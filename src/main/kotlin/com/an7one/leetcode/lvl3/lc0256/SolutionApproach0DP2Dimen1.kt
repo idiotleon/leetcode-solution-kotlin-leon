@@ -11,8 +11,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  *
  * `dp[i][j]`, the minimum cost of painting houses from [0, i] if one paints the i-th house with color j
  *
- * References:
- *  https://leetcode.com/problems/paint-house/discuss/68211/Simple-java-DP-solution
+ * Reference:
+ * https://leetcode.com/problems/paint-house/discuss/68211/Simple-java-DP-solution
  */
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen1 {

@@ -9,8 +9,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(`nCosts`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/paint-house/discuss/68211/Simple-java-DP-solution/146145
+ * Reference:
+ * https://leetcode.com/problems/paint-house/discuss/68211/Simple-java-DP-solution/146145
  */
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {

@@ -9,9 +9,9 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(`nHouses`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/paint-house/discuss/68211/Simple-java-DP-solution
- *  https://leetcode.com/problems/paint-house/discuss/68203/Share-my-very-simple-Java-solution-with-explanation.
+ * Reference:
+ * https://leetcode.com/problems/paint-house/discuss/68211/Simple-java-DP-solution
+ * https://leetcode.com/problems/paint-house/discuss/68203/Share-my-very-simple-Java-solution-with-explanation.
  */
 @Suppress(UNUSED)
 class SolutionApproach0DP0Dimen {
