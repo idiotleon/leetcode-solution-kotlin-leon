@@ -1,4 +1,5 @@
 /**
+ * @author: Leon
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
  *
  * Time Complexity:     O(N)
@@ -8,15 +9,18 @@ package com.zea7ot.lc.lvl3.lc0121
 
 class SolutionApproach0DP {
     fun maxProfit(prices: IntArray): Int {
+        // sanity check
+        if (prices.isEmpty()) return 0
+
         var minPrice = Int.MAX_VALUE
         var maxProfit = 0
 
-        for(price in prices){
-            if(price < minPrice)
+        for (price in prices) {
+            if (price < minPrice)
                 minPrice = price;
 
             val profit = price - minPrice
-            if(profit > maxProfit)
+            if (profit > maxProfit)
                 maxProfit = profit
         }
 
