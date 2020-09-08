@@ -7,7 +7,7 @@
  */
 package com.zea7ot.lc.lvl3.lc0714
 
-class SolutionApproach0DP2{
+class SolutionApproach0DP0Dimen2{
     fun maxProfit(prices: IntArray, fee: Int): Int {
         // sanity check
         if(prices.isEmpty()) return 0

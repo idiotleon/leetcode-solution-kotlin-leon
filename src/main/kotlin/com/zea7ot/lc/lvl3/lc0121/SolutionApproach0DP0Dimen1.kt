@@ -7,7 +7,10 @@
  */
 package com.zea7ot.lc.lvl3.lc0121
 
-class SolutionApproach0DP1 {
+import com.zea7ot.lc.utils.Constant.Annotation.Companion.UNUSED
+
+@Suppress(UNUSED)
+class SolutionApproach0DP0Dimen1 {
     fun maxProfit(prices: IntArray): Int {
         // sanity check
         if (prices.isEmpty()) return 0
