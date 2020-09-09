@@ -1,3 +1,15 @@
+/**
+ * https://leetcode.com/problems/majority-element/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(1)
+ *
+ * the description of the problem guarantees that there always will be a majority element
+ *
+ * References:
+ *  https://leetcode.com/problems/majority-element/discuss/51613/O(n)-time-O(1)-space-fastest-solution
+ *  https://leetcode.com/problems/majority-element/discuss/51611/Java-solutions-(sorting-hashmap-moore-voting-bit-manipulation).
+ */
 package com.zea7ot.lc.lvl3.lc0169
 
 import com.zea7ot.lc.utils.Constant.Annotation.Companion.UNUSED
