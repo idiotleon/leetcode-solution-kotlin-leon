@@ -10,31 +10,31 @@
 package com.zea7ot.lc.lvl3.lc1249
 
 import com.zea7ot.lc.utils.Constant.Annotation.Companion.UNUSED
+import java.util.*
 
 @Suppress(UNUSED)
 class SolutionApproach0Stack {
-    @ExperimentalStdlibApi
     fun minRemoveToMakeValid(s: String): String {
         // sanity check
         if (s.isEmpty()) return ""
 
-        val len = s.length
+        val lenS = s.length
         val chs = s.toCharArray()
 
         val placeHolder = '*'
         val openParen = '('
         val closedParen = ')'
 
-        val stack = ArrayDeque<Int>()
+        val stack = LinkedList<Int>()
 
-        for (i in 0 until len) {
+        for (i in 0 until lenS) {
             when (chs[i]) {
-                openParen -> stack.addFirst(i)
+                openParen -> stack.push(i)
                 closedParen -> {
                     if (stack.isEmpty())
                         chs[i] = placeHolder
                     else
-                        stack.removeFirst();
+                        stack.pop()
                 }
                 else -> {
                 }
@@ -42,7 +42,7 @@ class SolutionApproach0Stack {
         }
 
         while (!stack.isEmpty())
-            chs[stack.removeFirst()] = placeHolder
+            chs[stack.pop()] = placeHolder
 
         val builder = StringBuilder()
         for (ch in chs)
