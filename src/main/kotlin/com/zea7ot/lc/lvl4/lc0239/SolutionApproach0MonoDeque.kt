@@ -31,8 +31,8 @@ class SolutionApproach0MonoDeque {
                 deque.removeFirst()
             }
 
-            // when there is a new largest number met
-            while (deque.isNotEmpty() && nums[deque.peekLast()] < nums[i]) {
+            // when there is a new large number coming in from the last/tail
+            while (deque.isNotEmpty() && nums[i] > nums[deque.peekLast()]) {
                 deque.removeLast()
             }
 
