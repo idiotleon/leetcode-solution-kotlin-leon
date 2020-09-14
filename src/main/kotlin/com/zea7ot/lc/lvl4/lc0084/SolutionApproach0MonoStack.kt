@@ -6,9 +6,9 @@
  *
  * to maintain a "non-decreasing" stack
  *  1. the content(s) of the `stack` is(are) index(es)
- *  2. the elements/heights, accessed by indexes, are non-descreasing
+ *  2. the elements/heights, accessed by indexes, are non-decreasing
  *
- * please pay attention to `stack.pop()`, especially operations on the `stack` after that: the oder matters
+ * please pay attention to `stack.pop()`, especially operations, with the `stack`, after that: the order matters
  *
  * References:
  *  https://leetcode.com/problems/largest-rectangle-in-histogram/discuss/29018/AC-clean-Java-solution-using-stack
@@ -25,30 +25,34 @@ class SolutionApproach0MonoStack {
         if (heights.isEmpty()) return 0
 
         val size = heights.size
-        var idx = 0
-        var max = 0
+        var maxArea = 0
 
         val stack = LinkedList<Int>()
 
-        while (idx < size) {
+        for (idx in 0 until size) {
             while (stack.isNotEmpty() && heights[idx] < heights[stack.peek()]) {
-                val idxConcave = stack.pop()
+                // height of the concave
+                val shortest = heights[stack.pop()]
+                // current width
                 val width = idx - if (stack.isEmpty()) 0 else (stack.peek() + 1)
-                val area = heights[idxConcave] * width
-                max = maxOf(max, area)
+                // current area
+                val area = shortest * width
+                maxArea = maxOf(maxArea, area)
             }
 
             stack.push(idx)
-            ++idx
         }
 
         while (stack.isNotEmpty()) {
-            val idxConcave = stack.pop()
+            // height of the concave
+            val shortest = heights[stack.pop()]
+            // current width
             val width = size - if (stack.isEmpty()) 0 else (stack.peek() + 1)
-            val area = heights[idxConcave] * width
-            max = maxOf(max, area)
+            // current area
+            val area = shortest * width
+            maxArea = maxOf(maxArea, area)
         }
 
-        return max
+        return maxArea
     }
 }
