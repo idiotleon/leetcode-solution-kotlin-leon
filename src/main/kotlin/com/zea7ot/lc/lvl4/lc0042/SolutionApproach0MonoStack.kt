@@ -11,7 +11,7 @@
  * in another word, the stack always keeps
  *  the (index of) left taller (compare to cur) column
  *
- * in another word, the stack.peek() always has (the index of)
+ * in another word, the `stack.peek()` always has (the index of)
  *  the most immediate left taller column
  *
  * to keep checking out once an increase of height has been discovered,
