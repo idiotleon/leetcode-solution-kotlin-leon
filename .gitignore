@@ -6,3 +6,6 @@ build
 
 # Ignore IDEA settings files
 .idea
+
+# Mac System Files
+**/.DS_Store
