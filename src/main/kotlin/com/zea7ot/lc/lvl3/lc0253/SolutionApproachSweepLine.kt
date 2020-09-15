@@ -5,7 +5,7 @@
  * Space Complexity:    O(N)
  *
  * overlapped edge points are NOT counted,
- *  eg: [[1, 2], [2, 3]] is considered as NOT overlapped
+ *  eg: [[1, 2], [2, 3]] is NOT considered as overlapped
  *
  * References:
  *  https://leetcode.com/problems/my-calendar-iii/discuss/109556/JavaC++-Clean-Code/111457
