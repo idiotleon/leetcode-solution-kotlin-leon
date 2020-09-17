@@ -1,13 +1,11 @@
 /**
- * https://leetcode.com/problems/validate-binary-search-tree/
+ * @author: Leon
+ * https://leetcode.com/problems/kth-smallest-element-in-a-bst/
  *
  * Time Complexity:     O(N)
  * Space Complexity:    O(H)
- *
- * References:
- *  https://leetcode.com/problems/validate-binary-search-tree/discuss/32112/Learn-one-iterative-inorder-traversal-apply-it-to-multiple-tree-questions-(Java-Solution)
  */
-package com.zea7ot.lc.lvl3.lc0098
+package com.zea7ot.lc.lvl4.lc0230
 
 import com.zea7ot.lc.utils.Constant.Annotation.Companion.UNUSED
 import com.zea7ot.lc.utils.data_structure.tree.TreeNode
@@ -15,24 +13,22 @@ import java.util.*
 
 @Suppress(UNUSED)
 class SolutionApproach0InorderIterative {
-    fun isValidBST(root: TreeNode?): Boolean {
+    fun kthSmallest(root: TreeNode?, k: Int): Int {
         // sanity check
-        if (root == null) return true
-
-        var prev: Int? = null
+        if (root == null || k <= 0) return -1
 
         val stack = LinkedList<TreeNode>()
         pushLeft(root, stack)
+
+        var ith = 0
+
         while (stack.isNotEmpty()) {
             val top = stack.pop()
-
-            prev?.let { if (it >= top.`val`) return false }
-            prev = top.`val`
-
+            if (++ith == k) return top.`val`
             pushLeft(top.right, stack)
         }
 
-        return true
+        return -1
     }
 
     private fun pushLeft(node: TreeNode?, stack: LinkedList<TreeNode>) {

@@ -1,0 +1,5 @@
+Follow up:
+ 1. If the BST is modified (insert/delete operations) frequently,
+    how to find the kth smallest frequently?
+
+ 2. How would you optimize the kthSmallest routine
