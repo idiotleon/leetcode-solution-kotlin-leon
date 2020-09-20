@@ -7,6 +7,8 @@
  * `dp[i][j]` = min{ dp[i - 1][j'] + costs[i][j]}
  *      j' = 1, 2, 3, ..., (j - 1), (j + 1), ..., `kColors` (but not `j`)
  *
+ *  a top-down approach
+ *
  * References:
  *  https://leetcode.com/problems/paint-house-ii/discuss/69492/AC-Java-solution-without-extra-space/71565
  *  https://youtu.be/FLbqgyJ-70I?t=1433
