@@ -13,7 +13,7 @@
  *  https://leetcode.com/problems/serialize-and-deserialize-binary-tree/discuss/74253/Easy-to-understand-Java-Solution/77363
  *  https://leetcode.com/problems/serialize-and-deserialize-binary-tree/discuss/74253/Easy-to-understand-Java-Solution
  */
-package com.zea7ot.lc.ood.lc0297
+package com.zea7ot.lc.ood.lvl4.lc0297
 
 import com.zea7ot.lc.utils.Constant.Annotation.Companion.UNUSED
 import com.zea7ot.lc.utils.data_structure.tree.TreeNode
