@@ -44,6 +44,7 @@ class SolutionApproach0DP2Dimen {
         return longest
     }
 
+    // to check whether `word1` is a predecessor of `word2`
     private fun isPredecessor(word1: String, word2: String): Boolean {
         val len1 = word1.length
         val len2 = word2.length

@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/word-break/
  *
- * Time Complexity:     O(L ^ 2)
+ * Time Complexity:     O(L ^ 2) + O(totalWords)
  * Space Complexity:    O(L)
  *
  * References:
@@ -17,13 +17,13 @@ class SolutionApproach0DP1Dimen {
         // sanity check
         if (s.isEmpty()) return false
 
-        val len = s.length
+        val lenS = s.length
         val wordSet = HashSet(wordDict)
 
-        val dp = BooleanArray(len + 1)
+        val dp = BooleanArray(lenS + 1)
         dp[0] = true
 
-        for (hi in 1..len) {
+        for (hi in 1..lenS) {
             for (lo in 0..hi) {
                 if (dp[lo] && wordSet.contains(s.substring(lo, hi))) {
                     dp[hi] = true
@@ -32,6 +32,6 @@ class SolutionApproach0DP1Dimen {
             }
         }
 
-        return dp[len]
+        return dp[lenS]
     }
 }
