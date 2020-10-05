@@ -4,7 +4,7 @@
  * Time Complexity:     O(totalNums + `RANGE`) + O(`RANGE`) ~ O(totalNums + `RANGE`)
  *  totalNums, the amount of elements in the input array
  *  RANGE, the range of the value of each integer element, which, in this case, is 10001,
- *      and can be optimized to the max value in the array, at an extra cost of O(N)
+ *      and can be optimized to the max value in the array, at an extra cost of O(totalNums)
  *
  * Space Complexity:    O(totalNums + `RANGE`)
  *
