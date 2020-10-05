@@ -1,0 +1,69 @@
+/**
+ * https://leetcode.com/problems/longest-string-chain/
+ *
+ * Time Complexity:     O(`totalWords` * lg(`totalWords`)) + O((`totalWords` ^ 2) * L)
+ *  O(`totalWords` * lg(`totalWords`)), consumed by sorting
+ *  O((`totalWords` ^ 2) * L), consumed by DP
+ *
+ * Space Complexity:    O(`totalWords`)
+ *
+ * References:
+ *  https://leetcode.com/problems/longest-string-chain/discuss/294890/C%2B%2BJavaPython-DP-Solution
+ */
+package com.zea7ot.lc.lvl3.lc1048
+
+import com.zea7ot.lc.utils.Constant.Annotation.Companion.UNUSED
+
+@Suppress(UNUSED)
+class SolutionApproach0DP2Dimen {
+    fun longestStrChain(words: Array<String>): Int {
+        // sanity check
+        if (words.isEmpty()) return 0
+
+        val totalWords = words.size
+
+        words.sortWith(compareBy { it.length })
+
+        val dp = IntArray(totalWords) { 1 }
+        var longest = 0
+
+        for (hi in 1 until totalWords) {
+            for (lo in 0 until hi) {
+                val word1 = words[lo]
+                val word2 = words[hi]
+                if (word2.length - word1.length <= 1) {
+                    if (isPredecessor(word1, word2)) {
+                        dp[hi] = maxOf(dp[hi], dp[lo] + 1)
+                    }
+                }
+            }
+
+            longest = maxOf(longest, dp[hi])
+        }
+
+        return longest
+    }
+
+    private fun isPredecessor(word1: String, word2: String): Boolean {
+        val len1 = word1.length
+        val len2 = word2.length
+
+        if (len1 == len2) return false
+
+        var idx1 = 0
+        var idx2 = 0
+        var diff = 0
+
+        while (idx1 < len1) {
+            if (word1[idx1] == word2[idx2]) {
+                ++idx1
+                ++idx2
+            } else {
+                if (++diff > 1) return false
+                ++idx2
+            }
+        }
+
+        return true
+    }
+}

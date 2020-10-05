@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/
  *
- * Time Complexity:     O(N ^ 2)
- * Space Complexity:    O(N ^ 2)
+ * Time Complexity:     O(`totalSize` ^ 2)
+ * Space Complexity:    O(`totalSize` ^ 2)
  *
  * dp[i][j] represents the longest fibonacci subsequence ending with `nums[i]` and `nums[j]`
  * dp[i][j] = (dp[j - i][i] + 1) or 2
