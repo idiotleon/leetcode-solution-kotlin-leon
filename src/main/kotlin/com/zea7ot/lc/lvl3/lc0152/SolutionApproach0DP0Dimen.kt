@@ -1,7 +1,9 @@
 /**
  * https://leetcode.com/problems/maximum-product-subarray/
  *
- * Time Complexity:     O(N)
+ * Time Complexity:     O(size)
+ *  size, the amount of elements in the given array
+ *
  * Space Complexity:    O(1)
  *
  * Because that there are possibly negative numbers and 0(s),
@@ -11,27 +13,29 @@
  */
 package com.zea7ot.lc.lvl3.lc0152
 
+import com.zea7ot.lc.utils.Constant.Annotation.Companion.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DP0Dimen {
     fun maxProduct(nums: IntArray): Int {
         // sanity check
         if (nums.isEmpty()) return 0
 
-        val size = nums.size
+        var prevMin = 1
+        var prevMax = 1
 
-        var minProduct = 1
-        var maxProduct = 1
-        var ans = nums[0]
+        var maxProduct = Integer.MIN_VALUE
 
         for (num in nums) {
-            val curMin = minOf(num, minProduct * num, maxProduct * num)
-            val curMax = maxOf(num, minProduct * num, maxProduct * num)
+            val curMin = minOf(num, prevMax * num, prevMin * num)
+            val curMax = maxOf(num, prevMax * num, prevMin * num)
 
-            minProduct = curMin
-            maxProduct = curMax
+            maxProduct = maxOf(maxProduct, curMax)
 
-            ans = maxOf(ans, maxProduct)
+            prevMin = curMin
+            prevMax = curMax
         }
 
-        return ans
+        return maxProduct
     }
 }
