@@ -22,7 +22,7 @@ class SolutionApproach0DP2Dimen {
 
         val totalWords = words.size
 
-        words.sortWith(compareBy { it.length })
+        words.sortBy { it.length }
 
         val dp = IntArray(totalWords) { 1 }
         var longest = 0
