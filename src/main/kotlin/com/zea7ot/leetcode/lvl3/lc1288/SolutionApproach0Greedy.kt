@@ -3,7 +3,8 @@
  *
  * Time Complexity:     O(size * lg(size)) + O(size) ~ O(size * lg(size))
  *  size: total elements in the array
- * Space Complexity:    O(size)
+ *
+ * Space Complexity:    O(1)
  *  size: total elements in the array
  *
  * References:
@@ -20,14 +21,12 @@ class SolutionApproach0Greedy {
         // sanity check
         if (intervals.isEmpty()) return 0
 
-        // creating a new array, instead of sorting in place, seems to be hard to avoid
-        // which bumps the space complexity from O(1) to O(size)
-        val sorted = intervals.sortedWith(compareBy({ it[0] }, { -it[1] }))
+        intervals.sortWith(compareBy({ it[0] }, { -it[1] }))
 
         var curEnd = Int.MIN_VALUE
         var count = 0
 
-        for (interval in sorted) {
+        for (interval in intervals) {
             val end = interval[1]
 
             if (curEnd < end) {
