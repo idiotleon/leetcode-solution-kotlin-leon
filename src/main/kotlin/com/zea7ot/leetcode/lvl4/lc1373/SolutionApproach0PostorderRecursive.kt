@@ -11,7 +11,7 @@
 package com.zea7ot.leetcode.lvl4.lc1373
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
-import com.zea7ot.leetcode.utils.data_structure.tree.TreeNode
+import com.zea7ot.leetcode.utils.dataStructure.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {

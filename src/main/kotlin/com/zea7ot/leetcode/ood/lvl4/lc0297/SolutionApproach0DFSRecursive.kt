@@ -16,7 +16,7 @@
 package com.zea7ot.leetcode.ood.lvl4.lc0297
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
-import com.zea7ot.leetcode.utils.data_structure.tree.TreeNode
+import com.zea7ot.leetcode.utils.dataStructure.TreeNode
 import java.util.*
 
 @Suppress(UNUSED)
