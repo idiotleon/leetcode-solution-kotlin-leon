@@ -28,17 +28,18 @@ class SolutionApproach0MonoStack {
         // sanity check
         if (heights.isEmpty()) return 0
 
-        val size = heights.size
+        val totalHeights = heights.size
         val stack = LinkedList<Int>()
 
         var idx = 0
         var water = 0
-        while (idx < size) {
+        while (idx < totalHeights) {
             if (stack.isEmpty() || heights[stack.peek()] >= heights[idx]) {
-                stack.push(idx++)
+                stack.push(idx)
+                ++idx
             } else {
                 val idxConcave = stack.pop()
-                if (!stack.isEmpty()) {
+                if (stack.isNotEmpty()) {
                     val minHeight = minOf(heights[idx], heights[stack.peek()])
                     water += (minHeight - heights[idxConcave]) * (idx - stack.peek() - 1)
                 }
