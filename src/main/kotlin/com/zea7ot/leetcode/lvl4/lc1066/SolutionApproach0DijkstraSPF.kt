@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/campus-bikes-ii/
  *
- * Time Complexity:     O()
- * Space Complexity:    O()
+ * Time Complexity:     O(V + E * lg(V))
+ * Space Complexity:    O(E * lg(V))
  *
  * References:
  *  https://leetcode.com/problems/campus-bikes-ii/discuss/303422/Python-Priority-Queue/285136
@@ -20,7 +20,7 @@ class SolutionApproach0DijkstraSPF {
         val totalWorkers = workers.size
         val totalBikes = bikes.size
 
-        val minHeap = PriorityQueue<Node> { a, b -> a.distance.compareTo(b.distance) }
+        val minHeap = PriorityQueue<Node>(compareBy { it.distance })
         minHeap.offer(Node(0, 0, 0))
 
         val seen = hashSetOf<String>()
@@ -32,14 +32,14 @@ class SolutionApproach0DijkstraSPF {
             val distance = cur.distance
 
             val hash = "$idxWorker#$state"
-
             if (!seen.add(hash)) continue
 
-            if (idxWorker == totalWorkers) return cur.distance
+            if (idxWorker == totalWorkers) return distance
 
             for (idxBike in 0 until totalBikes) {
                 if ((state and (1 shl idxBike)) == 0) {
-                    minHeap.offer(Node(idxWorker + 1, state or (1 shl idxBike),
+                    minHeap.offer(Node(idxWorker + 1,
+                            state or (1 shl idxBike),
                             distance + getDistance(workers[idxWorker], bikes[idxBike])))
                 }
             }
