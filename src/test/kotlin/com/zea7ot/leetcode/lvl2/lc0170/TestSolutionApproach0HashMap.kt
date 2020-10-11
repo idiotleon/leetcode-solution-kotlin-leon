@@ -1,4 +1,4 @@
-package com.zea7ot.leetcode.lc2.lc0170
+package com.zea7ot.leetcode.lvl2.lc0170
 
 import com.zea7ot.leetcode.lvl2.lc0170.SolutionApproach0HashMap
 import org.junit.Test
