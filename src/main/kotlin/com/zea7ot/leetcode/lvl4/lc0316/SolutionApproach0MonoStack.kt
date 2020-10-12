@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/remove-duplicate-letters/
  *
- * Time Complexity:     O(L)
- * Space Complexity:    O(L)
+ * Time Complexity:     O(`lenS`)
+ * Space Complexity:    O(`lenS`)
  *
  * to main a "strickly increasing" stack
  *  1. the contents are actual characters
@@ -17,30 +17,31 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
     fun removeDuplicateLetters(s: String): String {
-        val lenS = s.length
+        // not used
+        // val lenS = s.length
 
-        val remaining = IntArray(26)
-        val used = IntArray(26)
+        val remaining = IntArray(26) { 0 }
+        val used = IntArray(26) { 0 }
         for (ch in s) {
             ++remaining[ch - 'a']
         }
 
         val builder = StringBuilder()
-        for (idx in 0 until lenS) {
-            if (used[s[idx] - 'a'] == 0) {
+        for (ch in s) {
+            if (used[ch - 'a'] == 0) {
                 while (builder.isNotEmpty()
-                        && builder.last() >= s[idx]
+                        && builder.last() >= ch
                         && remaining[builder.last() - 'a'] > 0) {
 
                     --used[builder.last() - 'a']
                     builder.deleteCharAt(builder.length - 1)
                 }
 
-                builder.append(s[idx])
-                ++used[s[idx] - 'a']
+                builder.append(ch)
+                ++used[ch - 'a']
             }
 
-            --remaining[s[idx] - 'a']
+            --remaining[ch - 'a']
         }
 
         return builder.toString()
