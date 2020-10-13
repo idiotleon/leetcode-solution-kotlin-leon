@@ -47,19 +47,26 @@ class SolutionApproach0DP2Dimen {
     private fun longestCommonSubsequence(str1: String, str2: String): String {
         val len1 = str1.length
         val len2 = str2.length
-        val dp = Array(len1 + 1) { Array<String>(len2 + 1) { "" } }
+        val dp = Array(len1 + 1) { Array(len2 + 1) { "" } }
 
         for (idx1 in 1..len1) {
             for (idx2 in 1..len2) {
-                dp[idx1][idx2] = if (str1[idx1 - 1] == str2[idx2 - 1]) {
-                    dp[idx1 - 1][idx2 - 1] + str1[idx1 - 1]
-                } else {
-                    if (dp[idx1 - 1][idx2].length > dp[idx1][idx2 - 1].length) {
-                        dp[idx1 - 1][idx2]
-                    } else {
-                        dp[idx1][idx2 - 1]
-                    }
+                dp[idx1][idx2] = when {
+                    str1[idx1 - 1] == str2[idx2 - 1] -> dp[idx1 - 1][idx2 - 1] + str1[idx1 - 1]
+                    dp[idx1 - 1][idx2].length > dp[idx1][idx2 - 1].length -> dp[idx1 - 1][idx2]
+                    else -> dp[idx1][idx2 - 1]
                 }
+
+                // or equivalently
+//                dp[idx1][idx2] = if (str1[idx1 - 1] == str2[idx2 - 1]) {
+//                    dp[idx1 - 1][idx2 - 1] + str1[idx1 - 1]
+//                } else {
+//                    if (dp[idx1 - 1][idx2].length > dp[idx1][idx2 - 1].length) {
+//                        dp[idx1 - 1][idx2]
+//                    } else {
+//                        dp[idx1][idx2 - 1]
+//                    }
+//                }
             }
         }
 
