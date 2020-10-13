@@ -13,22 +13,28 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
-    fun longestCommonSubsequence(text1: String, text2: String): Int {
-        val len1 = text1.length
-        val len2 = text2.length
+    fun isValidPalindrome(s: String, k: Int): Boolean {
+        val lenS = s.length
+        val t = StringBuilder(s).reverse().toString()
+        val longest = longestCommonSubsequence(s, t)
+        return lenS - longest <= k
+    }
 
-        val dp = Array(len1 + 1) { IntArray(len2 + 1) { 0 } }
+    private fun longestCommonSubsequence(s: String, t: String): Int {
+        val lenS = s.length
+        val lenT = t.length
 
-        for (idx1 in 1..len1) {
-            for (idx2 in 1..len2) {
-                if (text1[idx1 - 1] == text2[idx2 - 1]) {
-                    dp[idx1][idx2] = dp[idx1 - 1][idx2 - 1] + 1
+        val dp = Array(lenS + 1) { Array(lenT + 1) { 0 } }
+        for (idxS in 1..lenS) {
+            for (idxT in 1..lenT) {
+                dp[idxS][idxT] = if (s[idxS - 1] == t[idxT - 1]) {
+                    dp[idxS - 1][idxT - 1] + 1
                 } else {
-                    dp[idx1][idx2] = maxOf(dp[idx1 - 1][idx2], dp[idx1][idx2 - 1])
+                    maxOf(dp[idxS][idxT - 1], dp[idxS - 1][idxT])
                 }
             }
         }
 
-        return dp[len1][len2]
+        return dp[lenS][lenT]
     }
 }

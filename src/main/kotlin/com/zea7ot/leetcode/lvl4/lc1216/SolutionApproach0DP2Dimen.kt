@@ -27,6 +27,8 @@ class SolutionApproach0DP2Dimen {
             }
         }
 
-        return lenS - dp[0][lenS - 1] <= k
+        // the length of the longest common subsequence
+        val longest = dp[0][lenS - 1]
+        return lenS - longest <= k
     }
 }
