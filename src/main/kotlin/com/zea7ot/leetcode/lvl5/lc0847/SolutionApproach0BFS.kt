@@ -2,7 +2,7 @@
  * https://leetcode.com/problems/shortest-path-visiting-all-nodes/
  *
  * Time Complexity:     O(N * (2 ^ N))
- * Space Complexity:    O()
+ * Space Complexity:    O(N * (2 ^ N))
  *
  * References:
  *  https://leetcode.com/problems/shortest-path-visiting-all-nodes/discuss/135809/Fast-BFS-Solution-(46ms)-Clear-Detailed-Explanation-Included/237938
@@ -28,7 +28,7 @@ class SolutionApproach0BFS {
             seen.add(node.toHash())
         }
 
-        var level = 0
+        var steps = 0
         while (queue.isNotEmpty()) {
             val size = queue.size
 
@@ -36,7 +36,7 @@ class SolutionApproach0BFS {
                 val cur = queue.poll()
                 val vertex = cur.vertex
                 val bitMask = cur.bitMask
-                if (bitMask == fullMask) return level
+                if (bitMask == fullMask) return steps
                 for (nextVertex in graph[vertex]) {
                     val nextNode = State(nextVertex, bitMask or (1 shl nextVertex))
                     if (!seen.add(nextNode.toHash())) continue
@@ -44,10 +44,10 @@ class SolutionApproach0BFS {
                 }
             }
 
-            ++level
+            ++steps
         }
 
-        return level
+        return -1
     }
 
     private data class State(val vertex: Int, val bitMask: Int) {
