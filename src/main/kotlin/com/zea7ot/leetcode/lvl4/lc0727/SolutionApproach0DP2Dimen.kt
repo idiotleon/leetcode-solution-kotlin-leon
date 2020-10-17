@@ -32,11 +32,12 @@ class SolutionApproach0DP2Dimen {
         var startIdx = 0
         var len = lenS + 1
         for (idxS in 1..lenS) {
-            if (dp[lenT][idxS] == 0) continue
+            val lastRow = dp.last()
+            if (lastRow[idxS] == 0) continue
 
-            if (idxS - dp[lenT][idxS] + 1 < len) {
-                startIdx = dp[lenT][idxS] - 1
-                len = idxS - dp[lenT][idxS] + 1
+            if (idxS - lastRow[idxS] + 1 < len) {
+                startIdx = lastRow[idxS] - 1
+                len = idxS - lastRow[idxS] + 1
             }
         }
 
