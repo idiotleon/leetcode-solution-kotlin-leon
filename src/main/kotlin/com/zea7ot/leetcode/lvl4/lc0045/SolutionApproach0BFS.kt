@@ -32,6 +32,6 @@ class SolutionApproach0BFS {
             }
         }
 
-        return jump
+        return if (curEnd >= totalNums - 1) jump else -1
     }
 }

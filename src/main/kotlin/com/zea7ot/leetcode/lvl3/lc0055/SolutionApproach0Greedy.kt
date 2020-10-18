@@ -20,6 +20,8 @@ class SolutionApproach0Greedy {
             }
 
             furthest = maxOf(furthest, i + nums[i])
+            // pruning here
+            if (furthest >= totalNums) return true
         }
 
         return true
