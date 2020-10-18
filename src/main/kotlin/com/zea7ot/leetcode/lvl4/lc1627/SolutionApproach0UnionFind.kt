@@ -31,12 +31,12 @@ class SolutionApproach0UnionFind {
         private val roots = IntArray(n) { idx -> idx }
         private val ranks = IntArray(n) { 1 }
 
-        fun find(i: Int): Int {
-            if (roots[i] != i) {
-                roots[i] = find(roots[i])
+        fun find(x: Int): Int {
+            if (roots[x] != x) {
+                roots[x] = find(roots[x])
             }
 
-            return roots[i]
+            return roots[x]
         }
 
         fun union(x: Int, y: Int) {

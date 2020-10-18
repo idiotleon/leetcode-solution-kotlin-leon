@@ -25,7 +25,7 @@ class SolutionApproach0DP2Dimen {
 
             for (lo in hi - 1 downTo 0) {
                 // conflicts
-                if (players[hi].score < players[lo].score) continue
+                if (players[lo].score > players[hi].score) continue
                 dp[hi] = maxOf(dp[hi], dp[lo] + players[hi].score)
             }
 
