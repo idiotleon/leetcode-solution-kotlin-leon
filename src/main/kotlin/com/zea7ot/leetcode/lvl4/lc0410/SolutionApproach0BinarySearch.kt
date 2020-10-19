@@ -9,11 +9,11 @@
  *
  * The answer must be in the range:
  * Lower Bound: max value of nums
- *  this means, no matter what nums, m is, how nums is going to be splitted,
+ *  this means, no matter what nums, m is, how nums is going to be split,
  *  the min value of largest sum always is bigger than the largest value in nums
  *
  * Upper Bound: sum of nums (plus 1, depending on whether the last value is exclusive or inclusive)
- *  this means, no matter what nums, m is, how nums is going to be splitted,
+ *  this means, no matter what nums, m is, how nums is going to be split,
  *  the min value of largest sum always is smaller than the total sum of nums
  *
  * Given a candidate C, to compute the number groups k needed
