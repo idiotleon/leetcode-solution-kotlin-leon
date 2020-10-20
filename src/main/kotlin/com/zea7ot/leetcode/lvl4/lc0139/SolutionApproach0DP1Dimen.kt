@@ -20,13 +20,13 @@ class SolutionApproach0DP1Dimen {
         val lenS = s.length
         val wordSet = HashSet(wordDict)
 
-        val dp = BooleanArray(lenS + 1)
-        dp[0] = true
+        val dp = BooleanArray(lenS + 1) { idx -> idx == 0 }
 
         for (hi in 1..lenS) {
             for (lo in 0..hi) {
                 if (dp[lo] && wordSet.contains(s.substring(lo, hi))) {
                     dp[hi] = true
+                    // pruning here
                     break
                 }
             }

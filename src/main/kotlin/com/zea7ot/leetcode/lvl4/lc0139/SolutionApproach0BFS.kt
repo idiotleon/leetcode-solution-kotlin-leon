@@ -13,27 +13,31 @@ import kotlin.collections.HashSet
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
     fun wordBreak(s: String, wordDict: List<String>): Boolean {
+        // sanity check
+        if (s.isEmpty()) return false
 
         val wordSet = HashSet(wordDict)
-        val seen = HashSet<String>()
 
-        val queue = LinkedList(listOf(s))
+        val queue = LinkedList<String>()
+        queue.offer(s)
+
+        val seen = HashSet<String>()
+        seen.add(s)
 
         while (queue.isNotEmpty()) {
             val size = queue.size
 
-            for (i in 0 until size) {
+            for (sz in 0 until size) {
                 val cur = queue.poll()
                 val len = cur.length
 
-                for (j in 1..len) {
-                    if (!wordSet.contains(cur.substring(0, j))) continue
+                for (idx in 1..len) {
+                    if (!wordSet.contains(cur.substring(0, idx))) continue
 
-                    if (j == len) return true
+                    if (idx == len) return true
 
-                    val sub = cur.substring(j)
+                    val sub = cur.substring(idx)
                     if (!seen.add(sub)) continue
-
                     queue.offer(sub)
                 }
             }
