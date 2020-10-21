@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/maximum-product-subarray/
  *
- * Time Complexity:     O(size)
- *  size, the amount of elements in the given array
+ * Time Complexity:     O(`totalNums`)
+ *  totalNums, the total amount of elements in the given array
  *
  * Space Complexity:    O(1)
  *
@@ -19,15 +19,15 @@ class SolutionApproach0TwoPointers {
         // sanity check
         if (nums.isEmpty()) return 0
 
-        val size = nums.size
+        val totalNums = nums.size
 
-        var maxProduct = nums[0]
+        var maxProduct = Int.MIN_VALUE
         var lo = 0
         var hi = 0
 
-        for (i in 0 until size) {
-            lo = (if (lo == 0) 1 else lo) * nums[i]
-            hi = (if (hi == 0) 1 else hi) * nums[size - 1 - i]
+        for (idx in nums.indices) {
+            lo = (if (lo == 0) 1 else lo) * nums[idx]
+            hi = (if (hi == 0) 1 else hi) * nums[totalNums - 1 - idx]
 
             maxProduct = maxOf(maxProduct, lo, hi);
         }

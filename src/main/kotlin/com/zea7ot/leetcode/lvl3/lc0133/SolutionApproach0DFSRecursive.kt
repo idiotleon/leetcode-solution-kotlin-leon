@@ -3,9 +3,9 @@ package com.zea7ot.leetcode.lvl3.lc0133
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0DFSRecusive {
+class SolutionApproach0DFSRecursive {
     fun cloneGraph(node: Node?): Node? {
-        val map = hashMapOf<Node, Node>()
+        val map = HashMap<Node, Node>()
         return dfs(node, map)
     }
 
@@ -22,6 +22,6 @@ class SolutionApproach0DFSRecusive {
             }
         }
 
-        return map[cur]
+        return cloned
     }
 }

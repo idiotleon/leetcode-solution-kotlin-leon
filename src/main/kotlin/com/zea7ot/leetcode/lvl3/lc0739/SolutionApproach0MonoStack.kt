@@ -18,23 +18,21 @@ class SolutionApproach0MonoStack {
     class Solution {
         fun dailyTemperatures(T: IntArray): IntArray {
 
-            val totalT = T.size
+            val totalTs = T.size
             val stack = LinkedList<Int>()
 
-            val ans = IntArray(totalT) { 0 }
+            val ans = IntArray(totalTs) { 0 }
 
-            var idx = 0
-            while (idx < totalT) {
-                while (stack.isNotEmpty() && T[idx] > T[stack.peek()]) {
+            for (idx in T.indices) {
+                while (stack.isNotEmpty() && T[stack.peek()] < T[idx]) {
                     val prevIdx = stack.pop()
-                    ans[prevIdx] = (idx - prevIdx)
+                    ans[prevIdx] = idx - prevIdx
                 }
 
                 stack.push(idx)
-                ++idx
             }
 
-            // ba values, this can be omitted
+            // by values, this can be omitted
             while (stack.isNotEmpty()) {
                 ans[stack.pop()] = 0
             }

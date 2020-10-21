@@ -15,16 +15,16 @@ class SolutionApproach0BFS {
         // sanity check
         if (node == null) return node
 
-        val queue = LinkedList<Node>(listOf(node))
-        // or equivalently
-        // queue.offer(node)
+        val queue = LinkedList<Node>()
+        queue.offer(node)
 
-        val map = hashMapOf(node to Node(node.`val`))
+        val cloned = Node(node.`val`)
+        val map = hashMapOf(node to cloned)
 
         while (queue.isNotEmpty()) {
-            val sizeQ = queue.size
+            val size = queue.size
 
-            for (i in 0 until sizeQ) {
+            for (sz in 0 until size) {
                 val cur = queue.poll()
 
                 for (nei in cur.neighbors) {
@@ -42,6 +42,6 @@ class SolutionApproach0BFS {
             }
         }
 
-        return map[node]
+        return cloned
     }
 }

@@ -14,11 +14,11 @@ class SolutionApproach0DFSIterative {
     fun cloneGraph(node: Node?): Node? {
         if (node == null) return node
 
-        val stack = LinkedList<Node>(listOf(node))
-        // or equivalently
-        // stack.push(node)
+        val stack = LinkedList<Node>()
+        stack.push(node)
 
-        val map = hashMapOf(node to Node(node.`val`))
+        val cloned = Node(node.`val`)
+        val map = hashMapOf(node to cloned)
 
         while (stack.isNotEmpty()) {
             val top = stack.pop()
@@ -38,6 +38,6 @@ class SolutionApproach0DFSIterative {
 
         }
 
-        return map[node]
+        return cloned
     }
 }

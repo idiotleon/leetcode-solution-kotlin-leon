@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/max-chunks-to-make-sorted-ii/
  *
- * Time Complexity:     O(N)
- * Space Complexity:    O(N)
+ * Time Complexity:     O(`totalNums`)
+ * Space Complexity:    O(`totalNums`)
  *
  * References:
  *  https://leetcode.com/problems/max-chunks-to-make-sorted-ii/discuss/135830/c%2B%2B-Using-Stack-with-O(n)-space-and-time-complexity.-With-7-lines.-4ms.-Beats-100
@@ -18,7 +18,8 @@ class SolutionApproach0MonoStack {
         // sanity check
         if (nums.isEmpty()) return 0
 
-        val totalNums = nums.size
+        // not used
+        // val totalNums = nums.size
 
         val stack = LinkedList<Int>()
         for (num in nums) {

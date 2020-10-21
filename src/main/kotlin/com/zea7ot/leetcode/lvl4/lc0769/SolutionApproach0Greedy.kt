@@ -18,12 +18,13 @@ class SolutionApproach0Greedy {
         // sanity check
         if (nums.isEmpty()) return 0
 
-        val totalNums = nums.size
+        // not used
+        // val totalNums = nums.size
 
         var count = 0
         var max = 0
 
-        for (idx in 0 until totalNums) {
+        for (idx in nums.indices) {
             max = maxOf(max, nums[idx])
 
             if (max == idx) {
