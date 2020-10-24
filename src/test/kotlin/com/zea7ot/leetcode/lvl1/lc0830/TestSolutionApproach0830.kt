@@ -15,7 +15,7 @@ class TestSolutionApproach0830 {
     }
 
     @Test
-    fun pureEligible_ShouldReturnAll(){
+    fun pureEligible_ShouldReturnAll() {
         val input = "aaa"
         val expected = arrayListOf(arrayListOf(0, 2))
 

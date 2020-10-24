@@ -1,6 +1,5 @@
-package com.zea7ot.leetcode.lc1074
+package com.zea7ot.leetcode.lvl5.lc1074
 
-import com.zea7ot.leetcode.lvl5.lc1074.SolutionApproach0PrefixSums
 import org.junit.Test
 import kotlin.test.assertEquals
 
