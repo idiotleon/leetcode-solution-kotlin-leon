@@ -1,0 +1,32 @@
+/**
+ * https://leetcode.com/problems/stone-game-iv/
+ *
+ * Time Complexity:     O(`n` ^ 1.5)
+ * Space Complexity:    O(`n`)
+ *
+ * References:
+ *  https://leetcode.com/problems/stone-game-iv/discuss/730582/JavaC%2B%2BPython-DP
+ */
+package com.zea7ot.leetcode.lvl4.lc1510
+
+import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+
+@Suppress(UNUSED)
+class SolutionApproach0Knapsack1 {
+    fun winnerSquareGame(n: Int): Boolean {
+        val dp = BooleanArray(n + 1) { false }
+        for (hi in 1..n) {
+            var lo = 1
+            while (lo * lo <= hi) {
+                if (!dp[hi - lo * lo]) {
+                    dp[hi] = true
+                    break
+                }
+
+                ++lo
+            }
+        }
+
+        return dp[n]
+    }
+}

@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/path-with-maximum-minimum-value/
  *
- * Time Complexity:     O(`totalRows` * `totalCols` * lg(`totalRows` * `totalCols`))
- * Space Complexity:    O(`totalRows` * `totalCols`)
+ * Time Complexity:     O(E * lg(V)) ~ O(`totalRows` * `totalCols` * lg(`totalRows` * `totalCols`))
+ * Space Complexity:    O(V) ~ O(`totalRows` * `totalCols`)
  *
  * References:
  *  https://leetcode.com/problems/path-with-maximum-minimum-value/discuss/416227/Python-Dijkstra-Binary-Search-%2B-DFS-Union-Find-complexity-analysis
@@ -23,10 +23,10 @@ class SolutionApproach0DijkstraSPF {
         val totalRows = nums.size
         val totalCols = nums[0].size
 
-        val maxHeap = PriorityQueue<Node>(compareBy { -it.score })
-        maxHeap.offer(Node(0, 0, nums[0][0]))
-
         val scores = Array(totalRows) { IntArray(totalCols) { -1 } }
+
+        val maxHeap = PriorityQueue<Vertex>(compareBy { -it.score })
+        maxHeap.offer(Vertex(0, 0, nums[0][0]))
 
         while (maxHeap.isNotEmpty()) {
             val cur = maxHeap.poll()
@@ -44,7 +44,7 @@ class SolutionApproach0DijkstraSPF {
                 val score = minOf(nums[nextRow][nextCol], cur.score)
                 if (score > scores[nextRow][nextCol]) {
                     scores[nextRow][nextCol] = score
-                    maxHeap.offer(Node(nextRow, nextCol, score))
+                    maxHeap.offer(Vertex(nextRow, nextCol, score))
                 }
             }
         }
@@ -52,5 +52,5 @@ class SolutionApproach0DijkstraSPF {
         return -1
     }
 
-    private data class Node(val row: Int, val col: Int, val score: Int)
+    private data class Vertex(val row: Int, val col: Int, val score: Int)
 }
