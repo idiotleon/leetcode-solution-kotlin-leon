@@ -46,6 +46,5 @@ class SolutionApproach0BinarySearch {
         }
 
         return lo
-
     }
 }

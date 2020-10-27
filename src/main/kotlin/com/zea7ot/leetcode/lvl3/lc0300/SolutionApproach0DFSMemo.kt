@@ -1,7 +1,21 @@
+/**
+ * https://leetcode.com/problems/longest-increasing-subsequence
+ *
+ * Time Complexity:     O(`totalNums` ^ 2)
+ * Space Complexity:    O(`totalNums`)
+ *
+ * References:
+ *  http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-300-longest-increasing-subsequence/
+ *  https://youtu.be/7DKFpWnaxLI
+ */
 package com.zea7ot.leetcode.lvl3.lc0300
 
+import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun lengthOfLIS(nums: IntArray): Int {
+        // sanity check, required
         if (nums.isEmpty()) return 0
 
         val totalNums = nums.size
@@ -26,9 +40,8 @@ class SolutionApproach0DFSMemo {
         memo[idx]?.let { return it }
 
         var longest = 1
-        val hi = idx
-        for (lo in 0 until hi) {
-            if (nums[hi] > nums[lo]) {
+        for (lo in 0 until idx) {
+            if (nums[idx] > nums[lo]) {
                 longest = maxOf(longest, 1 + dfs(lo, nums, memo))
             }
         }

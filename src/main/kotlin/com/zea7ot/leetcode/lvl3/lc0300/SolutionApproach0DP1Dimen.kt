@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/longest-increasing-subsequence/
  *
- * Time Complexity:     O(`totalSize` ^ 2)
- * Space Complexity:    O(`totalSize`)
+ * Time Complexity:     O(`totalNums` ^ 2)
+ * Space Complexity:    O(`totalNums`)
  *
  * References:
  *  https://leetcode.com/problems/longest-increasing-subsequence/discuss/74836/My-easy-to-understand-O(n2)-solution-using-DP-with-video-explanation/144619
@@ -19,12 +19,12 @@ class SolutionApproach0DP1Dimen {
         // sanity check
         if (nums.isEmpty()) return 0
 
-        val totalSize = nums.size
+        val totalNums = nums.size
 
-        val dp = IntArray(totalSize) { 1 }
+        val dp = IntArray(totalNums) { 1 }
         var longest = 1
 
-        for (hi in 1 until totalSize) {
+        for (hi in nums.indices) {
             for (lo in 0 until hi) {
                 if (nums[hi] > nums[lo]) {
                     dp[hi] = maxOf(dp[hi], dp[lo] + 1)
