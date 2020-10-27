@@ -40,17 +40,17 @@ class SolutionApproach0DFS {
             }
 
             var count = 0
-            var bitMaskSubstr = bitMask
+            var bitMaskSubstring = bitMask
             val firstLetter = 1 shl (puzzle[0] - 'a')
 
-            while (bitMaskSubstr > 0) {
-                if ((bitMaskSubstr and firstLetter) == firstLetter) {
-                    count += (freqs[bitMaskSubstr] ?: 0)
+            while (bitMaskSubstring > 0) {
+                if ((bitMaskSubstring and firstLetter) == firstLetter) {
+                    count += (freqs[bitMaskSubstring] ?: 0)
                 }
 
                 // to get the next substrings,
                 // ultimately to get all the substrings
-                bitMaskSubstr = (bitMaskSubstr - 1) and bitMask
+                bitMaskSubstring = (bitMaskSubstring - 1) and bitMask
             }
 
             ans.add(count)
