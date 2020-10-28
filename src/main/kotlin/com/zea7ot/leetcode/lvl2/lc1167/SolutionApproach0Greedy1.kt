@@ -13,7 +13,7 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)
-class SolutionApproach0DFSMemo {
+class SolutionApproach0Greedy1 {
     fun connectSticks(sticks: IntArray): Int {
         // not used
         // val totalSticks = sticks.size
@@ -26,7 +26,7 @@ class SolutionApproach0DFSMemo {
         val connectedQueue = LinkedList<Int>()
 
         while (sticksQueue.size + connectedQueue.size > 1) {
-            val cost = dfs(sticksQueue, connectedQueue) + dfs(sticksQueue, connectedQueue)
+            val cost = getCost(sticksQueue, connectedQueue) + getCost(sticksQueue, connectedQueue)
             connectedQueue.offer(cost)
             totalCost += cost
         }
@@ -34,7 +34,7 @@ class SolutionApproach0DFSMemo {
         return totalCost
     }
 
-    private fun dfs(sticks: LinkedList<Int>, connected: LinkedList<Int>): Int {
+    private fun getCost(sticks: LinkedList<Int>, connected: LinkedList<Int>): Int {
         return when {
             sticks.isEmpty() -> connected.poll()
             connected.isEmpty() -> sticks.poll()
