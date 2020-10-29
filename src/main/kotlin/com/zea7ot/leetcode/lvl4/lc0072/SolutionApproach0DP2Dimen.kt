@@ -29,8 +29,8 @@ class SolutionApproach0DP2Dimen {
             }
         }
 
-        for (idx1 in 0 until len1) {
-            for (idx2 in 0 until len2) {
+        for (idx1 in word1.indices) {
+            for (idx2 in word2.indices) {
                 costs[idx1 + 1][idx2 + 1] = if (word1[idx1] == word2[idx2]) {
                     costs[idx1][idx2]
                 } else {
