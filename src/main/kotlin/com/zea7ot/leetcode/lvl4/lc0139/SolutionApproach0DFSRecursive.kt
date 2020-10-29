@@ -23,26 +23,21 @@ class SolutionApproach0DFSRecursive {
         return dfs(0, s, seen, wordSet)
     }
 
-    private fun dfs(idx: Int,
-                    s: String,
+    private fun dfs(cur: Int,
+                    str: String,
                     seen: HashSet<Int>,
                     wordSet: HashSet<String>): Boolean {
+        val lenS = str.length
+        if (cur == lenS) return true
+        if (seen.contains(cur)) return false
 
-        val len = s.length
-
-        if (idx == len) return true
-
-        if (seen.contains(idx)) return false
-
-        for (i in idx + 1..len) {
-            val sub = s.substring(idx, i)
-
+        for (next in cur + 1..lenS) {
+            val sub = str.substring(cur, next)
             if (!wordSet.contains(sub)) continue
-
-            if (dfs(i, s, seen, wordSet)) return true
+            if (dfs(next, str, seen, wordSet)) return true
         }
 
-        seen.add(idx)
+        seen.add(cur)
         return false
     }
 }

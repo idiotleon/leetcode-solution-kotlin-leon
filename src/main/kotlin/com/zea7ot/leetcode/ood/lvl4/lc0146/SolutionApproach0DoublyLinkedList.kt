@@ -9,7 +9,7 @@
  *
  * Space Complexity:    O(`capacity`)
  */
-package com.zea7ot.leetcode.ood.lvl3.lc0146
+package com.zea7ot.leetcode.ood.lvl4.lc0146
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
@@ -96,8 +96,5 @@ class SolutionApproach0DoublyLinkedList(capacity: Int) {
         }
     }
 
-    private class DLLNode(val key: Int, var value: Int) {
-        var prev: DLLNode? = null
-        var next: DLLNode? = null
-    }
+    private class DLLNode(val key: Int, var value: Int, var prev: DLLNode? = null, var next: DLLNode? = null)
 }
