@@ -23,7 +23,7 @@ class SolutionApproach0DP1Dimen {
 
         var longest = 0
 
-        for (hi in 0 until totalNums) {
+        for (hi in nums.indices) {
             for (lo in 0 until hi) {
                 if (nums[lo] < nums[hi]) {
                     if (lens[hi] == lens[lo] + 1) {
