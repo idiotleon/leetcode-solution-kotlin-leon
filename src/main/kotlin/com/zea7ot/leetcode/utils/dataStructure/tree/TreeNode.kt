@@ -1,4 +1,4 @@
-package com.zea7ot.leetcode.utils.dataStructure
+package com.zea7ot.leetcode.utils.dataStructure.tree
 
 data class TreeNode(var `val`: Int, var left: TreeNode? = null, var right: TreeNode? = null)
 

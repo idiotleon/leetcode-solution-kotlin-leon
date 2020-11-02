@@ -8,7 +8,7 @@
 package com.zea7ot.leetcode.lvl4.lc0230
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
-import com.zea7ot.leetcode.utils.dataStructure.TreeNode
+import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
 import java.util.*
 
 @Suppress(UNUSED)

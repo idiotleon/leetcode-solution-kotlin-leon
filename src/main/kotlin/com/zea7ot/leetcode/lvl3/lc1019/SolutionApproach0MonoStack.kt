@@ -14,7 +14,7 @@
 package com.zea7ot.leetcode.lvl3.lc1019
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
-import com.zea7ot.leetcode.utils.dataStructure.ListNode
+import com.zea7ot.leetcode.utils.dataStructure.linkedList.ListNode
 import java.util.*
 
 @Suppress(UNUSED)
