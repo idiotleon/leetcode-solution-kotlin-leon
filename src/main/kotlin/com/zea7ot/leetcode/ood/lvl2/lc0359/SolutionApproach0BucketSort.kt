@@ -7,7 +7,7 @@
  * References:
  *  https://leetcode.com/problems/logger-rate-limiter/discuss/83256/Java-Circular-Buffer-Solution-similar-to-Hit-Counter
  */
-package com.zea7ot.leetcode.ood.lc0359
+package com.zea7ot.leetcode.ood.lvl2.lc0359
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
