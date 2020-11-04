@@ -4,7 +4,7 @@
  * Time Complexity:     O(lg(`totalNums`))
  * Space Complexity:    O(lg(`totalNums`))
  */
-package com.zea7ot.leetcode.lvl3.lc0162
+package com.zea7ot.leetcode.lvl4.lc0162
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 

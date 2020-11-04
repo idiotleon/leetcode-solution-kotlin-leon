@@ -7,7 +7,7 @@
  * References:
  *  https://zxi.mytechroad.com/blog/algorithms/binary-search/%E8%8A%B1%E8%8A%B1%E9%85%B1-leetcode-162-find-peak-element/
  */
-package com.zea7ot.leetcode.lvl3.lc0162
+package com.zea7ot.leetcode.lvl4.lc0162
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
