@@ -1,0 +1,27 @@
+https://tinyurl.com/yyjk7or6
+
+Q & A
+
+Q1: What is Java metacharacter?
+A1: A metacharacter — a character with special meaning interpreted by the Java regular expression engine / matcher.
+https://en.wikipedia.org/wiki/Metacharacter
+https://docs.oracle.com/javase/tutorial/essential/regex/literals.html.
+
+Q2: Why does Java regular expression use \\, instead of \, to escape metacharacter such as +, ., *, etc?
+
+A2: I guess the reason is that the backslash character is an escape character in Java String literals already.
+
+Update:
+
+Credit to @helengu1996 for her link:
+
+"There are two "escapings" going on here. The first backslash is to escape the second backslash for the Java language, to create an actual backslash character. The backslash character is what escapes the + or the s for interpretation by the regular expression engine. That's why you need two backslashes -- one for Java, one for the regular expression engine. With only one backslash, Java reports \s and + as illegal escape characters -- not for regular expressions, but for an actual character in the Java language."
+
+Q3: What is the key word var?
+A3: Java 10 introduce local variable type inference with the key word var, see here.
+
+Q4: What is "\\s+"? What does var words = text.trim().split("\\s+"); mean?
+A4:"\\s+" is Java regular expression (regex); "\\s" stands for a single space and + is a quantifier in a regex, and it indicates one or more [the char or expression] right before it;
+The whole statement is used to trim the leading and trailing spaces of text, then to split it into words by space(s).
+
+End of Q & A.
