@@ -1,10 +1,10 @@
 /**
  * https://leetcode.com/problems/burst-balloons/
  *
- * Time Complexity:     ?O(`totalNums` * `totalNums` * `totalNums`)
- * Space Complexity:    O(`totalNums` * `totalNums`)
+ * Time Complexity:     O(`nNums` ^ 3)
+ * Space Complexity:    O(`nNums` ^ 2)
  *
- * `dp[i][k]`, the maximum score with s[i : j] balloons burst
+ * `dp[i][j]`, the maximum score with any one balloon within `nums[i : j]` bursted
  *
  * References:
  *  http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-312-burst-balloons/
@@ -18,35 +18,34 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun maxCoins(nums: IntArray): Int {
-        val totalNums = nums.size
+        val nNums = nums.size
 
-        // to pad both ends of `nums` array with 1s
-        val padded = IntArray(totalNums + 2) { idx ->
+        // to pad both ends of `nums` array with 1
+        val padded = IntArray(nNums + 2) { idx ->
             when (idx) {
                 0 -> 1;
-                totalNums + 1 -> 1;
+                nNums + 1 -> 1;
                 else -> nums[idx - 1]
             }
         }
 
+        val nPadded = padded.size
 
-        val dp = Array(totalNums + 2) { IntArray(totalNums + 2) { 0 } }
-        for (len in 1..totalNums) {
-            var i = 1
-            while (i + len <= totalNums + 1) {
-                val j = i + len - 1
-                var best = 0
-                for (k in i..j) {
-                    best = maxOf(best,
-                            dp[i][k - 1] + padded[i - 1] * padded[k] * padded[j + 1] + dp[k + 1][j])
+        val dp = Array(nPadded) { IntArray(nPadded) { 0 } }
+        for (len in 1..nNums) {
+            for (lo in 1 until nPadded - len) {
+                val hi = lo + len - 1
+                var maxCoins = 0
+
+                for (k in lo..hi) {
+                    maxCoins = maxOf(maxCoins,
+                            dp[lo][k - 1] + padded[lo - 1] * padded[k] * padded[hi + 1] + dp[k + 1][hi])
                 }
 
-                dp[i][j] = best
-
-                ++i
+                dp[lo][hi] = maxCoins
             }
         }
 
-        return dp[1][totalNums]
+        return dp[1][nNums]
     }
 }
