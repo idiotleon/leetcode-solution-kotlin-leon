@@ -1,0 +1,14 @@
+Given a 2D matrix, to implement the k * k max pooling.
+For K * K submatrix/window, to find its maximum value.
+
+e.g.1:
+matrix: [[2, 3], [0, 0]]
+K: 2
+
+expected to return: [[3]]
+
+e.g.2:
+matrix: [[2, 3, 0], [5, 0, 0], [-1, 0, 3]]
+K: 2
+
+expected to return: [[5, 3], [5, 3]]
