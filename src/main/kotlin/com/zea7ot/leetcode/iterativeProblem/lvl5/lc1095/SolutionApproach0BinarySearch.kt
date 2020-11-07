@@ -8,7 +8,7 @@
  *  https://leetcode.com/problems/find-in-mountain-array/discuss/378052/Binary-Search-Thinking-Process
  *  https://leetcode.com/problems/find-in-mountain-array/discuss/317607/JavaC%2B%2BPython-Triple-Binary-Search
  */
-package com.zea7ot.leetcode.iterativeProgram.lvl5.lc1095
+package com.zea7ot.leetcode.iterativeProblem.lvl5.lc1095
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
