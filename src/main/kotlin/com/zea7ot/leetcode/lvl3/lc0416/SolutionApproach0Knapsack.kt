@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/partition-equal-subset-sum/
  *
- * Time Complexity:     O(`totalNums` * `volume`)
+ * Time Complexity:     O(`nNums` * `volume`)
  * Space Complexity:    O(`volume`)
  *
  * the characteristic of Knapsack problems is that
@@ -20,7 +20,7 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 class SolutionApproach0Knapsack {
     fun canPartition(nums: IntArray): Boolean {
         // not used
-        // val totalNums = nums.size
+        // val nNums = nums.size
 
         val volume = nums.sum()
         if (volume % 2 == 1) return false
