@@ -4,7 +4,11 @@
  * Time Complexity:     O(N)
  * Space Complexity:    O(H)
  *
- * a bottom-up approach
+ * a combination of preorder(top-down) and postorder(bottom-up) traversals
+ *
+ * References:
+ *  https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/discuss/274610/JavaC++Python-Top-Down/262349
+ *  https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/discuss/274610/JavaC%2B%2BPython-Top-Down
  */
 package com.zea7ot.leetcode.lvl2.lc1026
 
@@ -14,20 +18,18 @@ import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun maxAncestorDiff(root: TreeNode?): Int {
-        return dfs(root, Int.MIN_VALUE, Int.MAX_VALUE)
+        return dfs(root, Int.MAX_VALUE, Int.MIN_VALUE)
     }
 
-    private fun dfs(node: TreeNode?, max: Int, min: Int): Int {
-        node?.let {
-            val maxVal = maxOf(max, it.`val`)
-            val minVal = minOf(min, it.`val`)
+    private fun dfs(node: TreeNode?, min: Int, max: Int): Int {
+        if (node == null) return 0
 
-            val left = dfs(it.left, maxVal, minVal)
-            val right = dfs(it.right, maxVal, minVal)
+        val maxVal = maxOf(max, node.`val`)
+        val minVal = minOf(min, node.`val`)
 
-            return maxOf(maxVal - minVal, left, right)
-        }
+        val leftMaxDiff = dfs(node.left, minVal, maxVal)
+        val rightMaxDiff = dfs(node.right, minVal, maxVal)
 
-        return 0
+        return maxOf(maxVal - minVal, leftMaxDiff, rightMaxDiff)
     }
 }
