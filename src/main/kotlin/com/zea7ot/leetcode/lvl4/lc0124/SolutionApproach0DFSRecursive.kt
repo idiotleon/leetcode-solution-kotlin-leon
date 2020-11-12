@@ -15,23 +15,23 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
-class SolutionApproach0PostorderRecursive {
+class SolutionApproach0DFSRecursive {
     fun maxPathSum(root: TreeNode?): Int {
-        val sum = IntArray(1) { Int.MIN_VALUE }
-        postorder(root, sum)
-        return sum[0]
+        val maxSum = intArrayOf(Int.MIN_VALUE)
+        dfs(root, maxSum)
+        return maxSum[0]
     }
 
-    private fun postorder(node: TreeNode?, sum: IntArray): Int {
-        node?.let {
-            val left = postorder(it.left, sum)
-            val right = postorder(it.right, sum)
+    private fun dfs(node: TreeNode?, maxSum: IntArray): Int {
+        if (node == null) return 0
 
-            sum[0] = maxOf(sum[0], left + right + it.`val`)
+        val value = node.`val`
 
-            return maxOf(0, maxOf(left, right) + it.`val`)
-        }
+        val left = dfs(node.left, maxSum)
+        val right = dfs(node.right, maxSum)
 
-        return 0
+        maxSum[0] = maxOf(maxSum[0], left + right + value)
+
+        return maxOf(0, maxOf(left, right) + value)
     }
 }

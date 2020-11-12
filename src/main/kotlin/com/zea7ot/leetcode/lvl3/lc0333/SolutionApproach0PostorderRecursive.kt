@@ -14,28 +14,32 @@ import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
-    fun largestBSTSubtree(root: TreeNode?): Int {
-        val res = postorder(root)
-        return res.size
+    private companion object {
+        private const val RANGE = 1e4.toInt() + 1
     }
 
-    private fun postorder(node: TreeNode?): Result{
-        if(node == null)
-            return Result(Int.MAX_VALUE, Int.MIN_VALUE, 0)
+    fun largestBSTSubtree(root: TreeNode?): Int {
+        val subtree = postorder(root)
+        return subtree.size
+    }
+
+    private fun postorder(node: TreeNode?): Subtree {
+        if (node == null) return Subtree(RANGE, -RANGE, 0)
 
         val left = postorder(node.left)
         val right = postorder(node.right)
+        val value = node.`val`
 
-        return if(node.`val` > left.max && node.`val` < right.min){
-            val min = minOf(node.`val`, left.min)
-            val max = maxOf(node.`val`, right.max)
+        return if (value in left.max + 1 until right.min) {
+            val min = minOf(value, left.min)
+            val max = maxOf(value, right.max)
             val size = left.size + right.size + 1
-            Result(min, max, size)
-        }else{
+            Subtree(min, max, size)
+        } else {
             val size = maxOf(left.size, right.size)
-            Result(Integer.MIN_VALUE, Integer.MAX_VALUE, size)
+            Subtree(-RANGE, RANGE, size)
         }
     }
 
-    private data class Result(val min: Int, val max: Int, val size: Int)
+    private data class Subtree(val min: Int, val max: Int, val size: Int)
 }

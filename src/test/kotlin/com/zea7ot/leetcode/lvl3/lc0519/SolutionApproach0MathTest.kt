@@ -18,7 +18,7 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 import kotlin.random.Random
 
 @Suppress(UNUSED)
-class SolutionApproach0Math(private val nRows: Int, private val nCols: Int) {
+class SolutionApproach0MathTest(private val nRows: Int, private val nCols: Int) {
     private val map = HashMap<Int, Int>()
     private var nNums = nRows * nCols
 

@@ -2,10 +2,10 @@
  * https://leetcode.com/problems/house-robber-iii/
  *
  * Time Complexity:     O(N)
- * Space Complexity:    O(H)
+ * Space Complexity:    O(N) + O(H) ~ O(N)
  *
  * References:
- *  https://leetcode.com/problems/house-robber-iii/discuss/79330/step-by-step-tackling-of-the-problem
+ *  https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/108730/javacstraightforward-dfs-solution
  */
 package com.zea7ot.leetcode.lvl4.lc0337
 
@@ -15,19 +15,23 @@ import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun rob(root: TreeNode?): Int {
-        val res = dfs(root)
-        return maxOf(res[0], res[1])
+        return dfs(root, HashMap())
     }
 
-    private fun dfs(node: TreeNode?): IntArray {
-        val res = IntArray(2)
-
+    private fun dfs(node: TreeNode?, memo: HashMap<TreeNode, Int>): Int {
+        var res = 0
         node?.let {
-            val left = dfs(it.left)
-            val right = dfs(it.right)
+            memo[it]?.let { `val` -> return `val` }
 
-            res[0] = maxOf(left[0], left[1]) + maxOf(right[0], right[1])
-            res[1] = it.`val` + left[0] + right[0]
+            it.left?.let { left ->
+                res += dfs(left.left, memo) + dfs(left.right, memo)
+            }
+
+            it.right?.let { right ->
+                res += dfs(right.left, memo) + dfs(right.right, memo)
+            }
+
+            res = maxOf(res + it.`val`, dfs(it.left, memo) + dfs(it.right, memo))
         }
 
         return res

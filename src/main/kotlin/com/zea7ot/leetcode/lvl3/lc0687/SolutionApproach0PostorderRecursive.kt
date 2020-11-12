@@ -10,7 +10,7 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
-class SolutionApproach0Postorder {
+class SolutionApproach0PostorderRecursive {
     fun longestUnivaluePath(root: TreeNode?): Int {
         val longest = intArrayOf(0)
         postorder(root, longest)

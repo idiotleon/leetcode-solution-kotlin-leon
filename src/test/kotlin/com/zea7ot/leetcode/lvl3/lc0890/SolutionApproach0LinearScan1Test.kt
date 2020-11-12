@@ -3,8 +3,8 @@ package com.zea7ot.leetcode.lvl3.lc0890
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class TestSolutionApproach0LinearScan {
-    private val solution = SolutionApproach0LinearScan()
+class SolutionApproach0LinearScan1Test {
+    private val solution = SolutionApproach0LinearScan1()
 
     @Test
     fun test_SampleInput1_ShouldReturnExpected() {

@@ -32,11 +32,8 @@ class SolutionApproach0HierholzersAlgorithm {
         // val totalTickets = tickets.size
 
         val graph = HashMap<String, PriorityQueue<String>>()
-
         for (ticket in tickets) {
-            val from = ticket[0]
-            val to = ticket[1]
-
+            val (from, to) = ticket
             graph.getOrPut(from) { PriorityQueue() }.add(to)
         }
 

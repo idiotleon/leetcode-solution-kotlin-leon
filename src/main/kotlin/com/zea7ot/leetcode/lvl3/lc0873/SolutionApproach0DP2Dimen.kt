@@ -20,16 +20,16 @@ class SolutionApproach0DP2Dimen {
         // sanity check
         if (nums.isEmpty()) return 0
 
-        val totalSize = nums.size
+        val nNums = nums.size
 
-        val dp = Array(totalSize) { IntArray(totalSize) { 0 } }
+        val dp = Array(nNums) { IntArray(nNums) { 0 } }
         var longest = 0
 
-        for (i in 2 until totalSize) {
-            val target = nums[i]
+        for (idx in 2 until nNums) {
+            val target = nums[idx]
 
             var lo = 0
-            var hi = i - 1
+            var hi = idx - 1
 
             while (lo < hi) {
                 val sum = nums[lo] + nums[hi]
@@ -37,10 +37,10 @@ class SolutionApproach0DP2Dimen {
                     sum > target -> --hi
                     sum < target -> ++lo
                     else -> {
-                        dp[hi][i] = dp[lo][hi] + 1
-                        longest = maxOf(longest, dp[hi][i])
-                        --hi
+                        dp[hi][idx] = dp[lo][hi] + 1
+                        longest = maxOf(longest, dp[hi][idx])
                         ++lo
+                        --hi
                     }
                 }
             }

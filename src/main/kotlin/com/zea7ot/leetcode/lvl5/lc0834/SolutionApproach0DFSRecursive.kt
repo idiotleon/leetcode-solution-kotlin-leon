@@ -13,23 +13,23 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
-    fun sumOfDistancesInTree(totalNodes: Int, edges: Array<IntArray>): IntArray {
-        val distances = IntArray(totalNodes)
-        val counts = IntArray(totalNodes)
+    fun sumOfDistancesInTree(nNodes: Int, edges: Array<IntArray>): IntArray {
+        val distances = IntArray(nNodes)
+        val counts = IntArray(nNodes)
 
-        val graph = buildGraph(edges, totalNodes)
+        val graph = buildGraph(edges, nNodes)
 
-        postorder(0, -1, counts, graph, distances)
-        preorder(0, -1, counts, graph, totalNodes, distances)
+        postorder(-1, 0, counts, graph, distances)
+        preorder(-1, 0, counts, graph, nNodes, distances)
 
         return distances
     }
 
-    private fun postorder(cur: Int, prev: Int, counts: IntArray, graph: Array<HashSet<Int>>, distances: IntArray) {
+    private fun postorder(prev: Int, cur: Int, counts: IntArray, graph: Array<HashSet<Int>>, distances: IntArray) {
         for (next in graph[cur]) {
             if (next == prev) continue
 
-            postorder(next, cur, counts, graph, distances)
+            postorder(cur, next, counts, graph, distances)
             counts[cur] += counts[next]
             distances[cur] += distances[next] + counts[next]
         }
@@ -37,12 +37,12 @@ class SolutionApproach0DFSRecursive {
         ++counts[cur]
     }
 
-    private fun preorder(cur: Int, prev: Int, counts: IntArray, graph: Array<HashSet<Int>>, totalNodes: Int, distances: IntArray) {
+    private fun preorder(prev: Int, cur: Int, counts: IntArray, graph: Array<HashSet<Int>>, nNodes: Int, distances: IntArray) {
         for (next in graph[cur]) {
             if (next == prev) continue
 
-            distances[next] = distances[cur] - counts[next] + totalNodes - counts[next]
-            preorder(next, cur, counts, graph, totalNodes, distances)
+            distances[next] = distances[cur] - counts[next] + nNodes - counts[next]
+            preorder(cur, next, counts, graph, nNodes, distances)
         }
     }
 
@@ -50,8 +50,7 @@ class SolutionApproach0DFSRecursive {
         val graph = Array(totalNodes) { hashSetOf<Int>() }
 
         for (edge in edges) {
-            val u = edge[0]
-            val v = edge[1]
+            val (u, v) = edge
 
             graph[u].add(v)
             graph[v].add(u)

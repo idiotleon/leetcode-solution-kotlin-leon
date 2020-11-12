@@ -17,23 +17,22 @@ class SolutionApproach0DFSRecursive {
     private var lca: TreeNode? = null
 
     fun lcaDeepestLeaves(root: TreeNode?): TreeNode? {
-        val deepest = IntArray(1) { 0 }
-        dfs(root, 0, deepest)
-        return this.lca
+        val deepest = intArrayOf(0)
+        postorder(root, deepest, 0)
+        return lca
     }
 
-    private fun dfs(node: TreeNode?, depth: Int, deepest: IntArray): Int {
-        deepest[0] = maxOf(depth, deepest[0])
-        node?.let {
-            val left = dfs(it.left, depth + 1, deepest)
-            val right = dfs(it.right, depth + 1, deepest)
+    private fun postorder(node: TreeNode?, deepest: IntArray, curDepth: Int): Int {
+        deepest[0] = maxOf(deepest[0], curDepth)
+        if (node == null) return curDepth
 
-            if (left == deepest[0] && right == deepest[0])
-                this.lca = it
+        val left = postorder(node.left, deepest, curDepth + 1)
+        val right = postorder(node.right, deepest, curDepth + 1)
 
-            return maxOf(left, right)
+        if (left == deepest[0] && right == deepest[0]) {
+            lca = node
         }
 
-        return depth
+        return maxOf(left, right)
     }
 }
