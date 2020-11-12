@@ -14,12 +14,12 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun findNumberOfLIS(nums: IntArray): Int {
-        // sanity check
-        if (nums.isEmpty()) return 0
+        // sanity check, not required
+        // if (nums.isEmpty()) return 0
 
-        val totalNums = nums.size
-        val lens = IntArray(totalNums) { 1 }
-        val counts = IntArray(totalNums) { 1 }
+        val nNums = nums.size
+        val lens = IntArray(nNums) { 1 }
+        val counts = IntArray(nNums) { 1 }
 
         var longest = 0
 
@@ -39,9 +39,9 @@ class SolutionApproach0DP1Dimen {
         }
 
         var count = 0
-        for (i in 0 until totalNums) {
-            if (lens[i] == longest) {
-                count += counts[i]
+        for (idx in lens.indices) {
+            if (lens[idx] == longest) {
+                count += counts[idx]
             }
         }
 

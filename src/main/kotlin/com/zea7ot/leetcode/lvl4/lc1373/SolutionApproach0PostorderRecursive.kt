@@ -15,34 +15,34 @@ import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
+    private companion object {
+        private const val RANGE = 4 * 1e4.toInt() + 1
+    }
+
     fun maxSumBST(root: TreeNode?): Int {
         val maxSum = intArrayOf(0)
         postorder(root, maxSum)
         return maxSum[0]
     }
 
-    private fun postorder(node: TreeNode?, maxSum: IntArray): Result {
-        node?.let {
-            val left = postorder(it.left, maxSum)
-            val right = postorder(it.right, maxSum)
+    private fun postorder(node: TreeNode?, maxSum: IntArray): Subtree {
+        if (node == null) return Subtree(true, RANGE, -RANGE, 0)
 
-            val nodeVal = it.`val`
-            val isBST = left.isBST && right.isBST && nodeVal > left.max && nodeVal < right.min
+        val left = postorder(node.left, maxSum)
+        val right = postorder(node.right, maxSum)
 
-            val sum = nodeVal + left.sum + right.sum
+        val value = node.`val`
+        val isBST = left.isBST && right.isBST && (value in left.max + 1 until right.min)
 
-            if (isBST) {
-                maxSum[0] = maxOf(maxSum[0], sum)
-            }
+        val sum = left.sum + right.sum + value
 
-            val min = minOf(nodeVal, left.min)
-            val max = maxOf(nodeVal, right.max)
+        if (isBST) maxSum[0] = maxOf(maxSum[0], sum)
 
-            return Result(isBST, min, max, sum)
-        }
+        val min = minOf(value, left.min)
+        val max = maxOf(value, right.max)
 
-        return Result(true, Int.MAX_VALUE, Int.MIN_VALUE, 0)
+        return Subtree(isBST, min, max, sum)
     }
 
-    private data class Result(val isBST: Boolean, val min: Int, val max: Int, val sum: Int)
+    private data class Subtree(val isBST: Boolean, val min: Int, val max: Int, val sum: Int)
 }
