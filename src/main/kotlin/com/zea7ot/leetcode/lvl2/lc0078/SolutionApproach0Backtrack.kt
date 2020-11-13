@@ -1,12 +1,13 @@
 /**
  * https://leetcode.com/problems/subsets-ii/
  *
- * Time Complexity:     O(N * 2 ^ N) + O(N * lg(N)) ~ O(N * 2 ^ 2)
- *  `ans.add(new ArrayList<Integer>(intermediate));` is of O(N)
+ * Time Complexity:     O(`nNums` * (2 ^ nNums)) + O(`nNums` * lg(`nNums`)) ~ O(`nNums` * (`nNums` ^ 2))
+ *  `paths.add(path.toMutableList())` costs O(`nNums`)
  *
- * Space Complexity:    O(N *  (2 ^ N))
+ * Space Complexity:    O(`nNums` *  (2 ^ `nNums`))
  *
  * References:
+ *  https://leetcode.com/problems/subsets/solution/
  *  https://medium.com/@vasanths294/permutation-combination-subset-time-complexity-eca924e00071
  */
 package com.zea7ot.leetcode.lvl2.lc0078
@@ -16,11 +17,11 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun subsets(nums: IntArray): List<List<Int>> {
-        val paths: MutableList<MutableList<Int>> = ArrayList()
+        val paths = mutableListOf<MutableList<Int>>()
         // sanity check
         if (nums.isEmpty()) return paths
 
-        val path = arrayListOf<Int>()
+        val path = mutableListOf<Int>()
         backtrack(0, path, nums, paths)
 
         return paths
@@ -30,13 +31,13 @@ class SolutionApproach0Backtrack {
                           path: MutableList<Int>,
                           nums: IntArray,
                           paths: MutableList<MutableList<Int>>) {
-        val size = nums.size
+        val nNums = nums.size
         paths.add(path.toMutableList())
 
-        for (i in startIdx until size) {
-            path.add(nums[i])
-            backtrack(i + 1, path, nums, paths)
-            path.remove(path.last())
+        for (idx in startIdx until nNums) {
+            path.add(nums[idx])
+            backtrack(idx + 1, path, nums, paths)
+            path.removeAt(path.size - 1)
         }
     }
 }

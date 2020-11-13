@@ -12,18 +12,22 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun combinationSum3(k: Int, n: Int): List<List<Int>> {
-        val ans = ArrayList<MutableList<Int>>()
+        val path = mutableListOf<Int>()
+        val paths = mutableListOf<MutableList<Int>>()
 
-        backtrack(k, n, 1, arrayListOf(), ans)
-        return ans
+        backtrack(1, k, n, path, paths)
+
+        return paths
     }
 
-    private fun backtrack(k: Int, n: Int, start: Int,
-                          path: ArrayList<Int>,
-                          paths: ArrayList<MutableList<Int>>): Unit {
-        if (k < 0) return
+    private fun backtrack(numStart: Int,
+                          k: Int,
+                          target: Int,
+                          path: MutableList<Int>,
+                          paths: MutableList<MutableList<Int>>) {
+        if (k < 0 || target < 0 || numStart == 10) return
 
-        if (n == 0) {
+        if (target == 0) {
             if (k == 0) {
                 paths.add(path.toMutableList());
             }
@@ -31,10 +35,10 @@ class SolutionApproach0Backtrack {
             return
         }
 
-        for (i in start until 10) {
-            path.add(i)
-            backtrack(k - 1, n - i, i + 1, path, paths)
-            path.remove(path.last())
+        for (num in numStart until 10) {
+            path.add(num)
+            backtrack(num + 1, k - 1, target - num, path, paths)
+            path.removeAt(path.size - 1)
         }
     }
 }
