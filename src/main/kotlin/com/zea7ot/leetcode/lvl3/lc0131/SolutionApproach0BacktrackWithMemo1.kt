@@ -16,30 +16,31 @@ class SolutionApproach0BacktrackWithMemo1 {
     fun partition(str: String): List<List<String>> {
         val lenS = str.length
 
-        val paths = ArrayList<List<String>>()
-        val path = ArrayList<String>()
+        val paths = mutableListOf<List<String>>()
+        val path = mutableListOf<String>()
         val memo = Array(lenS) { BooleanArray(lenS) { false } }
         backtrack(0, path, str, memo, paths)
+
         return paths
     }
 
-    private fun backtrack(startIdx: Int,
-                          path: ArrayList<String>,
+    private fun backtrack(idxStart: Int,
+                          path: MutableList<String>,
                           str: String,
                           memo: Array<BooleanArray>,
-                          paths: ArrayList<List<String>>) {
+                          paths: MutableList<List<String>>) {
 
         val lenS = str.length
-        if (startIdx >= lenS) {
+        if (idxStart >= lenS) {
             paths.add(path.toList())
         }
 
-        for (idx in startIdx until lenS) {
-            if (str[startIdx] != str[idx]) continue
-            if (idx - 1 > startIdx + 1 && !memo[startIdx + 1][idx - 1]) continue
+        for (idx in idxStart until lenS) {
+            if (str[idxStart] != str[idx]) continue
+            if (idx - 1 > idxStart + 1 && !memo[idxStart + 1][idx - 1]) continue
 
-            memo[startIdx][idx] = true
-            path.add(str.substring(startIdx, idx + 1))
+            memo[idxStart][idx] = true
+            path.add(str.substring(idxStart, idx + 1))
             backtrack(idx + 1, path, str, memo, paths)
             path.removeAt(path.size - 1)
         }

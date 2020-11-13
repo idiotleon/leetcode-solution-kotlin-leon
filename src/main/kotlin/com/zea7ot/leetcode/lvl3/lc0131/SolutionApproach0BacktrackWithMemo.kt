@@ -16,37 +16,39 @@ class SolutionApproach0BacktrackWithMemo {
     fun partition(str: String): List<List<String>> {
         val lenS = str.length
 
-        val paths = ArrayList<List<String>>()
-        val path = ArrayList<String>()
-        val memo = Array(lenS) { BooleanArray(lenS) { false } }
+        val path = mutableListOf<String>()
+        val paths = mutableListOf<List<String>>()
+
+        val isPalindrome = Array(lenS) { BooleanArray(lenS) { false } }
         for (hi in str.indices) {
             for (lo in 0..hi) {
-                if (str[hi] == str[lo] && (hi - lo <= 2 || memo[lo + 1][hi - 1])) {
-                    memo[lo][hi] = true
+                if (str[lo] == str[hi] && (hi - lo <= 2 || isPalindrome[lo + 1][hi - 1])) {
+                    isPalindrome[lo][hi] = true
                 }
             }
         }
 
-        backtrack(0, path, str, memo, paths)
+        backtrack(0, path, str, isPalindrome, paths)
+
         return paths
     }
 
-    private fun backtrack(startIdx: Int,
-                          path: ArrayList<String>,
+    private fun backtrack(idxStart: Int,
+                          path: MutableList<String>,
                           str: String,
-                          memo: Array<BooleanArray>,
-                          paths: ArrayList<List<String>>) {
+                          isPalindrome: Array<BooleanArray>,
+                          paths: MutableList<List<String>>) {
 
         val lenS = str.length
-        if (startIdx >= lenS) {
+        if (idxStart == lenS) {
             paths.add(path.toList())
             return
         }
 
-        for (idx in startIdx until lenS) {
-            if (memo[startIdx][idx]) {
-                path.add(str.substring(startIdx, idx + 1))
-                backtrack(idx + 1, path, str, memo, paths)
+        for (idx in idxStart until lenS) {
+            if (isPalindrome[idxStart][idx]) {
+                path.add(str.substring(idxStart, idx + 1))
+                backtrack(idx + 1, path, str, isPalindrome, paths)
                 path.removeAt(path.size - 1)
             }
         }

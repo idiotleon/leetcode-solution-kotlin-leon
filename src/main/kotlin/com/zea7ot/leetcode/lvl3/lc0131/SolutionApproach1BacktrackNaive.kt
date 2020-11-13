@@ -16,28 +16,27 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach1BacktrackNaive {
     fun partition(str: String): List<List<String>> {
-
-        val paths = ArrayList<List<String>>()
-        val path = ArrayList<String>()
+        val paths = mutableListOf<List<String>>()
+        val path = mutableListOf<String>()
         backtrack(0, path, str, paths)
         return paths
     }
 
-    private fun backtrack(startIdx: Int,
-                          path: ArrayList<String>,
+    private fun backtrack(idxStart: Int,
+                          path: MutableList<String>,
                           str: String,
-                          paths: ArrayList<List<String>>) {
+                          paths: MutableList<List<String>>) {
 
         val lenS = str.length
-        if (startIdx == lenS) {
+        if (idxStart == lenS) {
             paths.add(path.toList())
             return
         }
 
-        for (i in startIdx until lenS) {
-            if (isPalindrome(startIdx, i, str)) {
-                path.add(str.substring(startIdx, i + 1))
-                backtrack(i + 1, path, str, paths)
+        for (idx in idxStart until lenS) {
+            if (isPalindrome(idxStart, idx, str)) {
+                path.add(str.substring(idxStart, idx + 1))
+                backtrack(idx + 1, path, str, paths)
                 path.removeAt(path.size - 1)
             }
         }
