@@ -31,26 +31,31 @@ class SolutionApproach0HierholzersAlgorithm {
         // not used
         // val totalTickets = tickets.size
 
+        // to build the graph
         val graph = HashMap<String, PriorityQueue<String>>()
         for (ticket in tickets) {
             val (from, to) = ticket
             graph.getOrPut(from) { PriorityQueue() }.add(to)
         }
 
-        val ans = ArrayList<String>()
-        postorder(START, graph, ans)
-        ans.reverse()
-        return ans
+        // to postorder traverse
+        val path = ArrayList<String>()
+        postorder(START, graph, path)
+        path.reverse()
+        
+        return path
     }
 
-    private fun postorder(start: String, graph: Map<String, PriorityQueue<String>>, res: ArrayList<String>) {
+    private fun postorder(start: String,
+                          graph: Map<String, PriorityQueue<String>>,
+                          path: ArrayList<String>) {
         graph[start]?.let { destPQ ->
             while (destPQ.isNotEmpty()) {
                 val next = destPQ.poll()
-                postorder(next, graph, res)
+                postorder(next, graph, path)
             }
         }
 
-        res.add(start)
+        path.add(start)
     }
 }
