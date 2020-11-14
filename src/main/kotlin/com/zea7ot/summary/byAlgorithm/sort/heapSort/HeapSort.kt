@@ -6,7 +6,7 @@
  *  https://algorithms.tutorialhorizon.com/heap-sort-java-implementation/
  *  https://www.geeksforgeeks.org/heap-sort/
  */
-package com.zea7ot.summary.byAlgorithm.sort
+package com.zea7ot.summary.byAlgorithm.sort.heapSort
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 

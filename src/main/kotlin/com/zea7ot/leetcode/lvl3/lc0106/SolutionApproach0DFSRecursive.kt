@@ -1,11 +1,9 @@
 /**
+ * @author: Leon
  * https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
  *
  * Time Complexity:     O(N)
- * Space Complexity:    O(H)
- *
- * References:
- *  https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/discuss/34782/My-recursive-Java-code-with-O(n)-time-and-O(n)-space/154363
+ * Space Complexity:    O(N) + O(H) ~ O(N)
  */
 package com.zea7ot.leetcode.lvl3.lc0106
 
@@ -15,30 +13,33 @@ import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun buildTree(inorder: IntArray, postorder: IntArray): TreeNode? {
-        val nNodes = postorder.size
 
-        return dfs(nNodes - 1, 0, nNodes - 1, inorder, postorder)
+        val nNodes = inorder.size
+
+        val map = HashMap<Int, Int>()
+        for (idx in inorder.indices) {
+            map[inorder[idx]] = idx
+        }
+
+        return dfs(nNodes - 1, 0, nNodes - 1, inorder, postorder, map)
     }
 
     private fun dfs(idxPostorder: Int,
-                    startIdxInorder: Int,
-                    endIdxInorder: Int,
+                    idxStartInorder: Int,
+                    idxEndInorder: Int,
                     inorder: IntArray,
-                    postorder: IntArray): TreeNode? {
-        if (idxPostorder < 0 || startIdxInorder > endIdxInorder) return null
+                    postorder: IntArray,
+                    map: HashMap<Int, Int>): TreeNode? {
 
-        val nNodes = postorder.size
+        if (idxPostorder < 0 || idxStartInorder > idxEndInorder) return null
+
         val rootValue = postorder[idxPostorder]
         val root = TreeNode(rootValue)
 
-        var idxInorder = 0
-        while (idxInorder < nNodes) {
-            if (inorder[idxInorder] == rootValue) break
-            ++idxInorder
-        }
+        val idxRoot = map[rootValue]!!
 
-        root.right = dfs(idxPostorder - 1, idxInorder + 1, endIdxInorder, inorder, postorder)
-        root.left = dfs(idxPostorder - (endIdxInorder - idxInorder + 1), startIdxInorder, idxInorder - 1, inorder, postorder)
+        root.right = dfs(idxPostorder - 1, idxRoot + 1, idxEndInorder, inorder, postorder, map)
+        root.left = dfs(idxPostorder - (idxEndInorder - idxRoot + 1), idxStartInorder, idxRoot - 1, inorder, postorder, map)
 
         return root
     }
