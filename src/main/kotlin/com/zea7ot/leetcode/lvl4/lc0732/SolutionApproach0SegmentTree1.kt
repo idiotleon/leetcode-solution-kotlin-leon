@@ -1,11 +1,12 @@
 /**
  * https://leetcode.com/problems/my-calendar-iii/
  *
- * Time Complexity:     O()
- * Space Complexity:    O()
+ * Time Complexity:     O(nEvents * lg(duration))
+ * Space Complexity:    O(nEvents)
  *
  * References:
  *  https://leetcode.com/problems/my-calendar-iii/discuss/702154/Four-AC-Solution%3A-TreeMap-BST-Segment-Tree-with-Diagrams-Beats-100-time-and-space-8ms-39.4MB
+ *  https://leetcode.com/problems/my-calendar-iii/discuss/288928/Lazy-Dynamic-Segment-Tree-A-general-template
  */
 package com.zea7ot.leetcode.lvl4.lc0732
 
@@ -17,50 +18,51 @@ class SolutionApproach0SegmentTree1 {
         private const val RANGE = 1e9.toInt()
     }
 
-    private val tree = HashMap<Int, Int>()
-    private val lazyTree = HashMap<Int, Int>()
+    private val root = SegmentTreeNode(0, RANGE)
 
     fun book(start: Int, end: Int): Int {
-        update(start, end - 1, 0, 0, RANGE)
-        return (tree[0] ?: 0) + (lazyTree[0] ?: 0)
+        update(start, end - 1, root)
+        return root.value
     }
 
-    private fun update(fromIdx: Int, toIdx: Int, idx: Int, lo: Int, hi: Int) {
-        if (lo > hi) return
-        val idx1 = 2 * idx + 1
-        val idx2 = 2 * idx + 2
-
-        // to update the node of the Segment Tree
-        if ((lazyTree[idx] ?: 0) != 0) {
-            tree[idx] = (tree[idx] ?: 0) + (lazyTree[idx] ?: 0)
-            if (lo != hi) {
-                lazyTree[idx1] = (lazyTree[idx1] ?: 0) + (lazyTree[idx] ?: 0)
-                lazyTree[idx2] = (lazyTree[idx2] ?: 0) + (lazyTree[idx] ?: 0)
-            }
-
-            lazyTree.remove(idx)
+    private fun update(rangeLo: Int, rangeHi: Int, node: SegmentTreeNode) {
+        if (rangeLo <= node.start && node.end <= rangeHi) {
+            ++node.lazy
         }
 
-        // no overlap
-        if (hi < fromIdx || lo > toIdx) return
-
-        // full/complete overlap
-        if (fromIdx <= lo && hi <= toIdx) {
-            tree[idx] = 1 + (tree[idx] ?: 0)
-
-            if (lo != hi) {
-                lazyTree[idx1] = (lazyTree[idx1] ?: 0) + 1
-                lazyTree[idx2] = (lazyTree[idx2] ?: 0) + 1
+        // to update the node value
+        node.value += node.lazy
+        if (node.start != node.end) {
+            val mid = node.start + (node.end - node.start) / 2
+            if (node.left == null) {
+                node.left = SegmentTreeNode(node.start, mid)
             }
 
-            return
+            if (node.right == null) {
+                node.right = SegmentTreeNode(mid + 1, node.end)
+            }
+
+            node.left?.let { it.lazy += node.lazy }
+            node.right?.let { it.lazy += node.lazy }
         }
 
-        val mid = lo + (hi - lo) / 2
-        update(fromIdx, toIdx, idx1, lo, mid)
-        update(fromIdx, toIdx, idx2, mid + 1, hi)
+        node.lazy = 0
 
-        val value = maxOf(tree[idx1] ?: 0, tree[idx2] ?: 0)
-        tree[idx] = value
+        // no overlap, or full/complete overlap
+        if (rangeLo > node.end || rangeHi < node.start || rangeLo <= node.start && node.end <= rangeHi) return
+
+        // partial overlap
+        node.left?.let { update(rangeLo, rangeHi, it) }
+        node.right?.let { update(rangeLo, rangeHi, it) }
+
+        node.value = maxOf(node.left!!.value, node.right!!.value)
     }
+
+    private data class SegmentTreeNode(val start: Int,
+                                       val end: Int,
+                                       var value: Int = 0,
+                                       var lazy: Int = 0,
+                                       var left: SegmentTreeNode? = null,
+                                       var right: SegmentTreeNode? = null)
+
 }

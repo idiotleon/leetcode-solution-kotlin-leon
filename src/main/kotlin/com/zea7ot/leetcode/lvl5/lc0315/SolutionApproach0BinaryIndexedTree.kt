@@ -14,42 +14,47 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0BinaryIndexedTree {
     fun countSmaller(nums: IntArray): List<Int> {
-        val ans = ArrayList<Int>()
-        // sanity check, required
+        val ans = mutableListOf<Int>()
         if (nums.isEmpty()) return ans
 
-        val min = nums.min() ?: nums[0]
-        for (idx in nums.indices) {
-            nums[idx] -= (min - 1)
+        var minNum = Int.MAX_VALUE
+        for (num in nums) {
+            minNum = minOf(minNum, num)
         }
 
-        val max = nums.max() ?: nums[0]
-        val bit = IntArray(max + 1) { 0 }
+        // to build up the ranks
+        var maxRank = Int.MIN_VALUE
+        for (idx in nums.indices) {
+            nums[idx] -= (minNum - 1)
+            maxRank = maxOf(maxRank, nums[idx])
+        }
+
+        val fenwick = IntArray(maxRank + 1) { 0 }
 
         for (idx in nums.indices.reversed()) {
-            ans.add(get(nums[idx] - 1, bit))
-            update(nums[idx], bit)
+            ans.add(query(nums[idx] - 1, fenwick))
+            update(nums[idx], fenwick)
         }
 
         ans.reverse()
         return ans
     }
 
-    private fun update(index: Int, bit: IntArray) {
-        val totalBits = bit.size
+    private fun update(index: Int, fenwick: IntArray) {
+        val nBits = fenwick.size
         var idx = index
 
-        while (idx < totalBits) {
-            ++bit[idx]
+        while (idx < nBits) {
+            ++fenwick[idx]
             idx += (idx and -idx)
         }
     }
 
-    private fun get(index: Int, bit: IntArray): Int {
+    private fun query(index: Int, fenwick: IntArray): Int {
         var sum = 0
         var idx = index
         while (idx > 0) {
-            sum += bit[idx]
+            sum += fenwick[idx]
             idx -= (idx and -idx)
         }
 

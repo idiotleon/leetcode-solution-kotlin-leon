@@ -3,7 +3,7 @@
  * References:
  *  https://github.com/mission-peace/interview/blob/master/src/com/interview/tree/FenwickTree.java
  */
-package com.zea7ot.summary.byDataStructure
+package com.zea7ot.summary.byDataStructure.binaryIndexedTree
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 

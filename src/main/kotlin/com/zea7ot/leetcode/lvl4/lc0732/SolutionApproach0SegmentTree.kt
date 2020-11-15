@@ -1,67 +1,90 @@
-/**
- * https://leetcode.com/problems/my-calendar-iii/
- *
- * Time Complexity:     O()
- * Space Complexity:    O()
- *
- * References:
- *  https://leetcode.com/problems/my-calendar-iii/discuss/702154/Four-AC-Solution%3A-TreeMap-BST-Segment-Tree-with-Diagrams-Beats-100-time-and-space-8ms-39.4MB
- *  https://leetcode.com/problems/my-calendar-iii/discuss/288928/Lazy-Dynamic-Segment-Tree-A-general-template
- */
 package com.zea7ot.leetcode.lvl4.lc0732
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree {
-    private companion object {
-        private const val RANGE = 1e9.toInt()
-    }
-
-    private val root = SegmentTreeNode(0, RANGE)
+    private val root = SegmentTree()
 
     fun book(start: Int, end: Int): Int {
-        update(start, end - 1, root)
-        return root.value
+        root.update(start, end - 1)
+
+        return root.getRootMax()
     }
 
-    private fun update(fromIdx: Int, toIdx: Int, node: SegmentTreeNode) {
-        if (fromIdx <= node.lo && node.hi <= toIdx) {
-            ++node.lazyValue
+    private class SegmentTree {
+        private companion object {
+            private const val RANGE = 1e9.toInt() + 1
         }
 
-        // to update the node value
-        node.value += node.lazyValue
-        if (node.lo != node.hi) {
-            val mid = node.lo + (node.hi - node.lo) / 2
-            if (node.left == null) {
-                node.left = SegmentTreeNode(node.lo, mid)
+        private val root = SegmentTreeNode(0, RANGE)
+
+        fun update(rangeLo: Int, rangeHi: Int) = update(rangeLo, rangeHi, 1, root)
+        fun getRootMax() = root.max
+
+        // not used
+        // fun query(rangeLo: Int, rangeHi: Int) = query(rangeLo, rangeHi, root)
+
+
+        private fun update(rangeLo: Int, rangeHi: Int, value: Int, node: SegmentTreeNode?) {
+            if (node == null) return
+            if (rangeLo <= node.lo && node.hi <= rangeHi) {
+                node.lazy += value
             }
 
-            if (node.right == null) {
-                node.right = SegmentTreeNode(mid + 1, node.hi)
-            }
+            pushDown(node)
 
-            node.left?.let { it.lazyValue += node.lazyValue }
-            node.right?.let { it.lazyValue += node.lazyValue }
+            // completely overlap or no overlap at all
+            if (rangeLo <= node.lo && node.hi <= rangeHi || rangeLo > node.hi || rangeHi < node.lo) return
+
+            update(rangeLo, rangeHi, value, node.left)
+            update(rangeLo, rangeHi, value, node.right)
+
+            node.max = maxOf(node.left!!.max, node.right!!.max)
         }
 
-        node.lazyValue = 0
+        // not used
+/*        private fun query(rangeLo: Int, rangeHi: Int, node: SegmentTreeNode?): Int {
+            if (node == null) return 0
+            pushDown(node)
 
-        // no overlap, or full/complete overlap
-        if (fromIdx > node.hi || toIdx < node.lo || fromIdx <= node.lo && node.hi <= toIdx) return
+            // no overlap
+            if (rangeLo > node.hi || rangeHi < node.lo) return 0
 
-        // partial overlap
-        node.left?.let { update(fromIdx, toIdx, it) }
-        node.right?.let { update(fromIdx, toIdx, it) }
+            // complete overlap
+            if (rangeLo <= node.lo && node.hi <= rangeHi) return node.max
 
-        node.value = maxOf(node.left?.value ?: 0, node.right?.value ?: 0)
-    }
+            val leftMax = query(rangeLo, rangeHi, node.left)
+            val rightMax = query(rangeLo, rangeHi, node.right)
+            return maxOf(leftMax, rightMax)
+        }*/
 
-    private data class SegmentTreeNode(val lo: Int, val hi: Int) {
-        var value = 0
-        var lazyValue = 0
-        var left: SegmentTreeNode? = null
-        var right: SegmentTreeNode? = null
+        private fun pushDown(node: SegmentTreeNode) {
+            node.max += node.lazy
+
+            if (node.lo != node.hi) {
+                val mid = node.lo + (node.hi - node.lo) / 2
+
+                if (node.left == null) {
+                    node.left = SegmentTreeNode(node.lo, mid)
+                }
+
+                if (node.right == null) {
+                    node.right = SegmentTreeNode(mid + 1, node.hi)
+                }
+
+                node.left!!.lazy += node.lazy
+                node.right!!.lazy += node.lazy
+            }
+
+            node.lazy = 0
+        }
+
+        private data class SegmentTreeNode(val lo: Int,
+                                           val hi: Int,
+                                           var max: Int = 0,
+                                           var lazy: Int = 0,
+                                           var left: SegmentTreeNode? = null,
+                                           var right: SegmentTreeNode? = null)
     }
 }
