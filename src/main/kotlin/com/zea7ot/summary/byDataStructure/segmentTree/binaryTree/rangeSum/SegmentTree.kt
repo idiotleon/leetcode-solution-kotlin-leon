@@ -1,4 +1,4 @@
-package com.zea7ot.summary.byDataStructure.segmentTree.byImplementation.binaryTree.rangeSum
+package com.zea7ot.summary.byDataStructure.segmentTree.binaryTree.rangeSum
 
 class SegmentTree(private val nums: IntArray) {
     private val root = buildTree(0, nums.lastIndex)

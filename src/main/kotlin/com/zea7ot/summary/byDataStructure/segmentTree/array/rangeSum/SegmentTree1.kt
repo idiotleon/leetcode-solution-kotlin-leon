@@ -9,7 +9,7 @@
  * References:
  *  https://youtu.be/e_bK-dgPvfM
  */
-package com.zea7ot.summary.byDataStructure.segmentTree.byImplementation.array.rangeSum
+package com.zea7ot.summary.byDataStructure.segmentTree.array.rangeSum
 
 class SegmentTree1(private val nums: IntArray) {
     private val nNums = nums.size

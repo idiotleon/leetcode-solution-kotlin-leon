@@ -12,7 +12,7 @@
  * References:
  *  https://leetcode.com/problems/my-calendar-ii/discuss/109528/nlogd-Java-solution-using-segment-tree-with-lazy-propagation-applicable-to-the-general-case-of-K-booking
  */
-package com.zea7ot.summary.byDataStructure.segmentTree.byImplementation.binaryTree.rangeMax
+package com.zea7ot.summary.byDataStructure.segmentTree.binaryTree.rangeMax
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 

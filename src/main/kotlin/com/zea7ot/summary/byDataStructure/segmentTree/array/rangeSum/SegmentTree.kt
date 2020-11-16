@@ -1,4 +1,4 @@
-package com.zea7ot.summary.byDataStructure.segmentTree.byImplementation.array.rangeSum
+package com.zea7ot.summary.byDataStructure.segmentTree.array.rangeSum
 
 class SegmentTree(private val nums: IntArray) {
     private companion object {

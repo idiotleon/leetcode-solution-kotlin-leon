@@ -15,7 +15,7 @@ class SolutionApproach0Greedy {
                        toBeRemoved: IntArray): List<List<Int>> {
         // not used
         // val nIntervals =intervals.size
-        
+
         val ans = mutableListOf<List<Int>>()
         // sanity check
         if (toBeRemoved.isEmpty()) {

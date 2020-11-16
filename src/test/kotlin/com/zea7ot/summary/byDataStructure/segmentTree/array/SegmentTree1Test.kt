@@ -1,6 +1,6 @@
-package com.zea7ot.summary.byDataStructure.segmentTree.byImplementation.array
+package com.zea7ot.summary.byDataStructure.segmentTree.array
 
-import com.zea7ot.summary.byDataStructure.segmentTree.byImplementation.array.rangeSum.SegmentTree1
+import com.zea7ot.summary.byDataStructure.segmentTree.array.rangeSum.SegmentTree1
 import org.junit.Test
 import kotlin.test.assertEquals
 

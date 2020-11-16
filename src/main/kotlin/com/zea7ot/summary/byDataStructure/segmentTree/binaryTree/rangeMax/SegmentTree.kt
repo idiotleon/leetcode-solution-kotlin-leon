@@ -2,7 +2,7 @@
  * References:
  *  https://leetcode.com/problems/my-calendar-iii/discuss/288928/Lazy-Dynamic-Segment-Tree-A-general-template
  */
-package com.zea7ot.summary.byDataStructure.segmentTree.byImplementation.binaryTree.rangeMax
+package com.zea7ot.summary.byDataStructure.segmentTree.binaryTree.rangeMax
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
