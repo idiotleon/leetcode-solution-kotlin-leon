@@ -14,25 +14,25 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     fun longestMountain(nums: IntArray): Int {
-        val totalNums = nums.size
-        if (totalNums < 3) return 0
+        val nNums = nums.size
+        if (nNums < 3) return 0
 
         var longest = 0
 
         var idx = 1
-        while (idx < totalNums) {
-            while (idx < totalNums && nums[idx - 1] >= nums[idx]) {
+        while (idx < nNums) {
+            while (idx < nNums && nums[idx - 1] >= nums[idx]) {
                 ++idx
             }
 
             var up = 0
-            while (idx < totalNums && nums[idx - 1] < nums[idx]) {
+            while (idx < nNums && nums[idx - 1] < nums[idx]) {
                 ++up
                 ++idx
             }
 
             var down = 0
-            while (idx < totalNums && nums[idx - 1] > nums[idx]) {
+            while (idx < nNums && nums[idx - 1] > nums[idx]) {
                 ++down
                 ++idx
             }
