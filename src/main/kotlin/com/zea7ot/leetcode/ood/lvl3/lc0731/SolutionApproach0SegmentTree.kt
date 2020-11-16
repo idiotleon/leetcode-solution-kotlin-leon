@@ -7,7 +7,7 @@
  *
  * Space Complexity:    O(nEvents)
  */
-package com.zea7ot.leetcode.lvl3.lc0731
+package com.zea7ot.leetcode.ood.lvl3.lc0731
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 

@@ -1,4 +1,4 @@
-package com.zea7ot.leetcode.lvl4.lc0732
+package com.zea7ot.leetcode.ood.lvl4.lc0732
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 

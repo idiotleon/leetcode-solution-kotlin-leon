@@ -26,7 +26,7 @@ class SegmentTree {
         pushDown(node)
 
         // complete overlap or no overlap at all
-        if (rangeLo <= node.lo && rangeHi >= node.hi || rangeLo > node.hi || rangeHi < node.lo) return
+        if (rangeLo <= node.lo && node.hi <= rangeHi || rangeHi < node.lo || rangeLo > node.hi) return
 
         update(rangeLo, rangeHi, value, node.left)
         update(rangeLo, rangeHi, value, node.right)
@@ -46,6 +46,7 @@ class SegmentTree {
 
         val leftMax = query(rangeLo, rangeHi, node.left)
         val rightMax = query(rangeLo, rangeHi, node.right)
+
         return maxOf(leftMax, rightMax)
     }
 
@@ -54,6 +55,7 @@ class SegmentTree {
 
         if (node.lo != node.hi) {
             val mid = node.lo + (node.hi - node.lo) / 2
+
             if (node.left == null) {
                 node.left = SegmentTreeNode(node.lo, mid)
             }
