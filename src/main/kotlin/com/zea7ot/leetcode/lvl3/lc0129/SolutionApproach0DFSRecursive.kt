@@ -3,9 +3,6 @@
  *
  * Time Complexity:     O(N)
  * Space Complexity:    O(H)
- *
- * Tabulation vs Memoization
- * https://www.geeksforgeeks.org/tabulation-vs-memoization/
  */
 package com.zea7ot.leetcode.lvl3.lc0129
 
@@ -20,13 +17,14 @@ class SolutionApproach0DFSRecursive {
         if (node == null) return 0
 
         val value = node.`val`
+        val newSum = sum * 10 + value
 
         if (node.left == null && node.right == null) {
-            return sum * 10 + value
+            return newSum
         }
 
-        val left = dfs(node.left, sum * 10 + value)
-        val right = dfs(node.right, sum * 10 + value)
+        val left = dfs(node.left, newSum)
+        val right = dfs(node.right, newSum)
 
         return left + right
     }

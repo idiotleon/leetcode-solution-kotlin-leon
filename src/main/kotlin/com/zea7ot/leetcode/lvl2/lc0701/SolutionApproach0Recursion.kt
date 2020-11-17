@@ -14,15 +14,18 @@ import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0Recursion {
-    fun insertIntoBST(root: TreeNode?, `val`: Int): TreeNode? {
-        if (root == null) return TreeNode(`val`)
+    fun insertIntoBST(root: TreeNode?, newValue: Int) = dfs(root, newValue)
 
-        if (root.`val` < `val`) {
-            root.right = insertIntoBST(root.right, `val`)
+    private fun dfs(node: TreeNode?, newValue: Int): TreeNode? {
+        if (node == null) return TreeNode(newValue)
+
+        val value = node.`val`
+        if (value < newValue) {
+            node.right = dfs(node.right, newValue)
         } else {
-            root.left = insertIntoBST(root.left, `val`)
+            node.left = dfs(node.left, newValue)
         }
 
-        return root
+        return node
     }
 }
