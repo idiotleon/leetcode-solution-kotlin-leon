@@ -18,7 +18,7 @@ class SolutionApproach0DP1Dimen {
         if (s.isEmpty()) return false
 
         val lenS = s.length
-        val wordSet = HashSet(wordDict)
+        val wordSet = wordDict.toHashSet()
 
         val dp = BooleanArray(lenS + 1) { idx -> idx == 0 }
 
