@@ -15,7 +15,7 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 class SolutionApproach0DP2Dimen {
     fun isValidPalindrome(s: String, k: Int): Boolean {
         val lenS = s.length
-        val dp = Array(lenS) { row -> Array(lenS) { col -> if (row == col) 1 else 0 } }
+        val dp = Array(lenS) { idx1 -> Array(lenS) { idx2 -> if (idx1 == idx2) 1 else 0 } }
 
         for (lo in lenS - 1 downTo 0) {
             for (hi in lo + 1 until lenS) {

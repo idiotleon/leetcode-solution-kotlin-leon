@@ -14,15 +14,16 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     fun findAnagrams(s: String, p: String): List<Int> {
-        val ans = ArrayList<Int>()
+        val ans = mutableListOf<Int>()
         // sanity check
         if (s.isEmpty() || p.isEmpty() || s.length < p.length) return ans
 
         val lenS = s.length
         val lenP = p.length
         val hash = IntArray(26)
-        for (ch in p)
+        for (ch in p) {
             ++hash[ch - 'a']
+        }
 
         var lo = 0
         var hi = 0
@@ -31,8 +32,9 @@ class SolutionApproach0TwoPointers {
         while (hi < lenS) {
             if (hash[s[hi++] - 'a']-- > 0) --count
 
-            if (count == 0)
+            if (count == 0) {
                 ans.add(lo)
+            }
 
             if (hi - lo == lenP && hash[s[lo++] - 'a']++ >= 0) ++count
         }

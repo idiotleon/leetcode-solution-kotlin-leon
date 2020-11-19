@@ -11,7 +11,6 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     fun minWindow(s: String, t: String): String {
-
         val lenS = s.length
         val lenT = t.length
 
