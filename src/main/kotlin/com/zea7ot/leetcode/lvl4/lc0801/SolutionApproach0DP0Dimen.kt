@@ -15,14 +15,14 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DP0Dimen {
     fun minSwap(A: IntArray, B: IntArray): Int {
-        val totalNums = A.size
+        val nNums = A.size
         // base cases
         var prevSwap = 1
         var prevNotSwap = 0
 
-        for (idx in 1 until totalNums) {
-            var swap = totalNums
-            var notSwap = totalNums
+        for (idx in 1 until nNums) {
+            var swap = nNums
+            var notSwap = nNums
 
             if (A[idx - 1] < A[idx] && B[idx - 1] < B[idx]) {
                 swap = prevSwap + 1

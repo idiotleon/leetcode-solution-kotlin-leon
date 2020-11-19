@@ -13,7 +13,7 @@ package com.zea7ot.leetcode.lvl4.lc0801
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproachDP2Dimen {
+class SolutionApproach0DP1Dimen {
     fun minSwap(A: IntArray, B: IntArray): Int {
         val totalNums = A.size
         val swap = IntArray(totalNums) { 0 }

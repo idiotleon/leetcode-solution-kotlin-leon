@@ -29,18 +29,18 @@ class SolutionApproach0DP2Dimen {
             }
         }
 
-        var startIdx = 0
-        var len = lenS + 1
+        var idxStart = 0
+        var minLen = lenS + 1
+        val lastRow = dp.last()
         for (idxS in 1..lenS) {
-            val lastRow = dp.last()
             if (lastRow[idxS] == 0) continue
 
-            if (idxS - lastRow[idxS] + 1 < len) {
-                startIdx = lastRow[idxS] - 1
-                len = idxS - lastRow[idxS] + 1
+            if (idxS - lastRow[idxS] + 1 < minLen) {
+                idxStart = lastRow[idxS] - 1
+                minLen = idxS - lastRow[idxS] + 1
             }
         }
 
-        return if (len == lenS + 1) "" else S.substring(startIdx, startIdx + len)
+        return if (minLen == lenS + 1) "" else S.substring(idxStart, idxStart + minLen)
     }
 }

@@ -2,14 +2,9 @@
  * https://leetcode.com/problems/distinct-subsequences/
  *
  * Time Complexity:     O(`lenS` * `lenT`)
- * Space Complexity:    O(`lenS` * `lenT`)
- *
- *  initialization:
- *      when `t` is empty, `dp[0]` should be 1,
- *      because the empty string is a subsequence of any string but only for once
+ * Space Complexity:    O(`lenS`)
  *
  * References:
- *  https://leetcode.com/problems/distinct-subsequences/discuss/37413/Concise-JAVA-solution-based-on-DP
  *  https://leetcode.wang/leetcode-115-Distinct-Subsequences.html
  *  https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java
  *  https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java/35364
@@ -19,23 +14,29 @@ package com.zea7ot.leetcode.lvl4.lc0115
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0DP2Dimen {
+class SolutionApproach0DP1Dimen {
     fun numDistinct(s: String, t: String): Int {
         val lenS = s.length
         val lenT = t.length
 
-        val dp = Array(lenS + 1) { IntArray(lenT + 1) { idxT -> if (idxT == 0) 1 else 0 } }
+        val dp = IntArray(lenS + 1) { 1 }
 
-        for (idxS in 1..lenS) {
-            for (idxT in 1..lenT) {
-                dp[idxS][idxT] = if (s[idxS - 1] == t[idxT - 1]) {
-                    dp[idxS - 1][idxT] + dp[idxS - 1][idxT - 1]
+        for (idxT in 1..lenT) {
+            var prev = dp[0]
+            dp[0] = 0
+            for (idxS in 1..lenS) {
+                val temp = dp[idxS]
+
+                dp[idxS] = if (s[idxS - 1] == t[idxT - 1]) {
+                    dp[idxS - 1] + prev
                 } else {
-                    dp[idxS - 1][idxT]
+                    dp[idxS - 1]
                 }
+
+                prev = temp
             }
         }
 
-        return dp[lenS][lenT]
+        return dp[lenS]
     }
 }
