@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
  *
- * Time Complexity:     O(N)
- * Space Complexity:    O(N)
+ * Time Complexity:     O(`nNums`)
+ * Space Complexity:    O(`nNums`)
  *
  * References:
  *  https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/discuss/77778/Java-O(n)-explain-how-I-come-up-with-this-idea/82048
@@ -18,22 +18,24 @@ class SolutionApproach0PrefixSums {
         // sanity check
         if (nums.isEmpty()) return 0
 
-        val totalNums = nums.size
+        // not used
+        // val nNums = nums.size
 
         val prefixSums = hashMapOf(0 to -1)
         var sum = 0
         var longest = 0
 
-        for (i in 0 until totalNums) {
-            sum += nums[i]
+        for (idx in nums.indices) {
+            sum += nums[idx]
 
             prefixSums[sum - k]?.let {
-                val len = i - it
+                val len = idx - it
                 longest = maxOf(longest, len)
             }
 
-            if (prefixSums[sum] == null)
-                prefixSums[sum] = i
+            if (prefixSums[sum] == null) {
+                prefixSums[sum] = idx
+            }
         }
 
         return longest
