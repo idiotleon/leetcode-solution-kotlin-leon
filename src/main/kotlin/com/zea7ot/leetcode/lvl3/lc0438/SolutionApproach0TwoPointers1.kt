@@ -12,16 +12,17 @@ package com.zea7ot.leetcode.lvl3.lc0438
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0TwoPointers {
+class SolutionApproach0TwoPointers1 {
     fun findAnagrams(s: String, p: String): List<Int> {
         val ans = mutableListOf<Int>()
+        // sanity check
+        if (s.isEmpty() || p.isEmpty() || s.length < p.length) return ans
 
         val lenS = s.length
         val lenP = p.length
-
-        val freqs = IntArray(26) { 0 }
+        val hash = IntArray(26)
         for (ch in p) {
-            ++freqs[ch - 'a']
+            ++hash[ch - 'a']
         }
 
         var lo = 0
@@ -29,23 +30,13 @@ class SolutionApproach0TwoPointers {
         var count = lenP
 
         while (hi < lenS) {
-            if (freqs[s[hi] - 'a']-- > 0) {
-                --count
-            }
+            if (hash[s[hi++] - 'a']-- > 0) --count
 
             if (count == 0) {
                 ans.add(lo)
             }
 
-            if (hi - lo + 1 == lenP) {
-                if (freqs[s[lo] - 'a']++ >= 0) {
-                    ++count
-                }
-
-                ++lo
-            }
-
-            ++hi
+            if (hi - lo == lenP && hash[s[lo++] - 'a']++ >= 0) ++count
         }
 
         return ans
