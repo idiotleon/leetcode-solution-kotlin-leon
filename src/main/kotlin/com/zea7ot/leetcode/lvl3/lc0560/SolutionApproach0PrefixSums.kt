@@ -19,7 +19,7 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0PrefixSums {
     fun subarraySum(nums: IntArray, k: Int): Int {
-        val prefixSums = hashMapOf<Int, Int>()
+        val prefixSums = HashMap<Int, Int>()
 
         var count = 0
         var sum = 0

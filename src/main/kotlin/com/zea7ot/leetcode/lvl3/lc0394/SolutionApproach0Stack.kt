@@ -31,16 +31,16 @@ class SolutionApproach0Stack {
 
         var builder = StringBuilder()
 
-        var repNum = 0
+        var repCnt = 0
 
         for (ch in s) {
             when (ch) {
-                in '0'..'9' -> repNum = repNum * 10 + (ch - '0')
+                in '0'..'9' -> repCnt = repCnt * 10 + (ch - '0')
                 OPEN_SQUARE_BRACKET -> {
-                    repStack.push(repNum)
+                    repStack.push(repCnt)
                     subStack.push(builder)
                     builder = StringBuilder()
-                    repNum = 0
+                    repCnt = 0
                 }
                 CLOSED_SQUARE_BRACKET -> {
                     val rep = repStack.pop()

@@ -31,15 +31,15 @@ class SolutionApproach0DFSRecursive {
 
     private fun dfs(queue: LinkedList<Char>): String {
         val builder = StringBuilder()
-        var rep = 0
+        var repCnt = 0
 
         loop@ while (queue.isNotEmpty()) {
             when (val ch = queue.poll()) {
-                in '0'..'9' -> rep = rep * 10 + (ch - '0')
+                in '0'..'9' -> repCnt = repCnt * 10 + (ch - '0')
                 OPEN_SQUARE_BRACKET -> {
                     val sub = dfs(queue)
-                    builder.append(sub.repeat(rep))
-                    rep = 0
+                    builder.append(sub.repeat(repCnt))
+                    repCnt = 0
                 }
                 CLOSED_SQUARE_BRACKET -> {
                     break@loop
