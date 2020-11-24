@@ -14,34 +14,34 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun stoneGameII(piles: IntArray): Int {
-        val totalPiles = piles.size
+        val nPiles = piles.size
         val suffixSums = piles.copyOf()
-        for (i in totalPiles - 2 downTo 0) {
+        for (i in nPiles - 2 downTo 0) {
             suffixSums[i] += suffixSums[i + 1]
         }
 
-        val memo = Array(totalPiles) { Array<Int?>(totalPiles) { null } }
+        val memo = Array(nPiles) { Array<Int?>(nPiles) { null } }
 
-        return dfs(0, 1, suffixSums, totalPiles, memo)
+        return dfs(0, 1, suffixSums, nPiles, memo)
     }
 
     private fun dfs(player: Int,
                     m: Int,
-                    prefixSums: IntArray,
-                    totalPiles: Int,
+                    suffixSums: IntArray,
+                    nPiles: Int,
                     memo: Array<Array<Int?>>): Int {
-        if (player + 2 * m >= totalPiles) return prefixSums[player]
+        if (player + 2 * m >= nPiles) return suffixSums[player]
 
         memo[player][m]?.let { return it }
 
         var max = 0
-        var take = 0
 
         for (i in 1..2 * m) {
-            take = prefixSums[player] - prefixSums[player + i]
+            val take = suffixSums[player] - suffixSums[player + i]
             max = maxOf(max,
-                    take + prefixSums[player + i] - dfs(player + i, maxOf(i, m), prefixSums, totalPiles, memo))
+                    take + suffixSums[player + i] - dfs(player + i, maxOf(i, m), suffixSums, nPiles, memo))
         }
+
         memo[player][m] = max
         return max
     }

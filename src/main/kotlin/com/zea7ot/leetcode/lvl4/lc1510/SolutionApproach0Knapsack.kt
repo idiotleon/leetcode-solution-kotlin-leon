@@ -16,14 +16,14 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 class SolutionApproach0Knapsack {
     fun winnerSquareGame(n: Int): Boolean {
         val dp = BooleanArray(n + 1) { false }
-        for (lo in 0..n) {
-            if (dp[lo]) continue
+        for (idx in 0..n) {
+            if (dp[idx]) continue
 
-            var hi = 1
-            while (lo + hi * hi <= n) {
-                dp[lo + hi * hi] = true
+            var remove = 1
+            while (idx + remove * remove <= n) {
+                dp[idx + remove * remove] = true
 
-                ++hi
+                ++remove
             }
         }
 

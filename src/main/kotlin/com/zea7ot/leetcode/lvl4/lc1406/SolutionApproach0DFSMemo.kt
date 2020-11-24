@@ -23,35 +23,35 @@ class SolutionApproach0DFSMemo {
     }
 
     fun stoneGameIII(stoneValues: IntArray): String {
-        val totalStones = stoneValues.size
-        val memo = Array<Int?>(totalStones) { null }
+        val nStones = stoneValues.size
+        val memo = Array<Int?>(nStones) { null }
 
         val score = dfs(0, stoneValues, memo)
 
         return when {
-            score == 0 -> TIE
+            score > 0 -> ALICE
             score < 0 -> BOB
-            else -> ALICE
+            else -> TIE
         }
     }
 
-    private fun dfs(i: Int,
-                    stoneValues: IntArray,
-                    memo: Array<Int?>): Int {
+    private fun dfs(curTurn: Int, stoneValues: IntArray, memo: Array<Int?>): Int {
         val nStones = stoneValues.size
-        if (i >= nStones) return 0
+        if (curTurn >= nStones) return 0
 
-        memo[i]?.let { return it }
+        memo[curTurn]?.let { return it }
 
         var sum = 0
-        var maxScore = memo[i] ?: Int.MIN_VALUE
-        for (j in 0 until 3) {
-            if (i + j >= nStones) break
-            sum += stoneValues[i + j]
-            maxScore = maxOf(maxScore, sum - dfs(i + j + 1, stoneValues, memo))
+        var maxScore = Int.MIN_VALUE
+        for (curPick in 0 until 3) {
+            if (curTurn + curPick >= nStones) break
+
+            sum += stoneValues[curTurn + curPick]
+            val nextTurn = curTurn + curPick + 1
+            maxScore = maxOf(maxScore, sum - dfs(nextTurn, stoneValues, memo))
         }
 
-        memo[i] = maxScore
+        memo[curTurn] = maxScore
         return maxScore
     }
 }
