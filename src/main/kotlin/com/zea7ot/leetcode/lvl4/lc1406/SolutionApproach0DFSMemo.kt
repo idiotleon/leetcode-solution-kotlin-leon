@@ -38,15 +38,15 @@ class SolutionApproach0DFSMemo {
     private fun dfs(i: Int,
                     stoneValues: IntArray,
                     memo: Array<Int?>): Int {
-        val totalStones = stoneValues.size
-        if (i >= totalStones) return 0
+        val nStones = stoneValues.size
+        if (i >= nStones) return 0
 
         memo[i]?.let { return it }
 
         var sum = 0
         var maxScore = memo[i] ?: Int.MIN_VALUE
         for (j in 0 until 3) {
-            if (i + j >= totalStones) break
+            if (i + j >= nStones) break
             sum += stoneValues[i + j]
             maxScore = maxOf(maxScore, sum - dfs(i + j + 1, stoneValues, memo))
         }
