@@ -16,25 +16,25 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun stoneGameII(piles: IntArray): Int {
-        val totalPiles = piles.size
-        if (totalPiles <= 2) return piles[0]
+        val nPiles = piles.size
+        if (nPiles <= 2) return piles[0]
 
         val suffixSums = piles.copyOf()
-        for (i in totalPiles - 2 downTo 0) {
+        for (i in nPiles - 2 downTo 0) {
             suffixSums[i] += suffixSums[i + 1]
         }
 
-        val dp = Array(totalPiles) { IntArray((totalPiles + 1) / 2 + 1) { 0 } }
+        val dp = Array(nPiles) { IntArray((nPiles + 1) / 2 + 1) { 0 } }
 
-        for (i in totalPiles - 1 downTo 0) {
+        for (i in nPiles - 1 downTo 0) {
             val sum = suffixSums[i]
-            var m = (totalPiles - i + 1) / 2
+            var m = (nPiles - i + 1) / 2
             dp[i][m] = sum
             while (--m > 0) {
                 dp[i][m] = 0
                 for (x in 1..m * 2) {
-                    if (x + i >= totalPiles) break
-                    val max = minOf((totalPiles - i - x + 1) / 2, maxOf(x, m))
+                    if (x + i >= nPiles) break
+                    val max = minOf((nPiles - i - x + 1) / 2, maxOf(x, m))
                     dp[i][m] = maxOf(dp[i][m], sum - dp[i + x][max])
                 }
             }
