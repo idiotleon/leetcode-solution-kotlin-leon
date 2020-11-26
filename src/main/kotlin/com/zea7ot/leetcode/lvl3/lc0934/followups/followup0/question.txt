@@ -1,0 +1,2 @@
+https://leetcode.com/problems/shortest-bridge/discuss/272996/what-if-there're-more-than-2-islands
+

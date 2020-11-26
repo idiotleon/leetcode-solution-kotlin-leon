@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/find-duplicate-subtrees/
  *
- * Time Complexity:     O(N)
- * Space Complexity:    O(N) + O(H) ~ O(N)
+ * Time Complexity:     O(N ^ 2)
+ * Space Complexity:    O(N ^ 2) + O(H) ~ O(N ^ 2)
  *
  * References:
  *  https://leetcode.com/problems/find-duplicate-subtrees/discuss/106011/Java-Concise-Postorder-Traversal-Solution
