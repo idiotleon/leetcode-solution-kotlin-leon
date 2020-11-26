@@ -27,17 +27,18 @@ class SolutionApproach0Stack {
         // sanity check
         if (n == 0 && logs.isEmpty()) return ans
 
-        val stack: Deque<Int> = LinkedList<Int>()
+        val stack = LinkedList<Int>()
         var prevTimestamp = 0
 
         for (log in logs) {
-            val res: List<String> = log.split(SPLITTER)
-            val id: Int = res[0].toInt()
-            val state: String = res[1]
-            val curTimestamp: Int = res[2].toInt()
+            val res = log.split(SPLITTER)
+            val id = res[0].toInt()
+            val state = res[1]
+            val curTimestamp = res[2].toInt()
 
-            if (!stack.isEmpty())
+            if (stack.isNotEmpty()) {
                 ans[stack.peek()] += (curTimestamp - prevTimestamp)
+            }
 
             prevTimestamp = curTimestamp
 
