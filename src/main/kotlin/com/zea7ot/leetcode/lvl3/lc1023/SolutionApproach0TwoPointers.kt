@@ -20,16 +20,17 @@ class SolutionApproach0TwoPointers {
 
         var idx = 0
         for (query in queries) {
-            ans[idx++] = isMatch(query, pattern)
+            ans[idx++] = isMatching(query, pattern)
         }
 
         return ans
     }
 
-    private fun isMatch(query: String, pattern: String): Boolean {
+    private fun isMatching(query: String, pattern: String): Boolean {
         val lenP = pattern.length
         var idx = 0
 
+        // two pointers approach
         for (ch in query) {
             if (idx < lenP && ch == pattern[idx]) ++idx
             else if (ch < 'a') return false
