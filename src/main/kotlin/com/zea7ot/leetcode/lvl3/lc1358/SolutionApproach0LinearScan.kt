@@ -1,11 +1,11 @@
 /**
  * https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/
  *
- * Time Complexity:     O(L) / O(1) + O(1) ~ O(L) / O(1)
+ * Time Complexity:     O(`lenS`) / O(1) + O(1) ~ O(`lenS`) / O(1)
  * Space Complexity:    O(1)
  *
- *  `res += lo`
- *   [i - 1, ..., j] is the subarray, of the minimum length, ending at `j`, which contains all three letters.
+ *  `count += lo`
+ *   [lo - 1, ..., hi] is the subarray, of the minimum length, ending at `hi`, which contains all three letters.
  *   The validity of the subarray can be extended to `idx == 0`.
  *
  * References:
@@ -18,18 +18,19 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
-    fun numberOfSubstrings(s: String): Int {
-        // sanity check
-        if (s.isEmpty()) return 0
+    fun numberOfSubstrings(str: String): Int {
+        // not used
+        // val lenS = str.length
 
-        val lenS = s.length
+        // sanity check, not required
+        // if (str.isEmpty()) return 0
 
         val lastIndexes = arrayOf(-1, -1, -1)
 
         var count = 0
 
-        for (i in 0 until lenS) {
-            lastIndexes[s[i] - 'a'] = i
+        for (idx in str.indices) {
+            lastIndexes[str[idx] - 'a'] = idx
             count += 1 + minOf(lastIndexes[0], lastIndexes[1], lastIndexes[2])
         }
 

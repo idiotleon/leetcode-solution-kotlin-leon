@@ -13,28 +13,28 @@ package com.zea7ot.leetcode.lvl3.lc0696
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0SlidingWindow {
-    fun countBinarySubstrings(s: String): Int {
+class SolutionApproach0LinearScan2 {
+    fun countBinarySubstrings(str: String): Int {
         // sanity check
-        if (s.isEmpty()) return 0
+        if (str.isEmpty()) return 0
 
-        var ones = 0
-        var zeros = 0
+        var cntOnes = 0
+        var cntZeros = 0
         var prev = -1
         var count = 0
 
-        for (ch in s) {
+        for (ch in str) {
             if (ch == '0') {
-                if (prev == 1) zeros = 0
-                ++zeros
+                if (prev == 1) cntZeros = 0
+                ++cntZeros
                 prev = 0
             } else {
-                if (prev == 0) ones = 0
-                ++ones
+                if (prev == 0) cntOnes = 0
+                ++cntOnes
                 prev = 1
             }
 
-            if ((prev == 1 && zeros >= ones) || (prev == 0 && ones >= zeros)) ++count
+            if ((prev == 1 && cntZeros >= cntOnes) || (prev == 0 && cntOnes >= cntZeros)) ++count
         }
 
         return count

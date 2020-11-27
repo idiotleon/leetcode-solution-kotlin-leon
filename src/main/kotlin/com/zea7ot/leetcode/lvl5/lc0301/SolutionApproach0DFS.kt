@@ -1,10 +1,11 @@
 /**
  * https://leetcode.com/problems/remove-invalid-parentheses/
  *
- * Time Complexity:     O((OPEN_PAREN + CLOSED_PAREN) * (2 ^ (OPEN_PAREN + CLOSED_PAREN))) ~ O(L * (2 ^ L))
- * Space Complexity:    O((OPEN_PAREN + CLOSED_PAREN) ^ 2) ~ O(L ^ 2)
+ * Time Complexity:     O((OPEN_PAREN + CLOSED_PAREN) * (2 ^ (OPEN_PAREN + CLOSED_PAREN))) ~ O(`lenS` * (2 ^ `lenS`))
+ * Space Complexity:    O((OPEN_PAREN + CLOSED_PAREN) ^ 2) ~ O(`lenS` ^ 2)
  *
  * References:
+ *  https://leetcode.com/problems/remove-invalid-parentheses/discuss/75027/Easy-Short-Concise-and-Fast-Java-DFS-3-ms-solution/113024
  *  https://leetcode.com/problems/remove-invalid-parentheses/discuss/75027/Easy-Short-Concise-and-Fast-Java-DFS-3-ms-solution/156556
  *  https://zxi.mytechroad.com/blog/searching/leetcode-301-remove-invalid-parentheses/
  */
@@ -20,7 +21,7 @@ class SolutionApproach0DFS {
     }
 
     fun removeInvalidParentheses(s: String): List<String> {
-        val ans = ArrayList<String>()
+        val ans = mutableListOf<String>()
         dfs(0, 0, s, OPEN, CLOSED, ans)
         return ans
     }
@@ -30,7 +31,7 @@ class SolutionApproach0DFS {
                     str: String,
                     openParen: Char,
                     closedParen: Char,
-                    res: ArrayList<String>) {
+                    res: MutableList<String>) {
 
         val lenS = str.length
 
@@ -38,10 +39,10 @@ class SolutionApproach0DFS {
         for (hi in hiStart until lenS) {
             if (str[hi] == openParen) ++stack
             if (str[hi] == closedParen) --stack
-            if (stack >= 0) continue
+            if (stack >= 0) continue //after this line, there is one surplus closed parenthesis to remove
 
-            for (lo in loStart..hi) {
-                if (str[lo] == closedParen && (lo == loStart || str[lo - 1] != closedParen)) {
+            for (lo in loStart..hi) { // to try to remove one at each position, skipping duplicates
+                if (str[lo] == closedParen && (lo == 0 || str[lo - 1] != closedParen)) { // only to remove the first one of the duplicates
                     // to remove the char at index `lo`
                     // time complexity: O(`lenS`)
                     val deleted = StringBuilder(str).deleteCharAt(lo).toString()
@@ -54,6 +55,8 @@ class SolutionApproach0DFS {
             return
         }
 
+        // no invalid parenthesis has been detected,
+        // to check the opposite direction.
         val reversed = str.reversed()
         if (openParen == OPEN) {
             dfs(0, 0, reversed, CLOSED, OPEN, res)

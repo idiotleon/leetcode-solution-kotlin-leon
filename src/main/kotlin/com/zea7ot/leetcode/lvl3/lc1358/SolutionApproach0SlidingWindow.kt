@@ -18,11 +18,11 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
-    fun numberOfSubstrings(s: String): Int {
-        // sanity check
-        if (s.isEmpty()) return 0
+    fun numberOfSubstrings(str: String): Int {
+        // sanity check, not required
+        // if (str.isEmpty()) return 0
 
-        val lenS = s.length
+        val lenS = str.length
 
         val freqs = intArrayOf(0, 0, 0)
 
@@ -31,10 +31,10 @@ class SolutionApproach0SlidingWindow {
         var count = 0
 
         while (hi < lenS) {
-            ++freqs[s[hi] - 'a']
+            ++freqs[str[hi] - 'a']
 
-            while (isValid(freqs)) {
-                --freqs[s[lo] - 'a']
+            while (containsAll(freqs)) {
+                --freqs[str[lo] - 'a']
                 ++lo
             }
 
@@ -45,7 +45,7 @@ class SolutionApproach0SlidingWindow {
         return count
     }
 
-    private fun isValid(freqs: IntArray): Boolean {
+    private fun containsAll(freqs: IntArray): Boolean {
         return freqs[0] > 0 && freqs[1] > 0 && freqs[2] > 0
     }
 }

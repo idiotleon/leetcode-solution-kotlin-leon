@@ -20,20 +20,19 @@ package com.zea7ot.leetcode.lvl3.lc0696
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0SlidingWindow1 {
-    fun countBinarySubstrings(s: String): Int {
+class SolutionApproach0LinearScan1 {
+    fun countBinarySubstrings(str: String): Int {
         // sanity check
-        if (s.isEmpty()) return 0
+        if (str.isEmpty()) return 0
 
-        val len = s.length
+        val lenS = str.length
 
         var prev = 0
         var cur = 1
         var count = 0
 
-
-        for (i in 1 until len) {
-            if (s[i - 1] == s[i]) {
+        for (idx in 1 until lenS) {
+            if (str[idx - 1] == str[idx]) {
                 ++cur
             } else {
                 count += minOf(cur, prev)

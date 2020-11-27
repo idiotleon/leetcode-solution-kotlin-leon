@@ -11,22 +11,22 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
-    fun lengthOfLongestSubstring(s: String): Int {
+    fun lengthOfLongestSubstring(str: String): Int {
         var longest = 0
         // sanity check
-        if (s.isEmpty()) return longest
+        if (str.isEmpty()) return longest
 
-        val lenS = s.length
+        val lenS = str.length
         val freqs = IntArray(128) { 0 }
 
         var lo = 0
         var hi = 0
 
         while (hi < lenS) {
-            ++freqs[s[hi].toInt()]
+            ++freqs[str[hi].toInt()]
 
-            while (freqs[s[hi].toInt()] > 1) {
-                --freqs[s[lo].toInt()]
+            while (freqs[str[hi].toInt()] > 1) {
+                --freqs[str[lo].toInt()]
                 ++lo
             }
 
