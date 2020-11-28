@@ -14,37 +14,47 @@ class SolutionApproach0KMPAlgorithm {
         val lenH = haystack.length
         val lenN = needle.length
 
-        if (lenH < lenN) return -1
+        val kmpTable = buildKMPTable(needle)
 
-        val kmpTable = IntArray(lenN) { 0 }
-        var i = 1
-        var j = 0
+        var idxH = 0
+        var idxN = 0
 
-        while (i < lenN) {
-            when {
-                needle[i] == needle[j] -> kmpTable[i++] = ++j
-                j == 0 -> kmpTable[i++] = 0
-                else -> j = kmpTable[j - 1]
-            }
-        }
-
-        i = 0
-        j = 0
-        while (i < lenH) {
-            if (j == lenN) break
+        while (idxH < lenH) {
+            if (idxN == lenN) break
 
             when {
-                haystack[i] == needle[j] -> {
-                    ++i
-                    ++j
+                haystack[idxH] == needle[idxN] -> {
+                    ++idxH
+                    ++idxN
                 }
-                j == 0 -> ++i
-                else -> j = kmpTable[j - 1]
+
+                idxN == 0 -> ++idxH
+
+                else -> idxN = kmpTable[idxN - 1]
             }
         }
 
-        if (j == lenN) return i - lenN
+        if (idxN == lenN) return idxH - lenN
 
         return -1
+    }
+
+    private fun buildKMPTable(pattern: String): IntArray {
+        val lenP = pattern.length
+
+        val kmpTable = IntArray(lenP) { 0 }
+
+        var hi = 1
+        var lo = 0
+
+        while (hi < lenP) {
+            when {
+                pattern[lo] == pattern[hi] -> kmpTable[hi++] = ++lo
+                lo == 0 -> ++hi
+                else -> lo = kmpTable[lo - 1]
+            }
+        }
+
+        return kmpTable
     }
 }

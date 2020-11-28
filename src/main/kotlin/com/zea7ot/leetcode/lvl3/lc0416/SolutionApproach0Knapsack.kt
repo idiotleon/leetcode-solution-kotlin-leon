@@ -25,14 +25,14 @@ class SolutionApproach0Knapsack {
         val volume = nums.sum()
         if (volume % 2 == 1) return false
 
-        val target = volume / 2
-        val dp = BooleanArray(target + 1) { idx -> idx == 0 }
+        val targetSum = volume / 2
+        val dp = BooleanArray(targetSum + 1) { idx -> idx == 0 }
 
         for (num in nums) {
-            for (sum in target downTo 0) {
+            for (sum in targetSum downTo 0) {
                 if (dp[sum]) {
                     val newSum = sum + num
-                    if (newSum > target) continue
+                    if (newSum > targetSum) continue
                     dp[newSum] = true
                 }
 
