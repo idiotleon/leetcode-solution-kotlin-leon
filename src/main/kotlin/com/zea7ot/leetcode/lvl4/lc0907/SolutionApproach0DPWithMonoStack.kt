@@ -1,10 +1,10 @@
 /**
  * https://leetcode.com/problems/sum-of-subarray-minimums/
  *
- * Time Complexity:     O(`totalNums`)
- * Space Complexity:    O(`totalNums`)
+ * Time Complexity:     O(`nNums`)
+ * Space Complexity:    O(`nNums`)
  *
- * dp[i + 1]: sum of minimum of subarrays which ends with nums[i]
+ * dp[idx + 1]: sum of minimum of subarrays which ends with nums[idx]
  *
  * References:
  *  https://leetcode.com/problems/sum-of-subarray-minimums/discuss/170769/Java-O(n)-monotone-stack-with-DP
@@ -21,15 +21,16 @@ class SolutionApproach0DPWithMonoStack {
     }
 
     fun sumSubarrayMins(nums: IntArray): Int {
-        val totalNums = nums.size
+        val nNums = nums.size
 
         var sum = 0
-        val dp = IntArray(totalNums + 1) { 0 }
+        val dp = IntArray(nNums + 1) { 0 }
 
-        val stack = LinkedList<Int>()
-        stack.push(-1)
+        val stack = LinkedList<Int>().also {
+            it.push(-1)
+        }
 
-        for (idx in 0 until totalNums) {
+        for (idx in nums.indices) {
             while (stack.peek() != -1 && nums[idx] <= nums[stack.peek()]) {
                 stack.pop()
             }
