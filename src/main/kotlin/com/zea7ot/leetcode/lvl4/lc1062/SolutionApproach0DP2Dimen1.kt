@@ -23,10 +23,13 @@ class SolutionApproach0DP2Dimen1 {
         var longest = 0
         for (lo in str.indices) {
             for (hi in lo + 1 until lenS) {
-                if (str[lo] == str[hi]) {
-                    dp[lo + 1][hi + 1] = 1 + dp[lo][hi]
-                    longest = maxOf(longest, dp[lo + 1][hi + 1])
+                dp[lo + 1][hi + 1] = if (str[lo] == str[hi]) {
+                    1 + dp[lo][hi]
+                } else {
+                    0 // this tells the difference between "substring" vs "subsequence"
                 }
+
+                longest = maxOf(longest, dp[lo + 1][hi + 1])
             }
         }
 

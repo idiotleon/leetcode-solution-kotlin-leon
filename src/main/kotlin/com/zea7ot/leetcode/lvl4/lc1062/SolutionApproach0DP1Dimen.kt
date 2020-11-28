@@ -14,7 +14,6 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun longestRepeatingSubstring(str: String): Int {
-
         val lenS = str.length
         var longest = 0
         val dp = IntArray(lenS + 1) { 0 }
