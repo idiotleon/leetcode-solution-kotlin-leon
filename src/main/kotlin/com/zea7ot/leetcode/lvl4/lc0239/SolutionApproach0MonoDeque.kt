@@ -17,22 +17,22 @@ import java.util.*
 @Suppress(UNUSED)
 class SolutionApproach0MonoDeque {
     fun maxSlidingWindow(nums: IntArray, k: Int): IntArray {
-        val size = nums.size
-        val ans = IntArray(size - k + 1)
+        val nNums = nums.size
+        val ans = IntArray(nNums - k + 1)
         // sanity check
         if (nums.isEmpty()) return ans
 
         val deque = LinkedList<Int>()
         var idx = 0
 
-        for (i in 0 until size) {
+        for (i in nums.indices) {
             // when the size of the `deque` is larger than `k`
             while (deque.isNotEmpty() && deque.peekFirst() < i - k + 1) {
                 deque.removeFirst()
             }
 
             // when there is a new large number coming in from the last/tail
-            while (deque.isNotEmpty() && nums[i] > nums[deque.peekLast()]) {
+            while (deque.isNotEmpty() && nums[deque.peekLast()] < nums[i]) {
                 deque.removeLast()
             }
 

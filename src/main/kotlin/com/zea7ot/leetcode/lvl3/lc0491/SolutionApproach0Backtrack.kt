@@ -7,6 +7,9 @@
  * References:
  *  https://leetcode.com/problems/increasing-subsequences/discuss/97147/Java-solution-beats-100
  *  https://leetcode.com/problems/increasing-subsequences/discuss/97147/Java-solution-beats-100/498426
+ *
+ *  about why a local set:
+ *  https://leetcode.com/problems/increasing-subsequences/discuss/97130/Java-20-lines-backtracking-solution-using-set-beats-100./101617
  */
 package com.zea7ot.leetcode.lvl3.lc0491
 
