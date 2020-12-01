@@ -39,8 +39,8 @@ class SolutionApproach0DFSMemo {
                     col: Int,
                     matrix: Array<IntArray>,
                     memo: Array<Array<Int?>>): Int {
-        val totalRows = matrix.size
-        val totalCols = matrix[0].size
+        val nRows = matrix.size
+        val nCols = matrix[0].size
 
         memo[row][col]?.let { return it }
 
@@ -49,7 +49,7 @@ class SolutionApproach0DFSMemo {
             val nextRow = row + DIRS[d]
             val nextCol = col + DIRS[d + 1]
 
-            if (nextRow < 0 || nextRow >= totalRows || nextCol < 0 || nextCol >= totalCols) continue
+            if (nextRow < 0 || nextRow >= nRows || nextCol < 0 || nextCol >= nCols) continue
 
             if (matrix[row][col] < matrix[nextRow][nextCol]) {
                 longest = maxOf(longest, 1 + dfs(nextRow, nextCol, matrix, memo))
