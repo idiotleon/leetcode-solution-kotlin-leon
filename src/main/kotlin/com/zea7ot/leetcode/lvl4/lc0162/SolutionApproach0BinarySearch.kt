@@ -14,10 +14,10 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun findPeakElement(nums: IntArray): Int {
-        val totalNums = nums.size
+        val nNums = nums.size
 
         var lo = 0
-        var hi = totalNums - 1
+        var hi = nNums - 1
         while (lo < hi) {
             val mid = lo + (hi - lo) / 2
 

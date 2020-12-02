@@ -18,7 +18,7 @@ import kotlin.math.abs
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun myPow(x: Double, n: Int): Double {
-        var ans = 1.toDouble()
+        var ans = 1.0
         var absN = abs(n.toLong())
         var base = x
 

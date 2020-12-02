@@ -11,28 +11,21 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun twoSum(nums: IntArray, target: Int): IntArray {
-        val ans = IntArray(2)
-        if (nums.isEmpty()) return ans
-
-        val size = nums.size
+        val nNums = nums.size
 
         var lo = 0
-        var hi = size - 1
+        var hi = nNums - 1
 
         while (lo < hi) {
             val sum = nums[lo] + nums[hi]
 
             when {
-                sum == target -> {
-                    ans[0] = lo + 1
-                    ans[1] = hi + 1
-                    return ans
-                }
+                sum < target -> ++lo
                 sum > target -> --hi
-                else -> ++lo
+                else -> return intArrayOf(lo + 1, hi + 1)
             }
         }
 
-        return ans
+        return intArrayOf()
     }
 }
