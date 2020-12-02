@@ -35,7 +35,7 @@ class SolutionApproach0Backtrack {
             return
         }
 
-        when (str[idx]) {
+        when (val curCh = str[idx]) {
             OPEN_BRACKET -> {
                 val chs = mutableListOf<Char>()
                 var idxEnd = idx + 1
@@ -49,16 +49,16 @@ class SolutionApproach0Backtrack {
 
                 chs.sort()
                 val len = builder.length
-                for (letter in chs) {
+                for (ch in chs) {
                     // to further backtrack to the next state
-                    builder.append(letter)
+                    builder.append(ch)
                     backtrack(idxEnd + 1, builder, str, res)
                     // to backtrack to the previous state
                     builder.setLength(len)
                 }
             }
             in 'a'..'z' -> {
-                builder.append(str[idx])
+                builder.append(curCh)
                 backtrack(idx + 1, builder, str, res)
             }
             else -> {
