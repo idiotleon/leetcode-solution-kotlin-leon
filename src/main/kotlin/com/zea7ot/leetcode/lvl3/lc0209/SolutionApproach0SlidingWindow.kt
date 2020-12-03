@@ -15,14 +15,14 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     fun minSubArrayLen(s: Int, nums: IntArray): Int {
-        val totalNums = nums.size
+        val nNums = nums.size
 
         var lo = 0
         var hi = 0
         var sum = 0
-        var shortest = totalNums + 1
+        var shortest = nNums + 1
 
-        while (hi < totalNums) {
+        while (hi < nNums) {
             sum += nums[hi]
 
             while (sum >= s) {
@@ -34,6 +34,6 @@ class SolutionApproach0SlidingWindow {
             ++hi
         }
 
-        return shortest % (totalNums + 1)
+        return shortest % (nNums + 1)
     }
 }
