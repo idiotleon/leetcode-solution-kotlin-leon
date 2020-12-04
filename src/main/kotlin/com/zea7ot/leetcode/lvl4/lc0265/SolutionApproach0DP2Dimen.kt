@@ -1,17 +1,12 @@
 /**
  * https://leetcode.com/problems/paint-house-ii/
  *
- * Time Complexity:     O(`nHouses` * (`kColors` ^ 2))
- * Space Complexity:    O(`nHouses` * `kColors`)
- *
- * `dp[i][j]` = min{ dp[i - 1][j'] + costs[i][j]}
- *      j' = 1, 2, 3, ..., (j - 1), (j + 1), ..., `kColors` (but not `j`)
- *
- *  a top-down approach
+ * Time Complexity:     O(`nHouses` * `nColors`)
+ * Space Complexity:    O(1)
  *
  * References:
- *  https://leetcode.com/problems/paint-house-ii/discuss/69492/AC-Java-solution-without-extra-space/71565
- *  https://youtu.be/FLbqgyJ-70I?t=1433
+ *  https://leetcode.com/problems/paint-house-ii/discuss/69495/Fast-DP-Java-solution-Runtime-O(nk)-space-O(1)/143746
+ *  https://leetcode.com/problems/paint-house-ii/discuss/69495/Fast-DP-Java-solution-Runtime-O(nk)-space-O(1)
  */
 package com.zea7ot.leetcode.lvl4.lc0265
 
@@ -20,32 +15,47 @@ import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun minCostII(costs: Array<IntArray>): Int {
-        // sanity check
+        // sanity check, required
         if (costs.isEmpty() || costs[0].isEmpty()) return 0
 
         val nHouses = costs.size
-        val kColors = costs[0].size
+        val nColors = costs[0].size
+        if (nColors == 1) return if (nHouses == 1) costs[0][0] else -1
 
-        val dp = Array(nHouses) { IntArray(kColors) { 0 } }
-        for (k in 0 until kColors) {
-            dp[0][k] = costs[0][k]
-        }
+        var prevMin = 0
+        var prevSecMin = 0
+        var idxPrevMin = -1
 
-        for (i in 1 until nHouses) {
-            for (j in 0 until kColors) {
-                dp[i][j] = Int.MAX_VALUE
-                for (k in 0 until kColors) {
-                    if (k == j) continue
+        for (idxHouse in costs.indices) {
+            var curMin = Int.MAX_VALUE
+            var curSecMin = Int.MAX_VALUE
+            var idxCurMin = -1
 
-                    dp[i][j] = minOf(dp[i][j], dp[i - 1][k] + costs[i][j])
+            for (idxColor in costs[idxHouse].indices) {
+                val value = costs[idxHouse][idxColor] + if (idxColor == idxPrevMin) prevSecMin else prevMin
+
+                when {
+                    idxCurMin < 0 || value < curMin -> { // when value < curMin, or not initialized
+                        curSecMin = curMin
+                        curMin = value
+                        idxCurMin = idxColor
+                    }
+
+                    value < curSecMin -> { // when curMin <= value < curSecMin
+                        curSecMin = value
+                    }
+
+                    else -> {
+
+                    }
                 }
             }
+
+            prevMin = curMin
+            prevSecMin = curSecMin
+            idxPrevMin = idxCurMin
         }
 
-        var minCost = Int.MAX_VALUE
-        for (k in 0 until kColors) {
-            minCost = minOf(minCost, dp[nHouses - 1][k])
-        }
-        return minCost
+        return prevMin
     }
 }

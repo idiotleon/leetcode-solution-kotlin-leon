@@ -2,7 +2,7 @@
  * if there are m colors, instead of 3, how to solve the problem?
  * https://leetcode.com/problems/paint-house/
  *
- * Time Complexity:     O(`nHouses` * `nColors`)
+ * Time Complexity:     O(`nHouses` * (`nColors`) ^ 2)
  * Space Complexity:    O(`nHouses` * `nColors`)
  *
  * References:
