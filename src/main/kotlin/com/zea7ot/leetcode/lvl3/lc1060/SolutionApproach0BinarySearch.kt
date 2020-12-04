@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/missing-element-in-sorted-array/
  *
- * Time Complexity:     O()
+ * Time Complexity:     O(lg(maxOf(`nNums`, `k`))
  * Space Complexity:    O(1)
  *
  * References:
