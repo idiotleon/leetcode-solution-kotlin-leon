@@ -1,5 +1,8 @@
 package com.zea7ot.leetcode.lvl5.lc0715
 
+import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0SegmentTree {
     private val root = SegmentTree()
 
@@ -81,11 +84,13 @@ class SolutionApproach0SegmentTree {
             node.lazy = 0
         }
 
-        private data class SegmentTreeNode(val lo: Int,
-                                           val hi: Int,
-                                           var min: Int = 0,
-                                           var lazy: Int = 0,
-                                           var left: SegmentTreeNode? = null,
-                                           var right: SegmentTreeNode? = null)
+        private data class SegmentTreeNode(
+            val lo: Int,
+            val hi: Int,
+            var min: Int = 0,
+            var lazy: Int = 0,
+            var left: SegmentTreeNode? = null,
+            var right: SegmentTreeNode? = null
+        )
     }
 }
