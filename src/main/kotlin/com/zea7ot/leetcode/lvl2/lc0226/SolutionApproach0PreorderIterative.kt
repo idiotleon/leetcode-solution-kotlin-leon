@@ -14,7 +14,7 @@ import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
 import java.util.*
 
 @Suppress(UNUSED)
-class SolutionApproach0DFSIterative {
+class SolutionApproach0PreorderIterative {
     fun invertTree(root: TreeNode?): TreeNode? {
         if (root == null) return null
 

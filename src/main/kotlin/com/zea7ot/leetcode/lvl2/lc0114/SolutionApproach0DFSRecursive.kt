@@ -8,7 +8,7 @@
  *  https://leetcode.com/problems/flatten-binary-tree-to-linked-list/discuss/36977/My-short-post-order-traversal-Java-solution-for-share
  *  https://leetcode.com/problems/flatten-binary-tree-to-linked-list/discuss/36977/My-short-post-order-traversal-Java-solution-for-share/146292
  */
-package com.zea7ot.leetcode.lvl3.lc0114
+package com.zea7ot.leetcode.lvl2.lc0114
 
 import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
 import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
@@ -17,9 +17,7 @@ import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
 class SolutionApproach0DFSRecursive {
     private var prev: TreeNode? = null
 
-    fun flatten(root: TreeNode?) {
-        dfs(root)
-    }
+    fun flatten(root: TreeNode?) = dfs(root)
 
     private fun dfs(node: TreeNode?) {
         if (node == null) return
