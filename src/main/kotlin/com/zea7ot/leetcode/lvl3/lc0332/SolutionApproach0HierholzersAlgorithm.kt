@@ -16,7 +16,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0332
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap

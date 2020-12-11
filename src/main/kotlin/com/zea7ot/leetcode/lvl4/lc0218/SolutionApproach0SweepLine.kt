@@ -11,7 +11,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0218
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 import java.util.*
 import kotlin.Comparator
 import kotlin.collections.ArrayList

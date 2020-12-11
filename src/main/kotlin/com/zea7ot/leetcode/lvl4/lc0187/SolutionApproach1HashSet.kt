@@ -1,6 +1,6 @@
 package com.zea7ot.leetcode.lvl4.lc0187
 
-import com.zea7ot.leetcode.utils.Constant
+import com.zea7ot.leetcode.util.Constant
 
 @Suppress(Constant.Annotation.UNUSED)
 class SolutionApproach1HashSet {

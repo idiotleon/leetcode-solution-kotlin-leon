@@ -8,7 +8,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0863
 
-import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
+import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet

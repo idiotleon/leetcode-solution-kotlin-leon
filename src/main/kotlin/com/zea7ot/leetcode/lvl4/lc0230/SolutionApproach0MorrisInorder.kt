@@ -27,13 +27,13 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0230
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
-import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0MorrisInorder {
     fun kthSmallest(root: TreeNode?, k: Int): Int {
-        // sanity check
+        // sanity check, not required given data range
         if (root == null || k <= 0) return -1
 
         var cur = root
@@ -55,7 +55,7 @@ class SolutionApproach0MorrisInorder {
                     cur = cur.left
                 } else {
                     if (++ith == k) return cur.`val`
-                    predecessor.right = null;
+                    predecessor.right = null
                     cur = cur.right
                 }
             }

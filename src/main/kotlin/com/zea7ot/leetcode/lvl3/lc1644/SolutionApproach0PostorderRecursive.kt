@@ -9,8 +9,10 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1644
 
-import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
+@Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
     private var count = 0
 

@@ -7,7 +7,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0121
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP0Dimen1 {

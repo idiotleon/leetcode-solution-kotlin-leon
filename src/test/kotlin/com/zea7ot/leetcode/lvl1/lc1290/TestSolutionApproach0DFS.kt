@@ -1,6 +1,6 @@
 package com.zea7ot.leetcode.lvl1.lc1290
 
-import com.zea7ot.leetcode.utils.dataStructure.linkedList.ListNode
+import com.zea7ot.leetcode.util.dataStructure.linkedList.ListNode
 import org.junit.Test
 import kotlin.test.assertEquals
 

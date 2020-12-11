@@ -23,8 +23,8 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1297
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED_PARAMETER
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED_PARAMETER
 
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {

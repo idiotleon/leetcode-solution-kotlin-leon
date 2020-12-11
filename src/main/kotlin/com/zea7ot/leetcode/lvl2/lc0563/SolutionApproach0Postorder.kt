@@ -7,8 +7,8 @@
  */
 package com.zea7ot.leetcode.lvl2.lc0563
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
-import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 import kotlin.math.abs
 
 @Suppress(UNUSED)

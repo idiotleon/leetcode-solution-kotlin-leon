@@ -12,7 +12,7 @@
  */
 package com.zea7ot.leetcode.ood.lvl4.lc0307
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0BinaryIndexedTree(private val nums: IntArray) {

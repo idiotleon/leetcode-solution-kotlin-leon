@@ -6,8 +6,8 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0147
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
-import com.zea7ot.leetcode.utils.dataStructure.linkedList.ListNode
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.dataStructure.linkedList.ListNode
 
 @Suppress(UNUSED)
 class SolutionApproach0InsertionSort {

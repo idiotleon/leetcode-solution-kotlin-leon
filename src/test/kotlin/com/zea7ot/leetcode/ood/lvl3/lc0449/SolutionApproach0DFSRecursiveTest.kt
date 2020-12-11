@@ -1,6 +1,6 @@
 package com.zea7ot.leetcode.ood.lvl3.lc0449
 
-import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
+import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 import org.junit.Test
 import kotlin.test.assertEquals
 

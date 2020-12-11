@@ -12,7 +12,7 @@
  */
 package com.zea7ot.leetcode.ood.lvl6.lc0308
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree {

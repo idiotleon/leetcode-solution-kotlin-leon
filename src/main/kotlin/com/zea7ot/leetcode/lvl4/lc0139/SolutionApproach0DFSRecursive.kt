@@ -9,18 +9,18 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0139
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
-    fun wordBreak(s: String, wordDict: List<String>): Boolean {
+    fun wordBreak(str: String, wordDict: List<String>): Boolean {
         // sanity check
-        if (s.isEmpty()) return false
+        if (str.isEmpty()) return false
 
         val wordSet = HashSet(wordDict)
         val seen = HashSet<Int>()
 
-        return dfs(0, s, seen, wordSet)
+        return dfs(0, str, seen, wordSet)
     }
 
     private fun dfs(cur: Int,

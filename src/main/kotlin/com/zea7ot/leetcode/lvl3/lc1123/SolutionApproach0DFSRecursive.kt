@@ -9,30 +9,30 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1123
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
-import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
+    private var deepest = 0
     private var lca: TreeNode? = null
 
     fun lcaDeepestLeaves(root: TreeNode?): TreeNode? {
-        val deepest = intArrayOf(0)
-        postorder(root, deepest, 0)
+        dfs(root, 0)
         return lca
     }
 
-    private fun postorder(node: TreeNode?, deepest: IntArray, curDepth: Int): Int {
-        deepest[0] = maxOf(deepest[0], curDepth)
+    private fun dfs(node: TreeNode?, curDepth: Int): Int {
+        deepest = maxOf(deepest, curDepth)
         if (node == null) return curDepth
 
-        val left = postorder(node.left, deepest, curDepth + 1)
-        val right = postorder(node.right, deepest, curDepth + 1)
+        val leftDepth = dfs(node.left, 1 + curDepth)
+        val rightDepth = dfs(node.right, 1 + curDepth)
 
-        if (left == deepest[0] && right == deepest[0]) {
+        if (leftDepth == deepest && rightDepth == deepest) {
             lca = node
         }
 
-        return maxOf(left, right)
+        return maxOf(leftDepth, rightDepth)
     }
 }

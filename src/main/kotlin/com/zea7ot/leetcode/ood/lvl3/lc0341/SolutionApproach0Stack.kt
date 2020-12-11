@@ -12,7 +12,7 @@
  */
 package com.zea7ot.leetcode.ood.lvl3.lc0341
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)
@@ -40,9 +40,8 @@ class SolutionApproach0Stack(nestedList: List<NestedInteger>) {
 
     private fun flattenNestedList(nestedList: List<NestedInteger>?) {
         nestedList?.let {
-            val totalSize = it.size
-            for (i in totalSize - 1 downTo 0) {
-                stack.push(it[i])
+            for (idx in it.indices.reversed()) {
+                stack.push(it[idx])
             }
         }
     }

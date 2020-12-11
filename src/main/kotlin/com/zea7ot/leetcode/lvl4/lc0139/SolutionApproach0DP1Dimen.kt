@@ -9,22 +9,22 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0139
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
-    fun wordBreak(s: String, wordDict: List<String>): Boolean {
+    fun wordBreak(str: String, wordDict: List<String>): Boolean {
         // sanity check
-        if (s.isEmpty()) return false
+        if (str.isEmpty()) return false
 
-        val lenS = s.length
+        val lenS = str.length
         val wordSet = wordDict.toHashSet()
 
         val dp = BooleanArray(lenS + 1) { idx -> idx == 0 }
 
         for (hi in 1..lenS) {
             for (lo in 0..hi) {
-                if (dp[lo] && wordSet.contains(s.substring(lo, hi))) {
+                if (dp[lo] && wordSet.contains(str.substring(lo, hi))) {
                     dp[hi] = true
                     // pruning here
                     break

@@ -11,7 +11,7 @@
  */
 package com.zea7ot.leetcode.lvl5.lc1178.withBit
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFS {

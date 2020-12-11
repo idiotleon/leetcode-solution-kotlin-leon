@@ -1,51 +1,45 @@
 /**
  * https://leetcode.com/problems/find-duplicate-subtrees/
  *
- * Time Complexity:     O(N ^ 2)
- * Space Complexity:    O(N ^ 2) + O(H) ~ O(N ^ 2)
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(H)
  *
  * References:
- *  https://leetcode.com/problems/find-duplicate-subtrees/discuss/106011/Java-Concise-Postorder-Traversal-Solution
- *  https://leetcode.com/problems/find-duplicate-subtrees/discuss/106016/O(n)-time-and-space-lots-of-analysis
- *
- *  why the inorder traversal doest not work?
- *  https://leetcode.com/problems/find-duplicate-subtrees/discuss/106011/Java-Concise-Postorder-Traversal-Solution/247483
+ *  https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487527&idx=1&sn=9cf2b0d8608ba26ea7c6a5c9b41d05a1&chksm=9bd7ee2faca0673916bf075539bf6fc3c01f3dcc0b298b3f507047692ef5c850ed9cfe82e4e6&scene=21#wechat_redirect
  */
 package com.zea7ot.leetcode.lvl3.lc0652
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
-import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
     private companion object {
-        private const val SEPARATOR = "#"
         private const val SPLITTER = ","
+        private const val SEPARATOR = "#"
     }
 
     fun findDuplicateSubtrees(root: TreeNode?): List<TreeNode?> {
-        val map = HashMap<String, MutableList<TreeNode>>()
-        postorder(root, map)
-
         val ans = mutableListOf<TreeNode>()
-        for ((_, nodes) in map) {
-            if (nodes.size > 1) {
-                ans.add(nodes[0])
-            }
-        }
-
+        val memo = HashMap<String, Int>()
+        postorder(root, memo, ans)
         return ans
     }
 
-    private fun postorder(node: TreeNode?,
-                          map: HashMap<String, MutableList<TreeNode>>): String {
+    private fun postorder(node: TreeNode?, memo: HashMap<String, Int>, res: MutableList<TreeNode>): String {
         if (node == null) return SEPARATOR
-        val left = postorder(node.left, map)
-        val right = postorder(node.right, map)
 
-        val hash = "${node.`val`}$SPLITTER$left$SPLITTER$right$SEPARATOR"
+        val left = postorder(node.left, memo, res)
+        val right = postorder(node.right, memo, res)
 
-        map.getOrPut(hash) { mutableListOf() }.add(node)
+        val value = node.`val`
+        val hash = "$left$SPLITTER$value$SPLITTER$right$SEPARATOR"
+
+        val freq = memo[hash] ?: 0
+
+        if (freq == 1) res.add(node)
+
+        memo[hash] = 1 + freq
         return hash
     }
 }

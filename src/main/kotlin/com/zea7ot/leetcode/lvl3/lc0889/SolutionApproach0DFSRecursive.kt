@@ -1,49 +1,73 @@
 /**
  * https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/
  *
- * Time Complexity:     O(`nNodes`)
- * Space Complexity:    O(H)
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(N) + O(H) ~ O(H)
  *
  * References:
+ *  https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/discuss/161268/C++JavaPython-One-Pass-Real-O(N)/174387
  *  https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/discuss/161268/C%2B%2BJavaPython-One-Pass-Real-O(N)
- *  https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/discuss/161372/Java-Python-Divide-and-Conquer-with-Explanation/179456
- *  https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/discuss/161372/Java-Python-Divide-and-Conquer-with-Explanation
  */
 package com.zea7ot.leetcode.lvl3.lc0889
 
-import com.zea7ot.leetcode.utils.Constant.Annotation.Companion.UNUSED
-import com.zea7ot.leetcode.utils.dataStructure.tree.TreeNode
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun constructFromPrePost(preorder: IntArray, postorder: IntArray): TreeNode? {
-        // not used
-        // val nNodes = preorder.size
+        val postorderValToIdx = HashMap<Int, Int>()
+        for (idx in postorder.indices) {
+            postorderValToIdx[postorder[idx]] = idx
+        }
 
-        val idxPreorder = intArrayOf(0)
-        val idxPostorder = intArrayOf(0)
-
-        return dfs(idxPreorder, preorder, idxPostorder, postorder)
+        return buildTree(
+            0,
+            preorder.lastIndex,
+            0,
+            postorder.lastIndex,
+            preorder,
+            postorder,
+            postorderValToIdx
+        )
     }
 
-    private fun dfs(idxPreorder: IntArray,
-                    preorder: IntArray,
-                    idxPostorder: IntArray,
-                    postorder: IntArray): TreeNode? {
+    private fun buildTree(
+        idxStartPreorder: Int,
+        idxEndPreorder: Int,
+        idxStartPostorder: Int,
+        idxEndPostorder: Int,
+        preorder: IntArray,
+        postorder: IntArray,
+        postorderValToIdx: HashMap<Int, Int>
+    ): TreeNode? {
+        if (idxStartPreorder > idxEndPreorder || idxStartPostorder > idxEndPostorder) return null
 
-        val rootValue = preorder[idxPreorder[0]++]
-
+        val rootValue = preorder[idxStartPreorder]
         val root = TreeNode(rootValue)
+        if (1 + idxStartPreorder <= idxEndPreorder) {
+            val sizeLeftSubtree = postorderValToIdx[preorder[1 + idxStartPreorder]]!! - idxStartPostorder
 
-        if (rootValue != postorder[idxPostorder[0]]) {
-            root.left = dfs(idxPreorder, preorder, idxPostorder, postorder)
+            root.left = buildTree(
+                1 + idxStartPreorder,
+                1 + idxStartPreorder + sizeLeftSubtree,
+                idxStartPostorder,
+                idxStartPostorder + sizeLeftSubtree,
+                preorder, postorder,
+                postorderValToIdx
+            )
+
+            root.right = buildTree(
+                1 + idxStartPreorder + sizeLeftSubtree + 1,
+                idxEndPreorder,
+                idxStartPostorder + sizeLeftSubtree + 1,
+                idxEndPostorder - 1,
+                preorder,
+                postorder,
+                postorderValToIdx
+            )
         }
 
-        if (rootValue != postorder[idxPostorder[0]]) {
-            root.right = dfs(idxPreorder, preorder, idxPostorder, postorder)
-        }
-
-        ++idxPostorder[0]
         return root
     }
 }
