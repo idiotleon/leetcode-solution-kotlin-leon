@@ -17,17 +17,17 @@ class SolutionApproach0Recursion {
         // not used
         // val nNums = nums.size
 
-        return dfs(0, nums.lastIndex, nums)
+        return buildTree(0, nums.lastIndex, nums)
     }
 
-    private fun dfs(lo: Int, hi: Int, nums: IntArray): TreeNode? {
+    private fun buildTree(lo: Int, hi: Int, nums: IntArray): TreeNode? {
         if (lo > hi) return null
 
         val mid = lo + (hi - lo) / 2
         val root = TreeNode(nums[mid])
 
-        root.left = dfs(lo, mid - 1, nums)
-        root.right = dfs(mid + 1, hi, nums)
+        root.left = buildTree(lo, mid - 1, nums)
+        root.right = buildTree(mid + 1, hi, nums)
         return root
     }
 }

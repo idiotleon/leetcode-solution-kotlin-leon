@@ -11,22 +11,21 @@ import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
-class SolutionApproach0PostorderRecursive {
-    private var maxDiameter = 0
-
+class SolutionApproach0PostorderRecursive1 {
     fun diameterOfBinaryTree(root: TreeNode?): Int {
-        postorder(root)
-        return maxDiameter
+        val longest = intArrayOf(0)
+        postorder(root, longest)
+        return longest[0]
     }
 
-    private fun postorder(node: TreeNode?): Int {
+    private fun postorder(node: TreeNode?, longest: IntArray): Int {
         if (node == null) return 0
 
-        val leftDepth = postorder(node.left)
-        val rightDepth = postorder(node.right)
+        val left = postorder(node.left, longest)
+        val right = postorder(node.right, longest)
 
-        maxDiameter = maxOf(maxDiameter, leftDepth + rightDepth)
+        longest[0] = maxOf(longest[0], left + right)
 
-        return 1 + maxOf(leftDepth, rightDepth)
+        return maxOf(left, right) + 1
     }
 }

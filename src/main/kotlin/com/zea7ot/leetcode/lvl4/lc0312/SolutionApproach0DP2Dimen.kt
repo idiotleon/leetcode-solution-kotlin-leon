@@ -23,8 +23,8 @@ class SolutionApproach0DP2Dimen {
         // to pad both ends of `nums` array with 1
         val padded = IntArray(nNums + 2) { idx ->
             when (idx) {
-                0 -> 1;
-                nNums + 1 -> 1;
+                0 -> 1
+                nNums + 1 -> 1
                 else -> nums[idx - 1]
             }
         }
@@ -38,8 +38,10 @@ class SolutionApproach0DP2Dimen {
                 var maxCoins = 0
 
                 for (k in lo..hi) {
-                    maxCoins = maxOf(maxCoins,
-                            dp[lo][k - 1] + padded[lo - 1] * padded[k] * padded[hi + 1] + dp[k + 1][hi])
+                    maxCoins = maxOf(
+                        maxCoins,
+                        dp[lo][k - 1] + padded[lo - 1] * padded[k] * padded[hi + 1] + dp[k + 1][hi]
+                    )
                 }
 
                 dp[lo][hi] = maxCoins
