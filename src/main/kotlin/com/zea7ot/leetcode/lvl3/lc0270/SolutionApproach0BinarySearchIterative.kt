@@ -4,14 +4,14 @@
  * Time Complexity:     O(H)
  * Space Complexity:    O(1)
  */
-package com.zea7ot.leetcode.lvl3.lc0129
+package com.zea7ot.leetcode.lvl3.lc0270
 
 import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 import kotlin.math.abs
 
 @Suppress(UNUSED)
-class SolutionApproach0BinarySearch {
+class SolutionApproach0BinarySearchIterative {
     fun closestValue(root: TreeNode?, target: Double): Int {
         if (root == null) return 0
 

@@ -13,19 +13,19 @@ import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 class SolutionApproach0DFSRecursive {
     fun sumNumbers(root: TreeNode?) = dfs(root, 0)
 
-    private fun dfs(node: TreeNode?, sum: Int): Int {
+    private fun dfs(node: TreeNode?, prevNum: Int): Int {
         if (node == null) return 0
 
         val value = node.`val`
-        val newSum = sum * 10 + value
+        val curNum = prevNum * 10 + value
 
         if (node.left == null && node.right == null) {
-            return newSum
+            return curNum
         }
 
-        val left = dfs(node.left, newSum)
-        val right = dfs(node.right, newSum)
+        val leftNum = dfs(node.left, curNum)
+        val rightNum = dfs(node.right, curNum)
 
-        return left + right
+        return leftNum + rightNum
     }
 }
