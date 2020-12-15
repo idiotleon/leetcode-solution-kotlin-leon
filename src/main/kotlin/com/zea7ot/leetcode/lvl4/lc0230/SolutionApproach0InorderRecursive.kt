@@ -14,7 +14,7 @@ import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0InorderRecursive {
-    private var rank = 0
+    private var ith = 0
     private var ans: Int? = null
 
     fun kthSmallest(root: TreeNode?, k: Int): Int {
@@ -26,8 +26,8 @@ class SolutionApproach0InorderRecursive {
         if (node == null) return
 
         inorder(node.left, k)
-        ++rank
-        if (rank == k) {
+        ++ith
+        if (ith == k) {
             ans = node.`val`
             return
         }
