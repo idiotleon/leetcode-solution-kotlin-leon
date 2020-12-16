@@ -12,30 +12,32 @@ import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
     fun findFrequentTreeSum(root: TreeNode?): IntArray {
-        val freqs = HashMap<Int, Int>()
+        val sumToFreq = HashMap<Int, Int>()
         val maxCnt = intArrayOf(0)
 
-        postorder(root, freqs, maxCnt)
+        postorder(root, sumToFreq, maxCnt)
 
-        val ans = ArrayList<Int>()
-        for ((sum, freq) in freqs) {
+        val ans = mutableListOf<Int>()
+        for ((sum, freq) in sumToFreq) {
             if (freq == maxCnt[0]) ans.add(sum)
         }
 
         return ans.toIntArray()
     }
 
-    private fun postorder(node: TreeNode?,
-                          freqs: HashMap<Int, Int>,
-                          maxCnt: IntArray): Int {
+    private fun postorder(
+        node: TreeNode?,
+        sumToFreq: HashMap<Int, Int>,
+        maxCnt: IntArray
+    ): Int {
         if (node == null) return 0
 
-        val left = postorder(node.left, freqs, maxCnt)
-        val right = postorder(node.right, freqs, maxCnt)
-        val sum = left + right + node.`val`
+        val leftSum = postorder(node.left, sumToFreq, maxCnt)
+        val rightSum = postorder(node.right, sumToFreq, maxCnt)
+        val sum = leftSum + rightSum + node.`val`
 
-        freqs[sum] = 1 + (freqs[sum] ?: 0)
-        maxCnt[0] = maxOf(maxCnt[0], freqs[sum] ?: 0)
+        sumToFreq[sum] = 1 + (sumToFreq[sum] ?: 0)
+        maxCnt[0] = maxOf(maxCnt[0], sumToFreq[sum] ?: 0)
         return sum
     }
 }
