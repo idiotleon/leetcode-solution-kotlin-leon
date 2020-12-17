@@ -11,32 +11,34 @@ import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
+    private var longest = 0
+
     fun longestUnivaluePath(root: TreeNode?): Int {
-        val longest = intArrayOf(0)
-        postorder(root, longest)
-        return longest[0]
+        postorder(root)
+        return longest
     }
 
-    private fun postorder(node: TreeNode?, longest: IntArray): Int {
+    private fun postorder(node: TreeNode?): Int {
         if (node == null) return 0
 
-        val left = postorder(node.left, longest)
-        val right = postorder(node.right, longest)
+        val leftLen = postorder(node.left)
+        val rightLen = postorder(node.right)
 
-        var pathLeft = 0
+        var leftPathLen = 0
         node.left?.let {
-            if (it.`val` == node.`val`)
-                pathLeft = left + 1
+            if (it.`val` == node.`val`) {
+                leftPathLen = 1 + leftLen
+            }
         }
 
-        var pathRight = 0
+        var rightPathLen = 0
         node.right?.let {
-            if (it.`val` == node.`val`)
-                pathRight = right + 1
+            if (it.`val` == node.`val`) {
+                rightPathLen = 1 + rightLen
+            }
         }
 
-        longest[0] = maxOf(longest[0], pathLeft + pathRight)
-
-        return maxOf(pathLeft, pathRight)
+        longest = maxOf(longest, leftPathLen + rightPathLen)
+        return maxOf(leftPathLen, rightPathLen)
     }
 }

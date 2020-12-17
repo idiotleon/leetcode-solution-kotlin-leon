@@ -13,7 +13,7 @@ import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
-class SolutionApproach0Postorder {
+class SolutionApproach0PostorderRecursive2 {
     fun distributeCoins(root: TreeNode?): Int {
         val moves = intArrayOf(0)
         postorder(root, null, moves)
