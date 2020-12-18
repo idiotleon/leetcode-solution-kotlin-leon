@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/shortest-word-distance/
  *
- * Time Complexity:     O(`totalWords` * lenW)
+ * Time Complexity:     O(`nWords` * lenW)
  * Space Complexity:    O(1)
  *
  * References:
@@ -16,7 +16,7 @@ import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
 class SolutionApproach0LinearScan {
     fun shortestDistance(words: Array<String>, word1: String, word2: String): Int {
         // not used
-        // val totalWords = words.size
+        // val nWords = words.size
 
         var shortest = Int.MAX_VALUE
         var idx1: Int? = null
