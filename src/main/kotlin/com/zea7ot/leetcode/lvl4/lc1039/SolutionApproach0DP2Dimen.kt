@@ -10,6 +10,9 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1039
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun minScoreTriangulation(nums: IntArray): Int {
         val nNums = nums.size
@@ -19,8 +22,10 @@ class SolutionApproach0DP2Dimen {
             for (hi in lo + 2 until nNums) {
                 dp[lo][hi] = Int.MAX_VALUE
                 for (k in lo + 1 until hi) {
-                    dp[lo][hi] = minOf(dp[lo][hi],
-                            dp[lo][k] + nums[lo] * nums[k] * nums[hi] + dp[k][hi])
+                    dp[lo][hi] = minOf(
+                        dp[lo][hi],
+                        dp[lo][k] + nums[lo] * nums[k] * nums[hi] + dp[k][hi]
+                    )
                 }
             }
         }

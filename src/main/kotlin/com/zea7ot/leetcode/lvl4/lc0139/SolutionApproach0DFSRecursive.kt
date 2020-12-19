@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0139
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -23,10 +23,12 @@ class SolutionApproach0DFSRecursive {
         return dfs(0, str, seen, wordSet)
     }
 
-    private fun dfs(cur: Int,
-                    str: String,
-                    seen: HashSet<Int>,
-                    wordSet: HashSet<String>): Boolean {
+    private fun dfs(
+        cur: Int,
+        str: String,
+        seen: HashSet<Int>,
+        wordSet: HashSet<String>
+    ): Boolean {
         val lenS = str.length
         if (cur == lenS) return true
         if (seen.contains(cur)) return false

@@ -12,7 +12,7 @@
  */
 package com.zea7ot.leetcode.ood.lvl6.lc0460
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DLL(private val capacity: Int) {
@@ -74,8 +74,10 @@ class SolutionApproach0DLL(private val capacity: Int) {
         freqs[node.count] = newList
     }
 
-    private data class DoublyLinkedList(val dummyHead: DLLNode = DLLNode(-1),
-                                        val dummyTail: DLLNode = DLLNode(-1)) {
+    private data class DoublyLinkedList(
+        val dummyHead: DLLNode = DLLNode(-1),
+        val dummyTail: DLLNode = DLLNode(-1)
+    ) {
 
         var size: Int = 0
 

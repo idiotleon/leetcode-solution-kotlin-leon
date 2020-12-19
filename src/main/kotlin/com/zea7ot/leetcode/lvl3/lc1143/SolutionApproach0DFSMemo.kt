@@ -12,7 +12,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1143
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
@@ -24,9 +24,11 @@ class SolutionApproach0DFSMemo {
         return dfs(0, text1, 0, text2, memo)
     }
 
-    private fun dfs(idx1: Int, str1: String,
-                    idx2: Int, str2: String,
-                    memo: Array<Array<Int?>>): Int {
+    private fun dfs(
+        idx1: Int, str1: String,
+        idx2: Int, str2: String,
+        memo: Array<Array<Int?>>
+    ): Int {
         val len1 = str1.length
         val len2 = str2.length
 

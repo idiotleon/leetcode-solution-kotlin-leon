@@ -13,8 +13,10 @@
  */
 package com.zea7ot.leetcode.ood.lvl4.lc0701
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.random.Random
 
+@Suppress(UNUSED)
 class SolutionApproach0HashMap(N: Int, blocklist: IntArray) {
     private val nBlocked = blocklist.size
 

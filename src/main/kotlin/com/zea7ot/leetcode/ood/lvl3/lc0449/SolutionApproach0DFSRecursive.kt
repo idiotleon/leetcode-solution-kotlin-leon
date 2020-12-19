@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.ood.lvl3.lc0449
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
 
@@ -51,9 +51,11 @@ class SolutionApproach0DFSRecursive {
         return deserialize(Int.MIN_VALUE, Int.MAX_VALUE, queue)
     }
 
-    private fun deserialize(lower: Int,
-                            upper: Int,
-                            queue: LinkedList<String>): TreeNode? {
+    private fun deserialize(
+        lower: Int,
+        upper: Int,
+        queue: LinkedList<String>
+    ): TreeNode? {
         if (queue.isEmpty()) return null
 
         val rootValue = queue.peek().toInt()

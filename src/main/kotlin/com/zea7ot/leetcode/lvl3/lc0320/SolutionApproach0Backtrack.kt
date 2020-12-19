@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0320
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
@@ -19,11 +19,13 @@ class SolutionApproach0Backtrack {
         return ans
     }
 
-    private fun backtrack(idx: Int,
-                          count: Int,
-                          abbr: StringBuilder,
-                          word: String,
-                          res: MutableList<String>) {
+    private fun backtrack(
+        idx: Int,
+        count: Int,
+        abbr: StringBuilder,
+        word: String,
+        res: MutableList<String>
+    ) {
         val len = abbr.length
 
         if (idx == word.length) {

@@ -9,15 +9,16 @@
  */
 package com.zea7ot.leetcode.lvl2.lc0836
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Geometry {
     fun isRectangleOverlap(rec1: IntArray, rec2: IntArray): Boolean {
         if (rec1[0] == rec1[2] // rect1 is a horizontal line segment
-                || rec2[0] == rec2[2] // rect2 is a horizontal line segment
-                || rec1[1] == rec1[3] // rect1 is a horizontal line segment
-                || rec2[1] == rec2[3]) // rect2 is a horizontal line segment
+            || rec2[0] == rec2[2] // rect2 is a horizontal line segment
+            || rec1[1] == rec1[3] // rect1 is a horizontal line segment
+            || rec2[1] == rec2[3]
+        ) // rect2 is a horizontal line segment
             return false
 
         return rec1[2] > rec2[0] // left

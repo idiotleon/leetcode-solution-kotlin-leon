@@ -9,6 +9,9 @@
  */
 package com.zea7ot.leetcode.lvl5.lc0037
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     private companion object {
         private const val RANGE = 9
@@ -47,10 +50,12 @@ class SolutionApproach0Backtrack {
         return false
     }
 
-    private fun isValid(row: Int,
-                        col: Int,
-                        numCh: Char,
-                        board: Array<CharArray>): Boolean {
+    private fun isValid(
+        row: Int,
+        col: Int,
+        numCh: Char,
+        board: Array<CharArray>
+    ): Boolean {
         for (idx in 0 until RANGE) {
             // to check rows
             if (board[row][idx] == numCh) return false

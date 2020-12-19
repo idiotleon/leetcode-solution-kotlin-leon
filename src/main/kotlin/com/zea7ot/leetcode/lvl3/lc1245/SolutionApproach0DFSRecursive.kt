@@ -11,7 +11,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1245
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -27,11 +27,13 @@ class SolutionApproach0DFSRecursive {
         return res.len
     }
 
-    private fun dfs(cur: Int,
-                    parent: Int,
-                    len: Int,
-                    graph: Array<MutableList<Int>>,
-                    res: Res) {
+    private fun dfs(
+        cur: Int,
+        parent: Int,
+        len: Int,
+        graph: Array<MutableList<Int>>,
+        res: Res
+    ) {
 
         if (len > res.len) {
             res.len = len

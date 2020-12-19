@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1631
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach2FloydWarshall {
@@ -33,7 +33,10 @@ class SolutionApproach2FloydWarshall {
 
                         if (nextRow < 0 || nextRow >= totalRows || nextCol < 0 || nextCol >= totalCols) continue
 
-                        dp[row][col] = minOf(dp[row][col], maxOf(dp[nextRow][nextCol], Math.abs(heights[nextRow][nextCol] - heights[row][col])))
+                        dp[row][col] = minOf(
+                            dp[row][col],
+                            maxOf(dp[nextRow][nextCol], Math.abs(heights[nextRow][nextCol] - heights[row][col]))
+                        )
                     }
                 }
             }

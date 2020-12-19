@@ -6,7 +6,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0076
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
@@ -14,9 +14,9 @@ class SolutionApproach0SlidingWindow {
         val lenS = s.length
         val lenT = t.length
 
-        val freqs = IntArray(128) { 0 }
+        val charToFreq = IntArray(128) { 0 }
         for (ch in t) {
-            ++freqs[ch.toInt()]
+            ++charToFreq[ch.toInt()]
         }
 
         var shortest = ""
@@ -25,14 +25,14 @@ class SolutionApproach0SlidingWindow {
         var lo = 0
 
         while (hi < lenS) {
-            if (freqs[s[hi].toInt()]-- > 0) --count
+            if (charToFreq[s[hi].toInt()]-- > 0) --count
 
             while (count == 0) {
                 if (shortest.isEmpty() || (hi - lo + 1) < shortest.length) {
                     shortest = s.substring(lo, hi + 1)
                 }
 
-                if (++freqs[s[lo].toInt()] > 0) {
+                if (++charToFreq[s[lo].toInt()] > 0) {
                     ++count
                 }
 

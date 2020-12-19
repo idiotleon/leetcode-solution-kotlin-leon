@@ -1,5 +1,8 @@
 package com.zea7ot.summary.byDataStructure.tree.segmentTree.binaryTree.rangeSum
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SegmentTree(private val nums: IntArray) {
     private val root = buildTree(0, nums.lastIndex)
 
@@ -54,9 +57,11 @@ class SegmentTree(private val nums: IntArray) {
         return root
     }
 
-    private data class SegmentTreeNode(val start: Int,
-                                       val end: Int,
-                                       var sum: Int = 0,
-                                       var left: SegmentTreeNode? = null,
-                                       var right: SegmentTreeNode? = null)
+    private data class SegmentTreeNode(
+        val start: Int,
+        val end: Int,
+        var sum: Int = 0,
+        var left: SegmentTreeNode? = null,
+        var right: SegmentTreeNode? = null
+    )
 }

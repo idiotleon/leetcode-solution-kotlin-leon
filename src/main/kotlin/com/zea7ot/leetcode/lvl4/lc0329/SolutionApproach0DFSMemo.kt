@@ -8,7 +8,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0329
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
@@ -35,10 +35,12 @@ class SolutionApproach0DFSMemo {
         return longest
     }
 
-    private fun dfs(row: Int,
-                    col: Int,
-                    matrix: Array<IntArray>,
-                    memo: Array<Array<Int?>>): Int {
+    private fun dfs(
+        row: Int,
+        col: Int,
+        matrix: Array<IntArray>,
+        memo: Array<Array<Int?>>
+    ): Int {
         val nRows = matrix.size
         val nCols = matrix[0].size
 

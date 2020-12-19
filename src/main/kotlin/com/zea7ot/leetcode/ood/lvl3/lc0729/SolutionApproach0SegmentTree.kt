@@ -11,7 +11,7 @@
  */
 package com.zea7ot.leetcode.ood.lvl3.lc0729
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree {
@@ -87,10 +87,12 @@ class SolutionApproach0SegmentTree {
         }
     }
 
-    private data class SegmentTreeNode(val lo: Int,
-                                       val hi: Int,
-                                       var maxFreq: Int = 0,
-                                       var lazy: Int = 0,
-                                       var left: SegmentTreeNode? = null,
-                                       var right: SegmentTreeNode? = null)
+    private data class SegmentTreeNode(
+        val lo: Int,
+        val hi: Int,
+        var maxFreq: Int = 0,
+        var lazy: Int = 0,
+        var left: SegmentTreeNode? = null,
+        var right: SegmentTreeNode? = null
+    )
 }

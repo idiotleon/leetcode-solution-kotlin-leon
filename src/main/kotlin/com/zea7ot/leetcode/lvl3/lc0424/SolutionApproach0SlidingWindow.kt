@@ -9,6 +9,9 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0424
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     fun characterReplacement(s: String, k: Int): Int {
         // sanity check

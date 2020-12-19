@@ -7,8 +7,10 @@
  */
 package com.zea7ot.leetcode.lvl2.lc0215
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+@Suppress(UNUSED)
 class SolutionApproach0MinHeap {
     fun findKthLargest(nums: IntArray, k: Int): Int {
         // not used

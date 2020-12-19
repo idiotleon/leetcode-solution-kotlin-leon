@@ -12,7 +12,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0609
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
@@ -39,7 +39,8 @@ class SolutionApproach0HashMap {
             for (idx in 1 until totalStrs) {
                 val str = strs[idx]
                 val contentIdx = str.indexOf(OPEN_PAREN)
-                val content = str.substring(contentIdx + 1).also { it.dropLast(1) } // to trim both chars '(' and ')'                val fileName = dir + SLASH + str.substring(0, contentIdx)
+                val content = str.substring(contentIdx + 1)
+                    .also { it.dropLast(1) } // to trim both chars '(' and ')'                val fileName = dir + SLASH + str.substring(0, contentIdx)
                 val fileName = dir + SLASH + str.substring(0, contentIdx)
                 map.getOrPut(content) { hashSetOf() }.add(fileName)
             }

@@ -11,10 +11,10 @@
  */
 package com.zea7ot.leetcode.lvl5.lc0301
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0DFS {
+class SolutionApproach0DFSRecursive {
     private companion object {
         private const val OPEN = '('
         private const val CLOSED = ')'
@@ -26,12 +26,14 @@ class SolutionApproach0DFS {
         return ans
     }
 
-    private fun dfs(loStart: Int,
-                    hiStart: Int,
-                    str: String,
-                    openParen: Char,
-                    closedParen: Char,
-                    res: MutableList<String>) {
+    private fun dfs(
+        loStart: Int,
+        hiStart: Int,
+        str: String,
+        openParen: Char,
+        closedParen: Char,
+        res: MutableList<String>
+    ) {
 
         val lenS = str.length
 

@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0931
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
@@ -22,9 +22,11 @@ class SolutionApproach0DP2Dimen {
 
         for (row in 1 until size) {
             for (col in 0 until size) {
-                nums[row][col] += minOf(nums[row - 1][maxOf(0, col - 1)],
-                        nums[row - 1][col],
-                        nums[row - 1][minOf(size - 1, col + 1)])
+                nums[row][col] += minOf(
+                    nums[row - 1][maxOf(0, col - 1)],
+                    nums[row - 1][col],
+                    nums[row - 1][minOf(size - 1, col + 1)]
+                )
             }
         }
 

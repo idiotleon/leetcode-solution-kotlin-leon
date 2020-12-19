@@ -3,7 +3,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1101
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0UnionFind {
@@ -13,9 +13,7 @@ class SolutionApproach0UnionFind {
         val uf = UnionFind(N)
 
         for (log in logs) {
-            val timestamp = log[0]
-            val idA = log[1]
-            val idB = log[2]
+            val (timestamp, idA, idB) = log
 
             uf.union(idA, idB)
 

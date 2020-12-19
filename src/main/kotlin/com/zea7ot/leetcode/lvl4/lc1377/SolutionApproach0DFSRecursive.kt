@@ -10,10 +10,10 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1377
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0DFS {
+class SolutionApproach0DFSRecursive {
     class Solution {
         fun frogPosition(n: Int, edges: Array<IntArray>, t: Int, target: Int): Double {
             if (n == 1) return 1.0
@@ -23,12 +23,14 @@ class SolutionApproach0DFS {
             return dfs(0, t, 1.0, target - 1, visited, graph)
         }
 
-        private fun dfs(cur: Int,
-                        time: Int,
-                        probability: Double,
-                        target: Int,
-                        visited: BooleanArray,
-                        graph: Array<ArrayList<Int>>): Double {
+        private fun dfs(
+            cur: Int,
+            time: Int,
+            probability: Double,
+            target: Int,
+            visited: BooleanArray,
+            graph: Array<ArrayList<Int>>
+        ): Double {
             val size = graph[cur].size
 
             if (cur != 0 && size == 1 || time == 0) {

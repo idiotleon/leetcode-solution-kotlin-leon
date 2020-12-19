@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0300.followup
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
@@ -18,9 +18,9 @@ class SolutionApproach0BinarySearch {
         // sanity check, required
         if (nums.isEmpty()) return 0
 
-        val totalNums = nums.size
+        val nNums = nums.size
 
-        val dp = IntArray(totalNums) { 0 }
+        val dp = IntArray(nNums) { 0 }
         var len = 0
 
         for (num in nums) {

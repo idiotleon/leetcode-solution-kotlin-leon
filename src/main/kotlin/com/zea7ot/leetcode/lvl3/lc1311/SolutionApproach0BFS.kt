@@ -2,23 +2,29 @@
  * @author: Leon
  * https://leetcode.com/problems/get-watched-videos-by-your-friends/
  *
- * Time Complexity:     O(`totalFriends`)
- * Space Complexity:    O(`totalFriends`)
+ * Time Complexity:     O(`nFriends`)
+ * Space Complexity:    O(`nFriends`)
  */
 package com.zea7ot.leetcode.lvl3.lc1311
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashMap
 
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
-    fun watchedVideosByFriends(watchedVideos: List<List<String>>, friends: Array<IntArray>, id: Int, level: Int): List<String> {
+    fun watchedVideosByFriends(
+        watchedVideos: List<List<String>>,
+        friends: Array<IntArray>,
+        id: Int,
+        level: Int
+    ): List<String> {
         // not used
-        // val totalFriends = friends.size
+        // val nFriends = friends.size
 
-        val queue = LinkedList<Int>()
-        queue.offer(id)
+        val queue = LinkedList<Int>().also {
+            it.offer(id)
+        }
 
         val seen = hashSetOf(id)
 

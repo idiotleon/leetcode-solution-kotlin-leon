@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1538
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Math {
@@ -35,9 +35,11 @@ class SolutionApproach0Math {
             }
         }
 
-        val rThree = arrayOf(intArrayOf(1, 2, 3, 4),
-                intArrayOf(0, 2, 3, 4),
-                intArrayOf(0, 1, 3, 4))
+        val rThree = arrayOf(
+            intArrayOf(1, 2, 3, 4),
+            intArrayOf(0, 2, 3, 4),
+            intArrayOf(0, 1, 3, 4)
+        )
         for (idx in 0 until 3) {
             if (reader.query(rThree[idx][0], rThree[idx][1], rThree[idx][2], rThree[idx][3]) == r0124) {
                 ++groupA

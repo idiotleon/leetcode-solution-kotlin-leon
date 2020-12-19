@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1463
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
@@ -22,9 +22,11 @@ class SolutionApproach0DFSMemo {
         return dfs(0, 0, nCols - 1, grid, memo)
     }
 
-    private fun dfs(row: Int, col1: Int, col2: Int,
-                    grid: Array<IntArray>,
-                    memo: Array<Array<Array<Int?>>>): Int {
+    private fun dfs(
+        row: Int, col1: Int, col2: Int,
+        grid: Array<IntArray>,
+        memo: Array<Array<Array<Int?>>>
+    ): Int {
 
         val nRows = grid.size
         val nCols = grid[0].size

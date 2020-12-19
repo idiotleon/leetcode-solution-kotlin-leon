@@ -6,7 +6,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0532
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
@@ -16,8 +16,8 @@ class SolutionApproach0LinearScan {
 
         nums.sort()
 
-        val pool = hashSetOf<Int>()
-        val ans = hashSetOf<Int>()
+        val pool = HashSet<Int>()
+        val ans = HashSet<Int>()
 
         for (num in nums) {
             if (pool.contains(num)) ans.add(num)

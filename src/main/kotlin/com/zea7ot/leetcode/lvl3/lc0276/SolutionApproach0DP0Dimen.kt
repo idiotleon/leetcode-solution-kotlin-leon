@@ -11,7 +11,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0276
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP0Dimen {
@@ -24,7 +24,7 @@ class SolutionApproach0DP0Dimen {
         // the previous two are of the different colors
         var diff = k
 
-        for (i in 1 until n) {
+        for (repeat in 1 until n) {
             val prevSame = same
             same = diff
             diff = (prevSame + diff) * (k - 1)

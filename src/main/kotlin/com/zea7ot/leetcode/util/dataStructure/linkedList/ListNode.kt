@@ -1,6 +1,8 @@
 package com.zea7ot.leetcode.util.dataStructure.linkedList
 
 data class ListNode(var `val`: Int, var next: ListNode? = null) {
+
+    // util method for testing purpose only
     companion object {
         fun constructLinkedList(nums: IntArray): ListNode? {
             if (nums.isEmpty()) return null

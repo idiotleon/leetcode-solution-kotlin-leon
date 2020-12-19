@@ -7,9 +7,9 @@
  * References:
  *  https://leetcode.com/problems/single-number/discuss/42997/My-O(n)-solution-using-XOR
  */
-package com.zea7ot.leetcode.lvl2.lc0136.withBitManipulation
+package com.zea7ot.leetcode.lvl2.lc0136.withBit
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Xor {

@@ -9,10 +9,10 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0928
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0DFS {
+class SolutionApproach0DFSRecursive {
     fun minMalwareSpread(graph: Array<IntArray>, initials: IntArray): Int {
         initials.sort()
 
@@ -44,10 +44,12 @@ class SolutionApproach0DFS {
         return res
     }
 
-    private fun dfs(cur: Int,
-                    seen: HashSet<Int>,
-                    mal: HashSet<Int>,
-                    graph: Array<IntArray>): Int {
+    private fun dfs(
+        cur: Int,
+        seen: HashSet<Int>,
+        mal: HashSet<Int>,
+        graph: Array<IntArray>
+    ): Int {
         if (seen.contains(cur)) return 0
         if (mal.contains(cur)) return -1
         seen.add(cur)

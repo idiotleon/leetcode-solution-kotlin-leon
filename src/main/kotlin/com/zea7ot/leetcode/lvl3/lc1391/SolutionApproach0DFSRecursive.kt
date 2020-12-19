@@ -9,17 +9,19 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1391
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     private companion object {
-        private val STREETS = arrayOf(arrayOf(intArrayOf(0, -1), intArrayOf(0, 1)),
-                arrayOf(intArrayOf(-1, 0), intArrayOf(1, 0)),
-                arrayOf(intArrayOf(0, -1), intArrayOf(1, 0)),
-                arrayOf(intArrayOf(0, 1), intArrayOf(1, 0)),
-                arrayOf(intArrayOf(0, -1), intArrayOf(-1, 0)),
-                arrayOf(intArrayOf(-1, 0), intArrayOf(0, 1)))
+        private val STREETS = arrayOf(
+            arrayOf(intArrayOf(0, -1), intArrayOf(0, 1)),
+            arrayOf(intArrayOf(-1, 0), intArrayOf(1, 0)),
+            arrayOf(intArrayOf(0, -1), intArrayOf(1, 0)),
+            arrayOf(intArrayOf(0, 1), intArrayOf(1, 0)),
+            arrayOf(intArrayOf(0, -1), intArrayOf(-1, 0)),
+            arrayOf(intArrayOf(-1, 0), intArrayOf(0, 1))
+        )
     }
 
     fun hasValidPath(grid: Array<IntArray>): Boolean {

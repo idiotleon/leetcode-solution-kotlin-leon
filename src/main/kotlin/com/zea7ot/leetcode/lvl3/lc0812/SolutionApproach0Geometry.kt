@@ -12,7 +12,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0812
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.math.abs
 
 @Suppress(UNUSED)
@@ -34,5 +34,5 @@ class SolutionApproach0Geometry {
     }
 
     private fun getArea(coord0: IntArray, coord1: IntArray, coord2: IntArray) =
-            abs(coord0[0] * (coord1[1] - coord2[1]) + coord1[0] * (coord2[1] - coord0[1]) + coord2[0] * (coord0[1] - coord1[1])) / 2.0
+        abs(coord0[0] * (coord1[1] - coord2[1]) + coord1[0] * (coord2[1] - coord0[1]) + coord2[0] * (coord0[1] - coord1[1])) / 2.0
 }

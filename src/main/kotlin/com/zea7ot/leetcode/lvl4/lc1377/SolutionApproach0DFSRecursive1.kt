@@ -1,16 +1,21 @@
 package com.zea7ot.leetcode.lvl4.lc1377
 
-class SolutionApproach0DFS1 {
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
+class SolutionApproach0DFSRecursive1 {
     fun frogPosition(n: Int, edges: Array<IntArray>, t: Int, target: Int): Double {
         val graph = buildGraph(n, edges)
         return dfs(1, t, 1.0, target, graph)
     }
 
-    private fun dfs(cur: Int,
-                    time: Int,
-                    probability: Double,
-                    target: Int,
-                    graph: Array<HashSet<Int>>): Double {
+    private fun dfs(
+        cur: Int,
+        time: Int,
+        probability: Double,
+        target: Int,
+        graph: Array<HashSet<Int>>
+    ): Double {
 
         if (time < 0) return 0.0
 

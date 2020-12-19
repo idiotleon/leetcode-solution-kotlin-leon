@@ -12,7 +12,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1048
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
@@ -20,14 +20,14 @@ class SolutionApproach0DP2Dimen {
         // sanity check
         if (words.isEmpty()) return 0
 
-        val totalWords = words.size
+        val nWords = words.size
 
         words.sortBy { it.length }
 
-        val dp = IntArray(totalWords) { 1 }
+        val dp = IntArray(nWords) { 1 }
         var longest = 0
 
-        for (hi in 1 until totalWords) {
+        for (hi in 1 until nWords) {
             for (lo in 0 until hi) {
                 val word1 = words[lo]
                 val word2 = words[hi]

@@ -7,7 +7,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0257
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
@@ -25,9 +25,11 @@ class SolutionApproach0Backtrack {
         return paths
     }
 
-    private fun dfs(node: TreeNode?,
-                    builder: StringBuilder,
-                    paths: MutableList<String>) {
+    private fun dfs(
+        node: TreeNode?,
+        builder: StringBuilder,
+        paths: MutableList<String>
+    ) {
         if (node == null) return
 
         val value = node.`val`

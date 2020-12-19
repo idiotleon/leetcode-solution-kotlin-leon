@@ -13,6 +13,9 @@
  */
 package com.zea7ot.leetcode.ood.lvl6.lc0308
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0BinaryIndexedTree(matrix: Array<IntArray>) {
     private val nRows = matrix.size
     private val nCols = if (matrix.isEmpty()) 0 else matrix[0].size

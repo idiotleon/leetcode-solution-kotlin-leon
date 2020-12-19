@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1059
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -19,10 +19,12 @@ class SolutionApproach0DFSRecursive {
         private const val VISITED = 2
     }
 
-    fun leadsToDestination(n: Int,
-                           edges: Array<IntArray>,
-                           source: Int,
-                           destination: Int): Boolean {
+    fun leadsToDestination(
+        n: Int,
+        edges: Array<IntArray>,
+        source: Int,
+        destination: Int
+    ): Boolean {
 
         val graph = buildGraph(n, edges)
 
@@ -31,10 +33,12 @@ class SolutionApproach0DFSRecursive {
         return dfs(source, visited, destination, graph)
     }
 
-    private fun dfs(cur: Int,
-                    visited: IntArray,
-                    destination: Int,
-                    graph: Array<MutableList<Int>>): Boolean {
+    private fun dfs(
+        cur: Int,
+        visited: IntArray,
+        destination: Int,
+        graph: Array<MutableList<Int>>
+    ): Boolean {
 
         if (visited[cur] == VISITING) return false
         if (visited[cur] == VISITED) return true

@@ -7,14 +7,16 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1376
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
-    fun numOfMinutes(n: Int,
-                     headID: Int,
-                     manager: IntArray,
-                     informTime: IntArray): Int {
+    fun numOfMinutes(
+        n: Int,
+        headID: Int,
+        manager: IntArray,
+        informTime: IntArray
+    ): Int {
 
         val graph = buildGraph(n, manager)
 
@@ -23,11 +25,13 @@ class SolutionApproach0DFSRecursive {
         return longest[0]
     }
 
-    private fun dfs(cur: Int,
-                    curTime: Int,
-                    longest: IntArray,
-                    informTime: IntArray,
-                    graph: Array<MutableList<Int>>) {
+    private fun dfs(
+        cur: Int,
+        curTime: Int,
+        longest: IntArray,
+        informTime: IntArray,
+        graph: Array<MutableList<Int>>
+    ) {
 
         val nextTime = curTime + informTime[cur]
         longest[0] = maxOf(longest[0], nextTime)

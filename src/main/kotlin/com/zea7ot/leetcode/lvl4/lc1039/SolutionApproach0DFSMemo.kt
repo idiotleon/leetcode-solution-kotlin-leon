@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1039
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
@@ -21,16 +21,20 @@ class SolutionApproach0DFSMemo {
         return dfs(0, nNums - 1, nums, memo)
     }
 
-    private fun dfs(lo: Int, hi: Int,
-                    nums: IntArray,
-                    memo: Array<Array<Int?>>): Int {
+    private fun dfs(
+        lo: Int, hi: Int,
+        nums: IntArray,
+        memo: Array<Array<Int?>>
+    ): Int {
         memo[lo][hi]?.let { return it }
         if (hi - lo < 2) return 0
 
         var minScore = Int.MAX_VALUE
         for (k in lo + 1 until hi) {
-            minScore = minOf(minScore,
-                    dfs(lo, k, nums, memo) + nums[lo] * nums[k] * nums[hi] + dfs(k, hi, nums, memo))
+            minScore = minOf(
+                minScore,
+                dfs(lo, k, nums, memo) + nums[lo] * nums[k] * nums[hi] + dfs(k, hi, nums, memo)
+            )
         }
 
         memo[lo][hi] = minScore

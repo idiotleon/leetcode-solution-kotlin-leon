@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl5.lc0315
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach1BinarySearchTree {
@@ -60,8 +60,10 @@ class SolutionApproach1BinarySearchTree {
         return count
     }
 
-    private data class TreeNode(val value: Int,
-                                var count: Int = 1,
-                                var left: TreeNode? = null,
-                                var right: TreeNode? = null)
+    private data class TreeNode(
+        val value: Int,
+        var count: Int = 1,
+        var left: TreeNode? = null,
+        var right: TreeNode? = null
+    )
 }

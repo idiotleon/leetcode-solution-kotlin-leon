@@ -10,17 +10,19 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0787
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.ArrayList
 
 @Suppress(UNUSED)
 class SolutionApproach0DijkstraSPF {
-    fun findCheapestPrice(n: Int,
-                          flights: Array<IntArray>,
-                          src: Int,
-                          dst: Int,
-                          K: Int): Int {
+    fun findCheapestPrice(
+        n: Int,
+        flights: Array<IntArray>,
+        src: Int,
+        dst: Int,
+        K: Int
+    ): Int {
 
         // not used
         // total edges

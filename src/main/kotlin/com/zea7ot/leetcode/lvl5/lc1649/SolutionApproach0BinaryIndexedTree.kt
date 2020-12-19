@@ -9,13 +9,12 @@
  */
 package com.zea7ot.leetcode.lvl5.lc1649
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0BinaryIndexedTree {
     private companion object {
         private const val MOD = 1e9.toInt() + 7
-
         private const val RANGE = 1e5.toInt() + 1
     }
 
@@ -28,8 +27,10 @@ class SolutionApproach0BinaryIndexedTree {
         val fenwick = IntArray(RANGE) { 0 }
 
         for (idx in instructions.indices) {
-            ans += minOf(query(instructions[idx] - 1, fenwick),
-                    idx - query(instructions[idx], fenwick)) % MOD
+            ans += minOf(
+                query(instructions[idx] - 1, fenwick),
+                idx - query(instructions[idx], fenwick)
+            ) % MOD
             ans %= MOD
 
             update(instructions[idx], fenwick)

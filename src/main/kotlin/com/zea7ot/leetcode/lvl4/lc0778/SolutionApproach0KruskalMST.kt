@@ -9,6 +9,9 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0778
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0KruskalMST {
     private companion object {
         private val DIRS = intArrayOf(0, -1, 0, 1, 0)

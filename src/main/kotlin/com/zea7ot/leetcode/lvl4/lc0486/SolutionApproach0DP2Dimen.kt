@@ -11,7 +11,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0486
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
@@ -23,8 +23,10 @@ class SolutionApproach0DP2Dimen {
         for (len in 1 until totalNums) {
             for (start in 0 until totalNums - len) {
                 val end = start + len
-                dp[start][end] = maxOf(nums[start] - dp[start + 1][end],
-                        nums[end] - dp[start][end - 1])
+                dp[start][end] = maxOf(
+                    nums[start] - dp[start + 1][end],
+                    nums[end] - dp[start][end - 1]
+                )
             }
         }
 

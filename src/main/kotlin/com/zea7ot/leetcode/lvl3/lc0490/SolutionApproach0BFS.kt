@@ -6,7 +6,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0490
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)
@@ -16,14 +16,16 @@ class SolutionApproach0BFS {
     }
 
     fun hasPath(maze: Array<IntArray>, start: IntArray, destination: IntArray): Boolean {
-        val totalRows = maze.size
-        val totalCols = maze[0].size
+        val nRows = maze.size
+        val nCols = maze[0].size
 
-        val queue = LinkedList<IntArray>()
-        queue.offer(start)
+        val queue = LinkedList<IntArray>().also {
+            it.offer(start)
+        }
 
-        val visited = Array(totalRows) { BooleanArray(totalCols) { false } }
-        visited[start[0]][start[1]] = true
+        val visited = Array(nRows) { BooleanArray(nCols) { false } }
+        val (startRow, startCol) = start
+        visited[startRow][startCol] = true
 
         while (queue.isNotEmpty()) {
             val size = queue.size
@@ -58,9 +60,9 @@ class SolutionApproach0BFS {
     }
 
     private fun isValid(row: Int, col: Int, maze: Array<IntArray>): Boolean {
-        val totalRows = maze.size
-        val totalCols = maze[0].size
+        val nRows = maze.size
+        val nCols = maze[0].size
 
-        return (row in 0 until totalRows) && (col in 0 until totalCols) && maze[row][col] == 0
+        return (row in 0 until nRows) && (col in 0 until nCols) && maze[row][col] == 0
     }
 }

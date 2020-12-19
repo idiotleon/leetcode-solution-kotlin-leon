@@ -10,6 +10,9 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0047
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun permuteUnique(nums: IntArray): List<List<Int>> {
         val nNums = nums.size
@@ -26,10 +29,12 @@ class SolutionApproach0Backtrack {
         return paths
     }
 
-    private fun backtrack(used: BooleanArray,
-                          nums: IntArray,
-                          path: MutableList<Int>,
-                          paths: MutableList<MutableList<Int>>) {
+    private fun backtrack(
+        used: BooleanArray,
+        nums: IntArray,
+        path: MutableList<Int>,
+        paths: MutableList<MutableList<Int>>
+    ) {
 
         val nNums = nums.size
         if (path.size == nNums) {

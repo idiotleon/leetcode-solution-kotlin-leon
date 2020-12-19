@@ -7,9 +7,9 @@
  * References:
  *  https://github.com/phishman3579/java-algorithms-implementation/blob/master/src/com/jwetherell/algorithms/search/UpperBound.java
  */
-package com.zea7ot.summary.byAlgorithm.search.binarySearch
+package com.zea7ot.summary.byAlgorithm.search.binarySearch.integer
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class UpperBound {

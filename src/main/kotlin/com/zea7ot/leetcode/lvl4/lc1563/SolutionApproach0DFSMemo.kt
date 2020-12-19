@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1563
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
@@ -28,8 +28,10 @@ class SolutionApproach0DFSMemo {
     private fun dfs(lo: Int, hi: Int, prefixSums: IntArray, memo: Array<Array<Int?>>): Int {
         if (lo == hi) return 0
 
-        if (lo + 1 == hi) return minOf(prefixSums[lo + 1] - prefixSums[lo],
-                prefixSums[hi + 1] - prefixSums[hi])
+        if (lo + 1 == hi) return minOf(
+            prefixSums[lo + 1] - prefixSums[lo],
+            prefixSums[hi + 1] - prefixSums[hi]
+        )
 
         memo[lo][hi]?.let { return it }
 
@@ -50,9 +52,13 @@ class SolutionApproach0DFSMemo {
                 }
 
                 else -> { // to pick whichever is larger
-                    maxOf(maxSum,
-                            maxOf(dfs(idx + 1, hi, prefixSums, memo),
-                                    dfs(lo, idx, prefixSums, memo)) + leftSum)
+                    maxOf(
+                        maxSum,
+                        maxOf(
+                            dfs(idx + 1, hi, prefixSums, memo),
+                            dfs(lo, idx, prefixSums, memo)
+                        ) + leftSum
+                    )
                 }
             }
         }

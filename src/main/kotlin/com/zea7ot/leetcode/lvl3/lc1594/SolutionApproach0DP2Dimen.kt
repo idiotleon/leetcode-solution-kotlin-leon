@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1594
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
@@ -45,11 +45,15 @@ class SolutionApproach0DP2Dimen {
 
         for (row in 1 until nRows) {
             for (col in 1 until nCols) {
-                dpMax[row][col] = maxOf(maxOf(dpMax[row - 1][col], dpMax[row][col - 1]) * grid[row][col],
-                        minOf(dpMin[row - 1][col], dpMin[row][col - 1]) * grid[row][col])
+                dpMax[row][col] = maxOf(
+                    maxOf(dpMax[row - 1][col], dpMax[row][col - 1]) * grid[row][col],
+                    minOf(dpMin[row - 1][col], dpMin[row][col - 1]) * grid[row][col]
+                )
 
-                dpMin[row][col] = minOf(maxOf(dpMax[row - 1][col], dpMax[row][col - 1]) * grid[row][col],
-                        minOf(dpMin[row - 1][col], dpMin[row][col - 1]) * grid[row][col])
+                dpMin[row][col] = minOf(
+                    maxOf(dpMax[row - 1][col], dpMax[row][col - 1]) * grid[row][col],
+                    minOf(dpMin[row - 1][col], dpMin[row][col - 1]) * grid[row][col]
+                )
             }
         }
 

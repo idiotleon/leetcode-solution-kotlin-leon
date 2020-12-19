@@ -1,6 +1,6 @@
 package com.zea7ot.util
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class UtilSort {
@@ -29,11 +29,11 @@ class UtilSort {
         }
 
         private fun <T : Comparable<T>> isLarger(v: T, w: T) =
-                if (v == w) false
-                else v > w
+            if (v == w) false
+            else v > w
 
         private fun <T : Comparable<T>> isSmaller(v: T, w: T) =
-                if (v == w) false // optimization when reference equals
-                else v < w
+            if (v == w) false // optimization when reference equals
+            else v < w
     }
 }

@@ -7,7 +7,7 @@
  */
 package com.zea7ot.leetcode.lvl1.lc0917
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0HighLowPointers {

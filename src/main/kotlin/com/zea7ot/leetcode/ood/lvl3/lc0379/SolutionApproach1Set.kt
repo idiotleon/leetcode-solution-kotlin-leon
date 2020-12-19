@@ -14,6 +14,9 @@
  */
 package com.zea7ot.leetcode.ood.lvl3.lc0379
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach1Set(private val maxNumbers: Int) {
     private var assigned = 0
     private val recycle = HashSet<Int>()

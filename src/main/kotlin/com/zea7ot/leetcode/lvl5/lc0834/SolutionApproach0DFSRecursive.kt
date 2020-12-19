@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl5.lc0834
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -37,7 +37,14 @@ class SolutionApproach0DFSRecursive {
         ++counts[cur]
     }
 
-    private fun preorder(prev: Int, cur: Int, counts: IntArray, graph: Array<HashSet<Int>>, nNodes: Int, distances: IntArray) {
+    private fun preorder(
+        prev: Int,
+        cur: Int,
+        counts: IntArray,
+        graph: Array<HashSet<Int>>,
+        nNodes: Int,
+        distances: IntArray
+    ) {
         for (next in graph[cur]) {
             if (next == prev) continue
 

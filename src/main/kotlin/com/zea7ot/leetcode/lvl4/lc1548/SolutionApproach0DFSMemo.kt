@@ -9,14 +9,16 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1548
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
-    fun mostSimilar(n: Int,
-                    roads: Array<IntArray>,
-                    names: Array<String>,
-                    targetPath: Array<String>): List<Int> {
+    fun mostSimilar(
+        n: Int,
+        roads: Array<IntArray>,
+        names: Array<String>,
+        targetPath: Array<String>
+    ): List<Int> {
         val nTargets = targetPath.size
         val graph = buildGraph(n, roads)
 
@@ -46,13 +48,15 @@ class SolutionApproach0DFSMemo {
         return ans
     }
 
-    private fun dfs(idxCity: Int,
-                    idxTarget: Int,
-                    distances: Array<Array<Int?>>, // memo
-                    paths: Array<IntArray>,
-                    names: Array<String>,
-                    targetPath: Array<String>,
-                    graph: Array<ArrayList<Int>>): Int {
+    private fun dfs(
+        idxCity: Int,
+        idxTarget: Int,
+        distances: Array<Array<Int?>>, // memo
+        paths: Array<IntArray>,
+        names: Array<String>,
+        targetPath: Array<String>,
+        graph: Array<ArrayList<Int>>
+    ): Int {
 
         distances[idxCity][idxTarget]?.let { return it }
 

@@ -10,6 +10,9 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0877
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun stoneGame(piles: IntArray): Boolean {
         val nPiles = piles.size
@@ -24,19 +27,23 @@ class SolutionApproach0DFSMemo {
         return alexGain > leeGain
     }
 
-    private fun dfs(lo: Int,
-                    hi: Int,
-                    prefixSums: IntArray,
-                    piles: IntArray,
-                    memo: Array<Array<Int?>>): Int {
+    private fun dfs(
+        lo: Int,
+        hi: Int,
+        prefixSums: IntArray,
+        piles: IntArray,
+        memo: Array<Array<Int?>>
+    ): Int {
 
         if (lo > hi) return 0
         memo[lo][hi]?.let { return it }
 
         val sum = prefixSums[hi] - prefixSums[lo] + piles[lo]
         // to minimize the gain of the next player
-        val minNextGain = minOf(dfs(lo + 1, hi, prefixSums, piles, memo),
-                dfs(lo, hi - 1, prefixSums, piles, memo))
+        val minNextGain = minOf(
+            dfs(lo + 1, hi, prefixSums, piles, memo),
+            dfs(lo, hi - 1, prefixSums, piles, memo)
+        )
 
         val curGain = sum - minNextGain
         memo[lo][hi] = curGain

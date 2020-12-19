@@ -7,15 +7,18 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0714
 
-class SolutionApproach0DP0Dimen2{
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
+class SolutionApproach0DP0Dimen2 {
     fun maxProfit(prices: IntArray, fee: Int): Int {
         // sanity check
-        if(prices.isEmpty()) return 0
+        if (prices.isEmpty()) return 0
 
         val n = prices.count()
         var buy = -prices[0]
         var sell = 0
-        for(i in 1 until n){
+        for (i in 1 until n) {
             val tempBuy = buy;
             buy = maxOf(buy, sell - prices[i])
             sell = maxOf(sell, tempBuy + prices[i] - fee)

@@ -17,7 +17,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0545
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
@@ -34,10 +34,12 @@ class SolutionApproach0DFS {
         return ans
     }
 
-    private fun dfs(isLeftBoundary: Boolean,
-                    isRightBoundary: Boolean,
-                    node: TreeNode?,
-                    res: MutableList<Int>) {
+    private fun dfs(
+        isLeftBoundary: Boolean,
+        isRightBoundary: Boolean,
+        node: TreeNode?,
+        res: MutableList<Int>
+    ) {
         if (node == null) return
 
         val value = node.`val`

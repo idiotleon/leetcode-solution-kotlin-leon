@@ -8,11 +8,13 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0863
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet
 
+@Suppress(UNUSED)
 class SolutionApproach0BFS {
     fun distanceK(root: TreeNode?, target: TreeNode?, K: Int): List<Int> {
         val ans = mutableListOf<Int>()
@@ -52,8 +54,10 @@ class SolutionApproach0BFS {
         return ans
     }
 
-    private fun dfs(node: TreeNode?,
-                    childToParent: HashMap<TreeNode, TreeNode>) {
+    private fun dfs(
+        node: TreeNode?,
+        childToParent: HashMap<TreeNode, TreeNode>
+    ) {
         if (node == null) return
 
         node.left?.let { childToParent[it] = node }

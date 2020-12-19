@@ -18,6 +18,9 @@
  */
 package com.zea7ot.leetcode.lvl2.lc0078.withBit
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun subsets(nums: IntArray): List<List<Int>> {
         val nNums = nums.size

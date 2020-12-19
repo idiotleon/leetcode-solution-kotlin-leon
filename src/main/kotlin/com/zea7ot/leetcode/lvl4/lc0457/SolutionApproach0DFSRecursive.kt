@@ -12,10 +12,10 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0457
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0DFS {
+class SolutionApproach0DFSRecursive {
     private companion object {
         private const val NOT_YET_VISITED = 0
         private const val VISITING = 1

@@ -11,7 +11,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1444
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
@@ -31,19 +31,22 @@ class SolutionApproach0DFSMemo {
         val suffixSums = Array(nRows + 1) { IntArray(nCols + 1) { 0 } }
         for (row in nRows - 1 downTo 0) {
             for (col in nCols - 1 downTo 0) {
-                suffixSums[row][col] = suffixSums[row][col + 1] + suffixSums[row + 1][col] - suffixSums[row + 1][col + 1] + if (pizza[row][col] == APPLE) 1 else 0
+                suffixSums[row][col] =
+                    suffixSums[row][col + 1] + suffixSums[row + 1][col] - suffixSums[row + 1][col + 1] + if (pizza[row][col] == APPLE) 1 else 0
             }
         }
 
         return dfs(0, 0, k - 1, nRows, nCols, suffixSums, memo)
     }
 
-    private fun dfs(row: Int,
-                    col: Int,
-                    k: Int,
-                    nRows: Int, nCols: Int,
-                    suffixSums: Array<IntArray>,
-                    memo: Array<Array<Array<Int?>>>): Int {
+    private fun dfs(
+        row: Int,
+        col: Int,
+        k: Int,
+        nRows: Int, nCols: Int,
+        suffixSums: Array<IntArray>,
+        memo: Array<Array<Array<Int?>>>
+    ): Int {
         // if there is no apple left
         if (suffixSums[row][col] == 0) return 0
 

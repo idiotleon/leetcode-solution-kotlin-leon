@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1210
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashSet
 
@@ -85,10 +85,10 @@ class SolutionApproach0BFS {
         fun toHash(): String = "$row#$col#$dir"
 
         override fun equals(other: Any?) =
-                (other is State)
-                        && row == other.row
-                        && col == other.col
-                        && dir == other.dir
+            (other is State)
+                    && row == other.row
+                    && col == other.col
+                    && dir == other.dir
 
         override fun hashCode(): Int {
             return super.hashCode()

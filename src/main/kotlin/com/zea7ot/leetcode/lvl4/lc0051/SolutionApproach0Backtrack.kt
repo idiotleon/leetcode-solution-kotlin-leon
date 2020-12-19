@@ -11,7 +11,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0051
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
@@ -28,9 +28,11 @@ class SolutionApproach0Backtrack {
         return ans
     }
 
-    private fun backtrack(row: Int,
-                          board: MutableList<CharArray>,
-                          res: MutableList<List<String>>) {
+    private fun backtrack(
+        row: Int,
+        board: MutableList<CharArray>,
+        res: MutableList<List<String>>
+    ) {
 
         val nRows = board.size
         if (row == nRows) {
@@ -47,14 +49,17 @@ class SolutionApproach0Backtrack {
         }
     }
 
-    private fun isValid(row: Int,
-                        col: Int,
-                        board: MutableList<CharArray>): Boolean {
+    private fun isValid(
+        row: Int,
+        col: Int,
+        board: MutableList<CharArray>
+    ): Boolean {
 
         for (i in board.indices) {
             for (j in board[i].indices) {
                 if (board[i][j] == QUEEN
-                        && (row + j == col + i || row + col == i + j || col == j))
+                    && (row + j == col + i || row + col == i + j || col == j)
+                )
                     return false
             }
         }

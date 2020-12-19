@@ -10,9 +10,11 @@
  */
 package com.zea7ot.leetcode.lvl5.lc1036
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashSet
 
+@Suppress(UNUSED)
 class SolutionApproach0BFS {
     private companion object {
         private val DIRS = arrayOf(0, -1, 0, 1, 0)

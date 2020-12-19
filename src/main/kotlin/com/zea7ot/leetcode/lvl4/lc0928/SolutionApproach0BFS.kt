@@ -10,9 +10,8 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0928
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
-import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
 @Suppress(UNUSED)
@@ -20,7 +19,7 @@ class SolutionApproach0BFS {
     fun minMalwareSpread(graph: Array<IntArray>, initials: IntArray): Int {
         val totalNodes = graph.size
 
-        val map = HashMap<Int, ArrayList<Int>>()
+        val map = HashMap<Int, MutableList<Int>>()
         for (malware in initials) {
             val seen = initials.toHashSet()
 
@@ -39,7 +38,7 @@ class SolutionApproach0BFS {
                             queue.offer(next)
                             // to build up the graph/connection
                             // among this `malware` and its directly infected nodes
-                            map.getOrPut(next) { arrayListOf() }.add(malware)
+                            map.getOrPut(next) { mutableListOf() }.add(malware)
                         }
                     }
                 }

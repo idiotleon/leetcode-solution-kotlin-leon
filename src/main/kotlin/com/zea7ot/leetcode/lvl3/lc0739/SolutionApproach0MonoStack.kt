@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0739
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)
@@ -18,10 +18,10 @@ class SolutionApproach0MonoStack {
     class Solution {
         fun dailyTemperatures(T: IntArray): IntArray {
 
-            val totalTs = T.size
+            val nTs = T.size
             val stack = LinkedList<Int>()
 
-            val ans = IntArray(totalTs) { 0 }
+            val ans = IntArray(nTs) { 0 }
 
             for (idx in T.indices) {
                 while (stack.isNotEmpty() && T[stack.peek()] < T[idx]) {

@@ -1,6 +1,6 @@
 package com.zea7ot.summary.byDataStructure.linkedList
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.linkedList.ListNode
 
 @Suppress(UNUSED)

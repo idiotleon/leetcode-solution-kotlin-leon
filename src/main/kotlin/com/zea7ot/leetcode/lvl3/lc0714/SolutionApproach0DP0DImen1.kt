@@ -10,10 +10,13 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0714
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DP0DImen1 {
     fun maxProfit(prices: IntArray, fee: Int): Int {
         // sanity check
-        if(prices.isEmpty()) return 0
+        if (prices.isEmpty()) return 0
 
         var hold = Int.MIN_VALUE
         var sold = 0

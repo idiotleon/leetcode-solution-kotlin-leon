@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl5.lc0691.withBit
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashSet
 

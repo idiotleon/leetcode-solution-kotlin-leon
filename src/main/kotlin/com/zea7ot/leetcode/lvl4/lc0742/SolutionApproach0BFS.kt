@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0742
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
 import kotlin.collections.HashMap
@@ -58,9 +58,11 @@ class SolutionApproach0BFS {
         return -1
     }
 
-    private fun dfs(node: TreeNode?,
-                    map: HashMap<TreeNode, TreeNode>,
-                    targetKey: Int) {
+    private fun dfs(
+        node: TreeNode?,
+        map: HashMap<TreeNode, TreeNode>,
+        targetKey: Int
+    ) {
         if (node == null) return
 
         if (node.`val` == targetKey) start = node

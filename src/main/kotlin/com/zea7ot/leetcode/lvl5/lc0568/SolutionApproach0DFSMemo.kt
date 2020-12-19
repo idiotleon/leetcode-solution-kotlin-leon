@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl5.lc0568
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
@@ -21,7 +21,13 @@ class SolutionApproach0DFSMemo {
         return dfs(0, 0, flights, days, memo)
     }
 
-    private fun dfs(curWeek: Int, curCity: Int, flights: Array<IntArray>, days: Array<IntArray>, memo: Array<Array<Int?>>): Int {
+    private fun dfs(
+        curWeek: Int,
+        curCity: Int,
+        flights: Array<IntArray>,
+        days: Array<IntArray>,
+        memo: Array<Array<Int?>>
+    ): Int {
         val nWeeks = days[0].size
         val nCities = days.size
 

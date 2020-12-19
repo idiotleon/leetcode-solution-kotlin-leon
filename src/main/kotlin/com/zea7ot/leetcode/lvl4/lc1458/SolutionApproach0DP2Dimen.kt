@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1458
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
@@ -27,10 +27,11 @@ class SolutionApproach0DP2Dimen {
                 largest = maxOf(largest, product)
                 product = maxOf(0, product)
 
-                dp[idx1 + 1][idx2 + 1] = maxOf(dp[idx1][idx2] + product,
-                        dp[idx1 + 1][idx2],
-                        dp[idx1][idx2 + 1])
-
+                dp[idx1 + 1][idx2 + 1] = maxOf(
+                    dp[idx1][idx2] + product,
+                    dp[idx1 + 1][idx2],
+                    dp[idx1][idx2 + 1]
+                )
             }
         }
 

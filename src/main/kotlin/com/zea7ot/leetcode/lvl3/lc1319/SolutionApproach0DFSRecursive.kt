@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1319
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -30,9 +30,11 @@ class SolutionApproach0DFSRecursive {
         return components - 1
     }
 
-    private fun dfs(cur: Int,
-                    visited: BooleanArray,
-                    graph: Array<MutableList<Int>>): Int {
+    private fun dfs(
+        cur: Int,
+        visited: BooleanArray,
+        graph: Array<MutableList<Int>>
+    ): Int {
 
         if (visited[cur]) return 0
 

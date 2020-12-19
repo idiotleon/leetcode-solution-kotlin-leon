@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1547
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo1 {
@@ -29,8 +29,10 @@ class SolutionApproach0DFSMemo1 {
             if (cuts[idx] <= lo || cuts[idx] >= hi) continue
 
             val cost = hi - lo
-            minCost = minOf(minCost,
-                    dfs(lo, cuts[idx], cuts, memo) + cost + dfs(cuts[idx], hi, cuts, memo))
+            minCost = minOf(
+                minCost,
+                dfs(lo, cuts[idx], cuts, memo) + cost + dfs(cuts[idx], hi, cuts, memo)
+            )
         }
 
         if (minCost == Int.MAX_VALUE) minCost = 0

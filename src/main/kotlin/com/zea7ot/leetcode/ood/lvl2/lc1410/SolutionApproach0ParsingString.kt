@@ -9,18 +9,19 @@
  */
 package com.zea7ot.leetcode.ood.lvl2.lc1410
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0ParsingString {
     private companion object {
         private val map = hashMapOf(
-                "&quot;" to "\"",
-                "&apos;" to "'",
-                "&amp;" to "&",
-                "&gt;" to ">",
-                "&lt;" to "<",
-                "&frasl;" to "/")
+            "&quot;" to "\"",
+            "&apos;" to "'",
+            "&amp;" to "&",
+            "&gt;" to ">",
+            "&lt;" to "<",
+            "&frasl;" to "/"
+        )
 
         private const val AMPERSAND = '&'
         private const val SEMICOLON = ';'

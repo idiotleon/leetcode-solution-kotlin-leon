@@ -16,7 +16,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0332
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
@@ -42,13 +42,15 @@ class SolutionApproach0HierholzersAlgorithm {
         val path = ArrayList<String>()
         postorder(START, graph, path)
         path.reverse()
-        
+
         return path
     }
 
-    private fun postorder(start: String,
-                          graph: Map<String, PriorityQueue<String>>,
-                          path: ArrayList<String>) {
+    private fun postorder(
+        start: String,
+        graph: Map<String, PriorityQueue<String>>,
+        path: ArrayList<String>
+    ) {
         graph[start]?.let { destPQ ->
             while (destPQ.isNotEmpty()) {
                 val next = destPQ.poll()

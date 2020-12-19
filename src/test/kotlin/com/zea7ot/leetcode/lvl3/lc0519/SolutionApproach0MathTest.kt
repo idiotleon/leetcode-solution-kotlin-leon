@@ -14,7 +14,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0519
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.random.Random
 
 @Suppress(UNUSED)

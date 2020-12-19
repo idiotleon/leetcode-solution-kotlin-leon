@@ -7,7 +7,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0216.withBit
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
@@ -29,12 +29,14 @@ class SolutionApproach0Backtrack {
         return paths
     }
 
-    private fun backtrack(numStart: Int,
-                          bitMask: Int,
-                          k: Int,
-                          target: Int,
-                          path: MutableList<Int>,
-                          paths: MutableList<MutableList<Int>>) {
+    private fun backtrack(
+        numStart: Int,
+        bitMask: Int,
+        k: Int,
+        target: Int,
+        path: MutableList<Int>,
+        paths: MutableList<MutableList<Int>>
+    ) {
         if (k < 0 || target < 0 || numStart == RANGE + 1) return
 
         if (target == 0) {

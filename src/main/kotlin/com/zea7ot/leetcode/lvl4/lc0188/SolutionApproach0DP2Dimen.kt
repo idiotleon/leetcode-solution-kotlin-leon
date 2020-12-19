@@ -9,6 +9,9 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0188
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun maxProfit(K: Int, prices: IntArray): Int {
         val totalDays = prices.size

@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1066
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.math.abs
 
@@ -38,9 +38,13 @@ class SolutionApproach0DijkstraSPF {
 
             for (idxBike in 0 until totalBikes) {
                 if ((state and (1 shl idxBike)) == 0) {
-                    minHeap.offer(Node(idxWorker + 1,
+                    minHeap.offer(
+                        Node(
+                            idxWorker + 1,
                             state or (1 shl idxBike),
-                            distance + getDistance(workers[idxWorker], bikes[idxBike])))
+                            distance + getDistance(workers[idxWorker], bikes[idxBike])
+                        )
+                    )
                 }
             }
         }

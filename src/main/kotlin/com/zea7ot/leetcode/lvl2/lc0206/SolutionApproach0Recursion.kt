@@ -10,8 +10,10 @@
  */
 package com.zea7ot.leetcode.lvl2.lc0206
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.linkedList.ListNode
 
+@Suppress(UNUSED)
 class SolutionApproach0Recursion {
     fun reverseList(head: ListNode?) = dfs(head)
 

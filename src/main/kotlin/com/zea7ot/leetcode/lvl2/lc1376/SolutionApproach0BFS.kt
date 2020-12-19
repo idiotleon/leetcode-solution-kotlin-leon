@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl2.lc1376
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.ArrayList
 

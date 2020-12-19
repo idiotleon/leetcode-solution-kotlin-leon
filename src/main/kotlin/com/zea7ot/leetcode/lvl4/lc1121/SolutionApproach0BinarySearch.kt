@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1121
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 private class SolutionApproach0BinarySearch {
