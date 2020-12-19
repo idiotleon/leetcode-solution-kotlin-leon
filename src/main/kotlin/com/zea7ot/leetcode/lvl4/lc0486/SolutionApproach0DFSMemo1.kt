@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0486
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo1 {
@@ -32,9 +32,23 @@ class SolutionApproach0DFSMemo1 {
             }
             else -> {
                 if (player == PLAYER1) {
-                    !canWin(PLAYER2, start + 1, end, score1 + nums[start], score2, nums) || !canWin(PLAYER2, start, end - 1, score1 + nums[end], score2, nums)
+                    !canWin(PLAYER2, start + 1, end, score1 + nums[start], score2, nums) || !canWin(
+                        PLAYER2,
+                        start,
+                        end - 1,
+                        score1 + nums[end],
+                        score2,
+                        nums
+                    )
                 } else {
-                    !canWin(PLAYER1, start + 1, end, score1, score2 + nums[start], nums) || !canWin(PLAYER1, start, end - 1, score1, score2 + nums[end], nums)
+                    !canWin(PLAYER1, start + 1, end, score1, score2 + nums[start], nums) || !canWin(
+                        PLAYER1,
+                        start,
+                        end - 1,
+                        score1,
+                        score2 + nums[end],
+                        nums
+                    )
                 }
             }
         }

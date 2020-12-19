@@ -6,22 +6,22 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0055
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
     fun canJump(nums: IntArray): Boolean {
-        val totalNums = nums.size
+        val nNums = nums.size
         var furthest = 0
 
-        for (i in 0 until totalNums) {
+        for (i in 0 until nNums) {
             if (i > furthest) {
                 return false
             }
 
             furthest = maxOf(furthest, i + nums[i])
             // pruning here
-            if (furthest >= totalNums) return true
+            if (furthest >= nNums) return true
         }
 
         return true

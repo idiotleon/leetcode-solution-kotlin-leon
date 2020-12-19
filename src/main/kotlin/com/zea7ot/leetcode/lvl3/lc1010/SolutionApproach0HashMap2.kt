@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/
  *
- * Time Complexity:     O(`totalTimes`)
+ * Time Complexity:     O(`nTimes`)
  * Space Complexity:    O(`RANGE`)
  *
  * References:
@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1010
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0HashMap2 {
@@ -22,7 +22,7 @@ class SolutionApproach0HashMap2 {
 
     fun numPairsDivisibleBy60(times: IntArray): Int {
         // not used
-        // val totalTimes = times.size
+        // val nTimes = times.size
 
         val freqs = IntArray(MOD)
 

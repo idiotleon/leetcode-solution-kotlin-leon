@@ -9,10 +9,10 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1414
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0DFS {
+class SolutionApproach0DFSRecursive {
     fun findMinFibonacciNumbers(k: Int) = dfs(k)
 
     private fun dfs(k: Int): Int {

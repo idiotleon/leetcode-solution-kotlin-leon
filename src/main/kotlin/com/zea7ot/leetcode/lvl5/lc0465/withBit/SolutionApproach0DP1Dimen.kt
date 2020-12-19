@@ -9,6 +9,9 @@
  */
 package com.zea7ot.leetcode.lvl5.lc0465.withBit
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun minTransfers(transactions: Array<IntArray>): Int {
         // not used

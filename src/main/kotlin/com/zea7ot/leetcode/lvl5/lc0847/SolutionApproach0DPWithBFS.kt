@@ -6,10 +6,10 @@
  *
  * References:
  *  https://leetcode.com/problems/shortest-path-visiting-all-nodes/discuss/135686/Java-DP-Solution
-*/
+ */
 package com.zea7ot.leetcode.lvl5.lc0847
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)

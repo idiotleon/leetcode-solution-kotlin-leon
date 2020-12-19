@@ -11,7 +11,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0218
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.Comparator
 import kotlin.collections.ArrayList
@@ -80,13 +80,13 @@ class SolutionApproach0SweepLine {
         }
 
         private val COMPARATOR_BACKUP = Comparator
-                .comparingInt<Building> { it.xCoor }
-                .thenComparing { a, b ->
-                    when {
-                        a.isStart && b.isStart -> b.height.compareTo(a.height)
-                        !(a.isStart || b.isStart) -> a.height.compareTo(b.height)
-                        else -> if (a.isStart) 1 else -1
-                    }
+            .comparingInt<Building> { it.xCoor }
+            .thenComparing { a, b ->
+                when {
+                    a.isStart && b.isStart -> b.height.compareTo(a.height)
+                    !(a.isStart || b.isStart) -> a.height.compareTo(b.height)
+                    else -> if (a.isStart) 1 else -1
                 }
+            }
     }
 }

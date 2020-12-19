@@ -13,7 +13,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0491
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
@@ -25,10 +25,12 @@ class SolutionApproach0Backtrack {
         return paths
     }
 
-    private fun backtrack(idxStart: Int,
-                          path: MutableList<Int>,
-                          nums: IntArray,
-                          paths: MutableList<List<Int>>) {
+    private fun backtrack(
+        idxStart: Int,
+        path: MutableList<Int>,
+        nums: IntArray,
+        paths: MutableList<List<Int>>
+    ) {
         val nNums = nums.size
 
         if (path.size > 1) {

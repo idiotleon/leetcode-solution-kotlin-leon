@@ -1,5 +1,11 @@
+/**
+ *
+ */
 package com.zea7ot.leetcode.lvl2.lc0463
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0Geometry {
     fun islandPerimeter(grid: Array<IntArray>): Int {
         // sanity check

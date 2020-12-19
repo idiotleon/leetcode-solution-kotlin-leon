@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.ood.lvl3.lc0170
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
@@ -28,7 +28,8 @@ class SolutionApproach0HashMap {
         for ((num1, freq) in freqs) {
             val num2 = value - num1
             if ((num1 == num2) && (freq > 1)
-                    || (num1 != num2) && (freqs[num2] != null)) return true
+                || (num1 != num2) && (freqs[num2] != null)
+            ) return true
         }
 
         return false

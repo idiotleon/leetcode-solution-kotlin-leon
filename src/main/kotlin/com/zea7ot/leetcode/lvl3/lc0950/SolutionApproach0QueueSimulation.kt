@@ -1,6 +1,6 @@
 package com.zea7ot.leetcode.lvl3.lc0950
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)

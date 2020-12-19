@@ -9,17 +9,17 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1249
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)
 class SolutionApproach0Stack {
-    fun minRemoveToMakeValid(s: String): String {
+    fun minRemoveToMakeValid(str: String): String {
         // sanity check
-        if (s.isEmpty()) return ""
+        if (str.isEmpty()) return ""
 
-        val lenS = s.length
-        val chs = s.toCharArray()
+        val lenS = str.length
+        val chs = str.toCharArray()
 
         val placeHolder = '*'
         val openParen = '('

@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1519
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
@@ -21,11 +21,13 @@ class SolutionApproach0PostorderRecursive {
         return ans
     }
 
-    private fun dfs(cur: Int,
-                    parent: Int,
-                    labels: String,
-                    graph: Array<MutableList<Int>>,
-                    res: IntArray): IntArray {
+    private fun dfs(
+        cur: Int,
+        parent: Int,
+        labels: String,
+        graph: Array<MutableList<Int>>,
+        res: IntArray
+    ): IntArray {
         val freqs = IntArray(26) { 0 }
         val ch = labels[cur]
 

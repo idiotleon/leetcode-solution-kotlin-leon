@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1547
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
@@ -28,8 +28,10 @@ class SolutionApproach0DP2Dimen {
             for (idx in 0 until nCuts - len) {
                 dp[idx][idx + len] = Int.MAX_VALUE
                 for (k in idx + 1 until idx + len) {
-                    dp[idx][idx + len] = minOf(dp[idx][idx + len],
-                            padded[idx + len] - padded[idx] + dp[idx][k] + dp[k][idx + len])
+                    dp[idx][idx + len] = minOf(
+                        dp[idx][idx + len],
+                        padded[idx + len] - padded[idx] + dp[idx][k] + dp[k][idx + len]
+                    )
                 }
             }
         }

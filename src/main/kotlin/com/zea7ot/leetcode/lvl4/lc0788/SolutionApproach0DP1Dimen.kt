@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0788
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
@@ -31,8 +31,6 @@ class SolutionApproach0DP1Dimen {
                     2, 5, 6, 9 -> {
                         dp[num] = VALID_DIFF
                         ++count
-                    }
-                    else -> {
                     }
                 }
             } else {

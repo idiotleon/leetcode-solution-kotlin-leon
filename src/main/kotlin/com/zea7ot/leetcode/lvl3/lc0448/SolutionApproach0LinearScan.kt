@@ -9,13 +9,13 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0448
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun findDisappearedNumbers(nums: IntArray): List<Int> {
         val nNums = nums.size
-        val ans = ArrayList<Int>()
+        val ans = mutableListOf<Int>()
 
         for (num in nums) {
             nums[(num - 1) % nNums] += nNums

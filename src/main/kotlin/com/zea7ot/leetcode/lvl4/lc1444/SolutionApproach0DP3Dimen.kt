@@ -9,6 +9,9 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1444
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DP3Dimen {
     private companion object {
         private const val MOD = 1e9.toInt() + 7

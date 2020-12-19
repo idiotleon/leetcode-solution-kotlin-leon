@@ -16,7 +16,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0444
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashMap
 
@@ -60,8 +60,10 @@ class SolutionApproach0TopologicalSort {
         return idx == nOrg
     }
 
-    private fun buildGraph(seqs: List<List<Int>>,
-                           indegrees: HashMap<Int, Int>): HashMap<Int, MutableList<Int>> {
+    private fun buildGraph(
+        seqs: List<List<Int>>,
+        indegrees: HashMap<Int, Int>
+    ): HashMap<Int, MutableList<Int>> {
         val graph = HashMap<Int, MutableList<Int>>()
         for (seq in seqs) {
             for (idx in seq.indices) {

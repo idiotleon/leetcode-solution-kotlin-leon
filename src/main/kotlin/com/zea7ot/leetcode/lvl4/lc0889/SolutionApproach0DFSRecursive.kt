@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0889
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
@@ -22,10 +22,12 @@ class SolutionApproach0DFSRecursive {
         return dfs(idxPre, pre, idxPost, post)
     }
 
-    private fun dfs(idxPre: IntArray,
-                    pre: IntArray,
-                    idxPost: IntArray,
-                    post: IntArray): TreeNode? {
+    private fun dfs(
+        idxPre: IntArray,
+        pre: IntArray,
+        idxPost: IntArray,
+        post: IntArray
+    ): TreeNode {
 
         val value = pre[idxPre[0]++]
 

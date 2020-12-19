@@ -10,6 +10,9 @@
  */
 package com.zea7ot.leetcode.lvl5.lc1520
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach4Greedy {
     fun maxNumOfSubstrings(str: String): List<String> {
         // not used
@@ -36,10 +39,12 @@ class SolutionApproach4Greedy {
         return ans
     }
 
-    private fun extend(startIdx: Int,
-                       firstIdxes: IntArray,
-                       lastIdxes: IntArray,
-                       str: String): Int {
+    private fun extend(
+        startIdx: Int,
+        firstIdxes: IntArray,
+        lastIdxes: IntArray,
+        str: String
+    ): Int {
         var endIdx = lastIdxes[str[startIdx] - 'a']
 
         for (idx in startIdx..endIdx) {

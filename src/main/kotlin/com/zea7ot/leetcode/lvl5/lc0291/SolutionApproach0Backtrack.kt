@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl5.lc0291
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
@@ -20,10 +20,12 @@ class SolutionApproach0Backtrack {
         return backtrack(0, pattern, 0, str, seen, map)
     }
 
-    private fun backtrack(idxP: Int, pattern: String,
-                          idxS: Int, str: String,
-                          seen: HashSet<String>,
-                          map: HashMap<Char, String>): Boolean {
+    private fun backtrack(
+        idxP: Int, pattern: String,
+        idxS: Int, str: String,
+        seen: HashSet<String>,
+        map: HashMap<Char, String>
+    ): Boolean {
         val lenP = pattern.length
         val lenS = str.length
 

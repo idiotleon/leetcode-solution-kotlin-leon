@@ -7,7 +7,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1557
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0TopologicalSort {
@@ -19,7 +19,7 @@ class SolutionApproach0TopologicalSort {
             ++degrees[to]
         }
 
-        val ans = ArrayList<Int>()
+        val ans = mutableListOf<Int>()
         for (idx in degrees.indices) {
             if (degrees[idx] == 0) {
                 ans.add(idx)

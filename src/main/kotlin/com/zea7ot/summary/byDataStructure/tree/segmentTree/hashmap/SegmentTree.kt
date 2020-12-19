@@ -7,7 +7,7 @@
  */
 package com.zea7ot.summary.byDataStructure.tree.segmentTree.hashmap
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SegmentTree {

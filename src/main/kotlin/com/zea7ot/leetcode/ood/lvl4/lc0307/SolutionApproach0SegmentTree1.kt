@@ -13,7 +13,7 @@
  */
 package com.zea7ot.leetcode.ood.lvl4.lc0307
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree1(nums: IntArray) {
@@ -65,9 +65,11 @@ class SolutionApproach0SegmentTree1(nums: IntArray) {
             tree[node] = tree[leftNode] + tree[rightNode]
         }
 
-        fun query(rangeLo: Int, rangeHi: Int,
-                  node: Int,
-                  start: Int, end: Int): Int {
+        fun query(
+            rangeLo: Int, rangeHi: Int,
+            node: Int,
+            start: Int, end: Int
+        ): Int {
             if (rangeHi < start || rangeLo > end) return 0
             if (start == end) return nums[start]
 

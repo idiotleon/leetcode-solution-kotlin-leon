@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1102
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearchWithDFS {
@@ -36,10 +36,13 @@ class SolutionApproach0BinarySearchWithDFS {
         var hi = coordinates.size - 1
         while (lo <= hi) {
             val mid = lo + (hi - lo) / 2
-            if (dfs(0, 0,
-                            coordinates[mid].score,
-                            Array(totalRows) { BooleanArray(totalCols) { false } },
-                            nums)) {
+            if (dfs(
+                    0, 0,
+                    coordinates[mid].score,
+                    Array(totalRows) { BooleanArray(totalCols) { false } },
+                    nums
+                )
+            ) {
                 lo = mid + 1
             } else {
                 hi = mid - 1
@@ -52,9 +55,11 @@ class SolutionApproach0BinarySearchWithDFS {
     /**
      * to return whether it can reach the last or not
      */
-    private fun dfs(row: Int, col: Int, min: Int,
-                    seen: Array<BooleanArray>,
-                    nums: Array<IntArray>): Boolean {
+    private fun dfs(
+        row: Int, col: Int, min: Int,
+        seen: Array<BooleanArray>,
+        nums: Array<IntArray>
+    ): Boolean {
         val totalRows = nums.size
         val totalCols = nums[0].size
 

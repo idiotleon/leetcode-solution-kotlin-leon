@@ -9,20 +9,20 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1605
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
     fun restoreMatrix(rowSums: IntArray, colSums: IntArray): Array<IntArray> {
-        val totalRows = rowSums.size
-        val totalCols = colSums.size
+        val nRows = rowSums.size
+        val nCols = colSums.size
 
-        val matrix = Array(totalRows) { IntArray(totalCols) { 0 } }
+        val matrix = Array(nRows) { IntArray(nCols) { 0 } }
 
         var row = 0
         var col = 0
 
-        while (row < totalRows && col < totalCols) {
+        while (row < nRows && col < nCols) {
             matrix[row][col] = minOf(rowSums[row], colSums[col])
             rowSums[row] -= matrix[row][col]
             colSums[col] -= matrix[row][col]

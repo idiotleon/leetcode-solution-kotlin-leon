@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1129
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -35,9 +35,11 @@ class SolutionApproach0DFSRecursive {
         return paths[0]
     }
 
-    private fun dfs(cur: Int, curColor: Int, steps: Int,
-                    redEdges: Array<IntArray>, blueEdges: Array<IntArray>,
-                    paths: Array<IntArray>) {
+    private fun dfs(
+        cur: Int, curColor: Int, steps: Int,
+        redEdges: Array<IntArray>, blueEdges: Array<IntArray>,
+        paths: Array<IntArray>
+    ) {
 
         val edges = if (curColor == COLOR_RED) redEdges else blueEdges
         val otherColor = if (curColor == COLOR_RED) COLOR_BLUE else COLOR_RED

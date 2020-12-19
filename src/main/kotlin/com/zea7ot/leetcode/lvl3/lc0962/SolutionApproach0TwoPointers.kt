@@ -9,17 +9,17 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0962
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     fun maxWidthRamp(nums: IntArray): Int {
-        val totalNums = nums.size
+        val nNums = nums.size
 
-        val rightMax = IntArray(totalNums)
-        for (idx in totalNums - 1 downTo 0) {
-            rightMax[idx] = if (idx == totalNums - 1) {
-                nums[totalNums - 1]
+        val rightMax = IntArray(nNums)
+        for (idx in nNums - 1 downTo 0) {
+            rightMax[idx] = if (idx == nNums - 1) {
+                nums[nNums - 1]
             } else {
                 maxOf(rightMax[idx + 1], nums[idx])
             }
@@ -29,7 +29,7 @@ class SolutionApproach0TwoPointers {
         var hi = 0
         var widest = 0
 
-        while (hi < totalNums) {
+        while (hi < nNums) {
             while (lo < hi && nums[lo] > rightMax[hi]) {
                 ++lo
             }

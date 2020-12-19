@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl2.lc0800
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.math.abs
 
 @Suppress(UNUSED)

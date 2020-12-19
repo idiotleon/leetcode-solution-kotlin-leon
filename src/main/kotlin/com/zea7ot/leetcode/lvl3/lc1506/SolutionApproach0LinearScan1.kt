@@ -1,21 +1,21 @@
 /**
  * https://leetcode.com/problems/find-root-of-n-ary-tree/
  *
- * Time Complexity:     O(`totalNodes`)
- * Space Complexity:    O(`totalNodes`)
+ * Time Complexity:     O(`nNodes`)
+ * Space Complexity:    O(`nNodes`)
  *
  * References:
  *  https://leetcode.com/problems/find-root-of-n-ary-tree/discuss/726453/Java-O(n)-time-with-O(n)-space-and-O(1)-space-follow-up
  */
 package com.zea7ot.leetcode.lvl3.lc1506
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan1 {
     fun findRoot(tree: List<Node>): Node? {
         // not used
-        // val totalNodes = tree.size
+        // val nNodes = tree.size
 
         val seen = HashSet<Node>()
 

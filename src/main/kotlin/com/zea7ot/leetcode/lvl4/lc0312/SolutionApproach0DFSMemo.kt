@@ -10,6 +10,9 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0312
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun maxCoins(nums: IntArray): Int {
         val nNums = nums.size
@@ -33,8 +36,15 @@ class SolutionApproach0DFSMemo {
 
         var maxCoins = 0
         for (k in lo..hi) {
-            maxCoins = maxOf(maxCoins,
-                    dfs(lo, k - 1, padded, memo) + padded[lo - 1] * padded[k] * padded[hi + 1] + dfs(k + 1, hi, padded, memo))
+            maxCoins = maxOf(
+                maxCoins,
+                dfs(lo, k - 1, padded, memo) + padded[lo - 1] * padded[k] * padded[hi + 1] + dfs(
+                    k + 1,
+                    hi,
+                    padded,
+                    memo
+                )
+            )
         }
 
         memo[lo][hi] = maxCoins

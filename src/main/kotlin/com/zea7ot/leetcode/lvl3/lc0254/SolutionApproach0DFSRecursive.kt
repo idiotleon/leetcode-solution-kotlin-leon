@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0254
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -24,10 +24,12 @@ class SolutionApproach0DFSRecursive {
         return paths
     }
 
-    private fun backtrack(n: Int,
-                          factorStart: Int,
-                          path: MutableList<Int>,
-                          paths: MutableList<List<Int>>) {
+    private fun backtrack(
+        n: Int,
+        factorStart: Int,
+        path: MutableList<Int>,
+        paths: MutableList<List<Int>>
+    ) {
 
         if (n == 1 && path.size > 1) {
             paths.add(path.toList())

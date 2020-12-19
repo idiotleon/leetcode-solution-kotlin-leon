@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0448
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan1 {
@@ -26,7 +26,7 @@ class SolutionApproach0LinearScan1 {
         }
 
 
-        val ans = ArrayList<Int>()
+        val ans = mutableListOf<Int>()
         for (idx in nums.indices) {
             if (nums[idx] != idx + 1) {
                 ans.add(idx + 1)

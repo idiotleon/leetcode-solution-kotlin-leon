@@ -9,6 +9,9 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0121.followup
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DP {
     fun maxProfit(prices: IntArray): Int {
         // sanity check

@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1320
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.math.abs
 
 @Suppress(UNUSED)
@@ -28,8 +28,10 @@ class SolutionApproach0DFSMemo {
         val idx2 = if (ch2 == null) 0 else ch2 - 'A' + 1
 
         if (memo[idx1][idx2][idxCh] == null) {
-            memo[idx1][idx2][idxCh] = minOf(getDistance(ch1, word[idxCh]) + dfs(word[idxCh], ch2, 1 + idxCh, word, memo),
-                    getDistance(ch2, word[idxCh]) + dfs(ch1, word[idxCh], 1 + idxCh, word, memo))
+            memo[idx1][idx2][idxCh] = minOf(
+                getDistance(ch1, word[idxCh]) + dfs(word[idxCh], ch2, 1 + idxCh, word, memo),
+                getDistance(ch2, word[idxCh]) + dfs(ch1, word[idxCh], 1 + idxCh, word, memo)
+            )
         }
 
         return memo[idx1][idx2][idxCh]!!

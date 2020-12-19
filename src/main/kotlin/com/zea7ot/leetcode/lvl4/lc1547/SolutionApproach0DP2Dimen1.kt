@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1547
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen1 {
@@ -26,8 +26,10 @@ class SolutionApproach0DP2Dimen1 {
         for (lo in nCuts - 1 downTo 0) {
             for (hi in lo + 1 until nCuts) {
                 for (k in lo + 1 until hi) {
-                    dp[lo][hi] = minOf(if (dp[lo][hi] == 0) Int.MAX_VALUE else dp[lo][hi],
-                            padded[hi] - padded[lo] + dp[lo][k] + dp[k][hi])
+                    dp[lo][hi] = minOf(
+                        if (dp[lo][hi] == 0) Int.MAX_VALUE else dp[lo][hi],
+                        padded[hi] - padded[lo] + dp[lo][k] + dp[k][hi]
+                    )
                 }
             }
         }

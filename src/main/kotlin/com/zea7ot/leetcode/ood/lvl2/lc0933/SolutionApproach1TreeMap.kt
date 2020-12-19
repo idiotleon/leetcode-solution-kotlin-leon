@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.ood.lvl2.lc0933
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach1TreeMap {

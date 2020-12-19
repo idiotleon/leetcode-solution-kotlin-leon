@@ -10,6 +10,9 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0081
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun search(nums: IntArray, target: Int): Boolean {
         val nNums = nums.size

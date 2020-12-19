@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0934
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)
@@ -66,10 +66,12 @@ class SolutionApproach0BFS {
         return -1
     }
 
-    private fun dfs(row: Int, col: Int,
-                    visited: Array<BooleanArray>,
-                    grid: Array<IntArray>,
-                    queue: LinkedList<Point>) {
+    private fun dfs(
+        row: Int, col: Int,
+        visited: Array<BooleanArray>,
+        grid: Array<IntArray>,
+        queue: LinkedList<Point>
+    ) {
         val nRows = grid.size
         val nCols = grid[0].size
 

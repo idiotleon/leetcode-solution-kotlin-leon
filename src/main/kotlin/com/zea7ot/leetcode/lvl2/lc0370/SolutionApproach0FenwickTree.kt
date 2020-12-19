@@ -1,8 +1,16 @@
+/**
+ *
+ */
 package com.zea7ot.leetcode.lvl2.lc0370
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0FenwickTree {
-    fun getModifiedArray(length: Int,
-                         updates: Array<IntArray>): IntArray {
+    fun getModifiedArray(
+        length: Int,
+        updates: Array<IntArray>
+    ): IntArray {
         val fenwick = IntArray(length) { 0 }
 
         for (update in updates) {

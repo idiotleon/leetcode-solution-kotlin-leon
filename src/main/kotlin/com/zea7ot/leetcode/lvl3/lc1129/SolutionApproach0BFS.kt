@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1129
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashSet
 
@@ -28,9 +28,11 @@ class SolutionApproach0BFS {
 
         val graph = buildGraph(redEdges, blueEdges, n)
 
-        val queue = LinkedList<Node>()
-        queue.offer(Node(0, COLOR_RED))
-        queue.offer(Node(0, COLOR_BLUE))
+        val queue = LinkedList<Node>().also {
+            it.offer(Node(0, COLOR_RED))
+            it.offer(Node(0, COLOR_BLUE))
+        }
+
 
         // shortest path, or BFS level
         var shortest = 1

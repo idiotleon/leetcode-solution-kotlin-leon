@@ -6,7 +6,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0797
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -19,11 +19,13 @@ class SolutionApproach0DFSRecursive {
         return ans
     }
 
-    private fun dfs(cur: Int,
-                    path: MutableList<Int>,
-                    graph: Array<IntArray>,
-                    destination: Int,
-                    paths: MutableList<MutableList<Int>>) {
+    private fun dfs(
+        cur: Int,
+        path: MutableList<Int>,
+        graph: Array<IntArray>,
+        destination: Int,
+        paths: MutableList<MutableList<Int>>
+    ) {
 
         if (cur == destination) {
             paths.add(path.toMutableList())

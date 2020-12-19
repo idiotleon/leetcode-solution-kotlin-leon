@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1140
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
@@ -19,17 +19,19 @@ class SolutionApproach0DFSMemo {
         for (idx in nPiles - 2 downTo 0) {
             suffixSums[idx] += suffixSums[idx + 1]
         }
-        
+
         val memo = Array(nPiles) { Array<Int?>(nPiles) { null } }
 
         return dfs(0, 1, suffixSums, nPiles, memo)
     }
 
-    private fun dfs(player: Int,
-                    m: Int,
-                    suffixSums: IntArray,
-                    nPiles: Int,
-                    memo: Array<Array<Int?>>): Int {
+    private fun dfs(
+        player: Int,
+        m: Int,
+        suffixSums: IntArray,
+        nPiles: Int,
+        memo: Array<Array<Int?>>
+    ): Int {
 
         if (player + 2 * m >= nPiles) return suffixSums[player]
 
@@ -38,8 +40,10 @@ class SolutionApproach0DFSMemo {
         var max = 0
         for (i in 1..2 * m) {
             val take = suffixSums[player] - suffixSums[player + i]
-            max = maxOf(max,
-                    take + suffixSums[player + i] - dfs(player + i, maxOf(i, m), suffixSums, nPiles, memo))
+            max = maxOf(
+                max,
+                take + suffixSums[player + i] - dfs(player + i, maxOf(i, m), suffixSums, nPiles, memo)
+            )
         }
 
         memo[player][m] = max

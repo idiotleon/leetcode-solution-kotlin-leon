@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl5.lc0315
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree {
@@ -77,11 +77,13 @@ class SolutionApproach0SegmentTree {
         }
     }
 
-    private data class SegmentTreeNode(val min: Int,
-                                       val max: Int,
-                                       var count: Int = 0,
-                                       var left: SegmentTreeNode? = null,
-                                       var right: SegmentTreeNode? = null) {
+    private data class SegmentTreeNode(
+        val min: Int,
+        val max: Int,
+        var count: Int = 0,
+        var left: SegmentTreeNode? = null,
+        var right: SegmentTreeNode? = null
+    ) {
         fun getMid() = ((max + 1 - min) / 2 + min)
     }
 }

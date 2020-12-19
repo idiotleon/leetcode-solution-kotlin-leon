@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1255
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack1 {
@@ -24,10 +24,12 @@ class SolutionApproach0Backtrack1 {
         return dfs(0, freqs, score, words)
     }
 
-    private fun dfs(idx: Int,
-                    freqs: IntArray,
-                    score: IntArray,
-                    words: Array<String>): Int {
+    private fun dfs(
+        idx: Int,
+        freqs: IntArray,
+        score: IntArray,
+        words: Array<String>
+    ): Int {
 
         val nWords = words.size
         if (idx == nWords) return 0

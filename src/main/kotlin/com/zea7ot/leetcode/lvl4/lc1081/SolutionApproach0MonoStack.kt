@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1081
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
@@ -27,8 +27,9 @@ class SolutionApproach0MonoStack {
         for (idx in 0 until lenS) {
             if (used[s[idx] - 'a'] == 0) {
                 while (builder.isNotEmpty()
-                        && builder.last() >= s[idx]
-                        && remaining[builder.last() - 'a'] > 0) {
+                    && builder.last() >= s[idx]
+                    && remaining[builder.last() - 'a'] > 0
+                ) {
 
                     --used[builder.last() - 'a']
                     builder.deleteCharAt(builder.length - 1)

@@ -11,7 +11,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0052
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
@@ -27,12 +27,14 @@ class SolutionApproach0Backtrack {
         return count[0]
     }
 
-    private fun backtrack(row: Int,
-                          cols: BooleanArray,
-                          diag: BooleanArray,
-                          antiDiag: BooleanArray,
-                          n: Int,
-                          count: IntArray) {
+    private fun backtrack(
+        row: Int,
+        cols: BooleanArray,
+        diag: BooleanArray,
+        antiDiag: BooleanArray,
+        n: Int,
+        count: IntArray
+    ) {
 
         if (row == n) ++count[0]
 

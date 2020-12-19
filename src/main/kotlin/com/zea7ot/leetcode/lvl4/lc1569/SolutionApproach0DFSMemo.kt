@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1569
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
@@ -23,9 +23,11 @@ class SolutionApproach0DFSMemo {
         return dfs(1, nNums, nums, memo).toInt() - 1
     }
 
-    private fun dfs(lo: Int, hi: Int,
-                    nums: IntArray,
-                    memo: Array<Array<Long?>>): Long {
+    private fun dfs(
+        lo: Int, hi: Int,
+        nums: IntArray,
+        memo: Array<Array<Long?>>
+    ): Long {
         if (lo > hi) return 1L
 
         var idx = 0

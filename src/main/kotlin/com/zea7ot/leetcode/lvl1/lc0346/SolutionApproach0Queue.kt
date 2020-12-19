@@ -6,8 +6,10 @@
  */
 package com.zea7ot.leetcode.lvl1.lc0346
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.LinkedList
 
+@Suppress(UNUSED)
 class SolutionApproach0Queue(private val size: Int) {
     private var sum = 0
     private val queue = LinkedList<Int>()

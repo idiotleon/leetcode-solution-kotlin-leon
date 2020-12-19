@@ -2,12 +2,12 @@
  * References:
  *  https://leetcode.com/problems/falling-squares/solution/
  */
-package com.zea7ot.summary.byDataStructure.tree.segmentTree
+package com.zea7ot.summary.byDataStructure.tree.segmentTree.technique
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class Technique {
+class RangeCompression {
     fun compressRange(intervals: List<List<Int>>): HashMap<Int, Int> {
         val coordSet = HashSet<Int>()
         for ((start, end) in intervals) {

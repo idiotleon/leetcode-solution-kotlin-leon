@@ -11,7 +11,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1314
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0PrefixSums {
@@ -22,7 +22,8 @@ class SolutionApproach0PrefixSums {
         val rangeSums = Array(m + 1) { IntArray(n + 1) { 0 } }
         for (row in 0 until m) {
             for (col in 0 until n) {
-                rangeSums[row + 1][col + 1] = rangeSums[row + 1][col] + rangeSums[row][col + 1] - rangeSums[row][col] + mat[row][col]
+                rangeSums[row + 1][col + 1] =
+                    rangeSums[row + 1][col] + rangeSums[row][col + 1] - rangeSums[row][col] + mat[row][col]
             }
         }
 
@@ -34,7 +35,8 @@ class SolutionApproach0PrefixSums {
                 val row2 = minOf(m, row + K + 1)
                 val col2 = minOf(n, col + K + 1)
 
-                ans[row][col] = rangeSums[row2][col2] - rangeSums[row2][col1] - rangeSums[row1][col2] + rangeSums[row1][col1]
+                ans[row][col] =
+                    rangeSums[row2][col2] - rangeSums[row2][col1] - rangeSums[row1][col2] + rangeSums[row1][col1]
             }
         }
 

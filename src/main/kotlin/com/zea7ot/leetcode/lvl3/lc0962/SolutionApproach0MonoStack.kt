@@ -10,23 +10,23 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0962
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
     fun maxWidthRamp(nums: IntArray): Int {
-        val totalNums = nums.size
+        val nNums = nums.size
         val stack = LinkedList<Int>()
         var widest = 0
 
-        for (i in 0 until totalNums) {
+        for (i in 0 until nNums) {
             if (stack.isEmpty() || nums[stack.peek()] > nums[i]) {
                 stack.push(i)
             }
         }
 
-        for (i in totalNums - 1 downTo widest + 1) {
+        for (i in nNums - 1 downTo widest + 1) {
             while (stack.isNotEmpty() && nums[stack.peek()] <= nums[i]) {
                 widest = maxOf(widest, i - stack.pop())
             }

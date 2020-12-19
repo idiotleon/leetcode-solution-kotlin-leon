@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1293
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)
@@ -23,12 +23,13 @@ class SolutionApproach0BFS {
     }
 
     fun shortestPath(grid: Array<IntArray>, k: Int): Int {
-        val totalRows = grid.size
-        val totalCols = grid[0].size
+        val nRows = grid.size
+        val nCols = grid[0].size
 
-        val seen = Array(totalRows) { Array<Int?>(totalCols) { null } }
-        val queue = LinkedList<Node>()
-        queue.offer(Node(0, 0, k))
+        val seen = Array(nRows) { Array<Int?>(nCols) { null } }
+        val queue = LinkedList<Node>().also {
+            it.offer(Node(0, 0, k))
+        }
 
         var steps = 0
         while (queue.isNotEmpty()) {
@@ -40,13 +41,13 @@ class SolutionApproach0BFS {
                 val col = cur.col
                 val kCur = cur.k
                 // to return `steps` after reaching the destination
-                if (row == totalRows - 1 && col == totalCols - 1) return steps
+                if (row == nRows - 1 && col == nCols - 1) return steps
 
                 for (d in 0 until 4) {
                     val newRow = row + DIRS[d]
                     val newCol = col + DIRS[d + 1]
 
-                    if (newRow < 0 || newRow >= totalRows || newCol < 0 || newCol >= totalCols) continue
+                    if (newRow < 0 || newRow >= nRows || newCol < 0 || newCol >= nCols) continue
                     val kLeft = if (grid[newRow][newCol] == OBSTACLE) kCur - 1 else kCur
 
                     // equivalently

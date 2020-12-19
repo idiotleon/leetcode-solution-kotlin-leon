@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0990
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -47,10 +47,12 @@ class SolutionApproach0DFSRecursive {
     }
 
     // `cur` and `nxt` should not be connected
-    private fun hasConflict(cur: Char,
-                            nxt: Char,
-                            seen: HashSet<Char>,
-                            graph: Map<Char, HashSet<Char>>): Boolean {
+    private fun hasConflict(
+        cur: Char,
+        nxt: Char,
+        seen: HashSet<Char>,
+        graph: Map<Char, HashSet<Char>>
+    ): Boolean {
         if (cur == nxt) return true
         seen.add(cur)
 

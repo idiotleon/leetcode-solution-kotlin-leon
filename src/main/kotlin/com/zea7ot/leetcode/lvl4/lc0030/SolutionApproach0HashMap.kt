@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0030
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
@@ -21,13 +21,13 @@ class SolutionApproach0HashMap {
         val nWords = words.size
         val lenW = words[0].length
 
-        val freqs = HashMap<String, Int>()
+        val wordToFreq = HashMap<String, Int>()
         for (word in words) {
-            freqs[word] = 1 + (freqs[word] ?: 0)
+            wordToFreq[word] = 1 + (wordToFreq[word] ?: 0)
         }
 
         for (lo in 0..lenS - nWords * lenW) {
-            val copy = freqs.toMutableMap()
+            val copy = wordToFreq.toMutableMap()
             for (hi in 0 until nWords) {
                 val nextWord = str.substring(lo + hi * lenW, lo + hi * lenW + lenW)
                 if (copy.containsKey(nextWord)) {

@@ -16,7 +16,7 @@
  */
 package com.zea7ot.leetcode.ood.lvl5.lc1622
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0PrefixSums() {

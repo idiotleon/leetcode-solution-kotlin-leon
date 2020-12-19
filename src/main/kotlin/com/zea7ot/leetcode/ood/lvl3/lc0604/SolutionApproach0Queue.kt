@@ -13,11 +13,11 @@
  */
 package com.zea7ot.leetcode.ood.lvl3.lc0604
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)
-class SolutionApproach0Queue(private val compressedString: String) {
+class SolutionApproach0Queue(compressedString: String) {
     private val lenS = compressedString.length
     private val queue = LinkedList<Node>()
 

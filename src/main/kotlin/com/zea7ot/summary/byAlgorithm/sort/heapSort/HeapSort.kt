@@ -8,7 +8,7 @@
  */
 package com.zea7ot.summary.byAlgorithm.sort.heapSort
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class HeapSort {

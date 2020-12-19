@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0489
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
@@ -23,11 +23,13 @@ class SolutionApproach0Backtrack {
         return backtrack(0, 0, 0, seen, robot)
     }
 
-    private fun backtrack(row: Int,
-                          col: Int,
-                          dir: Int,
-                          seen: HashSet<String>,
-                          robot: FakeRobot) {
+    private fun backtrack(
+        row: Int,
+        col: Int,
+        dir: Int,
+        seen: HashSet<String>,
+        robot: FakeRobot
+    ) {
         robot.clean()
 
         for (d in 0 until 4) {

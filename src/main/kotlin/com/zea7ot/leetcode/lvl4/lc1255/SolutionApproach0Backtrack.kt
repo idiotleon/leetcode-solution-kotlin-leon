@@ -12,7 +12,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1255
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
@@ -26,10 +26,12 @@ class SolutionApproach0Backtrack {
         return backtrack(0, freqs, score, words)
     }
 
-    private fun backtrack(startIdx: Int,
-                          freqs: IntArray,
-                          score: IntArray,
-                          words: Array<String>): Int {
+    private fun backtrack(
+        startIdx: Int,
+        freqs: IntArray,
+        score: IntArray,
+        words: Array<String>
+    ): Int {
 
         val nWords = words.size
 

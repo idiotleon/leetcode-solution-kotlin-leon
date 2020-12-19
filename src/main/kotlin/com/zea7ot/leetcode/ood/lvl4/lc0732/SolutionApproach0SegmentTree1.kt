@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.ood.lvl4.lc0732
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree1 {
@@ -58,11 +58,13 @@ class SolutionApproach0SegmentTree1 {
         node.value = maxOf(node.left!!.value, node.right!!.value)
     }
 
-    private data class SegmentTreeNode(val start: Int,
-                                       val end: Int,
-                                       var value: Int = 0,
-                                       var lazy: Int = 0,
-                                       var left: SegmentTreeNode? = null,
-                                       var right: SegmentTreeNode? = null)
+    private data class SegmentTreeNode(
+        val start: Int,
+        val end: Int,
+        var value: Int = 0,
+        var lazy: Int = 0,
+        var left: SegmentTreeNode? = null,
+        var right: SegmentTreeNode? = null
+    )
 
 }

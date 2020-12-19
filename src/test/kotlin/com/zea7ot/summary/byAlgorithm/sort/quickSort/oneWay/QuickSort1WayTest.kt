@@ -11,7 +11,7 @@ internal class QuickSort1WayTest {
     fun test_SampleInput1_ShouldBeSorted() {
         val list = mutableListOf(1, 2, 8, 6, 3, 2).also { it.shuffle() }
 
-        val sorted = list.toIntArray().also { quickSort1Way.sort(it) }
+        val sorted = list.toIntArray().also { quickSort1Way.quickSort(it) }
         assertTrue(UtilSort.isSortedAscending(sorted.toTypedArray()))
     }
 }

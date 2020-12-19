@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0954
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
 @Suppress(UNUSED)
@@ -21,18 +21,18 @@ class SolutionApproach0TreeMap {
 
         if (nums.sum() % 3 != 0) return false
 
-        val freqs = TreeMap<Int, Int>()
-        for (num in nums) freqs[num] = 1 + (freqs[num] ?: 0)
+        val numToFreq = TreeMap<Int, Int>()
+        for (num in nums) numToFreq[num] = 1 + (numToFreq[num] ?: 0)
 
-        for ((num, freq) in freqs) {
+        for ((num, freq) in numToFreq) {
             if (freq == 0) continue
 
             val expected = if (num < 0) num / 2 else num * 2
-            val freqExpected = freqs[expected] ?: 0
+            val freqExpected = numToFreq[expected] ?: 0
             if (freqExpected < freq) return false
 
-            freqs[num] = 0
-            freqs[expected] = freqExpected - freq
+            numToFreq[num] = 0
+            numToFreq[expected] = freqExpected - freq
         }
 
         return true

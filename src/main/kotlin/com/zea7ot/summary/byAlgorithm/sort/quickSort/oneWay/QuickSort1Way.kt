@@ -7,15 +7,18 @@
  */
 package com.zea7ot.summary.byAlgorithm.sort.quickSort.oneWay
 
-class QuickSort1Way {
-    fun sort(nums: IntArray) = sort(0, nums.size - 1, nums)
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
-    fun sort(lo: Int, hi: Int, nums: IntArray) {
+@Suppress(UNUSED)
+class QuickSort1Way {
+    fun quickSort(nums: IntArray) = quickSort(0, nums.size - 1, nums)
+
+    fun quickSort(lo: Int, hi: Int, nums: IntArray) {
         if (lo >= hi) return
 
         val pivot = partition(lo, hi, nums)
-        sort(lo, pivot - 1, nums)
-        sort(pivot + 1, hi, nums)
+        quickSort(lo, pivot - 1, nums)
+        quickSort(pivot + 1, hi, nums)
     }
 
     private fun partition(low: Int, high: Int, nums: IntArray): Int {

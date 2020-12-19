@@ -9,5 +9,8 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0805.withBit
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
 }

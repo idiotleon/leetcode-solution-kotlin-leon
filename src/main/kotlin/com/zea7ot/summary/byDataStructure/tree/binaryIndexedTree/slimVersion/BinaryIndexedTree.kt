@@ -10,7 +10,7 @@
  */
 package com.zea7ot.summary.byDataStructure.tree.binaryIndexedTree.slimVersion
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class BinaryIndexedTree {

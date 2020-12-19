@@ -9,6 +9,9 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1650
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     fun lowestCommonAncestor(p: Node?, q: Node?): Node? {
         var curP = p

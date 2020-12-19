@@ -10,10 +10,10 @@
  */
 package com.zea7ot.leetcode.lvl5.lc1036
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0DFS {
+class SolutionApproach0DFSRecursive {
     private companion object {
         private val DIRS = arrayOf(0, -1, 0, 1, 0)
         private const val LIMIT = 1e6.toInt()
@@ -34,10 +34,12 @@ class SolutionApproach0DFS {
         return dfs(source, target, seen1, blocks) && dfs(target, source, seen2, blocks)
     }
 
-    private fun dfs(source: IntArray,
-                    target: IntArray,
-                    seen: HashSet<String>,
-                    blocked: Set<String>): Boolean {
+    private fun dfs(
+        source: IntArray,
+        target: IntArray,
+        seen: HashSet<String>,
+        blocked: Set<String>
+    ): Boolean {
         if (source.contentEquals(target) || seen.size >= MAX_VISITS) return true
 
         for (d in 0 until 4) {
@@ -45,7 +47,10 @@ class SolutionApproach0DFS {
             val nextCol = source[1] + DIRS[d + 1]
 
             val hash = hash(nextRow, nextCol)
-            if (nextRow < 0 || nextCol < 0 || nextRow >= LIMIT || nextCol >= LIMIT || blocked.contains(hash) || !seen.add(hash)) continue
+            if (nextRow < 0 || nextCol < 0 || nextRow >= LIMIT || nextCol >= LIMIT || blocked.contains(hash) || !seen.add(
+                    hash
+                )
+            ) continue
             if (dfs(intArrayOf(nextRow, nextCol), target, seen, blocked)) return true
         }
 

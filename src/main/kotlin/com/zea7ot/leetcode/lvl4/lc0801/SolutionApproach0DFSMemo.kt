@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0801
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
@@ -27,7 +27,15 @@ class SolutionApproach0DFSMemo {
         return dfs(0, -1, -1, NOT_SWAP, A, B, dp)
     }
 
-    private fun dfs(idx: Int, prevA: Int, prevB: Int, swapState: Int, A: IntArray, B: IntArray, dp: Array<Array<Int?>>): Int {
+    private fun dfs(
+        idx: Int,
+        prevA: Int,
+        prevB: Int,
+        swapState: Int,
+        A: IntArray,
+        B: IntArray,
+        dp: Array<Array<Int?>>
+    ): Int {
         val totalNums = A.size
         if (idx == totalNums) return 0
         dp[idx][swapState]?.let { return it }

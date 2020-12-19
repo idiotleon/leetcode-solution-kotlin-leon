@@ -5,7 +5,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 
 class TestSolutionApproach0DFS {
-    private val solution = SolutionApproach0DFS()
+    private val solution = SolutionApproach0DFSRecursive()
 
     @Test
     fun test_SampleInput1_ShouldReturnExpected() {

@@ -18,7 +18,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1102
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach4FloydWarshall {
@@ -37,7 +37,8 @@ class SolutionApproach4FloydWarshall {
                 val row2 = vertex2 / totalCols
                 val col2 = vertex2 % totalCols
 
-                graph[hash(row1, col1, totalCols)][hash(row2, col2, totalCols)] = minOf(nums[row1][col1], nums[row2][col2])
+                graph[hash(row1, col1, totalCols)][hash(row2, col2, totalCols)] =
+                    minOf(nums[row1][col1], nums[row2][col2])
             }
         }
 

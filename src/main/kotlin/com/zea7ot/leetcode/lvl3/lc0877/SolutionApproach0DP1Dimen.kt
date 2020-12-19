@@ -10,7 +10,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0877
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
@@ -20,8 +20,10 @@ class SolutionApproach0DP1Dimen {
         val dp = piles.copyOf()
         for (player1 in 1 until totalPiles) {
             for (player2 in 0 until totalPiles - player1) {
-                dp[player2] = maxOf(piles[player2] - dp[player2 + 1],
-                        piles[player1 + player2] - dp[player2])
+                dp[player2] = maxOf(
+                    piles[player2] - dp[player2 + 1],
+                    piles[player1 + player2] - dp[player2]
+                )
             }
         }
 

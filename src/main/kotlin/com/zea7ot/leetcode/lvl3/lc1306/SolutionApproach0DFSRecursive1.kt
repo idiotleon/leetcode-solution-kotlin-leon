@@ -7,10 +7,10 @@
  */
 package com.zea7ot.leetcode.lvl3.lc1306
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0DFS1 {
+class SolutionApproach0DFSRecursive1 {
     fun canReach(nums: IntArray, start: Int): Boolean {
         val totalNums = nums.size
 

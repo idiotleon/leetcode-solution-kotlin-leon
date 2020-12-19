@@ -10,9 +10,11 @@
  */
 package com.zea7ot.leetcode.lvl5.lc1520
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.ArrayList
 
+@Suppress(UNUSED)
 class SolutionApproach0Greedy {
     fun maxNumOfSubstrings(str: String): List<String> {
         val lenS = str.length
@@ -38,8 +40,9 @@ class SolutionApproach0Greedy {
             // kind of a mono stack, greedily replacing longer substrings with shorter ones
             // the shorter one has to be completely "within"/overlapped by the longer one
             while (stack.isNotEmpty()
-                    && lo >= stack.peek().low
-                    && hi <= stack.peek().high) {
+                && lo >= stack.peek().low
+                && hi <= stack.peek().high
+            ) {
                 stack.pop()
             }
 
@@ -57,11 +60,13 @@ class SolutionApproach0Greedy {
     // to find the valid substring range, more importantly the `hi` index,
     // including the whole str.substring[low, high]
     // all letters/chars involved should be covered
-    private fun getHighest(low: Int,
-                           high: Int,
-                           firstIdxes: IntArray,
-                           lastIdxes: IntArray,
-                           str: String): Int {
+    private fun getHighest(
+        low: Int,
+        high: Int,
+        firstIdxes: IntArray,
+        lastIdxes: IntArray,
+        str: String
+    ): Int {
 
         var hi = high
         var idx = low + 1

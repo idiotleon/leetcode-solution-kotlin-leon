@@ -13,7 +13,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0712
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
@@ -37,8 +37,10 @@ class SolutionApproach0DP2Dimen {
                 dp[idx1][idx2] = if (s1[idx1 - 1] == s2[idx2 - 1]) {
                     dp[idx1 - 1][idx2 - 1]
                 } else {
-                    minOf(dp[idx1 - 1][idx2] + s1[idx1 - 1].toInt(),
-                            dp[idx1][idx2 - 1] + s2[idx2 - 1].toInt())
+                    minOf(
+                        dp[idx1 - 1][idx2] + s1[idx1 - 1].toInt(),
+                        dp[idx1][idx2 - 1] + s2[idx2 - 1].toInt()
+                    )
                 }
             }
         }

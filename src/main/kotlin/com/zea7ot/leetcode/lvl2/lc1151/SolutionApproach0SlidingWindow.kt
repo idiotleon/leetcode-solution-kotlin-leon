@@ -9,6 +9,9 @@
  */
 package com.zea7ot.leetcode.lvl2.lc1151
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     fun minSwaps(data: IntArray): Int {
         // not used

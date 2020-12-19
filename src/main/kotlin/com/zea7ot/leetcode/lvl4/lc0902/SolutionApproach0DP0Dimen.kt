@@ -9,11 +9,11 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0902
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.math.pow
 
 @Suppress(UNUSED)
-class SolutionApproach0Dimen {
+class SolutionApproach0DP0Dimen {
     fun atMostNGivenDigitSet(digits: Array<String>, n: Int): Int {
         val nDigits = digits.size
         val str = n.toString()

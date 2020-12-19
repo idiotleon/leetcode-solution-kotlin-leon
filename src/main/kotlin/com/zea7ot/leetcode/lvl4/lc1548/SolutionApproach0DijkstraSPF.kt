@@ -2,12 +2,16 @@ package com.zea7ot.leetcode.lvl4.lc1548
 
 import java.util.*
 import kotlin.collections.ArrayList
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
+@Suppress(UNUSED)
 class SolutionApproach0DijkstraSPF {
-    fun mostSimilar(n: Int,
-                    roads: Array<IntArray>,
-                    names: Array<String>,
-                    targetPath: Array<String>): List<Int> {
+    fun mostSimilar(
+        n: Int,
+        roads: Array<IntArray>,
+        names: Array<String>,
+        targetPath: Array<String>
+    ): List<Int> {
         val nTargets = targetPath.size
         val graph = buildGraph(n, roads)
 

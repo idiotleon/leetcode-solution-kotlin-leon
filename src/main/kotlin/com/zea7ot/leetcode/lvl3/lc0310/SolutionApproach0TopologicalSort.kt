@@ -9,7 +9,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0310
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
 import kotlin.collections.ArrayList
@@ -17,7 +17,7 @@ import kotlin.collections.ArrayList
 @Suppress(UNUSED)
 class SolutionApproach0TopologicalSort {
     fun findMinHeightTrees(n: Int, edges: Array<IntArray>): List<Int> {
-        if (n == 1) return arrayListOf(0)
+        if (n == 1) return mutableListOf(0)
 
         val degrees = IntArray(n) { 0 }
         val graph = buildGraph(degrees, n, edges)
@@ -29,11 +29,11 @@ class SolutionApproach0TopologicalSort {
             }
         }
 
-        var ans = ArrayList<Int>()
+        var ans = mutableListOf<Int>()
         while (queue.isNotEmpty()) {
             val size = queue.size
 
-            val newLeaves = ArrayList<Int>()
+            val newLeaves = mutableListOf<Int>()
             for (sz in 0 until size) {
                 val cur = queue.poll()
                 newLeaves.add(cur)

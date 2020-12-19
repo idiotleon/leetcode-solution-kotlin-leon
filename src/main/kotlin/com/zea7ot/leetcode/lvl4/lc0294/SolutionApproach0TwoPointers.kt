@@ -9,6 +9,9 @@
  */
 package com.zea7ot.leetcode.lvl4.lc0294
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     private companion object {
         private const val SIGN_PLUS = '+'

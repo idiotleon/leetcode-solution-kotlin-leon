@@ -7,9 +7,9 @@
  * References:
  *  https://leetcode.com/problems/water-and-jug-problem/discuss/83716/Java-Programmatic-Solution-BFS-without-GCD
  */
-package com.zea7ot.leetcode.lvl3.lc1015
+package com.zea7ot.leetcode.lvl3.lc0365
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashSet
 
@@ -18,9 +18,13 @@ class SolutionApproach0BFS {
     fun canMeasureWater(x: Int, y: Int, z: Int): Boolean {
         if (z < 0 || z > x + y) return false
 
-        val seen = HashSet<Int>()
-        val queue = LinkedList<Int>()
-        queue.offer(0)
+        val queue = LinkedList<Int>().also {
+            it.offer(0)
+        }
+
+        val seen = HashSet<Int>().also {
+            it.add(0)
+        }
 
         while (queue.isNotEmpty()) {
             val size = queue.size

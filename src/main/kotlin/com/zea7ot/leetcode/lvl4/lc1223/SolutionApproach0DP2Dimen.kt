@@ -15,7 +15,7 @@
  */
 package com.zea7ot.leetcode.lvl4.lc1223
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
@@ -47,7 +47,8 @@ class SolutionApproach0DP2Dimen {
                 // meaning that the (`roll - rollMax[faceVal] - 1`)-th number can be anything but `faceVal`(which we have already deducted in the previous step)
                 if (roll - rollMax[faceVal] >= 2) { // if for the `roll`-th dice, constraint for `faceVal` is < `roll` - 1
                     // for axx1, to remove the number of a11 (211, 311, 411, 511, 611) => (..2 + ..3 + ..4 + ..5 + ..6) => (sum - ..1)
-                    val reduction = dp[roll - rollMax[faceVal] - 1][DICE_RANGE] - dp[roll - rollMax[faceVal] - 1][faceVal]
+                    val reduction =
+                        dp[roll - rollMax[faceVal] - 1][DICE_RANGE] - dp[roll - rollMax[faceVal] - 1][faceVal]
 
                     // to add one more `MOD` to prevent negative amounts/numbers
                     dp[roll][faceVal] = ((dp[roll][faceVal] - reduction) % MOD + MOD) % MOD

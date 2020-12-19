@@ -9,6 +9,9 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0853
 
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0Greedy {
     fun carFleet(target: Int, position: IntArray, speed: IntArray): Int {
         val nCars = position.size

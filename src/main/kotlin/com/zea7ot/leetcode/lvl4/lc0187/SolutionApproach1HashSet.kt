@@ -1,8 +1,8 @@
 package com.zea7ot.leetcode.lvl4.lc0187
 
-import com.zea7ot.leetcode.util.Constant
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
-@Suppress(Constant.Annotation.UNUSED)
+@Suppress(UNUSED)
 class SolutionApproach1HashSet {
     class SolutionApproach0HashMap {
         private companion object {

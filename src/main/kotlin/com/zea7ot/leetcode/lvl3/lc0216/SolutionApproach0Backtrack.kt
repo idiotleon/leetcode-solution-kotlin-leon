@@ -7,7 +7,7 @@
  */
 package com.zea7ot.leetcode.lvl3.lc0216
 
-import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
@@ -20,11 +20,13 @@ class SolutionApproach0Backtrack {
         return paths
     }
 
-    private fun backtrack(numStart: Int,
-                          k: Int,
-                          target: Int,
-                          path: MutableList<Int>,
-                          paths: MutableList<MutableList<Int>>) {
+    private fun backtrack(
+        numStart: Int,
+        k: Int,
+        target: Int,
+        path: MutableList<Int>,
+        paths: MutableList<MutableList<Int>>
+    ) {
         if (k < 0 || target < 0 || numStart == 10) return
 
         if (target == 0) {
