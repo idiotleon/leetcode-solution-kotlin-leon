@@ -8,6 +8,9 @@
  *  https://leetcode.com/problems/unique-binary-search-trees/discuss/31696/Simple-Recursion-Java-Solution-with-Explanation/30507
  *  https://leetcode.com/problems/unique-binary-search-trees/discuss/31696/Simple-Recursion-Java-Solution-with-Explanation
  */
+import com.zea7ot.leetcode.util.Constant.Annotation.Companion.UNUSED
+
+@Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun numTrees(n: Int): Int {
         val memo = Array<Int?>(n + 1) { null }
