@@ -23,30 +23,31 @@ class SolutionApproach0DFSMemo {
     }
 
     private fun dfs(
-        row: Int, col1: Int, col2: Int,
+        curRow: Int,
+        curCol1: Int,
+        curCol2: Int,
         grid: Array<IntArray>,
         memo: Array<Array<Array<Int?>>>
     ): Int {
-
         val nRows = grid.size
         val nCols = grid[0].size
 
-        if (row == nRows) return 0
-        memo[row][col1][col2]?.let { return it }
+        if (curRow == nRows) return 0
+        memo[curRow][curCol1][curCol2]?.let { return it }
 
-        var ans = 0
+        var cherries = 0
         for (delta1 in -1..1) {
             for (delta2 in -1..1) {
-                val nextCol1 = col1 + delta1
-                val nextCol2 = col2 + delta2
+                val nextCol1 = curCol1 + delta1
+                val nextCol2 = curCol2 + delta2
 
                 if (nextCol1 < 0 || nextCol1 >= nCols || nextCol2 < 0 || nextCol2 >= nCols) continue
-                ans = maxOf(ans, dfs(row + 1, nextCol1, nextCol2, grid, memo))
+                cherries = maxOf(cherries, dfs(curRow + 1, nextCol1, nextCol2, grid, memo))
             }
         }
 
-        val cherries = if (col1 == col2) grid[row][col1] else grid[row][col1] + grid[row][col2]
-        memo[row][col1][col2] = ans + cherries
-        return memo[row][col1][col2]!!
+        cherries += if (curCol1 == curCol2) grid[curRow][curCol1] else grid[curRow][curCol1] + grid[curRow][curCol2]
+        memo[curRow][curCol1][curCol2] = cherries
+        return cherries
     }
 }
