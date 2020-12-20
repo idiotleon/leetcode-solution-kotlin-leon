@@ -4,6 +4,8 @@
  * Time Complexity:     O(N)
  * Space Complexity:    O(H)
  *
+ * this is very similar to a preorder traversal
+ *
  * References:
  *   https://www.bilibili.com/video/BV19t411w7Ep
  */
@@ -13,7 +15,7 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
-class SolutionApproach0PreorderRecursive {
+class SolutionApproach0DFSRecursive {
     fun isSymmetric(root: TreeNode?): Boolean {
         if (root == null) return true
         return preorder(root.left, root.right)

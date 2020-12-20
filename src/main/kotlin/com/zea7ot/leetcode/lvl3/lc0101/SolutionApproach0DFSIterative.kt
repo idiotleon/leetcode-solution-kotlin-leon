@@ -4,6 +4,8 @@
  * Time Complexity:     O(N)
  * Space Complexity:    O(H)
  *
+ * this is very similar to an inorder traversal
+ *
  * References:
  *  https://www.bilibili.com/video/BV19t411w7Ep around 40:26
  */
@@ -14,7 +16,7 @@ import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
 
 @Suppress(UNUSED)
-class SolutionApproach0Iteration {
+class SolutionApproach0DFSIterative {
     fun isSymmetric(root: TreeNode?): Boolean {
         if (root == null) return true
 

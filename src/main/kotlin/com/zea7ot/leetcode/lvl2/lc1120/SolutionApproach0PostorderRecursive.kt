@@ -1,4 +1,4 @@
-package com.zea7ot.leetcode.lvl2.lv1120
+package com.zea7ot.leetcode.lvl2.lc1120
 
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode

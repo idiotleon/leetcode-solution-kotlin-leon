@@ -5,7 +5,7 @@ import org.junit.Assert.assertFalse
 import org.junit.Test
 
 internal class SolutionApproach0IterationTest {
-    private val solution = SolutionApproach0Iteration()
+    private val solution = SolutionApproach0DFSIterative()
 
     @Test
     fun isSymmetric_TestCase147_ShouldReturnExpected() {
