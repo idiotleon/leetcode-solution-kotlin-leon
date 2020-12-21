@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/longest-increasing-subsequence
  *
- * Time Complexity:     O(`totalNums` ^ 2)
- * Space Complexity:    O(`totalNums`)
+ * Time Complexity:     O(`nNums` ^ 2)
+ * Space Complexity:    O(`nNums`)
  *
  * References:
  *  http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-300-longest-increasing-subsequence/
@@ -18,15 +18,18 @@ class SolutionApproach0DFSMemo {
         // sanity check, required
         if (nums.isEmpty()) return 0
 
-        val totalNums = nums.size
+        val nNums = nums.size
 
         var longest = 1
-        val memo = Array<Int?>(totalNums) { null }
+
+        // memoization
+        // index to (longest) length
+        val idxToLen = Array<Int?>(nNums) { null }
 
         for (hi in nums.indices) {
             for (lo in 0 until hi) {
                 if (nums[hi] > nums[lo]) {
-                    longest = maxOf(longest, dfs(hi, nums, memo))
+                    longest = maxOf(longest, dfs(hi, nums, idxToLen))
                 }
             }
         }

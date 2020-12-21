@@ -22,17 +22,18 @@ class SolutionApproach0PrefixSum {
             prefixSums[idx + 1] = prefixSums[idx] + nums[idx]
         }
 
-        val valToIdx = HashMap<Int, Int>()
+        // to keep track of the latest/nearest index till/to the current index
+        val numToIdx = HashMap<Int, Int>()
 
         var maxValue = 0
         var prevIdx = 0
 
         for (idx in nums.indices) {
-            prevIdx = maxOf(prevIdx, 1 + (valToIdx[nums[idx]] ?: -1))
+            prevIdx = maxOf(prevIdx, 1 + (numToIdx[nums[idx]] ?: -1))
 
             maxValue = maxOf(maxValue, prefixSums[idx + 1] - prefixSums[prevIdx])
 
-            valToIdx[nums[idx]] = idx
+            numToIdx[nums[idx]] = idx
         }
 
         return maxValue
