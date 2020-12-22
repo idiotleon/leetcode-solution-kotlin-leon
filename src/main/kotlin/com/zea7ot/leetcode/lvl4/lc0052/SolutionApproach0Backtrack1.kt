@@ -1,13 +1,14 @@
 /**
  * https://leetcode.com/problems/n-queens-ii/
  *
- * Time Complexity:     O(`n`!)
+ * Time Complexity:     O(`n` * `n`!)
  * Space Complexity:    O(`n`)
  *
  * `board` is NOT needed at all
  *
  * References:
- *  https://leetcode.com/problems/n-queens-ii/discuss/20058/Accepted-Java-Solution/172490
+ *  https://leetcode.com/problems/n-queens-ii/discuss/20048/Easiest-Java-Solution-(1ms-98.22)
+ *  https://leetcode.wang/leetCode-52-N-QueensII.html
  *  https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484709&idx=1&sn=1c24a5c41a5a255000532e83f38f2ce4&chksm=9bd7fb2daca0723be888b30345e2c5e64649fc31a00b05c27a0843f349e2dd9363338d0dac61&scene=178&cur_album_id=1318883740306948097#rd
  */
 package com.zea7ot.leetcode.lvl4.lc0052
@@ -15,14 +16,17 @@ package com.zea7ot.leetcode.lvl4.lc0052
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0Backtrack {
+class SolutionApproach0Backtrack1 {
     fun totalNQueens(n: Int): Int {
 
         val isSameColumn = BooleanArray(n) { false }
         val isSameMainDiagonal = BooleanArray(2 * n - 1) { false }
         val isSameAntidiagonal = BooleanArray(2 * n - 1) { false }
 
-        return backtrack(0, isSameColumn, isSameMainDiagonal, isSameAntidiagonal, n)
+        val count = intArrayOf(0)
+        backtrack(0, isSameColumn, isSameMainDiagonal, isSameAntidiagonal, n, count)
+
+        return count[0]
     }
 
     private fun backtrack(
@@ -30,29 +34,26 @@ class SolutionApproach0Backtrack {
         isSameColumn: BooleanArray,
         isSameMainDiagonal: BooleanArray,
         isSameAntidiagonal: BooleanArray,
-        sideLen: Int
-    ): Int {
-        if (row == sideLen)
-            return 1
-
-        var count = 0
+        sideLen: Int,
+        count: IntArray
+    ) {
+        if (row == sideLen) ++count[0]
 
         for (col in 0 until sideLen) {
-            if (isSameColumn[col] || isSameMainDiagonal[row + sideLen - col - 1] || isSameAntidiagonal[row + col]) continue
+            val mainDiagonal = col - row + sideLen - 1
+            val antidiagonal = row + col
 
-            // to further backtrack to the next state
+            if (isSameColumn[col] || isSameMainDiagonal[mainDiagonal] || isSameAntidiagonal[antidiagonal]) continue
+
             isSameColumn[col] = true
-            isSameMainDiagonal[row + sideLen - col - 1] = true
-            isSameAntidiagonal[row + col] = true
+            isSameMainDiagonal[mainDiagonal] = true
+            isSameAntidiagonal[antidiagonal] = true
 
-            count += backtrack(1 + row, isSameColumn, isSameMainDiagonal, isSameAntidiagonal, sideLen)
+            backtrack(row + 1, isSameColumn, isSameMainDiagonal, isSameAntidiagonal, sideLen, count)
 
-            // to backtrack to the previous state
             isSameColumn[col] = false
-            isSameMainDiagonal[row + sideLen - col - 1] = false
-            isSameAntidiagonal[row + col] = false
+            isSameMainDiagonal[mainDiagonal] = false
+            isSameAntidiagonal[antidiagonal] = false
         }
-
-        return count
     }
 }
