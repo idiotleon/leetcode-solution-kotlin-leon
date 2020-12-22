@@ -13,7 +13,7 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
-class SolutionApproach0MorrisPreorder {
+class SolutionApproach1MorrisPreorder {
     fun findNearestRightNode(root: TreeNode?, u: TreeNode?): TreeNode? {
         if (root == null || u == null || root == u) return null
 
