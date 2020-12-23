@@ -19,17 +19,17 @@ class SolutionApproach1BellmanFord {
 
     fun networkDelayTime(times: Array<IntArray>, nVertices: Int, initial: Int): Int {
         val distances = IntArray(nVertices) { DATA_RANGE }.also { it[initial - 1] = 0 }
-        var prevDistances: IntArray
+        val backup = distances.copyOf()
 
-        for (idx in 0 until nVertices) {
-            prevDistances = distances
+        for (idx in 0 until nVertices) { // to traverse the `k`-allowed vertices, in this case, `nVertices`
+            distances.copyInto(backup)
 
-            for ((start, end, time) in times) {
-                distances[end - 1] = minOf(distances[end - 1], prevDistances[start - 1] + time)
+            for ((start, end, time) in times) { // to traverse the edges
+                distances[end - 1] = minOf(distances[end - 1], backup[start - 1] + time)
             }
         }
 
-        val shortest = distances.max()!!
-        return if (shortest == DATA_RANGE) -1 else shortest
+        val ans = distances.max()!!
+        return if (ans == DATA_RANGE) -1 else ans
     }
 }

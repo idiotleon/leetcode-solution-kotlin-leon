@@ -7,7 +7,7 @@
  * suitable for sparse graphs
  *
  * References:
- *  Paid Course: https://www.acwing.com/video/24/
+ *  Paid Course, around 59min: https://www.acwing.com/video/24/
  *  https://blog.csdn.net/qq_35356840/article/details/106516347
  *  https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
  */
