@@ -19,7 +19,7 @@
  *  https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
  *  https://leetcode-cn.com/problems/network-delay-time/solution/java-ban-dijkstra-spfa-floydxiang-xi-ti-jie-by-jer/
  */
-package com.zea7ot.summary.byDataStructure.graph.withDiffEdgeWeight.shortestPath.singleSource.positiveEdgeWeightsOnly.withoutHeap
+package com.zea7ot.summary.byDataStructure.graph.shortestPath.withDiffEdgeWeight.singleSource.positiveEdgeWeightsOnly.withoutHeap
 
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 

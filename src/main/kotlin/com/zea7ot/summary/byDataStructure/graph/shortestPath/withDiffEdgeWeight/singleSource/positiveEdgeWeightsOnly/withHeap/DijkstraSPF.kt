@@ -11,7 +11,7 @@
  *  https://blog.csdn.net/qq_35356840/article/details/106516347
  *  https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
  */
-package com.zea7ot.summary.byDataStructure.graph.withDiffEdgeWeight.shortestPath.singleSource.positiveEdgeWeightsOnly.withHeap
+package com.zea7ot.summary.byDataStructure.graph.shortestPath.withDiffEdgeWeight.singleSource.positiveEdgeWeightsOnly.withHeap
 
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
