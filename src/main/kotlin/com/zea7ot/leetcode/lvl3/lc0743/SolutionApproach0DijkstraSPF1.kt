@@ -1,5 +1,13 @@
 /**
  * https://leetcode.com/problems/network-delay-time/
+ *
+ * Time Complexity:     O(E * lg(V)) ~ O(`nTimes` * lg(`nNodes`))
+ * Space Complexity:    O()
+ *
+ * Dijkstra's SPF optimized with a min heap is comparably suitable for sparse graphs
+ *
+ * References:
+ *  https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
  */
 package com.zea7ot.leetcode.lvl3.lc0743
 
