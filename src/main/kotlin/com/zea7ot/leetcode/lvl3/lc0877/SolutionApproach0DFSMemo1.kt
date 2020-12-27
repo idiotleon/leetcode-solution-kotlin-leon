@@ -13,13 +13,12 @@ package com.zea7ot.leetcode.lvl3.lc0877
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0DFSMemo {
+class SolutionApproach0DFSMemo1 {
     fun stoneGame(piles: IntArray): Boolean {
         val nPiles = piles.size
-        val prefixSums = IntArray(nPiles + 1) { 0 }.also {
-            for (idx in piles.indices) {
-                it[idx + 1] = it[idx] + piles[idx]
-            }
+        val prefixSums = piles.copyOf()
+        for (idx in 1 until nPiles) {
+            prefixSums[idx] += prefixSums[idx - 1]
         }
 
         val memo = Array(nPiles) { Array<Int?>(nPiles) { null } }
@@ -28,15 +27,21 @@ class SolutionApproach0DFSMemo {
         return alexGain > leeGain
     }
 
-    private fun dfs(lo: Int, hi: Int, prefixSums: IntArray, piles: IntArray, memo: Array<Array<Int?>>): Int {
-        if (lo > hi) return 0
+    private fun dfs(
+        lo: Int,
+        hi: Int,
+        prefixSums: IntArray,
+        piles: IntArray,
+        memo: Array<Array<Int?>>
+    ): Int {
 
+        if (lo > hi) return 0
         memo[lo][hi]?.let { return it }
 
-        // 1. both ends (of the subarray) inclusive
-        // 2. indexes (of `piles` and `prefixSums`) should match each other
-        val sum = prefixSums[hi + 1] - prefixSums[lo]
-
+        // both ends inclusive
+        val sum = prefixSums[hi] - prefixSums[lo] + piles[lo]
+        
+        // to minimize the gain of the next player
         val minOpponentGain = minOf(
             dfs(lo + 1, hi, prefixSums, piles, memo),
             dfs(lo, hi - 1, prefixSums, piles, memo)

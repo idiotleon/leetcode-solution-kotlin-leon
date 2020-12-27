@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/predict-the-winner/
  *
- * Time Complexity:     O(`totalNums` ^ 2)
- * Space Complexity:    O(`totalNums` ^ 2) + O(`totalNums`) ~ O(`totalNums` ^ 2)
+ * Time Complexity:     O(`nNums` ^ 2)
+ * Space Complexity:    O(`nNums` ^ 2) + O(`nNums`) ~ O(`nNums` ^ 2)
  *
  * this approach simulates how player1 wins, assuming both players always take their optimized options
  *  1. the identity always is player1
@@ -20,9 +20,9 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun predictTheWinner(nums: IntArray): Boolean {
-        val totalNums = nums.size
-        val memo = Array(totalNums) { Array<Int?>(totalNums) { null } }
-        return dfs(0, totalNums - 1, nums, memo) >= 0
+        val nNums = nums.size
+        val memo = Array(nNums) { Array<Int?>(nNums) { null } }
+        return dfs(0, nNums - 1, nums, memo) >= 0
     }
 
     /**
@@ -43,8 +43,8 @@ class SolutionApproach0DFSMemo {
         val pickEnd = nums[end] - dfs(start, end - 1, nums, memo)
 
         // to pick whichever score is larger, won by player1
-        val mostScore = maxOf(pickStart, pickEnd)
-        memo[start][end] = mostScore
-        return mostScore
+        val maxScore = maxOf(pickStart, pickEnd)
+        memo[start][end] = maxScore
+        return maxScore
     }
 }

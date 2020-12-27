@@ -25,9 +25,9 @@ class SolutionApproach0BFS {
                 val level = levelToNums.getOrPut(lvl) { LinkedList() }
 
                 if (lvl % 2 == 0) {
-                    level.push(matrix[row][col])
+                    level.addFirst(matrix[row][col])
                 } else {
-                    level.add(matrix[row][col])
+                    level.addLast(matrix[row][col])
                 }
             }
         }

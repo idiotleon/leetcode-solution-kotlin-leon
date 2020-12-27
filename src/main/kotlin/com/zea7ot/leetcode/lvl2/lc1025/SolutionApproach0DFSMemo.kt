@@ -14,14 +14,17 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun divisorGame(N: Int): Boolean {
-        val memo = Array<Boolean?>(maxOf(2, N + 1)) { null }
-        memo[0] = true
-        memo[1] = false
+        val memo = Array<Boolean?>(maxOf(2, N + 1)) { null }.also {
+            it[0] = true
+            it[1] = false
+        }
 
         return dfs(N, memo)
     }
 
     private fun dfs(n: Int, memo: Array<Boolean?>): Boolean {
+        if (n == 1) return false
+
         memo[n]?.let { return it }
 
         var canWin = false

@@ -19,6 +19,7 @@ class SolutionApproach0DFSMemo {
     private companion object {
         private const val ALICE = "Alice"
         private const val BOB = "Bob"
+
         private const val TIE = "Tie"
     }
 
@@ -41,14 +42,14 @@ class SolutionApproach0DFSMemo {
 
         memo[curTurn]?.let { return it }
 
-        var sum = 0
+        var totalScores = 0
         var maxScore = Int.MIN_VALUE
         for (curPick in 0 until 3) {
             if (curTurn + curPick >= nStones) break
 
-            sum += stoneValues[curTurn + curPick]
+            totalScores += stoneValues[curTurn + curPick]
             val nextTurn = curTurn + curPick + 1
-            maxScore = maxOf(maxScore, sum - dfs(nextTurn, stoneValues, memo))
+            maxScore = maxOf(maxScore, totalScores - dfs(nextTurn, stoneValues, memo))
         }
 
         memo[curTurn] = maxScore

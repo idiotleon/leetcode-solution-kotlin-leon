@@ -25,12 +25,12 @@ class SolutionApproach0DP1Dimen {
         val dp = IntArray(nStones + 1) { 0 }
         for (curTurn in nStones - 1 downTo 0) {
             dp[curTurn] = Int.MIN_VALUE
-            var sum = 0
+            var totalScores = 0
             for (curPick in 0 until 3) {
                 if (curTurn + curPick >= nStones) break
-                sum += stoneValues[curTurn + curPick]
+                totalScores += stoneValues[curTurn + curPick]
                 val nextTurn = curTurn + curPick + 1
-                dp[curTurn] = maxOf(dp[curTurn], sum - dp[nextTurn])
+                dp[curTurn] = maxOf(dp[curTurn], totalScores - dp[nextTurn])
             }
         }
 

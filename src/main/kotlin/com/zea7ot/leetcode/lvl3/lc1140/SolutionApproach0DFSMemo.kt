@@ -5,6 +5,7 @@
  * Space Complexity:    O()
  *
  * References:
+ *  https://leetcode.com/problems/stone-game-ii/discuss/345230/Python-DP-Solution/637641
  *  https://leetcode.com/problems/stone-game-ii/discuss/345230/Python-DP-Solution
  */
 package com.zea7ot.leetcode.lvl3.lc1140
@@ -25,28 +26,20 @@ class SolutionApproach0DFSMemo {
         return dfs(0, 1, suffixSums, nPiles, memo)
     }
 
-    private fun dfs(
-        player: Int,
-        m: Int,
-        suffixSums: IntArray,
-        nPiles: Int,
-        memo: Array<Array<Int?>>
-    ): Int {
+    private fun dfs(curTake: Int, m: Int, suffixSums: IntArray, nPiles: Int, memo: Array<Array<Int?>>): Int {
+        if (curTake + 2 * m >= nPiles) return suffixSums[curTake]
 
-        if (player + 2 * m >= nPiles) return suffixSums[player]
+        memo[curTake][m]?.let { return it }
 
-        memo[player][m]?.let { return it }
-
-        var max = 0
-        for (i in 1..2 * m) {
-            val take = suffixSums[player] - suffixSums[player + i]
-            max = maxOf(
-                max,
-                take + suffixSums[player + i] - dfs(player + i, maxOf(i, m), suffixSums, nPiles, memo)
+        var mostStones = 0
+        for (moreTake in 1..2 * m) {
+            mostStones = maxOf(
+                mostStones,
+                suffixSums[curTake] - dfs(curTake + moreTake, maxOf(moreTake, m), suffixSums, nPiles, memo)
             )
         }
 
-        memo[player][m] = max
-        return max
+        memo[curTake][m] = mostStones
+        return mostStones
     }
 }
