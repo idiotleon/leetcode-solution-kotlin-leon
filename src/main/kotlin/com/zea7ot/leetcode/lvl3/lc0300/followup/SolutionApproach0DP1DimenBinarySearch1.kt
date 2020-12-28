@@ -7,13 +7,14 @@
  * References:
  *  https://youtu.be/S9oUiVYEq7E
  *  https://leetcode.com/problems/longest-increasing-subsequence/solution/
+ *  Paid Course, 12min: https://www.acwing.com/video/36/
  */
 package com.zea7ot.leetcode.lvl3.lc0300.followup
 
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0BinarySearch {
+class SolutionApproach0DP1DimenBinarySearch1 {
     fun lengthOfLIS(nums: IntArray): Int {
         // sanity check, required
         if (nums.isEmpty()) return 0
@@ -33,12 +34,16 @@ class SolutionApproach0BinarySearch {
         return len
     }
 
+    /**
+     * to find the the insertion position of the largest number that is smaller than the `target`
+     */
     private fun lowerBound(low: Int, high: Int, tails: IntArray, target: Int): Int {
         var lo = low
         var hi = high
 
         while (lo < hi) {
             val mid = lo + (hi - lo) / 2
+
             if (target > tails[mid]) {
                 lo = mid + 1
             } else {

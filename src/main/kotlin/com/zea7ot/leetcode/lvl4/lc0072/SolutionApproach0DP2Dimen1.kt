@@ -27,17 +27,16 @@ class SolutionApproach0DP2Dimen1 {
             costs[0][idx2] = idx2
         }
 
-        for (idx1 in 0 until len1) {
-            for (idx2 in 0 until len2) {
-                if (word1[idx1] == word2[idx2]) {
-                    costs[idx1 + 1][idx2 + 1] = costs[idx1][idx2]
+        for (idx1 in word1.indices) {
+            for (idx2 in word2.indices) {
+                costs[idx1 + 1][idx2 + 1] = if (word1[idx1] == word2[idx2]) {
+                    costs[idx1][idx2]
                 } else {
-                    val insert = costs[idx1][idx2 + 1]
-                    val replace = costs[idx1][idx2]
-                    val delete = costs[idx1 + 1][idx2]
+                    val insertion = costs[idx1][idx2 + 1]
+                    val replacement = costs[idx1][idx2]
+                    val deletion = costs[idx1 + 1][idx2]
 
-                    costs[idx1 + 1][idx2 + 1] = minOf(insert, replace, delete)
-                    ++costs[idx1 + 1][idx2 + 1]
+                    1 + minOf(insertion, replacement, deletion)
                 }
             }
         }

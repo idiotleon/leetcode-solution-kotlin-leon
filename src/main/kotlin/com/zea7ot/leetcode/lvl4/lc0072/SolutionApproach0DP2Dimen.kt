@@ -34,11 +34,11 @@ class SolutionApproach0DP2Dimen {
                 costs[idx1 + 1][idx2 + 1] = if (word1[idx1] == word2[idx2]) {
                     costs[idx1][idx2]
                 } else {
-                    val insert = costs[idx1][idx2 + 1]
-                    val replace = costs[idx1][idx2]
-                    val delete = costs[idx1 + 1][idx2]
+                    val insertion = costs[idx1][idx2 + 1]
+                    val replacement = costs[idx1][idx2]
+                    val deletion = costs[idx1 + 1][idx2]
 
-                    1 + minOf(insert, replace, delete)
+                    1 + minOf(insertion, replacement, deletion)
                 }
             }
         }
