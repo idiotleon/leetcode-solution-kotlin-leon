@@ -2,7 +2,7 @@
  * References:
  *  https://medium.com/@ankur.singh4012/implementing-max-heap-in-java-ea368dadd273
  */
-package com.zea7ot.summary.byDataStructure.heap
+package com.zea7ot.summary.byDataStructure.heap.maxHeap
 
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
@@ -82,5 +82,4 @@ class MaxHeap(initialCapacity: Int) {
         heap[idx1] = heap[idx2]
         heap[idx2] = temp
     }
-
 }
