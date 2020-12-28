@@ -9,6 +9,7 @@
  *
  * References:
  *  https://leetcode.com/problems/minimum-cost-to-merge-stones/discuss/247567/JavaC%2B%2BPython-DP
+ *  Paid Course, 100min: https://www.acwing.com/video/35/
  */
 package com.zea7ot.leetcode.lvl6.lc1000
 
@@ -31,8 +32,8 @@ class SolutionApproach0DP2Dimen {
                 val hi = lo + len - 1
                 dp[lo][hi] = Int.MAX_VALUE
 
-                for (m in lo until hi step K - 1) {
-                    dp[lo][hi] = minOf(dp[lo][hi], dp[lo][m] + dp[m + 1][hi])
+                for (k in lo until hi step K - 1) {
+                    dp[lo][hi] = minOf(dp[lo][hi], dp[lo][k] + dp[k + 1][hi])
                 }
 
                 if ((hi - lo) % (K - 1) == 0) {

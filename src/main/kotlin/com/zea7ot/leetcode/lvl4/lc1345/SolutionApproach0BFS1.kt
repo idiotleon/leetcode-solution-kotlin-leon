@@ -17,18 +17,20 @@ import kotlin.collections.HashMap
 @Suppress(UNUSED)
 class SolutionApproach0BFS1 {
     fun minJumps(nums: IntArray): Int {
-        val totalNums = nums.size
+        val nNums = nums.size
 
-        // a map of value to indexes of `nums`
-        val idxMap = HashMap<Int, ArrayList<Int>>()
-        for (idx in 0 until totalNums) {
-            idxMap.getOrPut(nums[idx]) { arrayListOf() }.add(idx)
+        val valToIdx = HashMap<Int, HashSet<Int>>()
+        for ((idx, value) in nums.withIndex()) {
+            valToIdx.getOrPut(value) { hashSetOf() }.add(idx)
         }
 
-        val queue = LinkedList<Int>()
-        queue.offer(0)
+        val queue = LinkedList<Int>().also {
+            it.offer(0)
+        }
 
-        val seen = hashSetOf(0)
+        val seen = HashSet<Int>().also {
+            it.add(0)
+        }
 
         var steps = 0
 
@@ -36,27 +38,19 @@ class SolutionApproach0BFS1 {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val curIdx = queue.poll()
-                if (curIdx == totalNums - 1) return steps
+                val cur = queue.poll()
 
-                val hiNext = curIdx + 1
-                if (hiNext in 0 until totalNums && seen.add(hiNext)) {
-                    queue.offer(hiNext)
-                }
+                if (cur == nNums - 1) return steps
 
-                val loNext = curIdx - 1
-                if (loNext in 0 until totalNums && seen.add(loNext)) {
-                    queue.offer(loNext)
-                }
-
-                idxMap[nums[curIdx]]?.let {
-                    for (equalValNext in it) {
-                        if (!seen.add(equalValNext)) continue
-                        queue.offer(equalValNext)
+                if (cur - 1 >= 0 && seen.add(cur - 1)) queue.offer(cur - 1)
+                if (cur + 1 <= nNums - 1 && seen.add(cur + 1)) queue.offer(cur + 1)
+                valToIdx[nums[cur]]?.let {
+                    for (idx in it) {
+                        if (seen.add(idx)) {
+                            queue.offer(idx)
+                        }
                     }
 
-                    // to save time
-                    // there is no need to check visited/seen at all later on
                     it.clear()
                 }
             }
