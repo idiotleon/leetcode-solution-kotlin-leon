@@ -44,7 +44,7 @@ class SolutionApproach0DFSMemo {
 
         var longest = 1
         for (lo in 0 until idx) {
-            if (nums[idx] > nums[lo]) {
+            if (nums[lo] < nums[idx]) {
                 longest = maxOf(longest, 1 + dfs(lo, nums, memo))
             }
         }

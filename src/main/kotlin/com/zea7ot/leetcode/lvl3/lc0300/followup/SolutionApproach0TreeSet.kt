@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/longest-increasing-subsequence/
  *
- * Time Complexity:     O(`totalNums` * lg(`totalNums`))
- * Space Complexity:    O(`totalNums`)
+ * Time Complexity:     O(`nNums` * lg(`nNums`))
+ * Space Complexity:    O(`nNums`)
  */
 package com.zea7ot.leetcode.lvl3.lc0300.followup
 
@@ -13,7 +13,7 @@ import java.util.*
 class SolutionApproach0TreeSet {
     fun lengthOfLIS(nums: IntArray): Int {
         // not used
-        // val totalNums = nums.size
+        // val nNums = nums.size
 
         val treeSet = TreeSet<Int>()
         for (num in nums) {

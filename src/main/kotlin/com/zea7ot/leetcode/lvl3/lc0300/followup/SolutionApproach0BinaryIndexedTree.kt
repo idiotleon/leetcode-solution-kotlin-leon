@@ -14,7 +14,7 @@ class SolutionApproach0BinaryIndexedTree {
         // not required
         // if(nums.isEmpty()) return 0
 
-        val totalNums = nums.size
+        val nNums = nums.size
 
         // to build up the ranks (map)
         val sorted = nums.copyOf().also { it.sort() }
@@ -26,7 +26,7 @@ class SolutionApproach0BinaryIndexedTree {
         // to be initialized as 0, rather than 1
         // if there is no sanity check for empty input arrays
         var longest = 0
-        val fenwick = BinaryIndexedTree(totalNums)
+        val fenwick = BinaryIndexedTree(nNums)
         for (idx in nums.indices) {
             ranksMap[nums[idx]]?.let { rankId ->
                 val value = 1 + fenwick.query(rankId - 1)
@@ -42,9 +42,9 @@ class SolutionApproach0BinaryIndexedTree {
         private val lensBIT = IntArray(size + 1) { 0 }
 
         fun update(index: Int, value: Int) {
-            val totalBits = lensBIT.size
+            val nBits = lensBIT.size
             var idx = index
-            while (idx < totalBits) {
+            while (idx < nBits) {
                 lensBIT[idx] = maxOf(lensBIT[idx], value)
                 idx += idx and (-idx)
             }

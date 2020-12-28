@@ -19,15 +19,15 @@ class SolutionApproach0DP1Dimen {
         // sanity check
         if (nums.isEmpty()) return 0
 
-        val totalNums = nums.size
+        val nNums = nums.size
 
-        val dp = IntArray(totalNums) { 1 }
+        val dp = IntArray(nNums) { 1 }
         var longest = 1
 
         for (hi in nums.indices) {
             for (lo in 0 until hi) {
-                if (nums[hi] > nums[lo]) {
-                    dp[hi] = maxOf(dp[hi], dp[lo] + 1)
+                if (nums[lo] < nums[hi]) {
+                    dp[hi] = maxOf(dp[hi], 1 + dp[lo])
                 }
             }
 

@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/longest-increasing-subsequence/
  *
- * Time Complexity:     O(`totalNums` * lg(`totalNums`))
- * Space Complexity:    O(`totalNums`)
+ * Time Complexity:     O(`nNums` * lg(`nNums`))
+ * Space Complexity:    O(`nNums`)
  *
  * References:
  *  https://youtu.be/S9oUiVYEq7E
@@ -36,6 +36,7 @@ class SolutionApproach0BinarySearch {
     private fun lowerBound(low: Int, high: Int, tails: IntArray, target: Int): Int {
         var lo = low
         var hi = high
+
         while (lo < hi) {
             val mid = lo + (hi - lo) / 2
             if (target > tails[mid]) {
