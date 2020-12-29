@@ -1,6 +1,6 @@
 /**
- * Time Complexity:     O(`totalNums` * lg(`totalNums`))
- * Space Complexity:    O(`totalNums`)
+ * Time Complexity:     O(`nNums` * lg(`nNums`))
+ * Space Complexity:    O(`nNums`)
  *
  * References:
  *  https://algorithms.tutorialhorizon.com/heap-sort-java-implementation/
@@ -13,41 +13,41 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class HeapSort {
     fun sort(nums: IntArray) {
-        val totalNums = nums.size
+        val nNums = nums.size
 
         // to build the heap
-        for (idx in totalNums / 2 - 1 downTo 0) {
-            heapify(idx, nums, totalNums)
+        for (idx in nNums / 2 - 1 downTo 0) {
+            maxHeapify(idx, nums, nNums)
         }
 
         // to extract the max element from the heap one by one
         // to replace it with the last element in the array
-        for (idx in totalNums - 1 downTo 0) {
+        for (idx in nums.indices.reversed()) {
             swap(0, idx, nums)
 
             // to call the max heapify on the reduced heap
-            heapify(0, nums, idx)
+            maxHeapify(0, nums, idx)
         }
     }
 
-    private fun heapify(idx: Int, nums: IntArray, heapSize: Int) {
-        var largestIdx = idx
-        val leftChildIdx = 2 * idx + 1
-        val rightChildIdx = 2 * idx + 2
+    private fun maxHeapify(idx: Int, nums: IntArray, heapSize: Int) {
+        var idxMax = idx
+        val idxLeftChild = 2 * idx + 1
+        val idxRightChild = 2 * idx + 2
 
-        if (leftChildIdx < heapSize && nums[leftChildIdx] > nums[largestIdx]) {
-            largestIdx = leftChildIdx
+        if (idxLeftChild < heapSize && nums[idxLeftChild] > nums[idxMax]) {
+            idxMax = idxLeftChild
         }
 
-        if (rightChildIdx < heapSize && nums[rightChildIdx] > nums[largestIdx]) {
-            largestIdx = rightChildIdx
+        if (idxRightChild < heapSize && nums[idxRightChild] > nums[idxMax]) {
+            idxMax = idxRightChild
         }
 
-        if (largestIdx != idx) {
-            swap(idx, largestIdx, nums)
+        if (idxMax != idx) {
+            swap(idx, idxMax, nums)
 
             // to recursively call to heapify the sub-tree
-            heapify(largestIdx, nums, heapSize)
+            maxHeapify(idxMax, nums, heapSize)
         }
     }
 
