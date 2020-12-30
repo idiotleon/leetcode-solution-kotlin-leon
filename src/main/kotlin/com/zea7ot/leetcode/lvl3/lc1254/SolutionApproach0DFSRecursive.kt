@@ -28,7 +28,6 @@ class SolutionApproach0DFSRecursive {
                         ++count
                     }
                 }
-
             }
         }
 
@@ -44,16 +43,16 @@ class SolutionApproach0DFSRecursive {
         if (grid[row][col] == 1) return true
         grid[row][col] = 1
 
-        var res = true
+        var isClosed = true
         for (d in 0 until 4) {
             val nextRow = row + DIRS[d]
             val nextCol = col + DIRS[d + 1]
 
             if (!dfs(nextRow, nextCol, grid)) {
-                res = false
+                isClosed = false
             }
         }
 
-        return res
+        return isClosed
     }
 }
