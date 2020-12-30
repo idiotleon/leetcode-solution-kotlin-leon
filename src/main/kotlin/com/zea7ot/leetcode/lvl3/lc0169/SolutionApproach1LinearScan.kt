@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/majority-element/
  *
- * Time Complexity:     O(N)
- * Space Complexity:    O(N)
+ * Time Complexity:     O(`nNums`)
+ * Space Complexity:    O(`nNums`)
  *
  * the description of the problem guarantees that there always will be a majority element
  *
@@ -14,17 +14,17 @@ package com.zea7ot.leetcode.lvl3.lc0169
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0LinearScan {
+class SolutionApproach1LinearScan {
     fun majorityElement(nums: IntArray): Int {
         // sanity check
         if (nums.isEmpty()) return 0
 
-        val size = nums.size
-        val freq = hashMapOf<Int, Int>()
+        val nNums = nums.size
+        val numToFreq = HashMap<Int, Int>()
 
         for (num in nums) {
-            freq[num] = (freq[num] ?: 0) + 1
-            if (freq[num] ?: -1 > size / 2) return num
+            numToFreq[num] = 1 + (numToFreq[num] ?: 0)
+            if (numToFreq[num]!! > nNums / 2) return num
         }
 
         return Int.MAX_VALUE

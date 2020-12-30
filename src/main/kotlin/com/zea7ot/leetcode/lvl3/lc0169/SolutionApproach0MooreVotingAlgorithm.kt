@@ -1,14 +1,13 @@
 /**
  * https://leetcode.com/problems/majority-element/
  *
- * Time Complexity:     O(N)
+ * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(1)
  *
  * the description of the problem guarantees that there always will be a majority element
  *
  * References:
- *  https://leetcode.com/problems/majority-element/discuss/51613/O(n)-time-O(1)-space-fastest-solution
- *  https://leetcode.com/problems/majority-element/discuss/51611/Java-solutions-(sorting-hashmap-moore-voting-bit-manipulation).
+ *  https://youtu.be/SWr4cSY2fCk?t=501
  */
 package com.zea7ot.leetcode.lvl3.lc0169
 
@@ -17,25 +16,15 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0MooreVotingAlgorithm {
     fun majorityElement(nums: IntArray): Int {
-        // sanity check
-        if (nums.isEmpty()) return 0;
+        var count = 0
+        var candidate = 0
 
-        val size = nums.size
+        for (num in nums) {
+            if (count == 0) candidate = num
 
-        var major = nums[0]
-        var count = 1
-
-        for (i in 1 until size) {
-            when {
-                count == 0 -> {
-                    ++count
-                    major = nums[i]
-                }
-                major == nums[i] -> ++count
-                else -> --count
-            }
+            count += if (num == candidate) 1 else -1
         }
 
-        return major
+        return candidate
     }
 }
