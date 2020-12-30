@@ -9,19 +9,12 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class BinaryIndexedTree(private val nums: IntArray) {
-    private val capacity = nums.size + 1
+    private val nNums = nums.size
+    private val capacity = nNums + 1
     private val binaryIndexedTree = IntArray(capacity) { 0 }
 
     init {
         createBinaryIndexedTree()
-    }
-
-    fun updateBinaryIndexedTree(value: Int, index: Int) {
-        var idx = index
-        while (idx < capacity) {
-            binaryIndexedTree[idx] += value
-            idx = getNext(idx)
-        }
     }
 
     /**
@@ -43,6 +36,14 @@ class BinaryIndexedTree(private val nums: IntArray) {
         for (idx in nums.indices) {
             // 1-indexed
             updateBinaryIndexedTree(nums[idx], 1 + idx)
+        }
+    }
+
+    private fun updateBinaryIndexedTree(value: Int, index: Int) {
+        var idx = index
+        while (idx < capacity) {
+            binaryIndexedTree[idx] += value
+            idx = getNext(idx)
         }
     }
 

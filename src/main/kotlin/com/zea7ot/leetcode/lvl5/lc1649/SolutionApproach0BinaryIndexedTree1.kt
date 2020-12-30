@@ -13,7 +13,7 @@ package com.zea7ot.leetcode.lvl5.lc1649
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0BinaryIndexedTree {
+class SolutionApproach0BinaryIndexedTree1 {
     private companion object {
         private const val MOD = 1e9.toInt() + 7
         private const val DATA_RANGE = 1e5.toInt() + 7
@@ -26,13 +26,14 @@ class SolutionApproach0BinaryIndexedTree {
         var minCost = 0
         val fenwick = IntArray(DATA_RANGE) { 0 }
 
-        for (num in instructions) {
-            val leftCost = querySum(num - 1, fenwick)
-            val rightCost = querySum(DATA_RANGE - 2, fenwick) - querySum(num, fenwick)
-            minCost += minOf(leftCost, rightCost) % MOD
+        for (idx in instructions.indices) {
+            minCost += minOf(
+                query(instructions[idx] - 1, fenwick),
+                idx - query(instructions[idx], fenwick)
+            ) % MOD
             minCost %= MOD
 
-            update(num, fenwick)
+            update(instructions[idx], fenwick)
         }
 
         return minCost
@@ -48,7 +49,7 @@ class SolutionApproach0BinaryIndexedTree {
         }
     }
 
-    private fun querySum(index: Int, fenwick: IntArray): Int {
+    private fun query(index: Int, fenwick: IntArray): Int {
         var sum = 0
 
         var idx = index + 1

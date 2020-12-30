@@ -14,10 +14,9 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree {
     fun countSmaller(nums: IntArray): List<Int> {
-        // not used
-        // val nNums = nums.size
+        val nNums = nums.size
 
-        val ans = mutableListOf<Int>()
+        val ans = MutableList(nNums) { 0 }
         if (nums.isEmpty()) return ans
 
         var min = Int.MAX_VALUE
@@ -30,11 +29,10 @@ class SolutionApproach0SegmentTree {
         val root = SegmentTreeNode(min, max)
 
         for (idx in nums.indices.reversed()) {
-            ans.add(query(nums[idx] - 1, root))
+            ans[idx] = query(nums[idx] - 1, root)
             update(nums[idx], root)
         }
 
-        ans.reverse()
         return ans
     }
 

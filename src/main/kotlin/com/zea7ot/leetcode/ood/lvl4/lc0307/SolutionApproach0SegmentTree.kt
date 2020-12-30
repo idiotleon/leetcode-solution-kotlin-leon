@@ -2,7 +2,7 @@
  * https://leetcode.com/problems/range-sum-query-mutable/
  *
  * Time Complexities:
- *  initialization:     O(`nNums`)
+ *  initialization:     O(`nNums` * lg(`nNums`))
  *  `update()`:         O(lg(`nNums`))
  *  `sumRange()`:       O(lg(`nNums`))
  *
@@ -82,10 +82,12 @@ class SolutionApproach0SegmentTree(nums: IntArray) {
             return root
         }
 
-        private data class SegmentTreeNode(val start: Int,
-                                           val end: Int,
-                                           var sum: Int = 0,
-                                           var left: SegmentTreeNode? = null,
-                                           var right: SegmentTreeNode? = null)
+        private data class SegmentTreeNode(
+            val start: Int,
+            val end: Int,
+            var sum: Int = 0,
+            var left: SegmentTreeNode? = null,
+            var right: SegmentTreeNode? = null
+        )
     }
 }

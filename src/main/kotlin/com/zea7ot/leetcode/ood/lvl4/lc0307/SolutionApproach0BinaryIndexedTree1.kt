@@ -17,8 +17,15 @@ package com.zea7ot.leetcode.ood.lvl4.lc0307
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0BinaryIndexedTree(private val nums: IntArray) {
-    private val fenwick = BinaryIndexedTree(nums)
+class SolutionApproach0BinaryIndexedTree1(private val nums: IntArray) {
+    private val nNums = nums.size
+    private val fenwick = BIT(nNums)
+
+    init {
+        for (idx in nums.indices) {
+            fenwick.update(idx, nums[idx])
+        }
+    }
 
     fun update(i: Int, value: Int) {
         val diff = value - nums[i]
@@ -27,38 +34,30 @@ class SolutionApproach0BinaryIndexedTree(private val nums: IntArray) {
     }
 
     fun sumRange(i: Int, j: Int): Int {
-        return fenwick.query(j) - fenwick.query(i - 1)
+        return fenwick.getSum(j) - fenwick.getSum(i - 1)
     }
 
-    private class BinaryIndexedTree(nums: IntArray) {
-        private val nNums = nums.size
+    private class BIT(private val nNums: Int) {
         private val fenwick = IntArray(nNums + 1) { 0 }
 
-        init {
-            for (idx in nums.indices) {
-                update(idx, nums[idx])
-            }
-        }
-
-        fun update(index: Int, value: Int) {
-            var idx = index + 1
-
-            while (idx <= nNums) {
-                fenwick[idx] += value
-                idx += (idx and -idx)
-            }
-        }
-
-        fun query(index: Int): Int {
+        fun getSum(index: Int): Int {
             var sum = 0
-
             var idx = index + 1
+
             while (idx > 0) {
                 sum += fenwick[idx]
                 idx -= (idx and -idx)
             }
 
             return sum
+        }
+
+        fun update(index: Int, value: Int) {
+            var idx = index + 1
+            while (idx <= nNums) {
+                fenwick[idx] += value
+                idx += (idx and -idx)
+            }
         }
     }
 }
