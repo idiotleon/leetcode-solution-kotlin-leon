@@ -24,35 +24,35 @@ class SolutionApproach0BinaryIndexedTree {
             val lo = cur - (k + 1)
             val hi = cur + (k + 1)
 
-            insert(cur, fenwick)
+            update(cur, fenwick)
             visited[cur] = true
 
-            val cntCur = search(cur, fenwick)
+            val cntCur = querySum(cur, fenwick)
             val cntLo = cntCur - 1
             val cntHi = cntCur + 1
 
-            if (lo > 0 && visited[lo] && search(lo, fenwick) == cntLo) return idx + 1
-            if (hi <= nBulbs && visited[hi] && search(hi, fenwick) == cntHi) return idx + 1
+            if (lo > 0 && visited[lo] && querySum(lo, fenwick) == cntLo) return idx + 1
+            if (hi <= nBulbs && visited[hi] && querySum(hi, fenwick) == cntHi) return idx + 1
         }
 
         return -1
     }
 
-    private fun insert(index: Int, bit: IntArray) {
-        val nBits = bit.size
+    private fun update(index: Int, fenwick: IntArray) {
+        val nBits = fenwick.size
 
         var idx = index
         while (idx < nBits) {
-            bit[idx] += 1
+            fenwick[idx] += 1
             idx += idx and -idx
         }
     }
 
-    private fun search(index: Int, bit: IntArray): Int {
+    private fun querySum(index: Int, fenwick: IntArray): Int {
         var sum = 0
         var idx = index
         while (idx > 0) {
-            sum += bit[idx]
+            sum += fenwick[idx]
             idx -= idx and -idx
         }
 

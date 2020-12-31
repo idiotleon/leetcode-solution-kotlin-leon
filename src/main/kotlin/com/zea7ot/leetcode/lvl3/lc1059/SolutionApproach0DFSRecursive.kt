@@ -25,11 +25,8 @@ class SolutionApproach0DFSRecursive {
         source: Int,
         destination: Int
     ): Boolean {
-
         val graph = buildGraph(n, edges)
-
         val visited = IntArray(n) { NOT_VISITED }
-
         return dfs(source, visited, destination, graph)
     }
 
@@ -37,9 +34,8 @@ class SolutionApproach0DFSRecursive {
         cur: Int,
         visited: IntArray,
         destination: Int,
-        graph: Array<MutableList<Int>>
+        graph: List<List<Int>>
     ): Boolean {
-
         if (visited[cur] == VISITING) return false
         if (visited[cur] == VISITED) return true
 
@@ -54,15 +50,11 @@ class SolutionApproach0DFSRecursive {
         return true
     }
 
-    private fun buildGraph(nVertices: Int, edges: Array<IntArray>): Array<MutableList<Int>> {
-        val graph = Array(nVertices) { mutableListOf<Int>() }
+    private fun buildGraph(nVertices: Int, edges: Array<IntArray>): List<List<Int>> {
+        val graph = List(nVertices) { mutableListOf<Int>() }
 
-        for (edge in edges) {
-            val (u, v) = edge
-
-            graph[u].add(v)
-            // directed graph, this line cannot be added
-            // graph[v].add(u)
+        for ((from, to) in edges) {
+            graph[from].add(to)
         }
 
         return graph

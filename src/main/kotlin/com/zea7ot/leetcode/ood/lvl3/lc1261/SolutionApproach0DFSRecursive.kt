@@ -14,25 +14,19 @@ import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive(root: TreeNode?) {
-    private val seen = hashSetOf<Int>()
+    private val seen = HashSet<Int>()
 
     init {
         dfs(root, 0)
     }
 
-    fun find(target: Int): Boolean {
-        return seen.contains(target)
-    }
+    fun find(target: Int) = seen.contains(target)
 
-    private fun dfs(node: TreeNode?, nodeVal: Int) {
-        node?.let {
-            it.`val` = nodeVal
-            seen.add(nodeVal)
-
-            dfs(it.left, 2 * nodeVal + 1)
-            dfs(it.right, 2 * nodeVal + 2)
-        }
-
-        return
+    private fun dfs(node: TreeNode?, correctedValue: Int) {
+        if (node == null) return
+        seen.add(correctedValue)
+        node.`val` = correctedValue
+        dfs(node.left, 2 * correctedValue + 1)
+        dfs(node.right, 2 * correctedValue + 2)
     }
 }

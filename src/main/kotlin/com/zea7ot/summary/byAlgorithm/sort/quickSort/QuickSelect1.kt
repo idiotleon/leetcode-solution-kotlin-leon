@@ -12,7 +12,7 @@ package com.zea7ot.summary.byAlgorithm.sort.quickSort
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class QuickFind1 {
+class QuickSelect1 {
     fun findKthLargest(k: Int, nums: IntArray): Int {
         val nNums = nums.size - 1
         divide(0, nNums - 1, k, nums)

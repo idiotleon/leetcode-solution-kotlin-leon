@@ -15,12 +15,12 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class BinaryIndexedTree {
 
-    fun update(index: Int, fenwick: IntArray) {
+    fun update(index: Int, value: Int, fenwick: IntArray) {
         val nBits = fenwick.size
         var idx = index
 
         while (idx < nBits) {
-            ++fenwick[idx]
+            fenwick[idx] += value
             idx += (idx and -idx)
         }
     }

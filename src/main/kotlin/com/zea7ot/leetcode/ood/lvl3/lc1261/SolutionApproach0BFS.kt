@@ -16,27 +16,30 @@ package com.zea7ot.leetcode.ood.lvl3.lc1261
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
+import kotlin.collections.HashSet
 
 @Suppress(UNUSED)
 class SolutionApproach0BFS(root: TreeNode?) {
-    private val seen = hashSetOf<Int>()
+    private val seen = HashSet<Int>()
 
     init {
-        root?.let { bfs(it) }
+        bfs(root)
     }
 
-    fun find(target: Int): Boolean {
-        return seen.contains(target)
-    }
+    fun find(target: Int) = seen.contains(target)
 
-    private fun bfs(node: TreeNode) {
-        node.`val` = 0
-        val queue = LinkedList<TreeNode>(listOf(node))
+    private fun bfs(root: TreeNode?) {
+        if (root == null) return
+
+        root.`val` = 0
+        val queue = LinkedList<TreeNode>().also {
+            it.offer(root)
+        }
 
         while (queue.isNotEmpty()) {
             val size = queue.size
 
-            for (i in 0 until size) {
+            for (sz in 0 until size) {
                 val cur = queue.poll()
                 val nodeVal = cur.`val`
                 seen.add(nodeVal)

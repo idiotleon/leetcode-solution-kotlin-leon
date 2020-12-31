@@ -13,7 +13,7 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 class QuickSort1Way {
     fun quickSort(nums: IntArray) = quickSort(0, nums.size - 1, nums)
 
-    fun quickSort(lo: Int, hi: Int, nums: IntArray) {
+    private fun quickSort(lo: Int, hi: Int, nums: IntArray) {
         if (lo >= hi) return
 
         val pivot = partition(lo, hi, nums)
