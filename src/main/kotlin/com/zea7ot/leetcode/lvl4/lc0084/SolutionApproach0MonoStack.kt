@@ -24,13 +24,13 @@ class SolutionApproach0MonoStack {
         // sanity check
         if (heights.isEmpty()) return 0
 
-        val totalHeights = heights.size
+        val nHeights = heights.size
         var largest = 0
 
         val stack = LinkedList<Int>()
 
         var idx = 0
-        while (idx < totalHeights) {
+        while (idx < nHeights) {
             while (stack.isNotEmpty() && heights[idx] < heights[stack.peek()]) {
                 // height of the concave
                 val shortest = heights[stack.pop()]
@@ -49,7 +49,7 @@ class SolutionApproach0MonoStack {
             // height of the concave
             val shortest = heights[stack.pop()]
             // current width
-            val width = totalHeights - if (stack.isEmpty()) 0 else (stack.peek() + 1)
+            val width = nHeights - if (stack.isEmpty()) 0 else (stack.peek() + 1)
             // current area
             val area = shortest * width
             largest = maxOf(largest, area)

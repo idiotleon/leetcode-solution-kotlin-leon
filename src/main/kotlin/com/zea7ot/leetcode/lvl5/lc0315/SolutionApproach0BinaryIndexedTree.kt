@@ -2,7 +2,7 @@
  * https://leetcode.com/problems/count-of-smaller-numbers-after-self/
  *
  * Time Complexity:     O(`nNums` * lg(`nNums`)) + O(`nNums`) ~ O(`nNums` * lg(`nNums`))
- * Space Complexity:    O(`nNums`) + O(`max`)
+ * Space Complexity:    O(`nNums`) + O(`highestRank`)
  *
  * References:
  *  https://leetcode.com/problems/count-of-smaller-numbers-after-self/discuss/76674/3-Ways-(Segment-Tree-Binary-Indexed-Tree-Merge-Sort)-clean-Java-code
@@ -20,13 +20,13 @@ class SolutionApproach0BinaryIndexedTree {
         if (nums.isEmpty()) return ans
 
         val min = nums.min()!!
-        var maxRank = Int.MIN_VALUE
+        var highestRank = Int.MIN_VALUE
         for (idx in nums.indices) {
             nums[idx] -= min - 1
-            maxRank = maxOf(maxRank, nums[idx])
+            highestRank = maxOf(highestRank, nums[idx])
         }
 
-        val fenwick = IntArray(maxRank + 1) { 0 }
+        val fenwick = IntArray(highestRank + 1) { 0 }
         for (idx in nums.indices.reversed()) {
             ans[idx] = query(nums[idx] - 1, fenwick)
             update(nums[idx], fenwick)

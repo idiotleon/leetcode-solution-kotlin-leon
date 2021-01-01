@@ -36,35 +36,39 @@ class SolutionApproach0BinaryIndexedTree(matrix: Array<IntArray>) {
         val delta = value - nums[row][col]
         nums[row][col] = value
 
-        var nextRow = row + 1
+        // to turn into the index for BIT
+        var idxRow = 1 + row
 
-        while (nextRow <= nRows) {
-            var nextCol = col + 1
-            while (nextCol <= nCols) {
-                fenwick[nextRow][nextCol] += delta
-                nextCol += (nextCol and -nextCol)
+        while (idxRow <= nRows) {
+            // to turn into the index for BIT
+            var idxCol = 1 + col
+            while (idxCol <= nCols) {
+                fenwick[idxRow][idxCol] += delta
+                idxCol += (idxCol and -idxCol)
             }
 
-            nextRow += (nextRow and -nextRow)
+            idxRow += (idxRow and -idxRow)
         }
     }
 
     fun sumRegion(row1: Int, col1: Int, row2: Int, col2: Int): Int {
-        return sum(row1, col1) + sum(row2 + 1, col2 + 1) - sum(row1, col2 + 1) - sum(row2 + 1, col1)
+        return querySum(row1 - 1, col1 - 1) + querySum(row2, col2) - querySum(row1 - 1, col2) - querySum(row2, col1 - 1)
     }
 
-    private fun sum(row: Int, col: Int): Int {
+    private fun querySum(row: Int, col: Int): Int {
         if (nRows == 0 || nCols == 0) return 0
         var sum = 0
 
-        var nextRow = row
-        while (nextRow > 0) {
-            var nextCol = col
-            while (nextCol > 0) {
-                sum += fenwick[nextRow][nextCol]
-                nextCol -= (nextCol and -nextCol)
+        // to turn into the index for BIT
+        var idxRow = 1 + row
+        while (idxRow > 0) {
+            // to turn into the index for BIT
+            var idxCol = 1 + col
+            while (idxCol > 0) {
+                sum += fenwick[idxRow][idxCol]
+                idxCol -= (idxCol and -idxCol)
             }
-            nextRow -= (nextRow and -nextRow)
+            idxRow -= (idxRow and -idxRow)
         }
 
         return sum

@@ -18,14 +18,14 @@ class SolutionApproach0MonoStack1 {
         // sanity check
         if (heights.isEmpty()) return 0
 
-        val size = heights.size
+        val nHeights = heights.size
         var maxArea = 0
 
         val stack = LinkedList<Int>()
         var idx = 0
 
-        while (idx <= size) {
-            val height = if (idx == size) 0 else heights[idx]
+        while (idx <= nHeights) {
+            val height = if (idx == nHeights) 0 else heights[idx]
             if (stack.isEmpty() || height >= heights[stack.peek()]) {
                 stack.push(idx++)
             } else {
