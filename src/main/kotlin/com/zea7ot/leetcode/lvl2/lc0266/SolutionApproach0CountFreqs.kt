@@ -1,0 +1,29 @@
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/palindrome-permutation/
+ *
+ * Time Complexity:     O(`lenS`)
+ * Space Complexity:    O(`len`)
+ */
+package com.zea7ot.leetcode.lvl2.lc0266
+
+import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
+
+@Suppress(UNUSED)
+class SolutionApproach0CountFreqs {
+    fun canPermutePalindrome(str: String): Boolean {
+        val freqs = IntArray(256) { 0 }
+        for (ch in str) {
+            ++freqs[ch.toInt()]
+        }
+
+        var cntOdd = 0
+        for (freq in freqs) {
+            if (freq % 2 == 1) {
+                if (++cntOdd > 1) return false
+            }
+        }
+
+        return true
+    }
+}
