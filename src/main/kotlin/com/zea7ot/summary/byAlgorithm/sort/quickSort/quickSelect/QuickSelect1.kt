@@ -7,7 +7,7 @@
  * References:
  *  https://youtu.be/SWr4cSY2fCk?t=933https://youtu.be/SWr4cSY2fCk?t=933
  */
-package com.zea7ot.summary.byAlgorithm.sort.quickSort
+package com.zea7ot.summary.byAlgorithm.sort.quickSort.quickSelect
 
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 

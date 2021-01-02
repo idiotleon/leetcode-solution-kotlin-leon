@@ -5,7 +5,7 @@
  * References:
  *  https://algs4.cs.princeton.edu/23quicksort/Quick.java.html
  */
-package com.zea7ot.summary.byAlgorithm.sort.quickSort.oneWay
+package com.zea7ot.summary.byAlgorithm.sort.quickSort.byNumOfWays.oneWay
 
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 

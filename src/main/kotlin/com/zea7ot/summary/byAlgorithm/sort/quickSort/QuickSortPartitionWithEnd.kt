@@ -13,7 +13,7 @@ package com.zea7ot.summary.byAlgorithm.sort.quickSort
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class QuickSortPartitionEnd {
+class QuickSortPartitionWithEnd {
     fun quickSort(lo: Int, hi: Int, nums: IntArray) {
         if (lo >= hi) return
 

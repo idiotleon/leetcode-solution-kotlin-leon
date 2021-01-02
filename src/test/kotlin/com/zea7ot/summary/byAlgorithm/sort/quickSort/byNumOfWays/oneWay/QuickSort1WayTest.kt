@@ -1,4 +1,4 @@
-package com.zea7ot.summary.byAlgorithm.sort.quickSort.oneWay
+package com.zea7ot.summary.byAlgorithm.sort.quickSort.byNumOfWays.oneWay
 
 import com.zea7ot.util.UtilSort
 import org.junit.Test

@@ -14,7 +14,7 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.random.Random
 
 @Suppress(UNUSED)
-class QuickSelect {
+class QuickSelectWithRandomPivot {
     fun quickSelect(lo: Int, hi: Int, k: Int, nums: IntArray): Int {
         if (lo <= hi) {
             val pivot = partition(lo, hi, nums)

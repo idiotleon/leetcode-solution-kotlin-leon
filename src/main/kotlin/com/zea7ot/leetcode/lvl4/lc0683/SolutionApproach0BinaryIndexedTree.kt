@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/k-empty-slots/
  *
- * Time Complexity:     O()
- * Space Complexity:    O()
+ * Time Complexity:     O(`nBulbs` * lg(`nBulbs`))
+ * Space Complexity:    O(`nBulbs`)
  *
  * References:
  *  https://leetcode.com/problems/k-empty-slots/discuss/107948/Iterate-over-time-vs.-iterate-over-position
@@ -19,20 +19,19 @@ class SolutionApproach0BinaryIndexedTree {
         val visited = BooleanArray(nBulbs + 1) { false }
         val fenwick = IntArray(nBulbs + 1) { 0 }
 
-        for (idx in bulbs.indices) {
-            val cur = bulbs[idx]
-            val lo = cur - (k + 1)
-            val hi = cur + (k + 1)
+        for ((idx, bulb) in bulbs.withIndex()) {
+            val lo = bulb - (k + 1)
+            val hi = bulb + (k + 1)
 
-            update(cur, fenwick)
-            visited[cur] = true
+            update(bulb - 1, fenwick)
+            visited[bulb] = true
 
-            val cntCur = querySum(cur, fenwick)
+            val cntCur = querySum(bulb - 1, fenwick)
             val cntLo = cntCur - 1
             val cntHi = cntCur + 1
 
-            if (lo > 0 && visited[lo] && querySum(lo, fenwick) == cntLo) return idx + 1
-            if (hi <= nBulbs && visited[hi] && querySum(hi, fenwick) == cntHi) return idx + 1
+            if (lo > 0 && visited[lo] && querySum(lo - 1, fenwick) == cntLo) return idx + 1
+            if (hi <= nBulbs && visited[hi] && querySum(hi - 1, fenwick) == cntHi) return idx + 1
         }
 
         return -1
@@ -41,16 +40,16 @@ class SolutionApproach0BinaryIndexedTree {
     private fun update(index: Int, fenwick: IntArray) {
         val nBits = fenwick.size
 
-        var idx = index
+        var idx = index + 1
         while (idx < nBits) {
-            fenwick[idx] += 1
+            ++fenwick[idx]
             idx += idx and -idx
         }
     }
 
     private fun querySum(index: Int, fenwick: IntArray): Int {
         var sum = 0
-        var idx = index
+        var idx = index + 1
         while (idx > 0) {
             sum += fenwick[idx]
             idx -= idx and -idx
