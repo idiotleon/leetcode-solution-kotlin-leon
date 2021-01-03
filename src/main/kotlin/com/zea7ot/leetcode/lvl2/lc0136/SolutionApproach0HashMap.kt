@@ -11,15 +11,15 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     fun singleNumber(nums: IntArray): Int {
-        val freqs = HashMap<Int, Int>()
+        val numToFreq = HashMap<Int, Int>()
 
         var single = 0
 
         for (num in nums) {
-            freqs[num] = 1 + (freqs[num] ?: 0)
+            numToFreq[num] = 1 + (numToFreq[num] ?: 0)
         }
 
-        for ((num, freq) in freqs) {
+        for ((num, freq) in numToFreq) {
             if (freq == 1) {
                 single = num
             }

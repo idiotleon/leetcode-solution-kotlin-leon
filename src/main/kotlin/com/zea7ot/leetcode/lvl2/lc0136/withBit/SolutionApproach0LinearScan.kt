@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/single-number/
  *
- * Time Complexity:     O(`totalNums`)
+ * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(1)
  *
  * References:
@@ -12,13 +12,9 @@ package com.zea7ot.leetcode.lvl2.lc0136.withBit
 import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0Xor {
+class SolutionApproach0LinearScan {
     fun singleNumber(nums: IntArray): Int {
-        // not used
-        // val totalNums = nums.size
-
         var single = 0
-
         for (num in nums) {
             single = single xor num
         }

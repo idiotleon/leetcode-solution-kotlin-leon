@@ -34,9 +34,7 @@ class UnionFind(size: Int) {
 
     fun findRecusively(x: Int): Int {
         if (x != roots[x]) {
-            val root = findRecusively(roots[x])
-            roots[x] = root
-            return root
+            roots[x] = findRecusively(roots[x])
         }
 
         return roots[x]

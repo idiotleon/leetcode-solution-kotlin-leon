@@ -14,15 +14,15 @@ class SolutionApproach0HighLowPointers {
         // sanity check
         if (nums.isEmpty()) return 0
 
-        val sizeN = nums.size
+        val nNums = nums.size
 
         var lo = 1
         var hi = 1
 
-        while (hi < sizeN) {
-            while (hi < sizeN && nums[hi - 1] == nums[hi]) ++hi
+        while (hi < nNums) {
+            while (hi < nNums && nums[hi - 1] == nums[hi]) ++hi
 
-            if (hi == sizeN) break
+            if (hi == nNums) break
             nums[lo] = nums[hi]
             ++lo
             ++hi
