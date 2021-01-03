@@ -1,5 +1,11 @@
 /**
+ * https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/
  *
+ * Time Complexity:     O(`nStones` ^ 2)
+ * Space Complexity:    O(`nStones`)
+ *
+ * References:
+ *  https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/discuss/197668/Count-the-Number-of-Islands-O(N)
  */
 package com.zea7ot.leetcode.lvl4.lc0947
 
@@ -8,45 +14,46 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0UnionFind {
     fun removeStones(stones: Array<IntArray>): Int {
-        val totalStones = stones.size
+        val nStones = stones.size
 
-        val uf = UnionFind(totalStones + 1)
+        val uf = UnionFind(nStones)
 
         for (lo in stones.indices) {
-            for (hi in lo + 1 until totalStones) {
-                val stone1 = stones[lo]
-                val stone2 = stones[hi]
+            for (hi in lo + 1 until nStones) {
+                val (row1, col1) = stones[lo]
+                val (row2, col2) = stones[hi]
 
-                if (stone1[0] == stone2[0] || stone1[1] == stone2[1]) {
+                if (row1 == row2 || col1 == col2) {
                     uf.union(lo, hi)
                 }
             }
         }
 
-        return totalStones - uf.getCount()
+        return nStones - uf.getCount()
     }
 
-    private class UnionFind(private var isolated: Int) {
-        private val roots = IntArray(isolated) { idx -> idx }
-        private val ranks = IntArray(isolated) { 1 }
+
+    private class UnionFind(capacity: Int) {
+        private val roots = IntArray(capacity) { idx -> idx }
+        private val ranks = IntArray(capacity) { 1 }
 
         fun union(x: Int, y: Int) {
             val rootX = find(x)
             val rootY = find(y)
 
-            if (ranks[rootX] > ranks[rootY]) {
+            if (rootX == rootY) return
+
+            if (roots[rootX] > roots[rootY]) {
                 roots[rootY] = rootX
                 ++ranks[rootX]
             } else {
                 roots[rootX] = rootY
                 ++ranks[rootY]
             }
-
-            --isolated
         }
 
         fun find(x: Int): Int {
-            if (x != roots[x]) {
+            if (roots[x] != x) {
                 roots[x] = find(roots[x])
             }
 
