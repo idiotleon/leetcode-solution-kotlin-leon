@@ -18,7 +18,7 @@ class SolutionApproach0Backtrack {
         private const val EMPTY = '.'
     }
 
-    fun solveSudoku(board: Array<CharArray>): Unit {
+    fun solveSudoku(board: Array<CharArray>) {
         backtrack(0, 0, board)
     }
 

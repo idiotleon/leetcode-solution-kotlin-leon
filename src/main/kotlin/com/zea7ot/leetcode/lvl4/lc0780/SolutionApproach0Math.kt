@@ -30,4 +30,3 @@ class SolutionApproach0Math {
         return sy == ty && sx <= tx && (tx - sx) % sy == 0
     }
 }
-}
