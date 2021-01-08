@@ -27,19 +27,16 @@ class SolutionApproach0BFS {
         val nCols = grid[0].size
 
         val seen = Array(nRows) { Array<Int?>(nCols) { null } }
-        val queue = LinkedList<Node>().also {
-            it.offer(Node(0, 0, k))
+        val queue = LinkedList<State>().also {
+            it.offer(State(0, 0, k))
         }
 
         var steps = 0
         while (queue.isNotEmpty()) {
             val size = queue.size
 
-            for (i in 0 until size) {
-                val cur = queue.poll()
-                val row = cur.row
-                val col = cur.col
-                val kCur = cur.k
+            for (sz in 0 until size) {
+                val (row, col, kCur) = queue.poll()
                 // to return `steps` after reaching the destination
                 if (row == nRows - 1 && col == nCols - 1) return steps
 
@@ -58,7 +55,7 @@ class SolutionApproach0BFS {
                     // if(kLeft >= 0 && (seen[newRow][newCol] == null || seen[newRow][newCol]!! < kLeft)
                     //  if (kLeft >= 0 && ((seen[newRow][newCol] ?: Int.MIN_VALUE) < kLeft)) {
                     seen[newRow][newCol] = kLeft
-                    queue.offer(Node(newRow, newCol, kLeft))
+                    queue.offer(State(newRow, newCol, kLeft))
                     // }
                 }
             }
@@ -69,5 +66,5 @@ class SolutionApproach0BFS {
         return -1
     }
 
-    private data class Node(val row: Int, val col: Int, val k: Int)
+    private data class State(val row: Int, val col: Int, val k: Int)
 }
