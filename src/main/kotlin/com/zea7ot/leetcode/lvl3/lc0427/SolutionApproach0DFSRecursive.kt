@@ -17,7 +17,7 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
-    fun construct(grid: Array<IntArray>): Node? {
+    fun construct(grid: Array<IntArray>): QuadTreeNode? {
         val nRows = grid.size
         val nCols = grid[0].size
 
@@ -30,16 +30,16 @@ class SolutionApproach0DFSRecursive {
         hiRow: Int,
         hiCol: Int,
         grid: Array<IntArray>
-    ): Node? {
+    ): QuadTreeNode? {
         if (loRow > hiRow || loCol > hiCol) return null
 
         if (isLeaf(loRow, loCol, hiRow, hiCol, grid))
-            return Node(grid[loRow][loCol] == 1, true)
+            return QuadTreeNode(grid[loRow][loCol] == 1, true)
 
         val midRow = loRow + (hiRow - loRow) / 2
         val midCol = loCol + (hiCol - loCol) / 2
 
-        val node = Node(false, false)
+        val node = QuadTreeNode(`val` = false, isLeaf = false)
         node.topLeft = buildTree(loRow, loCol, midRow, midCol, grid)
         node.topRight = buildTree(loRow, 1 + midCol, midRow, hiCol, grid)
         node.bottomLeft = buildTree(1 + midRow, loCol, hiRow, midCol, grid)

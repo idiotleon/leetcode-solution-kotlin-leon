@@ -13,18 +13,18 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive1 {
-    fun construct(grid: Array<IntArray>): Node {
+    fun construct(grid: Array<IntArray>): QuadTreeNode {
         val nRows = grid.size
 
         return dfs(0, 0, nRows, grid)
     }
 
-    private fun dfs(row: Int, col: Int, len: Int, grid: Array<IntArray>): Node {
+    private fun dfs(row: Int, col: Int, len: Int, grid: Array<IntArray>): QuadTreeNode {
         if (len == 1) {
-            return Node(grid[row][col] != 0, true)
+            return QuadTreeNode(grid[row][col] != 0, true)
         }
 
-        val root = Node(false, false)
+        val root = QuadTreeNode(`val` = false, isLeaf = false)
         val topLeft = dfs(row, col, len / 2, grid)
         val topRight = dfs(row, col + len / 2, len / 2, grid)
         val bottomLeft = dfs(row + len / 2, col, len / 2, grid)
