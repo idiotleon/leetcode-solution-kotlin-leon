@@ -24,12 +24,9 @@ class SolutionApproach0DP2Dimen1 {
 
         for (hi in str.indices) {
             for (lo in hi downTo 0) {
-                for (k in lo until hi) {
-                    dp[lo][hi] = if (str[k] == str[hi]) {
-                        minOf(dp[lo][hi], dp[lo][k] + dp[k + 1][hi] - 1)
-                    } else {
-                        minOf(dp[lo][hi], dp[lo][k] + dp[k + 1][hi])
-                    }
+                for (mid in lo until hi) {
+                    val localMin = dp[lo][mid] + dp[mid + 1][hi] - if (str[mid] == str[hi]) 1 else 0
+                    dp[lo][hi] = minOf(dp[lo][hi], localMin)
                 }
             }
         }
