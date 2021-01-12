@@ -16,22 +16,22 @@ import kotlin.collections.HashMap
 
 @Suppress(UNUSED)
 class SolutionApproach0UnionFind {
-    fun smallestStringWithSwaps(s: String, pairs: List<List<Int>>): String {
-        val lenS = s.length
+    fun smallestStringWithSwaps(str: String, pairs: List<List<Int>>): String {
+        val lenS = str.length
         val uf = UnionFind(lenS)
 
-        for (pair in pairs) {
-            uf.union(pair[0], pair[1])
+        for ((x, y) in pairs) {
+            uf.union(x, y)
         }
 
         val map = HashMap<Int, PriorityQueue<Char>>()
-        for (idx in s.indices) {
+        for (idx in str.indices) {
             val root = uf.find(idx)
-            map.getOrPut(root) { PriorityQueue() }.add(s[idx])
+            map.getOrPut(root) { PriorityQueue() }.add(str[idx])
         }
 
         val builder = StringBuilder()
-        for (idx in s.indices) {
+        for (idx in str.indices) {
             map[uf.find(idx)]?.let {
                 builder.append(it.poll())
             }

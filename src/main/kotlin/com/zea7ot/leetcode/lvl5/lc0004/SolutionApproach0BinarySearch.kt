@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/median-of-two-sorted-arrays/
  *
- * Time Complexity:     O(lg(min(L1, L2)))
+ * Time Complexity:     O(lg(min(`nNums1`, `nNums2`)))
  * Space Complexity:    O(1)
  *
  *
@@ -30,15 +30,15 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double {
-        val size1 = nums1.size
-        val size2 = nums2.size
-        if (size1 > size2) return findMedianSortedArrays(nums2, nums1)
+        val nNums1 = nums1.size
+        val nNums2 = nums2.size
+        if (nNums1 > nNums2) return findMedianSortedArrays(nums2, nums1)
 
-        val size = size1 + size2
-        val mid = (size + 1) / 2
+        val nNums = nNums1 + nNums2
+        val mid = (nNums + 1) / 2
 
         var lo = 0
-        var hi = size1
+        var hi = nNums1
 
         while (lo < hi) {
             val mid1 = lo + (hi - lo) / 2
@@ -46,19 +46,25 @@ class SolutionApproach0BinarySearch {
 
             if (nums1[mid1] < nums2[mid2 - 1]) {
                 lo = mid1 + 1
-            } else hi = mid1
+            } else {
+                hi = mid1
+            }
         }
 
         val mid1 = lo
         val mid2 = mid - mid1
 
-        val num1 = maxOf(if (mid1 <= 0) Int.MIN_VALUE else nums1[mid1 - 1],
-                if (mid2 <= 0) Int.MIN_VALUE else nums2[mid2 - 1])
+        val num1 = maxOf(
+            if (mid1 <= 0) Int.MIN_VALUE else nums1[mid1 - 1],
+            if (mid2 <= 0) Int.MIN_VALUE else nums2[mid2 - 1]
+        )
 
-        if (size % 2 == 1) return num1.toDouble()
+        if (nNums % 2 == 1) return num1.toDouble()
 
-        val num2 = minOf(if (mid1 >= size1) Int.MAX_VALUE else nums1[mid1],
-                if (mid2 >= size2) Int.MAX_VALUE else nums2[mid2])
+        val num2 = minOf(
+            if (mid1 >= nNums1) Int.MAX_VALUE else nums1[mid1],
+            if (mid2 >= nNums2) Int.MAX_VALUE else nums2[mid2]
+        )
 
         return (num1 + num2).toDouble() / 2
     }

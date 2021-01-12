@@ -1,10 +1,10 @@
 /**
  * https://leetcode.com/problems/longest-palindromic-substring/
  *
- * Time Complexity:     O(L ^ 2)
- * Space Complexity:    O(L ^ 2)
+ * Time Complexity:     O(`lenS` ^ 2)
+ * Space Complexity:    O(`lenS` ^ 2)
  *
- * `dp[i][j]`, whether `str.substring(i, j)` is a palindrome
+ * `dp[lo][hi]`, whether `str.substring(lo, hi + 1)` is a palindrome
  *
  *
  * References:
@@ -16,27 +16,26 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
-    fun longestPalindrome(s: String): String {
-        val lenS = s.length
-        // sanity check
-        if (lenS < 2) return s
+    fun longestPalindrome(str: String): String {
+        val lenS = str.length
+        if (lenS < 2) return str
 
-        val dp = Array(lenS) { BooleanArray(lenS) }
+        val dp = Array(lenS) { BooleanArray(lenS) { false } }
 
         var start = 0
         var end = 0
 
-        for (i in lenS - 1 downTo 0) {
-            for (j in i until lenS) {
-                dp[i][j] = (s[i] == s[j]) && (j - i < 2 || dp[i + 1][j - 1])
+        for (lo in lenS - 1 downTo 0) {
+            for (hi in lo until lenS) {
+                dp[lo][hi] = (str[lo] == str[hi]) && (hi - lo < 2 || dp[lo + 1][hi - 1])
 
-                if (dp[i][j] && j - i > end - start) {
-                    start = i
-                    end = j
+                if (dp[lo][hi] && hi - lo > end - start) {
+                    start = lo
+                    end = hi
                 }
             }
         }
 
-        return s.substring(start, end + 1)
+        return str.substring(start, end + 1)
     }
 }
