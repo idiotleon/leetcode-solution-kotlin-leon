@@ -20,14 +20,14 @@ class SolutionApproach0DFSMemo {
         // sanity check, required
         if (matrix.isEmpty() || matrix[0].isEmpty()) return 0
 
-        val totalRows = matrix.size
-        val totalCols = matrix[0].size
+        val nRows = matrix.size
+        val nCols = matrix[0].size
 
-        val memo = Array(totalRows) { Array<Int?>(totalCols) { null } }
+        val memo = Array(nRows) { Array<Int?>(nCols) { null } }
 
         var longest = 1
-        for (row in 0 until totalRows) {
-            for (col in 0 until totalCols) {
+        for (row in matrix.indices) {
+            for (col in matrix[row].indices) {
                 longest = maxOf(longest, dfs(row, col, matrix, memo))
             }
         }

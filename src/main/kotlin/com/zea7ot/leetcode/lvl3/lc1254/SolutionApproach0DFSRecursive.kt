@@ -34,19 +34,19 @@ class SolutionApproach0DFSRecursive {
         return count
     }
 
-    private fun dfs(row: Int, col: Int, grid: Array<IntArray>): Boolean {
+    private fun dfs(curRow: Int, curCol: Int, grid: Array<IntArray>): Boolean {
         val nRows = grid.size
         val nCols = grid[0].size
 
-        if (row < 0 || row >= nRows || col < 0 || col >= nCols) return false
+        if (curRow < 0 || curRow >= nRows || curCol < 0 || curCol >= nCols) return false
 
-        if (grid[row][col] == 1) return true
-        grid[row][col] = 1
+        if (grid[curRow][curCol] == 1) return true
+        grid[curRow][curCol] = 1
 
         var isClosed = true
         for (d in 0 until 4) {
-            val nextRow = row + DIRS[d]
-            val nextCol = col + DIRS[d + 1]
+            val nextRow = curRow + DIRS[d]
+            val nextCol = curCol + DIRS[d + 1]
 
             if (!dfs(nextRow, nextCol, grid)) {
                 isClosed = false

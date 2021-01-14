@@ -19,12 +19,12 @@ class SolutionApproach0Greedy {
 
         cars.sortBy { it.position }
 
-        var cur = 0.0
+        var curTimeLimit = 0.0
         var fleet = 0
         for (idx in cars.indices.reversed()) {
             val car = cars[idx]
-            if (car.time > cur) {
-                cur = car.time
+            if (car.time > curTimeLimit) {
+                curTimeLimit = car.time
                 ++fleet
             }
         }

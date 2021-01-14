@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/132-pattern/
  *
- * Time Complexity:     O(`totalNums`), one pass
- * Space Complexity:    O(`totalNums`)
+ * Time Complexity:     O(`nNums`), one pass
+ * Space Complexity:    O(`nNums`)
  *
  * to maintain a strictly decreasing stack:
  *  1. the elements are values, instead of indexes
@@ -32,7 +32,7 @@ import java.util.*
 class SolutionApproach0MonoStack {
     fun find132pattern(nums: IntArray): Boolean {
         // not used
-        // val totalNums = nums.size
+        // val nNums = nums.size
 
         var pattern3 = Int.MIN_VALUE
         val stack = LinkedList<Int>()

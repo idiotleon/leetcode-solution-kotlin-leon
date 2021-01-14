@@ -25,7 +25,7 @@ class SolutionApproach0DLL(private val capacity: Int) {
     fun get(key: Int): Int {
         nodeMap[key]?.let {
             update(it)
-            return it.`val`
+            return it.value
         }
 
         return -1
@@ -36,11 +36,11 @@ class SolutionApproach0DLL(private val capacity: Int) {
 
         if (nodeMap[key] != null) {
             val node = nodeMap[key]
-            node?.`val` = value
+            node?.value = value
             update(node!!)
         } else {
             val node = DLLNode(key)
-            node.`val` = value
+            node.value = value
             nodeMap[key] = node
 
             if (size == capacity) {
@@ -78,7 +78,6 @@ class SolutionApproach0DLL(private val capacity: Int) {
         val dummyHead: DLLNode = DLLNode(-1),
         val dummyTail: DLLNode = DLLNode(-1)
     ) {
-
         var size: Int = 0
 
         init {
@@ -124,7 +123,7 @@ class SolutionApproach0DLL(private val capacity: Int) {
     }
 
     private data class DLLNode(val key: Int) {
-        var `val` = 0
+        var value = 0
         var count = 1
         var prev: DLLNode? = null
         var next: DLLNode? = null

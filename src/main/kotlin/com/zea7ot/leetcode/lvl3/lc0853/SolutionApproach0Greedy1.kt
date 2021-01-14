@@ -25,10 +25,10 @@ class SolutionApproach0Greedy1 {
 
         var fleet = 0
 
-        var cur = 0.0
+        var curTimeLimit = 0.0
         for ((_, time) in map) {
-            if (time > cur) {
-                cur = time
+            if (time > curTimeLimit) {
+                curTimeLimit = time
                 ++fleet
             }
         }
