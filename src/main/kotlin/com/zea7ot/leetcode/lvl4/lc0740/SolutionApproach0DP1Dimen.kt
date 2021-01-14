@@ -1,12 +1,13 @@
 /**
  * https://leetcode.com/problems/delete-and-earn/
  *
- * Time Complexity:     O(totalNums + `RANGE`) + O(`RANGE`) ~ O(totalNums + `RANGE`)
- *  totalNums, the amount of elements in the input array
+ * Time Complexity:     O(`nNums` + `RANGE`) + O(`RANGE`) ~ O(`nNums` + `RANGE`)
+ *  nNums, the amount of elements in the input array
  *  RANGE, the range of the value of each integer element, which, in this case, is 10001,
  *      and can be optimized to the max value in the array, at an extra cost of O(totalNums)
  *
- * Space Complexity:    O(totalNums + `RANGE`)
+ * Space Complexity:    O(`nNums` + `RANGE`)
+ *
  *
  * References:
  *  https://leetcode.com/problems/delete-and-earn/discuss/109889/Java-Easy-DP-Solution/111623
@@ -20,23 +21,23 @@ import com.zea7ot.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun deleteAndEarn(nums: IntArray): Int {
-        // sanity check
-        if (nums.isEmpty()) return 0
+        // not used
+        // val nNums = nums.size
 
-        val totalRange = 1e4.toInt() + 1
+        val valueRange = 1e4.toInt() + 1
 
-        val sums = IntArray(totalRange)
+        val numToSums = IntArray(valueRange)
         for (num in nums) {
-            sums[num] += num
+            numToSums[num] += num
         }
 
-        val dp = IntArray(totalRange)
-        dp[1] = sums[1]
+        val dp = IntArray(valueRange) { 0 }
+        dp[1] = numToSums[1]
 
-        for (i in 2 until totalRange) {
-            dp[i] = maxOf(dp[i - 1], dp[i - 2] + sums[i])
+        for (idx in 2 until valueRange) {
+            dp[idx] = maxOf(dp[idx - 1], dp[idx - 2] + numToSums[idx])
         }
 
-        return dp[totalRange - 1]
+        return dp.last()
     }
 }
