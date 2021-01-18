@@ -25,11 +25,11 @@ class SolutionApproach0DijkstraSPF {
     }
 
     fun shortestDistance(maze: Array<IntArray>, start: IntArray, destination: IntArray): Int {
-        val totalRows = maze.size
-        val totalCols = maze[0].size
+        val nRows = maze.size
+        val nCols = maze[0].size
 
-        val distances = Array(totalRows) { row ->
-            IntArray(totalCols) { col ->
+        val distances = Array(nRows) { row ->
+            IntArray(nCols) { col ->
                 when {
                     row == start[0] && col == start[1] -> 0
                     else -> Int.MAX_VALUE
@@ -41,13 +41,12 @@ class SolutionApproach0DijkstraSPF {
         minHeap.offer(State(start[0], start[1], 0))
 
         while (minHeap.isNotEmpty()) {
-            val cur = minHeap.poll()
-            if (cur.row == destination[0] && cur.col == destination[1]) break
+            val (curRow, curCol, curDistance) = minHeap.poll()
+            if (curRow == destination[0] && curCol == destination[1]) break
 
-            val curDistance = distances[cur.row][cur.col]
             for (d in 0 until 4) {
-                var nextRow = cur.row
-                var nextCol = cur.col
+                var nextRow = curRow
+                var nextCol = curCol
                 var steps = 0
 
                 while (isValid(nextRow + DIRS[d], nextCol + DIRS[d + 1], maze)) {
@@ -70,10 +69,10 @@ class SolutionApproach0DijkstraSPF {
     }
 
     private fun isValid(row: Int, col: Int, maze: Array<IntArray>): Boolean {
-        val totalRows = maze.size
-        val totalCols = maze[0].size
+        val nRows = maze.size
+        val nCols = maze[0].size
 
-        return (row in 0 until totalRows) && (col in 0 until totalCols) && maze[row][col] == EMPTY
+        return (row in 0 until nRows) && (col in 0 until nCols) && maze[row][col] == EMPTY
     }
 
     private data class State(val row: Int, val col: Int, val distance: Int)
