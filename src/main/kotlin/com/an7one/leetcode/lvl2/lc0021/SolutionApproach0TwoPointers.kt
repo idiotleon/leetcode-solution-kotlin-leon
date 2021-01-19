@@ -12,28 +12,27 @@ import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
 
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
-    fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
-        val dummyHead = ListNode(-1)
-        var prev = dummyHead
+    private companion object {
+        private const val RANGE = 100 + 7
+    }
 
-        var l1 = l1
-        var l2 = l2
-
-        while (l1 != null && l2 != null) {
-            if (l1.`val` < l2.`val`) {
-                prev.next = l1
-                l1 = l1.next
+    fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
+        val dummy = ListNode(-1)
+        var prev: ListNode? = dummy
+        var cur1 = list1
+        var cur2 = list2
+        while (cur1 != null || cur2 != null) {
+            val value1 = cur1?.`val` ?: RANGE
+            val value2 = cur2?.`val` ?: RANGE
+            if (value1 < value2) {
+                prev?.next = cur1
+                cur1 = cur1?.next
             } else {
-                prev.next = l2
-                l2 = l2.next
+                prev?.next = cur2
+                cur2 = cur2?.next
             }
-
-            prev = prev.next!!
+            prev = prev?.next
         }
-
-        if (l1 != null) prev.next = l1
-        if (l2 != null) prev.next = l2
-
-        return dummyHead.next
+        return dummy.next
     }
 }
