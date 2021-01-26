@@ -22,7 +22,9 @@ class SolutionApproach0LinearScan {
         val lenS = s.length
         var hi = lenS - 1
 
-        while (hi >= 0 && s[hi] == SPACE) --hi
+        while (hi >= 0 && s[hi] == SPACE) {
+            --hi
+        }
 
         var len = 0
         while (hi >= 0 && s[hi] != SPACE) {
