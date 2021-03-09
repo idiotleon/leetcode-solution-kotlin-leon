@@ -13,15 +13,14 @@ import com.zea7ot.leetcode.util.dataStructure.tree.TreeNode
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun buildTree(inorder: IntArray, postorder: IntArray): TreeNode? {
-
         val nNodes = inorder.size
 
-        val map = HashMap<Int, Int>()
+        val inorderValToIdx = HashMap<Int, Int>()
         for (idx in inorder.indices) {
-            map[inorder[idx]] = idx
+            inorderValToIdx[inorder[idx]] = idx
         }
 
-        return dfs(nNodes - 1, 0, nNodes - 1, inorder, postorder, map)
+        return dfs(nNodes - 1, 0, nNodes - 1, inorder, postorder, inorderValToIdx)
     }
 
     private fun dfs(
@@ -30,19 +29,18 @@ class SolutionApproach0DFSRecursive {
         idxEndInorder: Int,
         inorder: IntArray,
         postorder: IntArray,
-        map: HashMap<Int, Int>
+        inorderValToIdx: HashMap<Int, Int>
     ): TreeNode? {
-
         if (idxPostorder < 0 || idxStartInorder > idxEndInorder) return null
 
         val rootValue = postorder[idxPostorder]
         val root = TreeNode(rootValue)
 
-        val idxRoot = map[rootValue]!!
+        val idxRoot = inorderValToIdx[rootValue]!!
 
-        root.right = dfs(idxPostorder - 1, idxRoot + 1, idxEndInorder, inorder, postorder, map)
+        root.right = dfs(idxPostorder - 1, idxRoot + 1, idxEndInorder, inorder, postorder, inorderValToIdx)
         root.left =
-            dfs(idxPostorder - (idxEndInorder - idxRoot + 1), idxStartInorder, idxRoot - 1, inorder, postorder, map)
+            dfs(idxPostorder - (idxEndInorder - idxRoot + 1), idxStartInorder, idxRoot - 1, inorder, postorder, inorderValToIdx)
 
         return root
     }
