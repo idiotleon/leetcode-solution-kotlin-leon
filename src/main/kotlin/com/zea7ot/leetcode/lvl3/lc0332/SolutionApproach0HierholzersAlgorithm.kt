@@ -1,11 +1,11 @@
 /**
  * https://leetcode.com/problems/reconstruct-itinerary/
  *
- * Time Complexity:     O(`totalTickets` * lg(`totalTickets`)) + O(`totalTickets`) ~ O(`totalTickets` * lg(`totalTickets`))
- *  O(`totalTickets` * lg(`totalTickets`)), consumed by PQ
- *  O(`totalTickets`), consumed by `postorder()`
+ * Time Complexity:     O(`nTickets` * lg(`nTickets`)) + O(`nTickets`) ~ O(`nTickets` * lg(`nTickets`))
+ *  O(`nTickets` * lg(`nTickets`)), consumed by Priority Queue
+ *  O(`nTickets`), consumed by `postorder()`
  *
- * Space Complexity:    O(`totalTickets`) + O(H)
+ * Space Complexity:    O(`nTickets`) + O(H)
  *
  * to sort the children and post order traverse the graph
  *
@@ -29,12 +29,11 @@ class SolutionApproach0HierholzersAlgorithm {
 
     fun findItinerary(tickets: List<List<String>>): List<String> {
         // not used
-        // val totalTickets = tickets.size
+        // val nTickets = tickets.size
 
         // to build the graph
         val graph = HashMap<String, PriorityQueue<String>>()
-        for (ticket in tickets) {
-            val (from, to) = ticket
+        for ((from, to) in tickets) {
             graph.getOrPut(from) { PriorityQueue() }.add(to)
         }
 
