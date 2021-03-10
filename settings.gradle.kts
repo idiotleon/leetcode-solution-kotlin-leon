@@ -7,4 +7,4 @@
  * in the user manual at https://docs.gradle.org/6.6/userguide/multi_project_builds.html
  */
 
-rootProject.name = "leetcode-solutions-kotlin-zea7ot"
+rootProject.name = "leetcode-solutions-kotlin-an7one"

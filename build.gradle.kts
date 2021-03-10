@@ -40,5 +40,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = "com.zea7ot.AppKt"
+    mainClassName = "com.an7one.AppKt"
 }
