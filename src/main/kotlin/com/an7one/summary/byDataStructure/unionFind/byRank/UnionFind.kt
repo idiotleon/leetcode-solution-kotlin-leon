@@ -21,8 +21,8 @@ class UnionFind(capacity: Int) {
     private var isolated = capacity
 
     fun unionByRank(x: Int, y: Int) {
-        val rootX = findRecursive(x)
-        val rootY = findIterative(y)
+        val rootX = findIteratively(x)
+        val rootY = findRecursively(y)
 
         if (rootX == rootY) return
 
@@ -37,20 +37,22 @@ class UnionFind(capacity: Int) {
         --isolated
     }
 
-    fun findRecursive(x: Int): Int {
+    fun findRecursively(x: Int): Int {
         if (roots[x] != x) {
-            roots[x] = findRecursive(roots[x])
+            roots[x] = findRecursively(roots[x])
             return roots[x]
         }
 
         return roots[x]
     }
 
-    fun findIterative(x: Int): Int {
+    fun findIteratively(x: Int): Int {
+        var x = x
         while (x != roots[x]) {
             roots[x] = roots[roots[x]]
+            x = roots[x]
         }
 
-        return roots[x]
+        return x
     }
 }
