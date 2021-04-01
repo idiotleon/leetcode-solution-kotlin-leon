@@ -15,9 +15,8 @@ class SolutionApproach0Sort {
         nums.sort()
 
         for (idx in 1 until nNums) {
-            if (nums[idx - 1] == nums[idx]) {
+            if (nums[idx - 1] == nums[idx])
                 return true
-            }
         }
 
         return false
