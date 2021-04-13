@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/j-array-largest-sum/
  *
- * Time Complexity:     O(`totalNums` * `m` * `totalNums`)
- * Space Complexity:    O(`totalNums` * `m`)
+ * Time Complexity:     O(`nNums` * `m` * `nNums`)
+ * Space Complexity:    O(`nNums` * `m`)
  *
  * this approach applies to situations where there is are negative numbers
  *
@@ -19,18 +19,18 @@ class SolutionApproach0DP2Dimen {
         // sanity check, not required
         // if (nums.isEmpty()) return 0
 
-        val totalNums = nums.size
+        val nNums = nums.size
 
         // 1-indexed, instead of 0-indexed
-        val prefixSums = IntArray(totalNums + 1)
-        for (i in 0 until totalNums) {
+        val prefixSums = IntArray(nNums + 1)
+        for (i in 0 until nNums) {
             prefixSums[i + 1] = prefixSums[i] + nums[i]
         }
 
-        val dp = Array(totalNums + 1) { IntArray(m + 1) { Int.MAX_VALUE } }
+        val dp = Array(nNums + 1) { IntArray(m + 1) { Int.MAX_VALUE } }
         dp[0][0] = 0
 
-        for (hi in 1..totalNums) {
+        for (hi in 1..nNums) {
             // the actual split(s), starting with 1
             for (partition in 1..m) {
                 // [0, lo], [lo, hi]: where to split the array
@@ -41,6 +41,6 @@ class SolutionApproach0DP2Dimen {
             }
         }
 
-        return dp[totalNums][m]
+        return dp[nNums][m]
     }
 }
