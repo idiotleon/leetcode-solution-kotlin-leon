@@ -20,13 +20,9 @@ class SolutionApproach0PostorderRecursive {
         val value = node.`val`
 
         if (left && right) {
-            node.left?.let {
-                if (value != it.`val`) return false
-            }
+            node.left?.let { if (value != it.`val`) return false }
 
-            node.right?.let {
-                if (value != it.`val`) return false
-            }
+            node.right?.let { if (value != it.`val`) return false }
 
             ++count[0]
             return true

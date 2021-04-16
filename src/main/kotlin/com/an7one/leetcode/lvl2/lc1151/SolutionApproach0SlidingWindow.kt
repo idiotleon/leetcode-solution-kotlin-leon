@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together/
  *
- * Time Complexity:     O(`totalData`)
+ * Time Complexity:     O(`nData`)
  * Space Complexity:    O(1)
  *
  * References:
@@ -15,7 +15,7 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0SlidingWindow {
     fun minSwaps(data: IntArray): Int {
         // not used
-        // val totalData = data.size
+        // val nData = data.size
 
         // the most 1s, within the fixed-size sliding window, can have
         var most = 0
