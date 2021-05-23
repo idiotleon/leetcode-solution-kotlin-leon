@@ -8,7 +8,7 @@
  *  https://leetcode.com/problems/find-the-shortest-superstring/discuss/194932/Travelling-Salesman-Problem/222214
  *  https://leetcode.com/problems/find-the-shortest-superstring/discuss/194932/Travelling-Salesman-Problem
  */
-package com.an7one.leetcode.lvl5.lc0943
+package com.an7one.leetcode.lvl5.lc0943.withBit
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
@@ -18,8 +18,8 @@ class SolutionApproach0DP2Dimen {
     fun shortestSuperstring(strs: Array<String>): String {
         val nStrs = strs.size
         val graph = Array(nStrs) { IntArray(nStrs) { 0 } }
-        for (i in 0 until nStrs) {
-            for (j in 0 until nStrs) {
+        for (i in strs.indices) {
+            for (j in strs.indices) {
                 graph[i][j] = getEdgeWeight(strs[i], strs[j])
                 graph[j][i] = getEdgeWeight(strs[j], strs[i])
             }
