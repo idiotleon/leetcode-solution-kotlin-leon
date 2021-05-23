@@ -2,7 +2,7 @@
  * https://leetcode.com/problems/valid-palindrome-iii/
  *
  * Time Complexity:     O(`lenS` ^ 2)
- * Space Complexity:    O()
+ * Space Complexity:    O(`lenS` ^ 2)
  *
  * References:
  *  https://leetcode.com/problems/valid-palindrome-iii/discuss/397606/Find-Longest-Palindromic-Subsequence.
@@ -26,12 +26,13 @@ class SolutionApproach0DFSMemo {
 
         memo[lo][hi]?.let { return it }
 
-        memo[lo][hi] = if (str[lo] == str[hi]) {
+        val longest = if (str[lo] == str[hi]) {
             dfs(lo + 1, hi - 1, str, memo) + 2
         } else {
             maxOf(dfs(lo + 1, hi, str, memo), dfs(lo, hi - 1, str, memo))
         }
 
-        return memo[lo][hi]!!
+        memo[lo][hi] = longest
+        return longest
     }
 }

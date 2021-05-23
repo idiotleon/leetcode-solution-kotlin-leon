@@ -16,8 +16,9 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0DFSMemo {
     fun maxCoins(nums: IntArray): Int {
         val nNums = nums.size
+        val nPadded = nNums + 2
 
-        val padded = IntArray(nNums + 2) { idx ->
+        val padded = IntArray(nPadded) { idx ->
             when (idx) {
                 0 -> 1
                 nNums + 1 -> 1
@@ -25,7 +26,7 @@ class SolutionApproach0DFSMemo {
             }
         }
 
-        val memo = Array(nNums + 2) { IntArray(nNums + 2) { 0 } }
+        val memo = Array(nPadded) { IntArray(nPadded) { 0 } }
         return dfs(1, nNums, padded, memo)
     }
 

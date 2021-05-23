@@ -9,8 +9,10 @@
  */
 package com.an7one.leetcode.ood.lvl3.lc0348
 
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.math.abs
 
+@Suppress(UNUSED)
 class SolutionApproach0LinearScan(private val n: Int) {
     private val rows = IntArray(n) { 0 }
     private val cols = IntArray(n) { 0 }
