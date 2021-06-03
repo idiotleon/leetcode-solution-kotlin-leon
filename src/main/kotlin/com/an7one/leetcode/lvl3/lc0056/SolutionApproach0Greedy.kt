@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/merge-intervals/
  *
- * Time Complexity:     O(`totalIntervals` * lg(`totalIntervals`)) + O(`totalIntervals`) ~ O(`totalIntervals` * lg(`totalIntervals`))
- * Space Complexity:    O(`totalIntervals`)
+ * Time Complexity:     O(`nIntervals` * lg(`nIntervals`)) + O(`nIntervals`) ~ O(`nIntervals` * lg(`nIntervals`))
+ * Space Complexity:    O(`nIntervals`)
  */
 package com.an7one.leetcode.lvl3.lc0056
 
@@ -12,7 +12,7 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0Greedy {
     fun merge(intervals: Array<IntArray>): Array<IntArray> {
         // not used
-        // val totalIntervals = intervals.size
+        // val nIntervals = intervals.size
 
         intervals.sortBy { it[0] }
 
