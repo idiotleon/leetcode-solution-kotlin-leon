@@ -9,9 +9,9 @@
  */
 package com.an7one.leetcode.lvl2.lc1570
 
-import com.an7one.leetcode.util.Constant
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
-@Suppress(Constant.Annotation.UNUSED)
+@Suppress(UNUSED)
 class SparseVector(nums: IntArray) {
     private val valToIdx = HashMap<Int, Int>()
 
@@ -24,21 +24,21 @@ class SparseVector(nums: IntArray) {
 
     // Return the dotProduct of two sparse vectors
     fun dotProduct(vec: SparseVector): Int {
-        val valToIdx1 = valToIdx // one vector
+        val valToIdx1 = this.valToIdx // one vector
         val valToIdx2 = vec.valToIdx // the other vector
 
         // to make sure vector1 is of smaller size,
         // later on to start with
         if (valToIdx1.size > valToIdx2.size)
-            return vec.dotProduct(this);
+            return vec.dotProduct(this)
 
-        var product = 0;
+        var product = 0
         for ((idx1, num1) in valToIdx1) {
             valToIdx2[idx1]?.let { num2 ->
                 product += num1 * num2
             }
         }
 
-        return product;
+        return product
     }
 }
