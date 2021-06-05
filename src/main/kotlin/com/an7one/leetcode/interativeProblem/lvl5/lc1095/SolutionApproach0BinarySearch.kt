@@ -37,11 +37,11 @@ class SolutionApproach0BinarySearch {
         hi = peak
         while (lo <= hi) {
             val mid = lo + (hi - lo) / 2
-            if (mountainArr.get(mid) < target) {
-                lo = mid + 1
-            } else if (mountainArr.get(mid) > target) {
-                hi = mid - 1
-            } else return mid
+            when {
+                mountainArr.get(mid) < target -> lo = mid + 1
+                mountainArr.get(mid) > target -> hi = mid - 1
+                else -> return mid
+            }
         }
 
         // to binary search on the right, decreasing slop
@@ -49,11 +49,11 @@ class SolutionApproach0BinarySearch {
         hi = lenM - 1
         while (lo <= hi) {
             val mid = lo + (hi - lo) / 2
-            if (mountainArr.get(mid) < target) {
-                hi = mid - 1
-            } else if (mountainArr.get(mid) > target) {
-                lo = mid + 1
-            } else return mid
+            when {
+                mountainArr.get(mid) < target -> hi = mid - 1
+                mountainArr.get(mid) > target -> lo = mid + 1
+                else -> return mid
+            }
         }
 
         return -1

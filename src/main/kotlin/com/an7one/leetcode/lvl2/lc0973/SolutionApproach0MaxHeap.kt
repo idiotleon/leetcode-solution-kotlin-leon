@@ -11,26 +11,23 @@ import java.util.*
 
 @Suppress(UNUSED)
 class SolutionApproach0MaxHeap {
-    fun kClosest(points: Array<IntArray>, K: Int): Array<IntArray> {
-        val ans = Array(K) { IntArray(2) }
-        // sanity check
-        if (points.isEmpty()) return ans
-
-        val maxHeap = PriorityQueue<IntArray> { a, b
-            ->
-            (b[0].toLong() * b[0].toLong() + b[1].toLong() * b[1].toLong()).compareTo(a[0].toLong() * a[0].toLong() + a[1].toLong() * a[1].toLong())
-        }
+    fun kClosest(points: Array<IntArray>, k: Int): Array<IntArray> {
+        val maxHeap = PriorityQueue<IntArray>(compareBy { -getDistance(it[0], it[1]) })
 
         for (point in points) {
             maxHeap.offer(point)
-            if (maxHeap.size > K)
+            if (maxHeap.size > k)
                 maxHeap.poll()
         }
 
-        var idx = K - 1
-        while (maxHeap.isNotEmpty())
+        val ans = Array(k) { IntArray(2) { 0 } }
+        var idx = k - 1
+        while (maxHeap.isNotEmpty()) {
             ans[idx--] = maxHeap.poll()
+        }
 
         return ans
     }
+
+    private fun getDistance(row: Int, col: Int): Long = row.toLong() * row.toLong() + col.toLong() * col.toLong()
 }

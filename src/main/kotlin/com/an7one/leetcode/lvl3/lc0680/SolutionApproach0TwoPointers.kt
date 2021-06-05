@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/valid-palindrome-ii/
  *
- * Time Complexity:     O(`len`)
+ * Time Complexity:     O(`lenS`)
  * Space Complexity:    O(1)
  */
 package com.an7one.leetcode.lvl3.lc0680
@@ -14,9 +14,9 @@ class SolutionApproach0TwoPointers {
         // sanity check
         if (str.isEmpty()) return false
 
-        val len = str.length
+        val lenS = str.length
         var lo = 0
-        var hi = len - 1
+        var hi = lenS - 1
 
         while (lo < hi) {
             if (str[lo] != str[hi])

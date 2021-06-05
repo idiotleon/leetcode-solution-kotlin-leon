@@ -8,7 +8,7 @@ package com.an7one.leetcode.interativeProblem.lvl2.lc1428
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
-@SuppressWarnings(UNUSED)
+@Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun leftMostColumnWithOne(binaryMatrix: FakeBinaryMatrix): Int {
         val (nRows, nCols) = binaryMatrix.dimensions()
