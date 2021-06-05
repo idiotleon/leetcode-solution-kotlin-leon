@@ -11,10 +11,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
-class SolutionApproach0Recursion {
-    fun rangeSumBST(root: TreeNode?, low: Int, high: Int): Int {
-        return dfs(low, high, root)
-    }
+class SolutionApproach0DFSRecursive {
+    fun rangeSumBST(root: TreeNode?, low: Int, high: Int): Int = dfs(low, high, root)
 
     private fun dfs(low: Int, high: Int, node: TreeNode?): Int {
         if (node == null) return 0

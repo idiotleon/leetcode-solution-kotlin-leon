@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/partition-equal-subset-sum/
  *
- * Time Complexity:     O(`nNums` * `volume`)
- * Space Complexity:    O(`volume`)
+ * Time Complexity:     O(`nNums` * `sumAll`)
+ * Space Complexity:    O(`sumAll`)
  *
  * the characteristic of Knapsack problems is that
  *  its time and space complexity is highly related
@@ -22,19 +22,19 @@ class SolutionApproach0Knapsack1 {
         // not used
         // val nNums = nums.size
 
-        val volume = nums.sum()
-        if (volume % 2 == 1) return false
+        val sumAll = nums.sum()
+        if (sumAll % 2 == 1) return false
 
-        val dp = BooleanArray(volume + 1) { idx -> idx == 0 }
+        val dp = BooleanArray(sumAll + 1) { idx -> idx == 0 }
 
         for (num in nums) {
-            for (sum in volume downTo 0) {
+            for (sum in sumAll downTo 0) {
                 if (dp[sum]) {
                     dp[num + sum] = true
                 }
             }
 
-            if (dp[volume / 2]) return true
+            if (dp[sumAll / 2]) return true
         }
 
         return false

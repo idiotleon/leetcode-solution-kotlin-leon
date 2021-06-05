@@ -18,16 +18,18 @@ import kotlin.random.Random
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch(weights: IntArray) {
     private val nWeights = weights.size
-    private val weightSums = weights.copyOf()
+
+    // prefix weight sums
+    private val prefixWSums = weights.copyOf()
 
     init {
         for (idx in 1 until nWeights) {
-            weightSums[idx] += weightSums[idx - 1]
+            prefixWSums[idx] += prefixWSums[idx - 1]
         }
     }
 
     fun pickIndex(): Int {
-        val idx = Random.nextInt(weightSums[nWeights - 1]) + 1
+        val idx = Random.nextInt(prefixWSums[nWeights - 1]) + 1
 
         var lo = 0
         var hi = nWeights
@@ -36,8 +38,8 @@ class SolutionApproach0BinarySearch(weights: IntArray) {
             val mid = lo + (hi - lo) / 2
 
             when {
-                weightSums[mid] < idx -> lo = mid + 1
-                weightSums[mid] > idx -> hi = mid
+                prefixWSums[mid] < idx -> lo = mid + 1
+                prefixWSums[mid] > idx -> hi = mid
                 else -> return mid
             }
         }

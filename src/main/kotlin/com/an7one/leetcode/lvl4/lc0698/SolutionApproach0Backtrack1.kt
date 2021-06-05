@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/partition-to-k-equal-sum-subsets/
  *
- * Time Complexity:     O(`k` ^ `totalNums`)
+ * Time Complexity:     O(`k` ^ `nNums`)
  * Space Complexity:    O(`k`)
  *
  * References:
@@ -13,7 +13,7 @@ package com.an7one.leetcode.lvl4.lc0698
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0Backtrack {
+class SolutionApproach0Backtrack1 {
     fun canPartitionKSubsets(nums: IntArray, k: Int): Boolean {
         // not used
         // val totalNums = nums.size
@@ -24,21 +24,21 @@ class SolutionApproach0Backtrack {
         return canPartition(0, 0, k, volume / k, nums)
     }
 
-    private fun canPartition(startIdx: Int, curSum: Int, k: Int, target: Int, nums: IntArray): Boolean {
-        val totalNums = nums.size
+    private fun canPartition(startIdx: Int, sumCur: Int, k: Int, target: Int, nums: IntArray): Boolean {
+        val nNums = nums.size
 
         if (k == 0) return true
         // one partition has been found (`k - 1`), to find the next one
-        if (curSum == target) return canPartition(0, 0, k - 1, target, nums)
-        if (curSum > target) return false
+        if (sumCur == target) return canPartition(0, 0, k - 1, target, nums)
+        if (sumCur > target) return false
 
-        for (idx in startIdx until totalNums) {
+        for (idx in startIdx until nNums) {
             if (nums[idx] != -1) {
                 val hold = nums[idx]
                 // to mark visited
                 nums[idx] = -1
                 // to further backtrack to the next state
-                if (canPartition(1 + idx, curSum + hold, k, target, nums)) return true
+                if (canPartition(1 + idx, sumCur + hold, k, target, nums)) return true
                 // to backtrack to the previous state
                 nums[idx] = hold
             }

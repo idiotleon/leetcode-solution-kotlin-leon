@@ -1,11 +1,12 @@
 /**
  * https://leetcode.com/problems/partition-to-k-equal-sum-subsets/
  *
- * Time Complexity:     O(`totalNums` * (2 ^ `totalNums`))
- * Space Complexity:    O(2 ^ `totalNums`)
+ * Time Complexity:     O(`nNums` * (2 ^ `nNums`)) + O(`nNums` * lg(`nNums`)) ~ O(`nNums` * (2 ^ `nNums`))
+ * Space Complexity:    O(2 ^ `nNums`)
  *
  * References:
  *  https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/335668/DP-with-Bit-Masking-Solution-%3A-Best-for-Interviews
+ *  https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/108741/solution-with-reference/962804
  */
 package com.an7one.leetcode.lvl4.lc0698.witBit
 
@@ -14,19 +15,19 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun canPartitionKSubsets(nums: IntArray, k: Int): Boolean {
-        val totalNums = nums.size
+        val nNums = nums.size
         // the range of states(bitmask)
-        val range = 1 shl totalNums
+        val range = 1 shl nNums
 
         // whether it can be partitioned, corresponding to the state (bitmask)
         val dp = BooleanArray(range) { idx -> idx == 0 }
         // the sums, corresponding to the state (bitmask)
         val sums = IntArray(range) { 0 }
 
-        val sum = nums.sum()
-        if (sum % k != 0) return false
+        val sumAll = nums.sum()
+        if (sumAll % k != 0) return false
 
-        val target = sum / k
+        val target = sumAll / k
         nums.sort()
         if (nums.last() > target) return false
 

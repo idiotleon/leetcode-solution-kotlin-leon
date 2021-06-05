@@ -21,22 +21,22 @@ class SolutionApproach0DP2Dimen {
 
         val nNums = nums.size
 
-        // 1-indexed, instead of 0-indexed
-        val prefixSums = IntArray(nNums + 1)
-        for (i in 0 until nNums) {
-            prefixSums[i + 1] = prefixSums[i] + nums[i]
+        val prefixSums = IntArray(nNums + 1) { 0 }
+        for ((idx, num) in nums.withIndex()) {
+            prefixSums[idx + 1] = prefixSums[idx] + num
         }
 
-        val dp = Array(nNums + 1) { IntArray(m + 1) { Int.MAX_VALUE } }
-        dp[0][0] = 0
+        val dp = Array(nNums + 1) { IntArray(m + 1) { Int.MAX_VALUE } }.also {
+            it[0][0] = 0
+        }
 
         for (hi in 1..nNums) {
             // the actual split(s), starting with 1
-            for (partition in 1..m) {
+            for (par in 1..m) {
                 // [0, lo], [lo, hi]: where to split the array
                 for (lo in 0 until hi) {
-                    val subarraySum = prefixSums[hi] - prefixSums[lo]
-                    dp[hi][partition] = minOf(dp[hi][partition], maxOf(dp[lo][partition - 1], subarraySum))
+                    val sumSubarray = prefixSums[hi] - prefixSums[lo]
+                    dp[hi][par] = minOf(dp[hi][par], maxOf(dp[lo][par - 1], sumSubarray))
                 }
             }
         }

@@ -8,7 +8,7 @@ import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
 
 @Suppress(UNUSED)
-class SolutionApproach0Stack {
+class SolutionApproach0DFSIterative {
     fun rangeSumBST(root: TreeNode?, low: Int, high: Int): Int {
         var sum = 0
 

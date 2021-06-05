@@ -1,27 +1,27 @@
 /**
  * https://leetcode.com/problems/matchsticks-to-square/
  *
- * Time Complexity:     O(4 ^ `totalNums`)
+ * Time Complexity:     O(4 ^ `sumAll`)
  * Space Complexity:    O(`n`)
  *
  * References:
  *  https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/108741/Solution-with-Reference/569560
  *  https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/108741/Solution-with-Reference
-*/
+ */
 package com.an7one.leetcode.lvl4.lc0473
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0Backtrack {
+class SolutionApproach0Backtrack1 {
     fun makesquare(nums: IntArray): Boolean {
         // not used
         // val totalNums = nums.size
 
-        val volume = nums.sum()
-        if (volume < 4 || volume % 4 != 0) return false
+        val sumAll = nums.sum()
+        if (sumAll < 4 || sumAll % 4 != 0) return false
 
-        return canPartition(0, 0, 4, volume / 4, nums)
+        return canPartition(0, 0, 4, sumAll / 4, nums)
     }
 
     private fun canPartition(startIdx: Int, curSum: Int, k: Int, target: Int, nums: IntArray): Boolean {

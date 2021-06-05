@@ -23,9 +23,7 @@ class SolutionApproach0Stack {
     }
 
     fun exclusiveTime(n: Int, logs: List<String>): IntArray {
-        val ans = IntArray(n)
-        // sanity check
-        if (n == 0 && logs.isEmpty()) return ans
+        val ans = IntArray(n) { 0 }
 
         val stack = LinkedList<Int>()
         var prevTimestamp = 0
