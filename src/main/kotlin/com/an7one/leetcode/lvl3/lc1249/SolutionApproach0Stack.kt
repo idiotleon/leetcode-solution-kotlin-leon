@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
  *
- * Time Complexity:     O(L)
- * Space Complexity:    O(L)
+ * Time Complexity:     O(`lenS`)
+ * Space Complexity:    O(`lenS`)
  *
  * References:
  *  https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/discuss/419402/JavaC%2B%2B-Stack
@@ -14,25 +14,28 @@ import java.util.*
 
 @Suppress(UNUSED)
 class SolutionApproach0Stack {
+    private companion object {
+        private const val PLACE_HOLDER = '#'
+        private const val PAREN_OPEN = '('
+        private const val PAREN_CLOSED = ')'
+    }
+
     fun minRemoveToMakeValid(str: String): String {
         // sanity check
         if (str.isEmpty()) return ""
 
-        val lenS = str.length
+        // not used
+        // val lenS = str.length
         val chs = str.toCharArray()
-
-        val placeHolder = '*'
-        val openParen = '('
-        val closedParen = ')'
 
         val stack = LinkedList<Int>()
 
-        for (i in 0 until lenS) {
-            when (chs[i]) {
-                openParen -> stack.push(i)
-                closedParen -> {
+        for (idx in str.indices) {
+            when (chs[idx]) {
+                PAREN_OPEN -> stack.push(idx)
+                PAREN_CLOSED -> {
                     if (stack.isEmpty())
-                        chs[i] = placeHolder
+                        chs[idx] = PLACE_HOLDER
                     else
                         stack.pop()
                 }
@@ -41,12 +44,12 @@ class SolutionApproach0Stack {
             }
         }
 
-        while (!stack.isEmpty())
-            chs[stack.pop()] = placeHolder
+        while (stack.isNotEmpty())
+            chs[stack.pop()] = PLACE_HOLDER
 
         val builder = StringBuilder()
         for (ch in chs)
-            if (ch != placeHolder)
+            if (ch != PLACE_HOLDER)
                 builder.append(ch)
 
         return builder.toString()
