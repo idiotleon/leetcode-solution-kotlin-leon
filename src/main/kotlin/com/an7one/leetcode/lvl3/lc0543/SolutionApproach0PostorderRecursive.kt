@@ -12,21 +12,23 @@ import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
-    private var maxDiameter = 0
+    private var longest = 0
 
     fun diameterOfBinaryTree(root: TreeNode?): Int {
         postorder(root)
-        return maxDiameter
+
+        return longest
     }
 
     private fun postorder(node: TreeNode?): Int {
-        if (node == null) return 0
+        if (node == null)
+            return 0
 
         val leftDepth = postorder(node.left)
         val rightDepth = postorder(node.right)
 
-        maxDiameter = maxOf(maxDiameter, leftDepth + rightDepth)
+        longest = maxOf(longest, leftDepth + rightDepth)
 
-        return 1 + maxOf(leftDepth, rightDepth)
+        return maxOf(leftDepth, rightDepth) + 1
     }
 }

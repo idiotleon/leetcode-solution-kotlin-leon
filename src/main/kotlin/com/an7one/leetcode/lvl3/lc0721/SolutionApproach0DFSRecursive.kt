@@ -57,9 +57,11 @@ class SolutionApproach0DFSRecursive {
     ) {
         res.add(cur)
 
-        for (next in graph[cur]!!) {
-            if (!seen.add(next)) continue
-            dfs(next, seen, res, graph)
+        graph[cur]?.let {
+            for (next in it) {
+                if (!seen.add(next)) continue
+                dfs(next, seen, res, graph)
+            }
         }
     }
 }
