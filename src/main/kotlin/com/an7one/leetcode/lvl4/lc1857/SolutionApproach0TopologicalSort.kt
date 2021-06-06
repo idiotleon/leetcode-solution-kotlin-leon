@@ -8,7 +8,7 @@
  *  https://leetcode.com/problems/largest-color-value-in-a-directed-graph/discuss/1198658/C++-Topological-Sort/931674
  *  https://leetcode.com/problems/largest-color-value-in-a-directed-graph/discuss/1198658/C%2B%2B-Topological-Sorts
  */
-package com.an7one.leetcode.lvl4.lc01857
+package com.an7one.leetcode.lvl4.lc1857
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*

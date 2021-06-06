@@ -29,6 +29,6 @@ class UpperBound {
             }
         }
 
-        return lo
+        return hi - 1
     }
 }
