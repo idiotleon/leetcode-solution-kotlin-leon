@@ -14,7 +14,9 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun integerBreak(n: Int): Int {
-        val dp = IntArray(n + 1) { idx -> if (idx == 1) 1 else 0 }
+        val dp = IntArray(n + 1).also {
+            it[1] = 1
+        }
         for (hi in 2..n) {
             for (lo in 1..hi / 2) {
                 dp[hi] = maxOf(
@@ -24,7 +26,7 @@ class SolutionApproach0DP1Dimen {
                     // the answer could be among 1 * 7, 2 * 6, 3 * 5, 4 * 4...
                     // but these numbers can be further broken.
                     // so we have to compare 1 with dp[1], 7 with dp[7], 2 with dp[2], 6 with dp[6]...etc
-                    maxOf(lo, dp[lo]) * (maxOf(hi - lo, dp[hi - lo]))
+                    maxOf(lo, dp[lo]) * maxOf(hi - lo, dp[hi - lo])
                 )
             }
         }

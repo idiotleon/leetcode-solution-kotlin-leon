@@ -18,21 +18,26 @@ class SolutionApproach0HashMap {
         // not used
         // val nNums = nums.size
 
+        val numToSeqLen = HashMap<Int, Int>()
+
         var longest = 0
 
-        val rangeMap = HashMap<Int, Int>()
-        for (num in nums) {
-            if (rangeMap.containsKey(num)) continue
+        loop@ for (num in nums) {
+            if (numToSeqLen.containsKey(num))
+                continue@loop
 
-            val lo = rangeMap[num - 1] ?: 0
-            val hi = rangeMap[num + 1] ?: 0
-            val len = lo + hi + 1
+            val lo = numToSeqLen[num - 1] ?: 0
+            val hi = numToSeqLen[num + 1] ?: 0
+            val curLen = lo + hi + 1
 
-            rangeMap[num] = len
-            longest = maxOf(longest, len)
+            numToSeqLen[num] = curLen
+            longest = maxOf(longest, curLen)
 
-            if (lo > 0) rangeMap[num - lo] = len
-            if (hi > 0) rangeMap[num + hi] = len
+            if (lo > 0)
+                numToSeqLen[num - lo] = curLen
+
+            if (hi > 0)
+                numToSeqLen[num + hi] = curLen
         }
 
         return longest

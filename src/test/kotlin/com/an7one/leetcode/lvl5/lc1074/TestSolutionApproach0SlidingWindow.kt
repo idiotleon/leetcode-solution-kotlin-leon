@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 
 class TestSolutionApproach0SlidingWindow {
-    private val solution = SolutionApproach0PrefixSums()
+    private val solution = SolutionApproach0PrefixSums1()
 
     @Test
     fun sampleInput1_ShouldReturnExpected() {

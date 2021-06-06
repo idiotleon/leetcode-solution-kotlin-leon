@@ -19,18 +19,18 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0PrefixSums1 {
     fun subarraySum(nums: IntArray, k: Int): Int {
-        val sumToCount = hashMapOf(0 to 1)
+        val sumToFreq = hashMapOf(0 to 1)
 
-        var count = 0
+        var freq = 0
         var sum = 0
 
         for (num in nums) {
             sum += num
 
-            sumToCount[sum - k]?.let { count += it }
-            sumToCount[sum] = (sumToCount[sum] ?: 0) + 1
+            sumToFreq[sum - k]?.let { freq += it }
+            sumToFreq[sum] = 1 + (sumToFreq[sum] ?: 0)
         }
 
-        return count
+        return freq
     }
 }

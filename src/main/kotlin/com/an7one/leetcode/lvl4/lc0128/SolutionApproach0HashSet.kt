@@ -17,22 +17,23 @@ class SolutionApproach0HashSet {
         // not used
         // val nNums = nums.size
 
+        val set = nums.toHashSet()
+
         var longest = 0
 
-        val set = HashSet<Int>().also {
-            for (num in nums) it.add(num)
-        }
-
-        for (num in nums) {
+        loop@ for (num in nums) {
             var lo = num - 1
             var hi = num + 1
 
             while (set.remove(lo)) --lo
             while (set.remove(hi)) ++hi
 
-            longest = maxOf(longest, hi - lo - 1)
+            val curLen = hi - lo - 1
 
-            if (set.isEmpty()) return longest
+            longest = maxOf(longest, curLen)
+
+            if (set.isEmpty())
+                break@loop
         }
 
         return longest

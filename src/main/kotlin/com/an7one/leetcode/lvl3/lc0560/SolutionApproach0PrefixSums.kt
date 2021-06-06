@@ -19,7 +19,7 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0PrefixSums {
     fun subarraySum(nums: IntArray, k: Int): Int {
-        val sumToCount = HashMap<Int, Int>()
+        val sumToFreq = HashMap<Int, Int>()
 
         var count = 0
         var sum = 0
@@ -30,8 +30,8 @@ class SolutionApproach0PrefixSums {
             if (sum == k)
                 ++count
 
-            sumToCount[sum - k]?.let { count += it }
-            sumToCount[sum] = 1 + (sumToCount[sum] ?: 0)
+            sumToFreq[sum - k]?.let { count += it }
+            sumToFreq[sum] = 1 + (sumToFreq[sum] ?: 0)
         }
 
         return count
