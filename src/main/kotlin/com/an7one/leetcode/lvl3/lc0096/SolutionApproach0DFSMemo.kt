@@ -20,15 +20,16 @@ class SolutionApproach0DFSMemo {
     private fun dfs(n: Int, memo: Array<Int?>): Int {
         memo[n]?.let { return it }
 
-        if (n <= 1) return 1
+        if (n <= 1)
+            return 1
 
-        var total = 0
+        var amount = 0
 
         for (i in 1..n) {
-            total += dfs(i - 1, memo) * dfs(n - i, memo)
+            amount += dfs(i - 1, memo) * dfs(n - i, memo)
         }
 
-        memo[n] = total
-        return total
+        memo[n] = amount
+        return amount
     }
 }
