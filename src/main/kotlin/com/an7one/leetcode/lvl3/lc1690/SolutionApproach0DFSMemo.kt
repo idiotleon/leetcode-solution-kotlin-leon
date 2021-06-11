@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/stone-game-vii/
  *
- * Time Complexity:     O()
- * Space Complexity:    O()
+ * Time Complexity:     O(`nStones` ^ 2)
+ * Space Complexity:    O(`nStones` ^ 2)
  *
  * References:
  *  https://leetcode.com/problems/stone-game-vii/discuss/970268/C++Python-O(n-*-n)/791280
