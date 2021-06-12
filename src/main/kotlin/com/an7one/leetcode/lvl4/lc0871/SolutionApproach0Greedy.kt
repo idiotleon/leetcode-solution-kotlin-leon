@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/minimum-number-of-refueling-stops/
  *
- * Time Complexity:     O(`totalStations` * lg(`totalStations`))
- * Space Complexity:    O(`totalStations`)
+ * Time Complexity:     O(`nStations` * lg(`nStations`))
+ * Space Complexity:    O(`nStations`)
  *
  * References:
  *  https://leetcode.com/problems/minimum-number-of-refueling-stops/discuss/294025/Java-Simple-Code-Greedy
@@ -15,7 +15,7 @@ import java.util.*
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
     fun minRefuelStops(target: Int, startFuel: Int, stations: Array<IntArray>): Int {
-        val totalStations = stations.size
+        val nStations = stations.size
 
         val maxHeap = PriorityQueue<Int>(compareBy { -it })
 
@@ -24,7 +24,7 @@ class SolutionApproach0Greedy {
         var refuel = 0
 
         while (furthest < target) {
-            while (idx < totalStations && furthest >= stations[idx][0]) {
+            while (idx < nStations && furthest >= stations[idx][0]) {
                 maxHeap.offer(stations[idx][1])
                 ++idx
             }

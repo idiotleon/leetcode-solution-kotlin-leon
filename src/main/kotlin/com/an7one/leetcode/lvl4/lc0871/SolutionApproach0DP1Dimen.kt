@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/minimum-number-of-refueling-ts/
  *
- * Time Complexity:     O(`totalStations` ^ 2)
- * Space Complexity:    O(`totalStations`)
+ * Time Complexity:     O(`nStations` ^ 2)
+ * Space Complexity:    O(`nStations`)
  *
  * dp[t], means the furthest distance one can get with `t` times of refueling
  *  if dp[t] >= stations[idx][0], one can refuel:
@@ -18,12 +18,13 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun minRefuelStops(target: Int, startFuel: Int, stations: Array<IntArray>): Int {
-        val totalStations = stations.size
+        val nStations = stations.size
 
-        val dp = IntArray(totalStations + 1)
-        dp[0] = startFuel
+        val dp = IntArray(nStations + 1) { 0 }.also {
+            it[0] = startFuel
+        }
 
-        for (idx in 0 until totalStations) {
+        for (idx in stations.indices) {
             for (t in idx downTo 0) {
                 if (dp[t] >= stations[idx][0]) {
                     dp[t + 1] = maxOf(dp[t + 1], dp[t] + stations[idx][1])
@@ -31,12 +32,6 @@ class SolutionApproach0DP1Dimen {
             }
         }
 
-        for (i in 0..totalStations) {
-            if (dp[i] >= target) {
-                return i
-            }
-        }
-
-        return -1
+        return dp.indexOfFirst { it >= target }
     }
 }
