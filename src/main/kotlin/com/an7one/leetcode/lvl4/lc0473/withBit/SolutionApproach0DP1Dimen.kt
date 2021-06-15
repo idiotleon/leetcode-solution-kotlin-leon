@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/matchsticks-to-square/
  *
- * Time Complexity:     O(4 ^ `totalNums`)
- * Space Complexity:    O(`n`)
+ * Time Complexity:     O(4 ^ `nNums`)
+ * Space Complexity:    O(`range`)
  *
  * References:
  *  https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/335668/DP-with-Bit-Masking-Solution-%3A-Best-for-Interviews
@@ -21,13 +21,15 @@ class SolutionApproach0DP1Dimen {
     }
 
     // the solution for lc0698
-    fun canPartitionKSubsets(nums: IntArray, k: Int): Boolean {
-        val totalNums = nums.size
+    private fun canPartitionKSubsets(nums: IntArray, k: Int): Boolean {
+        val nNums = nums.size
         // the range of states(bitmask)
-        val range = 1 shl totalNums
+        val range = 1 shl nNums
 
         // whether it can be partitioned, corresponding to the state (bitmask)
-        val dp = BooleanArray(range) { idx -> idx == 0 }
+        val dp = BooleanArray(range) { false }.also {
+            it[0] = true
+        }
         // the sums, corresponding to the state (bitmask)
         val sums = IntArray(range) { 0 }
 
