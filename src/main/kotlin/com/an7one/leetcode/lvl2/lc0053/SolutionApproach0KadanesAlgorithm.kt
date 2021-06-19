@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/maximum-subarray/
  *
- * Time Complexity:     O(`totalNums`)
+ * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(1)
  *
  * References:
@@ -16,25 +16,22 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0KadanesAlgorithm {
     fun maxSubArray(nums: IntArray): Int {
-
         // not used
-        // val totalNums = nums.size
+        // val nNums = nums.size
 
-        var localMax = 0
-        var globalMax = Int.MIN_VALUE
+        var sum = 0
+        var largest = Int.MIN_VALUE
 
         for (num in nums) {
-            localMax += num
+            sum += num
 
-            if (globalMax < localMax) {
-                globalMax = localMax
-            }
+            if (sum > largest)
+                largest = sum
 
-            if (localMax < 0) {
-                localMax = 0
-            }
+            if (sum < 0)
+                sum = 0
         }
 
-        return globalMax
+        return largest
     }
 }
