@@ -20,10 +20,12 @@ class SolutionApproach0DijkstraSPF {
     }
 
     fun swimInWater(grid: Array<IntArray>): Int {
+        // the grid is a square
         val n = grid.size
 
-        val minHeap = PriorityQueue<Node>(compareBy { it.elevation })
-        minHeap.offer(Node(0, 0, grid[0][0]))
+        val minHeap = PriorityQueue<Node>(compareBy { it.elevation }).also {
+            it.offer(Node(0, 0, grid[0][0]))
+        }
 
         val visited = Array(n) { BooleanArray(n) { false } }
 
