@@ -24,9 +24,11 @@ class SolutionApproach0DFSMemo {
         return dfs(s, wordSet, memo)
     }
 
-    private fun dfs(str: String,
-                    wordSet: HashSet<String>,
-                    memo: HashMap<String, List<String>>): List<String> {
+    private fun dfs(
+        str: String,
+        wordSet: HashSet<String>,
+        memo: HashMap<String, List<String>>
+    ): List<String> {
 
         memo[str]?.let { return it }
 
