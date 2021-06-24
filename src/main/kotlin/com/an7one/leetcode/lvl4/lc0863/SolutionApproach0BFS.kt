@@ -16,11 +16,11 @@ import kotlin.collections.HashSet
 
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
-    fun distanceK(root: TreeNode?, target: TreeNode?, K: Int): List<Int> {
+    fun distanceK(root: TreeNode?, target: TreeNode?, kDistance: Int): List<Int> {
         val ans = mutableListOf<Int>()
         if (root == null || target == null) return ans
         // required
-        if (K == 0) return listOf(target.`val`)
+        if (kDistance == 0) return listOf(target.`val`)
 
         val childToParent = HashMap<TreeNode, TreeNode>()
         dfs(root, childToParent)
@@ -47,7 +47,7 @@ class SolutionApproach0BFS {
 
             }
 
-            if (k++ == K) break
+            if (k++ == kDistance) break
             ans.clear()
         }
 
@@ -58,7 +58,8 @@ class SolutionApproach0BFS {
         node: TreeNode?,
         childToParent: HashMap<TreeNode, TreeNode>
     ) {
-        if (node == null) return
+        if (node == null)
+            return
 
         node.left?.let { childToParent[it] = node }
         node.right?.let { childToParent[it] = node }

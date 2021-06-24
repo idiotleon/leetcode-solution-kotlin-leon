@@ -25,7 +25,8 @@ class SolutionApproach0Greedy {
 
         var ans = (maxFreq - 1) * (n + 1)
         for (freq in freqs) {
-            if (freq == maxFreq) ++ans
+            if (freq == maxFreq)
+                ++ans
         }
 
         return maxOf(ans, nTasks)
