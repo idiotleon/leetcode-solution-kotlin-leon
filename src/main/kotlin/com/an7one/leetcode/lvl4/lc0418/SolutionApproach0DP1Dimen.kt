@@ -1,10 +1,11 @@
 /**
  * https://leetcode.com/problems/sentence-screen-fitting/
  *
- * Time Complexity:     O()
- * Space Complexity:    O()
+ * Time Complexity:     O(`lenP`)
+ * Space Complexity:    O(`lenP`)
  *
  * References:
+ *  https://leetcode.com/problems/sentence-screen-fitting/discuss/90845/21ms-18-lines-Java-solution/95274
  *  https://leetcode.com/problems/sentence-screen-fitting/discuss/90845/21ms-18-lines-Java-solution/95290
  *  https://leetcode.com/problems/sentence-screen-fitting/discuss/90845/21ms-18-lines-Java-solution
  */
@@ -15,25 +16,25 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     private companion object {
-        private const val SPACE = ' '
+        private const val CH_SPACE = ' '
     }
 
-    fun wordsTyping(sentence: Array<String>, rows: Int, cols: Int): Int {
-        val padded = sentence.joinToString(SPACE.toString()) + SPACE
-        val lenS = padded.length
-        var count = 0
+    fun wordsTyping(sentences: Array<String>, rows: Int, cols: Int): Int {
+        val padded = sentences.joinToString(CH_SPACE.toString()) + CH_SPACE
+        val lenP = padded.length
 
-        val map = IntArray(lenS) { 0 }.also {
-            for (i in 1 until lenS) {
-                it[i] = if (padded[i] == SPACE) 1 else it[i - 1] - 1
+        val distances = IntArray(lenP) { 0 }.also {
+            for (idx in 1 until lenP) {
+                it[idx] = if (padded[idx] == CH_SPACE) 1 else it[idx - 1] - 1
             }
         }
 
+        var count = 0
         for (row in 0 until rows) {
             count += cols
-            count += map[count % lenS]
+            count += distances[count % lenP]
         }
 
-        return count / lenS
+        return count / lenP
     }
 }
