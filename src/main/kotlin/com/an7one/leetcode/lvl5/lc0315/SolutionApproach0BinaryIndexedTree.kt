@@ -17,6 +17,7 @@ class SolutionApproach0BinaryIndexedTree {
         val nNums = nums.size
 
         val ans = MutableList(nNums) { 0 }
+        // sanity check
         if (nums.isEmpty()) return ans
 
         val min = nums.min()!!
@@ -35,18 +36,18 @@ class SolutionApproach0BinaryIndexedTree {
         return ans
     }
 
-    private fun update(index: Int, fenwick: IntArray) {
+    private fun update(idx: Int, fenwick: IntArray) {
         val nBits = fenwick.size
 
-        var idx = index
+        var idx = idx
         while (idx < nBits) {
             ++fenwick[idx]
             idx += (idx and -idx)
         }
     }
 
-    private fun query(index: Int, fenwick: IntArray): Int {
-        var idx = index
+    private fun query(idx: Int, fenwick: IntArray): Int {
+        var idx = idx
         var sum = 0
 
         while (idx > 0) {

@@ -17,14 +17,12 @@ class SolutionApproach0SegmentTree {
         val nNums = nums.size
 
         val ans = MutableList(nNums) { 0 }
-        if (nums.isEmpty()) return ans
+        // sanity check
+        if (nums.isEmpty())
+            return ans
 
-        var min = Int.MAX_VALUE
-        var max = Int.MIN_VALUE
-        for (num in nums) {
-            min = minOf(min, num)
-            max = maxOf(max, num)
-        }
+        val min = nums.min()!!
+        val max = nums.max()!!
 
         val root = SegmentTreeNode(min, max)
 
@@ -37,7 +35,8 @@ class SolutionApproach0SegmentTree {
     }
 
     private fun query(value: Int, node: SegmentTreeNode?): Int {
-        if (node == null) return 0
+        if (node == null)
+            return 0
 
         return if (value >= node.max) {
             node.count
@@ -53,23 +52,25 @@ class SolutionApproach0SegmentTree {
     }
 
     private fun update(value: Int, node: SegmentTreeNode?) {
-        if (node == null) return
-        if (value < node.min || value > node.max) return
+        if (node == null)
+            return
+
+        if (value < node.min || value > node.max)
+            return
 
         ++node.count
-        if (node.max == node.min) return
+        if (node.max == node.min)
+            return
 
         val mid = node.getMid()
         if (value < mid) {
-            if (node.left == null) {
+            if (node.left == null)
                 node.left = SegmentTreeNode(node.min, mid - 1)
-            }
 
             update(value, node.left)
         } else {
-            if (node.right == null) {
+            if (node.right == null)
                 node.right = SegmentTreeNode(mid, node.max)
-            }
 
             update(value, node.right)
         }
@@ -82,6 +83,6 @@ class SolutionApproach0SegmentTree {
         var left: SegmentTreeNode? = null,
         var right: SegmentTreeNode? = null
     ) {
-        fun getMid() = ((max + 1 - min) / 2 + min)
+        fun getMid() = (max + 1 - min) / 2 + min
     }
 }
