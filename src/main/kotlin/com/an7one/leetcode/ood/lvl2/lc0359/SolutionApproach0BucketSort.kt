@@ -12,7 +12,7 @@ package com.an7one.leetcode.ood.lvl2.lc0359
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0BucketSort() {
+class SolutionApproach0BucketSort {
     private companion object {
         private const val DURATION = 10
     }

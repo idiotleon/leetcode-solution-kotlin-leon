@@ -13,8 +13,11 @@ package com.an7one.leetcode.ood.lvl2.lc0359
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0HashMap() {
-    /** Initialize your data structure here. */
+class SolutionApproach0HashMap {
+    private companion object {
+        private const val DURATION = 10
+    }
+
     private var cacheOld = HashMap<String, Int>()
     private var cacheNew = HashMap<String, Int>()
     private var latest = 0
@@ -23,11 +26,11 @@ class SolutionApproach0HashMap() {
     If this method returns false, the message will not be printed.
     The timestamp is in seconds granularity. */
     fun shouldPrintMessage(timestamp: Int, message: String): Boolean {
-        if (timestamp >= latest + 20) {
+        if (timestamp >= latest + DURATION * 2) {
             cacheOld.clear()
             cacheNew.clear()
             latest = timestamp
-        } else if (timestamp >= latest + 10) {
+        } else if (timestamp >= latest + DURATION) {
             cacheOld = cacheNew
             cacheNew = HashMap()
             latest = timestamp
@@ -36,7 +39,8 @@ class SolutionApproach0HashMap() {
         cacheNew[message]?.let { return false }
 
         cacheOld[message]?.let { last ->
-            if (last + 10 > timestamp) return false
+            if (last + DURATION > timestamp)
+                return false
         }
 
         cacheNew[message] = timestamp
