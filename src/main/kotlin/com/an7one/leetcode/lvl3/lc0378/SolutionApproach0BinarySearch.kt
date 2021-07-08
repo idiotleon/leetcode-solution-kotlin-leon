@@ -17,7 +17,7 @@ class SolutionApproach0BinarySearch {
         val nRows = matrix.size
         val nCols = matrix[0].size
 
-        var lo = matrix[0][0] d
+        var lo = matrix[0][0]
         var hi = matrix[nRows - 1][nCols - 1]
 
         while (lo < hi) {
