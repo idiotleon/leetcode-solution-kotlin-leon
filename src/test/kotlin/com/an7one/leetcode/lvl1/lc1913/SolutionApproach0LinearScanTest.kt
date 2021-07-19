@@ -1,4 +1,4 @@
-package com.an7one.leetcode.lvl2.lc1913
+package com.an7one.leetcode.lvl1.lc1913
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
