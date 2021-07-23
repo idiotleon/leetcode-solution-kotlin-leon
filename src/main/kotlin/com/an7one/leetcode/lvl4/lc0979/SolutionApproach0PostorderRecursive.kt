@@ -23,17 +23,15 @@ class SolutionApproach0PostorderRecursive {
     }
 
     private fun postorder(node: TreeNode?): Subtree {
-        if (node == null) return Subtree(0, 0)
+        if (node == null)
+            return Subtree(0, 0)
 
-        val leftSubtree = postorder(node.left)
-        val rightSubtree = postorder(node.right)
+        val (leftNodes, leftCoins) = postorder(node.left)
+        val (rightNodes, rightCoins) = postorder(node.right)
 
-        moves += abs(leftSubtree.nodes - leftSubtree.coins) + abs(rightSubtree.nodes - rightSubtree.coins)
+        moves += abs(leftNodes - leftCoins) + abs(rightNodes - rightCoins)
 
-        return Subtree(
-            leftSubtree.nodes + rightSubtree.nodes + 1,
-            leftSubtree.coins + rightSubtree.coins + node.`val`
-        )
+        return Subtree(leftNodes + rightNodes + 1, leftCoins + rightCoins + node.`val`)
     }
 
     private data class Subtree(val nodes: Int, val coins: Int)
