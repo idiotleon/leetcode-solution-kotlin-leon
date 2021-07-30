@@ -14,21 +14,19 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DivideAndConquer {
-    fun beautifulArray(N: Int): IntArray {
-        var ans = arrayListOf(1)
+    fun beautifulArray(n: Int): IntArray {
+        var ans = mutableListOf(1)
 
-        while (ans.size < N) {
-            val temp = ArrayList<Int>()
+        while (ans.size < n) {
+            val temp = mutableListOf<Int>()
             for (num in ans) {
-                if (num * 2 - 1 <= N) {
+                if (num * 2 - 1 <= n)
                     temp.add(num * 2 - 1)
-                }
             }
 
             for (num in ans) {
-                if (num * 2 <= N) {
+                if (num * 2 <= n)
                     temp.add(num * 2)
-                }
             }
 
             ans = temp

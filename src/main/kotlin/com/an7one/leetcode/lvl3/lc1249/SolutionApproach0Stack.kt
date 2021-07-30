@@ -11,6 +11,7 @@ package com.an7one.leetcode.lvl3.lc1249
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0Stack {
@@ -20,37 +21,41 @@ class SolutionApproach0Stack {
         private const val PAREN_CLOSED = ')'
     }
 
-    fun minRemoveToMakeValid(str: String): String {
+    @OptIn(ExperimentalStdlibApi::class)
+    fun minRemoveToMakeValid(s: String): String {
         // sanity check
-        if (str.isEmpty()) return ""
+        if (s.isEmpty()) return ""
 
         // not used
-        // val lenS = str.length
-        val chs = str.toCharArray()
+        // val lenS = s.length
+        val chs = s.toCharArray()
 
-        val stack = LinkedList<Int>()
+        val stack = ArrayDeque<Int>()
 
-        for (idx in str.indices) {
-            when (chs[idx]) {
-                PAREN_OPEN -> stack.push(idx)
+        for ((idx, ch) in chs.withIndex()) {
+            when (ch) {
+                PAREN_OPEN -> stack.addLast(idx)
                 PAREN_CLOSED -> {
                     if (stack.isEmpty())
                         chs[idx] = PLACE_HOLDER
                     else
-                        stack.pop()
+                        stack.removeLast()
                 }
                 else -> {
+
                 }
             }
         }
 
-        while (stack.isNotEmpty())
-            chs[stack.pop()] = PLACE_HOLDER
+        while (!stack.isEmpty()) {
+            chs[stack.removeLast()] = PLACE_HOLDER
+        }
 
         val builder = StringBuilder()
-        for (ch in chs)
+        for (ch in chs) {
             if (ch != PLACE_HOLDER)
                 builder.append(ch)
+        }
 
         return builder.toString()
     }

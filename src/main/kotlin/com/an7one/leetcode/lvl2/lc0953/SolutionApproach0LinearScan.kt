@@ -2,14 +2,14 @@
  * @author: Leon
  * https://leetcode.com/problems/verifying-an-alien-dictionary/
  *
- * Time Complexity:     O(`nWord` * average_len_word)
+ * Time Complexity:     O(`nWord` * averageLenWord)
  * Space Complexity:    O(26) ~ O(1)
  */
 package com.an7one.leetcode.lvl2.lc0953
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
-@SuppressWarnings(UNUSED)
+@Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun isAlienSorted(words: Array<String>, order: String): Boolean {
         val dict = IntArray(26) { 0 }
