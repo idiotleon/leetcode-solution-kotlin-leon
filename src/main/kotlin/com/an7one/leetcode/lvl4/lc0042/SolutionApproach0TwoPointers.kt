@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/trapping-rain-water/
  *
- * Time Complexity:     O(`totalHeights`)
+ * Time Complexity:     O(`nHeights`)
  * Space Complexity:    O(1)
  *
  * References:
@@ -15,12 +15,12 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     fun trap(heights: IntArray): Int {
-        val totalHeights = heights.size
+        val nHeights = heights.size
 
         var lo = 0
-        var hi = totalHeights - 1
-        var loMax = Int.MIN_VALUE
-        var hiMax = Int.MIN_VALUE
+        var hi = nHeights - 1
+        var loMax = 0
+        var hiMax = 0
         var water = 0
 
         while (lo <= hi) {
