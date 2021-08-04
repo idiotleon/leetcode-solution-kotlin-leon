@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class SolutionApproach0BacktrackTest {
+class SolutionApproach0BacktrackRecursiveTest {
     val solution = SolutionApproach0Backtrack()
 
     @Test

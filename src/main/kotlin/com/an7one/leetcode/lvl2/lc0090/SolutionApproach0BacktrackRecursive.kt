@@ -14,9 +14,9 @@ package com.an7one.leetcode.lvl2.lc0090
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0Backtrack {
+class SolutionApproach0BacktrackRecursive {
     fun subsetsWithDup(nums: IntArray): List<List<Int>> {
-        val paths = mutableListOf<MutableList<Int>>()
+        val paths = mutableListOf<List<Int>>()
         // sanity check
         if (nums.isEmpty()) return paths
 
@@ -28,12 +28,14 @@ class SolutionApproach0Backtrack {
         return paths
     }
 
-    private fun backtrack(idxStart: Int,
-                          path: MutableList<Int>,
-                          nums: IntArray,
-                          paths: MutableList<MutableList<Int>>) {
+    private fun backtrack(
+        idxStart: Int,
+        path: MutableList<Int>,
+        nums: IntArray,
+        paths: MutableList<List<Int>>
+    ) {
         val nNums = nums.size
-        paths.add(path.toMutableList())
+        paths.add(path.toList())
 
         for (idx in idxStart until nNums) {
             if (idx != idxStart && nums[idx - 1] == nums[idx]) continue

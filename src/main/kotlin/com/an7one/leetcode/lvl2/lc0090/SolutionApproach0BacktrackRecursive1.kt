@@ -12,7 +12,7 @@ package com.an7one.leetcode.lvl2.lc0090
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
-class SolutionApproach0Backtrack1 {
+class SolutionApproach0BacktrackRecursive1 {
     fun subsetsWithDup(nums: IntArray): List<List<Int>> {
         val path = mutableListOf<Int>()
         val paths = mutableListOf<List<Int>>()
@@ -24,13 +24,14 @@ class SolutionApproach0Backtrack1 {
         return paths
     }
 
-    private fun backtrack(idxStart: Int,
-                          path: MutableList<Int>,
-                          nums: IntArray,
-                          paths: MutableList<List<Int>>) {
+    private fun backtrack(
+        idxStart: Int,
+        path: MutableList<Int>,
+        nums: IntArray,
+        paths: MutableList<List<Int>>
+    ) {
 
         val nNums = nums.size
-
         paths.add(path.toList())
 
         val used = HashSet<Int>()
