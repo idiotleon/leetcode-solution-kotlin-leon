@@ -33,13 +33,13 @@ class SolutionApproach0Backtrack {
     ) {
         val nNums = nums.size
 
-        if (path.size > 1) {
+        if (path.size > 1)
             paths.add(path.toList())
-        }
 
         val used = HashSet<Int>()
         for (idx in idxStart until nNums) {
-            if (used.contains(nums[idx])) continue
+            if (used.contains(nums[idx]))
+                continue
 
             if (path.isEmpty() || nums[idx] >= path.last()) {
                 used.add(nums[idx])

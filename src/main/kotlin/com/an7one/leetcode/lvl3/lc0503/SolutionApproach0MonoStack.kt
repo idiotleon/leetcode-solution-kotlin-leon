@@ -11,25 +11,24 @@
 package com.an7one.leetcode.lvl3.lc0503
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
 
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
+    @OptIn(ExperimentalStdlibApi::class)
     fun nextGreaterElements(nums: IntArray): IntArray {
+        val nNums = nums.size
+        val ans = IntArray(nNums) { -1 }
 
-        val totalNums = nums.size
-        val ans = IntArray(totalNums) { -1 }
-
-        val stack = LinkedList<Int>()
+        val stack = ArrayDeque<Int>()
 
         var idx = 0
 
-        while (idx < totalNums * 2) {
-            while (stack.isNotEmpty() && nums[idx % totalNums] > nums[stack.peek()]) {
-                ans[stack.pop()] = nums[idx % totalNums]
+        while (idx < nNums * 2) {
+            while (stack.isNotEmpty() && nums[idx % nNums] > nums[stack.last()]) {
+                ans[stack.removeLast()] = nums[idx % nNums]
             }
 
-            stack.push(idx % totalNums)
+            stack.addLast(idx % nNums)
             ++idx
         }
 

@@ -23,12 +23,12 @@ class SolutionApproach1Backtrack {
             val path = mutableListOf<Int>()
 
             for (idx in nums.indices) {
-                if ((bitMask and (1 shl idx)) != 0 && (path.isEmpty() || path.last() <= nums[idx])) {
+                if ((bitMask and (1 shl idx)) != 0 && (path.isEmpty() || path.last() <= nums[idx]))
                     path.add(nums[idx])
-                }
             }
 
-            if (path.size > 1) paths.add(path)
+            if (path.size > 1)
+                paths.add(path)
         }
 
         return paths.toList()

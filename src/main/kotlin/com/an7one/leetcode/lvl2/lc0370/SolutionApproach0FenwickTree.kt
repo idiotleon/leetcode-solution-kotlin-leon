@@ -1,5 +1,8 @@
 /**
+ * https://leetcode.com/problems/range-addition/
  *
+ * Time Complexity:     O(`nUpdates` * lg(`nUpdates`))
+ * Space Complexity:    O(`nUpdates`)
  */
 package com.an7one.leetcode.lvl2.lc0370
 
@@ -11,6 +14,9 @@ class SolutionApproach0FenwickTree {
         length: Int,
         updates: Array<IntArray>
     ): IntArray {
+        // not used
+        // val nUpdates = updates.size
+
         val fenwick = IntArray(length) { 0 }
 
         for (update in updates) {
