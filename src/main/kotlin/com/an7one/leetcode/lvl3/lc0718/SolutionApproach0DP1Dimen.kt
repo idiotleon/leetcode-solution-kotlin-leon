@@ -3,6 +3,9 @@
  *
  * Time Complexity:     O(`nNums1` * `nNums2`)
  * Space Complexity:    O(`nNums1`)
+ *
+ * Reference:
+ *  https://leetcode.com/problems/maximum-length-of-repeated-subarray/discuss/109068/JavaC%2B%2B-Clean-Code-8-lines
  */
 package com.an7one.leetcode.lvl3.lc0718
 

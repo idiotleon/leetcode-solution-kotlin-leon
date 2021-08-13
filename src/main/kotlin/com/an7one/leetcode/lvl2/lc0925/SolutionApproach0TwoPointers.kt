@@ -22,7 +22,8 @@ class SolutionApproach0TwoPointers {
                 ++idxN
                 ++idxT
             } else {
-                if (idxT == 0 || typed[idxT - 1] != typed[idxT]) return false
+                if (idxT == 0 || typed[idxT - 1] != typed[idxT])
+                    return false
 
                 ++idxT
             }
