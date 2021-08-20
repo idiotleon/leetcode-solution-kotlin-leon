@@ -33,7 +33,8 @@ class SolutionApproach0PostorderRecursive {
     }
 
     private fun getMaxProduct(node: TreeNode?, maxProd: LongArray, sum: Long): Long {
-        if (node == null) return 0
+        if (node == null)
+            return 0
 
         val left = getMaxProduct(node.left, maxProd, sum)
         val right = getMaxProduct(node.right, maxProd, sum)
