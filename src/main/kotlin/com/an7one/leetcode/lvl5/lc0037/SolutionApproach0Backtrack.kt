@@ -24,10 +24,12 @@ class SolutionApproach0Backtrack {
 
     private fun backtrack(curRow: Int, curCol: Int, board: Array<CharArray>): Boolean {
         // to move to the next row
-        if (curCol == RANGE) return backtrack(curRow + 1, 0, board)
+        if (curCol == RANGE)
+            return backtrack(curRow + 1, 0, board)
 
         // to terminate with an eligible case
-        if (curRow == RANGE) return true
+        if (curRow == RANGE)
+            return true
 
         for (row in curRow until RANGE) {
             for (col in curCol until RANGE) {
@@ -36,10 +38,13 @@ class SolutionApproach0Backtrack {
                     return backtrack(row, col + 1, board)
 
                 for (digit in '1'..'9') {
-                    if (!isValid(row, col, digit, board)) continue
+                    if (!isValid(row, col, digit, board))
+                        continue
 
                     board[row][col] = digit
-                    if (backtrack(row, col + 1, board)) return true
+                    if (backtrack(row, col + 1, board))
+                        return true
+
                     board[row][col] = EMPTY
                 }
 
@@ -58,13 +63,16 @@ class SolutionApproach0Backtrack {
     ): Boolean {
         for (idx in 0 until RANGE) {
             // to check rows
-            if (board[row][idx] == numCh) return false
+            if (board[row][idx] == numCh)
+                return false
 
             // to check cols
-            if (board[idx][col] == numCh) return false
+            if (board[idx][col] == numCh)
+                return false
 
             // to check 3 x 3 square
-            if (board[row / 3 * 3 + idx / 3][col / 3 * 3 + idx % 3] == numCh) return false
+            if (board[row / 3 * 3 + idx / 3][col / 3 * 3 + idx % 3] == numCh)
+                return false
         }
 
         return true
