@@ -16,7 +16,8 @@ class SolutionApproach0LinearScan {
 
     fun lengthOfLastWord(s: String): Int {
         // sanity check
-        if (s.isEmpty()) return 0
+        if (s.isEmpty())
+            return 0
 
         val lenS = s.length
         var hi = lenS - 1

@@ -26,7 +26,9 @@ class SolutionApproach0Sort {
 
         val builder = StringBuilder()
         for (idx in first.indices) {
-            if (first[idx] != last[idx]) break
+            if (first[idx] != last[idx])
+                break
+            
             builder.append(first[idx])
         }
 
