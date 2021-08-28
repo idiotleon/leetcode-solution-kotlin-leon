@@ -19,8 +19,12 @@ class SolutionApproach0DFSMemo {
     }
 
     private fun dfs(row: Int, col: Int, memo: Array<Array<Int?>>): Int {
-        if (row < 0 || col < 0) return 0
-        if (row == 0 && col == 0) return 1
+        if (row < 0 || col < 0)
+            return 0
+        
+        if (row == 0 && col == 0)
+            return 1
+
         memo[row][col]?.let { return it }
         val cntUniquePaths = dfs(row - 1, col, memo) + dfs(row, col - 1, memo)
         memo[row][col] = cntUniquePaths
