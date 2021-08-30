@@ -12,15 +12,17 @@ import java.util.LinkedList
 @Suppress(UNUSED)
 class SolutionApproach0Queue(private val size: Int) {
     private var sum = 0
-    private val queue = LinkedList<Int>()
+
+    @OptIn(ExperimentalStdlibApi::class)
+    private val queue = ArrayDeque<Int>()
 
     /** Initialize your data structure here. */
 
     fun next(`val`: Int): Double {
         sum += `val`
-        queue.offer(`val`)
+        queue.addLast(`val`)
         if (queue.size > size)
-            sum -= queue.poll()
+            sum -= queue.removeFirst()
 
         return sum.toDouble() / queue.size
     }
