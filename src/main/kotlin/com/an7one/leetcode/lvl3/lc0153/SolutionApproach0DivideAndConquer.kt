@@ -23,9 +23,11 @@ class SolutionApproach0DivideAndConquer {
     }
 
     private fun findMin(lo: Int, hi: Int, nums: IntArray): Int {
-        if (lo + 1 >= hi) return minOf(nums[lo], nums[hi])
+        if (lo + 1 >= hi)
+            return minOf(nums[lo], nums[hi])
 
-        if (nums[lo] < nums[hi]) return nums[lo]
+        if (nums[lo] < nums[hi])
+            return nums[lo]
 
         val mid = lo + (hi - lo) / 2
         return minOf(findMin(lo, mid, nums), findMin(mid + 1, hi, nums))
