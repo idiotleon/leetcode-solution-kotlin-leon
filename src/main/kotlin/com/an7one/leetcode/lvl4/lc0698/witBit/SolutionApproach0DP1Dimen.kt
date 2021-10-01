@@ -25,11 +25,13 @@ class SolutionApproach0DP1Dimen {
         val sums = IntArray(range) { 0 }
 
         val sumAll = nums.sum()
-        if (sumAll % k != 0) return false
+        if (sumAll % k != 0)
+            return false
 
         val target = sumAll / k
         nums.sort()
-        if (nums.last() > target) return false
+        if (nums.last() > target)
+            return false
 
         for (cur in 0 until range) {
             if (dp[cur]) { // if with the cur state, it can be partitioned
@@ -38,7 +40,8 @@ class SolutionApproach0DP1Dimen {
                     // to sum/take the idx-th bit
                     val next = cur or (1 shl idx)
                     // if this number has been token before
-                    if (cur == next) continue
+                    if (cur == next)
+                        continue
 
                     // if the current sum(`sums[cur]`),
                     // with this number (`nums[idx]`) being added,
