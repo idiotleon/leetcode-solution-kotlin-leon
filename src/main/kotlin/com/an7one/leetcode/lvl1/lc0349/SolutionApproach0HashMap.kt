@@ -15,7 +15,8 @@ class SolutionApproach0HashMap {
         val nNums1 = nums1.size
         val nNums2 = nums2.size
 
-        if (nNums1 > nNums2) return intersection(nums2, nums1)
+        if (nNums1 > nNums2)
+            return intersection(nums2, nums1)
 
         val valToFreq = HashMap<Int, Int>()
         for (num in nums1) {
@@ -24,9 +25,8 @@ class SolutionApproach0HashMap {
 
         val res = HashSet<Int>()
         for (num in nums2) {
-            if ((valToFreq[num] ?: 0) > 0) {
+            if ((valToFreq[num] ?: 0) > 0)
                 res.add(num)
-            }
         }
 
         return res.toIntArray()
