@@ -6,7 +6,7 @@
  * https://leetcode.com/problems/first-unique-character-in-a-string/
  *
  * Time Complexity:     O(`lenS`)
- * Space Complexity:    O(26)
+ * Space Complexity:    O(26) ~ O(1)
  */
 package com.an7one.leetcode.lvl1.lc0387
 
@@ -19,9 +19,8 @@ class SolutionApproach4LinearScan {
 
         val freqs = IntArray(26) { 0 }
         for (idx in str.indices.reversed()) {
-            if (++freqs[str[idx] - 'a'] == 1) {
+            if (++freqs[str[idx] - 'a'] == 1)
                 ans = idx
-            }
         }
 
         return if (ans == null || freqs[str[ans] - 'a'] > 1) -1 else ans
