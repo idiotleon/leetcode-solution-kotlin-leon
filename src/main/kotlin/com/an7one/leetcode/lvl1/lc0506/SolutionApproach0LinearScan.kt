@@ -25,13 +25,13 @@ class SolutionApproach0LinearScan {
         val sorted = nums.sorted()
 
         val ranks = HashMap<Int, Int>()
-        for (idx in sorted.indices) {
-            ranks[sorted[idx]] = nNums - idx
+        for ((idx, num) in sorted.withIndex()) {
+            ranks[num] = nNums - idx
         }
 
         val ans = Array(nNums) { "" }
-        for (idx in nums.indices) {
-            val rankStr = when (val rank = ranks[nums[idx]]!!) {
+        for ((idx, num) in nums.withIndex()) {
+            val rankStr = when (val rank = ranks[num]!!) {
                 1 -> MEDAL_GOLD
                 2 -> MEDAL_SILVER
                 3 -> MEDAL_BRONZE
