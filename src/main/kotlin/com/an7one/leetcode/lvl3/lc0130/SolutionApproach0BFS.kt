@@ -11,6 +11,7 @@ package com.an7one.leetcode.lvl3.lc0130
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
@@ -23,6 +24,7 @@ class SolutionApproach0BFS {
         private val DIRS = intArrayOf(0, 1, 0, -1, 0)
     }
 
+    @OptIn(ExperimentalStdlibApi::class)
     fun solve(board: Array<CharArray>) {
         // sanity check, required
         if (board.isEmpty() || board[0].isEmpty()) return
@@ -30,29 +32,29 @@ class SolutionApproach0BFS {
         val nRows = board.size
         val nCols = board[0].size
 
-        val queue = LinkedList<Coordinate>()
+        val queue = ArrayDeque<Coordinate>()
 
         for (row in board.indices) {
             if (board[row][0] == LETTER_O) {
                 board[row][0] = LETTER_T
-                queue.add(Coordinate(row, 0))
+                queue.addLast(Coordinate(row, 0))
             }
 
             if (board[row][nCols - 1] == LETTER_O) {
                 board[row][nCols - 1] = LETTER_T
-                queue.add(Coordinate(row, nCols - 1))
+                queue.addLast(Coordinate(row, nCols - 1))
             }
         }
 
         for (col in 1 until nCols - 1) {
             if (board[0][col] == LETTER_O) {
                 board[0][col] = LETTER_T
-                queue.add(Coordinate(0, col))
+                queue.addLast(Coordinate(0, col))
             }
 
             if (board[nRows - 1][col] == LETTER_O) {
                 board[nRows - 1][col] = LETTER_T
-                queue.add(Coordinate(nRows - 1, col))
+                queue.addLast(Coordinate(nRows - 1, col))
             }
         }
 
@@ -60,7 +62,7 @@ class SolutionApproach0BFS {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val (curRow, curCol) = queue.poll()
+                val (curRow, curCol) = queue.removeFirst()
 
                 for (d in 0 until 4) {
                     val nextRow = curRow + DIRS[d]
@@ -69,15 +71,17 @@ class SolutionApproach0BFS {
                     if (nextRow < 0 || nextRow >= nRows || nextCol < 0 || nextCol >= nCols || board[nextRow][nextCol] != LETTER_O) continue
 
                     board[nextRow][nextCol] = LETTER_T
-                    queue.offer(Coordinate(nextRow, nextCol))
+                    queue.addLast(Coordinate(nextRow, nextCol))
                 }
             }
         }
 
         for (row in board.indices) {
             for (col in board[row].indices) {
-                if (board[row][col] == LETTER_O) board[row][col] = LETTER_X
-                if (board[row][col] == LETTER_T) board[row][col] = LETTER_O
+                if (board[row][col] == LETTER_O)
+                    board[row][col] = LETTER_X
+                if (board[row][col] == LETTER_T)
+                    board[row][col] = LETTER_O
             }
         }
     }
