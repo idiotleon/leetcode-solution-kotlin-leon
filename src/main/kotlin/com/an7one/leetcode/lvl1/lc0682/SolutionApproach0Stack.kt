@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/baseball-game/
  *
- * Time Complexity:     O(`totalOps`)
- * Space Complexity:    O(`totalOps`)
+ * Time Complexity:     O(`nOps`)
+ * Space Complexity:    O(`nOps`)
  *
  * References:
  *  https://leetcode.com/problems/baseball-game/discuss/107860/Verbose-Java-solution-LinkedList/110022
@@ -11,6 +11,7 @@ package com.an7one.leetcode.lvl1.lc0682
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0Stack {
@@ -20,32 +21,33 @@ class SolutionApproach0Stack {
         private const val SIGN_PLUS = "+"
     }
 
+    @OptIn(ExperimentalStdlibApi::class)
     fun calPoints(ops: Array<String>): Int {
         // not used
-        // val totalOps = ops.size
+        // val nOps = ops.size
 
         var sum = 0
-        val stack = LinkedList<Int>()
+        val stack = ArrayDeque<Int>()
 
         for (op in ops) {
             when (op) {
-                C -> if (stack.isNotEmpty()) sum -= stack.pop()
+                C -> if (stack.isNotEmpty()) sum -= stack.removeLast()
                 D -> {
-                    stack.push(stack.peek() * 2)
-                    sum += stack.peek()
+                    stack.addLast(stack.last() * 2)
+                    sum += stack.last()
                 }
                 SIGN_PLUS -> {
-                    val second = stack.peek()
-                    stack.pop()
-                    val first = stack.peek()
-                    val cur = first + second
-                    stack.push(second)
-                    stack.push(cur)
+                    val second = stack.last()
+                    stack.removeLast()
+                    val last = stack.last()
+                    val cur = last + second
+                    stack.addLast(second)
+                    stack.addLast(cur)
                     sum += cur
                 }
                 else -> {
-                    stack.push(op.toInt())
-                    sum += stack.peek()
+                    stack.addLast(op.toInt())
+                    sum += stack.last()
                 }
             }
         }
