@@ -15,9 +15,8 @@ class SolutionApproach0LinearScan {
         val chs = str.toCharArray()
 
         for (idx in chs.indices) {
-            if (chs[idx] in 'A'..'Z') {
+            if (chs[idx] in 'A'..'Z')
                 chs[idx] = chs[idx] + ('a' - 'A')
-            }
         }
 
         return String(chs)
