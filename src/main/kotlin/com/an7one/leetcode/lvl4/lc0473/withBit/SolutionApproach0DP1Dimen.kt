@@ -15,7 +15,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0DP1Dimen {
     fun makeSquare(nums: IntArray): Boolean {
         // sanity check, required
-        if (nums.isEmpty()) return false
+        if (nums.isEmpty())
+            return false
 
         return canPartitionKSubsets(nums, 4)
     }
@@ -34,11 +35,13 @@ class SolutionApproach0DP1Dimen {
         val sums = IntArray(range) { 0 }
 
         val sum = nums.sum()
-        if (sum % k != 0) return false
+        if (sum % k != 0)
+            return false
 
         val target = sum / k
         nums.sort()
-        if (nums.last() > target) return false
+        if (nums.last() > target)
+            return false
 
         for (cur in 0 until range) {
             if (dp[cur]) { // if with the cur state, it can be partitioned
@@ -47,7 +50,8 @@ class SolutionApproach0DP1Dimen {
                     // to sum/take the idx-th bit
                     val next = cur or (1 shl idx)
                     // if this number has been token before
-                    if (cur == next) continue
+                    if (cur == next)
+                        continue
 
                     // if the current sum(`sums[cur]`),
                     // with this number (`nums[idx]`) being added,
@@ -56,7 +60,8 @@ class SolutionApproach0DP1Dimen {
                     if (nums[idx] <= target - sums[cur] % target) {
                         dp[next] = true
                         sums[next] = nums[idx] + sums[cur]
-                    } else break
+                    } else
+                        break
                 }
             }
         }

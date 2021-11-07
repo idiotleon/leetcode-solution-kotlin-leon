@@ -14,9 +14,9 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack1 {
-    fun makesquare(nums: IntArray): Boolean {
+    fun makeSquare(nums: IntArray): Boolean {
         // not used
-        // val totalNums = nums.size
+        // val nNums = nums.size
 
         val sumAll = nums.sum()
         if (sumAll < 4 || sumAll % 4 != 0) return false
@@ -27,10 +27,15 @@ class SolutionApproach0Backtrack1 {
     private fun canPartition(idxStart: Int, sumCur: Int, k: Int, target: Int, nums: IntArray): Boolean {
         val nNums = nums.size
 
-        if (k == 0) return true
+        if (k == 0)
+            return true
+
         // one partition has been found (`k - 1`), to find the next one
-        if (sumCur == target) return canPartition(0, 0, k - 1, target, nums)
-        if (sumCur > target) return false
+        if (sumCur == target)
+            return canPartition(0, 0, k - 1, target, nums)
+
+        if (sumCur > target)
+            return false
 
         for (idx in idxStart until nNums) {
             if (nums[idx] != -1) {

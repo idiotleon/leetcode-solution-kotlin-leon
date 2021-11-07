@@ -14,11 +14,12 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack0 {
-    fun makesquare(nums: IntArray): Boolean {
+    fun makeSquare(nums: IntArray): Boolean {
         val nNums = nums.size
 
         val sumAll = nums.sum()
-        if (sumAll < 4 || sumAll % 4 != 0) return false
+        if (sumAll < 4 || sumAll % 4 != 0)
+            return false
 
         val sumTarget = sumAll / 4
         val used = BooleanArray(nNums) { false }
@@ -36,17 +37,23 @@ class SolutionApproach0Backtrack0 {
     ): Boolean {
         val nNums = nums.size
 
-        if (k == 0) return true
+        if (k == 0)
+            return true
         // one partition has been found (`k - 1`), to find the next one
-        if (sumCur == sumTarget) return canPartition(0, 0, k - 1, used, sumTarget, nums)
-        if (sumCur > sumTarget) return false
+        if (sumCur == sumTarget)
+            return canPartition(0, 0, k - 1, used, sumTarget, nums)
+
+        if (sumCur > sumTarget)
+            return false
 
         for (idx in idxStart until nNums) {
-            if (used[idx]) continue
+            if (used[idx])
+                continue
             // to mark visited
             used[idx] = true
             // to further backtrack to the next state
-            if (canPartition(1 + idx, sumCur + nums[idx], k, used, sumTarget, nums)) return true
+            if (canPartition(1 + idx, sumCur + nums[idx], k, used, sumTarget, nums))
+                return true
             // to backtrack to the previous state
             used[idx] = false
         }
