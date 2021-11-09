@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
  *
- * Time Complexity:     O(`nNums`)
+ * Time Complexity:     O(`nPrices`)
  * Space Complexity:    O(1)
  */
 package com.an7one.leetcode.lvl2.lc0122
