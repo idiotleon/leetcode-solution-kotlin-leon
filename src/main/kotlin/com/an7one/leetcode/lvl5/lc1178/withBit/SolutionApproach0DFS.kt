@@ -1,9 +1,8 @@
 /**
  * https://leetcode.com/problems/number-of-valid-words-for-each-puzzle/
  *
- * Time Complexity:     O(`totalWords` * (2 ^ 7) + `totalPuzzles` * lenW)
+ * Time Complexity:     O(`nWords` * (2 ^ 7) + `nPuzzles` * lenW)
  *  lenW, the average length of the words
- *
  * Space Complexity:    O()
  *
  * References:
@@ -21,16 +20,16 @@ class SolutionApproach0DFS {
     ): List<Int> {
 
         // not used
-        // val totalWords = words.size
-        // val totalPuzzles = puzzles.size
+        // val nWords = words.size
+        // val nPuzzles = puzzles.size
 
-        val freqs = HashMap<Int, Int>()
+        val bitMaskToFreq = HashMap<Int, Int>()
         for (word in words) {
             var bitMask = 0
             for (ch in word) {
                 bitMask = bitMask or (1 shl (ch - 'a'))
             }
-            freqs[bitMask] = 1 + (freqs[bitMask] ?: 0)
+            bitMaskToFreq[bitMask] = 1 + (bitMaskToFreq[bitMask] ?: 0)
         }
 
         val ans = ArrayList<Int>()
@@ -47,7 +46,7 @@ class SolutionApproach0DFS {
 
             while (bitMaskSubstring > 0) {
                 if ((bitMaskSubstring and firstLetter) == firstLetter) {
-                    count += (freqs[bitMaskSubstring] ?: 0)
+                    count += (bitMaskToFreq[bitMaskSubstring] ?: 0)
                 }
 
                 // to get the next substrings,
