@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/daily-temperatures/
  *
- * Time Complexity:     O(`totalT`)
- * Space Complexity:    O(`totalT`)
+ * Time Complexity:     O(`nTs`)
+ * Space Complexity:    O(`nTs`)
  *
  * to maintain a "non-increasing" stack
  * 1. the elements of the stack are indexes, instead of values
@@ -15,14 +15,14 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @OptIn(ExperimentalStdlibApi::class)
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
-    fun dailyTemperatures(T: IntArray): IntArray {
-        val nTs = T.size
+    fun dailyTemperatures(temperatures: IntArray): IntArray {
+        val nTs = temperatures.size
         val stack = ArrayDeque<Int>()
 
         val ans = IntArray(nTs) { 0 }
 
-        for (idx in T.indices) {
-            while (stack.isNotEmpty() && T[stack.last()] < T[idx]) {
+        for (idx in temperatures.indices) {
+            while (stack.isNotEmpty() && temperatures[stack.last()] < temperatures[idx]) {
                 val prevIdx = stack.removeLast()
                 ans[prevIdx] = idx - prevIdx
             }
