@@ -11,33 +11,30 @@
 package com.an7one.leetcode.lvl3.lc0739
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
 
+@OptIn(ExperimentalStdlibApi::class)
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
-    class Solution {
-        fun dailyTemperatures(T: IntArray): IntArray {
+    fun dailyTemperatures(T: IntArray): IntArray {
+        val nTs = T.size
+        val stack = ArrayDeque<Int>()
 
-            val nTs = T.size
-            val stack = LinkedList<Int>()
+        val ans = IntArray(nTs) { 0 }
 
-            val ans = IntArray(nTs) { 0 }
-
-            for (idx in T.indices) {
-                while (stack.isNotEmpty() && T[stack.peek()] < T[idx]) {
-                    val prevIdx = stack.pop()
-                    ans[prevIdx] = idx - prevIdx
-                }
-
-                stack.push(idx)
+        for (idx in T.indices) {
+            while (stack.isNotEmpty() && T[stack.last()] < T[idx]) {
+                val prevIdx = stack.removeLast()
+                ans[prevIdx] = idx - prevIdx
             }
 
-            // by values, this can be omitted
-            while (stack.isNotEmpty()) {
-                ans[stack.pop()] = 0
-            }
-
-            return ans
+            stack.addLast(idx)
         }
+
+        // by values, this can be omitted
+        while (stack.isNotEmpty()) {
+            ans[stack.removeLast()] = 0
+        }
+
+        return ans
     }
 }
