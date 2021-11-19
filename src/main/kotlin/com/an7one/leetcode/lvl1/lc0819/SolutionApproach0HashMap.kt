@@ -25,7 +25,7 @@ class SolutionApproach0HashMap {
             }
 
             while (idx < lenP && !paragraph[idx].isLetter()) {
-                idx++
+                ++idx
             }
 
             val word = builder.toString()

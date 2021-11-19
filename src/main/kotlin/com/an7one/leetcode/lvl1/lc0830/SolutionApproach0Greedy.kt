@@ -7,7 +7,8 @@ class SolutionApproach0Greedy {
     fun largeGroupPositions(s: String): List<List<Int>> {
         val positions = arrayListOf<ArrayList<Int>>()
         // sanity check
-        if (s.isEmpty()) return positions
+        if (s.isEmpty())
+            return positions
 
         val lenS = s.length
 
@@ -19,7 +20,6 @@ class SolutionApproach0Greedy {
         for (i in 0 until lenS) {
             if (s[i] == prevChar) {
                 ++len
-
             } else {
                 idxEnd = i - 1
                 if (len >= 3) {
@@ -31,9 +31,8 @@ class SolutionApproach0Greedy {
             }
         }
 
-        if (len >= 3) {
+        if (len >= 3)
             positions.add(arrayListOf(idxStart, lenS - 1))
-        }
 
         return positions
     }

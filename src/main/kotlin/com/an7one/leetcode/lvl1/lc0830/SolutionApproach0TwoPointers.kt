@@ -7,7 +7,8 @@ class SolutionApproach0TwoPointers {
     fun largeGroupPositions(s: String): List<List<Int>> {
         val positions = arrayListOf<ArrayList<Int>>()
         // sanity check
-        if (s.isEmpty()) return positions
+        if (s.isEmpty())
+            return positions
 
         val lenS = s.length
 
@@ -19,9 +20,8 @@ class SolutionApproach0TwoPointers {
                 ++hi
             }
 
-            if (hi - lo >= 3) {
+            if (hi - lo >= 3)
                 positions.add(arrayListOf(lo, hi - 1))
-            }
 
             lo = hi
             ++hi
