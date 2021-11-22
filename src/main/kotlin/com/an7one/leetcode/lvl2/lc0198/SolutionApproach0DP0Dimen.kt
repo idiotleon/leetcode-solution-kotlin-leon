@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/house-robber/
  *
- * Time Complexity:     O(N)
+ * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(1)
  *
  * References:
@@ -16,20 +16,20 @@ class SolutionApproach0DP0Dimen {
     fun rob(nums: IntArray): Int {
         // sanity check
         if (nums.isEmpty()) return 0
-        val nNums = nums.nNums
+        val nNums = nums.size
         if (nNums == 1) return nums[0]
 
-        var inclusive = 0
-        var exclusive = 0
+        var curRobbed = 0
+        var curNotRobbed = 0
 
         for (num in nums) {
-            val prevInclusive = inclusive
-            val prevExclusive = exclusive
+            val prevRobbed = curRobbed
+            val prevNotRobbed = curNotRobbed
 
-            inclusive = prevExclusive + num
-            exclusive = maxOf(prevInclusive, prevExclusive)
+            curRobbed = prevNotRobbed + num
+            curNotRobbed = maxOf(prevRobbed, prevNotRobbed)
         }
 
-        return maxOf(inclusive, exclusive)
+        return maxOf(curRobbed, curNotRobbed)
     }
 }

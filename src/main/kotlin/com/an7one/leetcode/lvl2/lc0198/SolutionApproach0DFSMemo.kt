@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/house-robber/
  *
- * Time Complexity:     O(N)
- * Space Complexity:    O(N) + O(N) ~ O(N)
+ * Time Complexity:     O(`nNums`)
+ * Space Complexity:    O(`nNums`) + O(`nNums`) ~ O(`nNums`)
  *
  * References:
  *  https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
@@ -17,10 +17,10 @@ class SolutionApproach0DFSMemo {
         // sanity check
         if (nums.isEmpty()) return 0
 
-        val size = nums.size
-        val memo = IntArray(size + 1) { -1 }
+        val nNums = nums.size
+        val memo = IntArray(nNums + 1) { -1 }
 
-        return dfs(size - 1, nums, memo)
+        return dfs(nNums - 1, nums, memo)
     }
 
     private fun dfs(idx: Int, nums: IntArray, memo: IntArray): Int {
