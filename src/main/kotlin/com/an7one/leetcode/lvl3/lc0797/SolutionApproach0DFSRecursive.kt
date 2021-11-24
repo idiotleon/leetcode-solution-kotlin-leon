@@ -11,7 +11,7 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun allPathsSourceTarget(graph: Array<IntArray>): List<List<Int>> {
-        val ans: MutableList<MutableList<Int>> = arrayListOf()
+        val ans: MutableList<List<Int>> = arrayListOf()
         val size = graph.size
 
         dfs(0, mutableListOf(0), graph, size - 1, ans)
@@ -24,11 +24,11 @@ class SolutionApproach0DFSRecursive {
         path: MutableList<Int>,
         graph: Array<IntArray>,
         destination: Int,
-        paths: MutableList<MutableList<Int>>
+        paths: MutableList<List<Int>>
     ) {
 
         if (cur == destination) {
-            paths.add(path.toMutableList())
+            paths.add(path.toList())
             return
         }
 

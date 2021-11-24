@@ -9,18 +9,20 @@ package com.an7one.leetcode.lvl3.lc0797
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
+    @OptIn(ExperimentalStdlibApi::class)
     fun allPathsSourceTarget(graph: Array<IntArray>): List<List<Int>> {
-        val paths: MutableList<MutableList<Int>> = arrayListOf()
+        val paths: MutableList<List<Int>> = arrayListOf()
         // sanity check
         if (graph.isEmpty()) return paths
 
         val size = graph.size
         val destination = size - 1
 
-        val queue = LinkedList<MutableList<Int>>(mutableListOf(mutableListOf(0)))
+        val queue = ArrayDeque(mutableListOf(mutableListOf(0)))
         // or equivalently
         // queue.offer(mutableListOf(0))
 
@@ -28,10 +30,10 @@ class SolutionApproach0BFS {
             val sizeQ = queue.size
 
             for (i in 0 until sizeQ) {
-                val list = queue.poll()
+                val list = queue.removeFirst()
                 val cur = list.last()
                 if (cur == destination) {
-                    paths.add(list.toMutableList())
+                    paths.add(list.toList())
                     continue
                 }
 
@@ -39,7 +41,7 @@ class SolutionApproach0BFS {
                     val nextList = list.toMutableList().apply { add(next) }
                     // or equivalently
                     // nextList.add(next)
-                    queue.offer(nextList)
+                    queue.addLast(nextList)
                 }
             }
         }
