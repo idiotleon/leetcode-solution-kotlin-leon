@@ -44,13 +44,13 @@ class SolutionApproach0MonoStack {
     }
 
     private fun getMaxArea(heights: IntArray): Int {
-        val totalHeights = heights.size
+        val nHeights = heights.size
 
-        val stack = LinkedList<Int>()
+        val stack = ArrayDeque<Int>()
         var max = 0
         var idx = 0
 
-        while (idx < totalHeights) {
+        while (idx < nHeights) {
             while (stack.isNotEmpty() && heights[idx] < heights[stack.peek()]) {
                 val shortest = heights[stack.pop()]
                 val width = idx - if (stack.isEmpty()) 0 else (stack.peek() + 1)
@@ -64,7 +64,7 @@ class SolutionApproach0MonoStack {
 
         while (stack.isNotEmpty()) {
             val shortest = heights[stack.pop()]
-            val width = totalHeights - if (stack.isEmpty()) 0 else (stack.peek() + 1)
+            val width = nHeights - if (stack.isEmpty()) 0 else (stack.peek() + 1)
             val area = shortest * width
             max = maxOf(max, area)
         }
