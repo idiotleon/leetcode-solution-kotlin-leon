@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/maximal-rectangle/
  *
- * Time Complexity:     O(`numRows` * `numCols`)
- * Space Complexity:    O(`numRows` * `numCols`)
+ * Time Complexity:     O(`nRows` * `nCols`)
+ * Space Complexity:    O(`nRows` * `nCols`)
  *
  * References:
  *  https://leetcode.com/problems/maximal-rectangle/discuss/29064/A-O(n2)-solution-based-on-Largest-Rectangle-in-Histogram
@@ -22,18 +22,19 @@ class SolutionApproach0MonoStack {
         // sanity check
         if (matrix.isEmpty() || matrix[0].isEmpty()) return 0
 
-        val numRows = matrix.size
-        val numCols = matrix[0].size
-        val heights = IntArray(numCols) { 0 }
+        // not used
+        // val nRows = matrix.size
+        val nCols = matrix[0].size
+        val heights = IntArray(nCols) { 0 }
 
         var max = 0
 
-        for (row in 0 until numRows) {
-            for (col in 0 until numCols) {
-                if (matrix[row][col] == ONE) {
-                    ++heights[col]
+        for (row in matrix) {
+            for ((idxCol, value) in row.withIndex()) {
+                if (value == ONE) {
+                    ++heights[idxCol]
                 } else {
-                    heights[col] = 0
+                    heights[idxCol] = 0
                 }
             }
 
@@ -51,20 +52,20 @@ class SolutionApproach0MonoStack {
         var idx = 0
 
         while (idx < nHeights) {
-            while (stack.isNotEmpty() && heights[idx] < heights[stack.peek()]) {
-                val shortest = heights[stack.pop()]
-                val width = idx - if (stack.isEmpty()) 0 else (stack.peek() + 1)
+            while (stack.isNotEmpty() && heights[idx] < heights[stack.last()]){
+                val shortest = heights[stack.removeLast()]
+                val width = idx - if (stack.isEmpty()) 0 else (stack.last() + 1)
                 val area = shortest * width
                 max = maxOf(max, area)
             }
 
-            stack.push(idx)
+            stack.addLast(idx)
             ++idx
         }
 
         while (stack.isNotEmpty()) {
-            val shortest = heights[stack.pop()]
-            val width = nHeights - if (stack.isEmpty()) 0 else (stack.peek() + 1)
+            val shortest = heights[stack.removeLast()]
+            val width = nHeights - if (stack.isEmpty()) 0 else (stack.last() + 1)
             val area = shortest * width
             max = maxOf(max, area)
         }
