@@ -21,8 +21,13 @@ class SolutionApproach0HighLowPointers {
         var hi = chs.lastIndex
 
         while (lo < hi) {
-            while (lo < hi && !isLetter(chs[lo])) ++lo
-            while (lo < hi && !isLetter(chs[hi])) --hi
+            while (lo < hi && !isLetter(chs[lo])) {
+                ++lo
+            }
+
+            while (lo < hi && !isLetter(chs[hi])) {
+                --hi
+            }
 
             swap(lo++, hi--, chs)
         }
