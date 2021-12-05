@@ -21,7 +21,8 @@ class SolutionApproach0Greedy {
 
         var count = 0
         for (idx in heights.indices) {
-            if (heights[idx] != sorted[idx]) ++count
+            if (heights[idx] != sorted[idx])
+                ++count
         }
 
         return count

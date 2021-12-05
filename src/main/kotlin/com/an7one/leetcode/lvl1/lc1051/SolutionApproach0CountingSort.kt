@@ -14,7 +14,7 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0CountingSort {
     private companion object {
-        private const val RANGE = 100 + 1
+        private const val RANGE = 100 + 7
     }
 
     fun heightChecker(heights: IntArray): Int {
@@ -22,15 +22,20 @@ class SolutionApproach0CountingSort {
         // val nHeights = heights.size
 
         val freqs = IntArray(RANGE) { 0 }
-        for (height in heights) ++freqs[height]
+        for (height in heights) {
+            ++freqs[height]
+        }
 
         var count = 0
         var curHeight = 0
 
         for (idx in heights.indices) {
-            while (freqs[curHeight] == 0) ++curHeight
+            while (freqs[curHeight] == 0) {
+                ++curHeight
+            }
 
-            if (curHeight != heights[idx]) ++count
+            if (curHeight != heights[idx])
+                ++count
 
             --freqs[curHeight]
         }

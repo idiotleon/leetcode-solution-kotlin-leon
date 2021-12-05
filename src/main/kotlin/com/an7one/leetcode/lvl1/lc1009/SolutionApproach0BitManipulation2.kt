@@ -14,7 +14,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0BitManipulation2 {
     fun bitwiseComplement(num: Int): Int {
-        if (num == 0) return 1
+        if (num == 0)
+            return 1
         var mask = num
         mask = mask or (mask shr 1)
         mask = mask or (mask shr 2)

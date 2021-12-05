@@ -15,8 +15,11 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0BitManipulation1 {
     fun bitwiseComplement(N: Int): Int {
-        if (N == 0) return 1
-        if (N == 1) return 0
+        if (N == 0)
+            return 1
+
+        if (N == 1)
+            return 0
 
         var x = 1
         while (x <= N) {
