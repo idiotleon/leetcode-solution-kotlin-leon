@@ -29,7 +29,8 @@ class SolutionApproach0Math {
             if (map[digit] != -1) {
                 reversed *= 10
                 reversed += map[digit]
-            } else return false
+            } else
+                return false
         }
 
         return reversed != num

@@ -11,8 +11,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0DP0Dimen {
-    fun tribonacci(n: Int): Int {
-        return when (n) {
+    fun tribonacci(n: Int): Int =
+        when (n) {
             0 -> 0
             1 -> 1
             2 -> 1
@@ -31,5 +31,4 @@ class SolutionApproach0DP0Dimen {
                 t1
             }
         }
-    }
 }

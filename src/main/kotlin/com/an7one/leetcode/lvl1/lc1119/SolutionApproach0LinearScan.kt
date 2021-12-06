@@ -22,7 +22,9 @@ class SolutionApproach0LinearScan {
         val builder = StringBuilder()
 
         for (ch in S) {
-            if (vowels.contains(ch)) continue
+            if (vowels.contains(ch))
+                continue
+
             builder.append(ch)
         }
 
