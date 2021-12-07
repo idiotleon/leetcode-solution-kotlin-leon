@@ -18,12 +18,15 @@ class SolutionApproach0LinearScan {
         // not used
         // val nNums = nums.size
 
-        val freqs = HashMap<Int, Int>()
-        for (num in nums) freqs[num] = 1 + (freqs[num] ?: 0)
-
+        val freqs = HashMap<Int, Int>().also {
+            for (num in nums) {
+                it[num] = 1 + (it[num] ?: 0)
+            }
+        }
         val seen = HashSet<Int>()
         for ((_, freq) in freqs) {
-            if (!seen.add(freq)) return false
+            if (!seen.add(freq))
+                return false
         }
 
         return true

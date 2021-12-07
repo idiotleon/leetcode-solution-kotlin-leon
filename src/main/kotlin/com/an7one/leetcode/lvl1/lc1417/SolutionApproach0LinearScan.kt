@@ -31,7 +31,8 @@ class SolutionApproach0LinearScan {
 
         val totalDigits = digits.size
         val totalChars = chars.size
-        if (abs(totalDigits - totalChars) >= 2) return ""
+        if (abs(totalDigits - totalChars) >= 2)
+            return ""
 
         val builder = StringBuilder()
         var isDigit = totalDigits >= totalChars

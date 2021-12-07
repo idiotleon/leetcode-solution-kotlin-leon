@@ -17,8 +17,8 @@ class SolutionApproach0LinearScan {
         // val lenK = keyboard.length
 
         val indexes = IntArray(26) { 0 }
-        for (idx in keyboard.indices) {
-            indexes[keyboard[idx] - 'a'] = idx
+        for ((idx, ch) in keyboard.withIndex()) {
+            indexes[ch - 'a'] = idx
         }
 
         var cost = 0
