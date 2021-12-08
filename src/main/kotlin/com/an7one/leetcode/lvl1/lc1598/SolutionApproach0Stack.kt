@@ -2,13 +2,14 @@
  * @author: Leon
  * https://leetcode.com/problems/crawler-log-folder/
  *
- * Time Complexity:     O(`totalLogs` * avgLenLog)
- * Space Complexity:    O(`totalLogs`)
+ * Time Complexity:     O(`nLogs` * avgLenLog)
+ * Space Complexity:    O(`nLogs`)
  */
 package com.an7one.leetcode.lvl1.lc1598
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0Stack {
@@ -17,19 +18,20 @@ class SolutionApproach0Stack {
         private const val REMAIN = "./"
     }
 
+    @OptIn(ExperimentalStdlibApi::class)
     fun minOperations(logs: Array<String>): Int {
         // not used
-        // val totalLogs = logs.size
+        // val nLogs = logs.size
 
-        val stack = LinkedList<String>()
+        val stack = ArrayDeque<String>()
 
         for (log in logs) {
             when (log) {
-                MOVE_TO_PARENT -> if (stack.isNotEmpty()) stack.pop()
+                MOVE_TO_PARENT -> if (stack.isNotEmpty()) stack.removeFirst()
                 REMAIN -> {
                     // to do nothing
                 }
-                else -> stack.push(log)
+                else -> stack.addLast(log)
             }
         }
 
