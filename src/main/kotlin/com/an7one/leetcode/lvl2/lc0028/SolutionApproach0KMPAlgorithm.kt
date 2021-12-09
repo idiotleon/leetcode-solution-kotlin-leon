@@ -20,7 +20,8 @@ class SolutionApproach0KMPAlgorithm {
         var idxN = 0
 
         while (idxH < lenH) {
-            if (idxN == lenN) break
+            if (idxN == lenN)
+                break
 
             when {
                 haystack[idxH] == needle[idxN] -> {

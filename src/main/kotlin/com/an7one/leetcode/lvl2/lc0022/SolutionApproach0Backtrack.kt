@@ -30,11 +30,13 @@ class SolutionApproach0Backtrack {
         return ans
     }
 
-    private fun backtrack(builder: StringBuilder,
-                          cntOpen: Int,
-                          cntClosed: Int,
-                          n: Int,
-                          res: MutableList<String>) {
+    private fun backtrack(
+        builder: StringBuilder,
+        cntOpen: Int,
+        cntClosed: Int,
+        n: Int,
+        res: MutableList<String>
+    ) {
 
         if (builder.length == 2 * n) {
             res.add(builder.toString())

@@ -12,7 +12,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0HighLowPointers {
     fun removeDuplicates(nums: IntArray): Int {
         // sanity check
-        if (nums.isEmpty()) return 0
+        if (nums.isEmpty())
+            return 0
 
         val nNums = nums.size
 
@@ -20,7 +21,9 @@ class SolutionApproach0HighLowPointers {
         var hi = 1
 
         while (hi < nNums) {
-            while (hi < nNums && nums[hi - 1] == nums[hi]) ++hi
+            while (hi < nNums && nums[hi - 1] == nums[hi]) {
+                ++hi
+            }
 
             if (hi == nNums) break
             nums[lo] = nums[hi]

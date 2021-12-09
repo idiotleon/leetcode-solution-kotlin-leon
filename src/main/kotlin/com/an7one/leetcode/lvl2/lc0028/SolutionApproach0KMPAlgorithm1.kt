@@ -14,7 +14,8 @@ class SolutionApproach0KMPAlgorithm1 {
         val lenH = haystack.length
         val lenN = needle.length
 
-        if (lenH < lenN) return -1
+        if (lenH < lenN)
+            return -1
 
         val kmpTable = IntArray(lenN) { 0 }
         var i = 1
@@ -43,7 +44,8 @@ class SolutionApproach0KMPAlgorithm1 {
             }
         }
 
-        if (j == lenN) return i - lenN
+        if (j == lenN)
+            return i - lenN
 
         return -1
     }
