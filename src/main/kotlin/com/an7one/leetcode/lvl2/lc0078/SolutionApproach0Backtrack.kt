@@ -19,7 +19,8 @@ class SolutionApproach0Backtrack {
     fun subsets(nums: IntArray): List<List<Int>> {
         val paths = mutableListOf<MutableList<Int>>()
         // sanity check
-        if (nums.isEmpty()) return paths
+        if (nums.isEmpty())
+            return paths
 
         val path = mutableListOf<Int>()
         backtrack(0, path, nums, paths)
@@ -27,10 +28,12 @@ class SolutionApproach0Backtrack {
         return paths
     }
 
-    private fun backtrack(startIdx: Int,
-                          path: MutableList<Int>,
-                          nums: IntArray,
-                          paths: MutableList<MutableList<Int>>) {
+    private fun backtrack(
+        startIdx: Int,
+        path: MutableList<Int>,
+        nums: IntArray,
+        paths: MutableList<MutableList<Int>>
+    ) {
         val nNums = nums.size
         paths.add(path.toMutableList())
 

@@ -12,7 +12,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0BinarySearch {
     fun searchInsert(nums: IntArray, target: Int): Int {
         // sanity check
-        if (nums.isEmpty()) return 0
+        if (nums.isEmpty())
+            return 0
 
         val sizeN = nums.size
 

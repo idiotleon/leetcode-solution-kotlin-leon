@@ -33,9 +33,8 @@ class SolutionApproach0KadaneAlgorithm {
             if (sum < 0) {
                 sum = 0
                 len = 0
-            } else {
+            } else
                 ++len
-            }
         }
 
         return nums.copyOfRange(lo, hi + 1)
