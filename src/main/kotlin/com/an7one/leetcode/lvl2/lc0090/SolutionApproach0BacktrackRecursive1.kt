@@ -30,7 +30,6 @@ class SolutionApproach0BacktrackRecursive1 {
         nums: IntArray,
         paths: MutableList<List<Int>>
     ) {
-
         val nNums = nums.size
         paths.add(path.toList())
 

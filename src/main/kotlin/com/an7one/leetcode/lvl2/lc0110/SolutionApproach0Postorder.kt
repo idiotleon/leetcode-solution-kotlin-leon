@@ -15,12 +15,14 @@ class SolutionApproach0Postorder {
     fun isBalanced(root: TreeNode?) = postorder(root) != -1
 
     private fun postorder(node: TreeNode?): Int {
-        if (node == null) return 0
+        if (node == null)
+            return 0
 
         val leftHeight = postorder(node.left)
         val rightHeight = postorder(node.right)
 
-        if (leftHeight == -1 || rightHeight == -1 || abs(leftHeight - rightHeight) > 1) return -1
+        if (leftHeight == -1 || rightHeight == -1 || abs(leftHeight - rightHeight) > 1)
+            return -1
 
         return maxOf(leftHeight, rightHeight) + 1
     }

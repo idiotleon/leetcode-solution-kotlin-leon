@@ -13,13 +13,15 @@ package com.an7one.leetcode.lvl2.lc0111
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
+    @OptIn(ExperimentalStdlibApi::class)
     fun minDepth(root: TreeNode?): Int {
         if (root == null) return 0
 
-        val queue = LinkedList<TreeNode>().also { it.offer(root) }
+        val queue = ArrayDeque<TreeNode>().also { it.addLast(root) }
 
         var height = 1
 
@@ -27,13 +29,13 @@ class SolutionApproach0BFS {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val cur = queue.poll()
+                val cur = queue.removeFirst()
 
                 if (cur.left == null && cur.right == null)
                     return height
 
-                cur.left?.let { queue.offer(it) }
-                cur.right?.let { queue.offer(it) }
+                cur.left?.let { queue.addLast(it) }
+                cur.right?.let { queue.addLast(it) }
             }
 
             ++height

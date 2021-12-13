@@ -18,7 +18,8 @@ class SolutionApproach0BacktrackRecursive {
     fun subsetsWithDup(nums: IntArray): List<List<Int>> {
         val paths = mutableListOf<List<Int>>()
         // sanity check
-        if (nums.isEmpty()) return paths
+        if (nums.isEmpty())
+            return paths
 
         nums.sort()
         val path = mutableListOf<Int>()

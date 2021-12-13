@@ -15,7 +15,8 @@ class SolutionApproach0PostorderRecursive {
     fun maxDepth(root: TreeNode?) = postorder(root, 0)
 
     private fun postorder(node: TreeNode?, curDepth: Int): Int {
-        if (node == null) return curDepth
+        if (node == null)
+            return curDepth
 
         val leftDepth = postorder(node.left, 1 + curDepth)
         val rightDepth = postorder(node.right, 1 + curDepth)
