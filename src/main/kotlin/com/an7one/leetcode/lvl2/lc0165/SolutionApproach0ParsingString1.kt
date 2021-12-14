@@ -30,9 +30,8 @@ class SolutionApproach0ParsingString1 {
             val num1 = if (idx < nVer1) ver1[idx].toInt() else 0
             val num2 = if (idx < nVer2) ver2[idx].toInt() else 0
 
-            if (num1 != num2) {
+            if (num1 != num2)
                 return if (num1 > num2) 1 else -1
-            }
 
             ++idx
         }

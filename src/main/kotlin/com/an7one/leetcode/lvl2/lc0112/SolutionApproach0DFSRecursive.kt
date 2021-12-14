@@ -17,13 +17,13 @@ class SolutionApproach0DFSRecursive {
     }
 
     private fun dfs(node: TreeNode?, target: Int): Boolean {
-        if (node == null) return false
+        if (node == null)
+            return false
 
         val value = node.`val`
 
-        if (target == value && node.left == null && node.right == null) {
+        if (target == value && node.left == null && node.right == null)
             return true
-        }
 
         val left = dfs(node.left, target - value)
         val right = dfs(node.right, target - value)

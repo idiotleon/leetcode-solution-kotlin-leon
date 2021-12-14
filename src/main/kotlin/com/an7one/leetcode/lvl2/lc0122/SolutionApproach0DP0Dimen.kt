@@ -15,9 +15,8 @@ class SolutionApproach0DP0Dimen {
         var maxProfit = 0
 
         for (idx in 1 until nPrices) {
-            if (prices[idx - 1] < prices[idx]) {
+            if (prices[idx - 1] < prices[idx])
                 maxProfit += prices[idx] - prices[idx - 1]
-            }
         }
 
         return maxProfit

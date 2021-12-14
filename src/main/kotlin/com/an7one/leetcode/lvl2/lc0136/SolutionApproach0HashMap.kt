@@ -20,9 +20,8 @@ class SolutionApproach0HashMap {
         }
 
         for ((num, freq) in numToFreq) {
-            if (freq == 1) {
+            if (freq == 1)
                 single = num
-            }
         }
 
         return single
