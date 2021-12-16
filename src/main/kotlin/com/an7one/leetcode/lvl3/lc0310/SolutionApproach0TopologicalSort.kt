@@ -10,37 +10,37 @@
 package com.an7one.leetcode.lvl3.lc0310
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
 
-import kotlin.collections.ArrayList
+import kotlin.collections.ArrayDeque;
 
 @Suppress(UNUSED)
 class SolutionApproach0TopologicalSort {
+    @OptIn(ExperimentalStdlibApi::class)
     fun findMinHeightTrees(n: Int, edges: Array<IntArray>): List<Int> {
         if (n == 1) return mutableListOf(0)
 
         val degrees = IntArray(n) { 0 }
         val graph = buildGraph(degrees, n, edges)
 
-        val queue = LinkedList<Int>()
-        for (vertex in degrees.indices) {
-            if (degrees[vertex] == 1) {
-                queue.offer(vertex)
+        val queue = ArrayDeque<Int>()
+        for ((idxNode, degree) in degrees.withIndex()) {
+            if (degree == 1) {
+                queue.addLast(idxNode)
             }
         }
 
         var ans = mutableListOf<Int>()
         while (queue.isNotEmpty()) {
             val size = queue.size
-
             val newLeaves = mutableListOf<Int>()
-            for (sz in 0 until size) {
-                val cur = queue.poll()
+
+            for (_sz in 0 until size) {
+                val cur = queue.removeFirst()
                 newLeaves.add(cur)
 
                 for (next in graph[cur]) {
                     if (--degrees[next] == 1) {
-                        queue.offer(next)
+                        queue.addLast(next)
                     }
                 }
             }
