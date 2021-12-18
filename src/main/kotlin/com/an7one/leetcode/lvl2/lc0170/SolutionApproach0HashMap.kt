@@ -31,7 +31,9 @@ class SolutionApproach0HashMap {
         for ((num1, freq) in freqs) {
             val num2 = value - num1
             if ((num1 == num2) && (freq > 1)
-                    || (num1 != num2) && (freqs[num2] != null)) return true
+                || (num1 != num2) && (freqs[num2] != null)
+            )
+                return true
         }
 
         return false

@@ -15,9 +15,12 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0DP0Dimen {
     fun rob(nums: IntArray): Int {
         // sanity check
-        if (nums.isEmpty()) return 0
+        if (nums.isEmpty())
+            return 0
+
         val nNums = nums.size
-        if (nNums == 1) return nums[0]
+        if (nNums == 1)
+            return nums[0]
 
         var curRobbed = 0
         var curNotRobbed = 0

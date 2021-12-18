@@ -28,9 +28,8 @@ class SolutionApproach0DFSRecursive {
 
         val value = node.`val`
 
-        if (curDepth == res.size) {
+        if (curDepth == res.size)
             res.add(value)
-        }
 
         dfs(node.right, 1 + curDepth, res)
         dfs(node.left, 1 + curDepth, res)
