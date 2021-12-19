@@ -11,6 +11,7 @@ package com.an7one.leetcode.lvl3.lc0394
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -19,22 +20,26 @@ class SolutionApproach0DFSRecursive {
         private const val CLOSED_SQUARE_BRACKET = ']'
     }
 
+    @OptIn(ExperimentalStdlibApi::class)
     fun decodeString(s: String): String {
         // not used
         // val lenS = s.length
 
-        val queue = LinkedList<Char>()
-        for (ch in s) queue.offer(ch)
+        val queue = ArrayDeque<Char>()
+        for (ch in s) {
+            queue.addLast(ch)
+        }
 
         return dfs(queue)
     }
 
-    private fun dfs(queue: LinkedList<Char>): String {
+    @OptIn(ExperimentalStdlibApi::class)
+    private fun dfs(queue: ArrayDeque<Char>): String {
         val builder = StringBuilder()
         var repCnt = 0
 
         loop@ while (queue.isNotEmpty()) {
-            when (val ch = queue.poll()) {
+            when (val ch = queue.removeFirst()) {
                 in '0'..'9' -> repCnt = repCnt * 10 + (ch - '0')
                 OPEN_SQUARE_BRACKET -> {
                     val sub = dfs(queue)
