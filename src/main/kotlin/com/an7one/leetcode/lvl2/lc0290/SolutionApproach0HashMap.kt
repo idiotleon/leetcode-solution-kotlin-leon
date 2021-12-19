@@ -15,7 +15,8 @@ class SolutionApproach0HashMap {
         val arr: List<String> = str.split(" ")
         val size = arr.size
 
-        if (size != len) return false
+        if (size != len)
+            return false
 
         val map = HashMap<Char, String>()
         val seen: MutableSet<String> = HashSet()
@@ -26,9 +27,11 @@ class SolutionApproach0HashMap {
             val word = arr[i]
 
             if (map.containsKey(ch)) {
-                if (map[ch] != word) return false
+                if (map[ch] != word)
+                    return false
             } else {
-                if (!seen.add(word)) return false
+                if (!seen.add(word))
+                    return false
                 map[ch] = word
             }
         }

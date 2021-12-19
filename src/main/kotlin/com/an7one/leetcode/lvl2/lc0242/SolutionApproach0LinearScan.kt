@@ -15,17 +15,20 @@ class SolutionApproach0LinearScan {
         // val lenS = s.length
         // not used
         // val lenT = t.length
-        val freqs = IntArray(26){ 0 }
-        for(ch in s){
-            ++freqs[ch - 'a']
+
+        val freqs = IntArray(26) { 0 }.also {
+            for (ch in s) {
+                ++it[ch - 'a']
+            }
         }
-        for(ch in t){
+
+        for (ch in t) {
             --freqs[ch - 'a']
         }
-        for(freq in freqs){
-            if(freq != 0){
+
+        for (freq in freqs) {
+            if (freq != 0)
                 return false
-            }
         }
         return true
     }

@@ -21,9 +21,8 @@ class SolutionApproach0MinHeap {
         for (num in nums) {
             minHeap.offer(num)
 
-            if (minHeap.size > k) {
+            if (minHeap.size > k)
                 minHeap.poll()
-            }
         }
 
         return minHeap.poll()

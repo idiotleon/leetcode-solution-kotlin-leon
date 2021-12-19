@@ -17,7 +17,8 @@ class SolutionApproach0PostorderRecursive1 {
     fun invertTree(root: TreeNode?) = postorder(root)
 
     private fun postorder(node: TreeNode?): TreeNode? {
-        if (node == null) return null
+        if (node == null)
+            return null
 
         postorder(node.left)
         postorder(node.right)

@@ -21,19 +21,25 @@ class SolutionApproach0BinarySearch {
     fun minSubArrayLen(s: Int, nums: IntArray): Int {
         val nNums = nums.size
 
-        val prefixSums = IntArray(nNums + 1) { 0 }
-        for (idx in 1..nNums) {
-            prefixSums[idx] = prefixSums[idx - 1] + nums[idx - 1]
+        val prefixSums = IntArray(nNums + 1) { 0 }.also {
+            for (idx in 1..nNums) {
+                it[idx] = it[idx - 1] + nums[idx - 1]
+            }
         }
-        if (prefixSums[nNums] < s) return 0
+
+        if (prefixSums[nNums] < s)
+            return 0
 
         var shortest = nNums + 1
 
         for (idxStart in prefixSums.indices) {
             val endIdx = lowerBound(idxStart + 1, nNums + 1, prefixSums, s + prefixSums[idxStart])
 
-            if (endIdx == nNums + 1) break
-            if (endIdx - idxStart < shortest) shortest = endIdx - idxStart
+            if (endIdx == nNums + 1)
+                break
+
+            if (endIdx - idxStart < shortest)
+                shortest = endIdx - idxStart
         }
 
         return shortest % (nNums + 1)
@@ -45,11 +51,10 @@ class SolutionApproach0BinarySearch {
 
         while (lo < hi) {
             val mid = lo + (hi - lo) / 2
-            if (prefixSums[mid] >= s) {
+            if (prefixSums[mid] >= s)
                 hi = mid
-            } else {
+            else
                 lo = mid + 1
-            }
         }
 
         return lo

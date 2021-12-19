@@ -18,15 +18,13 @@ class SolutionApproach0BinarySearch : FakeVersionControl() {
         while (lo <= hi) {
             val mid = lo + (hi - lo) / 2
 
-            if (!isBadVersion(mid) && isBadVersion(mid + 1)) {
+            if (!isBadVersion(mid) && isBadVersion(mid + 1))
                 return 1 + mid
-            }
 
-            if (!isBadVersion(mid)) {
+            if (!isBadVersion(mid))
                 lo = mid + 1
-            } else {
+            else
                 hi = mid - 1
-            }
         }
 
         return 1

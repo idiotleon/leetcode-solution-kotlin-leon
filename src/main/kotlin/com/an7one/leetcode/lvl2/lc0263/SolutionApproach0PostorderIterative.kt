@@ -14,7 +14,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0PostorderIterative {
     fun isUgly(num: Int): Boolean {
-        if (num <= 0) return false
+        if (num <= 0)
+            return false
 
         var num = num
         while (num % 5 == 0) num /= 5

@@ -19,9 +19,9 @@ class SolutionApproach0CountFreqs {
 
         var cntOdd = 0
         for (freq in freqs) {
-            if (freq % 2 == 1) {
-                if (++cntOdd > 1) return false
-            }
+            if (freq % 2 == 1)
+                if (++cntOdd > 1)
+                    return false
         }
 
         return true

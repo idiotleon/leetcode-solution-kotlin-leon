@@ -10,7 +10,7 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
 @Suppress(UNUSED)
-class SolutionApproach0Backtrack {
+class SolutionApproach0BacktrackRecursive {
     fun binaryTreePaths(root: TreeNode?): List<String> {
         val ans = mutableListOf<String>()
         val builder = StringBuilder()
