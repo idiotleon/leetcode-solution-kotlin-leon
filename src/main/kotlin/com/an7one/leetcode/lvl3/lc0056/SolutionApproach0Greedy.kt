@@ -10,16 +10,17 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
+    @OptIn(ExperimentalStdlibApi::class)
     fun merge(intervals: Array<IntArray>): Array<IntArray> {
         // not used
         // val nIntervals = intervals.size
 
         intervals.sortBy { it[0] }
 
-        val merged = ArrayList<IntArray>()
+        val merged = ArrayDeque<IntArray>()
         for (interval in intervals) {
             if (merged.isEmpty() || merged.last()[1] < interval[0]) {
-                merged.add(interval)
+                merged.addLast(interval)
             } else {
                 merged.last()[1] = maxOf(merged.last()[1], interval[1])
             }
