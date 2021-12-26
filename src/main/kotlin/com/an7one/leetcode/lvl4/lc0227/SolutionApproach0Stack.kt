@@ -8,6 +8,7 @@ package com.an7one.leetcode.lvl4.lc0227
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0Stack {
@@ -19,28 +20,28 @@ class SolutionApproach0Stack {
         private const val SIGN_DIVIDE = '/'
     }
 
+    @OptIn(ExperimentalStdlibApi::class)
     fun calculate(s: String): Int {
         val lenS = s.length
 
-        val stack = LinkedList<Int>()
+        val stack = ArrayDeque<Int>()
         var num = 0
         var op = SIGN_PLUS
 
-        for (idx in s.indices) {
-            val ch = s[idx]
+        for ((idx, ch) in s.withIndex()) {
             if (ch in '0'..'9') num = num * 10 + (ch - '0')
 
             if (ch !in '0'..'9' && ch != SPACE || idx == lenS - 1) {
                 when (op) {
-                    SIGN_PLUS -> stack.push(num)
-                    SIGN_MINUS -> stack.push(-num)
+                    SIGN_PLUS -> stack.addLast(num)
+                    SIGN_MINUS -> stack.addLast(-num)
                     SIGN_MULTIPLY -> {
-                        val product = num * stack.pop()
-                        stack.push(product)
+                        val product = num * stack.removeLast()
+                        stack.addLast(product)
                     }
                     SIGN_DIVIDE -> {
-                        val quotient = stack.pop() / num
-                        stack.push(quotient)
+                        val quotient = stack.removeLast() / num
+                        stack.addLast(quotient)
                     }
                     else -> {
                     }
@@ -53,7 +54,7 @@ class SolutionApproach0Stack {
 
         var ans = 0
         while (stack.isNotEmpty()) {
-            ans += stack.pop()
+            ans += stack.removeLast()
         }
 
         return ans
