@@ -10,13 +10,13 @@
 package com.an7one.leetcode.lvl5.lc0772
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     private companion object {
-        private const val OPEN_PAREN = '('
-        private const val CLOSED_PAREN = ')'
+        private const val PAREN_OPEN = '('
+        private const val PAREN_CLOSED = ')'
         private const val SPACE = ' '
 
         private const val SIGN_PLUS = '+'
@@ -25,31 +25,32 @@ class SolutionApproach0DFSRecursive {
         private const val SIGN_DIVIDE = '/'
     }
 
+    @OptIn(ExperimentalStdlibApi::class)
     fun calculate(s: String): Int {
         // not used
         // val lenS = s.length
 
-        val tokens = LinkedList<Char>()
+        val tokens = ArrayDeque<Char>()
         for (ch in s) {
-            if (ch != SPACE) {
-                tokens.offer(ch)
-            }
+            if (ch != SPACE)
+                tokens.addLast(ch)
         }
-        tokens.offer(SIGN_PLUS)
+        tokens.addLast(SIGN_PLUS)
 
         return dfs(tokens)
     }
 
-    private fun dfs(tokens: LinkedList<Char>): Int {
+    @OptIn(ExperimentalStdlibApi::class)
+    private fun dfs(tokens: ArrayDeque<Char>): Int {
         var op = SIGN_PLUS
         var num = 0
         var sum = 0
         var prev = 0
 
         loop@ while (tokens.isNotEmpty()) {
-            when (val ch = tokens.poll()) {
+            when (val ch = tokens.removeFirst()) {
                 in '0'..'9' -> num = num * 10 + (ch - '0')
-                OPEN_PAREN -> num = dfs(tokens)
+                PAREN_OPEN -> num = dfs(tokens)
                 else -> {
                     when (op) {
                         SIGN_PLUS -> {
@@ -74,7 +75,7 @@ class SolutionApproach0DFSRecursive {
                         }
                     }
 
-                    if (ch == CLOSED_PAREN) break@loop
+                    if (ch == PAREN_CLOSED) break@loop
 
                     op = ch
                     num = 0

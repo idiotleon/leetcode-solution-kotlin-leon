@@ -7,7 +7,7 @@
 package com.an7one.leetcode.lvl5.lc0224
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0Stack {
@@ -22,6 +22,7 @@ class SolutionApproach0Stack {
         private const val CLOSED_PAREN = ')'
     }
 
+    @OptIn(ExperimentalStdlibApi::class)
     fun calculate(s: String): Int {
         // not used
         // val lenS = s.length
@@ -29,19 +30,19 @@ class SolutionApproach0Stack {
         var ans = 0
         var sign = 1
 
-        val stack = LinkedList<Int>()
-        stack.push(sign)
+        val stack = ArrayDeque<Int>()
+        stack.addLast(sign)
 
         for (ch in s) {
             when (ch) {
                 in '0'..'9' -> num = num * 10 + (ch - '0')
                 SIGN_PLUS, SIGN_MINUS -> {
                     ans += sign * num
-                    sign = stack.peek() * (if (ch == SIGN_PLUS) 1 else -1)
+                    sign = stack.last() * (if (ch == SIGN_PLUS) 1 else -1)
                     num = 0
                 }
-                OPEN_PAREN -> stack.push(sign)
-                CLOSED_PAREN -> stack.pop()
+                OPEN_PAREN -> stack.addLast(sign)
+                CLOSED_PAREN -> stack.removeLast()
                 else -> {
                 }
             }
