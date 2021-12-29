@@ -8,14 +8,16 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun connect(root: Node?): Node? {
-        if (root == null) return null
+        if (root == null)
+            return null
 
         dfs(root.left, root.right)
         return root
     }
 
     private fun dfs(node1: Node?, node2: Node?) {
-        if (node1 == null || node2 == null) return
+        if (node1 == null || node2 == null)
+            return
 
         node1.next = node2
 

@@ -10,27 +10,28 @@
 package com.an7one.leetcode.lvl3.lc0116
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
+    @OptIn(ExperimentalStdlibApi::class)
     fun connect(root: Node?): Node? {
         if (root == null) return null
 
-        val queue = LinkedList<Node>().also { it.offer(root) }
+        val queue = ArrayDeque<Node>().also { it.addLast(root) }
 
         while (queue.isNotEmpty()) {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val cur = queue.poll()
+                val cur = queue.removeFirst()
 
                 if (sz < size - 1) {
-                    cur.next = queue.peek()
+                    cur.next = queue.first()
                 }
 
-                cur.left?.let { queue.offer(it) }
-                cur.right?.let { queue.offer(it) }
+                cur.left?.let { queue.addLast(it) }
+                cur.right?.let { queue.addLast(it) }
             }
         }
 
