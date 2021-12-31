@@ -11,7 +11,7 @@ import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 import kotlin.math.abs
 
 @Suppress(UNUSED)
-class SolutionApproach0PostorderRecursive {
+class SolutionApproach0PostorderRecursive1 {
     fun maxAncestorDiff(root: TreeNode?): Int {
         if (root == null) return 0
         if (root.left == null && root.right == null) return root.`val`
