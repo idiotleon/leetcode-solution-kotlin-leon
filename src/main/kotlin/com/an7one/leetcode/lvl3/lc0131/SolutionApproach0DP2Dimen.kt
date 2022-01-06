@@ -26,9 +26,9 @@ class SolutionApproach0DP2Dimen {
                 if (str[lo] == str[hi] && (hi - lo <= 2 || isPalindrome[lo + 1][hi - 1])) {
                     isPalindrome[lo][hi] = true
 
-                    val substr = str.substring(lo, hi + 1)
+                    val subStr = str.substring(lo, hi + 1)
                     for (list in results[lo]) {
-                        val copy = ArrayList(list).also { it.add(substr) }
+                        val copy = ArrayList(list).also { it.add(subStr) }
                         results[hi + 1].add(copy)
                     }
                 }

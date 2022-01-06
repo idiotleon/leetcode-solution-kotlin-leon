@@ -8,17 +8,18 @@
 package com.an7one.leetcode.lvl1.lc0014
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0Trie {
+    @OptIn(ExperimentalStdlibApi::class)
     fun longestCommonPrefix(strs: Array<String>): String {
         val root = buildTrie(strs)
 
         val builder = StringBuilder()
 
-        val queue = LinkedList<TrieNode>().also {
-            it.offer(root)
+        val queue = ArrayDeque<TrieNode>().also {
+            it.addLast(root)
         }
 
         outer@ while (queue.isNotEmpty()) {
@@ -27,13 +28,12 @@ class SolutionApproach0Trie {
             if (size > 1) break@outer
 
             for (sz in 0 until size) {
-                val cur = queue.poll()
-                cur.letter?.let { builder.append(it) }
+                val cur = queue.removeFirst()
+                cur.ch?.let { builder.append(it) }
 
                 for (child in cur.children) {
-                    if (child != null) {
-                        queue.offer(child)
-                    }
+                    if (child != null)
+                        queue.addLast(child)
                 }
 
                 if (cur.word != null) break@outer
@@ -50,9 +50,8 @@ class SolutionApproach0Trie {
             var cur = root
 
             for (ch in str) {
-                if (cur.children[ch - 'a'] == null) {
+                if (cur.children[ch - 'a'] == null)
                     cur.children[ch - 'a'] = TrieNode(ch)
-                }
 
                 cur = cur.children[ch - 'a']!!
             }
@@ -64,8 +63,8 @@ class SolutionApproach0Trie {
     }
 
     private data class TrieNode(
-        var letter: Char? = null,
+        var ch: Char? = null,
         var word: String? = null,
-        val children: Array<TrieNode?> = Array<TrieNode?>(26) { null }
+        val children: Array<TrieNode?> = Array(26) { null }
     )
 }

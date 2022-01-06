@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/
  *
- * Time Complexity:     O(`totalTimes`)
- * Space Complexity:    O(`totalTimes`)
+ * Time Complexity:     O(`nTimes`)
+ * Space Complexity:    O(`nTimes`)
  *
  * References:
  *  https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/discuss/256726/JavaPython-3-O(n)-code-w-comment-similar-to-Two-Sum
@@ -19,7 +19,7 @@ class SolutionApproach0HashMap1 {
 
     fun numPairsDivisibleBy60(times: IntArray): Int {
         // not used
-        // val totalTimes = times.size
+        // val nTimes = times.size
 
         val freqs = HashMap<Int, Int>()
 

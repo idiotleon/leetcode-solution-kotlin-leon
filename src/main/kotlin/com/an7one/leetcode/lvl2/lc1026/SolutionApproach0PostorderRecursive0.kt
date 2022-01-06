@@ -27,8 +27,8 @@ class SolutionApproach0PostorderRecursive0 {
         val maxVal = maxOf(maxValLeft ?: value, maxValRight ?: value, value)
         val maxAbsDiff =
             maxOf(
-                abs(value - minVal ?: value),
-                abs(value - maxVal ?: value),
+                abs(value - (minVal ?: value)),
+                abs(value - (maxVal ?: value)),
                 maxOf(absDiffLeft ?: 0, absDiffRight ?: 0)
             )
 
