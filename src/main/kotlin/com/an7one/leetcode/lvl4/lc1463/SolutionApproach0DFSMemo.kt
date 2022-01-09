@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/cherry-pickup-ii/
  *
- * Time Complexity:     O(9 * `nRows` * (`nCols` ^ 2))
+ * Time Complexity:     O(9 * `nRows` * (`nCols` ^ 2)) ~ O(`nRows` )
  * Space Complexity:    O(`nRows` * (`nCols` ^ 2))
  *
  * References:
