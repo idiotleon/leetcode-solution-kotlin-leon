@@ -15,9 +15,8 @@ class SolutionApproach1MinHeap {
         for (num in nums) {
             if (seen.add(num)) {
                 minHeap.offer(num)
-                if (minHeap.size > 3) {
+                if (minHeap.size > 3)
                     seen.remove(minHeap.poll())
-                }
             }
         }
 
