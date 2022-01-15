@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
  *
- * Time Complexity:     O(`totalPoints` * lg(`totalPoints`))
+ * Time Complexity:     O(`nPoints` * lg(`nPoints`))
  * Space Complexity:    O(1)
  *
  * Steps:
@@ -22,7 +22,7 @@ class SolutionApproach0Greedy {
         if (points.isEmpty()) return 0
 
         // not used
-        // val totalPoints = points.size
+        // val nPoints = points.size
 
         points.sortBy { it[1] }
 
