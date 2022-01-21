@@ -12,13 +12,13 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0Greedy {
     fun canCompleteCircuit(gas: IntArray, costs: IntArray): Int {
 
-        val totalStops = gas.size
+        val nStops = gas.size
 
         var curTank = 0
         var totalTank = 0
         var startPos = 0
 
-        for (i in 0 until totalStops) {
+        for (i in 0 until nStops) {
             val gasBalance = gas[i] - costs[i]
             curTank += gasBalance
 
@@ -30,6 +30,6 @@ class SolutionApproach0Greedy {
             totalTank += gasBalance
         }
 
-        return if (totalTank >= 0) startPos else -1;
+        return if (totalTank >= 0) startPos else -1
     }
 }
