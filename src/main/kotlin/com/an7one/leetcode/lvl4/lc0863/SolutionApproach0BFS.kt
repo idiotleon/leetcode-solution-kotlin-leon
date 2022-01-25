@@ -44,7 +44,6 @@ class SolutionApproach0BFS {
                 cur.left?.let { if (seen.add(it)) queue.offer(it) }
                 cur.right?.let { if (seen.add(it)) queue.offer(it) }
                 childToParent[cur]?.let { if (seen.add(it)) queue.offer(it) }
-
             }
 
             if (k++ == kDistance) break

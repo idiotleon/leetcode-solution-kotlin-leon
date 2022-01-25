@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/word-pattern/
  *
- * Time Complexity:     O(`lenP`) + O(`totalWords` * lenW) ~ O(`totalWords` * lenW)
- * Space Complexity:    O(`totalWords` * lenW)
+ * Time Complexity:     O(`lenP`) + O(`nWords` * lenW) ~ O(`nWords` * lenW)
+ * Space Complexity:    O(`nWords` * lenW)
  *
  * References:
  *  https://leetcode.com/problems/word-pattern/discuss/73399/Very-fast-(3ms)-Java-Solution-using-HashMap
@@ -20,9 +20,9 @@ class SolutionApproach0TwoPointers {
     fun wordPattern(pattern: String, str: String): Boolean {
         val lenP = pattern.length;
         val words = str.split(SPACE);
-        val totalWords = words.size;
+        val nWords = words.size;
 
-        if (lenP != totalWords)
+        if (lenP != nWords)
             return false;
 
         val map = HashMap<Char, String>();

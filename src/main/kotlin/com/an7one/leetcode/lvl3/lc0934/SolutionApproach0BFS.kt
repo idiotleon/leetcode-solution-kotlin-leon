@@ -1,4 +1,5 @@
 /**
+ * @author: Leon
  * https://leetcode.com/problems/shortest-bridge/
  *
  * Time Complexity:     O(`nRows` * `nCols`)
@@ -12,6 +13,7 @@ package com.an7one.leetcode.lvl3.lc0934
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
+import kotlin.collections.ArrayDeque
 
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
@@ -19,11 +21,12 @@ class SolutionApproach0BFS {
         private val DIRS = intArrayOf(0, -1, 0, 1, 0)
     }
 
+    @OptIn(ExperimentalStdlibApi::class)
     fun shortestBridge(grid: Array<IntArray>): Int {
         val nRows = grid.size
         val nCols = grid[0].size
 
-        val queue = LinkedList<Point>()
+        val queue = ArrayDeque<Point>()
         val visited = Array(nRows) { BooleanArray(nCols) { false } }
 
         // to find any of the two island
@@ -45,7 +48,7 @@ class SolutionApproach0BFS {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val (curRow, curCol) = queue.poll()
+                val (curRow, curCol) = queue.removeFirst()
 
                 for (d in 0 until 4) {
                     val nextRow = curRow + DIRS[d]
@@ -55,7 +58,7 @@ class SolutionApproach0BFS {
 
                     if (grid[nextRow][nextCol] == 1) return steps
 
-                    queue.offer(Point(nextRow, nextCol))
+                    queue.addLast(Point(nextRow, nextCol))
                     visited[nextRow][nextCol] = true
                 }
             }
@@ -66,11 +69,13 @@ class SolutionApproach0BFS {
         return -1
     }
 
+    @OptIn(ExperimentalStdlibApi::class)
     private fun dfs(
-        row: Int, col: Int,
+        row: Int,
+        col: Int,
         visited: Array<BooleanArray>,
         grid: Array<IntArray>,
-        queue: LinkedList<Point>
+        queue: ArrayDeque<Point>
     ) {
         val nRows = grid.size
         val nCols = grid[0].size
@@ -78,7 +83,7 @@ class SolutionApproach0BFS {
         if (row < 0 || col < 0 || row >= nRows || col >= nCols || visited[row][col] || grid[row][col] == 0) return
 
         visited[row][col] = true
-        queue.offer(Point(row, col))
+        queue.addLast(Point(row, col))
         for (d in 0 until 4) {
             dfs(row + DIRS[d], col + DIRS[d + 1], visited, grid, queue)
         }
