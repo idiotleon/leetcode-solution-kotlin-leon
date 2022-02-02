@@ -1,8 +1,9 @@
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-path-sum/
  *
- * Time Complexity:     O(`m` * `n`)
- * Space Complexity:    O(`m` * `n`)
+ * Time Complexity:     O(`nRows` * `nCols`)
+ * Space Complexity:    O(`nRows` * `nCols`)
  *
  * References:
  *  https://leetcode.com/problems/minimum-path-sum/discuss/185358/Easy-Recursive-Solution-with-memo-(Java)
@@ -14,22 +15,22 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun minPathSum(grid: Array<IntArray>): Int {
-        val m = grid.size
-        val n = grid[0].size
+        val nRows = grid.size
+        val nCols = grid[0].size
 
-        val memo = Array(m) { Array<Int?>(n) { null } }
+        val memo = Array(nRows) { Array<Int?>(nCols) { null } }
 
         return dfs(0, 0, grid, memo)
     }
 
     private fun dfs(row: Int, col: Int, grid: Array<IntArray>, memo: Array<Array<Int?>>): Int {
-        val m = grid.size
-        val n = grid[0].size
+        val nRows = grid.size
+        val nCols = grid[0].size
 
-        if (row < 0 || row >= m || col < 0 || col >= n) return Int.MAX_VALUE
+        if (row < 0 || row >= nRows || col < 0 || col >= nCols) return Int.MAX_VALUE
         memo[row][col]?.let { return it }
 
-        if (row == m - 1 && col == n - 1) return grid[row][col]
+        if (row == nRows - 1 && col == nCols - 1) return grid[row][col]
 
         val minPathSum = grid[row][col] + minOf(dfs(row + 1, col, grid, memo), dfs(row, col + 1, grid, memo))
         memo[row][col] = minPathSum

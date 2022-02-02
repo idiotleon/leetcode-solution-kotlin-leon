@@ -6,7 +6,7 @@
  *
  * a top-down approach
  */
-package com.an7one.leetcode.lvl3.lc0108
+package com.an7one.leetcode.lvl2.lc0108
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode

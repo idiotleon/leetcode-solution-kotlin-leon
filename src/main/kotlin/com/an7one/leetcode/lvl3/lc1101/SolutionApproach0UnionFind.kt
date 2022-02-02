@@ -1,5 +1,8 @@
 /**
- *
+ * @author: Leon
+ * https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/
+ * Time Complexity:     O(`nLogs` * lg(`nLogs`))
+ * Space Complexity:    O(`n`)
  */
 package com.an7one.leetcode.lvl3.lc1101
 
@@ -7,10 +10,12 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 @Suppress(UNUSED)
 class SolutionApproach0UnionFind {
-    fun earliestAcq(logs: Array<IntArray>, N: Int): Int {
+    fun earliestAcq(logs: Array<IntArray>, n: Int): Int {
+        // not used
+        // val nLogs = logs.size
         logs.sortBy { it[0] }
 
-        val uf = UnionFind(N)
+        val uf = UnionFind(n)
 
         for (log in logs) {
             val (timestamp, idA, idB) = log

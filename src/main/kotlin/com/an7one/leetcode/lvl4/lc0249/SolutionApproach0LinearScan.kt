@@ -1,4 +1,5 @@
 /**
+ * @author: Leon
  * https://leetcode.com/problems/group-shifted-strings/
  *
  * Time Complexity:     O(`nStrs` * ave_len_str)

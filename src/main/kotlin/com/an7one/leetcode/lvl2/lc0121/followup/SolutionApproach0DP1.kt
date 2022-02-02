@@ -5,7 +5,7 @@
  * Time Complexity:     O(N)
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl3.lc0121.followup
+package com.an7one.leetcode.lvl2.lc0121.followup
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
