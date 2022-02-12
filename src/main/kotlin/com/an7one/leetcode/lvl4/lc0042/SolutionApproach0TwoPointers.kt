@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0042
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/trapping-rain-water/
  *
  * Time Complexity:     O(`nHeights`)
@@ -8,10 +13,6 @@
  *  https://leetcode.com/problems/trapping-rain-water/discuss/17391/Share-my-short-solution./185869
  *  https://leetcode.com/problems/trapping-rain-water/discuss/17391/Share-my-short-solution.
  */
-package com.an7one.leetcode.lvl4.lc0042
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     fun trap(heights: IntArray): Int {
