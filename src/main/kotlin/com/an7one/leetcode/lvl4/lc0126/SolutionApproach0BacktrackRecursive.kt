@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0126
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/word-ladder-ii/
  *
  * Time Complexity:     O()
@@ -8,10 +13,6 @@
  *  https://leetcode.com/problems/word-ladder-ii/discuss/40475/My-concise-JAVA-solution-based-on-BFS-and-DFS/177427
  *  https://leetcode.com/problems/word-ladder-ii/discuss/40475/My-concise-JAVA-solution-based-on-BFS-and-DFS
  */
-package com.an7one.leetcode.lvl4.lc0126
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BacktrackRecursive {
     fun findLadders(beginWord: String, endWord: String, wordList: List<String>): List<List<String>> {
