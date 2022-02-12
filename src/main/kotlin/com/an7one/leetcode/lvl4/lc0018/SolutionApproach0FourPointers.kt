@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0018
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/4sum/
  *
  * Time Complexity:     O(`nNums` ^ 3)
@@ -7,10 +12,6 @@
  * Reference:
  *  https://leetcode.com/problems/4sum/discuss/8609/My-solution-generalized-for-kSums-in-JAVA
  */
-package com.an7one.leetcode.lvl4.lc0018
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0FourPointers {
     fun fourSum(nums: IntArray, target: Int): List<List<Int>> {
@@ -45,7 +46,6 @@ class SolutionApproach0FourPointers {
                                 --hi
                             }
                         }
-
                         sum < target -> ++lo
                         else -> --hi
                     }

@@ -1,8 +1,10 @@
+package com.an7one.leetcode.lvl4.lc0042
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 /**
  * https://leetcode.com/problems/trapping-rain-water/
  *
- * Time Complexity:     O(N)
- * Space Complexity:    O(N)
+ * Time Complexity:     O(`nHeights`)
+ * Space Complexity:    O(`nHeights`)
  *
  * to maintain a "non-increasing" stack:
  *  1. to contain indexes, instead of heights/values
@@ -11,37 +13,33 @@
  * in another word, the stack always keeps
  *  the (index of) left taller (compare to cur) column
  *
- * in another word, the `stack.peek()` always has (the index of)
+ * in another word, the `stack.last()` always has (the index of)
  *  the most immediate left taller column
  *
  * to keep checking out once an increase of height has been discovered,
  *  till the leftmost taller column (of the entire height array).
  */
-package com.an7one.leetcode.lvl4.lc0042
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.LinkedList
-
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
+    @OptIn(ExperimentalStdlibApi::class)
     fun trap(heights: IntArray): Int {
         // sanity check
         if (heights.isEmpty()) return 0
 
-        val totalHeights = heights.size
-        val stack = LinkedList<Int>()
+        val nHeights = heights.size
+        val stack = ArrayDeque<Int>()
 
         var idx = 0
         var water = 0
-        while (idx < totalHeights) {
-            if (stack.isEmpty() || heights[stack.peek()] >= heights[idx]) {
-                stack.push(idx)
+        while (idx < nHeights) {
+            if (stack.isEmpty() || heights[stack.last()] >= heights[idx]) {
+                stack.addLast(idx)
                 ++idx
             } else {
-                val idxConcave = stack.pop()
+                val idxConcave = stack.removeLast()
                 if (stack.isNotEmpty()) {
-                    val minHeight = minOf(heights[idx], heights[stack.peek()])
-                    water += (minHeight - heights[idxConcave]) * (idx - stack.peek() - 1)
+                    val minHeight = minOf(heights[idx], heights[stack.last()])
+                    water += (minHeight - heights[idxConcave]) * (idx - stack.last() - 1)
                 }
             }
         }

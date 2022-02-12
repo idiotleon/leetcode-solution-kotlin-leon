@@ -1,20 +1,20 @@
-/**
- * https://leetcode.com/problems/trapping-rain-water/
- *
- * Time Complexity:     O(`totalHeights`)
- * Space Complexity:    O(`totalHeights`)
- */
 package com.an7one.leetcode.lvl4.lc0042
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * https://leetcode.com/problems/trapping-rain-water/
+ *
+ * Time Complexity:     O(`nHeights`)
+ * Space Complexity:    O(`nHeights`)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun trap(heights: IntArray): Int {
-        val totalHeights = heights.size
+        val nHeights = heights.size
 
-        val leftMax = IntArray(totalHeights)
-        for (idx in 0 until totalHeights) {
+        val leftMax = IntArray(nHeights)
+        for (idx in 0 until nHeights) {
             leftMax[idx] = if (idx == 0) {
                 heights[idx]
             } else {
@@ -22,17 +22,17 @@ class SolutionApproach0DP1Dimen {
             }
         }
 
-        val rightMax = IntArray(totalHeights)
-        for (idx in totalHeights - 1 downTo 0) {
-            rightMax[idx] = if (idx == totalHeights - 1) {
-                heights[totalHeights - 1]
+        val rightMax = IntArray(nHeights)
+        for (idx in nHeights - 1 downTo 0) {
+            rightMax[idx] = if (idx == nHeights - 1) {
+                heights[nHeights - 1]
             } else {
                 maxOf(heights[idx], rightMax[idx + 1])
             }
         }
 
         var water = 0
-        for (idx in 0 until totalHeights) {
+        for (idx in 0 until nHeights) {
             water += minOf(leftMax[idx], rightMax[idx]) - heights[idx]
         }
 

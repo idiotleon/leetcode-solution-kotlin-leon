@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0051
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/n-queens/
  *
  * Time Complexity:     O(2 ^ (`n` ^ 2))
@@ -9,10 +14,6 @@
  * References:
  *  Paid Course: https://www.acwing.com/video/21/
  */
-package com.an7one.leetcode.lvl4.lc0051
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach1Backtrack {
     private companion object {

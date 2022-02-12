@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl4.lc0072
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/edit-distance/
  *
- * Time Complexity:     O(len1 * len2)
- * Space Complexity:    O(len1 * len2)
+ * Time Complexity:     O(`len1` * `len2`)
+ * Space Complexity:    O(`len1` * `len2`)
  *
  * References:
  *  https://leetcode.com/problems/edit-distance/discuss/25849/Java-DP-solution-O(nm)
  *  https://leetcode.com/problems/edit-distance/discuss/25849/Java-DP-solution-O(nm)/424626
  *  https://web.stanford.edu/class/cs124/lec/med.pdf
  */
-package com.an7one.leetcode.lvl4.lc0072
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen1 {
     fun minDistance(word1: String, word2: String): Int {
