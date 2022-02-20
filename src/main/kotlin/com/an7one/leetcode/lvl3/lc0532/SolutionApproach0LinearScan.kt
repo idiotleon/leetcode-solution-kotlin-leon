@@ -1,8 +1,9 @@
 /**
+ * @author: Leon
  * https://leetcode.com/problems/k-diff-pairs-in-an-array/
  *
- * Time  Complexity:    O(N * lg(N))
- * Space Complexity:    O(N)
+ * Time  Complexity:    O(`nNums` * lg(`nNums`))
+ * Space Complexity:    O(`nNums`)
  */
 package com.an7one.leetcode.lvl3.lc0532
 
@@ -13,6 +14,9 @@ class SolutionApproach0LinearScan {
     fun findPairs(nums: IntArray, k: Int): Int {
         // sanity check
         if (nums.isEmpty()) return 0
+
+        // not used
+        // val nNums = nums.size
 
         nums.sort()
 

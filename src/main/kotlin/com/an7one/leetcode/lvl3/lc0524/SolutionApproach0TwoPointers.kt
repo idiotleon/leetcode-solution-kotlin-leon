@@ -2,7 +2,7 @@
  * @author: Leon
  * https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/
  *
- * Time Complexity:     O(`totalWords` * `lenS`)
+ * Time Complexity:     O(`nWords` * `lenS`)
  * Space Complexity:    O(1)
  */
 package com.an7one.leetcode.lvl3.lc0524
@@ -13,7 +13,7 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0TwoPointers {
     fun findLongestWord(s: String, d: List<String>): String {
         // not used
-        // val totalWords = d.size
+        // val nWords = d.size
 
         var longest = ""
 
