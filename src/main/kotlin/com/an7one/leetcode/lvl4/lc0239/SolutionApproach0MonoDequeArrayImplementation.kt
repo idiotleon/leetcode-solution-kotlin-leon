@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl4.lc0239
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * https://leetcode.com/problems/sliding-window-maximum/
  *
@@ -7,10 +11,6 @@
  * References:
  *  Paid Course, 110min: https://www.acwing.com/video/15/
  */
-package com.an7one.leetcode.lvl4.lc0239
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0MonoDequeArrayImplementation {
     private companion object {
