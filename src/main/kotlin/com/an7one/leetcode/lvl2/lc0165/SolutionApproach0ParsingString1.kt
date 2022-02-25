@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl2.lc0165
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * https://leetcode.com/problems/compare-version-numbers/
  *
@@ -9,10 +13,6 @@
  * References:
  *  https://leetcode.com/problems/compare-version-numbers/discuss/50774/Accepted-small-Java-solution.
  */
-package com.an7one.leetcode.lvl2.lc0165
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0ParsingString1 {
     private companion object {

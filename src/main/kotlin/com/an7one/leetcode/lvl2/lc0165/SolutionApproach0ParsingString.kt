@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl2.lc0165
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * https://leetcode.com/problems/compare-version-numbers/
  *
@@ -7,13 +11,9 @@
  * gotta pay attention to possible integer overflow
  *
  * References:
- *  https://leetcode.com/problems/compare-version-numbers/discuss/50774/Accepted-small-Java-solution./199430
- *  https://leetcode.com/problems/compare-version-numbers/discuss/50774/Accepted-small-Java-solution.
+ * https://leetcode.com/problems/compare-version-numbers/discuss/50774/Accepted-small-Java-solution./199430
+ * https://leetcode.com/problems/compare-version-numbers/discuss/50774/Accepted-small-Java-solution.
  */
-package com.an7one.leetcode.lvl2.lc0165
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0ParsingString {
     private companion object {
