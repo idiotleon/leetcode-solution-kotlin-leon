@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0139
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/word-break/
  *
  * Time Complexity:     O(L ^ 2)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/word-break/discuss/43819/DFS-with-Path-Memorizing-Java-Solution
  */
-package com.an7one.leetcode.lvl4.lc0139
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun wordBreak(str: String, wordDict: List<String>): Boolean {

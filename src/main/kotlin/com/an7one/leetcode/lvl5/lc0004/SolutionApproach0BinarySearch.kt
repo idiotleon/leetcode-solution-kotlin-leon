@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl5.lc0004
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/median-of-two-sorted-arrays/
  *
  * Time Complexity:     O(lg(min(`nNums1`, `nNums2`)))
@@ -23,10 +28,6 @@
  *  https://www.youtube.com/watch?v=LPFhl65R7ww
  *  https://github.com/mission-peace/interview/blob/master/src/com/interview/binarysearch/MedianOfTwoSortedArrayOfDifferentLength.java
  */
-package com.an7one.leetcode.lvl5.lc0004
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double {

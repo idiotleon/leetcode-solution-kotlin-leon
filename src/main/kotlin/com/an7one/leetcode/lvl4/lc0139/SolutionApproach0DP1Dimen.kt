@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0139
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/word-break/
  *
  * Time Complexity:     O(L ^ 2) + O(totalWords)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/word-break/discuss/43790/Java-implementation-using-DP-in-two-ways
  */
-package com.an7one.leetcode.lvl4.lc0139
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun wordBreak(str: String, wordDict: List<String>): Boolean {

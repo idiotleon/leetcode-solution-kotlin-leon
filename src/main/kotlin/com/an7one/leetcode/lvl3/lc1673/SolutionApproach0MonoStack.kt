@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl3.lc1673
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/find-the-most-competitive-subsequence/
@@ -5,35 +9,33 @@
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(`nNums`)
  */
-package com.an7one.leetcode.lvl3.lc1673
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
+    @OptIn(ExperimentalStdlibApi::class)
     fun mostCompetitive(nums: IntArray, k: Int): IntArray {
         val nNums = nums.size
         val limit = nNums - k
 
-        val stack = LinkedList<Int>()
+        val stack = ArrayDeque<Int>()
         var count = 0
 
         for (num in nums) {
-            while (stack.isNotEmpty() && count < limit && stack.peek() > num) {
-                stack.pop()
+            while (stack.isNotEmpty() && count < limit && stack.last() > num) {
+                stack.removeLast()
                 ++count
             }
 
-            stack.push(num)
+            stack.addLast(num)
         }
 
-        while (stack.size > k) stack.pop()
+        while (stack.size > k) {
+            stack.removeLast()
+        }
 
         val ans = IntArray(k) { 0 }
         var idx = k - 1
         while (stack.isNotEmpty()) {
-            ans[idx--] = stack.pop()
+            ans[idx--] = stack.removeLast()
         }
         return ans
     }

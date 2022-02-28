@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl3.lc1695
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/maximum-erasure-value/
@@ -5,10 +9,6 @@
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(`nNums`)
  */
-package com.an7one.leetcode.lvl3.lc1695
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     fun maximumUniqueSubarray(nums: IntArray): Int {

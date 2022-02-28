@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc1695
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/maximum-erasure-value/
  *
  * Time Complexity:     O(`nNums`)
@@ -8,10 +13,6 @@
  *  https://leetcode.com/problems/maximum-erasure-value/discuss/978487/Prefix-Sum-Easy-Sol-with-video/794236
  *  https://leetcode.com/problems/maximum-erasure-value/discuss/978487/Prefix-Sum-Easy-Sol-with-video
  */
-package com.an7one.leetcode.lvl3.lc1695
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0PrefixSum {
     fun maximumUniqueSubarray(nums: IntArray): Int {
