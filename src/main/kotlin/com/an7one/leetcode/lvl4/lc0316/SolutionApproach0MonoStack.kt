@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0316
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/remove-duplicate-letters/
  *
  * Time Complexity:     O(`lenS`)
@@ -10,10 +15,6 @@
  *      by "if possible", it rather depends on the given String sequence,
  *      in another words, how many letters left, and what they are
  */
-package com.an7one.leetcode.lvl4.lc0316
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
     fun removeDuplicateLetters(s: String): String {

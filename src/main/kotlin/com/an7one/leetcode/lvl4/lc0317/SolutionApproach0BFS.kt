@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl4.lc0317
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/shortest-distance-from-all-buildings/
  *
  * Time Complexity:     O(`nBuildings` * `nRows` * `nCols`) ~ O((`nRows` * `nCols`) ^ 2)
@@ -7,11 +13,6 @@
  * Reference:
  *  https://leetcode.com/problems/shortest-distance-from-all-buildings/discuss/76886/Share-a-Java-implement
  */
-package com.an7one.leetcode.lvl4.lc0317
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
     private companion object {
