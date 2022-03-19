@@ -1,7 +1,6 @@
 package com.an7one.leetcode.lvl4.lc0317
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
 
 /**
  * @author: Leon
@@ -55,15 +54,15 @@ class SolutionApproach0BFS {
         val nRows = grid.size
         val nCols = grid[0].size
 
-        val queue = LinkedList<Building>().also {
-            it.offer(building)
+        val queue = ArrayDeque<Building>().also {
+            it.addLast(building)
         }
 
         while (queue.isNotEmpty()) {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val (row, col, distance) = queue.poll()
+                val (row, col, distance) = queue.removeFirst()
                 distances[row][col] += distance
 
                 for (d in 0 until 4) {
@@ -73,7 +72,7 @@ class SolutionApproach0BFS {
                         continue
 
                     grid[nextRow][nextCol] = 1 + reaches
-                    queue.add(Building(nextRow, nextCol, 1 + distance))
+                    queue.addLast(Building(nextRow, nextCol, 1 + distance))
                 }
             }
         }

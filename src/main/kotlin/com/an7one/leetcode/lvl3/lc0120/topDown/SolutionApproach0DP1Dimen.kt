@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0120.topDown
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/triangle/
  *
  * Time Complexity:     O()
@@ -9,10 +14,6 @@
  * References:
  *  https://leetcode.com/problems/triangle/discuss/38918/C%2B%2B-top-down-and-bottom-up-solutions.
  */
-package com.an7one.leetcode.lvl3.lc0120.topDown
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun minimumTotal(triangle: List<List<Int>>): Int {
