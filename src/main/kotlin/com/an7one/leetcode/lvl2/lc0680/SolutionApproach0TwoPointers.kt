@@ -1,13 +1,14 @@
-/**
- * https://leetcode.com/problems/valid-palindrome-ii/
- *
- * Time Complexity:     O(`lenS`)
- * Space Complexity:    O(1)
- */
-package com.an7one.leetcode.lvl3.lc0680
+package com.an7one.leetcode.lvl2.lc0680
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/valid-palindrome-ii/
+ *
+ * Time Complexity:     O(`lenS`)
+ * Space Complexity:    O(`lenS`)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     fun validPalindrome(str: String): Boolean {
