@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl1.lc0088
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/merge-sorted-array/
@@ -5,10 +9,6 @@
  * Time Complexity:     O(`m` + `n`)
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl1.lc0088
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0ThreePointers1 {
     fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int) {
