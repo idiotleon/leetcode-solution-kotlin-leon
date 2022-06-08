@@ -1,20 +1,21 @@
+package com.an7one.leetcode.lvl3.lc0875
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/koko-eating-bananas/
  *
  * Time Complexity:     O(`nPiles` * lg(`range`))
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl3.lc0875
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun minEatingSpeed(piles: IntArray, H: Int): Int {
         // not used
         // val nPiles = piles.size
 
-        val max = piles.max() ?: 0
+        val max = piles.maxOrNull() ?: 0
         val range = max + 1
 
         var lo = 1

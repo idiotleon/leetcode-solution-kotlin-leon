@@ -1,6 +1,5 @@
 package com.an7one.leetcode.lvl2.lc0170
 
-import com.an7one.leetcode.lvl2.lc0170.SolutionApproach0HashMap
 import org.junit.Test
 import kotlin.test.assertEquals
 

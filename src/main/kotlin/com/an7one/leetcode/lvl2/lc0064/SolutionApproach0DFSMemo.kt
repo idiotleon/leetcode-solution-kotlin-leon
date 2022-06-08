@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl2.lc0064
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/minimum-path-sum/
@@ -8,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/minimum-path-sum/discuss/185358/Easy-Recursive-Solution-with-memo-(Java)
  */
-package com.an7one.leetcode.lvl2.lc0064
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun minPathSum(grid: Array<IntArray>): Int {

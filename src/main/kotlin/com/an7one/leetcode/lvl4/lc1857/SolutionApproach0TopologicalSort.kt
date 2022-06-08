@@ -1,3 +1,10 @@
+package com.an7one.leetcode.lvl4.lc1857
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+import kotlin.collections.HashMap
+import kotlin.collections.HashSet
+
 /**
  * https://leetcode.com/problems/largest-color-value-in-a-directed-graph/
  *
@@ -8,13 +15,6 @@
  *  https://leetcode.com/problems/largest-color-value-in-a-directed-graph/discuss/1198658/C++-Topological-Sort/931674
  *  https://leetcode.com/problems/largest-color-value-in-a-directed-graph/discuss/1198658/C%2B%2B-Topological-Sorts
  */
-package com.an7one.leetcode.lvl4.lc1857
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-import kotlin.collections.HashMap
-import kotlin.collections.HashSet
-
 @Suppress(UNUSED)
 class SolutionApproach0TopologicalSort {
     fun largestPathValue(colors: String, edges: Array<IntArray>): Int {
@@ -43,7 +43,7 @@ class SolutionApproach0TopologicalSort {
             val cur = queue.poll()
             ++seen
 
-            largest = maxOf(largest, chToChFreqs[cur].max()!!)
+            largest = maxOf(largest, chToChFreqs[cur].maxOrNull()!!)
 
             graph[cur]?.let {
                 for (next in it) {

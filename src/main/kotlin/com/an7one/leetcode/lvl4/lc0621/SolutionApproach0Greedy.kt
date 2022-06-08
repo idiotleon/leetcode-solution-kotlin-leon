@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0621
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/task-scheduler/
  *
  * Time Complexity:     O(`nTasks`)
@@ -7,10 +12,6 @@
  * References:
  *  http://zxi.mytechroad.com/blog/greedy/leetcode-621-task-scheduler/
  */
-package com.an7one.leetcode.lvl4.lc0621
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
     fun leastInterval(tasks: CharArray, n: Int): Int {
@@ -21,7 +22,7 @@ class SolutionApproach0Greedy {
             ++freqs[task - 'A']
         }
 
-        val maxFreq = freqs.max() ?: 0
+        val maxFreq = freqs.maxOrNull() ?: 0
 
         var ans = (maxFreq - 1) * (n + 1)
         for (freq in freqs) {

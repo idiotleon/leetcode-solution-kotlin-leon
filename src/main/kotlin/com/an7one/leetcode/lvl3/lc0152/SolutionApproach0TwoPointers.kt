@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0152
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/maximum-product-subarray/
  *
  * Time Complexity:     O(`nNums`)
@@ -9,10 +14,6 @@
  * References:
  *  https://leetcode.com/problems/maximum-product-subarray/discuss/183483/In-Python-it-can-be-more-concise-PythonC%2B%2BJava
  */
-package com.an7one.leetcode.lvl3.lc0152
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     fun maxProduct(nums: IntArray): Int {
@@ -34,3 +35,4 @@ class SolutionApproach0TwoPointers {
 
         return maxProduct
     }
+}

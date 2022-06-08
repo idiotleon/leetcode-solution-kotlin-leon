@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0120.topDown
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/triangle/
  *
  * Time Complexity:     O(N)
@@ -9,10 +14,6 @@
  *  https://leetcode.com/problems/triangle/discuss/38724/7-lines-neat-Java-Solution/36485
  *  https://leetcode.com/problems/triangle/discuss/38732/My-8-line-DP-Java-code(4-meaningful-lines)-with-O(1)-space
  */
-package com.an7one.leetcode.lvl3.lc0120.topDown
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen1 {
     fun minimumTotal(triangle: List<List<Int>>): Int {
@@ -32,6 +33,6 @@ class SolutionApproach0DP1Dimen1 {
             }
         }
 
-        return dp.min()!!
+        return dp.minOrNull()!!
     }
 }

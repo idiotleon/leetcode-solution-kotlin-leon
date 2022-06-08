@@ -31,6 +31,6 @@ class SolutionApproach0DP1Dimen {
             }
         }
 
-        return dp.min()!!
+        return dp.minOrNull()!!
     }
 }

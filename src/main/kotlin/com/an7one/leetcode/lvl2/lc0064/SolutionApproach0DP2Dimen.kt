@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl2.lc0064
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/minimum-path-sum/
@@ -5,12 +9,8 @@
  * Time Complexity:     O(`nRows` * `nCols`)
  * Space Complexity:    O(`nRows` * `nCols`)
  */
-package com.an7one.leetcode.lvl2.lc0064
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
-class SolutionApproach0DP2D {
+class SolutionApproach0DP2Dimen {
     fun minPathSum(grid: Array<IntArray>): Int {
         val nRows = grid.size
         val nCols = grid[0].size

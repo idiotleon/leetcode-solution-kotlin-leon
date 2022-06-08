@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl5.lc0315
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/count-of-smaller-numbers-after-self/
  *
  * Time Complexity:     O(`nNums` * lg(`nNums`))
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/count-of-smaller-numbers-after-self/discuss/76674/3-Ways-(Segment-Tree-Binary-Indexed-Tree-Merge-Sort)-clean-Java-code
  */
-package com.an7one.leetcode.lvl5.lc0315
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree {
     fun countSmaller(nums: IntArray): List<Int> {
@@ -21,8 +22,8 @@ class SolutionApproach0SegmentTree {
         if (nums.isEmpty())
             return ans
 
-        val min = nums.min()!!
-        val max = nums.max()!!
+        val min = nums.minOrNull()!!
+        val max = nums.maxOrNull()!!
 
         val root = SegmentTreeNode(min, max)
 

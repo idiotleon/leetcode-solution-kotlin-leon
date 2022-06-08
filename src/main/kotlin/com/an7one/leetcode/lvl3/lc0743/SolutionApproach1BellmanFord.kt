@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0743
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/network-delay-time/
  *
  * Time Complexity:     O(V * E) ~ O(`nVertices` * `nTimes`)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
  */
-package com.an7one.leetcode.lvl3.lc0743
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach1BellmanFord {
     private companion object {
@@ -29,7 +30,7 @@ class SolutionApproach1BellmanFord {
             }
         }
 
-        val ans = distances.max()!!
+        val ans = distances.maxOrNull()!!
         return if (ans == DATA_RANGE) -1 else ans
     }
 }

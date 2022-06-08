@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0170
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/two-sum-iii-data-structure-design/
  *
  * Time Complexities:
@@ -10,10 +15,6 @@
  * References:
  *  https://leetcode.com/problems/two-sum-iii-data-structure-design/discuss/52015/Beats-100-Java-Code
  */
-package com.an7one.leetcode.lvl2.lc0170
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     private val freqs = hashMapOf<Int, Int>()

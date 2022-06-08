@@ -15,7 +15,7 @@ class SolutionApproach0LinearScan {
         val nKids = candies.size
         val ans = BooleanArray(nKids) { false }
 
-        candies.max()?.let {
+        candies.maxOrNull()?.let {
             for (idx in candies.indices) {
                 if (candies[idx] + extraCandies >= it)
                     ans[idx] = true
