@@ -1,19 +1,20 @@
-/**
- * https://leetcode.com/problems/longest-string-chain/
- *
- * Time Complexity:     O(`totalWords` * lg(`totalWords`)) + O((`totalWords` ^ 2) * L)
- *  O(`totalWords` * lg(`totalWords`)), consumed by sorting
- *  O((`totalWords` ^ 2) * L), consumed by DP
- *
- * Space Complexity:    O(`totalWords`)
- *
- * References:
- *  https://leetcode.com/problems/longest-string-chain/discuss/294890/C%2B%2BJavaPython-DP-Solution
- */
 package com.an7one.leetcode.lvl3.lc1048
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/longest-string-chain/
+ *
+ * Time Complexity:     O(`nWords` * lg(`nWords`)) + O((`nWords` ^ 2) * L)
+ *  O(`nWords` * lg(`nWords`)), consumed by sorting
+ *  O((`nWords` ^ 2) * L), consumed by DP
+ *
+ * Space Complexity:    O(`nWords`)
+ *
+ * References:
+ *  https://leetcode.com/problems/longest-string-chain/discuss/294890/C%2B%2BJavaPython-DP-Solution
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun longestStrChain(words: Array<String>): Int {
