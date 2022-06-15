@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc0395
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/
  *
- * Time Complexity:     O(26 * 26 * L) ~ O(L)
- * Space Complexity:    O(1) / O(L) + O(26) ~ O(1) / O(L)
+ * Time Complexity:     O(26 * 26 * `lenS`) ~ O(`lenS`)
+ * Space Complexity:    O(1) / O(`lenS`) + O(26) ~ O(1) / O(`lenS`)
  *
  * References:
  *  https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/discuss/87739/Java-Strict-O(N)-Two-Pointer-Solution/188126
  *  https://www.cnblogs.com/grandyang/p/5852352.html
  */
-package com.an7one.leetcode.lvl4.lc0395
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     fun longestSubstring(str: String, k: Int): Int {
@@ -34,7 +35,8 @@ class SolutionApproach0SlidingWindow {
                 }
 
                 if (isValid(freqs, k)) {
-                    longest = maxOf(longest, hi - lo + 1)
+                    val len = hi - lo + 1
+                    longest = maxOf(longest, len)
                 }
 
                 ++hi

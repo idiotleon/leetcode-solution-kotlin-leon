@@ -2,6 +2,13 @@ package com.an7one.leetcode.lvl4.lc0187
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/repeated-dna-sequences/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ */
 @Suppress(UNUSED)
 class SolutionApproach1HashSet1 {
     private companion object {

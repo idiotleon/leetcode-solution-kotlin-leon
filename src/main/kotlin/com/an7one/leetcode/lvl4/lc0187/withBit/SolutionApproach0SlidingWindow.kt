@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0187.withBit
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/repeated-dna-sequences/
  *
  * Time Complexity:     O(L)
@@ -9,10 +14,6 @@
  *  https://leetcode.com/problems/repeated-dna-sequences/discuss/53867/Clean-Java-solution-(hashmap-+-bits-manipulation)/55192
  *  https://leetcode.com/problems/repeated-dna-sequences/discuss/53867/Clean-Java-solution-(hashmap-%2B-bits-manipulation)
  */
-package com.an7one.leetcode.lvl4.lc0187
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     private companion object {

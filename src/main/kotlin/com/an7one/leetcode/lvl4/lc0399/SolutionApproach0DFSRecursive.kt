@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0399
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/evaluate-division/
  *
  * Time Complexity:
@@ -15,10 +20,6 @@
  *  https://leetcode.com/problems/evaluate-division/discuss/88169/Java-AC-Solution-using-graph/126499
  *  https://leetcode.com/problems/evaluate-division/discuss/171649/1ms-DFS-with-Explanations
  */
-package com.an7one.leetcode.lvl4.lc0399
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun calcEquation(equations: List<List<String>>, values: DoubleArray, queries: List<List<String>>): DoubleArray {
