@@ -26,7 +26,7 @@ class SolutionApproach0DP2Dimen {
         words.sortBy { it.length }
 
         val dp = IntArray(nWords) { 1 }
-        var longest = 0
+        var longest = 1
 
         for (hi in 1 until nWords) {
             for (lo in 0 until hi) {
