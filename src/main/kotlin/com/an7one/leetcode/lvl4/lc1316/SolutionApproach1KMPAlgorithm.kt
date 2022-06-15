@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc1316
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/distinct-echo-substrings/
  *
  * Time Complexity:     O(`lenT` ^ 2)
@@ -7,10 +12,6 @@
  * References:
  *  https://github.com/huanminwu/LeetCode/blob/master/LeetCode_String_III_KMP_RabinKarp.docx
  */
-package com.an7one.leetcode.lvl4.lc1316
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach1KMPAlgorithm {
     fun distinctEchoSubstrings(text: String): Int {
