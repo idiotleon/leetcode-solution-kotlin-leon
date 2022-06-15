@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl4.lc1234
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/replace-the-substring-for-balanced-string/
  *
- * Time Complexity:     O(L)
- * Space Complexity:    O(4) / O(L) ~ O(1) / O(L)
+ * Time Complexity:     O(`lenS`)
+ * Space Complexity:    O(4) / O(`lenS`) ~ O(1) / O(`lenS`)
  *
  * `freq[]` keeps accounts of the frequencies OUTSIDE the sliding window
  *
  * References:
  *  https://leetcode.com/problems/replace-the-substring-for-balanced-string/discuss/408978/JavaC%2B%2BPython-Sliding-Window
  */
-package com.an7one.leetcode.lvl4.lc1234
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     fun balancedString(s: String): Int {
@@ -25,8 +26,8 @@ class SolutionApproach0SlidingWindow {
             ++freqs[ch - 'A']
         }
 
-        val k = lenS / 4
-        if (isValid(freqs, k)) return 0
+        val freqExpected = lenS / 4
+        if (isValid(freqs, freqExpected)) return 0
 
         var lo = 0
         var hi = 0
@@ -35,8 +36,9 @@ class SolutionApproach0SlidingWindow {
         while (hi < lenS) {
             --freqs[s[hi] - 'A']
 
-            while (isValid(freqs, k)) {
-                shortest = minOf(shortest, hi - lo + 1)
+            while (isValid(freqs, freqExpected)) {
+                val len = hi - lo + 1
+                shortest = minOf(shortest, len)
                 ++freqs[s[lo] - 'A']
                 ++lo
             }
@@ -47,9 +49,9 @@ class SolutionApproach0SlidingWindow {
         return shortest
     }
 
-    private fun isValid(freqs: IntArray, k: Int): Boolean {
+    private fun isValid(freqs: IntArray, freqExpected: Int): Boolean {
         for (freq in freqs) {
-            if (freq > k) return false
+            if (freq > freqExpected) return false
         }
 
         return true
