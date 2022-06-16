@@ -29,8 +29,8 @@ class PrefixSums1Dimen {
     /**
      * to get the sum of the subarray [lo, hi]
      *
-     * @param lo
-     * @param hi
+     * @param lo inclusive
+     * @param hi inclusive
      * @return the sum of the subarray
      */
     fun getSubarraySum(lo: Int, hi: Int, prefixSums: IntArray): Int {
