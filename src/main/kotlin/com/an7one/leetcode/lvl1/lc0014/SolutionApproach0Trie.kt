@@ -1,3 +1,8 @@
+package com.an7one.leetcode.lvl1.lc0014
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.collections.ArrayDeque
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/longest-common-prefix/
@@ -5,14 +10,8 @@
  * Time Complexity:     O(`nStrs` * lenS)
  * Space Complexity:    O(`nStrs` * lenS)
  */
-package com.an7one.leetcode.lvl1.lc0014
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.collections.ArrayDeque
-
 @Suppress(UNUSED)
 class SolutionApproach0Trie {
-    @OptIn(ExperimentalStdlibApi::class)
     fun longestCommonPrefix(strs: Array<String>): String {
         val root = buildTrie(strs)
 
