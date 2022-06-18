@@ -1,17 +1,17 @@
-/**
- * @author: Leon
- * https://leetcode.com/problems/regular-expression-matching/
- *
- * Time Complexity:     O(LEN_S * LEN_P)
- * Space Complexity:    O(LEN_S * LEN_P)
- *
- * References:
- *  https://www.youtube.com/watch?v=l3hda49XcDE&t=389s
- */
 package com.an7one.leetcode.lvl5.lc0010
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/regular-expression-matching/
+ *
+ * Time Complexity:     O(`lenS` * `lenP`)
+ * Space Complexity:    O(`lenS` * `lenP`)
+ *
+ * References:
+ *  https://youtu.be/l3hda49XcDE?t=389
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen1 {
     private companion object {

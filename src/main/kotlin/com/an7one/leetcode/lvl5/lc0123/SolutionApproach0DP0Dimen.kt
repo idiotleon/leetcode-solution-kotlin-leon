@@ -1,21 +1,24 @@
-/**
- * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(1)
- *
- * References:
- *  https://www.youtube.com/watch?v=gsL3T9bI1RQ
- */
 package com.an7one.leetcode.lvl5.lc0123
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+ *
+ * Time Complexity:     O(`nStocks`)
+ * Space Complexity:    O(1)
+ *
+ * References:
+ *  https://youtu.be/gsL3T9bI1RQ
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP0Dimen {
     fun maxProfit(prices: IntArray): Int {
         // sanity check
         if (prices.isEmpty()) return 0
+        // not used
+        // val nStocks = prices.size
 
         var held1 = -prices[0]
         var held2 = -prices[0]

@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl5.lc0037
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/sudoku-solver/
  *
  * Time Complexity:     O(`RANGE` ^ EMPTY_CELLS(`board`))
@@ -7,10 +12,6 @@
  * References:
  *  https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485097&idx=1&sn=a5e82da8646cd8985de6b2b0950de4e2&chksm=9bd7f8a1aca071b7b72e23013bc2a7c528ee913fded9278e2058bc98d7c746e439737d7abb5b&scene=178&cur_album_id=1318883740306948097#rd
  */
-package com.an7one.leetcode.lvl5.lc0037
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     private companion object {

@@ -23,9 +23,9 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  *
  *
  * References:
- *  https://www.youtube.com/watch?v=KB9IcSCDQ9k
+ *  https://youtu.be/KB9IcSCDQ9k
  *  https://zxi.mytechroad.com/blog/algorithms/binary-search/leetcode-4-median-of-two-sorted-arrays/
- *  https://www.youtube.com/watch?v=LPFhl65R7ww
+ *  https://youtu.be/LPFhl65R7ww
  *  https://github.com/mission-peace/interview/blob/master/src/com/interview/binarysearch/MedianOfTwoSortedArrayOfDifferentLength.java
  */
 @Suppress(UNUSED)

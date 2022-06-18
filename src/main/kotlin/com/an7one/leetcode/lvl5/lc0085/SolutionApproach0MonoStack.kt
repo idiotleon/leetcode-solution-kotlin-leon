@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl5.lc0085
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/maximal-rectangle/
  *
  * Time Complexity:     O(`nRows` * `nCols`)
@@ -7,11 +13,6 @@
  * References:
  *  https://leetcode.com/problems/maximal-rectangle/discuss/29064/A-O(n2)-solution-based-on-Largest-Rectangle-in-Histogram
  */
-package com.an7one.leetcode.lvl5.lc0085
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
     private companion object {

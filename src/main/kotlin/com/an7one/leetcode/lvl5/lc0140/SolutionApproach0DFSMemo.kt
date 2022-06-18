@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl5.lc0140
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/word-break-ii/
  *
  * Time Complexity:     O(`lenS` ^ 2)
@@ -9,10 +14,6 @@
  *  https://leetcode.com/problems/word-break-ii/discuss/44167/My-concise-JAVA-solution-based-on-memorized-DFS/215095
  *  https://leetcode.com/problems/word-break-ii/discuss/44167/My-concise-JAVA-solution-based-on-memorized-DFS
  */
-package com.an7one.leetcode.lvl5.lc0140
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun wordBreak(s: String, wordDict: List<String>): List<String> {

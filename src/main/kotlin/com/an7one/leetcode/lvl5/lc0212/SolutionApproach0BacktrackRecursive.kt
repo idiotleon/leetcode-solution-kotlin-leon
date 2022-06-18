@@ -38,7 +38,7 @@ class SolutionApproach0BacktrackRecursive {
             return
 
         val hold = board[row][col]
-        val idx = hold.toInt() - 'a'.toInt();
+        val idx = hold.code - 'a'.code;
         if(hold == IMPOSSIBLE || node.children[idx] == null){
             return
         }
@@ -64,7 +64,7 @@ class SolutionApproach0BacktrackRecursive {
         for(word in words){
             var cur: TrieNode? = root
             for(ch in word){
-                val idx = ch.toInt() - 'a'.toInt()
+                val idx = ch.code - 'a'.code
                 if(cur!!.children[idx] == null)
                     cur.children[idx] = TrieNode()
 

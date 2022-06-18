@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl5.lc0010
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/regular-expression-matching/
  *
  * Time Complexity:     O(lenS * lenP)
@@ -21,10 +26,6 @@
  * References:
  *  https://leetcode.com/problems/regular-expression-matching/discuss/5651/Easy-DP-Java-Solution-with-detailed-Explanation
  */
-package com.an7one.leetcode.lvl5.lc0010
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     private companion object {
