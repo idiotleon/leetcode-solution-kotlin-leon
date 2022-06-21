@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0350
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/intersection-of-two-arrays-ii/
  *
  * Time Complexity:     O(max(`nNums1`, `nNums2`))
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/intersection-of-two-arrays-ii/discuss/282372/Java-solution-with-all-3-follow-up-questions
  */
-package com.an7one.leetcode.lvl2.lc0350
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     fun intersect(nums1: IntArray, nums2: IntArray): IntArray {

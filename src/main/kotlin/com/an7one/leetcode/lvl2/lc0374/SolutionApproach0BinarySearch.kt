@@ -1,13 +1,14 @@
+package com.an7one.leetcode.lvl2.lc0374
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/guess-number-higher-or-lower/
  *
  * Time Complexity:     O(lg(`n`))
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl2.lc0374
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch : FakeGuessGame() {
     override fun guessNumber(n: Int): Int {

@@ -1,15 +1,16 @@
-/**
- * https://leetcode.com/problems/top-k-frequent-elements/
- *
- * Time Complexity:     O(N * lg(k))
- * Space Complexity:    O(N)
- */
 package com.an7one.leetcode.lvl2.lc0347
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashMap
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/top-k-frequent-elements/
+ *
+ * Time Complexity:     O(N * lg(k))
+ * Space Complexity:    O(N)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0MinHeap {
     fun topKFrequent(nums: IntArray, k: Int): IntArray {

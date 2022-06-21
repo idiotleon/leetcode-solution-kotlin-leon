@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0299
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/bulls-and-cows/
  *
  * Time Complexity:     O(`L`)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/bulls-and-cows/discuss/74621/One-pass-Java-solution
  */
-package com.an7one.leetcode.lvl2.lc0299
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun getHint(secret: String, guess: String): String {

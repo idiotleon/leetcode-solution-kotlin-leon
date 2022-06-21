@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0414
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/third-maximum-number/
  *
  * Time Complexity:     O()
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/third-maximum-number/discuss/90202/Java-neat-and-easy-understand-solution-O(n)-time-O(1)-space
  */
-package com.an7one.leetcode.lvl2.lc0414
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun thirdMax(nums: IntArray): Int {

@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl2.lc0398
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.random.Random
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/random-pick-index/
  *
  * Time Complexity:     O()
@@ -8,11 +14,6 @@
  *  https://youtu.be/mjKq89QAaJA?t=495
  *  https://leetcode.com/problems/random-pick-index/discuss/88072/Simple-Reservoir-Sampling-solution
  */
-package com.an7one.leetcode.lvl2.lc0398
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.random.Random
-
 @Suppress(UNUSED)
 class SolutionApproach0ReservoirSampling(private val nums: IntArray) {
     fun pick(target: Int): Int {

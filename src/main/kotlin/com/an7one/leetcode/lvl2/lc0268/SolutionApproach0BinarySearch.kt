@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0268
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/missing-number/
  *
  * Time Complexity:     O(`nNums` * lg(`nNums`)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/missing-number/discuss/69791/4-Line-Simple-Java-Bit-Manipulate-Solution-with-Explaination/282752
  */
-package com.an7one.leetcode.lvl2.lc0268
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun missingNumber(nums: IntArray): Int {

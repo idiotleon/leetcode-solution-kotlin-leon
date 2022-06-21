@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl2.lc0384
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.random.Random
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/shuffle-an-array/
  *
  * Time Complexities:
@@ -10,11 +16,6 @@
  * Reference:
  *  https://leetcode.com/problems/shuffle-an-array/discuss/85958/First-Accepted-Solution-Java
  */
-package com.an7one.leetcode.lvl2.lc0384
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.random.Random
-
 @Suppress(UNUSED)
 class SolutionApproach0Math(private val nums: IntArray) {
     private val nNums = nums.size

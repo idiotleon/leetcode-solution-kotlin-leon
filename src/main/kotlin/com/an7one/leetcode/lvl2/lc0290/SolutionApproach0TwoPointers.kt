@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0290
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/word-pattern/
  *
  * Time Complexity:     O(`lenP`) + O(`nWords` * lenW) ~ O(`nWords` * lenW)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/word-pattern/discuss/73399/Very-fast-(3ms)-Java-Solution-using-HashMap
  */
-package com.an7one.leetcode.lvl2.lc0290
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     private companion object {

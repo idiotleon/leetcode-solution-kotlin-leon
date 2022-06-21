@@ -1,13 +1,14 @@
+package com.an7one.leetcode.lvl2.lc0290
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/word-pattern/
  *
  * Time Complexity:     O(L)
  * Space Complexity:    O(L)
  */
-package com.an7one.leetcode.lvl2.lc0290
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     fun wordPattern(pattern: String, str: String): Boolean {

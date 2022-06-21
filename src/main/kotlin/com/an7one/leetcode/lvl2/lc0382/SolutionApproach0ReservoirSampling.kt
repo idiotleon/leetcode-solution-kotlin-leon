@@ -1,4 +1,11 @@
+package com.an7one.leetcode.lvl2.lc0382
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
+import kotlin.random.Random
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/linked-list-random-node/
  *
  * Time Complexity:     O()
@@ -7,12 +14,6 @@
  * Reference:
  *  https://youtu.be/mjKq89QAaJA?t=301
  */
-package com.an7one.leetcode.lvl2.lc0382
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
-import kotlin.random.Random
-
 @Suppress(UNUSED)
 class SolutionApproach0ReservoirSampling(private val head: ListNode?) {
     fun getRandom(): Int {

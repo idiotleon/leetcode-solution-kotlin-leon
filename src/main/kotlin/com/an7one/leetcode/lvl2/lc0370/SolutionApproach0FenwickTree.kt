@@ -1,13 +1,14 @@
+package com.an7one.leetcode.lvl2.lc0370
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/range-addition/
  *
  * Time Complexity:     O(`nUpdates` * lg(`nUpdates`))
  * Space Complexity:    O(`nUpdates`)
  */
-package com.an7one.leetcode.lvl2.lc0370
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0FenwickTree {
     fun getModifiedArray(
