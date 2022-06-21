@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl2.lc0017
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/letter-combinations-of-a-phone-number/
@@ -5,14 +9,10 @@
  * Time Complexity:     O(3 ^ `lenD`)
  * Space Complexity:    O(`lenD`)
  */
-package com.an7one.leetcode.lvl2.lc0017
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     private companion object {
-        private val phonePad = arrayOf("", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz")
+        private val dialPad = arrayOf("", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz")
     }
 
     fun letterCombinations(digits: String): List<String> {
@@ -34,7 +34,7 @@ class SolutionApproach0Backtrack {
             return
         }
 
-        val candidates = phonePad[digits[idx] - '0']
+        val candidates = dialPad[digits[idx] - '0']
 
         for (ch in candidates) {
             builder.append(ch)
