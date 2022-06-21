@@ -1,4 +1,12 @@
+package com.an7one.leetcode.lvl2.lc0226
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+import java.util.*
+import kotlin.collections.ArrayDeque
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/invert-binary-tree/
  *
  * Time Complexity:     O(N)
@@ -7,13 +15,6 @@
  * References:
  *  https://leetcode.com/problems/invert-binary-tree/discuss/62707/Straightforward-DFS-recursive-iterative-BFS-solutions
  */
-package com.an7one.leetcode.lvl2.lc0226
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-import java.util.*
-import kotlin.collections.ArrayDeque
-
 @Suppress(UNUSED)
 class SolutionApproach0PreorderIterative {
     @OptIn(ExperimentalStdlibApi::class)

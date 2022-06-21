@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0263
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/ugly-number/
  *
  * Time Complexity:     O(lg(`num`))
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/ugly-number/
  */
-package com.an7one.leetcode.lvl2.lc0263
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
     fun isUgly(num: Int) = dfs(num)

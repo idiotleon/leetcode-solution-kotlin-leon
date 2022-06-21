@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0243
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/shortest-word-distance/
  *
  * Time Complexity:     O(`nWords` * lenW)
@@ -8,10 +13,6 @@
  *  https://leetcode.com/problems/shortest-word-distance/discuss/66931/AC-Java-clean-solution/178697
  *  https://leetcode.com/problems/shortest-word-distance/discuss/66931/AC-Java-clean-solution
  */
-package com.an7one.leetcode.lvl2.lc0243
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun shortestDistance(words: Array<String>, word1: String, word2: String): Int {
