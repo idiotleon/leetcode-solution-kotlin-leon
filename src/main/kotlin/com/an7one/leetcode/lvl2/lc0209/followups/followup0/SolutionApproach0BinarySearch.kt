@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0209.followups.followup0
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-size-subarray-sum/
  *
  * If you have figured out the O(n) solution,
@@ -12,10 +17,6 @@
  * References:
  *  https://leetcode.com/problems/minimum-size-subarray-sum/discuss/59103/Two-AC-solutions-in-Java-with-time-complexity-of-N-and-NLogN-with-explanation
  */
-package com.an7one.leetcode.lvl2.lc0209.followups.followup0
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun minSubArrayLen(s: Int, nums: IntArray): Int {

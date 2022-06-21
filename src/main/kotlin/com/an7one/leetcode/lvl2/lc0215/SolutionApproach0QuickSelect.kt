@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0215
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/kth-largest-element-in-an-array/
  *
  * Time Complexity:     O(`nNums`), O(`nNums` ^ 2) in the worst case
@@ -8,10 +13,6 @@
  *  https://algs4.cs.princeton.edu/23quicksort/Quick.java.html
  *  https://mp.weixin.qq.com/s/TRO3FOKT90Mpvn3hQWVBAQ
  */
-package com.an7one.leetcode.lvl2.lc0215
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0QuickSelect {
     fun findKthLargest(nums: IntArray, k: Int): Int {

@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0209
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-size-subarray-sum/
  *
  * Time Complexity:     O(`nNums`)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/minimum-window-substring/discuss/26808/Here-is-a-10-line-template-that-can-solve-most-'substring'-problems
  */
-package com.an7one.leetcode.lvl2.lc0209
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     fun minSubArrayLen(s: Int, nums: IntArray): Int {
