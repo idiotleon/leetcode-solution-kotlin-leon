@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0198
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/house-robber/
  *
  * Time Complexity:     O(`nNums`)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
  */
-package com.an7one.leetcode.lvl2.lc0198
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun rob(nums: IntArray): Int {

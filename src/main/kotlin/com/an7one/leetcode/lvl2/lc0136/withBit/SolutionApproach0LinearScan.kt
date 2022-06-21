@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0136.withBit
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/single-number/
  *
  * Time Complexity:     O(`nNums`)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/single-number/discuss/42997/My-O(n)-solution-using-XOR
  */
-package com.an7one.leetcode.lvl2.lc0136.withBit
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun singleNumber(nums: IntArray): Int {

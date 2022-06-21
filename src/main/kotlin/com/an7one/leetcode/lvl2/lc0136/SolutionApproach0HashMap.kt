@@ -1,13 +1,14 @@
+package com.an7one.leetcode.lvl2.lc0136
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/single-number/
  *
  * Time Complexity:     O(`totalNums`)
  * Space Complexity:    O(`totalNums`)
  */
-package com.an7one.leetcode.lvl2.lc0136
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     fun singleNumber(nums: IntArray): Int {

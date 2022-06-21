@@ -1,10 +1,3 @@
-/**
- * @author: Leon
- * https://leetcode.com/problems/binary-tree-right-side-view/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(W)
- */
 package com.an7one.leetcode.lvl2.lc0199
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
@@ -12,9 +5,15 @@ import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
 import kotlin.collections.ArrayDeque
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/binary-tree-right-side-view/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(W)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
-    @OptIn(ExperimentalStdlibApi::class)
     fun rightSideView(root: TreeNode?): List<Int> {
         val ans = mutableListOf<Int>()
         // sanity check
