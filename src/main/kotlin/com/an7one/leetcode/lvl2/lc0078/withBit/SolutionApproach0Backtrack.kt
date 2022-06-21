@@ -33,8 +33,6 @@ class SolutionApproach0Backtrack {
             val path = mutableListOf<Int>()
 
             for (idx in nums.indices) {
-                val temp = bitMask and (1 shl idx)
-                println("temp:$temp")
                 if (bitMask and (1 shl idx) != 0)
                     path.add(nums[idx])
             }
