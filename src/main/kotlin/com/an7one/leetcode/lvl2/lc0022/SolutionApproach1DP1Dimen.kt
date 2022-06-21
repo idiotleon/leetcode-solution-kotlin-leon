@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl2.lc0022
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/generate-parentheses/
  *
  * Time Complexity:     O()
@@ -7,11 +13,6 @@
  * Reference:
  * https://leetcode.com/problems/generate-parentheses/discuss/10127/an-iterative-method/963942
  */
-package com.an7one.leetcode.lvl2.lc0022
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach1DP1Dimen {
     private companion object {

@@ -1,13 +1,14 @@
-/**
- * https://leetcode.com/problems/search-insert-position/
- *
- * Time Complexity:     O(lg(N))
- * Space Complexity:    O(1)
- */
 package com.an7one.leetcode.lvl2.lc0035
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/search-insert-position/
+ *
+ * Time Complexity:     O(lg(`nNums`))
+ * Space Complexity:    O(1)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun searchInsert(nums: IntArray, target: Int): Int {
@@ -15,10 +16,10 @@ class SolutionApproach0BinarySearch {
         if (nums.isEmpty())
             return 0
 
-        val sizeN = nums.size
+        val nNums = nums.size
 
         var lo = 0
-        var hi = sizeN
+        var hi = nNums
 
         while (lo < hi) {
             val mid = lo + (hi - lo) / 2

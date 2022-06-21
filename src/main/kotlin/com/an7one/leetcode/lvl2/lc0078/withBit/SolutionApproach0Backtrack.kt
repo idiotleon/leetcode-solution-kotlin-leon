@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0078.withBit
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/subsets/
  *
  * Time Complexity:     O(`nNums` * (2 ^ nNums)) + O(`nNums` * lg(`nNums`)) ~ O(`nNums` * (`nNums` ^ 2))
@@ -16,10 +21,6 @@
  *  https://www.mathsisfun.com/sets/power-set.html
  *  https://leetcode.com/problems/subsets/discuss/27288/My-solution-using-bit-manipulation
  */
-package com.an7one.leetcode.lvl2.lc0078.withBit
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun subsets(nums: IntArray): List<List<Int>> {

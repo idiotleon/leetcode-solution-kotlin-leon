@@ -1,13 +1,14 @@
-/**
- * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(1)
- */
 package com.an7one.leetcode.lvl2.lc0026
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+ *
+ * Time Complexity:     O(`nNums`)
+ * Space Complexity:    O(1)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0HighLowPointers {
     fun removeDuplicates(nums: IntArray): Int {

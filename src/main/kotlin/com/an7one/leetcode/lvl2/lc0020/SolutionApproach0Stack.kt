@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl2.lc0020
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/valid-parentheses/
@@ -5,10 +9,6 @@
  * Time Complexity:     O(`lenS`)
  * Space Complexity:    O(`lenS`)
  */
-package com.an7one.leetcode.lvl2.lc0020
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Stack {
     private companion object {
@@ -18,10 +18,8 @@ class SolutionApproach0Stack {
         private const val PAREN_CLOSED1 = ')'
         private const val PAREN_CLOSED2 = ']'
         private const val PAREN_CLOSED3 = '}'
-
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     fun isValid(str: String): Boolean {
         // not used
         // val lenS = str.length

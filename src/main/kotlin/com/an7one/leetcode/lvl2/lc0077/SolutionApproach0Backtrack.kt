@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0077
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/combinations/
  *
  * Time Complexity:     O()
@@ -7,8 +12,7 @@
  * References:
  *  https://leetcode.com/problems/combinations/discuss/27002/Backtracking-Solution-Java
  */
-package com.an7one.leetcode.lvl2.lc0077
-
+@Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun combine(n: Int, k: Int): List<List<Int>> {
         val paths = mutableListOf<List<Int>>()
@@ -18,7 +22,9 @@ class SolutionApproach0Backtrack {
     }
 
     private fun backtrack(
-        idxStart: Int, n: Int, k: Int,
+        idxStart: Int,
+        n: Int,
+        k: Int,
         path: MutableList<Int>,
         paths: MutableList<List<Int>>
     ) {

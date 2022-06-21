@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0078
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/subsets-ii/
  *
  * Time Complexity:     O(`nNums` * (2 ^ nNums)) + O(`nNums` * lg(`nNums`)) ~ O(`nNums` * (`nNums` ^ 2))
@@ -10,10 +15,6 @@
  *  https://leetcode.com/problems/subsets/solution/
  *  https://medium.com/@vasanths294/permutation-combination-subset-time-complexity-eca924e00071
  */
-package com.an7one.leetcode.lvl2.lc0078
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun subsets(nums: IntArray): List<List<Int>> {

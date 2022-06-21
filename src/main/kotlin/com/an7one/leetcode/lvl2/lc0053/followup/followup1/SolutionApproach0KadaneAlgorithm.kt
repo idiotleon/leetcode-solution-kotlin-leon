@@ -1,3 +1,5 @@
+package com.an7one.leetcode.lvl2.lc0053.followup.followup1
+
 /**
  * follow up of
  * https://leetcode.com/problems/maximum-subarray/
@@ -7,8 +9,6 @@
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl2.lc0053.followup.followup1
-
 class SolutionApproach0KadaneAlgorithm {
     fun maxSubArray(nums: IntArray): IntArray {
         // not used

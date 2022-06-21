@@ -1,3 +1,8 @@
+package com.an7one.leetcode.lvl2.lc0021
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/merge-two-sorted-lists/
@@ -5,11 +10,6 @@
  * Time Complexity:     O(max(len1, len2))
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl2.lc0021
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
-
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     private companion object {

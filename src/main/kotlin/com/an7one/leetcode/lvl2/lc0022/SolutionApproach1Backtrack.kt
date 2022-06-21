@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0022
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/generate-parentheses/
  *
  * Time Complexity:     O(2 ^ (2 * `n`) * ave_len_ans)
@@ -9,10 +14,6 @@
  *  https://leetcode.com/problems/generate-parentheses/discuss/10100/Easy-to-understand-Java-backtracking-solution
  *  https://leetcode.com/problems/generate-parentheses/discuss/10098/Java-DFS-way-solution/116003
  */
-package com.an7one.leetcode.lvl2.lc0022
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach1Backtrack {
     private companion object {

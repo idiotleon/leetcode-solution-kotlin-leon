@@ -1,13 +1,14 @@
+package com.an7one.leetcode.lvl2.lc0028
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/implement-strstr/
  *
  * Time Complexity:     O(`lenH` + `lenN`) ~ O(max(`lenH`, `lenN`))
  * Space Complexity:    O(`lenN`)
  */
-package com.an7one.leetcode.lvl2.lc0028
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0KMPAlgorithm1 {
     fun strStr(haystack: String, needle: String): Int {
