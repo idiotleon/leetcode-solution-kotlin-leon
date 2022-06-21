@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0118
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/pascals-triangle/
  *
  * Time Complexity:     O()
@@ -7,10 +12,6 @@
  * Reference:
  *  https://leetcode.com/problems/pascals-triangle/discuss/38141/My-concise-solution-in-Java
  */
-package com.an7one.leetcode.lvl2.lc0118
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun generate(nRows: Int): List<List<Int>> {

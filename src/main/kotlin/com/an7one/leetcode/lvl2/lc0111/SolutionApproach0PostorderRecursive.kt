@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl2.lc0111
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-depth-of-binary-tree/
  *
  * Time Complexity:     O(N)
@@ -7,11 +13,6 @@
  * References:
  *  https://leetcode.com/problems/minimum-depth-of-binary-tree/discuss/36045/My-4-Line-java-solution
  */
-package com.an7one.leetcode.lvl2.lc0111
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
     fun minDepth(root: TreeNode?) = postorder(root)
