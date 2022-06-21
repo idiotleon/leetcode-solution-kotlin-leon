@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0090
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/subsets-ii/
  *
  * Time Complexity:     O(`nNums` * (2 ^ nNums)) + O(`nNums` * lg(`nNums`)) ~ O(`nNums` * (`nNums` ^ 2))
@@ -9,13 +14,12 @@
  * References:
  *  https://medium.com/@vasanths294/permutation-combination-subset-time-complexity-eca924e00071
  */
-package com.an7one.leetcode.lvl2.lc0090
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BacktrackRecursive {
     fun subsetsWithDup(nums: IntArray): List<List<Int>> {
+        // not used
+        // val nNums = nums.size
+
         val paths = mutableListOf<List<Int>>()
         // sanity check
         if (nums.isEmpty())

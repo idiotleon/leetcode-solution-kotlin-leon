@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0090
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/subsets-ii/
  *
  * Time Complexity:     O()
@@ -9,10 +14,6 @@
  *  https://leetcode.com/problems/subsets-ii/discuss/30137/Simple-iterative-solution
  *  https://leetcode.wang/leetCode-90-SubsetsII.html
  */
-package com.an7one.leetcode.lvl2.lc0090
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Iteration {
     fun subsetsWithDup(nums: IntArray): List<List<Int>> {

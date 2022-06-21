@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0090
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/subsets-ii/
  *
  * Time Complexity:     O(2 ^ `nNums`)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/subsets-ii/discuss/169226/Java-Two-Way-of-Recursive-thinking
  */
-package com.an7one.leetcode.lvl2.lc0090
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BacktrackRecursive1 {
     fun subsetsWithDup(nums: IntArray): List<List<Int>> {
