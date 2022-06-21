@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl2.lc0551
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/student-attendance-record-i/
@@ -5,10 +9,6 @@
  * Time Complexity:     O(`lenS`)
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl2.lc0551
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     private companion object {

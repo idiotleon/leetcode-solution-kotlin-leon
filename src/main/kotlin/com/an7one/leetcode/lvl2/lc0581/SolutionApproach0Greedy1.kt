@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0581
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
  *
  * Time Complexity:     O(`nNUms` * lg(`nNums`)) + O(2 * `nNums`) ~ O(`nNUms` * lg(`nNums`))
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/shortest-unsorted-continuous-subarray/discuss/103070/Java-Solution-Sort.
  */
-package com.an7one.leetcode.lvl2.lc0581
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Greedy1 {
     fun findUnsortedSubarray(nums: IntArray): Int {

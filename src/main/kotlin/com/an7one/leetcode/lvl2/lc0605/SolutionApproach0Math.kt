@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl2.lc0605
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * https://leetcode.com/problems/can-place-flowers/
  *
@@ -8,10 +12,6 @@
  *  https://leetcode.com/problems/can-place-flowers/discuss/103883/Java-Very-easy-solution/236171
  *  https://leetcode.com/problems/can-place-flowers/discuss/103883/Java-Very-easy-solution
  */
-package com.an7one.leetcode.lvl2.lc0605
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Math {
     fun canPlaceFlowers(flowerbed: IntArray, n: Int): Boolean {

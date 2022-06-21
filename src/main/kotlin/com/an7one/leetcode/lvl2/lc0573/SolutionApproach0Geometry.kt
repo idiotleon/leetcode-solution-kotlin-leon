@@ -1,4 +1,11 @@
+package com.an7one.leetcode.lvl2.lc0573
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED_PARAMETER
+import kotlin.math.abs
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/squirrel-simulation/
  *
  * Time Complexity:     O(`nNuts`)
@@ -7,12 +14,6 @@
  * Reference:
  *  https://leetcode.com/problems/squirrel-simulation/discuss/102842/C%2B%2B-Clean-Code-with-Explanation
  */
-package com.an7one.leetcode.lvl2.lc0573
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED_PARAMETER
-import kotlin.math.abs
-
 @Suppress(UNUSED)
 class SolutionApproach0Geometry {
     @Suppress(UNUSED_PARAMETER)

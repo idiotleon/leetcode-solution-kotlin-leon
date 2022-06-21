@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0504
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/base-7/
  *
  * Time Complexity:     O(lg(`num`))
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/base-7/discuss/98364/JavaC%2B%2BPython-Iteration-and-Recursion
  */
-package com.an7one.leetcode.lvl2.lc0504
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0ParsingString {
     fun convertToBase7(num: Int): String {

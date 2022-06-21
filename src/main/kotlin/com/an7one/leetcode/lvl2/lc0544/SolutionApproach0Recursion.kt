@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl2.lc0544
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/output-contest-matches/
  *
  * Time Complexity:     O()
@@ -8,11 +14,6 @@
  *  https://leetcode.com/problems/output-contest-matches/discuss/101226/Java-10-lines/104981
  *  https://leetcode.com/problems/output-contest-matches/discuss/101226/Java-10-lines
  */
-package com.an7one.leetcode.lvl2.lc0544
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0Recursion {
     fun findContestMatch(n: Int): String {

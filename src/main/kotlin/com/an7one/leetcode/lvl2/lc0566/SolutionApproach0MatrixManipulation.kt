@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0566
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/reshape-the-matrix/
  *
  * Time Complexity:     O(`r` * `c`)
@@ -7,10 +12,6 @@
  * Reference:
  *  https://leetcode.com/problems/reshape-the-matrix/discuss/102491/Java-Concise-O(nm)-time
  */
-package com.an7one.leetcode.lvl2.lc0566
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0MatrixManipulation {
     fun matrixReshape(matrix: Array<IntArray>, r: Int, c: Int): Array<IntArray> {

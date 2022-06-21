@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0544
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/output-contest-matches/
  *
  * Time Complexity:     O()
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/output-contest-matches/discuss/101274/C%2B%2B-Java-Clean-Code
  */
-package com.an7one.leetcode.lvl2.lc0544
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun findContestMatch(n: Int): String {

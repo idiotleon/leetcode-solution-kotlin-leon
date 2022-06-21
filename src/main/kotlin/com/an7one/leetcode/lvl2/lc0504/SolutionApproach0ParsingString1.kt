@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl2.lc0504
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.math.abs
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/base-7/
  *
  * Time Complexity:     O(lg(`n`)), 7-base
@@ -7,11 +13,6 @@
  * References:
  *  https://leetcode.com/problems/base-7/discuss/98363/Verbose-Java-Solution
  */
-package com.an7one.leetcode.lvl2.lc0504
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.math.abs
-
 @Suppress(UNUSED)
 class SolutionApproach0ParsingString1 {
     fun convertToBase7(n: Int): String {
