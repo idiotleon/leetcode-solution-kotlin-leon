@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl2.lc0003
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
@@ -5,10 +9,6 @@
  * Time Complexity:     O(L)
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl2.lc0003
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     fun lengthOfLongestSubstring(str: String): Int {

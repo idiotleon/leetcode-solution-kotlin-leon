@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl2.lc0001
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/two-sum/
@@ -8,10 +12,6 @@
  * Reference:
  *  https://leetcode.com/problems/two-sum/discuss/715951/Rust%3A-HashMap-solution
  */
-package com.an7one.leetcode.lvl2.lc0001
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     fun twoSum(nums: IntArray, target: Int): IntArray {
