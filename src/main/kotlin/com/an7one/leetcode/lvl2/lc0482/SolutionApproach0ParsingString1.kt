@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl2.lc0482
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/license-key-formatting/
  *
  * Time Complexity:     O(`lenS`)
@@ -7,10 +13,6 @@
  * References:
  *  https://leetcode.com/problems/license-key-formatting/discuss/96512/Java-5-lines-clean-solution
  */
-package com.an7one.leetcode.lvl2.lc0482
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0ParsingString1 {
     fun licenseKeyFormatting(str: String, k: Int): String {
@@ -24,6 +26,6 @@ class SolutionApproach0ParsingString1 {
             }
         }
 
-        return builder.reverse().toString().toUpperCase()
+        return builder.reverse().toString().uppercase(Locale.getDefault())
     }
 }

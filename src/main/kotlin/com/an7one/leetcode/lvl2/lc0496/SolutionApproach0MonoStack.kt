@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl2.lc0496
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.collections.HashMap
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/next-greater-element-i/
  *
  * Time Complexity:     O(`nNums1`)
@@ -8,14 +14,8 @@
  *  1. the contents of the stack are actual values/elements
  *  2. the elements are strictly decreasing
  */
-package com.an7one.leetcode.lvl2.lc0496
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.collections.HashMap
-
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
-    @OptIn(ExperimentalStdlibApi::class)
     fun nextGreaterElement(nums1: IntArray, nums2: IntArray): IntArray {
         val nNums1 = nums1.size
         // not used

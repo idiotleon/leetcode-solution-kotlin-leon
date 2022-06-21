@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0482
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/license-key-formatting/
  *
  * Time Complexity:     O(`lenS`)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/license-key-formatting/discuss/96512/Java-5-lines-clean-solution/101107
  */
-package com.an7one.leetcode.lvl2.lc0482
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     private companion object {
@@ -29,7 +30,7 @@ class SolutionApproach0LinearScan {
                     builder.append(DASH)
                 }
 
-                builder.append(str[idx].toUpperCase())
+                builder.append(str[idx].uppercaseChar())
                 ++len
             }
         }

@@ -1,10 +1,15 @@
-/**
- *
- */
 package com.an7one.leetcode.lvl2.lc0463
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ *
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ *
+ */
 @Suppress(UNUSED)
 class SolutionApproach0Geometry {
     fun islandPerimeter(grid: Array<IntArray>): Int {

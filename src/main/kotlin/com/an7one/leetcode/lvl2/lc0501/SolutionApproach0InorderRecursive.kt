@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl2.lc0501
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/find-mode-in-binary-search-tree/
  *
  * Time Complexity:     O(N)
@@ -7,11 +13,6 @@
  * References:
  *  https://leetcode.com/problems/find-mode-in-binary-search-tree/discuss/98100/Java-4ms-Beats-100-Extra-O(1)-solution-No-Map
  */
-package com.an7one.leetcode.lvl2.lc0501
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-
 @Suppress(UNUSED)
 class SolutionApproach0InorderRecursive {
     private var prev: Int? = null

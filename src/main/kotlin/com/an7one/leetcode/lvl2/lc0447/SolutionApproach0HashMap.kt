@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0447
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/number-of-boomerangs/
  *
  * Time Complexity:     O(`nPoints` ^ 2)
@@ -9,10 +14,6 @@
  *  https://leetcode.com/problems/number-of-boomerangs/discuss/92868/Short-Python-O(n2)-hashmap-solution/113268
  *  https://leetcode.com/problems/number-of-boomerangs/discuss/92861/Clean-java-solution%3A-O(n2)-166ms
  */
-package com.an7one.leetcode.lvl2.lc0447
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     fun numberOfBoomerangs(points: Array<IntArray>): Int {

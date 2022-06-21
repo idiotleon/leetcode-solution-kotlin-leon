@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl2.lc0438
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/find-all-anagrams-in-a-string/
  *
  * Time Complexity:     O(lenS) + O(lenT) ~ O(lenS)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92015/ShortestConcise-JAVA-O(n)-Sliding-Window-Solution
  */
-package com.an7one.leetcode.lvl2.lc0438
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers1 {
     fun findAnagrams(s: String, p: String): List<Int> {
