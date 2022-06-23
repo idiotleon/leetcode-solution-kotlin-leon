@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0718
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/maximum-length-of-repeated-subarray/
  *
  * Time Complexity:     O(`nNums1` * `nNums2`)
@@ -7,10 +12,6 @@
  * Reference:
  *  https://leetcode.com/problems/maximum-length-of-repeated-subarray/discuss/109068/JavaC%2B%2B-Clean-Code-8-lines
  */
-package com.an7one.leetcode.lvl3.lc0718
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun findLength(nums1: IntArray, nums2: IntArray): Int {
