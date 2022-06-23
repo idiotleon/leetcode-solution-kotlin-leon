@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0792
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/number-of-matching-subsequences/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
  * Reference:
- *  https://leetcode.com/problems/number-of-matching-subsequences/discuss/157065/Java-Trie-Solution
+ * https://leetcode.com/problems/number-of-matching-subsequences/discuss/157065/Java-Trie-Solution
  */
-package com.an7one.leetcode.lvl3.lc0792
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSWithTrie {
     private companion object {

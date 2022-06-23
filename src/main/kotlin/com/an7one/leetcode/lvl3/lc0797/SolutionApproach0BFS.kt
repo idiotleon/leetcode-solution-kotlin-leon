@@ -1,3 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0797
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+import kotlin.collections.ArrayDeque
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/all-paths-from-source-to-target/
@@ -5,15 +11,8 @@
  * Time Complexity:     O(V + E) ~ O(size + TOTAL_ELEMENTS)
  * Space Complexity:    O(V + E) ~ O(size + TOTAL_ELEMENTS)
  */
-package com.an7one.leetcode.lvl3.lc0797
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-import kotlin.collections.ArrayDeque
-
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
-    @OptIn(ExperimentalStdlibApi::class)
     fun allPathsSourceTarget(graph: Array<IntArray>): List<List<Int>> {
         val paths: MutableList<List<Int>> = arrayListOf()
         // sanity check
