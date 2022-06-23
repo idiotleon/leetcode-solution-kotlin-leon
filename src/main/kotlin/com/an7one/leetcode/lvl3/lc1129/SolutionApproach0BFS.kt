@@ -11,8 +11,8 @@ import kotlin.collections.HashSet
  * Time Complexity:     O(V + E)
  * Space Complexity:    O(V + E)
  *
- * References:
- *  https://leetcode.com/problems/shortest-path-with-alternating-colors/discuss/340258/Java-BFS-Solution-with-Video-Explanation
+ * Reference:
+ * https://leetcode.com/problems/shortest-path-with-alternating-colors/discuss/340258/Java-BFS-Solution-with-Video-Explanation
  */
 @Suppress(UNUSED)
 class SolutionApproach0BFS {

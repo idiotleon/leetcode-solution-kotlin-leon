@@ -9,8 +9,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(V + E)
  * Space Complexity:    O(V + E)
  *
- * References:
- *  https://leetcode.com/problems/shortest-path-with-alternating-colors/discuss/340246/Java-DFS-and-BFS-two-codes-each-wo-duplication-check.
+ * Reference:
+ * https://leetcode.com/problems/shortest-path-with-alternating-colors/discuss/340246/Java-DFS-and-BFS-two-codes-each-wo-duplication-check.
  */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
