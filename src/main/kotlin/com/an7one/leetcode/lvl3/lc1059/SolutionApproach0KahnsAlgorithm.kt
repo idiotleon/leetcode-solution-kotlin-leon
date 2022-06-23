@@ -1,4 +1,11 @@
+package com.an7one.leetcode.lvl3.lc1059
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+import kotlin.collections.HashSet
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/all-paths-from-source-lead-to-destination/
  *
  * Time Complexity:     O(`n` + nEdges)
@@ -7,14 +14,8 @@
  * References:
  * https://leetcode.com/problems/all-paths-from-source-lead-to-destination/discuss/335148/enough-dfs-there-is-a-plain-simple-bfs-solution/804177
  */
-package com.an7one.leetcode.lvl3.lc1059
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-import kotlin.collections.HashSet
-
 @Suppress(UNUSED)
-class SolutionApproach0TopologicalSort {
+class SolutionApproach0KahnsAlgorithm {
     fun leadsToDestination(n: Int, edges: Array<IntArray>, source: Int, destination: Int): Boolean {
         val graph = List(n) { HashSet<Int>() }
         val indegrees = IntArray(n) { 0 }
@@ -24,15 +25,15 @@ class SolutionApproach0TopologicalSort {
             graph[from].add(to)
         }
 
-        val queue = LinkedList<Int>().also {
-            it.offer(source)
+        val queue = ArrayDeque<Int>().also {
+            it.addLast(source)
         }
 
         while (queue.isNotEmpty()) {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val cur = queue.poll()
+                val cur = queue.removeFirst()
 
                 // self loop
                 if (graph[cur].contains(cur)) return false

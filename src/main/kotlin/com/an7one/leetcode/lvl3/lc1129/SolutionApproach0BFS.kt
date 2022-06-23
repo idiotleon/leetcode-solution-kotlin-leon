@@ -1,4 +1,11 @@
+package com.an7one.leetcode.lvl3.lc1129
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+import kotlin.collections.HashSet
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/shortest-path-with-alternating-colors/
  *
  * Time Complexity:     O(V + E)
@@ -7,12 +14,6 @@
  * References:
  *  https://leetcode.com/problems/shortest-path-with-alternating-colors/discuss/340258/Java-BFS-Solution-with-Video-Explanation
  */
-package com.an7one.leetcode.lvl3.lc1129
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-import kotlin.collections.HashSet
-
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
     private companion object {
@@ -28,11 +29,10 @@ class SolutionApproach0BFS {
 
         val graph = buildGraph(redEdges, blueEdges, n)
 
-        val queue = LinkedList<Node>().also {
-            it.offer(Node(0, COLOR_RED))
-            it.offer(Node(0, COLOR_BLUE))
+        val queue = ArrayDeque<Node>().also {
+            it.addLast(Node(0, COLOR_RED))
+            it.addLast(Node(0, COLOR_BLUE))
         }
-
 
         // shortest path, or BFS level
         var shortest = 1
@@ -43,7 +43,7 @@ class SolutionApproach0BFS {
             val size = queue.size
 
             for (i in 0 until size) {
-                val cur = queue.poll()
+                val cur = queue.removeFirst()
                 val curNode = cur.node
                 val color = cur.color
                 val hash = "$curNode#$color"
@@ -56,7 +56,7 @@ class SolutionApproach0BFS {
                     // or equivalently in terms of skipping visited nodes
                     // val hash = "$nextNode#$otherColor"
                     // if(!seen.add(hash)) continue
-                    queue.offer(Node(nextNode, otherColor))
+                    queue.addLast(Node(nextNode, otherColor))
                     ans[nextNode] = minOf(ans[nextNode], shortest)
                 }
             }

@@ -27,7 +27,6 @@ class SolutionApproach0DFSRecursive {
         destination: Int,
         paths: MutableList<List<Int>>
     ) {
-
         if (cur == destination) {
             paths.add(path.toList())
             return

@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc1059
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/all-paths-from-source-lead-to-destination/
  *
  * Time Complexity:     O(E + V)
  * Space Complexity:    O(E + V)
  *
  * References:
- *  https://leetcode.com/problems/all-paths-from-source-lead-to-destination/discuss/303566/Java-DFS-with-cycle-detection-(5ms)
+ * https://leetcode.com/problems/all-paths-from-source-lead-to-destination/discuss/303566/Java-DFS-with-cycle-detection-(5ms)
  */
-package com.an7one.leetcode.lvl3.lc1059
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     private companion object {

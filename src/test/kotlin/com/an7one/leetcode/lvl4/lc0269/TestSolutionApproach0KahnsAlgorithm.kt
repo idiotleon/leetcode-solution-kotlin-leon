@@ -4,7 +4,7 @@ import com.an7one.leetcode.lvl4.lc0269.SolutionApproach0TopologicalSort
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class TestSolutionApproach0TopologicalSort {
+class TestSolutionApproach0KahnsAlgorithm {
     private val solution = SolutionApproach0TopologicalSort()
 
     @Test
