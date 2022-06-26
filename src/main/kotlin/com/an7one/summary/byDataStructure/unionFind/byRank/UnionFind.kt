@@ -1,3 +1,7 @@
+package com.an7one.summary.byDataStructure.unionFind.byRank
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  *
@@ -10,10 +14,6 @@
  * References:
  *  https://youtu.be/gBmwoxsL8lY?t=555
  */
-package com.an7one.summary.byDataStructure.unionFind.byRank
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class UnionFind(capacity: Int) {
     private val roots = IntArray(capacity) { idx -> idx }
@@ -37,6 +37,7 @@ class UnionFind(capacity: Int) {
         --isolated
     }
 
+    @Suppress(UNUSED)
     fun findRecursively(x: Int): Int {
         if (roots[x] != x) {
             roots[x] = findRecursively(roots[x])
@@ -46,6 +47,7 @@ class UnionFind(capacity: Int) {
         return roots[x]
     }
 
+    @Suppress(UNUSED)
     fun findIteratively(x: Int): Int {
         var x = x
         while (x != roots[x]) {
