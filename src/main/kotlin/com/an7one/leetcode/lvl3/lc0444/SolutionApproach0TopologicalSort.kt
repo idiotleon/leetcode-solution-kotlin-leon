@@ -1,4 +1,11 @@
+package com.an7one.leetcode.lvl3.lc0444
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+import kotlin.collections.HashMap
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/sequence-reconstruction/
  *
  * Time Complexity:     O()
@@ -9,17 +16,11 @@
  *  2. the topological sort order is unique
  *  3. the topological sort order confirms to `org`
  *
- * References:
- *  https://leetcode.com/problems/sequence-reconstruction/discuss/92580/Java-Solution-using-BFS-Topological-Sort/143050
- *  https://leetcode.com/problems/sequence-reconstruction/discuss/92580/Java-Solution-using-BFS-Topological-Sort/97078
- *  https://leetcode.com/problems/sequence-reconstruction/discuss/92580/Java-Solution-using-BFS-Topological-Sort
+ * Reference:
+ * https://leetcode.com/problems/sequence-reconstruction/discuss/92580/Java-Solution-using-BFS-Topological-Sort/143050
+ * https://leetcode.com/problems/sequence-reconstruction/discuss/92580/Java-Solution-using-BFS-Topological-Sort/97078
+ * https://leetcode.com/problems/sequence-reconstruction/discuss/92580/Java-Solution-using-BFS-Topological-Sort
  */
-package com.an7one.leetcode.lvl3.lc0444
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-import kotlin.collections.HashMap
-
 @Suppress(UNUSED)
 class SolutionApproach0TopologicalSort {
     fun sequenceReconstruction(org: IntArray, seqs: List<List<Int>>): Boolean {
@@ -61,8 +62,7 @@ class SolutionApproach0TopologicalSort {
     }
 
     private fun buildGraph(
-        seqs: List<List<Int>>,
-        indegrees: HashMap<Int, Int>
+        seqs: List<List<Int>>, indegrees: HashMap<Int, Int>
     ): HashMap<Int, MutableList<Int>> {
         val graph = HashMap<Int, MutableList<Int>>()
         for (seq in seqs) {

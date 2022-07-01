@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl3.lc0444
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/sequence-reconstruction/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/sequence-reconstruction/discuss/92572/Simple-Solution-:-one-pass-using-only-array-(C++-92ms-Java-16ms)/97033
- *  https://leetcode.com/problems/sequence-reconstruction/discuss/92572/Simple-Solution-%3A-one-pass-using-only-array-(C%2B%2B-92ms-Java-16ms)
+ * Reference:
+ * https://leetcode.com/problems/sequence-reconstruction/discuss/92572/Simple-Solution-:-one-pass-using-only-array-(C++-92ms-Java-16ms)/97033
+ * https://leetcode.com/problems/sequence-reconstruction/discuss/92572/Simple-Solution-%3A-one-pass-using-only-array-(C%2B%2B-92ms-Java-16ms)
  */
-package com.an7one.leetcode.lvl3.lc0444
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun sequenceReconstruction(org: IntArray, seqs: List<List<Int>>): Boolean {
