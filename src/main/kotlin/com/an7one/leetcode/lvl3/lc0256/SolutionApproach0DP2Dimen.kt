@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0256
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/paint-house/
  *
  * Time Complexity:     O(`nCosts`)
@@ -7,10 +12,6 @@
  * References:
  *  https://leetcode.com/problems/paint-house/discuss/68211/Simple-java-DP-solution/146145
  */
-package com.an7one.leetcode.lvl3.lc0256
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun minCost(costs: Array<IntArray>): Int {

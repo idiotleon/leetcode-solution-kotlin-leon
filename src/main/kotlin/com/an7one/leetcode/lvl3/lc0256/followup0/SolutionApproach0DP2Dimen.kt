@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0256.followup0
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * if there are m colors, instead of 3, how to solve the problem?
  * https://leetcode.com/problems/paint-house/
  *
@@ -6,12 +11,8 @@
  * Space Complexity:    O(`nHouses` * `nColors`)
  *
  * References:
- *  https://leetcode.com/problems/paint-house/discuss/68243/Java-solution-Not-limited-to-3-colors-No-change-to-original-input
+ * https://leetcode.com/problems/paint-house/discuss/68243/Java-solution-Not-limited-to-3-colors-No-change-to-original-input
  */
-package com.an7one.leetcode.lvl3.lc0256.followup0
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun getMinCost(costs: Array<IntArray>): Int {

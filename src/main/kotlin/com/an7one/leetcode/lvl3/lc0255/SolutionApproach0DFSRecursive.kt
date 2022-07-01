@@ -1,12 +1,14 @@
-/**
- * https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/
- *
- *
- */
 package com.an7one.leetcode.lvl3.lc0255
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun verifyPreorder(preorder: IntArray): Boolean {

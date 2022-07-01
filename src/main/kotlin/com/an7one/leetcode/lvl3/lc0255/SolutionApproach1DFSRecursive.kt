@@ -1,13 +1,14 @@
+package com.an7one.leetcode.lvl3.lc0255
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/
  *
  * Time Complexity:     O(`nNodes` ^ H)
  * Space Complexity:    O(`nNodes`)
  */
-package com.an7one.leetcode.lvl3.lc0255
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach1DFSRecursive {
     fun verifyPreorder(preorder: IntArray): Boolean {
@@ -23,7 +24,9 @@ class SolutionApproach1DFSRecursive {
         val rootValue = preorder[lo]
 
         var idx = lo + 1
-        while (idx <= hi && preorder[idx] < rootValue) ++idx
+        while (idx <= hi && preorder[idx] < rootValue) {
+            ++idx
+        }
 
         for (index in idx..hi) {
             if (preorder[index] <= rootValue) return false
