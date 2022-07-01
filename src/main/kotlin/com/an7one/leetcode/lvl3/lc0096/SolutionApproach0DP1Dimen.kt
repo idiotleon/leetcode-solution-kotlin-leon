@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0096
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/unique-binary-search-trees/
  *
  * Time Complexity:     O(`n` ^ 2)
@@ -10,18 +15,14 @@
  *  and know how many possible left and right subtrees can be built under that node.
  *  The result is to multiply them.
  *
- * References:
- *  https://leetcode.com/problems/unique-binary-search-trees/discuss/31707/Fantastic-Clean-Java-DP-Solution-with-Detail-Explaination
- *  https://leetcode.com/problems/unique-binary-search-trees/discuss/703488/Detailed-Explanation-%3A-Mental-Leap-on-Why-the-approach-actually-works
- *  https://leetcode-cn.com/problems/unique-binary-search-trees/solution/shou-hua-tu-jie-san-chong-xie-fa-dp-di-gui-ji-yi-h/
+ * Reference:
+ * https://leetcode.com/problems/unique-binary-search-trees/discuss/31707/Fantastic-Clean-Java-DP-Solution-with-Detail-Explaination
+ * https://leetcode.com/problems/unique-binary-search-trees/discuss/703488/Detailed-Explanation-%3A-Mental-Leap-on-Why-the-approach-actually-works
+ * https://leetcode-cn.com/problems/unique-binary-search-trees/solution/shou-hua-tu-jie-san-chong-xie-fa-dp-di-gui-ji-yi-h/
  *
  * Catalan number:
  *  https://en.wikipedia.org/wiki/Catalan_number
  */
-package com.an7one.leetcode.lvl3.lc0096
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun numTrees(n: Int): Int {

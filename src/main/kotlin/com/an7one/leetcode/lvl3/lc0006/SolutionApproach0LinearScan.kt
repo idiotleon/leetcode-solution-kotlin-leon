@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0006
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/zigzag-conversion/
  *
  * Time Complexity:     O(`lenS`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/zigzag-conversion/discuss/3435/If-you-are-confused-with-zigzag-patterncome-and-see!/4165
+ * Reference:
+ * https://leetcode.com/problems/zigzag-conversion/discuss/3435/If-you-are-confused-with-zigzag-patterncome-and-see!/4165
  */
-package com.an7one.leetcode.lvl3.lc0006
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun convert(str: String, numRows: Int): String {

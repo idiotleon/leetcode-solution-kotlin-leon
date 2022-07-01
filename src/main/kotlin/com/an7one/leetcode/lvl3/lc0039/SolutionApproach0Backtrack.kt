@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl3.lc0039
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/combination-sum/
@@ -13,10 +17,6 @@
  * References:
  *  https://leetcode.com/problems/combination-sum/solution/
  */
-package com.an7one.leetcode.lvl3.lc0039
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun combinationSum(nums: IntArray, target: Int): List<List<Int>> {
@@ -28,12 +28,9 @@ class SolutionApproach0Backtrack {
         return paths
     }
 
-    private fun backtrack(idxStart: Int,
-                          target: Int,
-                          path: MutableList<Int>,
-                          nums: IntArray,
-                          paths: MutableList<MutableList<Int>>) {
-
+    private fun backtrack(
+        idxStart: Int, target: Int, path: MutableList<Int>, nums: IntArray, paths: MutableList<MutableList<Int>>
+    ) {
         val nNums = nums.size
         if (target < 0) return
         if (target == 0) {

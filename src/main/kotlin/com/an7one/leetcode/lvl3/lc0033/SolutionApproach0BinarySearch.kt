@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl3.lc0033
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/search-in-rotated-sorted-array/
@@ -5,10 +9,6 @@
  * Time Complexity:     O(lg(`nNums`))
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl3.lc0033
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun search(nums: IntArray, target: Int): Int {

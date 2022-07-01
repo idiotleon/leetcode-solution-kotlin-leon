@@ -1,16 +1,16 @@
+package com.an7one.leetcode.lvl3.lc0056
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/merge-intervals/
  *
  * Time Complexity:     O(`nIntervals` * lg(`nIntervals`)) + O(`nIntervals`) ~ O(`nIntervals` * lg(`nIntervals`))
  * Space Complexity:    O(`nIntervals`)
  */
-package com.an7one.leetcode.lvl3.lc0056
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
-    @OptIn(ExperimentalStdlibApi::class)
     fun merge(intervals: Array<IntArray>): Array<IntArray> {
         // not used
         // val nIntervals = intervals.size

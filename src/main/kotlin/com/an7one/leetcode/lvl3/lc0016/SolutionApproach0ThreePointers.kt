@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl3.lc0016
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.math.abs
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/3sum-closest/
  *
  * Time Complexity:     O(`nNums` ^ 2)
  * Space Complexity:    O(1)
  *
  * Reference:
- *  https://leetcode.com/problems/3sum-closest/discuss/7872/Java-solution-with-O(n2)-for-reference/9007
- *  https://leetcode.com/problems/3sum-closest/discuss/7872/Java-solution-with-O(n2)-for-reference
+ * https://leetcode.com/problems/3sum-closest/discuss/7872/Java-solution-with-O(n2)-for-reference/9007
+ * https://leetcode.com/problems/3sum-closest/discuss/7872/Java-solution-with-O(n2)-for-reference
  */
-package com.an7one.leetcode.lvl3.lc0016
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.math.abs
-
 @Suppress(UNUSED)
 class SolutionApproach0ThreePointers {
     fun threeSumClosest(nums: IntArray, target: Int): Int {
@@ -44,8 +45,7 @@ class SolutionApproach0ThreePointers {
                     else -> return sum
                 }
 
-                if (abs(target - sum) < abs(target - closest))
-                    closest = sum
+                if (abs(target - sum) < abs(target - closest)) closest = sum
             }
         }
 

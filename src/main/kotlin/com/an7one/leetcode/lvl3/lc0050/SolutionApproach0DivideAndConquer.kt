@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl3.lc0050
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/powx-n/
  *
  * Time Complexity:     O(lg(`n`))
  * Space Complexity:    O(lg(`n`))
  *
  * References:
- *  https://youtu.be/SWr4cSY2fCk?t=671
+ * https://youtu.be/SWr4cSY2fCk?t=671
  */
-package com.an7one.leetcode.lvl3.lc0050
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
-class SolutionApproach0DivideAndConquer1 {
+class SolutionApproach0DivideAndConquer {
     fun myPow(x: Double, n: Int): Double {
         return when {
             x == 0.0 || x == 1.0 -> x

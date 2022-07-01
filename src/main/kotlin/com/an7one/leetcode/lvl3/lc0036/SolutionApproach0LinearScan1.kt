@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl3.lc0036
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/valid-sudoku/
  *
  * Time Complexity:     O(9 * 9)
  * Space Complexity:    O(9 * 9)
  *
- * References:
- *  https://leetcode.com/problems/valid-sudoku/discuss/15450/Shared-my-concise-Java-code/146624
- *  https://leetcode.com/problems/valid-sudoku/discuss/15450/Shared-my-concise-Java-code
+ * Reference:
+ * https://leetcode.com/problems/valid-sudoku/discuss/15450/Shared-my-concise-Java-code/146624
+ * https://leetcode.com/problems/valid-sudoku/discuss/15450/Shared-my-concise-Java-code
  */
-package com.an7one.leetcode.lvl3.lc0036
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan1 {
     private companion object {
@@ -27,11 +28,7 @@ class SolutionApproach0LinearScan1 {
                 if (value == EMPTY) continue
 
                 val block = (row / 3 * 3) + (col / 3)
-                if (!seen.add("row#$row#$value")
-                    || !seen.add("col#$col$value")
-                    || !seen.add("block#$block$value")
-                )
-                    return false
+                if (!seen.add("row#$row#$value") || !seen.add("col#$col$value") || !seen.add("block#$block$value")) return false
             }
         }
 

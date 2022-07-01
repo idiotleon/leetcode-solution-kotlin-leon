@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0091
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/decode-ways/
  *
  * Time Complexity:     O(`lenS`)
  * Space Complexity:    O(`lenS`)
  *
- * References:
- *  https://leetcode.com/problems/decode-ways/discuss/30358/Java-clean-DP-solution-with-explanation/330433
+ * Reference:
+ * https://leetcode.com/problems/decode-ways/discuss/30358/Java-clean-DP-solution-with-explanation/330433
  */
-package com.an7one.leetcode.lvl3.lc0091
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun numDecodings(str: String): Int {

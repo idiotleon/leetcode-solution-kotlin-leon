@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0036
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/valid-sudoku/
  *
  * Time Complexity:     O(9 * 9)
@@ -8,10 +13,6 @@
  *  https://leetcode.com/problems/valid-sudoku/discuss/15450/Shared-my-concise-Java-code/15493
  *  https://leetcode.com/problems/valid-sudoku/discuss/15450/Shared-my-concise-Java-code
  */
-package com.an7one.leetcode.lvl3.lc0036
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     private companion object {
@@ -25,17 +26,14 @@ class SolutionApproach0LinearScan {
             val seenInCube = HashSet<Char>()
 
             for (col in board[row].indices) {
-                if (board[row][col] != EMPTY && !seenInRow.add(board[row][col]))
-                    return false
+                if (board[row][col] != EMPTY && !seenInRow.add(board[row][col])) return false
 
-                if (board[col][row] != EMPTY && !seenInCol.add(board[col][row]))
-                    return false
+                if (board[col][row] != EMPTY && !seenInCol.add(board[col][row])) return false
 
                 val idxRow = 3 * (row / 3)
                 val idxCol = 3 * (row % 3)
 
-                if (board[idxRow + col / 3][idxCol + col % 3] != EMPTY && !seenInCube.add(board[idxRow + col / 3][idxCol + col % 3]))
-                    return false
+                if (board[idxRow + col / 3][idxCol + col % 3] != EMPTY && !seenInCube.add(board[idxRow + col / 3][idxCol + col % 3])) return false
             }
         }
 

@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl3.lc0061
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/rotate-list/
  *
  * Time Complexity:     O(`k`) + O(L) ~ O(max(`k`, L))
@@ -6,14 +12,9 @@
  *
  * TLEed
  *
- * References:
- *  https://leetcode.com/problems/rotate-list/discuss/22726/Anyone-solve-the-problem-without-counting-the-length-of-List/22235
+ * Reference:
+ * https://leetcode.com/problems/rotate-list/discuss/22726/Anyone-solve-the-problem-without-counting-the-length-of-List/22235
  */
-package com.an7one.leetcode.lvl3.lc0061
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
-
 @Suppress(UNUSED)
 class SolutionApproach1TwoPointers {
     fun rotateRight(head: ListNode?, k: Int): ListNode? {

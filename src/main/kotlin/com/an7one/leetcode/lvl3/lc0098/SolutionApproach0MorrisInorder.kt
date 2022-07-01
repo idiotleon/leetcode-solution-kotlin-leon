@@ -3,6 +3,13 @@ package com.an7one.leetcode.lvl3.lc0098
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/validate-binary-search-tree/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ */
 @Suppress(UNUSED)
 class SolutionApproach0MorrisInorder {
     fun isValidBST(root: TreeNode?): Boolean {

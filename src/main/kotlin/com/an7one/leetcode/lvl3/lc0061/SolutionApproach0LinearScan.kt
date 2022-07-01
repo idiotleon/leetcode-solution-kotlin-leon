@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl3.lc0061
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/rotate-list/
  *
  * Time Complexity:     O(L)
@@ -6,14 +12,9 @@
  *
  * to link the tail of the list with the head, making it a circle
  *
- * References:
- *  https://leetcode.com/problems/rotate-list/discuss/22751/Clean-Java-Solution-with-Brief-Explanation
+ * Reference:
+ * https://leetcode.com/problems/rotate-list/discuss/22751/Clean-Java-Solution-with-Brief-Explanation
  */
-package com.an7one.leetcode.lvl3.lc0061
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun rotateRight(head: ListNode?, k: Int): ListNode? {

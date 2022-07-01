@@ -1,15 +1,16 @@
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/unique-binary-search-trees/
  *
  * Time Complexity:     O(`n` ^ 2)
  * Space Complexity:    O(`n`)
  *
- * References:
- *  https://leetcode.com/problems/unique-binary-search-trees/discuss/31696/Simple-Recursion-Java-Solution-with-Explanation/30507
- *  https://leetcode.com/problems/unique-binary-search-trees/discuss/31696/Simple-Recursion-Java-Solution-with-Explanation
+ * Reference:
+ * https://leetcode.com/problems/unique-binary-search-trees/discuss/31696/Simple-Recursion-Java-Solution-with-Explanation/30507
+ * https://leetcode.com/problems/unique-binary-search-trees/discuss/31696/Simple-Recursion-Java-Solution-with-Explanation
  */
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun numTrees(n: Int): Int {
@@ -20,8 +21,7 @@ class SolutionApproach0DFSMemo {
     private fun dfs(n: Int, memo: Array<Int?>): Int {
         memo[n]?.let { return it }
 
-        if (n <= 1)
-            return 1
+        if (n <= 1) return 1
 
         var amount = 0
 

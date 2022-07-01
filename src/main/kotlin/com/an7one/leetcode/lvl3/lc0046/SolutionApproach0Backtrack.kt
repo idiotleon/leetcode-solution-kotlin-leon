@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl3.lc0046
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/permutations/
@@ -5,10 +9,6 @@
  * Time Complexity:     O(2 ^ `nNums`)
  * Space Complexity:    O(`nNums`)
  */
-package com.an7one.leetcode.lvl3.lc0046
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun permute(nums: IntArray): List<List<Int>> {
@@ -25,10 +25,7 @@ class SolutionApproach0Backtrack {
     }
 
     private fun backtrack(
-        nums: IntArray,
-        used: BooleanArray,
-        path: MutableList<Int>,
-        paths: MutableList<MutableList<Int>>
+        nums: IntArray, used: BooleanArray, path: MutableList<Int>, paths: MutableList<MutableList<Int>>
     ) {
 
         val nNums = nums.size

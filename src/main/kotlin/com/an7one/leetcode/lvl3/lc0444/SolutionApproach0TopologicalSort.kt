@@ -31,10 +31,10 @@ class SolutionApproach0TopologicalSort {
         if (nOrg != indegrees.size) return false
 
         // to topological sort
-        val queue = LinkedList<Int>()
+        val queue = ArrayDeque<Int>()
         for ((num, indegree) in indegrees) {
             if (indegree == 0) {
-                queue.offer(num)
+                queue.addLast(num)
             }
         }
 
@@ -44,7 +44,7 @@ class SolutionApproach0TopologicalSort {
             // the topological sort order should be unique
             if (size > 1) return false
 
-            val cur = queue.poll()
+            val cur = queue.removeFirst()
             // the topological sort order should confirm to `org`
             if (org[idx++] != cur) return false
 
@@ -52,7 +52,7 @@ class SolutionApproach0TopologicalSort {
                 for (next in it) {
                     indegrees[next] = (indegrees[next] ?: 0) - 1
                     if (indegrees[next] == 0) {
-                        queue.offer(next)
+                        queue.addLast(next)
                     }
                 }
             }

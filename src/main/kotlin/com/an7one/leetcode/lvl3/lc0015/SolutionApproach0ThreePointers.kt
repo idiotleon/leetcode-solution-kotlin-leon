@@ -1,13 +1,14 @@
+package com.an7one.leetcode.lvl3.lc0015
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/3sum/
  *
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl3.lc0015
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0ThreePointers {
     fun threeSum(nums: IntArray): List<List<Int>> {
@@ -17,8 +18,7 @@ class SolutionApproach0ThreePointers {
         val ans = mutableListOf<List<Int>>()
 
         for (idx in 0 until nNums - 2) {
-            if (idx > 0 && nums[idx - 1] == nums[idx])
-                continue
+            if (idx > 0 && nums[idx - 1] == nums[idx]) continue
 
             var lo = idx + 1
             var hi = nNums - 1
