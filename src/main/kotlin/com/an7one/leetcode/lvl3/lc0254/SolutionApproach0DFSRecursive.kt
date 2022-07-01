@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl3.lc0254
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/factor-combinations/
  *
  * Time Complexity:     ?O(n * lg(n))
  * Space Complexity:    ?O(n * lg(n))
  *
  * References:
- *  https://leetcode.com/problems/factor-combinations/discuss/68040/My-Recursive-DFS-Java-Solution/165582
- *  https://leetcode.com/problems/factor-combinations/discuss/68040/My-Recursive-DFS-Java-Solution/159196
+ * https://leetcode.com/problems/factor-combinations/discuss/68040/My-Recursive-DFS-Java-Solution/165582
+ * https://leetcode.com/problems/factor-combinations/discuss/68040/My-Recursive-DFS-Java-Solution/159196
  */
-package com.an7one.leetcode.lvl3.lc0254
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun getFactors(n: Int): List<List<Int>> {
@@ -25,10 +26,7 @@ class SolutionApproach0DFSRecursive {
     }
 
     private fun backtrack(
-        n: Int,
-        factorStart: Int,
-        path: MutableList<Int>,
-        paths: MutableList<List<Int>>
+        n: Int, factorStart: Int, path: MutableList<Int>, paths: MutableList<List<Int>>
     ) {
 
         if (n == 1 && path.size > 1) {
