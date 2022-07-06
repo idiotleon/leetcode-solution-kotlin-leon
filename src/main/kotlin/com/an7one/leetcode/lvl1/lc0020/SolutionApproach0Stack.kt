@@ -1,4 +1,4 @@
-package com.an7one.leetcode.lvl2.lc0020
+package com.an7one.leetcode.lvl1.lc0020
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
@@ -32,18 +32,13 @@ class SolutionApproach0Stack {
                 PAREN_OPEN2 -> stack.addLast(PAREN_CLOSED2)
                 PAREN_OPEN3 -> stack.addLast(PAREN_CLOSED3)
                 else -> {
-                    if (stack.isEmpty())
-                        return false
+                    if (stack.isEmpty()) return false
 
-                    if (stack.removeLast() != ch)
-                        return false
+                    if (stack.removeLast() != ch) return false
                 }
             }
         }
 
-        if (stack.isNotEmpty())
-            return false
-
-        return true
+        return stack.isEmpty()
     }
 }
