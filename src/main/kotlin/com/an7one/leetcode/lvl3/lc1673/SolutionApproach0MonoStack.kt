@@ -31,11 +31,6 @@ class SolutionApproach0MonoStack {
             stack.removeLast()
         }
 
-        val ans = IntArray(k) { 0 }
-        var idx = k - 1
-        while (stack.isNotEmpty()) {
-            ans[idx--] = stack.removeLast()
-        }
-        return ans
+        return stack.toIntArray()
     }
 }
