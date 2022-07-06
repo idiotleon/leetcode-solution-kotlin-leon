@@ -11,7 +11,6 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  */
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
-    @OptIn(ExperimentalStdlibApi::class)
     fun mostCompetitive(nums: IntArray, k: Int): IntArray {
         val nNums = nums.size
         val limit = nNums - k
