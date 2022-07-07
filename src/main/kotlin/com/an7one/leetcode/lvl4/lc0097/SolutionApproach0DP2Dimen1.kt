@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc0097
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/interleaving-string/
  *
  * Time Complexity:     O(`len1` * `len2`)
  * Space Complexity:    O(`len1` * `len2`)
  *
- * References:
- *  https://leetcode.com/problems/interleaving-string/discuss/31879/My-DP-solution-in-C++/30687
+ * Reference:
+ * https://leetcode.com/problems/interleaving-string/discuss/31879/My-DP-solution-in-C++/30687
  */
-package com.an7one.leetcode.lvl4.lc0097
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen1 {
     fun isInterleave(s1: String, s2: String, s3: String): Boolean {

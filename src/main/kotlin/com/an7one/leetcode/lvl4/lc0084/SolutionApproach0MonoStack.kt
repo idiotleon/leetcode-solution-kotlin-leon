@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl4.lc0084
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/largest-rectangle-in-histogram/
@@ -14,13 +18,8 @@
  * References:
  *  https://leetcode.com/problems/largest-rectangle-in-histogram/discuss/29018/AC-clean-Java-solution-using-stack
  */
-package com.an7one.leetcode.lvl4.lc0084
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
-    @OptIn(ExperimentalStdlibApi::class)
     fun largestRectangleArea(heights: IntArray): Int {
         // sanity check
         if (heights.isEmpty()) return 0

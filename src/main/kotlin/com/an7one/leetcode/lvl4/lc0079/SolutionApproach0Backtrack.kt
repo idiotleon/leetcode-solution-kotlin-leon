@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0079
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/word-search/
  *
  * Time Complexity:     O(`nRows` * `nCols` * (4 ^ `lenW`))
@@ -8,13 +13,9 @@
  * Space Complexity:    O(`lenW`)
  *  `lenW`: length of the word
  *
- * References:
- *   https://www.bilibili.com/video/BV1M4411Q7td
+ * Reference:
+ * https://www.bilibili.com/video/BV1M4411Q7td
  */
-package com.an7one.leetcode.lvl4.lc0079
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     private companion object {
@@ -35,11 +36,7 @@ class SolutionApproach0Backtrack {
     }
 
     private fun backtrack(
-        row: Int,
-        col: Int,
-        idxS: Int,
-        board: Array<CharArray>,
-        word: String
+        row: Int, col: Int, idxS: Int, board: Array<CharArray>, word: String
     ): Boolean {
         val lenW = word.length
         val nRows = board.size
@@ -55,8 +52,7 @@ class SolutionApproach0Backtrack {
             val nextRow = row + DIRS[d]
             val nextCol = col + DIRS[d + 1]
 
-            if (backtrack(nextRow, nextCol, idxS + 1, board, word))
-                return true
+            if (backtrack(nextRow, nextCol, idxS + 1, board, word)) return true
         }
 
         board[row][col] = hold

@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc0030
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/substring-with-concatenation-of-all-words/
  *
  * Time Complexity:     O(`lenS` * `nWords`) + O(`nWords`) ~ O(`lenS` * `nWords`)
  * Space Complexity:    O(`nWords` * `lenW`)
  *
- * References:
- *  https://leetcode.com/problems/substring-with-concatenation-of-all-words/discuss/13664/Simple-Java-Solution-with-Two-Pointers-and-Map
+ * Reference:
+ * https://leetcode.com/problems/substring-with-concatenation-of-all-words/discuss/13664/Simple-Java-Solution-with-Two-Pointers-and-Map
  */
-package com.an7one.leetcode.lvl4.lc0030
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     fun findSubstring(str: String, words: Array<String>): List<Int> {

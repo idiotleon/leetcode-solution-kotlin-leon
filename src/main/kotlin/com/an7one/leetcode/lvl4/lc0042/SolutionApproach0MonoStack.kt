@@ -24,7 +24,6 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  */
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
-    @OptIn(ExperimentalStdlibApi::class)
     fun trap(heights: IntArray): Int {
         // sanity check
         if (heights.isEmpty()) return 0

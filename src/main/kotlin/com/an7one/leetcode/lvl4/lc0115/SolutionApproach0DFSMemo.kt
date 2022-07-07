@@ -1,19 +1,20 @@
+package com.an7one.leetcode.lvl4.lc0115
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/distinct-subsequences/
  *
  * Time Complexity:     O(`lenS` * `lenT`)
  * Space Complexity:    O(`lenS` * `lenT`)
  *
- * References:
- *  https://leetcode.com/problems/distinct-subsequences/discuss/37413/Concise-JAVA-solution-based-on-DP/315532
- *  https://leetcode.com/problems/distinct-subsequences/discuss/37413/Concise-JAVA-solution-based-on-DP
- *  https://leetcode.wang/leetcode-115-Distinct-Subsequences.html
- *  https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java/35364
+ * Reference:
+ * https://leetcode.com/problems/distinct-subsequences/discuss/37413/Concise-JAVA-solution-based-on-DP/315532
+ * https://leetcode.com/problems/distinct-subsequences/discuss/37413/Concise-JAVA-solution-based-on-DP
+ * https://leetcode.wang/leetcode-115-Distinct-Subsequences.html
+ * https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java/35364
  */
-package com.an7one.leetcode.lvl4.lc0115
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun numDistinct(s: String, t: String): Int {
@@ -25,9 +26,7 @@ class SolutionApproach0DFSMemo {
     }
 
     private fun dfs(
-        idxS: Int, s: String,
-        idxT: Int, t: String,
-        memo: Array<Array<Int?>>
+        idxS: Int, s: String, idxT: Int, t: String, memo: Array<Array<Int?>>
     ): Int {
 
         val lenS = s.length

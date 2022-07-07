@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl4.lc0115
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/distinct-subsequences/
  *
  * Time Complexity:     O(`lenS` * `lenT`)
  * Space Complexity:    O(`lenS`)
  *
- * References:
- *  https://leetcode.wang/leetcode-115-Distinct-Subsequences.html
- *  https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java
- *  https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java/35364
+ * Reference:
+ * https://leetcode.wang/leetcode-115-Distinct-Subsequences.html
+ * https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java
+ * https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java/35364
  */
-package com.an7one.leetcode.lvl4.lc0115
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun numDistinct(s: String, t: String): Int {

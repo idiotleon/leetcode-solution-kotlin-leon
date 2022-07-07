@@ -9,10 +9,10 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(`n` ^ (`n` + 1))
  * Space Complexity:    O(`n`)
  *
- * References:
- *  https://mp.weixin.qq.com/s/nMUHqvwzG2LmWA9jMIHwQQ
- *  https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484709&idx=1&sn=1c24a5c41a5a255000532e83f38f2ce4&chksm=9bd7fb2daca0723be888b30345e2c5e64649fc31a00b05c27a0843f349e2dd9363338d0dac61&scene=178&cur_album_id=1318883740306948097#rd
- *  https://youtu.be/xFv_Hl4B83A
+ * Reference:
+ * https://mp.weixin.qq.com/s/nMUHqvwzG2LmWA9jMIHwQQ
+ * https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484709&idx=1&sn=1c24a5c41a5a255000532e83f38f2ce4&chksm=9bd7fb2daca0723be888b30345e2c5e64649fc31a00b05c27a0843f349e2dd9363338d0dac61&scene=178&cur_album_id=1318883740306948097#rd
+ * https://youtu.be/xFv_Hl4B83A
  */
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack1 {
@@ -30,9 +30,7 @@ class SolutionApproach0Backtrack1 {
     }
 
     private fun backtrack(
-        row: Int,
-        board: Array<CharArray>,
-        res: MutableList<List<String>>
+        row: Int, board: Array<CharArray>, res: MutableList<List<String>>
     ) {
         val nRows = board.size
         if (row == nRows) {
@@ -50,16 +48,11 @@ class SolutionApproach0Backtrack1 {
     }
 
     private fun isValid(
-        curRow: Int,
-        curCol: Int,
-        board: Array<CharArray>
+        curRow: Int, curCol: Int, board: Array<CharArray>
     ): Boolean {
         for (row in board.indices) {
             for (col in board[row].indices) {
-                if (board[row][col] == QUEEN
-                    && (curRow + col == curCol + row || curRow + curCol == row + col || curCol == col)
-                )
-                    return false
+                if (board[row][col] == QUEEN && (curRow + col == curCol + row || curRow + curCol == row + col || curCol == col)) return false
             }
         }
 

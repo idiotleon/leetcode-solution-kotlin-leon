@@ -20,12 +20,10 @@ class SolutionApproach0FourPointers {
         nums.sort()
 
         for (i in 0 until nNums - 3) {
-            if (i > 0 && nums[i - 1] == nums[i])
-                continue
+            if (i > 0 && nums[i - 1] == nums[i]) continue
 
             for (j in i + 1 until nNums - 2) {
-                if (j > i + 1 && nums[j - 1] == nums[j])
-                    continue
+                if (j > i + 1 && nums[j - 1] == nums[j]) continue
 
                 var lo = j + 1
                 var hi = nNums - 1

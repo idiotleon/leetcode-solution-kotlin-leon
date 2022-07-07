@@ -16,8 +16,7 @@ import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
 @Suppress(UNUSED)
 class SolutionApproach0ReverseRecursive {
     fun reverseKGroup(head: ListNode?, k: Int): ListNode? {
-        if (head == null)
-            return null
+        if (head == null) return null
 
         val start = head
         var end = head

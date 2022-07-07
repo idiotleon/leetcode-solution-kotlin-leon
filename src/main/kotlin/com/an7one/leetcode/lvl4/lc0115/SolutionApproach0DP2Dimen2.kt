@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0115
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/distinct-subsequences/
  *
  * Time Complexity:     O(`lenS` * `lenT`)
@@ -8,16 +13,12 @@
  *      when `t` is empty, `dp[0]` should be 1,
  *      because the empty string is a subsequence of any string but only for once
  *
- * References:
- *  https://leetcode.com/problems/distinct-subsequences/discuss/37413/Concise-JAVA-solution-based-on-DP
- *  https://leetcode.wang/leetcode-115-Distinct-Subsequences.html
- *  https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java
- *  https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java/35364
+ * Reference:
+ * https://leetcode.com/problems/distinct-subsequences/discuss/37413/Concise-JAVA-solution-based-on-DP
+ * https://leetcode.wang/leetcode-115-Distinct-Subsequences.html
+ * https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java
+ * https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java/35364
  */
-package com.an7one.leetcode.lvl4.lc0115
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen2 {
     fun numDistinct(s: String, t: String): Int {

@@ -1,6 +1,7 @@
 package com.an7one.leetcode.lvl4.lc0045
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/jump-game-ii/
@@ -10,8 +11,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  *
  * to start with the last position, and find the leftmost start ever possible, in a implicit BFS way
  *
- * References:
- *  https://leetcode.com/problems/jump-game-ii/discuss/18028/O(n)-BFS-solution/237098
+ * Reference:
+ * https://leetcode.com/problems/jump-game-ii/discuss/18028/O(n)-BFS-solution/237098
  */
 @Suppress(UNUSED)
 class SolutionApproach1BFS {

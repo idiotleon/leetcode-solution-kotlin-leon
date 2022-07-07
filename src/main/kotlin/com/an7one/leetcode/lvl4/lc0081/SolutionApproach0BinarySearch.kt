@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc0081
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
  *
  * Time Complexity:     O(lg(`nNums`)), O(`nNums`) in the worst case
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/search-in-rotated-sorted-array-ii/discuss/28202/Neat-JAVA-solution-using-binary-search/27196
- *  https://leetcode.com/problems/search-in-rotated-sorted-array-ii/discuss/28202/Neat-JAVA-solution-using-binary-search
+ * Reference:
+ * https://leetcode.com/problems/search-in-rotated-sorted-array-ii/discuss/28202/Neat-JAVA-solution-using-binary-search/27196
+ * https://leetcode.com/problems/search-in-rotated-sorted-array-ii/discuss/28202/Neat-JAVA-solution-using-binary-search
  */
-package com.an7one.leetcode.lvl4.lc0081
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun search(nums: IntArray, target: Int): Boolean {

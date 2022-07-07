@@ -21,9 +21,8 @@ class SolutionApproach0LinearScan {
 
         val nNums = nums.size
 
-        for (i in 0 until nNums){
-            if (nums[i] > nNums || nums[i] <= 0)
-                nums[i] = nNums + 1
+        for (i in 0 until nNums) {
+            if (nums[i] > nNums || nums[i] <= 0) nums[i] = nNums + 1
         }
 
         for (i in 0 until nNums) {
@@ -31,13 +30,11 @@ class SolutionApproach0LinearScan {
             if (num > nNums) continue
 
             val idx = num - 1
-            if (nums[idx] > 0)
-                nums[idx] *= -1
+            if (nums[idx] > 0) nums[idx] *= -1
         }
 
-        for (i in 0 until nNums){
-            if (nums[i] > 0)
-                return i + 1
+        for (i in 0 until nNums) {
+            if (nums[i] > 0) return i + 1
         }
 
         return nNums + 1

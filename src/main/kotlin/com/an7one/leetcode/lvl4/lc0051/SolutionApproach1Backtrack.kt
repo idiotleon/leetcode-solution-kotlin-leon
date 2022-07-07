@@ -11,8 +11,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  *
  * this approach is based on whether a queen is going to be placed on a grid or not
  *
- * References:
- *  Paid Course: https://www.acwing.com/video/21/
+ * Reference:
+ * Paid Course: https://www.acwing.com/video/21/
  */
 @Suppress(UNUSED)
 class SolutionApproach1Backtrack {
@@ -88,7 +88,10 @@ class SolutionApproach1Backtrack {
         isSameMainDiagonal[row - col + sideLen - 1] = true
         isSameAntidiagonal[row + col] = true
         backtrack(
-            row, col + 1, cntQueens + 1, isSameRow,
+            row,
+            col + 1,
+            cntQueens + 1,
+            isSameRow,
             isSameColumn,
             isSameMainDiagonal,
             isSameAntidiagonal,
