@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc0128
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/longest-consecutive-sequence/
  *
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(`nNums`)
  *
- * References:
- *  https://leetcode.com/problems/longest-consecutive-sequence/discuss/41055/My-really-simple-Java-O(n)-solution-Accepted/191109
+ * Reference:
+ * https://leetcode.com/problems/longest-consecutive-sequence/discuss/41055/My-really-simple-Java-O(n)-solution-Accepted/191109
  */
-package com.an7one.leetcode.lvl4.lc0128
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashSet {
     fun longestConsecutive(nums: IntArray): Int {
@@ -32,8 +33,7 @@ class SolutionApproach0HashSet {
 
             longest = maxOf(longest, curLen)
 
-            if (set.isEmpty())
-                break@loop
+            if (set.isEmpty()) break@loop
         }
 
         return longest

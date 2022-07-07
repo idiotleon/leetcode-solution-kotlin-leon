@@ -1,3 +1,8 @@
+package com.an7one.leetcode.lvl4.lc0124
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/binary-tree-maximum-path-sum/
@@ -5,11 +10,6 @@
  * Time Complexity:     O(H)
  * Space Complexity:    O(H)
  */
-package com.an7one.leetcode.lvl4.lc0124
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive2 {
     private var maxPathSum = Int.MIN_VALUE

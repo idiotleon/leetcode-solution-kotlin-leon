@@ -2,6 +2,13 @@ package com.an7one.leetcode.lvl4.lc0128
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/longest-consecutive-sequence/description/
+ *
+ * Time Complexity:     O(`nNums` * lg(`nNums`))
+ * Space Complexity:    O(1)
+ */
 @Suppress(UNUSED)
 class SolutionApproach1Sort {
     fun longestConsecutive(nums: IntArray): Int {

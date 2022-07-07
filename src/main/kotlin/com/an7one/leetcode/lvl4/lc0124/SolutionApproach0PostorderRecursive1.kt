@@ -1,3 +1,8 @@
+package com.an7one.leetcode.lvl4.lc0124
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+
 /**
  * https://leetcode.com/problems/binary-tree-maximum-path-sum/
  *
@@ -9,11 +14,6 @@
  * References:
  *  https://leetcode.com/problems/binary-tree-maximum-path-sum/discuss/39775/Accepted-short-solution-in-Java
  */
-package com.an7one.leetcode.lvl4.lc0124
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive1 {
     fun maxPathSum(root: TreeNode?): Int {

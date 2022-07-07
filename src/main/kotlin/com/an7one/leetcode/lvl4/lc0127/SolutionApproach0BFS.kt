@@ -11,10 +11,10 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  *
  * Bidirectional BFS
  *
- * References:
- *  https://www.youtube.com/watch?v=vWPCm69MSfs
- *  http://zxi.mytechroad.com/blog/searching/127-word-ladder/
- *  https://leetcode.com/problems/word-ladder/discuss/40711/Two-end-BFS-in-Java-31ms.
+ * Reference:
+ * https://www.youtube.com/watch?v=vWPCm69MSfs
+ * http://zxi.mytechroad.com/blog/searching/127-word-ladder/
+ * https://leetcode.com/problems/word-ladder/discuss/40711/Two-end-BFS-in-Java-31ms.
  */
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
@@ -27,10 +27,10 @@ class SolutionApproach0BFS {
         // sanity check
         if (!wordSet.contains(endWord)) return 0
 
-        var beginSet = HashSet<String>().also{
+        var beginSet = HashSet<String>().also {
             it.add(beginWord)
         }
-        var endSet = HashSet<String>().also{
+        var endSet = HashSet<String>().also {
             it.add(endWord)
         }
 
