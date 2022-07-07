@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl4.lc0174
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/dungeon-game/
  *
  * Time Complexity:     O(`nRows` * `nCols`)
  * Space Complexity:    O(`nRows` * `nCols`)
  *  or O(1) if one modifying the original array
  *
- * References:
- *  https://leetcode.com/problems/dungeon-game/discuss/52774/C%2B%2B-DP-solution
- *  https://leetcode.com/problems/dungeon-game/discuss/52774/C++-DP-solution/53813
+ * Reference:
+ * https://leetcode.com/problems/dungeon-game/discuss/52774/C%2B%2B-DP-solution
+ * https://leetcode.com/problems/dungeon-game/discuss/52774/C++-DP-solution/53813
  */
-package com.an7one.leetcode.lvl4.lc0174
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun calculateMinimumHP(dungeon: Array<IntArray>): Int {

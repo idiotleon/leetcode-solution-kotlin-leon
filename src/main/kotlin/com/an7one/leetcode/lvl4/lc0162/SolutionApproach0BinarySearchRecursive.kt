@@ -1,13 +1,14 @@
-/**
- * https://leetcode.com/problems/find-peak-element/
- *
- * Time Complexity:     O(lg(`totalNums`))
- * Space Complexity:    O(lg(`totalNums`))
- */
 package com.an7one.leetcode.lvl4.lc0162
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/find-peak-element/
+ *
+ * Time Complexity:     O(lg(`nNums`))
+ * Space Complexity:    O(lg(`nNums`))
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearchRecursive {
     fun findPeakElement(nums: IntArray): Int {

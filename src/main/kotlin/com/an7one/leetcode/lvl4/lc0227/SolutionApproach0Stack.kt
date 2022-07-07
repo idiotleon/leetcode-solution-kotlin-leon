@@ -1,15 +1,16 @@
-/**
- * https://leetcode.com/problems/basic-calculator-ii/
- *
- * Time Complexity:     O(`lenS`)
- * Space Complexity:    O(1) / O(`lenS`)
- */
 package com.an7one.leetcode.lvl4.lc0227
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.ArrayDeque
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/basic-calculator-ii/
+ *
+ * Time Complexity:     O(`lenS`)
+ * Space Complexity:    O(1) / O(`lenS`)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0Stack {
     private companion object {
@@ -20,7 +21,6 @@ class SolutionApproach0Stack {
         private const val SIGN_DIVIDE = '/'
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     fun calculate(s: String): Int {
         val lenS = s.length
 

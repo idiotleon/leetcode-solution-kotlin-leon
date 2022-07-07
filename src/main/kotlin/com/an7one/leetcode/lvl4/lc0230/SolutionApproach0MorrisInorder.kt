@@ -1,3 +1,8 @@
+package com.an7one.leetcode.lvl4.lc0230
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/kth-smallest-element-in-a-bst/
@@ -21,15 +26,10 @@
  *              visit(cur)
  *              cur = cur.right
  *
- * References:
- *  https://www.youtube.com/watch?v=wGXB9OWhPTg
- *  https://github.com/mission-peace/interview/blob/master/src/com/interview/tree/MorrisTraversal.java
+ * Reference:
+ * https://youtu.be/wGXB9OWhPTg
+ * https://github.com/mission-peace/interview/blob/master/src/com/interview/tree/MorrisTraversal.java
  */
-package com.an7one.leetcode.lvl4.lc0230
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-
 @Suppress(UNUSED)
 class SolutionApproach0MorrisInorder {
     fun kthSmallest(root: TreeNode?, k: Int): Int {

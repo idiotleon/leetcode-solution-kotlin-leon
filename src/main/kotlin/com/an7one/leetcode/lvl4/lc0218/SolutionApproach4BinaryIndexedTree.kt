@@ -1,19 +1,20 @@
+package com.an7one.leetcode.lvl4.lc0218
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * this is NOT yet correct solution
  * https://leetcode.com/problems/the-skyline-problem/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/the-skyline-problem/discuss/61198/My-O(nlogn)-solution-using-Binary-Indexed-Tree(BIT)Fenwick-Tree/62473
- *  https://leetcode.com/problems/the-skyline-problem/discuss/61287/Java-Binary-Indexed-Tree-Solution
- *  https://leetcode.com/problems/the-skyline-problem/discuss/61198/My-O(nlogn)-solution-using-Binary-Indexed-Tree(BIT)Fenwick-Tree
+ * Reference:
+ * https://leetcode.com/problems/the-skyline-problem/discuss/61198/My-O(nlogn)-solution-using-Binary-Indexed-Tree(BIT)Fenwick-Tree/62473
+ * https://leetcode.com/problems/the-skyline-problem/discuss/61287/Java-Binary-Indexed-Tree-Solution
+ * https://leetcode.com/problems/the-skyline-problem/discuss/61198/My-O(nlogn)-solution-using-Binary-Indexed-Tree(BIT)Fenwick-Tree
  */
-package com.an7one.leetcode.lvl4.lc0218
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach4BinaryIndexedTree {
     private companion object {

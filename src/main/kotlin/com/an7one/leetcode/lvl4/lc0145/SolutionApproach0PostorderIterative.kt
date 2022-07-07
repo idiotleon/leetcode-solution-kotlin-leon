@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/binary-tree-postorder-traversal/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(H)
- *
- * References:
- *  https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/45551/Preorder-Inorder-and-Postorder-Iteratively-Summarization/608296
- */
 package com.an7one.leetcode.lvl4.lc0145
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/binary-tree-postorder-traversal/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(H)
+ *
+ * Reference:
+ * https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/45551/Preorder-Inorder-and-Postorder-Iteratively-Summarization/608296
+ */
 @Suppress(UNUSED)
 class SolutionApproach0PostorderIterative {
     fun postorderTraversal(root: TreeNode?): List<Int> {

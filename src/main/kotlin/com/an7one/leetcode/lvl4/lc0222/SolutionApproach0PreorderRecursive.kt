@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/count-complete-tree-nodes/
- *
- * Time Complexity:     O((lg(N)) ^ 2)
- * Space Complexity:    O(lg(N))
- *
- * References:
- *  https://leetcode.com/problems/count-complete-tree-nodes/discuss/61958/Concise-Java-solutions-O(log(n)2)
- *  https://leetcode.com/problems/count-complete-tree-nodes/discuss/61958/Concise-Java-solutions-O(log(n)2)/63523
- */
 package com.an7one.leetcode.lvl4.lc0222
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/count-complete-tree-nodes/
+ *
+ * Time Complexity:     O((lg(N)) ^ 2)
+ * Space Complexity:    O(lg(N))
+ *
+ * Reference:
+ * https://leetcode.com/problems/count-complete-tree-nodes/discuss/61958/Concise-Java-solutions-O(log(n)2)
+ * https://leetcode.com/problems/count-complete-tree-nodes/discuss/61958/Concise-Java-solutions-O(log(n)2)/63523
+ */
 @Suppress(UNUSED)
 class SolutionApproach0PreorderRecursive {
     fun countNodes(root: TreeNode?) = preorder(root)

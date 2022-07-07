@@ -1,3 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0230
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+import java.util.*
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/kth-smallest-element-in-a-bst/
@@ -5,12 +11,6 @@
  * Time Complexity:     O(N)
  * Space Complexity:    O(H)
  */
-package com.an7one.leetcode.lvl4.lc0230
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0InorderIterative {
     fun kthSmallest(root: TreeNode?, k: Int): Int {

@@ -1,14 +1,3 @@
-/**
- * https://leetcode.com/problems/the-skyline-problem/
- *
- * Time Complexity:     O(`totalBuildings` * lg(`totalBuildings`))
- * Space Complexity:    O(`totalBuildings`)
- *
- * References:
- *  https://github.com/mission-peace/interview/blob/master/src/com/interview/geometry/SkylineDrawing.java
- *  https://www.youtube.com/watch?v=GSBLe8cKu0s
- *  https://leetcode.com/problems/the-skyline-problem/discuss/61197/(Guaranteed)-Really-Detailed-and-Good-(Perfect)-Explanation-of-The-Skyline-Problem/190968
- */
 package com.an7one.leetcode.lvl4.lc0218
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
@@ -16,6 +5,18 @@ import java.util.*
 import kotlin.Comparator
 import kotlin.collections.ArrayList
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/the-skyline-problem/
+ *
+ * Time Complexity:     O(`nBlds` * lg(`nBlds`))
+ * Space Complexity:    O(`nBlds`)
+ *
+ * References:
+ *  https://github.com/mission-peace/interview/blob/master/src/com/interview/geometry/SkylineDrawing.java
+ *  https://www.youtube.com/watch?v=GSBLe8cKu0s
+ *  https://leetcode.com/problems/the-skyline-problem/discuss/61197/(Guaranteed)-Really-Detailed-and-Good-(Perfect)-Explanation-of-The-Skyline-Problem/190968
+ */
 @Suppress(UNUSED)
 class SolutionApproach0SweepLine {
     fun getSkyline(blds: Array<IntArray>): List<List<Int>> {
@@ -23,8 +24,8 @@ class SolutionApproach0SweepLine {
         // sanity check
         if (blds.isEmpty()) return ans
 
-        val totalBuildings = blds.size
-        val buildings = Array<Building?>(totalBuildings * 2) { null }
+        val nBlds = blds.size
+        val buildings = Array<Building?>(nBlds * 2) { null }
 
         var idx = 0
         for (building in blds) {
@@ -48,8 +49,7 @@ class SolutionApproach0SweepLine {
                 skyline[height] = 1 + (skyline[height] ?: 0)
             } else {
                 skyline[height] = (skyline[height] ?: 1) - 1
-                if (skyline[height] == 0)
-                    skyline.remove(height)
+                if (skyline[height] == 0) skyline.remove(height)
             }
 
             val xCoor = building.xCoor
@@ -79,14 +79,12 @@ class SolutionApproach0SweepLine {
             }
         }
 
-        private val COMPARATOR_BACKUP = Comparator
-            .comparingInt<Building> { it.xCoor }
-            .thenComparing { a, b ->
-                when {
-                    a.isStart && b.isStart -> b.height.compareTo(a.height)
-                    !(a.isStart || b.isStart) -> a.height.compareTo(b.height)
-                    else -> if (a.isStart) 1 else -1
-                }
+        private val COMPARATOR_BACKUP = Comparator.comparingInt<Building> { it.xCoor }.thenComparing { a, b ->
+            when {
+                a.isStart && b.isStart -> b.height.compareTo(a.height)
+                !(a.isStart || b.isStart) -> a.height.compareTo(b.height)
+                else -> if (a.isStart) 1 else -1
             }
+        }
     }
 }

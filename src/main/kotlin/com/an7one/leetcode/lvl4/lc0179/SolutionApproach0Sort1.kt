@@ -26,7 +26,7 @@ class SolutionApproach0Sort1 {
             strs[i] = nums[i].toString()
         }
 
-        strs.sortWith(Comparator { a, b -> (b + a).compareTo(a + b) })
+        strs.sortWith { a, b -> (b + a).compareTo(a + b) }
 
         if (strs[0][0] == '0') return "0"
 

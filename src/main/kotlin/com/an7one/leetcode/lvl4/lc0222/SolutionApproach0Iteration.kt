@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/count-complete-tree-nodes/
- *
- * Time Complexity:     O()
- * Space Complexity:    O()
- *
- * References:
- *  https://leetcode.com/problems/count-complete-tree-nodes/discuss/61958/Concise-Java-solutions-O(log(n)2)
- */
 package com.an7one.leetcode.lvl4.lc0222
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/count-complete-tree-nodes/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ *
+ * Reference:
+ * https://leetcode.com/problems/count-complete-tree-nodes/discuss/61958/Concise-Java-solutions-O(log(n)2)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0Iteration {
     fun countNodes(root: TreeNode?): Int {

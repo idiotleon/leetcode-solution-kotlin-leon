@@ -9,10 +9,10 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(L)
  * Space Complexity:    O(L)
  *
- * References:
- *  https://leetcode.com/problems/repeated-dna-sequences/discuss/53867/Clean-Java-solution-(hashmap-+-bits-manipulation)/201065
- *  https://leetcode.com/problems/repeated-dna-sequences/discuss/53867/Clean-Java-solution-(hashmap-+-bits-manipulation)/55192
- *  https://leetcode.com/problems/repeated-dna-sequences/discuss/53867/Clean-Java-solution-(hashmap-%2B-bits-manipulation)
+ * Reference:
+ * https://leetcode.com/problems/repeated-dna-sequences/discuss/53867/Clean-Java-solution-(hashmap-+-bits-manipulation)/201065
+ * https://leetcode.com/problems/repeated-dna-sequences/discuss/53867/Clean-Java-solution-(hashmap-+-bits-manipulation)/55192
+ * https://leetcode.com/problems/repeated-dna-sequences/discuss/53867/Clean-Java-solution-(hashmap-%2B-bits-manipulation)
  */
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {

@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc0221
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/maximal-square/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/maximal-square/discuss/61803/C%2B%2B-space-optimized-DP
+ * Reference:
+ * https://leetcode.com/problems/maximal-square/discuss/61803/C%2B%2B-space-optimized-DP
  */
-package com.an7one.leetcode.lvl4.lc0221
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun maximalSquare(matrix: Array<CharArray>): Int {

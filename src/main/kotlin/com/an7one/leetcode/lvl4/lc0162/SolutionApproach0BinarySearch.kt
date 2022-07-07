@@ -1,16 +1,17 @@
-/**
- * https://leetcode.com/problems/find-peak-element/
- *
- * Time Complexity:     O(lg(`totalNums`))
- * Space Complexity:    O(lg(`totalNums`))
- *
- * References:
- *  https://zxi.mytechroad.com/blog/algorithms/binary-search/%E8%8A%B1%E8%8A%B1%E9%85%B1-leetcode-162-find-peak-element/
- */
 package com.an7one.leetcode.lvl4.lc0162
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/find-peak-element/
+ *
+ * Time Complexity:     O(lg(`nNums`))
+ * Space Complexity:    O(lg(`nNums`))
+ *
+ * Reference:
+ * https://zxi.mytechroad.com/blog/algorithms/binary-search/%E8%8A%B1%E8%8A%B1%E9%85%B1-leetcode-162-find-peak-element/
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun findPeakElement(nums: IntArray): Int {

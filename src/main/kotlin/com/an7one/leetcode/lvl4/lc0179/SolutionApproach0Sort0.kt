@@ -20,10 +20,10 @@ class SolutionApproach0Sort0 {
         // not used
         // val nNums = nums.size
 
-        val strs = nums.map{ it.toString() }.toMutableList().also {
-            it.sortWith(Comparator { a, b -> (b + a).compareTo(a + b) })
+        val strs = nums.map { it.toString() }.toMutableList().also {
+            it.sortWith { a, b -> (b + a).compareTo(a + b) }
         }.toList()
 
-        return if(strs[0][0] == '0') "0" else strs.joinToString ("")
+        return if (strs[0][0] == '0') "0" else strs.joinToString("")
     }
 }

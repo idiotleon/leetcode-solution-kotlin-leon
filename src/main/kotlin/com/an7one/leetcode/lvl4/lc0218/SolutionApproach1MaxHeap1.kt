@@ -1,24 +1,25 @@
-/**
- * https://leetcode.com/problems/the-skyline-problem/
- *
- * Time Complexity:     O(`totalBuildings` ^ 2)
- * Space Complexity:    O(`totalBuildings`)
- *
- * References:
- *  https://leetcode.com/problems/the-skyline-problem/discuss/61192/Once-for-all-explanation-with-clean-Java-code(O(n2)time-O(n)-space)
- */
 package com.an7one.leetcode.lvl4.lc0218
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.ArrayList
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/the-skyline-problem/
+ *
+ * Time Complexity:     O(`nBlgs` ^ 2)
+ * Space Complexity:    O(`nBlgs`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/the-skyline-problem/discuss/61192/Once-for-all-explanation-with-clean-Java-code(O(n2)time-O(n)-space)
+ */
 @Suppress(UNUSED)
 class SolutionApproach1MaxHeap1 {
     fun getSkyline(blds: Array<IntArray>): List<List<Int>> {
 
         // not used
-        // val totalBuildings = blds.size
+        // val nBlgs = blds.size
 
         val buildings = ArrayList<Node>()
         for (building in blds) {
@@ -35,7 +36,7 @@ class SolutionApproach1MaxHeap1 {
 
         val ans = ArrayList<List<Int>>()
         for (building in buildings) {
-            var xCoord = building.xCoord
+            val xCoord = building.xCoord
             val height = building.height
             if (height < 0) {
                 maxHeap.offer(-height)
