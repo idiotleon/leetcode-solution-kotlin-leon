@@ -1,15 +1,15 @@
-/**
- * @author: Leon
- * https://leetcode.com/problems/alien-dictionary/
- *
- * Time Complexity:     O(N * L)
- * Space Complexity:    O(N * L)
- */
 package com.an7one.leetcode.lvl4.lc0269
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/alien-dictionary/
+ *
+ * Time Complexity:     O(`nWords` * avgLenWord)
+ * Space Complexity:    O(`nWords` * avgLenWord)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0TopologicalSort {
     private companion object {
@@ -20,7 +20,7 @@ class SolutionApproach0TopologicalSort {
         // sanity check
         if (words.isEmpty()) return ""
 
-        val sizeW = words.size
+        val nWords = words.size
 
         val freqs = IntArray(TOTAL_ALPHABET) { -1 }
         for (word in words) {
@@ -31,7 +31,7 @@ class SolutionApproach0TopologicalSort {
 
         val graph = Array(TOTAL_ALPHABET) { hashSetOf<Int>() }
 
-        for (i in 1 until sizeW) {
+        for (i in 1 until nWords) {
             val wordPrev = words[i - 1]
             val wordCur = words[i]
 

@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc0265
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/paint-house-ii/
  *
  * Time Complexity:     O(`nHouses` * `nColors`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/paint-house-ii/discuss/69495/Fast-DP-Java-solution-Runtime-O(nk)-space-O(1)/143746
- *  https://leetcode.com/problems/paint-house-ii/discuss/69495/Fast-DP-Java-solution-Runtime-O(nk)-space-O(1)
+ * Reference:
+ * https://leetcode.com/problems/paint-house-ii/discuss/69495/Fast-DP-Java-solution-Runtime-O(nk)-space-O(1)/143746
+ * https://leetcode.com/problems/paint-house-ii/discuss/69495/Fast-DP-Java-solution-Runtime-O(nk)-space-O(1)
  */
-package com.an7one.leetcode.lvl4.lc0265
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun minCostII(costs: Array<IntArray>): Int {

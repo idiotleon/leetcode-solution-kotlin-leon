@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc0249
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/group-shifted-strings/
  *
  * Time Complexity:     O(`nStrs` * avg_len_str)
  * Space Complexity:    O(`nStrs` * avg_len_str)
  *
  * Reference:
- *  https://leetcode.com/problems/group-shifted-strings/discuss/67442/My-Concise-JAVA-Solution/69322
+ * https://leetcode.com/problems/group-shifted-strings/discuss/67442/My-Concise-JAVA-Solution/69322
  */
-package com.an7one.leetcode.lvl4.lc0249
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     private companion object {

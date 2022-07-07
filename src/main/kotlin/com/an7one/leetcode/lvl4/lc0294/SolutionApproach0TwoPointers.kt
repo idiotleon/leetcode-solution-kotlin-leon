@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc0294
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/flip-game-ii/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/flip-game-ii/discuss/73958/Memoization:-3150ms-greater-130ms-greater-44ms-(Python)/76951
+ * Reference:
+ * https://leetcode.com/problems/flip-game-ii/discuss/73958/Memoization:-3150ms-greater-130ms-greater-44ms-(Python)/76951
  */
-package com.an7one.leetcode.lvl4.lc0294
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     private companion object {

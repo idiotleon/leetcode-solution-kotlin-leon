@@ -11,12 +11,11 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  *
  * the `deque` is used to save indexes, instead of actual values
  *
- * References:
- *  http://zxi.mytechroad.com/blog/heap/leetcode-239-sliding-window-maximum/
+ * Reference:
+ * http://zxi.mytechroad.com/blog/heap/leetcode-239-sliding-window-maximum/
  */
 @Suppress(UNUSED)
 class SolutionApproach0MonoDeque {
-    @OptIn(ExperimentalStdlibApi::class)
     fun maxSlidingWindow(nums: IntArray, k: Int): IntArray {
         val nNums = nums.size
         val ans = IntArray(nNums - k + 1)

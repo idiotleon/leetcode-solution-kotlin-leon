@@ -1,19 +1,20 @@
+package com.an7one.leetcode.lvl4.lc0296
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/best-meeting-point/
  *
  * Time Complexity:     O(`nRows` * `nCols`)
  * Space Complexity:    O(`nRows` * `nCols`)
  *
- * References:
- *  https://leetcode.com/problems/best-meeting-point/discuss/74186/14ms-java-solution/77254
- *  https://leetcode.com/problems/best-meeting-point/discuss/74186/14ms-java-solution
- *  https://leetcode.com/problems/best-meeting-point/discuss/74217/The-theory-behind-(why-the-median-works)
- *  https://en.wikipedia.org/wiki/Geometric_median
+ * Reference:
+ * https://leetcode.com/problems/best-meeting-point/discuss/74186/14ms-java-solution/77254
+ * https://leetcode.com/problems/best-meeting-point/discuss/74186/14ms-java-solution
+ * https://leetcode.com/problems/best-meeting-point/discuss/74217/The-theory-behind-(why-the-median-works)
+ * https://en.wikipedia.org/wiki/Geometric_median
  */
-package com.an7one.leetcode.lvl4.lc0296
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Math {
     fun minTotalDistance(grid: Array<IntArray>): Int {

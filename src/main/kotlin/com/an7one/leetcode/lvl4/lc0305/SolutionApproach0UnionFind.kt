@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl4.lc0305
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/number-of-islands-ii/
@@ -5,10 +9,6 @@
  * Time Complexity:     O(`nPos`)
  * Space Complexity:    O(`m` * `n`) + O(`nPos`) / O(1) ~ O(`m` * `n`)
  */
-package com.an7one.leetcode.lvl4.lc0305
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0UnionFind {
     private companion object {

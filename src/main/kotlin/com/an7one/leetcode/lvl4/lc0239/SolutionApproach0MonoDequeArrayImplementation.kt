@@ -3,13 +3,14 @@ package com.an7one.leetcode.lvl4.lc0239
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 /**
+ * @author: Leon
  * https://leetcode.com/problems/sliding-window-maximum/
  *
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(`nNums`) / O(1)
  *
- * References:
- *  Paid Course, 110min: https://www.acwing.com/video/15/
+ * Reference:
+ * Paid Course, 110min: https://www.acwing.com/video/15/
  */
 @Suppress(UNUSED)
 class SolutionApproach0MonoDequeArrayImplementation {

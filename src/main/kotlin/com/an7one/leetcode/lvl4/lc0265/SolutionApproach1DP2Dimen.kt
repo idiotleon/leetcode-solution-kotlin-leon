@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0265
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/paint-house-ii/
  *
  * Time Complexity:     O(`nHouses` * (`kColors` ^ 2))
@@ -13,10 +18,6 @@
  *  https://leetcode.com/problems/paint-house-ii/discuss/69492/AC-Java-solution-without-extra-space/71565
  *  https://youtu.be/FLbqgyJ-70I?t=1433
  */
-package com.an7one.leetcode.lvl4.lc0265
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach1DP2Dimen {
     fun minCostII(costs: Array<IntArray>): Int {
