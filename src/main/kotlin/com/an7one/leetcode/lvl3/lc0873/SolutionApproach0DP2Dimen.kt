@@ -1,8 +1,12 @@
+package com.an7one.leetcode.lvl3.lc0873
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/
  *
- * Time Complexity:     O(`totalSize` ^ 2)
- * Space Complexity:    O(`totalSize` ^ 2)
+ * Time Complexity:     O(`nNums` ^ 2)
+ * Space Complexity:    O(`nNums` ^ 2)
  *
  * dp[i][j] represents the longest fibonacci subsequence ending with `nums[i]` and `nums[j]`
  * dp[i][j] = (dp[j - i][i] + 1) or 2
@@ -10,10 +14,6 @@
  * References:
  *  https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/discuss/165330/Java-beat-98-DP-%2B-2Sum
  */
-package com.an7one.leetcode.lvl3.lc0873
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun lenLongestFibSubseq(nums: IntArray): Int {
@@ -37,7 +37,7 @@ class SolutionApproach0DP2Dimen {
                     sum > target -> --hi
                     sum < target -> ++lo
                     else -> {
-                        dp[hi][idx] = dp[lo][hi] + 1
+                        dp[hi][idx] = 1 + dp[lo][hi]
                         longest = maxOf(longest, dp[hi][idx])
                         ++lo
                         --hi
