@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc0330
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/patching-array/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/patching-array/discuss/78492/C%2B%2B-8ms-greedy-solution-with-explanation
- *  https://leetcode.com/problems/patching-array/discuss/280183/Detailed-Explanation-with-Example
+ * Reference:
+ * https://leetcode.com/problems/patching-array/discuss/78492/C%2B%2B-8ms-greedy-solution-with-explanation
+ * https://leetcode.com/problems/patching-array/discuss/280183/Detailed-Explanation-with-Example
  */
-package com.an7one.leetcode.lvl4.lc0330
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
     fun minPatches(nums: IntArray, n: Int): Int {

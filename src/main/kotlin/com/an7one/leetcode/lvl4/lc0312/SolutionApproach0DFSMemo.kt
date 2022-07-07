@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc0312
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/burst-balloons/
  *
  * Time Complexity:     O(`nNums` ^ 3)
  * Space Complexity:    O(`nNums` ^ 2)
  *
- * References:
- *  http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-312-burst-balloons/
- *  https://www.youtube.com/watch?v=z3hu2Be92UA
+ * Reference:
+ * http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-312-burst-balloons/
+ * https://youtu.be/z3hu2Be92UA
  */
-package com.an7one.leetcode.lvl4.lc0312
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun maxCoins(nums: IntArray): Int {
@@ -38,12 +39,8 @@ class SolutionApproach0DFSMemo {
         var maxCoins = 0
         for (k in lo..hi) {
             maxCoins = maxOf(
-                maxCoins,
-                dfs(lo, k - 1, padded, memo) + padded[lo - 1] * padded[k] * padded[hi + 1] + dfs(
-                    k + 1,
-                    hi,
-                    padded,
-                    memo
+                maxCoins, dfs(lo, k - 1, padded, memo) + padded[lo - 1] * padded[k] * padded[hi + 1] + dfs(
+                    k + 1, hi, padded, memo
                 )
             )
         }

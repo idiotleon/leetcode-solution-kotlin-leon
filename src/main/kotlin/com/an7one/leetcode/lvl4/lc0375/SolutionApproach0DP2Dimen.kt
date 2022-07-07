@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0375
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/guess-number-higher-or-lower-ii/
  *
  * Time Complexity:     O()
@@ -6,16 +11,12 @@
  *
  * `dp[lo][hi]`, minimum money required (to cover the ever max expenses) in [lo, hi], both ends inclusive
  *
- * References:
- *  https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84764/Simple-DP-solution-with-explanation~~/89349
- *  https://img-blog.csdnimg.cn/20190831084454102.JPG
- *  https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84764/Simple-DP-solution-with-explanation~~
- *  https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84807/Java-commented-DP-solution
+ * Reference:
+ * https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84764/Simple-DP-solution-with-explanation~~/89349
+ * https://img-blog.csdnimg.cn/20190831084454102.JPG
+ * https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84764/Simple-DP-solution-with-explanation~~
+ * https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84807/Java-commented-DP-solution
  */
-package com.an7one.leetcode.lvl4.lc0375
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun getMoneyAmount(n: Int): Int {

@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/trapping-rain-water-ii/
- *
- * Time Complexity:     O(V + Elg(V)) ~
- * Space Complexity:    O(Elg(V)) ~
- *
- * References:
- *  https://leetcode.com/problems/trapping-rain-water-ii/discuss/89461/Java-solution-using-PriorityQueue
- */
 package com.an7one.leetcode.lvl4.lc0407
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/trapping-rain-water-ii/
+ *
+ * Time Complexity:     O(V + Elg(V)) ~
+ * Space Complexity:    O(Elg(V)) ~
+ *
+ * Reference:
+ * https://leetcode.com/problems/trapping-rain-water-ii/discuss/89461/Java-solution-using-PriorityQueue
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DijkstraSPF {
     private companion object {

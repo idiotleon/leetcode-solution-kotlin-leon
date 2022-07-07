@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0312
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/burst-balloons/
  *
  * Time Complexity:     O(`nNums` ^ 3)
@@ -6,15 +11,11 @@
  *
  * `dp[i][j]`, the maximum score with any one balloon within `nums[i : j]` bursted
  *
- * References:
- *  http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-312-burst-balloons/
- *  https://www.youtube.com/watch?v=z3hu2Be92UA
- *  https://youtu.be/FLbqgyJ-70I?t=7040
+ * Reference:
+ * http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-312-burst-balloons/
+ * https://youtu.be/z3hu2Be92UA
+ * https://youtu.be/FLbqgyJ-70I?t=7040
  */
-package com.an7one.leetcode.lvl4.lc0312
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun maxCoins(nums: IntArray): Int {
@@ -38,8 +39,7 @@ class SolutionApproach0DP2Dimen {
 
                 for (k in lo..hi) {
                     maxCoins = maxOf(
-                        maxCoins,
-                        dp[lo][k - 1] + padded[lo - 1] * padded[k] * padded[hi + 1] + dp[k + 1][hi]
+                        maxCoins, dp[lo][k - 1] + padded[lo - 1] * padded[k] * padded[hi + 1] + dp[k + 1][hi]
                     )
                 }
 

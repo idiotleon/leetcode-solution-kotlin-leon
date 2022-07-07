@@ -1,15 +1,16 @@
-/**
- * https://leetcode.com/problems/longest-increasing-paths-in-a-matrix/
- *
- * a top-down approach
- *
- * Time Complexity:     O(`totalRows` * `totalCols`)
- * Space Complexity:    O(`totalRows` * `totalCols`)
- */
 package com.an7one.leetcode.lvl4.lc0329
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/longest-increasing-paths-in-a-matrix/
+ *
+ * a top-down approach
+ *
+ * Time Complexity:     O(`nRows` * `nCols`)
+ * Space Complexity:    O(`nRows` * `nCols`)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     private companion object {
@@ -36,10 +37,7 @@ class SolutionApproach0DFSMemo {
     }
 
     private fun dfs(
-        row: Int,
-        col: Int,
-        matrix: Array<IntArray>,
-        memo: Array<Array<Int?>>
+        row: Int, col: Int, matrix: Array<IntArray>, memo: Array<Array<Int?>>
     ): Int {
         val nRows = matrix.size
         val nCols = matrix[0].size

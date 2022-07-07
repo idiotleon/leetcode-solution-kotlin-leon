@@ -16,9 +16,9 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  *      O(2 * (`nEquations` + `nValues`)), to build up the graph
  *      O(`nValues`), for the visited set
  *
- * References:
- *  https://leetcode.com/problems/evaluate-division/discuss/88169/Java-AC-Solution-using-graph/126499
- *  https://leetcode.com/problems/evaluate-division/discuss/171649/1ms-DFS-with-Explanations
+ * Reference:
+ * https://leetcode.com/problems/evaluate-division/discuss/88169/Java-AC-Solution-using-graph/126499
+ * https://leetcode.com/problems/evaluate-division/discuss/171649/1ms-DFS-with-Explanations
  */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -40,7 +40,9 @@ class SolutionApproach0DFSRecursive {
         return ans
     }
 
-    private fun dfs(start: String, end: String, seen: HashSet<String>, graph: HashMap<String, HashMap<String, Double>>): Double {
+    private fun dfs(
+        start: String, end: String, seen: HashSet<String>, graph: HashMap<String, HashMap<String, Double>>
+    ): Double {
         if (!graph.containsKey(start)) return -1.0
         val map = graph[start]!!
         if (map.containsKey(end)) return map[end]!!
@@ -58,7 +60,9 @@ class SolutionApproach0DFSRecursive {
         return -1.0
     }
 
-    private fun buildGraph(equations: List<List<String>>, values: DoubleArray): HashMap<String, HashMap<String, Double>> {
+    private fun buildGraph(
+        equations: List<List<String>>, values: DoubleArray
+    ): HashMap<String, HashMap<String, Double>> {
         val graph = HashMap<String, HashMap<String, Double>>()
 
         for (idx in equations.indices) {

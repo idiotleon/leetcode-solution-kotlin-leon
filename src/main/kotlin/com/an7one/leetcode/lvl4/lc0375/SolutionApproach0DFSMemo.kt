@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl4.lc0375
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/guess-number-higher-or-lower-ii/
  *
  * Time Complexity:     O(`n` ^ 3)
  * Space Complexity:    O(`n` ^ 2) + O(`n`)
  *
- * References:
- *  https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84764/Simple-DP-solution-with-explanation~~/89353
- *  https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84764/Simple-DP-solution-with-explanation~~
- *  https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84778/Recursion-%2B-Memization
+ * Reference:
+ * https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84764/Simple-DP-solution-with-explanation~~/89353
+ * https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84764/Simple-DP-solution-with-explanation~~
+ * https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84778/Recursion-%2B-Memization
  */
-package com.an7one.leetcode.lvl4.lc0375
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun getMoneyAmount(n: Int): Int {

@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/house-robber-iii/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(N) + O(H) ~ O(N)
- *
- * References:
- *  https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/108730/javacstraightforward-dfs-solution
- */
 package com.an7one.leetcode.lvl4.lc0337
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/house-robber-iii/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(N) + O(H) ~ O(N)
+ *
+ * Reference:
+ * https://leetcode.com/problems/partition-to-k-equal-sum-subsets/discuss/108730/javacstraightforward-dfs-solution
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun rob(root: TreeNode?): Int {

@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl4.lc0309
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
@@ -5,13 +9,9 @@
  * Time Complexity:     O(N)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://www.youtube.com/watch?v=jNy8yM0NBdw
+ * Reference:
+ * https://youtu.be/jNy8yM0NBdw
  */
-package com.an7one.leetcode.lvl4.lc0309
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP0Dimen {
     fun maxProfit(prices: IntArray): Int {

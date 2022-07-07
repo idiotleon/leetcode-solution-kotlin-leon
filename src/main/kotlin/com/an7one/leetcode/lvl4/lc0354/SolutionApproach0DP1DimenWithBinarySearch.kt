@@ -1,23 +1,24 @@
-/**
- * https://leetcode.com/problems/russian-doll-envelopes/
- *
- * Time Complexity:     O(`totalEnvelops` * lg(`totalEnvelops`))
- * Space Complexity:    O(`totalEnvelops`)
- *
- * References:
- *  https://leetcode.com/problems/russian-doll-envelopes/discuss/82763/Java-NLogN-Solution-with-Explanation
- */
 package com.an7one.leetcode.lvl4.lc0354
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/russian-doll-envelopes/
+ *
+ * Time Complexity:     O(`nEnvelops` * lg(`nEnvelops`))
+ * Space Complexity:    O(`nEnvelops`)
+ *
+ * References:
+ * https://leetcode.com/problems/russian-doll-envelopes/discuss/82763/Java-NLogN-Solution-with-Explanation
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP1DimenWithBinarySearch {
     fun maxEnvelopes(envelopes: Array<IntArray>): Int {
-        val totalEnvelops = envelopes.size
+        val nEnvelops = envelopes.size
         envelopes.sortWith(compareBy({ it[0] }, { -it[1] }))
 
-        val dp = IntArray(totalEnvelops) { 0 }
+        val dp = IntArray(nEnvelops) { 0 }
         var size = 0
 
         for (envelope in envelopes) {

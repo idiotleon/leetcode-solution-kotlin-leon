@@ -1,19 +1,20 @@
-/**
- * https://leetcode.com/problems/largest-divisible-subset/
- *
- * Time Complexity:     O(`totalNums` ^ 2) + O(`totalNums` * lg(`totalNums`)) ~ O(`totalNums` ^ 2)
- * Space Complexity:    O(`totalNums`)
- *
- * `dp[i]`, the length of the longest divisible subset ending with nums[i]
- *
- * References:
- *  https://leetcode.com/problems/largest-divisible-subset/discuss/83999/Easy-understood-Java-DP-solution-in-28ms-with-O(n2)-time
- *  https://youtu.be/FLbqgyJ-70I?t=3068
- */
 package com.an7one.leetcode.lvl4.lc0368
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/largest-divisible-subset/
+ *
+ * Time Complexity:     O(`nNums` ^ 2) + O(`nNums` * lg(`nNums`)) ~ O(`nNums` ^ 2)
+ * Space Complexity:    O(`nNums`)
+ *
+ * `dp[i]`, the length of the longest divisible subset ending with nums[i]
+ *
+ * Reference:
+ * https://leetcode.com/problems/largest-divisible-subset/discuss/83999/Easy-understood-Java-DP-solution-in-28ms-with-O(n2)-time
+ * https://youtu.be/FLbqgyJ-70I?t=3068
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun largestDivisibleSubset(nums: IntArray): List<Int> {
@@ -21,11 +22,11 @@ class SolutionApproach0DP1Dimen {
         // sanity check
         if (nums.isEmpty()) return ans
 
-        val totalNums = nums.size
+        val nNums = nums.size
         nums.sort()
-        val dp = IntArray(totalNums) { 1 }
+        val dp = IntArray(nNums) { 1 }
 
-        for (hi in 1 until totalNums) {
+        for (hi in 1 until nNums) {
             for (lo in hi - 1 downTo 0) {
                 if (nums[hi] % nums[lo] == 0) {
                     dp[hi] = maxOf(dp[hi], dp[lo] + 1)
@@ -34,10 +35,10 @@ class SolutionApproach0DP1Dimen {
         }
 
         var idxMaxLen = 0
-        for (i in 1 until totalNums) {
+        for (i in 1 until nNums) {
             idxMaxLen = if (dp[i] > dp[idxMaxLen]) i else idxMaxLen
         }
-        // or equivalently, O(`totalNums`), with one pass only
+        // or equivalently, O(`nNums`), with one pass only
         // var idxMaxLen = dp.indices.maxBy{ dp[it] } ?: -1
 
         var maxLenTail = nums[idxMaxLen]
