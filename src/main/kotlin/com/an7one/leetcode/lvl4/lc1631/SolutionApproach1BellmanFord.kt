@@ -1,3 +1,8 @@
+package com.an7one.leetcode.lvl4.lc1631
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.math.abs
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/path-with-minimum-effort/
@@ -5,11 +10,6 @@
  * Time Complexity:     O(V * E) ~ O()
  * Space Complexity:    O(V) ~ O()
  */
-package com.an7one.leetcode.lvl4.lc1631
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach1BellmanFord {
     private companion object {
@@ -17,18 +17,18 @@ class SolutionApproach1BellmanFord {
     }
 
     fun minimumEffortPath(heights: Array<IntArray>): Int {
-        val totalRows = heights.size
-        val totalCols = heights[0].size
+        val nRows = heights.size
+        val nCols = heights[0].size
 
-        val queue = LinkedList<Vertex>()
-        queue.offer(Vertex(0, 0, 0))
+        val queue = ArrayDeque<Vertex>()
+        queue.addLast(Vertex(0, 0, 0))
 
         // shortest distances
-        val efforts = Array(totalRows) { IntArray(totalCols) { Int.MAX_VALUE } }
+        val efforts = Array(nRows) { IntArray(nCols) { Int.MAX_VALUE } }
         efforts[0][0] = 0
 
         while (queue.isNotEmpty()) {
-            val cur = queue.poll()
+            val cur = queue.removeFirst()
             val row = cur.row
             val col = cur.col
 
@@ -36,18 +36,18 @@ class SolutionApproach1BellmanFord {
                 val nextRow = row + DIRS[d]
                 val nextCol = col + DIRS[d + 1]
 
-                if (nextRow < 0 || nextRow >= totalRows || nextCol < 0 || nextCol >= totalCols) continue
+                if (nextRow < 0 || nextRow >= nRows || nextCol < 0 || nextCol >= nCols) continue
 
-                val newEffort = Math.abs(heights[row][col] - heights[nextRow][nextCol])
+                val newEffort = abs(heights[row][col] - heights[nextRow][nextCol])
                 val nextEffort = maxOf(cur.effort, newEffort)
                 if (nextEffort < efforts[nextRow][nextCol]) {
-                    queue.offer(Vertex(nextRow, nextCol, nextEffort))
+                    queue.addLast(Vertex(nextRow, nextCol, nextEffort))
                     efforts[nextRow][nextCol] = nextEffort
                 }
             }
         }
 
-        return efforts.last().last()
+        return efforts[nRows - 1][nCols - 1]
     }
 
     private data class Vertex(val row: Int, val col: Int, val effort: Int)

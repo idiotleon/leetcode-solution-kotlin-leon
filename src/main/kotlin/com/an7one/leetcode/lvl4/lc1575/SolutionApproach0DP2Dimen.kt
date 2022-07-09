@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/count-all-possible-routes/
- *
- * Time Complexity:     O(`fuel` * (`nLocations` ^ 2))
- * Space Complexity:    O(`fuel` * `nLocations`)
- *
- * References:
- *  https://leetcode.com/problems/count-all-possible-routes/discuss/831152/Java-Bottom-Up
- *  https://leetcode.com/problems/count-all-possible-routes/discuss/832678/JAVA-For-Beginners-Detailed-explanation-Brute-force-to-Memoization
- */
 package com.an7one.leetcode.lvl4.lc1575
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.math.abs
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/count-all-possible-routes/
+ *
+ * Time Complexity:     O(`fuel` * (`nLocations` ^ 2))
+ * Space Complexity:    O(`fuel` * `nLocations`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/count-all-possible-routes/discuss/831152/Java-Bottom-Up
+ * https://leetcode.com/problems/count-all-possible-routes/discuss/832678/JAVA-For-Beginners-Detailed-explanation-Brute-force-to-Memoization
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     private companion object {

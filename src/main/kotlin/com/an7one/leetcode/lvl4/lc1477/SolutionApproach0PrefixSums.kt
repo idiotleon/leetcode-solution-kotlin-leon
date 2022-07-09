@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc1477
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/
  *
  * Time Complexity:     O(`nNums`)
@@ -8,13 +13,9 @@
  * the approach below requires only 1 pass of the array.
  *
  * Reference:
- *  https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/discuss/685470/Python-One-pass-prefix-sum-O(n)/578264
- *  https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/discuss/685470/Python-One-pass-prefix-sum-O(n)
+ * https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/discuss/685470/Python-One-pass-prefix-sum-O(n)/578264
+ * https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/discuss/685470/Python-One-pass-prefix-sum-O(n)
  */
-package com.an7one.leetcode.lvl4.lc1477
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0PrefixSums {
     fun minSumOfLengths(nums: IntArray, target: Int): Int {

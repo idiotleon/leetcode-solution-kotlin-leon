@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc1526
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/
  *
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/discuss/754674/JavaC%2B%2BPython-Comparison-of-Consecutive-Elements
- *  https://leetcode.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/discuss/754623/Detailed-Explanation
+ * Reference:
+ * https://leetcode.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/discuss/754674/JavaC%2B%2BPython-Comparison-of-Consecutive-Elements
+ * https://leetcode.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/discuss/754623/Detailed-Explanation
  */
-package com.an7one.leetcode.lvl4.lc1526
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP0Dimen {
     fun minNumberOperations(target: IntArray): Int {

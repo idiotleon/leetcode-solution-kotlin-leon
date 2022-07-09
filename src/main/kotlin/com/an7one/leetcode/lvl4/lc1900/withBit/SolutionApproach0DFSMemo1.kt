@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc1900.withBit
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/the-earliest-and-latest-rounds-where-players-compete/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
  * Reference:
- *  https://leetcode.com/problems/the-earliest-and-latest-rounds-where-players-compete/discuss/1268539/Recursion
+ * https://leetcode.com/problems/the-earliest-and-latest-rounds-where-players-compete/discuss/1268539/Recursion
  */
-package com.an7one.leetcode.lvl4.lc1900.withBit
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo1 {
     private companion object {
@@ -45,11 +46,13 @@ class SolutionApproach0DFSMemo1 {
                 latest = maxOf(latest, round)
             }
             else -> {
-                if (lo != firstPlayer && lo != secondPlayer)
-                    dfs(bitMask xor (1 shl lo), round, lo + 1, hi - 1, firstPlayer, secondPlayer)
+                if (lo != firstPlayer && lo != secondPlayer) dfs(
+                    bitMask xor (1 shl lo), round, lo + 1, hi - 1, firstPlayer, secondPlayer
+                )
 
-                if (hi != firstPlayer && hi != secondPlayer)
-                    dfs(bitMask xor (1 shl hi), round, lo + 1, hi - 1, firstPlayer, secondPlayer)
+                if (hi != firstPlayer && hi != secondPlayer) dfs(
+                    bitMask xor (1 shl hi), round, lo + 1, hi - 1, firstPlayer, secondPlayer
+                )
             }
         }
     }

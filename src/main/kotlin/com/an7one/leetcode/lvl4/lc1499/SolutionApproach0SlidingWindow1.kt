@@ -1,24 +1,25 @@
-/**
- * https://leetcode.com/problems/max-value-of-equation/
- *
- * Time Complexity:     O(`totalPoints` * lg(`totalPoints`))
- * Space Complexity:    O(`totalPoints`)
- *
- * a sliding window approach with a max heap/PQ
- *
- * References:
- *  https://leetcode.com/problems/max-value-of-equation/discuss/709231/JavaPython-Priority-Queue-and-Deque-Solution-O(N)
- */
 package com.an7one.leetcode.lvl4.lc1499
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/max-value-of-equation/
+ *
+ * Time Complexity:     O(`nPoints` * lg(`nPoints`))
+ * Space Complexity:    O(`nPoints`)
+ *
+ * a sliding window approach with a max heap/PQ
+ *
+ * Reference:
+ * https://leetcode.com/problems/max-value-of-equation/discuss/709231/JavaPython-Priority-Queue-and-Deque-Solution-O(N)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow1 {
     fun findMaxValueOfEquation(points: Array<IntArray>, k: Int): Int {
         // not used
-        // val totalPoints = points.size
+        // val nPoints = points.size
 
         val maxHeap = PriorityQueue<Node>(compareBy({ -it.variance }, { it.xCoor }))
 

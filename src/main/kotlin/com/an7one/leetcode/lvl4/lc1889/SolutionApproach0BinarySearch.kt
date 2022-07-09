@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc1889
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-space-wasted-from-packaging/
  *
  * Time Complexity:     O()
@@ -7,10 +12,6 @@
  * Reference:
  * https://leetcode.com/problems/minimum-space-wasted-from-packaging/discuss/1254123/Java-Binary-Search-%2B-Prefix-Sum
  */
-package com.an7one.leetcode.lvl4.lc1889
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     private companion object {
@@ -28,15 +29,13 @@ class SolutionApproach0BinarySearch {
         var minWasted = Long.MAX_VALUE
         for (box in boxes) {
             box.sort()
-            if (packages.last() > box.last())
-                continue
+            if (packages.last() > box.last()) continue
 
             var curWasted = 0L
             var prevIdxPkg = 0
 
             for (cap in box) {
-                if (cap < packages[0])
-                    continue
+                if (cap < packages[0]) continue
 
                 val idxPkg = upperBound(packages, cap)
                 val pkgSpace = prefixSums[idxPkg + 1] - prefixSums[prevIdxPkg]

@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/strange-printer-ii/
- *
- * Time Complexity:     O()
- * Space Complexity:    O()
- *
- * References:
- *  https://leetcode.com/problems/strange-printer-ii/discuss/854219/JavaTopological-Sort
- */
 package com.an7one.leetcode.lvl4.lc1591
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashSet
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/strange-printer-ii/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ *
+ * Reference:
+ * https://leetcode.com/problems/strange-printer-ii/discuss/854219/JavaTopological-Sort
+ */
 @Suppress(UNUSED)
 class SolutionApproach0TopologicalSort {
     private companion object {
@@ -27,10 +28,10 @@ class SolutionApproach0TopologicalSort {
             search(color, indegrees, targetGrid, graph)
         }
 
-        val queue = LinkedList<Int>().also {
+        val queue = ArrayDeque<Int>().also {
             for (idx in indegrees.indices) {
                 if (indegrees[idx] == 0) {
-                    it.offer(idx)
+                    it.addLast(idx)
                 }
             }
         }
@@ -41,9 +42,9 @@ class SolutionApproach0TopologicalSort {
             val cur = queue.poll()
             if (!seen.add(cur)) continue
 
-            for (next in graph[cur]!!) {
+            for (next in graph[cur]) {
                 if (--indegrees[next] == 0) {
-                    queue.offer(next)
+                    queue.addLast(next)
                 }
             }
         }

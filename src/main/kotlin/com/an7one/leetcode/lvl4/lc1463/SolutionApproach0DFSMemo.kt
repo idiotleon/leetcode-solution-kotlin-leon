@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc1463
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/cherry-pickup-ii/
  *
  * Time Complexity:     O(9 * `nRows` * (`nCols` ^ 2)) ~ O(`nRows` )
  * Space Complexity:    O(`nRows` * (`nCols` ^ 2))
  *
- * References:
- *  https://leetcode.com/problems/cherry-pickup-ii/discuss/660562/JavaC%2B%2BPython-Top-Down-DP-Clean-code
- *  https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1463-cherry-pickup-ii/
+ * Reference:
+ * https://leetcode.com/problems/cherry-pickup-ii/discuss/660562/JavaC%2B%2BPython-Top-Down-DP-Clean-code
+ * https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-1463-cherry-pickup-ii/
  */
-package com.an7one.leetcode.lvl4.lc1463
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun cherryPickup(grid: Array<IntArray>): Int {
@@ -23,11 +24,7 @@ class SolutionApproach0DFSMemo {
     }
 
     private fun dfs(
-        curRow: Int,
-        curCol1: Int,
-        curCol2: Int,
-        grid: Array<IntArray>,
-        memo: Array<Array<Array<Int?>>>
+        curRow: Int, curCol1: Int, curCol2: Int, grid: Array<IntArray>, memo: Array<Array<Array<Int?>>>
     ): Int {
         val nRows = grid.size
         val nCols = grid[0].size

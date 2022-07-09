@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc1563
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/stone-game-v/
  *
  * Time Complexity:     O(`nStones` ^ 3)
  * Space Complexity:    O(`nStones` ^ 2)
  *
- * References:
- *  https://leetcode.com/problems/stone-game-v/discuss/806717/Java-Detailed-Explanation-Easy-Understand-DFS-+-Memo-Top-Down-DP/685600
- *  https://leetcode.com/problems/stone-game-v/discuss/806717/Java-Detailed-Explanation-Easy-Understand-DFS-%2B-Memo-Top-Down-DP
+ * Reference:
+ * https://leetcode.com/problems/stone-game-v/discuss/806717/Java-Detailed-Explanation-Easy-Understand-DFS-+-Memo-Top-Down-DP/685600
+ * https://leetcode.com/problems/stone-game-v/discuss/806717/Java-Detailed-Explanation-Easy-Understand-DFS-%2B-Memo-Top-Down-DP
  */
-package com.an7one.leetcode.lvl4.lc1563
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun stoneGameV(stoneValues: IntArray): Int {
@@ -29,8 +30,7 @@ class SolutionApproach0DFSMemo {
         if (lo == hi) return 0
 
         if (lo + 1 == hi) return minOf(
-            prefixSums[lo + 1] - prefixSums[lo],
-            prefixSums[hi + 1] - prefixSums[hi]
+            prefixSums[lo + 1] - prefixSums[lo], prefixSums[hi + 1] - prefixSums[hi]
         )
 
         memo[lo][hi]?.let { return it }
@@ -53,10 +53,8 @@ class SolutionApproach0DFSMemo {
 
                 else -> { // to pick whichever is larger
                     maxOf(
-                        maxSum,
-                        maxOf(
-                            dfs(idx + 1, hi, prefixSums, memo),
-                            dfs(lo, idx, prefixSums, memo)
+                        maxSum, maxOf(
+                            dfs(idx + 1, hi, prefixSums, memo), dfs(lo, idx, prefixSums, memo)
                         ) + leftSum
                     )
                 }

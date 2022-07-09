@@ -1,16 +1,14 @@
-/**
- * https://leetcode.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/
- *
- * Time Complexity:     O(`lenS`)
- * Space Complexity:    O(1)
- *
- * References:
- *
- */
 package com.an7one.leetcode.lvl4.lc1471.withBit
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/
+ *
+ * Time Complexity:     O(`lenS`)
+ * Space Complexity:    O(1)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     private companion object {
@@ -19,7 +17,7 @@ class SolutionApproach0SlidingWindow {
 
     fun findTheLongestSubstring(str: String): Int {
         // val lenS = str.length
-        val firstIdxes = IntArray(1 shl 5) { Int.MAX_VALUE }.also {
+        val firstIndices = IntArray(1 shl 5) { Int.MAX_VALUE }.also {
             it[0] = -1
         }
 
@@ -33,8 +31,8 @@ class SolutionApproach0SlidingWindow {
                 }
             }
 
-            if (firstIdxes[bitMask] == Int.MAX_VALUE) firstIdxes[bitMask] = idx
-            longest = maxOf(longest, idx - firstIdxes[bitMask])
+            if (firstIndices[bitMask] == Int.MAX_VALUE) firstIndices[bitMask] = idx
+            longest = maxOf(longest, idx - firstIndices[bitMask])
         }
 
         return longest

@@ -1,23 +1,21 @@
+package com.an7one.leetcode.lvl4.lc1548
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/the-most-similar-path-in-a-graph/
  *
  * Time Complexity:     O(`n` + `nRoads`)
  * Space Complexity:    O(`n` * max(`n`, `nRoads`))
  *
- * References:
- *  https://leetcode.com/problems/the-most-similar-path-in-a-graph/discuss/791155/Java-Clean-Code-w-Comments-and-Video-Explanation.
+ * Reference:
+ * https://leetcode.com/problems/the-most-similar-path-in-a-graph/discuss/791155/Java-Clean-Code-w-Comments-and-Video-Explanation.
  */
-package com.an7one.leetcode.lvl4.lc1548
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun mostSimilar(
-        n: Int,
-        roads: Array<IntArray>,
-        names: Array<String>,
-        targetPath: Array<String>
+        n: Int, roads: Array<IntArray>, names: Array<String>, targetPath: Array<String>
     ): List<Int> {
         val nTargets = targetPath.size
         val graph = buildGraph(n, roads)
@@ -49,13 +47,8 @@ class SolutionApproach0DFSMemo {
     }
 
     private fun dfs(
-        idxCity: Int,
-        idxTarget: Int,
-        distances: Array<Array<Int?>>, // memo
-        paths: Array<IntArray>,
-        names: Array<String>,
-        targetPath: Array<String>,
-        graph: Array<ArrayList<Int>>
+        idxCity: Int, idxTarget: Int, distances: Array<Array<Int?>>, // memo
+        paths: Array<IntArray>, names: Array<String>, targetPath: Array<String>, graph: Array<ArrayList<Int>>
     ): Int {
 
         distances[idxCity][idxTarget]?.let { return it }

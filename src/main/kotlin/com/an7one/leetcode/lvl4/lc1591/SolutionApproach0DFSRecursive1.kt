@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc1591
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/strange-printer-ii/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/strange-printer-ii/discuss/854151/C%2B%2B-O(n3)-solution-checking-cycle-in-dependency-graph
+ * Reference:
+ * https://leetcode.com/problems/strange-printer-ii/discuss/854151/C%2B%2B-O(n3)-solution-checking-cycle-in-dependency-graph
  */
-package com.an7one.leetcode.lvl4.lc1591
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive1 {
     private companion object {
@@ -27,10 +28,7 @@ class SolutionApproach0DFSRecursive1 {
 
         val visited = IntArray(RANGE_SIZE) { NOT_VISITED }
         for (color in 1 until RANGE_VALUE) {
-            if (visited[color] == NOT_VISITED
-                && dfs(color, graph, visited)
-            )
-                return false
+            if (visited[color] == NOT_VISITED && dfs(color, graph, visited)) return false
         }
 
         return true

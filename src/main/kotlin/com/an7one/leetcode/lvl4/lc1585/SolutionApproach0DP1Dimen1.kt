@@ -2,6 +2,13 @@ package com.an7one.leetcode.lvl4.lc1585
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen1 {
     fun isTransformable(s: String, t: String): Boolean {

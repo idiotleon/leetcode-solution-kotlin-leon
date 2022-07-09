@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/
- *
- * Time Complexity:     O(max(lenS, lenT))
- * Space Complexity:    O(10) ~ O(1)
- *
- * References:
- *  https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/discuss/843917/C++JavaPython-O(n)/694392
- *  https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/discuss/843917/C%2B%2BJavaPython-O(n)
- */
 package com.an7one.leetcode.lvl4.lc1585
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/
+ *
+ * Time Complexity:     O(max(lenS, lenT))
+ * Space Complexity:    O(10) ~ O(1)
+ *
+ * Reference:
+ * https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/discuss/843917/C++JavaPython-O(n)/694392
+ * https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/discuss/843917/C%2B%2BJavaPython-O(n)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun isTransformable(s: String, t: String): Boolean {

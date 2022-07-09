@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl4.lc1627
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/graph-connectivity-with-threshold/
@@ -5,10 +9,6 @@
  * Time Complexity:     O()
  * Space Complexity:    O()
  */
-package com.an7one.leetcode.lvl4.lc1627
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0UnionFind {
     fun areConnected(n: Int, threshold: Int, queries: Array<IntArray>): List<Boolean> {

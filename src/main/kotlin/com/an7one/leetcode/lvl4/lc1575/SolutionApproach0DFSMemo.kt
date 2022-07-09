@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/count-all-possible-routes/
- *
- * Time Complexity:     O(`fuel` * (`nLocations` ^ 2))
- * Space Complexity:    O(`fuel` * `nLocations`)
- *
- * References:
- *  https://leetcode.com/problems/count-all-possible-routes/discuss/830400/Dynamic-Programming-or-Simple-Explanation
- *  https://leetcode.com/problems/count-all-possible-routes/discuss/832678/JAVA-For-Beginners-Detailed-explanation-Brute-force-to-Memoization
- */
 package com.an7one.leetcode.lvl4.lc1575
 
 import kotlin.math.abs
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/count-all-possible-routes/
+ *
+ * Time Complexity:     O(`fuel` * (`nLocations` ^ 2))
+ * Space Complexity:    O(`fuel` * `nLocations`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/count-all-possible-routes/discuss/830400/Dynamic-Programming-or-Simple-Explanation
+ * https://leetcode.com/problems/count-all-possible-routes/discuss/832678/JAVA-For-Beginners-Detailed-explanation-Brute-force-to-Memoization
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     private companion object {
@@ -26,9 +27,7 @@ class SolutionApproach0DFSMemo {
     }
 
     private fun dfs(
-        curCity: Int, fuel: Int, endCity: Int,
-        locations: IntArray,
-        memo: Array<Array<Long?>>
+        curCity: Int, fuel: Int, endCity: Int, locations: IntArray, memo: Array<Array<Long?>>
     ): Long {
         if (fuel < 0) return 0
         memo[curCity][fuel]?.let { return it }

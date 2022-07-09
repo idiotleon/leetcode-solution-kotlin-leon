@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc1696
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/jump-game-vi/
  *
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(`nNums`)
  *
  * Reference:
- *  https://leetcode.com/problems/jump-game-vi/discuss/978462/C%2B%2B-DP-%2B-Monoqueue-O(n)
+ * https://leetcode.com/problems/jump-game-vi/discuss/978462/C%2B%2B-DP-%2B-Monoqueue-O(n)
  */
-package com.an7one.leetcode.lvl4.lc1696
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproachDPWMonoDeque {
     fun maxResult(nums: IntArray, k: Int): Int {
@@ -19,19 +20,18 @@ class SolutionApproachDPWMonoDeque {
         // val nNums = nums.size
 
         var score = 0
-        val deque = LinkedList<Int>()
+        val deque = ArrayDeque<Int>()
 
         for (idx in nums.indices.reversed()) {
             score = nums[idx] + if (deque.isEmpty()) 0 else nums[deque.peekFirst()]
 
             while (deque.isNotEmpty() && score > nums[deque.peekLast()]) {
-                deque.pollLast()
+                deque.removeLast()
             }
 
-            deque.offerLast(idx)
+            deque.addLast(idx)
 
-            if (deque.peekFirst() >= idx + k)
-                deque.pollFirst()
+            if (deque.peekFirst() >= idx + k) deque.removeFirst()
 
             nums[idx] = score
         }

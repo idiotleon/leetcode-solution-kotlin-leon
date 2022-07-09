@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc1697
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/
  *
  * Time Complexity:     O(`nEdges` * lg(`nEdges`)) + O(`nQueries` * lg(`nQueries`)) + O(`nEdges`) + O(`nQueries`)
  * Space Complexity:    O(`nEdges`) + O(`nQueries`)
  *
- * References:
- *  https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/discuss/978655/Clean-Java
+ * Reference:
+ * https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/discuss/978655/Clean-Java
  */
-package com.an7one.leetcode.lvl4.lc1697
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0UnionFind {
     fun distanceLimitedPathsExist(n: Int, edgeList: Array<IntArray>, queries: Array<IntArray>): BooleanArray {

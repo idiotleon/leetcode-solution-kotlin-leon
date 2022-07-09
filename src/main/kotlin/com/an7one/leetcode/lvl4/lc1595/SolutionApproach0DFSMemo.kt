@@ -1,19 +1,20 @@
+package com.an7one.leetcode.lvl4.lc1595
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/
  *
  * Time Complexity:     O(`nCosts` * (2 ^ `nPoints`) * `nPoints`)
  * Space Complexity:    O(`nCosts` * (2 ^ `nPoints`))
  *
- * References:
- *  https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/discuss/855041/C++Python-DP-using-mask/703424
- *  https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/discuss/855041/C%2B%2BPython-DP-using-mask
- *  https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/discuss/855425/Java-bottom-up-DP-with-bit-mask/705851
- *  https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/discuss/855188/Python-Clean-DP-+-Bitmask-solution-with-explaination/736365
+ * Reference:
+ * https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/discuss/855041/C++Python-DP-using-mask/703424
+ * https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/discuss/855041/C%2B%2BPython-DP-using-mask
+ * https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/discuss/855425/Java-bottom-up-DP-with-bit-mask/705851
+ * https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/discuss/855188/Python-Clean-DP-+-Bitmask-solution-with-explaination/736365
  */
-package com.an7one.leetcode.lvl4.lc1595
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun connectTwoGroups(costs: List<List<Int>>): Int {

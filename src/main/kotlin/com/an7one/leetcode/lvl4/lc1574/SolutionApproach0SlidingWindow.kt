@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc1574
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/
  *
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/discuss/830480/C%2B%2B-O(N)-Sliding-window-Explanation-with-Illustrations
+ * Reference:
+ * https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/discuss/830480/C%2B%2B-O(N)-Sliding-window-Explanation-with-Illustrations
  */
-package com.an7one.leetcode.lvl4.lc1574
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     fun findLengthOfShortestSubarray(nums: IntArray): Int {

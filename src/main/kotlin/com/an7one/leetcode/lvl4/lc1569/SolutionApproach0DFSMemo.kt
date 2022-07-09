@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc1569
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/discuss/819413/Didn't-see-any-Java-solution-here-because-nobody-knows-how-to-mod/676800
+ * Reference:
+ * https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/discuss/819413/Didn't-see-any-Java-solution-here-because-nobody-knows-how-to-mod/676800
  */
-package com.an7one.leetcode.lvl4.lc1569
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     private companion object {
@@ -24,9 +25,7 @@ class SolutionApproach0DFSMemo {
     }
 
     private fun dfs(
-        lo: Int, hi: Int,
-        nums: IntArray,
-        memo: Array<Array<Long?>>
+        lo: Int, hi: Int, nums: IntArray, memo: Array<Array<Long?>>
     ): Long {
         if (lo > hi) return 1L
 

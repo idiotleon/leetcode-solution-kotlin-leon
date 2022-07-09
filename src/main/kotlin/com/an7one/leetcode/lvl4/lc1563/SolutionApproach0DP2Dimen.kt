@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc1563
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/stone-game-v/
  *
  * Time Complexity:     O(`nStones` ^ 3)
  * Space Complexity:    O(`nStones` ^ 2)
  *
- * References:
- *  https://leetcode.com/problems/stone-game-v/discuss/806761/Python-DP/676538
- *  https://leetcode.com/problems/stone-game-v/discuss/806761/Python-DP
+ * Reference:
+ * https://leetcode.com/problems/stone-game-v/discuss/806761/Python-DP/676538
+ * https://leetcode.com/problems/stone-game-v/discuss/806761/Python-DP
  */
-package com.an7one.leetcode.lvl4.lc1563
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun stoneGameV(stoneValues: IntArray): Int {

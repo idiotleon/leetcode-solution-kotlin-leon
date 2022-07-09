@@ -1,38 +1,39 @@
-/**
- * https://leetcode.com/problems/max-value-of-equation/
- *
- * Time Complexity:     O(`totalPoints`)
- * Space Complexity:    O(`totalPoints`)
- *
- * a sliding window approach with a monotonic deque
- *
- * References:
- *  https://leetcode.com/problems/max-value-of-equation/discuss/709231/JavaPython-Priority-Queue-and-Deque-Solution-O(N)
- */
 package com.an7one.leetcode.lvl4.lc1499
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/max-value-of-equation/
+ *
+ * Time Complexity:     O(`nPoints`)
+ * Space Complexity:    O(`nPoints`)
+ *
+ * a sliding window approach with a monotonic deque
+ *
+ * Reference:
+ * https://leetcode.com/problems/max-value-of-equation/discuss/709231/JavaPython-Priority-Queue-and-Deque-Solution-O(N)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow {
     fun findMaxValueOfEquation(points: Array<IntArray>, k: Int): Int {
         // not used
-        // val totalPoints = points.size
+        // val nPoints = points.size
 
-        val deque = LinkedList<Node>()
+        val deque = ArrayDeque<Node>()
 
         var max = Int.MIN_VALUE
         for (point in points) {
-            while (deque.isNotEmpty() && point[0] - deque.peekFirst().xCoor > k) {
-                deque.removeFirst();
+            while (deque.isNotEmpty() && point[0] - deque.first().xCoord > k) {
+                deque.removeFirst()
             }
 
             if (deque.isNotEmpty()) {
-                max = maxOf(max, deque.peekFirst().variance + point[0] + point[1])
+                max = maxOf(max, deque.first().variance + point[0] + point[1])
             }
 
-            while (deque.isNotEmpty() && point[1] - point[0] > deque.peekLast().variance) {
+            while (deque.isNotEmpty() && point[1] - point[0] > deque.last().variance) {
                 deque.removeLast()
             }
 
@@ -42,5 +43,5 @@ class SolutionApproach0SlidingWindow {
         return max
     }
 
-    private data class Node(val variance: Int, val xCoor: Int)
+    private data class Node(val variance: Int, val xCoord: Int)
 }

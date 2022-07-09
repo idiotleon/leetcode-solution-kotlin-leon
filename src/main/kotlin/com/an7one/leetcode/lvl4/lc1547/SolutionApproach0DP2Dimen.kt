@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc1547
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-cost-to-cut-a-stick/
  *
  * Time Complexity:     O(`n` ^ 3)
  * Space Complexity:    O(`n` ^ 2)
  *
- * References:
- *  https://leetcode.com/problems/minimum-cost-to-cut-a-stick/discuss/781074/JavaC%2B%2BPython-Merge-Stones
- *  https://leetcode.com/problems/minimum-cost-to-cut-a-stick/discuss/780880/DP-with-picture-(Burst-Balloons)
+ * Reference:
+ * https://leetcode.com/problems/minimum-cost-to-cut-a-stick/discuss/781074/JavaC%2B%2BPython-Merge-Stones
+ * https://leetcode.com/problems/minimum-cost-to-cut-a-stick/discuss/780880/DP-with-picture-(Burst-Balloons)
  */
-package com.an7one.leetcode.lvl4.lc1547
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun minCost(n: Int, cuts: IntArray): Int {
@@ -29,8 +30,7 @@ class SolutionApproach0DP2Dimen {
                 dp[idx][idx + len] = Int.MAX_VALUE
                 for (k in idx + 1 until idx + len) {
                     dp[idx][idx + len] = minOf(
-                        dp[idx][idx + len],
-                        padded[idx + len] - padded[idx] + dp[idx][k] + dp[k][idx + len]
+                        dp[idx][idx + len], padded[idx + len] - padded[idx] + dp[idx][k] + dp[k][idx + len]
                     )
                 }
             }

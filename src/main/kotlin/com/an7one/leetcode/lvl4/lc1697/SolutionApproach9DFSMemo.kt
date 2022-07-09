@@ -1,10 +1,3 @@
-/**
- * this solution is NOT yet correct
- * https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/
- *
- * Time Complexity:     O()
- * Space Complexity:    O()
- */
 package com.an7one.leetcode.lvl4.lc1697
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
@@ -12,6 +5,14 @@ import java.util.*
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet
 
+/**
+ * @author: Leon
+ * this solution is NOT yet correct
+ * https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ */
 @Suppress(UNUSED)
 class SolutionApproach9DFSMemo {
     fun distanceLimitedPathsExist(n: Int, edgeList: Array<IntArray>, queries: Array<IntArray>): BooleanArray {
@@ -72,10 +73,8 @@ class SolutionApproach9DFSMemo {
             mst.getOrPut(u) { hashMapOf() }.getOrPut(v) { distance }
             mst.getOrPut(v) { hashMapOf() }.getOrPut(u) { distance }
 
-            if (seen.add(u))
-                if (nConnected++ == nVertices) break
-            if (seen.add(v))
-                if (nConnected++ == nVertices) break
+            if (seen.add(u)) if (nConnected++ == nVertices) break
+            if (seen.add(v)) if (nConnected++ == nVertices) break
         }
 
         return mst

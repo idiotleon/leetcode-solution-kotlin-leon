@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc1692
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/count-ways-to-distribute-candies/
  *
  * Time Complexity:     O(`n` * `k`)
@@ -6,13 +11,9 @@
  *
  * dp[i][j], to use all the first i candies to put them into j bags
  *
- * References:
- *  https://leetcode.com/problems/count-ways-to-distribute-candies/discuss/979889/Java-Concise-DP-Solution-with-Explanations
+ * Reference:
+ * https://leetcode.com/problems/count-ways-to-distribute-candies/discuss/979889/Java-Concise-DP-Solution-with-Explanations
  */
-package com.an7one.leetcode.lvl4.lc1692
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     private companion object {

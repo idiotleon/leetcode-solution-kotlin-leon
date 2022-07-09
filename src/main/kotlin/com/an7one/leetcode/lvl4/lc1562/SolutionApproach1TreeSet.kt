@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/find-latest-group-of-size-m/
- *
- * Time Complexity:     O(`nNums` * lg(`nNums`))
- * Space Complexity:    O(`nNums`)
- *
- * References:
- *  https://leetcode.com/problems/find-latest-group-of-size-m/discuss/806942/JAVA-Using-Tree-Set
- */
 package com.an7one.leetcode.lvl4.lc1562
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/find-latest-group-of-size-m/
+ *
+ * Time Complexity:     O(`nNums` * lg(`nNums`))
+ * Space Complexity:    O(`nNums`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/find-latest-group-of-size-m/discuss/806942/JAVA-Using-Tree-Set
+ */
 @Suppress(UNUSED)
 class SolutionApproach1TreeSet {
     fun findLatestStep(nums: IntArray, m: Int): Int {

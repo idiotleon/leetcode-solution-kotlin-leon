@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc1900.withBit
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/the-earliest-and-latest-rounds-where-players-compete/
  *
  * Time Complexity:     O()
@@ -7,13 +12,9 @@
  * !This is !!!NOT!!! yet correct solution!
  *
  * Reference:
- *  https://leetcode.com/problems/the-earliest-and-latest-rounds-where-players-compete/discuss/1268539/Recursion/972645
- *  https://leetcode.com/problems/the-earliest-and-latest-rounds-where-players-compete/discuss/1268539/Recursion
+ * https://leetcode.com/problems/the-earliest-and-latest-rounds-where-players-compete/discuss/1268539/Recursion/972645
+ * https://leetcode.com/problems/the-earliest-and-latest-rounds-where-players-compete/discuss/1268539/Recursion
  */
-package com.an7one.leetcode.lvl4.lc1900.withBit
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo0 {
     private var earliest = Int.MAX_VALUE
@@ -41,11 +42,25 @@ class SolutionApproach0DFSMemo0 {
             }
 
             else -> {
-                if (lo != firstPlayer && lo != secondPlayer)
-                    dfs(deadMask or (1 shl lo), round, lo + 1, hi - 1, n, firstPlayer, secondPlayer)
+                if (lo != firstPlayer && lo != secondPlayer) dfs(
+                    deadMask or (1 shl lo),
+                    round,
+                    lo + 1,
+                    hi - 1,
+                    n,
+                    firstPlayer,
+                    secondPlayer
+                )
 
-                if (hi != firstPlayer && hi != secondPlayer)
-                    dfs(deadMask or (1 shl hi), round, lo + 1, hi - 1, n, firstPlayer, secondPlayer)
+                if (hi != firstPlayer && hi != secondPlayer) dfs(
+                    deadMask or (1 shl hi),
+                    round,
+                    lo + 1,
+                    hi - 1,
+                    n,
+                    firstPlayer,
+                    secondPlayer
+                )
             }
         }
     }

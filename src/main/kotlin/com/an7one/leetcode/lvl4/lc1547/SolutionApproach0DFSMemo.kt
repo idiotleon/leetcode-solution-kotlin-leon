@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc1547
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-cost-to-cut-a-stick/
  *
  * Time Complexity:     O(`n` ^ 3)
  * Space Complexity:    O(`n` ^ 2)
  *
- * References:
- *  https://leetcode.com/problems/minimum-cost-to-cut-a-stick/discuss/781074/JavaC++Python-Merge-Stones/648523
- *  https://leetcode.com/problems/minimum-cost-to-cut-a-stick/discuss/780920/Java-Detailed-Explanation-DFS%2BMemo-Top-Down-DP
+ * Reference:
+ * https://leetcode.com/problems/minimum-cost-to-cut-a-stick/discuss/781074/JavaC++Python-Merge-Stones/648523
+ * https://leetcode.com/problems/minimum-cost-to-cut-a-stick/discuss/780920/Java-Detailed-Explanation-DFS%2BMemo-Top-Down-DP
  */
-package com.an7one.leetcode.lvl4.lc1547
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun minCost(n: Int, cuts: IntArray): Int {

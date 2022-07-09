@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc1473
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/paint-house-iii/
  *
  * Time Complexity:     O(`m` * (`n` ^ 2))
  * Space Complexity:    O(`m` * `target` * `n`)
  *
- * References:
- *  https://leetcode.com/problems/paint-house-iii/discuss/674413/C++-Top-Down-DP/569880
- *  https://leetcode.com/problems/paint-house-iii/discuss/674413/C%2B%2B-Top-Down-DP
+ * Reference:
+ * https://leetcode.com/problems/paint-house-iii/discuss/674413/C++-Top-Down-DP/569880
+ * https://leetcode.com/problems/paint-house-iii/discuss/674413/C%2B%2B-Top-Down-DP
  */
-package com.an7one.leetcode.lvl4.lc1473
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     private companion object {
@@ -53,12 +54,7 @@ class SolutionApproach0DFSMemo {
         var minCost = RANGE
         for (idxCurColor in 1..nColors) {
             val curCost = costs[idxHouse][idxCurColor - 1] + dfs(
-                idxHouse + 1,
-                idxCurColor,
-                target - if (idxPrevColor == idxCurColor) 0 else 1,
-                houses,
-                costs,
-                memo
+                idxHouse + 1, idxCurColor, target - if (idxPrevColor == idxCurColor) 0 else 1, houses, costs, memo
             )
             minCost = minOf(minCost, curCost)
         }

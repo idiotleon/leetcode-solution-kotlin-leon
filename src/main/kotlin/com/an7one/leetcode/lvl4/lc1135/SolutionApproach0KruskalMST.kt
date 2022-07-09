@@ -1,21 +1,21 @@
+package com.an7one.leetcode.lvl4.lc1135
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * https://leetcode.com/problems/connecting-cities-with-minimum-cost/
  *
- * Time Complexity:     O(`totalConn` * lg(`totalConn`)) + O(E * lg(V)) ~ O(`totalConn` * lg(`totalConn`)) + O(`totalConn` * lg(`N`))
+ * Time Complexity:     O(`nConn` * lg(`nConn`)) + O(E * lg(V)) ~ O(`nConn` * lg(`nConn`)) + O(`nConn` * lg(`N`))
  * Space Complexity:    O(`N`)
  *
  * References:
  *  https://leetcode.com/problems/connecting-cities-with-minimum-cost/discuss/344867/Java-Kruskal's-Minimum-Spanning-Tree-Algorithm-with-Union-Find
  */
-package com.an7one.leetcode.lvl4.lc1135
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0KruskalMST {
     fun minimumCost(N: Int, connections: Array<IntArray>): Int {
         // not used
-        // val totalConn = connections.size
+        // val nConn = connections.size
 
         connections.sortBy { it[2] }
 

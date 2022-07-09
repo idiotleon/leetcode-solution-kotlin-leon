@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl4.lc1655
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/distribute-repeating-integers/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *   https://leetcode.com/problems/distribute-repeating-integers/discuss/935476/C++-oror-DP-oror-Bitmask/764600
- *   https://leetcode.com/problems/distribute-repeating-integers/discuss/935476/C%2B%2B-oror-DP-oror-Bitmask
- *   https://leetcode.com/problems/distribute-repeating-integers/discuss/935522/Step-by-step-optimization-more-than-10-methods
+ * Reference:
+ * https://leetcode.com/problems/distribute-repeating-integers/discuss/935476/C++-oror-DP-oror-Bitmask/764600
+ * https://leetcode.com/problems/distribute-repeating-integers/discuss/935476/C%2B%2B-oror-DP-oror-Bitmask
+ * https://leetcode.com/problems/distribute-repeating-integers/discuss/935522/Step-by-step-optimization-more-than-10-methods
  */
-package com.an7one.leetcode.lvl4.lc1655
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun canDistribute(nums: IntArray, quantity: IntArray): Boolean {
@@ -35,11 +36,7 @@ class SolutionApproach0DFSMemo {
     }
 
     private fun dfs(
-        idxFreq: Int,
-        curState: Int,
-        freqs: List<Int>,
-        quantity: IntArray,
-        memo: Array<Array<Boolean?>>
+        idxFreq: Int, curState: Int, freqs: List<Int>, quantity: IntArray, memo: Array<Array<Boolean?>>
     ): Boolean {
 
         val nFreqs = freqs.size

@@ -1,16 +1,17 @@
-/**
- * https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/
- *
- * Time Complexity:     O(`totalRows` * `totalCols`)
- * Space Complexity:    O(`totalRows` * `totalCols`)
- *
- * References:
- *  https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/discuss/876833/JavaPython-3-O(m-%2B-n)-codes-w-analysis%3A-Put-into-current-cell-the-less-of-the-remaining-values
- */
 package com.an7one.leetcode.lvl4.lc1605
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/
+ *
+ * Time Complexity:     O(`ngRows` * `totalCols`)
+ * Space Complexity:    O(`ngRows` * `totalCols`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/discuss/876833/JavaPython-3-O(m-%2B-n)-codes-w-analysis%3A-Put-into-current-cell-the-less-of-the-remaining-values
+ */
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
     fun restoreMatrix(rowSums: IntArray, colSums: IntArray): Array<IntArray> {

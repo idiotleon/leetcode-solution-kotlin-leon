@@ -6,14 +6,15 @@ import kotlin.collections.HashMap
 import kotlin.collections.HashSet
 
 /**
+ * @author: Leon
  * https://leetcode.com/problems/largest-color-value-in-a-directed-graph/
  *
  * Time Complexity:     O(V + E) ~ O(`lenC` + `nEdges`)
  * Space Complexity:    O(V + E) ~ O(`lenC` + `nEdges`)
  *
  * Reference:
- *  https://leetcode.com/problems/largest-color-value-in-a-directed-graph/discuss/1198658/C++-Topological-Sort/931674
- *  https://leetcode.com/problems/largest-color-value-in-a-directed-graph/discuss/1198658/C%2B%2B-Topological-Sorts
+ * https://leetcode.com/problems/largest-color-value-in-a-directed-graph/discuss/1198658/C++-Topological-Sort/931674
+ * https://leetcode.com/problems/largest-color-value-in-a-directed-graph/discuss/1198658/C%2B%2B-Topological-Sorts
  */
 @Suppress(UNUSED)
 class SolutionApproach0TopologicalSort {
@@ -52,8 +53,7 @@ class SolutionApproach0TopologicalSort {
                             maxOf(chToChFreqs[next][i], chToChFreqs[cur][i] + if (colors[next] - 'a' == i) 1 else 0)
                     }
 
-                    if (--indegrees[next] == 0)
-                        queue.offer(next)
+                    if (--indegrees[next] == 0) queue.offer(next)
                 }
             }
         }
