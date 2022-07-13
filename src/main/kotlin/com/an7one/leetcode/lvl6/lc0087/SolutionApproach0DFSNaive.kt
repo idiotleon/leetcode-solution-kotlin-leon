@@ -1,19 +1,20 @@
+package com.an7one.leetcode.lvl6.lc0087
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/scramble-string/
  *
  * Time Complexity:     O(`lenS` ^ 5)
  * Space Complexity:    O(`lenS` ^ 4)
  *
- * References:
- *  https://zxi.mytechroad.com/blog/searching/leetcode-87-scramble-string/
- *  https://leetcode.com/problems/scramble-string/discuss/29387/Accepted-Java-solution
- *  https://leetcode.com/problems/scramble-string/discuss/29392/Share-my-4ms-c%2B%2B-recursive-solution
- *  https://leetcode.wang/leetCode-87-Scramble-String.html
+ * Reference:
+ * https://zxi.mytechroad.com/blog/searching/leetcode-87-scramble-string/
+ * https://leetcode.com/problems/scramble-string/discuss/29387/Accepted-Java-solution
+ * https://leetcode.com/problems/scramble-string/discuss/29392/Share-my-4ms-c%2B%2B-recursive-solution
+ * https://leetcode.wang/leetCode-87-Scramble-String.html
  */
-package com.an7one.leetcode.lvl6.lc0087
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSNaive {
     fun isScramble(s1: String, s2: String) = dfs(s1, s2)
@@ -25,12 +26,12 @@ class SolutionApproach0DFSNaive {
         if (getFreqs(str1) != getFreqs(str2)) return false
 
         for (idx in 1 until lenS) {
-            if (dfs(str1.substring(0, idx), str2.substring(0, idx))
-                && dfs(str1.substring(idx), str2.substring(idx))
-                || dfs(str1.substring(0, idx), str2.substring(lenS - idx))
-                && dfs(str1.substring(idx), str2.substring(0, lenS - idx))
-            )
-                return true
+            if (dfs(str1.substring(0, idx), str2.substring(0, idx)) && dfs(
+                    str1.substring(idx), str2.substring(idx)
+                ) || dfs(str1.substring(0, idx), str2.substring(lenS - idx)) && dfs(
+                    str1.substring(idx), str2.substring(0, lenS - idx)
+                )
+            ) return true
         }
 
         return false

@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl6.lc0471
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/encode-string-with-shortest-length/
  *
  * Time Complexity:     O(`lenS` ^ 3)
  * Space Complexity:    O(`lenS` ^ 2)
  *
- * References:
- *  https://leetcode.com/problems/encode-string-with-shortest-length/discuss/95599/Accepted-Solution-in-Java/100040
- *  https://leetcode.com/problems/encode-string-with-shortest-length/discuss/95599/Accepted-Solution-in-Java
+ * Reference:
+ * https://leetcode.com/problems/encode-string-with-shortest-length/discuss/95599/Accepted-Solution-in-Java/100040
+ * https://leetcode.com/problems/encode-string-with-shortest-length/discuss/95599/Accepted-Solution-in-Java
  */
-package com.an7one.leetcode.lvl6.lc0471
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2DimenWithKMP {
     fun encode(str: String): String {

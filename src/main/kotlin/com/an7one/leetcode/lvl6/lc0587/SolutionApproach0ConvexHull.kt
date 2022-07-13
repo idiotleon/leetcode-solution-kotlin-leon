@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/erect-the-fence/
- *
- * Time Complexity:     O()
- * Space Complexity:    O()
- *
- * References:
- *  https://leetcode.com/problems/erect-the-fence/discuss/103306/C++-and-Python-easy-wiki-solution/617487
- *  https://leetcode.com/problems/erect-the-fence/discuss/103306/C%2B%2B-and-Python-easy-wiki-solution
- */
 package com.an7one.leetcode.lvl6.lc0587
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/erect-the-fence/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ *
+ * Reference:
+ * https://leetcode.com/problems/erect-the-fence/discuss/103306/C++-and-Python-easy-wiki-solution/617487
+ * https://leetcode.com/problems/erect-the-fence/discuss/103306/C%2B%2B-and-Python-easy-wiki-solution
+ */
 @Suppress(UNUSED)
 class SolutionApproach0ConvexHull {
     fun outerTrees(points: Array<IntArray>): Array<IntArray> {
@@ -22,9 +23,7 @@ class SolutionApproach0ConvexHull {
         val hull = LinkedList<IntArray>()
 
         for (idx in points.indices) {
-            while (hull.size >= 2
-                && getOrientation(hull[0], hull[1], points[idx]) > 0
-            ) {
+            while (hull.size >= 2 && getOrientation(hull[0], hull[1], points[idx]) > 0) {
 
                 hull.pop()
             }
@@ -35,9 +34,7 @@ class SolutionApproach0ConvexHull {
         hull.pop()
 
         for (idx in points.indices.reversed()) {
-            while (hull.size >= 2
-                && getOrientation(hull[0], hull[1], points[idx]) > 0
-            ) {
+            while (hull.size >= 2 && getOrientation(hull[0], hull[1], points[idx]) > 0) {
                 hull.pop()
             }
 

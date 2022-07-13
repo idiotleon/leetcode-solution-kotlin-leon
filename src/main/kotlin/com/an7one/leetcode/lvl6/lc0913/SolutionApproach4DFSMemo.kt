@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl6.lc0913
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * this is NOT a correct solution, because it fails to detect cycles
  * https://leetcode.com/problems/cat-and-mouse/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/cat-and-mouse/discuss/181681/Java-solution-with-bug-updated-on-02022019
- *  https://leetcode.com/problems/cat-and-mouse/discuss/176268/Perfect-Wrong-DFSDP-code-explained-in-detail-(Revised)
+ * Reference:
+ * https://leetcode.com/problems/cat-and-mouse/discuss/181681/Java-solution-with-bug-updated-on-02022019
+ * https://leetcode.com/problems/cat-and-mouse/discuss/176268/Perfect-Wrong-DFSDP-code-explained-in-detail-(Revised)
  */
-package com.an7one.leetcode.lvl6.lc0913
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach4DFSMemo {
     private companion object {
@@ -34,10 +35,7 @@ class SolutionApproach4DFSMemo {
     }
 
     private fun dfs(
-        mouse: Int,
-        cat: Int,
-        graph: Array<IntArray>,
-        memo: Array<Array<Int?>>
+        mouse: Int, cat: Int, graph: Array<IntArray>, memo: Array<Array<Int?>>
     ): Int {
 
         memo[mouse][cat]?.let { return it }

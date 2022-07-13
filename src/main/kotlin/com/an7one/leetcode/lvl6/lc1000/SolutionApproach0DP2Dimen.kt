@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl6.lc1000
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-cost-to-merge-stones/
  *
  * Time Complexity:     O((`nStones` ^ 3) / `K`)
@@ -7,14 +12,10 @@
  * `dp[lo][hi]`, the minimum cost required to merge stones[lo: hi].
  *  the merged pile(s) do(es) not have to be 1, but can be as many as it requires
  *
- * References:
- *  https://leetcode.com/problems/minimum-cost-to-merge-stones/discuss/247567/JavaC%2B%2BPython-DP
- *  Paid Course, 100min: https://www.acwing.com/video/35/
+ * Reference:
+ * https://leetcode.com/problems/minimum-cost-to-merge-stones/discuss/247567/JavaC%2B%2BPython-DP
+ * Paid Course, 100min: https://www.acwing.com/video/35/
  */
-package com.an7one.leetcode.lvl6.lc1000
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun mergeStones(stones: IntArray, K: Int): Int {

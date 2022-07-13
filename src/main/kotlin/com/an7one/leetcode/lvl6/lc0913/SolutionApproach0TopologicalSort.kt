@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/cat-and-mouse/
- *
- * Time Complexity:     O()
- * Space Complexity:    O()
- *
- * References:
- *  https://leetcode.com/problems/cat-and-mouse/discuss/176177/Most-of-the-DFS-solutions-are-WRONG-check-this-case
- */
 package com.an7one.leetcode.lvl6.lc0913
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/cat-and-mouse/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ *
+ * Reference:
+ * https://leetcode.com/problems/cat-and-mouse/discuss/176177/Most-of-the-DFS-solutions-are-WRONG-check-this-case
+ */
 @Suppress(UNUSED)
 class SolutionApproach0TopologicalSort {
     fun catMouseGame(graph: Array<IntArray>): Int {

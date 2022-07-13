@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl6.lc0087
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/scramble-string/
  *
  * Time Complexity:     O(`len1` ^ 3)
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.wang/leetCode-87-Scramble-String.html
+ * Reference:
+ * https://leetcode.wang/leetCode-87-Scramble-String.html
  */
-package com.an7one.leetcode.lvl6.lc0087
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun isScramble(s1: String, s2: String): Boolean {
@@ -53,15 +54,17 @@ class SolutionApproach0DFSMemo {
         }
 
         for (idx in 1 until len1) {
-            if (dfs(str1.substring(0, idx), str2.substring(0, idx), memo)
-                && dfs(str1.substring(idx), str2.substring(idx), memo)
+            if (dfs(str1.substring(0, idx), str2.substring(0, idx), memo) && dfs(
+                    str1.substring(idx), str2.substring(idx), memo
+                )
             ) {
                 memo[hash] = 1
                 return true
             }
 
-            if (dfs(str1.substring(0, idx), str2.substring(len2 - idx), memo)
-                && dfs(str1.substring(idx), str2.substring(0, len2 - idx), memo)
+            if (dfs(str1.substring(0, idx), str2.substring(len2 - idx), memo) && dfs(
+                    str1.substring(idx), str2.substring(0, len2 - idx), memo
+                )
             ) {
                 memo[hash] = 1
                 return true
