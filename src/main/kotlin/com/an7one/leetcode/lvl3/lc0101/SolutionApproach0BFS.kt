@@ -1,19 +1,20 @@
-/**
- * https://leetcode.com/problems/symmetric-tree/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(W)
- *
- * References:
- *  https://leetcode.com/problems/symmetric-tree/discuss/33080/Recursive-and-iterative-(DFS-and-BFS)-in-C++.-Easy-to-understand./31882
- *  https://leetcode.com/problems/symmetric-tree/discuss/33080/Recursive-and-iterative-(DFS-and-BFS)-in-C%2B%2B.-Easy-to-understand.
- */
 package com.an7one.leetcode.lvl3.lc0101
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/symmetric-tree/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(W)
+ *
+ * Reference:
+ * https://leetcode.com/problems/symmetric-tree/discuss/33080/Recursive-and-iterative-(DFS-and-BFS)-in-C++.-Easy-to-understand./31882
+ * https://leetcode.com/problems/symmetric-tree/discuss/33080/Recursive-and-iterative-(DFS-and-BFS)-in-C%2B%2B.-Easy-to-understand.
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
     fun isSymmetric(root: TreeNode?): Boolean {

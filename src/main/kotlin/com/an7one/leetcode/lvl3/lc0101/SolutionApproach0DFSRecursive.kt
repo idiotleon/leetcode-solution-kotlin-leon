@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl3.lc0101
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/symmetric-tree/
  *
  * Time Complexity:     O(N)
@@ -6,14 +12,9 @@
  *
  * this is very similar to a preorder traversal
  *
- * References:
- *   https://www.bilibili.com/video/BV19t411w7Ep
+ * Reference:
+ * https://www.bilibili.com/video/BV19t411w7Ep
  */
-package com.an7one.leetcode.lvl3.lc0101
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun isSymmetric(root: TreeNode?): Boolean {

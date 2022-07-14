@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(H)
- *
- * References:
- *  https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/discuss/34782/My-recursive-Java-code-with-O(n)-time-and-O(n)-space/154363
- */
 package com.an7one.leetcode.lvl3.lc0106
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(H)
+ *
+ * Reference:
+ * https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/discuss/34782/My-recursive-Java-code-with-O(n)-time-and-O(n)-space/154363
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive1 {
     fun buildTree(inorder: IntArray, postorder: IntArray): TreeNode? {
@@ -21,11 +22,7 @@ class SolutionApproach0DFSRecursive1 {
     }
 
     private fun dfs(
-        idxPostorder: Int,
-        startIdxInorder: Int,
-        endIdxInorder: Int,
-        inorder: IntArray,
-        postorder: IntArray
+        idxPostorder: Int, startIdxInorder: Int, endIdxInorder: Int, inorder: IntArray, postorder: IntArray
     ): TreeNode? {
         if (idxPostorder < 0 || startIdxInorder > endIdxInorder) return null
 
