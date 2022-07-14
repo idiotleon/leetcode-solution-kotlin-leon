@@ -16,9 +16,10 @@ class SolutionApproach0DFSRecursive {
         // not used
         // val nNodes = preorder.size
 
-        val inorderValToIdx = HashMap<Int, Int>()
-        for (idx in inorder.indices) {
-            inorderValToIdx[inorder[idx]] = idx
+        val inorderValToIdx = HashMap<Int, Int>().also {
+            for (idx in inorder.indices) {
+                it[inorder[idx]] = idx
+            }
         }
 
         return dfs(0, 0, inorder.lastIndex, preorder, inorder, inorderValToIdx)
