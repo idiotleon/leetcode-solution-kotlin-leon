@@ -1,14 +1,15 @@
-/**
- * https://leetcode.com/problems/merge-two-binary-trees/
- *
- * Time Complexity:     O(N(`t1`) + N(`t2`)) ~ O(max(N(`t1`), N(`t2`)))
- * Space Complexity:    O(H(`t1`) + H(`t2`)) ~ O(max(H(`t1`), H(`t2`)))
- */
 package com.an7one.leetcode.lvl2.lc0617
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/merge-two-binary-trees/
+ *
+ * Time Complexity:     O(N(`t1`) + N(`t2`)) ~ O(max(N(`t1`), N(`t2`)))
+ * Space Complexity:    O(H(`t1`) + H(`t2`)) ~ O(max(H(`t1`), H(`t2`)))
+ */
 @Suppress(UNUSED)
 class SolutionApproach0Recursion {
     fun mergeTrees(t1: TreeNode?, t2: TreeNode?) = dfs(t1, t2)

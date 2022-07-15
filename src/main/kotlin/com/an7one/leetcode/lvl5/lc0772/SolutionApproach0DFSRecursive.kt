@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/basic-calculator-iii/
- *
- * Time Complexity:     O(`lenS`)
- * Space Complexity:    O(`lenS`) + O(NUM('(')) ~ O(`lenS`)
- *
- * References:
- *  https://leetcode.com/problems/basic-calculator-iii/discuss/152092/O(n)-Java-Recursive-Simple-Solution/227715
- */
 package com.an7one.leetcode.lvl5.lc0772
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.collections.ArrayDeque
 
+/**
+ * @author: LEon
+ * https://leetcode.com/problems/basic-calculator-iii/
+ *
+ * Time Complexity:     O(`lenS`)
+ * Space Complexity:    O(`lenS`) + O(NUM('(')) ~ O(`lenS`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/basic-calculator-iii/discuss/152092/O(n)-Java-Recursive-Simple-Solution/227715
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     private companion object {
@@ -25,22 +26,19 @@ class SolutionApproach0DFSRecursive {
         private const val SIGN_DIVIDE = '/'
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     fun calculate(s: String): Int {
         // not used
         // val lenS = s.length
 
         val tokens = ArrayDeque<Char>()
         for (ch in s) {
-            if (ch != SPACE)
-                tokens.addLast(ch)
+            if (ch != SPACE) tokens.addLast(ch)
         }
         tokens.addLast(SIGN_PLUS)
 
         return dfs(tokens)
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     private fun dfs(tokens: ArrayDeque<Char>): Int {
         var op = SIGN_PLUS
         var num = 0

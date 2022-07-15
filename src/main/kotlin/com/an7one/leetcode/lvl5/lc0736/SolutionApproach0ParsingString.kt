@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl5.lc0736
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/parse-lisp-expression/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/parse-lisp-expression/discuss/113902/A-Clean-Java-Solution
+ * Reference:
+ * https://leetcode.com/problems/parse-lisp-expression/discuss/113902/A-Clean-Java-Solution
  */
-package com.an7one.leetcode.lvl5.lc0736
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0ParsingString {
     fun evaluate(expression: String): Int {

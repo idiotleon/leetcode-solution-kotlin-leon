@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/insert-into-a-binary-search-tree/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(H)
- *
- * References:
- *  https://leetcode.com/problems/insert-into-a-binary-search-tree/discuss/150757/java-iterative-100/253274
- */
 package com.an7one.leetcode.lvl2.lc0701
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/insert-into-a-binary-search-tree/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(H)
+ *
+ * Reference:
+ * https://leetcode.com/problems/insert-into-a-binary-search-tree/discuss/150757/java-iterative-100/253274
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearchRecursive {
     fun insertIntoBST(root: TreeNode?, newValue: Int) = insert(root, newValue)

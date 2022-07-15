@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl2.lc0811
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/subdomain-visit-count/
  *
  * Time Complexity:     O(`nDomains` * `lenS`)
  * Space Complexity:    O(`nDomains` * `lenS`)
  *
- * References:
- *  https://leetcode.com/problems/subdomain-visit-count/discuss/121738/C%2B%2BJavaPython-Easy-Understood-Solution
+ * Reference:
+ * https://leetcode.com/problems/subdomain-visit-count/discuss/121738/C%2B%2BJavaPython-Easy-Understood-Solution
  */
-package com.an7one.leetcode.lvl2.lc0811
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     private companion object {

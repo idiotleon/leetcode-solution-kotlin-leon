@@ -1,22 +1,21 @@
+package com.an7one.leetcode.lvl2.lc0734
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/sentence-similarity/
  *
  * Time Complexity:     O(`nWords1`)
  * Space Complexity:    O(`nWords1` + `nWords2`) ~ O(`nWords1`)
  *
- * References:
- *  https://leetcode.com/problems/sentence-similarity/discuss/109633/Java-Super-Clean-Code-(Similarity-I-and-II)
+ * Reference:
+ * https://leetcode.com/problems/sentence-similarity/discuss/109633/Java-Super-Clean-Code-(Similarity-I-and-II)
  */
-package com.an7one.leetcode.lvl2.lc0734
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     fun areSentencesSimilar(
-        words1: Array<String>,
-        words2: Array<String>,
-        similarPairs: List<List<String>>
+        words1: Array<String>, words2: Array<String>, similarPairs: List<List<String>>
     ): Boolean {
         val nWords1 = words1.size
         val nWords2 = words2.size

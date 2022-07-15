@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl2.lc0690
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/employee-importance/
  *
  * Time Complexity:     O(V + E)
  * Space Complexity:    O(V + E)
  *
- * References:
- *  https://leetcode.com/problems/employee-importance/discuss/112587/Java-HashMap-bfs-dfs
+ * Reference:
+ * https://leetcode.com/problems/employee-importance/discuss/112587/Java-HashMap-bfs-dfs
  */
-package com.an7one.leetcode.lvl2.lc0690
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun getImportance(employees: List<Employee>, id: Int): Int {

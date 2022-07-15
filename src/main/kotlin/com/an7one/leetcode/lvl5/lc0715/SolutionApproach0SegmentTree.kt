@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl5.lc0715
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/range-module/
  *
  * Time Complexities:
@@ -8,13 +13,9 @@
  *
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/range-module/discuss/495876/Clean-And-Concise-Lazy-Propagation-Segment-Tree
+ * Reference:
+ * https://leetcode.com/problems/range-module/discuss/495876/Clean-And-Concise-Lazy-Propagation-Segment-Tree
  */
-package com.an7one.leetcode.lvl5.lc0715
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree {
     private val root = SegmentTree()
@@ -37,14 +38,11 @@ class SolutionApproach0SegmentTree {
         fun queryRange(rangeLo: Int, rangeHi: Int) = query(rangeLo, rangeHi, root)
 
         private fun query(rangeLo: Int, rangeHi: Int, node: SegmentTreeNode?): Boolean {
-            if (node == null)
-                return true
+            if (node == null) return true
 
-            if (rangeLo >= node.hi || rangeHi <= node.lo)
-                return true
+            if (rangeLo >= node.hi || rangeHi <= node.lo) return true
 
-            if (rangeLo <= node.lo && node.hi <= rangeHi || (node.left == null))
-                return node.state
+            if (rangeLo <= node.lo && node.hi <= rangeHi || (node.left == null)) return node.state
 
             val mid = node.lo + (node.hi - node.lo) / 2
 
@@ -56,12 +54,9 @@ class SolutionApproach0SegmentTree {
         }
 
         private fun update(
-            rangeLo: Int, rangeHi: Int,
-            value: Boolean,
-            node: SegmentTreeNode?
+            rangeLo: Int, rangeHi: Int, value: Boolean, node: SegmentTreeNode?
         ) {
-            if (node == null)
-                return
+            if (node == null) return
 
             if (rangeLo <= node.lo && node.hi <= rangeHi) {
                 node.state = value
@@ -70,8 +65,7 @@ class SolutionApproach0SegmentTree {
                 return
             }
 
-            if (rangeLo >= node.hi || rangeHi <= node.lo)
-                return
+            if (rangeLo >= node.hi || rangeHi <= node.lo) return
 
             val mid = node.lo + (node.hi - node.lo) / 2
             if (node.left == null) {
@@ -85,10 +79,8 @@ class SolutionApproach0SegmentTree {
         }
 
         private data class SegmentTreeNode(
-            val lo: Int, val hi: Int,
-            var state: Boolean = false,  // has been tracked or not
-            var left: SegmentTreeNode? = null,
-            var right: SegmentTreeNode? = null
+            val lo: Int, val hi: Int, var state: Boolean = false,  // has been tracked or not
+            var left: SegmentTreeNode? = null, var right: SegmentTreeNode? = null
         )
     }
 }

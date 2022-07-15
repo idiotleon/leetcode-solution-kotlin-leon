@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/binary-tree-pruning/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(H)
- *
- * References:
- *  https://leetcode.com/problems/binary-tree-pruning/discuss/122730/C%2B%2BJavaPython-Self-Explaining-Solution-and-2-lines
- */
 package com.an7one.leetcode.lvl2.lc0814
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/binary-tree-pruning/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(H)
+ *
+ * Reference:
+ * https://leetcode.com/problems/binary-tree-pruning/discuss/122730/C%2B%2BJavaPython-Self-Explaining-Solution-and-2-lines
+ */
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
     fun pruneTree(root: TreeNode?) = postorder(root)

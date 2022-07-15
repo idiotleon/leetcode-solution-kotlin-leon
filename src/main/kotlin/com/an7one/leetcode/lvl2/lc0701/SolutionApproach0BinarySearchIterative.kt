@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/insert-into-a-binary-search-tree/
- *
- * Time Complexity:     O(lg(N))
- * Space Complexity:    O(1)
- *
- * References:
- *  https://leetcode.com/problems/insert-into-a-binary-search-tree/discuss/150757/java-iterative-100/486467
- */
 package com.an7one.leetcode.lvl2.lc0701
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/insert-into-a-binary-search-tree/
+ *
+ * Time Complexity:     O(lg(N))
+ * Space Complexity:    O(1)
+ *
+ * Referencs:
+ * https://leetcode.com/problems/insert-into-a-binary-search-tree/discuss/150757/java-iterative-100/486467
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearchIterative {
     fun insertIntoBST(root: TreeNode?, newValue: Int): TreeNode {
@@ -26,10 +27,8 @@ class SolutionApproach0BinarySearchIterative {
 
             val value = cur.`val`
             cur = when {
-                value < newValue ->
-                    cur.right
-                value > newValue ->
-                    cur.left
+                value < newValue -> cur.right
+                value > newValue -> cur.left
                 else -> {
                     // illegal: curValue == value
                     cur

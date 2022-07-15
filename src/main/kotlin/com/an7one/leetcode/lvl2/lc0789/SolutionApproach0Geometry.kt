@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/escape-the-ghosts/
- *
- * Time Complexity:     O(`nGhosts`)
- * Space Complexity:    O(1)
- *
- * References:
- *  https://leetcode.com/problems/escape-the-ghosts/discuss/116678/Why-interception-in-the-middle-is-not-a-good-idea-for-ghosts.
- *  https://leetcode.com/problems/escape-the-ghosts/discuss/116507/Java-5-liner
- */
 package com.an7one.leetcode.lvl2.lc0789
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.math.abs
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/escape-the-ghosts/
+ *
+ * Time Complexity:     O(`nGhosts`)
+ * Space Complexity:    O(1)
+ *
+ * Reference:
+ * https://leetcode.com/problems/escape-the-ghosts/discuss/116678/Why-interception-in-the-middle-is-not-a-good-idea-for-ghosts.
+ * https://leetcode.com/problems/escape-the-ghosts/discuss/116507/Java-5-liner
+ */
 @Suppress(UNUSED)
 class SolutionApproach0Geometry {
     fun escapeGhosts(ghosts: Array<IntArray>, target: IntArray): Boolean {

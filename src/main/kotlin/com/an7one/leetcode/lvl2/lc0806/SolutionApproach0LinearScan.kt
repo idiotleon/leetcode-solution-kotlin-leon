@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl2.lc0806
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/number-of-lines-to-write-string/
  *
  * Time Complexity:     O(`lenS`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/number-of-lines-to-write-string/discuss/120666/Easy-Solution-6-lines-C%2B%2BJavaPython
+ * Reference:
+ * https://leetcode.com/problems/number-of-lines-to-write-string/discuss/120666/Easy-Solution-6-lines-C%2B%2BJavaPython
  */
-package com.an7one.leetcode.lvl2.lc0806
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun numberOfLines(widths: IntArray, str: String): IntArray {
