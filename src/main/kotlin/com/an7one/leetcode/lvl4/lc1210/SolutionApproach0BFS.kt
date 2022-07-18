@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/minimum-moves-to-reach-target-with-rotations/
- *
- * Time Complexity:     O(`n` ^ 2)
- * Space Complexity:    O(`n` ^ 2)
- *
- * References:
- *  https://leetcode.com/problems/minimum-moves-to-reach-target-with-rotations/discuss/393511/JavaPython-3-25-and-17-liner-clean-BFS-codes-w-brief-explanation-and-analysis.
- */
 package com.an7one.leetcode.lvl4.lc1210
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashSet
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/minimum-moves-to-reach-target-with-rotations/
+ *
+ * Time Complexity:     O(`n` ^ 2)
+ * Space Complexity:    O(`n` ^ 2)
+ *
+ * Reference:
+ * https://leetcode.com/problems/minimum-moves-to-reach-target-with-rotations/discuss/393511/JavaPython-3-25-and-17-liner-clean-BFS-codes-w-brief-explanation-and-analysis.
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
     private companion object {
@@ -30,8 +31,9 @@ class SolutionApproach0BFS {
 
         // to keep track of the tail of the snake,
         // so it is required to check 2 steps in the front, to move towards the facing direction
-        val queue = LinkedList<State>()
-        queue.offer(start)
+        val queue = ArrayDeque<State>().also {
+            it.addLast(start)
+        }
 
         val seen = HashSet<String>()
 
@@ -41,7 +43,7 @@ class SolutionApproach0BFS {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val cur = queue.poll()
+                val cur = queue.removeFirst()
                 if (cur == target) return steps
 
                 val row = cur.row
@@ -84,11 +86,7 @@ class SolutionApproach0BFS {
 
         fun toHash(): String = "$row#$col#$dir"
 
-        override fun equals(other: Any?) =
-            (other is State)
-                    && row == other.row
-                    && col == other.col
-                    && dir == other.dir
+        override fun equals(other: Any?) = (other is State) && row == other.row && col == other.col && dir == other.dir
 
         override fun hashCode(): Int {
             return super.hashCode()

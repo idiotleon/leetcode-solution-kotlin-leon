@@ -1,45 +1,42 @@
-/**
- * https://leetcode.com/problems/lexicographically-smallest-string-after-applying-operations/
- *
- * Time Complexity:     O()
- * Space Complexity:    O()
- */
 package com.an7one.leetcode.lvl3.lc1625
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashSet
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/lexicographically-smallest-string-after-applying-operations/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
     fun findLexSmallestString(s: String, a: Int, b: Int): String {
         var smallest = s
 
-        val queue = LinkedList<String>()
-        queue.offer(s)
+        val queue = ArrayDeque<String>().also {
+            it.addLast(s)
+        }
 
-        val seen = HashSet<String>()
-        seen.add(s)
+        val seen = HashSet<String>().also {
+            it.add(s)
+        }
 
         while (queue.isNotEmpty()) {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val cur = queue.poll()
+                val cur = queue.removeFirst()
 
-                if (cur < smallest) {
-                    smallest = cur
-                }
+                if (cur < smallest) smallest = cur
 
                 val added = add(cur, a)
-                if (seen.add(added)) {
-                    queue.offer(added)
-                }
+                if (seen.add(added)) queue.offer(added)
 
                 val rotated = rotate(cur, b)
-                if (seen.add(rotated)) {
-                    queue.offer(rotated)
-                }
+                if (seen.add(rotated)) queue.offer(rotated)
             }
         }
 
