@@ -26,7 +26,7 @@ class SolutionApproach1DP1Dimen {
         }
 
         for (hi in 1..n) {
-            val list = LinkedList<String>()
+            val list = mutableListOf<String>()
 
             for (lo in 0 until hi) {
                 for (firstSeg in dp[lo]) {
