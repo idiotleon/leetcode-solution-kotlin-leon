@@ -9,9 +9,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(L)
  * Space Complexity:    O(L)
  *
- * References:
- *  https://leetcode.com/problems/reverse-nodes-in-k-group/discuss/183356/Java-O(n)-solution-with-super-detailed-explanation-and-illustration
+ * Reference:
+ * https://leetcode.com/problems/reverse-nodes-in-k-group/discuss/183356/Java-O(n)-solution-with-super-detailed-explanation-and-illustration
  */
 @Suppress(UNUSED)
-class SolutionApproach0Stack {
-}
+class SolutionApproach0Stack {}
