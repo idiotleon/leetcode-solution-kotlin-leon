@@ -1,8 +1,8 @@
 /**
  * https://leetcode.com/problems/circular-array-loop/
  *
- * Time Complexity:     O(`totalNums`)
- * Space Complexity:    O(lg(`totalNums`))
+ * Time Complexity:     O(`nNums`)
+ * Space Complexity:    O(lg(`nNums`))
  *
  * to detect if there is any cycle, of length strictly longer than 1,
  *  and in the same direction
@@ -17,16 +17,16 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     private companion object {
-        private const val NOT_YET_VISITED = 0
+        private const val NOT_VISITED = 0
         private const val VISITING = 1
         private const val VISITED = 2
     }
 
     fun circularArrayLoop(nums: IntArray): Boolean {
-        val totalNums = nums.size
-        val visited = IntArray(totalNums) { NOT_YET_VISITED }
+        val nNums = nums.size
+        val visited = IntArray(nNums) { NOT_VISITED }
         for (idx in nums.indices) {
-            if (visited[idx] != NOT_YET_VISITED) continue
+            if (visited[idx] != NOT_VISITED) continue
             if (dfs(idx, visited, nums)) return true
         }
 
@@ -34,15 +34,15 @@ class SolutionApproach0DFSRecursive {
     }
 
     private fun dfs(cur: Int, visited: IntArray, nums: IntArray): Boolean {
-        val totalNums = nums.size
+        val nNums = nums.size
         if (visited[cur] == VISITING) return true
         if (visited[cur] == VISITED) return false
 
         visited[cur] = VISITING
 
         var next = cur + nums[cur]
-        next %= totalNums
-        if (next < 0) next += totalNums
+        next %= nNums
+        if (next < 0) next += nNums
 
         if (cur == next || nums[cur] * nums[next] < 0) {
             visited[cur] = VISITED
