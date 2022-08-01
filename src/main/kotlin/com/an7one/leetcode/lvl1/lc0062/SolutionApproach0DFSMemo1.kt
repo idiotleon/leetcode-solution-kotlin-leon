@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl1.lc0062
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/unique-paths/
  *
  * Time Complexity:     O(`m` * `n`)
  * Space Complexity:    O(`m` * `n`)
  *
- * References:
- *  https://youtu.be/BxblkIz6TZc?t=512
+ * Reference:
+ * https://youtu.be/BxblkIz6TZc?t=512
  */
-package com.an7one.leetcode.lvl1.lc0062
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo1 {
     fun uniquePaths(m: Int, n: Int): Int {

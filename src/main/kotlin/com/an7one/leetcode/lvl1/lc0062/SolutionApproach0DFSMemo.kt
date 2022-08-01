@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl1.lc0062
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/unique-paths/
  *
  * Time Complexity:     O(`m` * `n`)
  * Space Complexity:    O(`m` * `n`)
  *
- * References:
- *  https://youtu.be/BxblkIz6TZc?t=518
+ * Reference:
+ * https://youtu.be/BxblkIz6TZc?t=518
  */
-package com.an7one.leetcode.lvl1.lc0062
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun uniquePaths(m: Int, n: Int): Int {
@@ -19,11 +20,9 @@ class SolutionApproach0DFSMemo {
     }
 
     private fun dfs(row: Int, col: Int, memo: Array<Array<Int?>>): Int {
-        if (row < 0 || col < 0)
-            return 0
-        
-        if (row == 0 && col == 0)
-            return 1
+        if (row < 0 || col < 0) return 0
+
+        if (row == 0 && col == 0) return 1
 
         memo[row][col]?.let { return it }
         val cntUniquePaths = dfs(row - 1, col, memo) + dfs(row, col - 1, memo)
