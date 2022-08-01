@@ -1,4 +1,9 @@
+package com.an7one.leetcode.ood.lvl4.lc0307
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/range-sum-query-mutable/
  *
  * Time Complexities:
@@ -8,13 +13,9 @@
  *
  * Space Complexity:    O(`nNums`)
  *
- * References:
- *  https://youtu.be/e_bK-dgPvfM
+ * Reference:
+ * https://youtu.be/e_bK-dgPvfM
  */
-package com.an7one.leetcode.ood.lvl4.lc0307
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree1(nums: IntArray) {
     private val root = SegmentTree(nums)
@@ -66,9 +67,7 @@ class SolutionApproach0SegmentTree1(nums: IntArray) {
         }
 
         fun query(
-            rangeLo: Int, rangeHi: Int,
-            node: Int,
-            start: Int, end: Int
+            rangeLo: Int, rangeHi: Int, node: Int, start: Int, end: Int
         ): Int {
             if (rangeHi < start || rangeLo > end) return 0
             if (start == end) return nums[start]

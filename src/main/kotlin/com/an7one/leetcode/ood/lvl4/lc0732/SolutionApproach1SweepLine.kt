@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/my-calendar-iii/
- *
- * Time Complexity:     O()
- * Space Complexity:    O()
- *
- * References:
- *  https://leetcode.com/problems/my-calendar-iii/discuss/702154/Four-AC-Solution%3A-TreeMap-BST-Segment-Tree-with-Diagrams-Beats-100-time-and-space-8ms-39.4MB
- */
 package com.an7one.leetcode.ood.lvl4.lc0732
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/my-calendar-iii/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ *
+ * Reference:
+ * https://leetcode.com/problems/my-calendar-iii/discuss/702154/Four-AC-Solution%3A-TreeMap-BST-Segment-Tree-with-Diagrams-Beats-100-time-and-space-8ms-39.4MB
+ */
 @Suppress(UNUSED)
 class SolutionApproach1SweepLine {
     private val timeline = TreeMap<Int, Int>()

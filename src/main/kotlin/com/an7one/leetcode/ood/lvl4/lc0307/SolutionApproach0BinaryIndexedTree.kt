@@ -1,4 +1,9 @@
+package com.an7one.leetcode.ood.lvl4.lc0307
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/range-sum-query-mutable/
  *
  * Time Complexities:
@@ -8,26 +13,22 @@
  *
  * Space Complexity:    O(`nNums`)
  *
- * References:
- *  https://leetcode.com/problems/range-sum-query-mutable/discuss/75753/Java-using-Binary-Indexed-Tree-with-clear-explanation
- *  https://cs.stackexchange.com/questions/10538/bit-what-is-the-intuition-behind-a-binary-indexed-tree-and-how-was-it-thought-a
+ * Reference:
+ * https://leetcode.com/problems/range-sum-query-mutable/discuss/75753/Java-using-Binary-Indexed-Tree-with-clear-explanation
+ * https://cs.stackexchange.com/questions/10538/bit-what-is-the-intuition-behind-a-binary-indexed-tree-and-how-was-it-thought-a
  */
-package com.an7one.leetcode.ood.lvl4.lc0307
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinaryIndexedTree(private val nums: IntArray) {
-    private val fenwick = BinaryIndexedTree(nums)
+    private val bit = BinaryIndexedTree(nums)
 
     fun update(i: Int, value: Int) {
         val diff = value - nums[i]
         nums[i] = value
-        fenwick.update(i, diff)
+        bit.update(i, diff)
     }
 
     fun sumRange(i: Int, j: Int): Int {
-        return fenwick.query(j) - fenwick.query(i - 1)
+        return bit.query(j) - bit.query(i - 1)
     }
 
     private class BinaryIndexedTree(nums: IntArray) {

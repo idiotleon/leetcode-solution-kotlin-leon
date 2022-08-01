@@ -1,4 +1,10 @@
+package com.an7one.leetcode.ood.lvl4.lc0701
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.random.Random
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/random-pick-with-blacklist/
  *
  * Time Complexity:
@@ -7,15 +13,10 @@
  *
  * Space Complexity:        O(`nBlocked`)
  *
- * References:
- *  https://leetcode.com/problems/random-pick-with-blacklist/discuss/144624/Java-O(B)-O(1)-HashMap/424919
- *  https://leetcode.com/problems/random-pick-with-blacklist/discuss/144624/Java-O(B)-O(1)-HashMap
+ * Reference:
+ * https://leetcode.com/problems/random-pick-with-blacklist/discuss/144624/Java-O(B)-O(1)-HashMap/424919
+ * https://leetcode.com/problems/random-pick-with-blacklist/discuss/144624/Java-O(B)-O(1)-HashMap
  */
-package com.an7one.leetcode.ood.lvl4.lc0701
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.random.Random
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap(N: Int, blocklist: IntArray) {
     private val nBlocked = blocklist.size

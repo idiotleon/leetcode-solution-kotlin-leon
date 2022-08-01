@@ -1,16 +1,17 @@
+package com.an7one.leetcode.ood.lvl4.lc0732
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/my-calendar-iii/
  *
  * Time Complexity:     O(`N` * lg(`N`))
  * Space Complexity:    O(`N`)
  *
- * References:
- *  https://leetcode.com/problems/my-calendar-iii/discuss/702154/Four-AC-Solution%3A-TreeMap-BST-Segment-Tree-with-Diagrams-Beats-100-time-and-space-8ms-39.4MB
+ * Reference:
+ * https://leetcode.com/problems/my-calendar-iii/discuss/702154/Four-AC-Solution%3A-TreeMap-BST-Segment-Tree-with-Diagrams-Beats-100-time-and-space-8ms-39.4MB
  */
-package com.an7one.leetcode.ood.lvl4.lc0732
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BST() {
     private var root: TreeNode? = null
@@ -22,10 +23,9 @@ class SolutionApproach0BST() {
     }
 
     // to DFS recursively to build up the Binary Search Tree
-    private fun dfs(start: Int,
-                    end: Int,
-                    count: Int,
-                    root: TreeNode?): TreeNode? {
+    private fun dfs(
+        start: Int, end: Int, count: Int, root: TreeNode?
+    ): TreeNode? {
         var node = root
         when {
             node == null -> {
@@ -52,10 +52,9 @@ class SolutionApproach0BST() {
                 if (startMin < startMax) {
                     // no need to add new TreeNode if both are equal
                     // to update the count of the current node instead
-                    node.left = dfs(startMin,
-                            startMax,
-                            if (start < node.start) count else node.count,
-                            node.left)
+                    node.left = dfs(
+                        startMin, startMax, if (start < node.start) count else node.count, node.left
+                    )
                 }
 
                 if (endMin < endMax) {

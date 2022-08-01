@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/my-calendar-iii/
- *
- * Time Complexity:     O(nEvents * lg(duration))
- * Space Complexity:    O(nEvents)
- *
- * References:
- *  https://leetcode.com/problems/my-calendar-iii/discuss/702154/Four-AC-Solution%3A-TreeMap-BST-Segment-Tree-with-Diagrams-Beats-100-time-and-space-8ms-39.4MB
- *  https://leetcode.com/problems/my-calendar-iii/discuss/288928/Lazy-Dynamic-Segment-Tree-A-general-template
- */
 package com.an7one.leetcode.ood.lvl4.lc0732
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/my-calendar-iii/
+ *
+ * Time Complexity:     O(`nEvents` * lg(`duration`))
+ * Space Complexity:    O(`nEvents`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/my-calendar-iii/discuss/702154/Four-AC-Solution%3A-TreeMap-BST-Segment-Tree-with-Diagrams-Beats-100-time-and-space-8ms-39.4MB
+ * https://leetcode.com/problems/my-calendar-iii/discuss/288928/Lazy-Dynamic-Segment-Tree-A-general-template
+ */
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree1 {
     private companion object {

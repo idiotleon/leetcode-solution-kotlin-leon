@@ -1,4 +1,9 @@
+package com.an7one.leetcode.ood.lvl4.lc0307
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/range-sum-query-mutable/
  *
  * Time Complexities:
@@ -8,14 +13,10 @@
  *
  * Space Complexity:    O(`nNums`)
  *
- * References:
- *  https://leetcode.com/problems/range-sum-query-mutable/discuss/75724/17-ms-Java-solution-with-segment-tree
- *  https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/
+ * Reference:
+ * https://leetcode.com/problems/range-sum-query-mutable/discuss/75724/17-ms-Java-solution-with-segment-tree
+ * https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/
  */
-package com.an7one.leetcode.ood.lvl4.lc0307
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree(nums: IntArray) {
     private val root = SegmentTree(nums)

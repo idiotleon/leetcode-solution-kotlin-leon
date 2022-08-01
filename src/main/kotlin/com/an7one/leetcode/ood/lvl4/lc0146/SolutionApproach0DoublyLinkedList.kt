@@ -1,3 +1,7 @@
+package com.an7one.leetcode.ood.lvl4.lc0146
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/lru-cache/
@@ -9,10 +13,6 @@
  *
  * Space Complexity:    O(`capacity`)
  */
-package com.an7one.leetcode.ood.lvl4.lc0146
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DoublyLinkedList(capacity: Int) {
     private val dll = DoublyLinkedList(capacity)

@@ -2,6 +2,17 @@ package com.an7one.leetcode.ood.lvl4.lc0732
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/my-calendar-iii/
+ *
+ * Time Complexity:     O(`nEvents` * lg(`duration`))
+ * Space Complexity:    O(`nEvents`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/my-calendar-iii/discuss/702154/Four-AC-Solution%3A-TreeMap-BST-Segment-Tree-with-Diagrams-Beats-100-time-and-space-8ms-39.4MB
+ * https://leetcode.com/problems/my-calendar-iii/discuss/288928/Lazy-Dynamic-Segment-Tree-A-general-template
+ */
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree {
     private val root = SegmentTree()
@@ -44,20 +55,20 @@ class SolutionApproach0SegmentTree {
         }
 
         // not used
-/*        private fun query(rangeLo: Int, rangeHi: Int, node: SegmentTreeNode?): Int {
-            if (node == null) return 0
-            pushDown(node)
+        /*        private fun query(rangeLo: Int, rangeHi: Int, node: SegmentTreeNode?): Int {
+                    if (node == null) return 0
+                    pushDown(node)
 
-            // no overlap
-            if (rangeLo > node.hi || rangeHi < node.lo) return 0
+                    // no overlap
+                    if (rangeLo > node.hi || rangeHi < node.lo) return 0
 
-            // complete overlap
-            if (rangeLo <= node.lo && node.hi <= rangeHi) return node.max
+                    // complete overlap
+                    if (rangeLo <= node.lo && node.hi <= rangeHi) return node.max
 
-            val leftMax = query(rangeLo, rangeHi, node.left)
-            val rightMax = query(rangeLo, rangeHi, node.right)
-            return maxOf(leftMax, rightMax)
-        }*/
+                    val leftMax = query(rangeLo, rangeHi, node.left)
+                    val rightMax = query(rangeLo, rangeHi, node.right)
+                    return maxOf(leftMax, rightMax)
+                }*/
 
         private fun pushDown(node: SegmentTreeNode) {
             node.max += node.lazy
@@ -80,11 +91,13 @@ class SolutionApproach0SegmentTree {
             node.lazy = 0
         }
 
-        private data class SegmentTreeNode(val lo: Int,
-                                           val hi: Int,
-                                           var max: Int = 0,
-                                           var lazy: Int = 0,
-                                           var left: SegmentTreeNode? = null,
-                                           var right: SegmentTreeNode? = null)
+        private data class SegmentTreeNode(
+            val lo: Int,
+            val hi: Int,
+            var max: Int = 0,
+            var lazy: Int = 0,
+            var left: SegmentTreeNode? = null,
+            var right: SegmentTreeNode? = null
+        )
     }
 }
