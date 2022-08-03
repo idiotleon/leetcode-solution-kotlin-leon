@@ -3,22 +3,29 @@ package com.an7one.leetcode.lvl3.lc0950
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/reveal-cards-in-increasing-order/
+ *
+ * Time Complexity:     O(`nCards`)
+ * Space Complexity:    O(`nCards`)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0QueueSimulation {
     fun deckRevealedIncreasing(deck: IntArray): IntArray {
-        val totalCards = deck.size
+        val nCards = deck.size
 
         deck.sort()
-        val queue = LinkedList<Int>().also {
-            for (cardIdx in 0 until totalCards) {
-                it.offer(cardIdx)
+        val queue = ArrayDeque<Int>().also {
+            for (cardIdx in 0 until nCards) {
+                it.addLast(cardIdx)
             }
         }
 
-        val ans = IntArray(totalCards) { 0 }
+        val ans = IntArray(nCards) { 0 }
         for (idx in deck.indices) {
-            ans[queue.poll()] = deck[idx]
-            queue.add(queue.poll())
+            ans[queue.removeFirst()] = deck[idx]
+            queue.addLast(queue.removeFirst())
         }
 
         return ans

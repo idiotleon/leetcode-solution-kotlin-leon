@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0955
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/delete-columns-to-make-sorted-ii/
  *
  * Time Complexity:     O(`nStrs` * `lenS`)
  * Space Complexity:    ?O()
  *
- * References:
- *  https://leetcode.com/problems/delete-columns-to-make-sorted-ii/discuss/203171/C%2B%2B-12-ms-brute-force
+ * Reference:
+ * https://leetcode.com/problems/delete-columns-to-make-sorted-ii/discuss/203171/C%2B%2B-12-ms-brute-force
  */
-package com.an7one.leetcode.lvl3.lc0955
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
     fun minDeletionSize(arr: Array<String>): Int {

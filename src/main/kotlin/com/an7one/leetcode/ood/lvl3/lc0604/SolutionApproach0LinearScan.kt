@@ -1,4 +1,9 @@
+package com.an7one.leetcode.ood.lvl3.lc0604
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/design-compressed-string-iterator/
  *
  * Time Complexities:
@@ -8,13 +13,9 @@
  *
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/design-compressed-string-iterator/discuss/103872/Straightforward-Java-solution-no-fancy-data-structure
+ * Reference:
+ * https://leetcode.com/problems/design-compressed-string-iterator/discuss/103872/Straightforward-Java-solution-no-fancy-data-structure
  */
-package com.an7one.leetcode.ood.lvl3.lc0604
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan(private val compressedString: String) {
     private val lenS = compressedString.length

@@ -1,4 +1,11 @@
+package com.an7one.leetcode.ood.lvl3.lc0449
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/serialize-and-deserialize-bst/
  *
  * Time Complexities:
@@ -7,15 +14,9 @@
  *
  * Space Complexity:        O(nTreeNodes)
  *
- * References:
- *  https://leetcode.com/problems/serialize-and-deserialize-bst/discuss/177617/the-General-Solution-for-Serialize-and-Deserialize-BST-and-Serialize-and-Deserialize-BT
+ * Reference:
+ * https://leetcode.com/problems/serialize-and-deserialize-bst/discuss/177617/the-General-Solution-for-Serialize-and-Deserialize-BST-and-Serialize-and-Deserialize-BT
  */
-package com.an7one.leetcode.ood.lvl3.lc0449
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive1 {
     private companion object {

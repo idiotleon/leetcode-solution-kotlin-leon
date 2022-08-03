@@ -1,3 +1,7 @@
+package com.an7one.leetcode.ood.lvl3.lc0729
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/my-calendar-i/
@@ -9,10 +13,6 @@
  * Space Complexity:    O(nSegmentTreeNodes)
  *  nSegmentTreeNodes, number of segment tree nodes
  */
-package com.an7one.leetcode.ood.lvl3.lc0729
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree {
     private val root = SegmentTree()

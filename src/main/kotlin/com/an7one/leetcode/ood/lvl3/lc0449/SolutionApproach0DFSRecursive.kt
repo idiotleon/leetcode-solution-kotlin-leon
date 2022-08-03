@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/serialize-and-deserialize-bst/
- *
- * Time Complexity:     O(`nNodes`)
- * Space Complexity:    O(`nNodes`)
- *
- * References:
- *  https://leetcode.com/problems/serialize-and-deserialize-bst/discuss/177617/the-General-Solution-for-Serialize-and-Deserialize-BST-and-Serialize-and-Deserialize-BT
- */
 package com.an7one.leetcode.ood.lvl3.lc0449
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/serialize-and-deserialize-bst/
+ *
+ * Time Complexity:     O(`nNodes`)
+ * Space Complexity:    O(`nNodes`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/serialize-and-deserialize-bst/discuss/177617/the-General-Solution-for-Serialize-and-Deserialize-BST-and-Serialize-and-Deserialize-BT
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     private companion object {
@@ -43,8 +44,7 @@ class SolutionApproach0DFSRecursive {
 
         data.split(SPLITTER).also {
             for (str in it) {
-                if (str.isNotEmpty())
-                    queue.offer(str)
+                if (str.isNotEmpty()) queue.offer(str)
             }
         }
 
@@ -52,9 +52,7 @@ class SolutionApproach0DFSRecursive {
     }
 
     private fun deserialize(
-        lower: Int,
-        upper: Int,
-        queue: LinkedList<String>
+        lower: Int, upper: Int, queue: LinkedList<String>
     ): TreeNode? {
         if (queue.isEmpty()) return null
 

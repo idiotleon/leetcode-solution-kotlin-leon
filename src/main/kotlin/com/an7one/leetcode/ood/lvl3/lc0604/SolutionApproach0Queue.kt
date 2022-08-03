@@ -1,4 +1,10 @@
+package com.an7one.leetcode.ood.lvl3.lc0604
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/design-compressed-string-iterator/
  *
  * Time Complexities:
@@ -8,14 +14,9 @@
  *
  * Space Complexity:    O(`lenS`)
  *
- * References:
- *  https://leetcode.com/problems/design-compressed-string-iterator/discuss/103828/Java-Concise-Single-Queue-Solution
+ * Reference:
+ * https://leetcode.com/problems/design-compressed-string-iterator/discuss/103828/Java-Concise-Single-Queue-Solution
  */
-package com.an7one.leetcode.ood.lvl3.lc0604
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0Queue(compressedString: String) {
     private val lenS = compressedString.length

@@ -1,4 +1,10 @@
+package com.an7one.leetcode.ood.lvl3.lc0528
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.random.Random
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/random-pick-with-weight/
  *
  * Time Complexities:
@@ -7,14 +13,9 @@
  *
  * Space Complexity:    O(`nWeights`)
  *
- * References:
- *  https://leetcode.com/problems/random-pick-with-weight/discuss/154044/Java-accumulated-freq-sum-and-binary-search
+ * Reference:
+ * https://leetcode.com/problems/random-pick-with-weight/discuss/154044/Java-accumulated-freq-sum-and-binary-search
  */
-package com.an7one.leetcode.ood.lvl3.lc0528
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.random.Random
-
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch(weights: IntArray) {
     private val nWeights = weights.size
