@@ -1,20 +1,21 @@
+package com.an7one.leetcode.lvl3.lc0377
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/combination-sum-iv/
  *
  * Time Complexity:     O(`nNums` * `target`)
  * Space Complexity:    O(`target`)
  *
- * References:
- *  https://leetcode.com/problems/combination-sum-iv/discuss/111860/Coin-change-AND-this-problem
- *  https://leetcode.com/problems/combination-sum-iv/discuss/85036/1ms-Java-DP-Solution-with-Detailed-Explanation
+ * Reference:
+ * https://leetcode.com/problems/combination-sum-iv/discuss/111860/Coin-change-AND-this-problem
+ * https://leetcode.com/problems/combination-sum-iv/discuss/85036/1ms-Java-DP-Solution-with-Detailed-Explanation
  *
- * Almost the same Problems:
- *  https://leetcode.com/problems/coin-change-2/
+ * Almost the same problems:
+ * https://leetcode.com/problems/coin-change-2/
  */
-package com.an7one.leetcode.lvl3.lc0377
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Knapsack {
     fun combinationSum4(nums: IntArray, target: Int): Int {
