@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc1216
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/valid-palindrome-iii/
  *
  * Time Complexity:     O(`lenS` ^ 2)
  * Space Complexity:    O(`lenS` ^ 2)
  *
- * References:
- *  https://leetcode.com/problems/valid-palindrome-iii/discuss/397606/Find-Longest-Palindromic-Subsequence./358118
+ * Reference:
+ * https://leetcode.com/problems/valid-palindrome-iii/discuss/397606/Find-Longest-Palindromic-Subsequence./358118
  */
-package com.an7one.leetcode.lvl4.lc1216
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun isValidPalindrome(s: String, k: Int): Boolean {
