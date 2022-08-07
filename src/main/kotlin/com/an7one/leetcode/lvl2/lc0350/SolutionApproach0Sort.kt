@@ -9,8 +9,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(`nNums1` * lg(`nNums1`) +`nNums2` * lg(`nNums2`))
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/intersection-of-two-arrays-ii/discuss/282372/Java-solution-with-all-3-follow-up-questions
+ * Reference:
+ * https://leetcode.com/problems/intersection-of-two-arrays-ii/discuss/282372/Java-solution-with-all-3-follow-up-questions
  */
 @Suppress(UNUSED)
 class SolutionApproach0Sort {

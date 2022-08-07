@@ -10,8 +10,8 @@ import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
  * Time Complexity:     O(L)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/plus-one-linked-list/discuss/84130/Java-recursive-solution
+ * Reference:
+ * https://leetcode.com/problems/plus-one-linked-list/discuss/84130/Java-recursive-solution
  */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -19,7 +19,7 @@ class SolutionApproach0DFSRecursive {
         if (dfs(head) == 0) {
             return head
         }
-        
+
         val newHead = ListNode(1)
         newHead.next = head
         return newHead

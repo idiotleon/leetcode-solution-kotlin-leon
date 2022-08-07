@@ -12,8 +12,7 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0FenwickTree {
     fun getModifiedArray(
-        length: Int,
-        updates: Array<IntArray>
+        length: Int, updates: Array<IntArray>
     ): IntArray {
         // not used
         // val nUpdates = updates.size
@@ -21,12 +20,12 @@ class SolutionApproach0FenwickTree {
         val fenwick = IntArray(length) { 0 }
 
         for (update in updates) {
-            val startIdx = update[0]
-            val endIdx = update[1]
+            val idxStart = update[0]
+            val idxEnd = update[1]
             val value = update[2]
 
-            update(endIdx + 1, value, fenwick)
-            update(startIdx, -value, fenwick)
+            update(idxEnd + 1, value, fenwick)
+            update(idxStart, -value, fenwick)
         }
 
         for (idx in 0 until length) {
