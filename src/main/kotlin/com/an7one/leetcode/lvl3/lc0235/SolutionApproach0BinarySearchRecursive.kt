@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
- *
- * Time Complexity:     O(H)
- * Space Complexity:    O(H)
- *
- * References:
- *  https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/discuss/64963/3-lines-with-O(1)-space-1-Liners-Alternatives/66601
- *  https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/discuss/64963/3-lines-with-O(1)-space-1-Liners-Alternatives
- */
 package com.an7one.leetcode.lvl3.lc0235
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+ *
+ * Time Complexity:     O(H)
+ * Space Complexity:    O(H)
+ *
+ * Reference:
+ * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/discuss/64963/3-lines-with-O(1)-space-1-Liners-Alternatives/66601
+ * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/discuss/64963/3-lines-with-O(1)-space-1-Liners-Alternatives
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearchRecursive {
     fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?) = binarySearch(root, p, q)
