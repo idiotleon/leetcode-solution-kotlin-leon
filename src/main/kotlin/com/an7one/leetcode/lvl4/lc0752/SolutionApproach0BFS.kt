@@ -1,24 +1,25 @@
-/**
- * https://leetcode.com/problems/open-the-lock/
- *
- * Time Complexity:     O()
- * Space Complexity:    O()
- *
- * Reference:
- *  https://leetcode.com/problems/open-the-lock/discuss/110237/Regular-java-BFS-solution-and-2-end-BFS-solution-with-improvement/303702
- *  https://leetcode.com/problems/open-the-lock/discuss/110237/Regular-java-BFS-solution-and-2-end-BFS-solution-with-improvement
- */
 package com.an7one.leetcode.lvl4.lc0752
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashSet
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/open-the-lock/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ *
+ * Reference:
+ * https://leetcode.com/problems/open-the-lock/discuss/110237/Regular-java-BFS-solution-and-2-end-BFS-solution-with-improvement/303702
+ * https://leetcode.com/problems/open-the-lock/discuss/110237/Regular-java-BFS-solution-and-2-end-BFS-solution-with-improvement
+ */
 @SuppressWarnings(UNUSED)
 class SolutionApproach0BFS {
     fun openLock(deadends: Array<String>, target: String): Int {
-        val queue = LinkedList<String>().also {
-            it.offer("0000")
+        val queue = ArrayDeque<String>().also {
+            it.addLast("0000")
         }
         val locked = deadends.toHashSet()
         val seen = HashSet<String>().also {
@@ -31,17 +32,14 @@ class SolutionApproach0BFS {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val cur = queue.poll()
-                if (locked.contains(cur))
-                    continue
+                val cur = queue.removeFirst()
+                if (locked.contains(cur)) continue
 
-                if (cur == target)
-                    return level
+                if (cur == target) return level
 
                 val nextStrs = getNextStrs(cur)
                 for (next in nextStrs) {
-                    if (seen.add(next) && !locked.contains(next))
-                        queue.offer(next)
+                    if (seen.add(next) && !locked.contains(next)) queue.addLast(next)
                 }
             }
 
@@ -52,7 +50,7 @@ class SolutionApproach0BFS {
     }
 
     private fun getNextStrs(prev: String): List<String> {
-        val nextStrs = LinkedList<String>()
+        val nextStrs = mutableListOf<String>()
         for (idx in prev.indices) {
             val wheel = prev[idx] - '0'
             val str1 = prev.substring(0, idx) + ((10 + wheel + 1) % 10).toString() + prev.substring(idx + 1)
