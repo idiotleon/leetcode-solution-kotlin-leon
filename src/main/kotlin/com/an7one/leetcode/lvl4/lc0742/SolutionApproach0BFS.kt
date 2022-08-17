@@ -1,12 +1,3 @@
-/**
- * https://leetcode.com/problems/closest-leaf-in-a-binary-tree/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(H) + O(N) ~ O(N)
- *
- * References:
- *  https://leetcode.com/problems/closest-leaf-in-a-binary-tree/discuss/109960/Java-DFS-%2B-BFS-27ms
- */
 package com.an7one.leetcode.lvl4.lc0742
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
@@ -15,6 +6,16 @@ import java.util.*
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/closest-leaf-in-a-binary-tree/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(H) + O(N) ~ O(N)
+ *
+ * Reference:
+ * https://leetcode.com/problems/closest-leaf-in-a-binary-tree/discuss/109960/Java-DFS-%2B-BFS-27ms
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
     private var start: TreeNode? = null
@@ -33,8 +34,8 @@ class SolutionApproach0BFS {
 
     private fun bfs(childToParent: HashMap<TreeNode, TreeNode>): Int {
 
-        val queue = LinkedList<TreeNode>().also {
-            it.offer(start!!)
+        val queue = ArrayDeque<TreeNode>().also {
+            it.addLast(start!!)
         }
 
         val seen = HashSet<TreeNode>().also {
@@ -42,16 +43,16 @@ class SolutionApproach0BFS {
         }
 
         while (queue.isNotEmpty()) {
-            val size = queue.size
+            val sizeQ = queue.size
 
-            for (sz in 0 until size) {
-                val cur = queue.poll()
+            for (sz in 0 until sizeQ) {
+                val cur = queue.removeFirst()
 
                 if (isLeaf(cur)) return cur.`val`
 
-                cur.left?.let { if (seen.add(it)) queue.offer(it) }
-                cur.right?.let { if (seen.add(it)) queue.offer(it) }
-                childToParent[cur]?.let { if (seen.add(it)) queue.offer(it) }
+                cur.left?.let { if (seen.add(it)) queue.addLast(it) }
+                cur.right?.let { if (seen.add(it)) queue.addLast(it) }
+                childToParent[cur]?.let { if (seen.add(it)) queue.addLast(it) }
             }
         }
 
@@ -59,9 +60,7 @@ class SolutionApproach0BFS {
     }
 
     private fun dfs(
-        node: TreeNode?,
-        map: HashMap<TreeNode, TreeNode>,
-        targetKey: Int
+        node: TreeNode?, map: HashMap<TreeNode, TreeNode>, targetKey: Int
     ) {
         if (node == null) return
 

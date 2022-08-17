@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0740
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/delete-and-earn/
  *
  * Time Complexity:     O(`nNums` + `RANGE`) + O(`RANGE`) ~ O(`nNums` + `RANGE`)
@@ -9,15 +14,11 @@
  * Space Complexity:    O(`nNums` + `RANGE`)
  *
  *
- * References:
- *  https://leetcode.com/problems/delete-and-earn/discuss/109889/Java-Easy-DP-Solution/111623
- *  https://www.youtube.com/watch?v=YzZd-bsMthk
- *  http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-740-delete-and-earn/
+ * Reference:
+ * https://leetcode.com/problems/delete-and-earn/discuss/109889/Java-Easy-DP-Solution/111623
+ * https://www.youtube.com/watch?v=YzZd-bsMthk
+ * http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-740-delete-and-earn/
  */
-package com.an7one.leetcode.lvl4.lc0740
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun deleteAndEarn(nums: IntArray): Int {
