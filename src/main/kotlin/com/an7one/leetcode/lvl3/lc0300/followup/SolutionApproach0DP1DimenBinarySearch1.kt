@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl3.lc0300.followup
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/longest-increasing-subsequence/
  *
  * Time Complexity:     O(`nNums` * lg(`nNums`))
  * Space Complexity:    O(`nNums`)
  *
- * References:
- *  https://youtu.be/S9oUiVYEq7E
- *  https://leetcode.com/problems/longest-increasing-subsequence/solution/
- *  Paid Course, 12min: https://www.acwing.com/video/36/
+ * Reference:
+ * https://youtu.be/S9oUiVYEq7E
+ * https://leetcode.com/problems/longest-increasing-subsequence/solution/
+ * Paid Course, 12min: https://www.acwing.com/video/36/
  */
-package com.an7one.leetcode.lvl3.lc0300.followup
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1DimenBinarySearch1 {
     fun lengthOfLIS(nums: IntArray): Int {
@@ -35,7 +36,7 @@ class SolutionApproach0DP1DimenBinarySearch1 {
     }
 
     /**
-     * to find the the insertion position of the largest number that is smaller than the `target`
+     * to find the insertion position of the largest number that is smaller than the `target`
      */
     private fun lowerBound(low: Int, high: Int, tails: IntArray, target: Int): Int {
         var lo = low

@@ -1,13 +1,14 @@
+package com.an7one.leetcode.lvl3.lc0300.followup
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/longest-increasing-subsequence/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  */
-package com.an7one.leetcode.lvl3.lc0300.followup
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinaryIndexedTree {
     fun lengthOfLIS(nums: IntArray): Int {

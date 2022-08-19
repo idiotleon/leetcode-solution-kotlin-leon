@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/longest-increasing-subsequence/
- *
- * Time Complexity:     O(`totalNums` ^ 2)
- * Space Complexity:    O(`totalNums`)
- *
- * References:
- *  https://leetcode.com/problems/longest-increasing-subsequence/discuss/74836/My-easy-to-understand-O(n2)-solution-using-DP-with-video-explanation/144619
- *  https://youtu.be/7DKFpWnaxLI
- *  http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-300-longest-increasing-subsequence/
- */
 package com.an7one.leetcode.lvl3.lc0300
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/longest-increasing-subsequence/
+ *
+ * Time Complexity:     O(`nNums` ^ 2)
+ * Space Complexity:    O(`nNums`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/longest-increasing-subsequence/discuss/74836/My-easy-to-understand-O(n2)-solution-using-DP-with-video-explanation/144619
+ * https://youtu.be/7DKFpWnaxLI
+ * http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-300-longest-increasing-subsequence/
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun lengthOfLIS(nums: IntArray): Int {

@@ -1,14 +1,15 @@
-/**
- * https://leetcode.com/problems/longest-increasing-subsequence/
- *
- * Time Complexity:     O(`nNums` * lg(`nNums`))
- * Space Complexity:    O(`nNums`)
- */
 package com.an7one.leetcode.lvl3.lc0300.followup
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/longest-increasing-subsequence/
+ *
+ * Time Complexity:     O(`nNums` * lg(`nNums`))
+ * Space Complexity:    O(`nNums`)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0TreeSet {
     fun lengthOfLIS(nums: IntArray): Int {

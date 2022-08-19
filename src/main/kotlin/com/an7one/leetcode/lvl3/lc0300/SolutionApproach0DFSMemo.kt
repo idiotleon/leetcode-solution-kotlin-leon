@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl3.lc0300
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/longest-increasing-subsequence
  *
  * Time Complexity:     O(`nNums` ^ 2)
  * Space Complexity:    O(`nNums`)
  *
- * References:
- *  http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-300-longest-increasing-subsequence/
- *  https://youtu.be/7DKFpWnaxLI
+ * Reference:
+ * http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-300-longest-increasing-subsequence/
+ * https://youtu.be/7DKFpWnaxLI
  */
-package com.an7one.leetcode.lvl3.lc0300
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun lengthOfLIS(nums: IntArray): Int {
