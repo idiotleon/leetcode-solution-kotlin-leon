@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0318.withBit
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/maximum-product-of-word-lengths/
  *
  * Time Complexity:     O(`nWords` ^ 2)
  * Space Complexity:    O(`nWords`)
  *
- * References:
- *  https://leetcode.com/problems/maximum-product-of-word-lengths/discuss/76959/JAVA-Easy-Version-To-Understand!!!!!!!!!!!!!!!!!/80790
+ * Reference:
+ * https://leetcode.com/problems/maximum-product-of-word-lengths/discuss/76959/JAVA-Easy-Version-To-Understand!!!!!!!!!!!!!!!!!/80790
  */
-package com.an7one.leetcode.lvl3.lc0318.withBit
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun maxProduct(words: Array<String>): Int {

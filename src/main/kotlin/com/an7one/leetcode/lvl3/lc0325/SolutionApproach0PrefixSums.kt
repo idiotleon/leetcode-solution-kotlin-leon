@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl3.lc0325
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
  *
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(`nNums`)
  *
- * References:
- *  https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/discuss/77778/Java-O(n)-explain-how-I-come-up-with-this-idea/82048
- *  https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/discuss/77778/Java-O(n)-explain-how-I-come-up-with-this-idea
+ * Reference:
+ * https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/discuss/77778/Java-O(n)-explain-how-I-come-up-with-this-idea/82048
+ * https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/discuss/77778/Java-O(n)-explain-how-I-come-up-with-this-idea
  */
-package com.an7one.leetcode.lvl3.lc0325
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0PrefixSums {
     fun maxSubArrayLen(nums: IntArray, k: Int): Int {

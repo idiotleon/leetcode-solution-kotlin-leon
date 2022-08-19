@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0320
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/generalized-abbreviation/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/generalized-abbreviation/discuss/77218/Java-14ms-beats-100/427336
+ * Reference:
+ * https://leetcode.com/problems/generalized-abbreviation/discuss/77218/Java-14ms-beats-100/427336
  */
-package com.an7one.leetcode.lvl3.lc0320
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun generateAbbreviations(word: String): List<String> {
@@ -20,11 +21,7 @@ class SolutionApproach0Backtrack {
     }
 
     private fun backtrack(
-        idx: Int,
-        count: Int,
-        abbr: StringBuilder,
-        word: String,
-        res: MutableList<String>
+        idx: Int, count: Int, abbr: StringBuilder, word: String, res: MutableList<String>
     ) {
         val len = abbr.length
 

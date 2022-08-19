@@ -1,21 +1,21 @@
-/**
- * https://leetcode.com/problems/minimum-height-trees/
- *
- * Time Complexity:     O(`n`)
- * Space Complexity:    O(`n`)
- *
- * References:
- *  https://leetcode.com/problems/minimum-height-trees/discuss/76129/Share-my-BFS-JAVA-code-using-degree-with-explanation-which-beats-more-than-95/293110
- */
 package com.an7one.leetcode.lvl3.lc0310
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 import kotlin.collections.ArrayDeque;
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/minimum-height-trees/
+ *
+ * Time Complexity:     O(`n`)
+ * Space Complexity:    O(`n`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/minimum-height-trees/discuss/76129/Share-my-BFS-JAVA-code-using-degree-with-explanation-which-beats-more-than-95/293110
+ */
 @Suppress(UNUSED)
 class SolutionApproach0TopologicalSort {
-    @OptIn(ExperimentalStdlibApi::class)
     fun findMinHeightTrees(n: Int, edges: Array<IntArray>): List<Int> {
         if (n == 1) return mutableListOf(0)
 

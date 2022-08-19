@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0322
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/coin-change/
  *
  * Time Complexity:     O(`nCoins` * `amount`)
  * Space Complexity:    O(`amount`)
  *
- * References:
- *  http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-322-coin-change/
+ * Reference:
+ * http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-322-coin-change/
  */
-package com.an7one.leetcode.lvl3.lc0322
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Knapsack {
     fun coinChange(coins: IntArray, amount: Int): Int {
