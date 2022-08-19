@@ -1,4 +1,12 @@
+package com.an7one.leetcode.lvl3.lc0332
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/reconstruct-itinerary/
  *
  * Time Complexity:     O(`nTickets` * lg(`nTickets`)) + O(`nTickets`) ~ O(`nTickets` * lg(`nTickets`))
@@ -9,18 +17,11 @@
  *
  * to sort the children and post order traverse the graph
  *
- * References:
- *  https://www.youtube.com/watch?v=4udFSOWQpdg
- *  http://zxi.mytechroad.com/blog/graph/leetcode-332-reconstruct-itinerary/
- *  Hierholzer's algorithm: https://en.wikipedia.org/wiki/Eulerian_path
+ * Reference:
+ * https://www.youtube.com/watch?v=4udFSOWQpdg
+ * http://zxi.mytechroad.com/blog/graph/leetcode-332-reconstruct-itinerary/
+ * Hierholzer's algorithm: https://en.wikipedia.org/wiki/Eulerian_path
  */
-package com.an7one.leetcode.lvl3.lc0332
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
-
 @Suppress(UNUSED)
 class SolutionApproach0HierholzersAlgorithm {
     private companion object {
@@ -46,9 +47,7 @@ class SolutionApproach0HierholzersAlgorithm {
     }
 
     private fun postorder(
-        start: String,
-        graph: Map<String, PriorityQueue<String>>,
-        path: ArrayList<String>
+        start: String, graph: Map<String, PriorityQueue<String>>, path: ArrayList<String>
     ) {
         graph[start]?.let { destPQ ->
             while (destPQ.isNotEmpty()) {

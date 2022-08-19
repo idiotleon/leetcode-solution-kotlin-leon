@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/largest-bst-subtree/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(H)
- *
- * References:
- *  https://leetcode.com/problems/largest-bst-subtree/discuss/78899/Very-Short-Simple-Java-O(N)-Solution
- */
 package com.an7one.leetcode.lvl3.lc0333
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/largest-bst-subtree/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(H)
+ *
+ * Reference:
+ * https://leetcode.com/problems/largest-bst-subtree/discuss/78899/Very-Short-Simple-Java-O(N)-Solution
+ */
 @Suppress(UNUSED)
 class SolutionApproach0PostorderRecursive {
     private companion object {

@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0334
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/increasing-triplet-subsequence/
  *
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/increasing-triplet-subsequence/discuss/79004/Concise-Java-solution-with-comments.
+ * Reference:
+ * https://leetcode.com/problems/increasing-triplet-subsequence/discuss/79004/Concise-Java-solution-with-comments.
  */
-package com.an7one.leetcode.lvl3.lc0334
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun increasingTriplet(nums: IntArray): Boolean {
