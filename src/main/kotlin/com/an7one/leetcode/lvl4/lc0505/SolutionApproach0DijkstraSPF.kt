@@ -1,19 +1,20 @@
-/**
- * https://leetcode.com/problems/the-maze-ii/
- *
- * Time Complexity:     O(V + Elg(V)) ~ O(`totalRows` * `totalCols` * lg(`totalRows` * `totalCols`))
- * Space Complexity:    O(Elg(V)) ~ O(`totalRows` * `totalCols`)
- *
- * to find the next shortest stop from the starting point and then continue to explore from there.
- *
- * References:
- *  https://leetcode.com/problems/the-maze-ii/solution/
- */
 package com.an7one.leetcode.lvl4.lc0505
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/the-maze-ii/
+ *
+ * Time Complexity:     O(V + Elg(V)) ~ O(`nRows` * `nCols` * lg(`nRows` * `nCols`))
+ * Space Complexity:    O(Elg(V)) ~ O(`nRows` * `nCols`)
+ *
+ * to find the next shortest stop from the starting point and then continue to explore from there.
+ *
+ * Reference:
+ * https://leetcode.com/problems/the-maze-ii/solution/
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DijkstraSPF {
     private companion object {

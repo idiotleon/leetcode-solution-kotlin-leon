@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc0489
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/robot-room-cleaner/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/robot-room-cleaner/discuss/153530/DFS-Logical-Thinking/239683
- *  https://leetcode.com/problems/robot-room-cleaner/discuss/153530/DFS-Logical-Thinking
+ * Reference:
+ * https://leetcode.com/problems/robot-room-cleaner/discuss/153530/DFS-Logical-Thinking/239683
+ * https://leetcode.com/problems/robot-room-cleaner/discuss/153530/DFS-Logical-Thinking
  */
-package com.an7one.leetcode.lvl4.lc0489
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     private companion object {
@@ -24,11 +25,7 @@ class SolutionApproach0Backtrack {
     }
 
     private fun backtrack(
-        row: Int,
-        col: Int,
-        dir: Int,
-        seen: HashSet<String>,
-        robot: FakeRobot
+        row: Int, col: Int, dir: Int, seen: HashSet<String>, robot: FakeRobot
     ) {
         robot.clean()
 

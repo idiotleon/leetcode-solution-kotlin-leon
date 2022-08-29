@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl4.lc0486
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/predict-the-winner/
  *
  * Time Complexity:     O(`nNums` ^ 2)
@@ -9,14 +14,10 @@
  *  2. when player2 wins scores, to subtract the score from player1's total scores
  *  3. ultimately to see if player1 has any score left, which means player1 achieves more scores than player2, and thus wins
  *
- * References:
- *  https://leetcode.com/problems/predict-the-winner/discuss/96838/Java-'1-Line'-Recursive-Solution-O(n2)-Time-and-O(n)-Space/171753
- *  https://youtu.be/Tw1k46ywN6E?t=3622
+ * Reference:
+ * https://leetcode.com/problems/predict-the-winner/discuss/96838/Java-'1-Line'-Recursive-Solution-O(n2)-Time-and-O(n)-Space/171753
+ * https://youtu.be/Tw1k46ywN6E?t=3622
  */
-package com.an7one.leetcode.lvl4.lc0486
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun predictTheWinner(nums: IntArray): Boolean {

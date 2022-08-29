@@ -1,38 +1,36 @@
-/**
- * https://leetcode.com/problems/freedom-trail/
- *
- * Time Complexity:     O()
- * Space Complexity:    O()
- *
- * References:
- *  https://leetcode.com/problems/freedom-trail/discuss/98897/Java-Clear-Solution-dfs+memoization/103015
- *  https://leetcode.com/problems/freedom-trail/discuss/98897/Java-Clear-Solution-dfs%2Bmemoization
- */
 package com.an7one.leetcode.lvl4.lc0514
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.math.abs
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/freedom-trail/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ *
+ * Reference:
+ * https://leetcode.com/problems/freedom-trail/discuss/98897/Java-Clear-Solution-dfs+memoization/103015
+ * https://leetcode.com/problems/freedom-trail/discuss/98897/Java-Clear-Solution-dfs%2Bmemoization
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun findRotateSteps(ring: String, key: String): Int {
         val lenR = ring.length
         val lenK = key.length
 
-        val chToIdxes = List(26) { HashSet<Int>() }
+        val chToIndices = List(26) { HashSet<Int>() }
         for (idx in ring.indices) {
-            chToIdxes[ring[idx] - 'a'].add(idx)
+            chToIndices[ring[idx] - 'a'].add(idx)
         }
 
         val memo = Array(lenK) { Array<Int?>(lenR) { null } }
-        return dfs(0, 0, key, ring, chToIdxes, memo) + lenK
+        return dfs(0, 0, key, ring, chToIndices, memo) + lenK
     }
 
     private fun dfs(
-        idxKey: Int, idxRing: Int,
-        key: String, ring: String,
-        chToIdxes: List<HashSet<Int>>,
-        memo: Array<Array<Int?>>
+        idxKey: Int, idxRing: Int, key: String, ring: String, chToIdxes: List<HashSet<Int>>, memo: Array<Array<Int?>>
     ): Int {
         val lenR = ring.length
         val lenK = key.length

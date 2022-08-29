@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl4.lc0481
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/magical-string/
  *
  * Time Complexity:     O(`n`)
  * Space Complexity:    O(`n`)
  *
- * References:
- *  https://leetcode.com/problems/magical-string/discuss/96413/Simple-Java-solution-using-one-array-and-two-pointers
+ * Reference:
+ * https://leetcode.com/problems/magical-string/discuss/96413/Simple-Java-solution-using-one-array-and-two-pointers
  */
-package com.an7one.leetcode.lvl4.lc0481
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     fun magicalString(n: Int): Int {
