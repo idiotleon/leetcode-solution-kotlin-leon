@@ -1,3 +1,9 @@
+package com.an7one.leetcode.lvl4.lc1202
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+import kotlin.collections.HashMap
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/smallest-string-with-swaps/
@@ -5,15 +11,9 @@
  * Time Complexity:     O(L) + O(N)
  * Space Complexity:    O(L) + O(N)
  *
- * References:
- *  https://leetcode.com/problems/smallest-string-with-swaps/discuss/388055/Java-Union-find-%2B-PriorityQueue.-Easy-to-understand.
+ * Reference:
+ * https://leetcode.com/problems/smallest-string-with-swaps/discuss/388055/Java-Union-find-%2B-PriorityQueue.-Easy-to-understand.
  */
-package com.an7one.leetcode.lvl4.lc1202
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-import kotlin.collections.HashMap
-
 @Suppress(UNUSED)
 class SolutionApproach0UnionFind {
     fun smallestStringWithSwaps(str: String, pairs: List<List<Int>>): String {
