@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl5.lc1649
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/create-sorted-array-through-instructions/
  *
  * Time Complexity:     O(`nInsts` * lg(`nInsts`))
  * Space Complexity:    O(`DATA_RANGE`)
  *
- * References:
- *  https://youtu.be/v2Q4ZjPeFuc?t=1615
- *  https://leetcode.com/problems/create-sorted-array-through-instructions/discuss/927531/JavaC%2B%2BPython-Binary-Indexed-Tree
+ * Reference:
+ * https://youtu.be/v2Q4ZjPeFuc?t=1615
+ * https://leetcode.com/problems/create-sorted-array-through-instructions/discuss/927531/JavaC%2B%2BPython-Binary-Indexed-Tree
  */
-package com.an7one.leetcode.lvl5.lc1649
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinaryIndexedTree {
     private companion object {
