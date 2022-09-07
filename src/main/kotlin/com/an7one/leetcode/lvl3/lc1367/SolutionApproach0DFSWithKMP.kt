@@ -1,4 +1,11 @@
+package com.an7one.leetcode.lvl3.lc1367
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/linked-list-in-binary-tree/
  *
  * Time Complexity:     O(L + N) ~ O(max(L, N))
@@ -9,15 +16,9 @@
  *  H, height of the tree
  *  L, amount of nodes of the linked list
  *
- * References:
- *  https://leetcode.com/problems/linked-list-in-binary-tree/discuss/535370/Java-KMP-Search-O(m%2Bn)-Clean-code
+ * Reference:
+ * https://leetcode.com/problems/linked-list-in-binary-tree/discuss/535370/Java-KMP-Search-O(m%2Bn)-Clean-code
  */
-package com.an7one.leetcode.lvl3.lc1367
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSWithKMP {
     fun isSubPath(head: ListNode?, root: TreeNode?): Boolean {
