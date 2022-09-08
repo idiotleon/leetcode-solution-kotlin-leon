@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc1918
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/kth-smallest-subarray-sum/
  *
  * Time Complexity:     O(`nNums` * lg(`RANGE_DATA`))
  * Space Complexity:    O(1)
  *
  * Reference:
- *  https://leetcode.com/problems/kth-smallest-subarray-sum/discuss/1309749/Binary-Search-%2B-Sliding-Window
+ * https://leetcode.com/problems/kth-smallest-subarray-sum/discuss/1309749/Binary-Search-%2B-Sliding-Window
  */
-package com.an7one.leetcode.lvl3.lc1918
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     private companion object {
@@ -28,10 +29,8 @@ class SolutionApproach0BinarySearch {
             val mid = lo + (hi - lo) / 2
             val count = getCount(nums, mid)
 
-            if (count < k)
-                lo = mid + 1
-            else
-                hi = mid
+            if (count < k) lo = mid + 1
+            else hi = mid
         }
 
         return lo
