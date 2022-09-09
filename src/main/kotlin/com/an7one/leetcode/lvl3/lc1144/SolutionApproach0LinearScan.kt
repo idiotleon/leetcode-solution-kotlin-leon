@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl3.lc1144
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/decrease-elements-to-make-array-zigzag/
  *
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/decrease-elements-to-make-array-zigzag/discuss/350576/JavaC++Python-Easy-and-concise/318347
- *  https://leetcode.com/problems/decrease-elements-to-make-array-zigzag/discuss/350713/Read-my-short-proof-if-you-feel-confused.
+ * Reference:
+ * https://leetcode.com/problems/decrease-elements-to-make-array-zigzag/discuss/350576/JavaC++Python-Easy-and-concise/318347
+ * https://leetcode.com/problems/decrease-elements-to-make-array-zigzag/discuss/350713/Read-my-short-proof-if-you-feel-confused.
  */
-package com.an7one.leetcode.lvl3.lc1144
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun movesToMakeZigzag(nums: IntArray): Int {
