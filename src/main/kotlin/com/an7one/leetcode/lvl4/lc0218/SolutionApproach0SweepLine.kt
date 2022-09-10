@@ -12,10 +12,10 @@ import kotlin.collections.ArrayList
  * Time Complexity:     O(`nBlds` * lg(`nBlds`))
  * Space Complexity:    O(`nBlds`)
  *
- * References:
- *  https://github.com/mission-peace/interview/blob/master/src/com/interview/geometry/SkylineDrawing.java
- *  https://www.youtube.com/watch?v=GSBLe8cKu0s
- *  https://leetcode.com/problems/the-skyline-problem/discuss/61197/(Guaranteed)-Really-Detailed-and-Good-(Perfect)-Explanation-of-The-Skyline-Problem/190968
+ * Reference:
+ * https://github.com/mission-peace/interview/blob/master/src/com/interview/geometry/SkylineDrawing.java
+ * https://www.youtube.com/watch?v=GSBLe8cKu0s
+ * https://leetcode.com/problems/the-skyline-problem/discuss/61197/(Guaranteed)-Really-Detailed-and-Good-(Perfect)-Explanation-of-The-Skyline-Problem/190968
  */
 @Suppress(UNUSED)
 class SolutionApproach0SweepLine {

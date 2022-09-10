@@ -9,8 +9,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(`K` * `nDays`)
  * Space Complexity:    O(`K` * `nDays`)
  *
- * References:
- *  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/discuss/54117/Clean-Java-DP-solution-with-comment
+ * Reference:
+ * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/discuss/54117/Clean-Java-DP-solution-with-comment
  */
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
