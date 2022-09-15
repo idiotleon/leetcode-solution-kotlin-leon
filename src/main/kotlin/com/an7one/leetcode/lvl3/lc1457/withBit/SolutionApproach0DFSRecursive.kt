@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/
- *
- * Time Complexity:     O(N)
- * Space Complexity:    O(K + H)
- *
- * References:
- *  https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/discuss/648534/JavaC%2B%2BPython-At-most-one-odd-occurrence
- */
 package com.an7one.leetcode.lvl3.lc1457.withBit
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(K + H)
+ *
+ * Reference:
+ * https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/discuss/648534/JavaC%2B%2BPython-At-most-one-odd-occurrence
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun pseudoPalindromicPaths(root: TreeNode?): Int {

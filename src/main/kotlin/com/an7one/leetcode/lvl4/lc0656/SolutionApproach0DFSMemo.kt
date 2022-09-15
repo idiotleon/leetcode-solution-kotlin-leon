@@ -1,21 +1,21 @@
+package com.an7one.leetcode.lvl4.lc0656
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/coin-path/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/coin-path/discuss/130812/Java-Clear-Code-Beats-99.43-with-Explanations
+ * Reference:
+ * https://leetcode.com/problems/coin-path/discuss/130812/Java-Clear-Code-Beats-99.43-with-Explanations
  */
-package com.an7one.leetcode.lvl4.lc0656
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun cheapestJump(coins: IntArray, maxJump: Int): List<Int> {
-        if (coins.isEmpty() || coins.last() == -1)
-            return listOf()
+        if (coins.isEmpty() || coins.last() == -1) return listOf()
 
         val nCoins = coins.size
 
@@ -38,11 +38,7 @@ class SolutionApproach0DFSMemo {
     }
 
     private fun dfs(
-        idxStart: Int,
-        coins: IntArray,
-        maxJump: Int,
-        paths: Array<Int>,
-        memo: Array<Int?>
+        idxStart: Int, coins: IntArray, maxJump: Int, paths: Array<Int>, memo: Array<Int?>
     ): Int {
         memo[idxStart]?.let { return it }
 

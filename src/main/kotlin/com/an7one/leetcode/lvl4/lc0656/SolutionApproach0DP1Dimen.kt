@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl4.lc0656
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/coin-path/
  *
  * Time Complexity:     O(`nCoins` ^ 2)
  * Space Complexity:    O(`nCoins`)
  *
- * References:
- *  https://leetcode.com/problems/coin-path/discuss/106295/C++-DP-O(nB)-time-O(n)-space/108651
- *  https://leetcode.com/problems/coin-path/discuss/106295/C%2B%2B-DP-O(nB)-time-O(n)-space
+ * Reference:
+ * https://leetcode.com/problems/coin-path/discuss/106295/C++-DP-O(nB)-time-O(n)-space/108651
+ * https://leetcode.com/problems/coin-path/discuss/106295/C%2B%2B-DP-O(nB)-time-O(n)-space
  */
-package com.an7one.leetcode.lvl4.lc0656
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun cheapestJump(coins: IntArray, maxJump: Int): List<Int> {
