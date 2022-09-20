@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl3.lc0253.followups.followup0
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/meeting-rooms-ii/
  * could you please output the schedules of all meeting rooms, in below orders:
  *  1. to sorted by meeting room IDs
@@ -17,11 +23,6 @@
  *
  * this solution has NOT been verified yet
  */
-package com.an7one.leetcode.lvl3.lc0253.followups.followup0
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0SweepLine {
     fun meetingRoomsSchedules(intervals: Array<IntArray>): List<List<IntArray>> {
