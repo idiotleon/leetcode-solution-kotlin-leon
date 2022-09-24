@@ -1,3 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0109
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/
@@ -7,12 +13,6 @@
  *
  * a top-down approach
  */
-package com.an7one.leetcode.lvl3.lc0109
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-
 @Suppress(UNUSED)
 class SolutionApproach0Recursion {
     fun sortedListToBST(head: ListNode?): TreeNode? {

@@ -1,23 +1,25 @@
-/**
- *
- */
 package com.an7one.leetcode.lvl3.lc0116
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+ *
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(H)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun connect(root: Node?): Node? {
-        if (root == null)
-            return null
+        if (root == null) return null
 
         dfs(root.left, root.right)
         return root
     }
 
     private fun dfs(node1: Node?, node2: Node?) {
-        if (node1 == null || node2 == null)
-            return
+        if (node1 == null || node2 == null) return
 
         node1.next = node2
 

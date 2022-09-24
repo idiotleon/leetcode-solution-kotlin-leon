@@ -1,3 +1,8 @@
+package com.an7one.leetcode.lvl3.lc0113
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/path-sum-ii/
@@ -5,11 +10,6 @@
  * Time Complexity:     O(N)
  * Space Complexity:    O(H)
  */
-package com.an7one.leetcode.lvl3.lc0113
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun pathSum(root: TreeNode?, sum: Int): List<List<Int>> {
@@ -22,10 +22,7 @@ class SolutionApproach0Backtrack {
     }
 
     private fun backtrack(
-        node: TreeNode?,
-        target: Int,
-        path: MutableList<Int>,
-        paths: MutableList<List<Int>>
+        node: TreeNode?, target: Int, path: MutableList<Int>, paths: MutableList<List<Int>>
     ) {
         if (node == null) return
 
