@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0343
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/integer-break/
  *
  * Time Complexity:     O(lg(`n`))
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/integer-break/discuss/80689/A-simple-explanation-of-the-math-part-and-a-O(n)-solution
+ * Reference:
+ * https://leetcode.com/problems/integer-break/discuss/80689/A-simple-explanation-of-the-math-part-and-a-O(n)-solution
  */
-package com.an7one.leetcode.lvl3.lc0343
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Math {
     fun integerBreak(n: Int): Int {

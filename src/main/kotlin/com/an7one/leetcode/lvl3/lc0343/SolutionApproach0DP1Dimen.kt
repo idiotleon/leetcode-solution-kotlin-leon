@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0343
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/integer-break/
  *
  * Time Complexity:     O(`n` ^ 2)
  * Space Complexity:    O(`n`)
  *
- * References:
- *  https://leetcode.com/problems/integer-break/discuss/80694/Java-DP-solution/204792
+ * Reference:
+ * https://leetcode.com/problems/integer-break/discuss/80694/Java-DP-solution/204792
  */
-package com.an7one.leetcode.lvl3.lc0343
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun integerBreak(n: Int): Int {
