@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/insertion-sort-list/
- *
- * Time Complexity:     O(L ^ 2)
- * Space Complexity:    O(1)
- */
 package com.an7one.leetcode.lvl3.lc0147
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.linkedList.ListNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/insertion-sort-list/
+ *
+ * Time Complexity:     O(L ^ 2)
+ * Space Complexity:    O(1)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0InsertionSort {
     fun insertionSortList(head: ListNode?): ListNode? {
-        if (head == null) return head
+        if (head == null) return null
 
         val dummy = ListNode(-1)
         var prev = dummy
