@@ -1,7 +1,12 @@
+package com.an7one.leetcode.lvl3.lc0152
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/maximum-product-subarray/
  *
- * Time Complexity:     O(size)
+ * Time Complexity:     O(`nNums`)
  *  size, the amount of elements in the given array
  *
  * Space Complexity:    O(1)
@@ -11,16 +16,14 @@
  * And then to compare the current value to get the current minimum or maximum product.
  * Please note that do NOT involve any divide operation, because there might be a zero in the array, which costs extra code.
  *
- * References:
- *  https://leetcode.com/problems/maximum-product-subarray/discuss/48230/Possibly-simplest-solution-with-O(n)-time-complexity
+ * Reference:
+ * https://leetcode.com/problems/maximum-product-subarray/discuss/48230/Possibly-simplest-solution-with-O(n)-time-complexity
  */
-package com.an7one.leetcode.lvl3.lc0152
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP0Dimen {
     fun maxProduct(nums: IntArray): Int {
+        // not used
+        // val nNums = nums.size
         // sanity check
         if (nums.isEmpty()) return 0
 
