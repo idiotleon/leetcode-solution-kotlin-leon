@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0153
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
  *
  * Time Complexity:     O(lg(`nNums`))
@@ -6,14 +11,10 @@
  *
  * Space Complexity:    O(lg(`nNums`))
  *
- * References:
- *  http://zxi.mytechroad.com/blog/divide-and-conquer/leetcode-153-find-minimum-in-rotated-sorted-array/
- *  https://www.youtube.com/watch?v=P4r7mF1Jd50
+ * Reference:
+ * http://zxi.mytechroad.com/blog/divide-and-conquer/leetcode-153-find-minimum-in-rotated-sorted-array/
+ * https://youtu.be/P4r7mF1Jd50
  */
-package com.an7one.leetcode.lvl3.lc0153
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DivideAndConquer {
     fun findMin(nums: IntArray): Int {
@@ -23,11 +24,9 @@ class SolutionApproach0DivideAndConquer {
     }
 
     private fun findMin(lo: Int, hi: Int, nums: IntArray): Int {
-        if (lo + 1 >= hi)
-            return minOf(nums[lo], nums[hi])
+        if (lo + 1 >= hi) return minOf(nums[lo], nums[hi])
 
-        if (nums[lo] < nums[hi])
-            return nums[lo]
+        if (nums[lo] < nums[hi]) return nums[lo]
 
         val mid = lo + (hi - lo) / 2
         return minOf(findMin(lo, mid, nums), findMin(mid + 1, hi, nums))
