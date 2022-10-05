@@ -1,11 +1,12 @@
 /**
+ * @author" Leon
  * https://leetcode.com/problems/majority-element/
  *
  * Time Complexity:     O(`nNums` * lg(`nNums`))
  * Space Complexity:    O(lg(`nNums`))
  *
- * References:
- *  https://youtu.be/SWr4cSY2fCk?t=366
+ * Reference:
+ * https://youtu.be/SWr4cSY2fCk?t=366
  */
 package com.an7one.leetcode.lvl3.lc0169
 

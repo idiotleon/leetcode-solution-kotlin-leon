@@ -12,7 +12,7 @@ import com.an7one.leetcode.util.dataStructure.tree.TreeNode
  *
  * Reference:
  * https://leetcode.com/problems/binary-tree-upside-down/discuss/49412/Clean-Java-solution/49658
- *  https://leetcode.com/problems/binary-tree-upside-down/discuss/49412/Clean-Java-solution
+ * https://leetcode.com/problems/binary-tree-upside-down/discuss/49412/Clean-Java-solution
  */
 @Suppress(UNUSED)
 class SolutionApproach0Recursion {

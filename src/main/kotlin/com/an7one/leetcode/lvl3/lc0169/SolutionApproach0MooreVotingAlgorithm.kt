@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl3.lc0169
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * https://leetcode.com/problems/majority-element/
  *
@@ -6,13 +10,9 @@
  *
  * the description of the problem guarantees that there always will be a majority element
  *
- * References:
- *  https://youtu.be/SWr4cSY2fCk?t=501
+ * Reference:
+ * https://youtu.be/SWr4cSY2fCk?t=501
  */
-package com.an7one.leetcode.lvl3.lc0169
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0MooreVotingAlgorithm {
     fun majorityElement(nums: IntArray): Int {
