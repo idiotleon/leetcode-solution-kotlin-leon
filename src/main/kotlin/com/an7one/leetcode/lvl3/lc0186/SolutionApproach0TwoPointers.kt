@@ -1,13 +1,14 @@
+package com.an7one.leetcode.lvl3.lc0186
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/reverse-words-in-a-string-ii/
  *
  * Time Complexity:     O(`nChs`)
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl3.lc0186
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     private companion object {
