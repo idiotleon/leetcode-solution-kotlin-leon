@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0624
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/maximum-distance-in-arrays/
  *
  * Time Complexity:     O(`NR`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/maximum-distance-in-arrays/discuss/104613/Java-Solution-Min-and-Max
+ * Reference:
+ * https://leetcode.com/problems/maximum-distance-in-arrays/discuss/104613/Java-Solution-Min-and-Max
  */
-package com.an7one.leetcode.lvl3.lc0624
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun maxDistance(arrays: List<List<Int>>): Int {
