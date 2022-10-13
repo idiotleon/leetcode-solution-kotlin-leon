@@ -1,4 +1,9 @@
+package com.an7one.leetcode.ood.lvl3.lc0731
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/my-calendar-ii/
  *
  * Time Complexity:     O(nEvents * lg(duration))
@@ -7,10 +12,6 @@
  *
  * Space Complexity:    O(nEvents)
  */
-package com.an7one.leetcode.ood.lvl3.lc0731
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree {
     private companion object {
@@ -85,10 +86,12 @@ class SolutionApproach0SegmentTree {
         }
     }
 
-    private data class SegmentTreeNode(val start: Int,
-                                       val end: Int,
-                                       var k: Int = 0,
-                                       var lazy: Int = 0,
-                                       var left: SegmentTreeNode? = null,
-                                       var right: SegmentTreeNode? = null)
+    private data class SegmentTreeNode(
+        val start: Int,
+        val end: Int,
+        var k: Int = 0,
+        var lazy: Int = 0,
+        var left: SegmentTreeNode? = null,
+        var right: SegmentTreeNode? = null
+    )
 }
