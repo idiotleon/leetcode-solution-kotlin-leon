@@ -1,4 +1,10 @@
+package com.an7one.leetcode.ood.lvl3.lc0901
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/online-stock-span/
  *
  * Time Complexity:     O(N) ~ O(N ^ 2)
@@ -8,23 +14,18 @@
  *  1. the contents are an 2-element array of price and count
  *  2. the prices are strictly decreasing
  */
-package com.an7one.leetcode.ood.lvl3.lc0901
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
-    private val stack = LinkedList<IntArray>()
+    private val stack = ArrayDeque<IntArray>()
 
     fun next(price: Int): Int {
         var span = 1
 
-        while (stack.isNotEmpty() && stack.peek()[0] <= price) {
-            span += stack.pop()[1]
+        while (stack.isNotEmpty() && stack.last()[0] <= price) {
+            span += stack.removeLast()[1]
         }
 
-        stack.push(intArrayOf(price, span))
+        stack.addLast(intArrayOf(price, span))
 
         return span
     }
