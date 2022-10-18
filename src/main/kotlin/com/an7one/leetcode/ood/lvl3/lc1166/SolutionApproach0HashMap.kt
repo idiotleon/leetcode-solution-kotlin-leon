@@ -1,16 +1,17 @@
+package com.an7one.leetcode.ood.lvl3.lc1166
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/design-file-system/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/design-file-system/discuss/365901/JavaPython-3-7-line-simple-HashMap-code-w-analysis.
+ * Reference:
+ * https://leetcode.com/problems/design-file-system/discuss/365901/JavaPython-3-7-line-simple-HashMap-code-w-analysis.
  */
-package com.an7one.leetcode.ood.lvl3.lc1166
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     private val file = HashMap<String, Int>()
@@ -27,5 +28,4 @@ class SolutionApproach0HashMap {
     }
 
     fun get(path: String) = file[path] ?: -1
-
 }
