@@ -1,4 +1,12 @@
+package com.an7one.leetcode.ood.lvl3.lc1261
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import com.an7one.leetcode.util.dataStructure.tree.TreeNode
+import java.util.*
+import kotlin.collections.HashSet
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/
  *
  *
@@ -8,16 +16,9 @@
  *
  * Space Complexity:    O(H) + O(`size`)
  *
- * References:
- *  https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/discuss/431107/JavaPython-3-DFS-clean-code-w-analysis./390121
+ * Reference:
+ * https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/discuss/431107/JavaPython-3-DFS-clean-code-w-analysis./390121
  */
-package com.an7one.leetcode.ood.lvl3.lc1261
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-import java.util.*
-import kotlin.collections.HashSet
-
 @Suppress(UNUSED)
 class SolutionApproach0BFS(root: TreeNode?) {
     private val seen = HashSet<Int>()
