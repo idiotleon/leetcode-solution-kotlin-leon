@@ -1,4 +1,9 @@
+package com.an7one.leetcode.ood.lvl3.lc1352
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/product-of-the-last-k-numbers/
  *
  * Time Complexities:
@@ -8,13 +13,9 @@
  * Space Complexity:    O(N)
  *  N, number of calls
  *
- * References:
- *  https://leetcode.com/problems/product-of-the-last-k-numbers/discuss/510260/JavaC%2B%2BPython-Prefix-Product
+ * Reference:
+ * https://leetcode.com/problems/product-of-the-last-k-numbers/discuss/510260/JavaC%2B%2BPython-Prefix-Product
  */
-package com.an7one.leetcode.ood.lvl3.lc1352
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0PrefixProducts {
     private var prefixProducts = arrayListOf(1)

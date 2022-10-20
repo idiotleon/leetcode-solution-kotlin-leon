@@ -1,17 +1,18 @@
+package com.an7one.leetcode.ood.lvl3.lc1600
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/throne-inheritance/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/throne-inheritance/discuss/866400/Textbook-DFS-Problem-with-convoluted-wording/712762
- *  https://leetcode.com/problems/throne-inheritance/discuss/866400/Textbook-DFS-Problem-with-convoluted-wording
+ * Reference:
+ * https://leetcode.com/problems/throne-inheritance/discuss/866400/Textbook-DFS-Problem-with-convoluted-wording/712762
+ * https://leetcode.com/problems/throne-inheritance/discuss/866400/Textbook-DFS-Problem-with-convoluted-wording
  */
-package com.an7one.leetcode.ood.lvl3.lc1600
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive(kingName: String) {
     private val family = HashMap<String, MutableList<String>>().also {
