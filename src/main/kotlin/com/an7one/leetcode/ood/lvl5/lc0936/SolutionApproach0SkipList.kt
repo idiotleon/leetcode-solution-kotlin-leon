@@ -1,4 +1,11 @@
+package com.an7one.leetcode.ood.lvl5.lc0936
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.math.log2
+import kotlin.random.Random
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/design-skiplist/
  *
  * Time Complexities:
@@ -7,16 +14,10 @@
  *
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/design-skiplist/discuss/393713/Python-1-node-per-value-and-100/781202
- *  https://leetcode.com/problems/design-skiplist/discuss/393713/Python-1-node-per-value-and-100
+ * Reference:
+ * https://leetcode.com/problems/design-skiplist/discuss/393713/Python-1-node-per-value-and-100/781202
+ * https://leetcode.com/problems/design-skiplist/discuss/393713/Python-1-node-per-value-and-100
  */
-package com.an7one.leetcode.ood.lvl5.lc0936
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.math.log2
-import kotlin.random.Random
-
 @Suppress(UNUSED)
 class SolutionApproach0SkipList {
     private companion object {
@@ -37,8 +38,7 @@ class SolutionApproach0SkipList {
 
     fun add(num: Int) {
         val idxLevel = minOf(
-            RANGE_LEVEL,
-            1 + (log2(1.0 / Random.nextDouble(1.0)).toInt())
+            RANGE_LEVEL, 1 + (log2(1.0 / Random.nextDouble(1.0)).toInt())
         )
 
         val newNode = SkipListNode(num)

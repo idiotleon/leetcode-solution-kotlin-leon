@@ -1,23 +1,24 @@
-/**
- *  https://leetcode.com/problems/fancy-sequence/
- *
- *  Time Complexities:
- *      `append()`:         O(1)
- *      `addAll()`:         O(1)
- *      `multiApp()`:       O(1)
- *      `getIndex()`:       O(1)
- *
- *  Space Complexity:       O(N)
- *      N, number of calls of `append()`
- *
- * References:
- *  https://leetcode.com/problems/fancy-sequence/discuss/898753/Python-Time-O(1)-for-each/736833
- *  https://leetcode.com/problems/fancy-sequence/discuss/898753/Python-Time-O(1)-for-each
- */
 package com.an7one.leetcode.ood.lvl5.lc1622
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/fancy-sequence/
+ *
+ * Time Complexities:
+ *     `append()`:         O(1)
+ *     `addAll()`:         O(1)
+ *     `multiApp()`:       O(1)
+ *     `getIndex()`:       O(1)
+ *
+ * Space Complexity:       O(N)
+ *     N, number of calls of `append()`
+ *
+ * Reference:
+ * https://leetcode.com/problems/fancy-sequence/discuss/898753/Python-Time-O(1)-for-each/736833
+ * https://leetcode.com/problems/fancy-sequence/discuss/898753/Python-Time-O(1)-for-each
+ */
 @Suppress(UNUSED)
 class SolutionApproach0PrefixSums() {
     private companion object {
