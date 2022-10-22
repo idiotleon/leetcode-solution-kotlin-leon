@@ -1,4 +1,9 @@
+package com.an7one.leetcode.ood.lvl6.lc0460
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/lfu-cache/
  *
  * Time Complexities:
@@ -7,13 +12,9 @@
  *
  * Space Complexity:    O(`CAPACITY`)
  *
- * References:
- *  https://leetcode.com/problems/lfu-cache/discuss/94547/Java-O(1)-Solution-Using-Two-HashMap-and-One-DoubleLinkedList
+ * Reference:
+ * https://leetcode.com/problems/lfu-cache/discuss/94547/Java-O(1)-Solution-Using-Two-HashMap-and-One-DoubleLinkedList
  */
-package com.an7one.leetcode.ood.lvl6.lc0460
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DLL(private val capacity: Int) {
     private val freqs = hashMapOf<Int, DoublyLinkedList>()
@@ -75,8 +76,7 @@ class SolutionApproach0DLL(private val capacity: Int) {
     }
 
     private data class DoublyLinkedList(
-        val dummyHead: DLLNode = DLLNode(-1),
-        val dummyTail: DLLNode = DLLNode(-1)
+        val dummyHead: DLLNode = DLLNode(-1), val dummyTail: DLLNode = DLLNode(-1)
     ) {
         var size: Int = 0
 

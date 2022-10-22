@@ -1,4 +1,9 @@
+package com.an7one.leetcode.ood.lvl6.lc0308
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/range-sum-query-2d-mutable/
  *
  * Time Complexities:
@@ -7,14 +12,10 @@
  *
  * Space Complexity:    O(`nRows` * `nCols`)
  *
- * References:
- *  https://leetcode.com/problems/range-sum-query-2d-mutable/discuss/75870/Java-2D-Binary-Indexed-Tree-Solution-clean-and-short-17ms/79038
- *  https://leetcode.com/problems/range-sum-query-2d-mutable/discuss/75870/Java-2D-Binary-Indexed-Tree-Solution-clean-and-short-17ms
+ * Reference:
+ * https://leetcode.com/problems/range-sum-query-2d-mutable/discuss/75870/Java-2D-Binary-Indexed-Tree-Solution-clean-and-short-17ms/79038
+ * https://leetcode.com/problems/range-sum-query-2d-mutable/discuss/75870/Java-2D-Binary-Indexed-Tree-Solution-clean-and-short-17ms
  */
-package com.an7one.leetcode.ood.lvl6.lc0308
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinaryIndexedTree(matrix: Array<IntArray>) {
     private val nRows = matrix.size
