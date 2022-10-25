@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0739
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/daily-temperatures/
  *
  * Time Complexity:     O(`nTs`)
@@ -8,11 +13,6 @@
  * 1. the elements of the stack are indexes, instead of values
  * 2. the values in the given array, accessed by those indexes, are in non-increasing order
  */
-package com.an7one.leetcode.lvl3.lc0739
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
-@OptIn(ExperimentalStdlibApi::class)
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
     fun dailyTemperatures(temperatures: IntArray): IntArray {
