@@ -10,8 +10,8 @@ import java.util.*
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
+ * Reference:
+ * https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
  */
 @Suppress(UNUSED)
 class SolutionApproach1SPFA {
@@ -26,8 +26,8 @@ class SolutionApproach1SPFA {
             it[initial - 1] = 0
         }
 
-        val queue = LinkedList<Int>().also {
-            it.offer(initial - 1)
+        val queue = ArrayDeque<Int>().also {
+            it.addLast(initial - 1)
         }
 
         val isInQueue = BooleanArray(nVertices) { false }.also {
@@ -35,14 +35,14 @@ class SolutionApproach1SPFA {
         }
 
         while (queue.isNotEmpty()) {
-            val cur = queue.poll()
+            val cur = queue.removeFirst()
             isInQueue[cur] = false
 
             for ((next, time) in graph[cur]) {
                 if (distances[next] > distances[cur] + time) {
                     distances[next] = distances[cur] + time
                     if (!isInQueue[next]) {
-                        queue.offer(next)
+                        queue.addLast(next)
                         isInQueue[next] = true
                     }
                 }

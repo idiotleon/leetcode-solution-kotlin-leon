@@ -9,8 +9,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(V * E) ~ O(`nVertices` * `nTimes`)
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
+ * Reference:
+ * https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
  */
 @Suppress(UNUSED)
 class SolutionApproach1BellmanFord {

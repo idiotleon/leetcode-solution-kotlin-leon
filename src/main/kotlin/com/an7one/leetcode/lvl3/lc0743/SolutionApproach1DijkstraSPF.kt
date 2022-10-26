@@ -3,6 +3,7 @@ package com.an7one.leetcode.lvl3.lc0743
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 /**
+ * @author: Leon
  * https://leetcode.com/problems/network-delay-time/
  *
  * Time Complexity:     O(`nNodes` ^ 2)
@@ -10,8 +11,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  *
  * Plain Dijkstra's SPF, without optimization with a min heap, is comparably suitable for dense graphs
  *
- * References:
- *  https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
+ * Reference:
+ * https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
  */
 @Suppress(UNUSED)
 class SolutionApproach1DijkstraSPF {
