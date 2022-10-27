@@ -1,20 +1,21 @@
+package com.an7one.leetcode.lvl3.lc0748
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/shortest-completing-word/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/shortest-completing-word/discuss/110137/Java-Solution-using-character-Array
+ * Reference:
+ * https://leetcode.com/problems/shortest-completing-word/discuss/110137/Java-Solution-using-character-Array
  */
-package com.an7one.leetcode.lvl3.lc0748
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     fun shortestCompletingWord(licensePlate: String, words: Array<String>): String {
-        val target = licensePlate.toLowerCase()
+        val target = licensePlate.lowercase()
         val freqs = IntArray(26) { 0 }
         for (ch in target) {
             if (ch in 'a'..'z') {
@@ -27,7 +28,7 @@ class SolutionApproach0HashMap {
 
         for (word in words) {
             val lenW = word.length
-            if (matches(word.toLowerCase(), freqs) && lenW < minLen) {
+            if (matches(word.lowercase(), freqs) && lenW < minLen) {
                 minLen = lenW
                 shortest = word
             }
