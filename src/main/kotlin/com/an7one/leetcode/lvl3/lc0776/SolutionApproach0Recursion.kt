@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/split-bst/
- *
- * Time Complexity:     O(H)
- * Space Complexity:    O(H)
- *
- * References:
- *  https://leetcode.com/problems/split-bst/discuss/114861/Java-Recursion-in-O(logn)/115833
- *  https://leetcode.com/problems/split-bst/discuss/114861/Java-Recursion-in-O(logn)
- */
 package com.an7one.leetcode.lvl3.lc0776
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/split-bst/
+ *
+ * Time Complexity:     O(H)
+ * Space Complexity:    O(H)
+ *
+ * Reference:
+ * https://leetcode.com/problems/split-bst/discuss/114861/Java-Recursion-in-O(logn)/115833
+ * https://leetcode.com/problems/split-bst/discuss/114861/Java-Recursion-in-O(logn)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0Recursion {
     fun splitBST(root: TreeNode?, target: Int) = dfs(root, target)
