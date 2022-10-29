@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl3.lc0777
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/swap-adjacent-in-lr-string/
  *
  * Time Complexity:     O(`lenS`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/swap-adjacent-in-lr-string/discuss/114737/Simple-Java-Solution/216997
- *  https://leetcode.com/problems/swap-adjacent-in-lr-string/discuss/114737/Simple-Java-Solution
- *  https://leetcode.com/problems/swap-adjacent-in-lr-string/discuss/114737/Simple-Java-Solution/238126
+ * Reference:
+ * https://leetcode.com/problems/swap-adjacent-in-lr-string/discuss/114737/Simple-Java-Solution/216997
+ * https://leetcode.com/problems/swap-adjacent-in-lr-string/discuss/114737/Simple-Java-Solution
+ * https://leetcode.com/problems/swap-adjacent-in-lr-string/discuss/114737/Simple-Java-Solution/238126
  */
-package com.an7one.leetcode.lvl3.lc0777
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers1 {
     private companion object {
