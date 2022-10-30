@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/
- *
- * Time Complexity:     O(`totalRows` * `totalCols`)
- * Space Complexity:    O(`totalRows` * `totalCols`)
- *
- * References:
- *  https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/discuss/451787/Python-O(m*n*k)-BFS-Solution-with-Explanation/732304
- */
 package com.an7one.leetcode.lvl4.lc1293
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/
+ *
+ * Time Complexity:     O(`totalRows` * `totalCols`)
+ * Space Complexity:    O(`totalRows` * `totalCols`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/discuss/451787/Python-O(m*n*k)-BFS-Solution-with-Explanation/732304
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
     private companion object {
@@ -27,8 +28,8 @@ class SolutionApproach0BFS {
         val nCols = grid[0].size
 
         val seen = Array(nRows) { Array<Int?>(nCols) { null } }
-        val queue = LinkedList<State>().also {
-            it.offer(State(0, 0, k))
+        val queue = ArrayDeque<State>().also {
+            it.addLast(State(0, 0, k))
         }
 
         var steps = 0
@@ -36,7 +37,7 @@ class SolutionApproach0BFS {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val (row, col, kCur) = queue.poll()
+                val (row, col, kCur) = queue.removeFirst()
                 // to return `steps` after reaching the destination
                 if (row == nRows - 1 && col == nCols - 1) return steps
 
@@ -55,7 +56,7 @@ class SolutionApproach0BFS {
                     // if(kLeft >= 0 && (seen[newRow][newCol] == null || seen[newRow][newCol]!! < kLeft)
                     //  if (kLeft >= 0 && ((seen[newRow][newCol] ?: Int.MIN_VALUE) < kLeft)) {
                     seen[newRow][newCol] = kLeft
-                    queue.offer(State(newRow, newCol, kLeft))
+                    queue.addLast(State(newRow, newCol, kLeft))
                     // }
                 }
             }
