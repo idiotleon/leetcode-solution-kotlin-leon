@@ -1,27 +1,24 @@
-/**
- * https://leetcode.com/problems/cheapest-flights-within-k-stops/
- *
- * Time Complexity:     O(V + E * lg(V)) ~  O(`n` + `totalFlights` * lg(`n`))
- * Space Complexity:    O(V) ~ O(`n`)
- *
- * References:
- *  https://leetcode.com/problems/cheapest-flights-within-k-stops/discuss/115541/JavaPython-Priority-Queue-Solution
- *  https://leetcode.com/problems/cheapest-flights-within-k-stops/discuss/361711/Java-DFSBFSBellman-Ford-Dijkstra's
- */
 package com.an7one.leetcode.lvl3.lc0787
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.ArrayList
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/cheapest-flights-within-k-stops/
+ *
+ * Time Complexity:     O(V + E * lg(V)) ~  O(`n` + `totalFlights` * lg(`n`))
+ * Space Complexity:    O(V) ~ O(`n`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/cheapest-flights-within-k-stops/discuss/115541/JavaPython-Priority-Queue-Solution
+ * https://leetcode.com/problems/cheapest-flights-within-k-stops/discuss/361711/Java-DFSBFSBellman-Ford-Dijkstra's
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DijkstraSPF {
     fun findCheapestPrice(
-        n: Int,
-        flights: Array<IntArray>,
-        src: Int,
-        dst: Int,
-        K: Int
+        n: Int, flights: Array<IntArray>, src: Int, dst: Int, K: Int
     ): Int {
 
         // not used

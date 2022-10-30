@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl3.lc0785
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/is-graph-bipartite/
@@ -5,10 +9,6 @@
  * Time Complexity:     O(V + E) + O(N) ~ O(2 * N) + O(N) ~ O(N)
  * Space Complexity:    O(V + E) + O(N) ~ O(2 * N) + O(N) ~ O(N)
  */
-package com.an7one.leetcode.lvl3.lc0785
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     private companion object {
