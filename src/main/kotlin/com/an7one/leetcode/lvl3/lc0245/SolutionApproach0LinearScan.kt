@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/shortest-word-distance-iii/
- *
- * Time Complexity:     O(`nWords` * len)
- * Space Complexity:    O(1)
- *
- * References:
- *  https://leetcode.com/problems/shortest-word-distance-iii/discuss/67097/12-16-lines-Java-C++/69108
- */
 package com.an7one.leetcode.lvl3.lc0245
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.math.abs
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/shortest-word-distance-iii/
+ *
+ * Time Complexity:     O(`nWords` * len)
+ * Space Complexity:    O(1)
+ *
+ * Reference:
+ * https://leetcode.com/problems/shortest-word-distance-iii/discuss/67097/12-16-lines-Java-C++/69108
+ */
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun shortestWordDistance(words: Array<String>, word1: String, word2: String): Int {
