@@ -1,17 +1,18 @@
-/**
- * https://leetcode.com/problems/car-fleet/
- *
- * Time Complexity:     O(`nCars` * lg(`nCars`))
- * Space Complexity:    O(`nCars`)
- *
- * References:
- *  https://leetcode.com/problems/car-fleet/discuss/139850/C%2B%2BJavaPython-Straight-Forward
- */
 package com.an7one.leetcode.lvl3.lc0853
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/car-fleet/
+ *
+ * Time Complexity:     O(`nCars` * lg(`nCars`))
+ * Space Complexity:    O(`nCars`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/car-fleet/discuss/139850/C%2B%2BJavaPython-Straight-Forward
+ */
 @Suppress(UNUSED)
 class SolutionApproach0Greedy1 {
     fun carFleet(target: Int, position: IntArray, speed: IntArray): Int {
