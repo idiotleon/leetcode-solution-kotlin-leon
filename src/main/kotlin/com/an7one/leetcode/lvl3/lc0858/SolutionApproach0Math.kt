@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0858
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/mirror-reflection/
  *
  * Time Complexity:     O(1)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/mirror-reflection/discuss/146336/Java-solution-with-an-easy-to-understand-explanation
+ * Reference:
+ * https://leetcode.com/problems/mirror-reflection/discuss/146336/Java-solution-with-an-easy-to-understand-explanation
  */
-package com.an7one.leetcode.lvl3.lc0858
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Math {
     fun mirrorReflection(p: Int, q: Int): Int {
