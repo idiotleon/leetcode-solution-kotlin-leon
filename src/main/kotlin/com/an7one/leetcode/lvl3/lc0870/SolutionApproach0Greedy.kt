@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl3.lc0870
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/advantage-shuffle/
  *
  * Time Complexity:     O(`nNums` * lg(`nNums`))
  * Space Complexity:    O(`nNums`)
  *
  * Reference:
- *  https://leetcode.com/problems/advantage-shuffle/discuss/149822/JAVA-Greedy-6-lines-with-Explanation
+ * https://leetcode.com/problems/advantage-shuffle/discuss/149822/JAVA-Greedy-6-lines-with-Explanation
  */
-package com.an7one.leetcode.lvl3.lc0870
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
     fun advantageCount(nums1: IntArray, nums2: IntArray): IntArray {
