@@ -3,6 +3,7 @@ package com.an7one.leetcode.lvl3.lc0873
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 /**
+ * @author: Leon
  * https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/
  *
  * Time Complexity:     O(`nNums` ^ 2)
@@ -11,8 +12,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * dp[i][j] represents the longest fibonacci subsequence ending with `nums[i]` and `nums[j]`
  * dp[i][j] = (dp[j - i][i] + 1) or 2
  *
- * References:
- *  https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/discuss/165330/Java-beat-98-DP-%2B-2Sum
+ * Reference:
+ * https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/discuss/165330/Java-beat-98-DP-%2B-2Sum
  */
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
