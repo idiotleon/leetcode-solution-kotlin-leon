@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0877
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/stone-game/
  *
  * Time Complexity:     O(`nPiles` ^ 2)
@@ -11,14 +16,10 @@
  * so the final answer is:
  *  dp[lo][hi] = maxOf(piles[lo] - dp[lo + 1][hi], piles[hi] - dp[lo][hi - 1])
  *
- * References:
- *  https://youtu.be/WxpIHvsu1RI
- *  https://leetcode.com/problems/stone-game/discuss/154610/DP-or-Just-return-true
+ * Reference:
+ * https://youtu.be/WxpIHvsu1RI
+ * https://leetcode.com/problems/stone-game/discuss/154610/DP-or-Just-return-true
  */
-package com.an7one.leetcode.lvl3.lc0877
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun stoneGame(piles: IntArray): Boolean {
@@ -35,8 +36,7 @@ class SolutionApproach0DP2Dimen {
                 val hi = lo + len
 
                 dp[lo][hi] = maxOf(
-                    piles[lo] - dp[lo + 1][hi],
-                    piles[hi] - dp[lo][hi - 1]
+                    piles[lo] - dp[lo + 1][hi], piles[hi] - dp[lo][hi - 1]
                 )
             }
         }

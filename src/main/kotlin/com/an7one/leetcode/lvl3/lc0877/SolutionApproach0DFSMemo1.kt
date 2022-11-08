@@ -1,17 +1,18 @@
+package com.an7one.leetcode.lvl3.lc0877
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/stone-game/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/stone-game/discuss/154660/Java-This-is-minimax-+-dp-(fully-detailed-explanation-+-generalization-+-easy-understand-code)/565603
- *  https://leetcode.com/problems/stone-game/discuss/154660/Java-This-is-minimax-%2B-dp-(fully-detailed-explanation-%2B-generalization-%2B-easy-understand-code)
+ * Reference:
+ * https://leetcode.com/problems/stone-game/discuss/154660/Java-This-is-minimax-+-dp-(fully-detailed-explanation-+-generalization-+-easy-understand-code)/565603
+ * https://leetcode.com/problems/stone-game/discuss/154660/Java-This-is-minimax-%2B-dp-(fully-detailed-explanation-%2B-generalization-%2B-easy-understand-code)
  */
-package com.an7one.leetcode.lvl3.lc0877
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo1 {
     fun stoneGame(piles: IntArray): Boolean {
@@ -28,11 +29,7 @@ class SolutionApproach0DFSMemo1 {
     }
 
     private fun dfs(
-        lo: Int,
-        hi: Int,
-        prefixSums: IntArray,
-        piles: IntArray,
-        memo: Array<Array<Int?>>
+        lo: Int, hi: Int, prefixSums: IntArray, piles: IntArray, memo: Array<Array<Int?>>
     ): Int {
 
         if (lo > hi) return 0
@@ -40,11 +37,10 @@ class SolutionApproach0DFSMemo1 {
 
         // both ends inclusive
         val sum = prefixSums[hi] - prefixSums[lo] + piles[lo]
-        
+
         // to minimize the gain of the next player
         val minOpponentGain = minOf(
-            dfs(lo + 1, hi, prefixSums, piles, memo),
-            dfs(lo, hi - 1, prefixSums, piles, memo)
+            dfs(lo + 1, hi, prefixSums, piles, memo), dfs(lo, hi - 1, prefixSums, piles, memo)
         )
 
         val curMaxGain = sum - minOpponentGain
