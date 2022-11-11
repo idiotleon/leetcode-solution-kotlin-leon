@@ -2,7 +2,7 @@ package com.an7one.leetcode.lvl4.lc0145
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import com.an7one.leetcode.util.dataStructure.tree.TreeNode
-import java.util.*
+import kotlin.collections.ArrayDeque
 
 /**
  * @author: Leon
@@ -20,24 +20,24 @@ class SolutionApproach0PostorderIterative {
         val ans = arrayListOf<Int>()
         if (root == null) return ans
 
-        val stack = LinkedList<TreeNode>()
+        val stack = ArrayDeque<TreeNode>()
         var cur = root
 
         while (cur != null || stack.isNotEmpty()) {
             while (cur != null) {
-                stack.push(cur)
+                stack.addLast(cur)
                 cur = cur.left
             }
 
-            cur = stack.peek()
+            cur = stack.last()
             if (cur.right != null) {
                 cur = cur.right
             } else {
-                cur = stack.pop()
+                cur = stack.removeLast()
                 ans.add(cur.`val`)
 
-                while (stack.isNotEmpty() && cur == stack.peek().right) {
-                    cur = stack.pop()
+                while (stack.isNotEmpty() && cur == stack.last().right) {
+                    cur = stack.removeLast()
                     ans.add(cur.`val`)
                 }
 
