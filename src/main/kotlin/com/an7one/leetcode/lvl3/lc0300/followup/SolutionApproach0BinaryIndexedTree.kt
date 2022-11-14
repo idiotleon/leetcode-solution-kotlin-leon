@@ -6,8 +6,8 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * @author: Leon
  * https://leetcode.com/problems/longest-increasing-subsequence/
  *
- * Time Complexity:     O()
- * Space Complexity:    O()
+ * Time Complexity:     O(`nNums` * lg(`nNums`))
+ * Space Complexity:    O(`nNums`)
  */
 @Suppress(UNUSED)
 class SolutionApproach0BinaryIndexedTree {
