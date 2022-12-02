@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0279
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/perfect-squares/
  *
  * Time Complexity:     O(`n` * sqrt(`n`))
  * Space Complexity:    O(`n`)
  *
- * References:
- *  https://leetcode.com/problems/perfect-squares/discuss/805994/4-approaches-or-Java
+ * Reference:
+ * https://leetcode.com/problems/perfect-squares/discuss/805994/4-approaches-or-Java
  */
-package com.an7one.leetcode.lvl3.lc0279
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSMemo {
     fun numSquares(n: Int): Int {

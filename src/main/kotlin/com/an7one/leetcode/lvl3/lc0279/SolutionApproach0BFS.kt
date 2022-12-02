@@ -1,22 +1,24 @@
+package com.an7one.leetcode.lvl3.lc0279
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+import kotlin.collections.ArrayDeque
+import kotlin.collections.HashSet
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/perfect-squares/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/perfect-squares/discuss/71488/Summary-of-4-different-solutions-(BFS-DP-static-DP-and-mathematics)/73744
+ * Reference:
+ * https://leetcode.com/problems/perfect-squares/discuss/71488/Summary-of-4-different-solutions-(BFS-DP-static-DP-and-mathematics)/73744
  */
-package com.an7one.leetcode.lvl3.lc0279
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-import kotlin.collections.HashSet
-
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
     fun numSquares(n: Int): Int {
-        val queue = LinkedList<Int>().also { it.offer(0) }
+        val queue = ArrayDeque<Int>().also { it.addLast(0) }
         val seen = HashSet<Int>().also { it.add(0) }
 
         // 1-indexed
@@ -26,7 +28,7 @@ class SolutionApproach0BFS {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val curValue = queue.poll()
+                val curValue = queue.removeFirst()
 
                 var num = 1
                 while (num * num <= n) {
@@ -40,9 +42,7 @@ class SolutionApproach0BFS {
                         break
                     }
 
-                    if (seen.add(nextValue)) {
-                        queue.offer(nextValue)
-                    }
+                    if (seen.add(nextValue)) queue.removeFirst()
 
                     ++num
                 }
