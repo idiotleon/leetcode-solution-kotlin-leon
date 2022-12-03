@@ -1,16 +1,17 @@
-/**
- * https://leetcode.com/problems/longest-mountain-in-array/
- *
- * Time Complexity:     O(`totalNums`)
- * Space Complexity:    O(`totalNums`)
- *
- * References:
- *  https://leetcode.com/problems/longest-mountain-in-array/discuss/135593/C%2B%2BJavaPython-1-pass-and-O(1)-space
- */
 package com.an7one.leetcode.lvl3.lc0845
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/longest-mountain-in-array/
+ *
+ * Time Complexity:     O(`nNums`)
+ * Space Complexity:    O(`nNums`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/longest-mountain-in-array/discuss/135593/C%2B%2BJavaPython-1-pass-and-O(1)-space
+ */
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers2 {
     fun longestMountain(nums: IntArray): Int {
