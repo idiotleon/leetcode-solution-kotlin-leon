@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0841
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/keys-and-rooms/
  *
  * Time Complexity:     O(`nRooms` + edges)
  * Space Complexity:    O(`nRooms` + edges)
  *
- * References:
- *  https://leetcode.com/problems/keys-and-rooms/discuss/133944/Java-8-lines
+ * Reference:
+ * https://leetcode.com/problems/keys-and-rooms/discuss/133944/Java-8-lines
  */
-package com.an7one.leetcode.lvl3.lc0841
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun canVisitAllRooms(rooms: List<List<Int>>): Boolean {
