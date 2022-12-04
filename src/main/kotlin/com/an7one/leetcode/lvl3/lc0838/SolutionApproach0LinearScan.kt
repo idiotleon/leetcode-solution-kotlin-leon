@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0838
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/push-dominoes/
  *
  * Time Complexity:     O(`lenD`)
  * Space Complexity:    O(`lenD`)
  *
- * References:
- *  https://leetcode.com/problems/push-dominoes/discuss/132482/Java-one-pass-in-place-13ms
+ * Reference:
+ * https://leetcode.com/problems/push-dominoes/discuss/132482/Java-one-pass-in-place-13ms
  */
-package com.an7one.leetcode.lvl3.lc0838
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     private companion object {
