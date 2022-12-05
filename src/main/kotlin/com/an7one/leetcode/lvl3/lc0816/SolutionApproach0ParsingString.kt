@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0816
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/ambiguous-coordinates/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/ambiguous-coordinates/discuss/123875/Really-clear-Java-code
+ * Reference:
+ * https://leetcode.com/problems/ambiguous-coordinates/discuss/123875/Really-clear-Java-code
  */
-package com.an7one.leetcode.lvl3.lc0816
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0ParsingString {
     fun ambiguousCoordinates(s: String): List<String> {
