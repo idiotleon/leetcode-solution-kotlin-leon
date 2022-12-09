@@ -3,6 +3,7 @@ package com.an7one.leetcode.lvl3.lc0169
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
 /**
+ * @author: Leon
  * https://leetcode.com/problems/majority-element/
  *
  * Time Complexity:     O(`nNums`)
