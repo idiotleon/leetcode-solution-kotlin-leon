@@ -1,20 +1,21 @@
-/**
- * https://leetcode.com/problems/largest-triangle-area/
- *
- * Time Complexity:     O(`nPts` ^ 3)
- * Space Complexity:    O(1)
- *
- * References:
- *  https://leetcode.com/problems/largest-triangle-area/discuss/124010/Simple-Java-Easy-Understand
- *  https://www.mathopenref.com/coordtrianglearea.html
- *  https://www.geeksforgeeks.org/print-all-possible-combinations-of-r-elements-in-a-given-array-of-size-n/
- *  https://leetcode.com/problems/largest-triangle-area/discuss/122711/C%2B%2BJavaPython-Solution-with-Explanation-and-Prove
- */
 package com.an7one.leetcode.lvl3.lc0812
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import kotlin.math.abs
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/largest-triangle-area/
+ *
+ * Time Complexity:     O(`nPts` ^ 3)
+ * Space Complexity:    O(1)
+ *
+ * Reference:
+ * https://leetcode.com/problems/largest-triangle-area/discuss/124010/Simple-Java-Easy-Understand
+ * https://www.mathopenref.com/coordtrianglearea.html
+ * https://www.geeksforgeeks.org/print-all-possible-combinations-of-r-elements-in-a-given-array-of-size-n/
+ * https://leetcode.com/problems/largest-triangle-area/discuss/122711/C%2B%2BJavaPython-Solution-with-Explanation-and-Prove
+ */
 @Suppress(UNUSED)
 class SolutionApproach0Geometry {
     fun largestTriangleArea(points: Array<IntArray>): Double {
