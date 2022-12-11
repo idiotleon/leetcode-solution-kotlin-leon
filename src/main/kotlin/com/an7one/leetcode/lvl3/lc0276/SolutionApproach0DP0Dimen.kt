@@ -13,6 +13,13 @@ package com.an7one.leetcode.lvl3.lc0276
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/paint-fence/
+ *
+ * Time Complexity:     O(`n`)
+ * Space Complexity:    O(`1k`)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP0Dimen {
     fun numWays(n: Int, k: Int): Int {
