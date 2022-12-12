@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl3.lc0216
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/combination-sum-iii/
@@ -5,10 +9,6 @@
  * Time Complexity:     O(9! / (k! * (9 - k)!))
  * Space Complexity:    O(`k`)
  */
-package com.an7one.leetcode.lvl3.lc0216
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     fun combinationSum3(k: Int, n: Int): List<List<Int>> {

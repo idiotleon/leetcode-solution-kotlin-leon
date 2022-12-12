@@ -1,3 +1,7 @@
+package com.an7one.leetcode.lvl3.lc0216.withBit
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/combination-sum-iv/
@@ -5,10 +9,6 @@
  * Time Complexity:     O(9 * 8 * ... * (9 - `k` + 1)) ~ O(`k`)
  * Space Complexity:    O(`k`) + O(1) / O(`k` * 9) ~ O(`k`)
  */
-package com.an7one.leetcode.lvl3.lc0216.withBit
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Backtrack {
     private companion object {
