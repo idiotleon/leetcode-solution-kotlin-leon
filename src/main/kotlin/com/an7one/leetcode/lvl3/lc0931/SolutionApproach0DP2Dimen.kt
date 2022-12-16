@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0931
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-falling-path-sum/
  *
  * Time Complexity:     O(`size` * `size`) ~ O(`size` ^ 2)
  * Space Complexity:    O(1) / O(`size` * `size`)
  *
- * References:
- *  https://leetcode.com/problems/minimum-falling-path-sum/discuss/186666/C%2B%2BJava-4-lines-DP
+ * Reference:
+ * https://leetcode.com/problems/minimum-falling-path-sum/discuss/186666/C%2B%2BJava-4-lines-DP
  */
-package com.an7one.leetcode.lvl3.lc0931
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun minFallingPathSum(nums: Array<IntArray>): Int {
