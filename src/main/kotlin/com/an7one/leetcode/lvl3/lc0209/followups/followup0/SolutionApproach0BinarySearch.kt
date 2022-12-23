@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0209.followups.followup0
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-size-subarray-sum/
  *
  * Time Complexity:     O(`nNums` * lg(`nNums`))
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/minimum-size-subarray-sum/discuss/59123/O(N)O(NLogN)-solutions-both-O(1)-space
+ * Reference:
+ * https://leetcode.com/problems/minimum-size-subarray-sum/discuss/59123/O(N)O(NLogN)-solutions-both-O(1)-space
  */
-package com.an7one.leetcode.lvl3.lc0209.followups.followup0
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BinarySearch {
     fun minSubArrayLen(s: Int, nums: IntArray): Int {
