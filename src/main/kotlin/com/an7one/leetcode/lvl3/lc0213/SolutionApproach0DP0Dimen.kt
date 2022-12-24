@@ -1,13 +1,14 @@
+package com.an7one.leetcode.lvl3.lc0213
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/house-robber-ii/
  *
  * Time Complexity:     O(2 * N) ~ O(N)
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl3.lc0213
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP0Dimen {
     fun rob(nums: IntArray): Int {
