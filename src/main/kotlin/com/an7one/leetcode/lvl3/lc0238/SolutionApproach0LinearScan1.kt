@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0238
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/product-of-array-except-self/
  *
  * Time Complexity:     O(2 * `nNums`) ~ O(`nNums`)
  * Space Complexity:    O(`nNums`) / O(1)
  *
- * References:
- *  https://leetcode.com/problems/product-of-array-except-self/discuss/65622/Simple-Java-solution-in-O(n)-without-extra-space
+ * Reference:
+ * https://leetcode.com/problems/product-of-array-except-self/discuss/65622/Simple-Java-solution-in-O(n)-without-extra-space
  */
-package com.an7one.leetcode.lvl3.lc0238
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan1 {
     fun productExceptSelf(nums: IntArray): IntArray {
