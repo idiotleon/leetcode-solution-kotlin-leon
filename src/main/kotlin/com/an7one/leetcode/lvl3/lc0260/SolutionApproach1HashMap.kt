@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/single-number-iii/
- *
- * Time Complexity:     O(`totalNums`)
- * Space Complexity:    O(`totalNums`)
- */
 package com.an7one.leetcode.lvl3.lc0260
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/single-number-iii/
+ *
+ * Time Complexity:     O(`nNums`)
+ * Space Complexity:    O(`nNums`)
+ */
 @Suppress(UNUSED)
 class SolutionApproach1HashMap {
     fun singleNumber(nums: IntArray): IntArray {
         // not used
-        // val totalNums = nums.size
+        // val nNums = nums.size
 
         val freqs = HashMap<Int, Int>()
         for (num in nums) {
@@ -21,9 +22,7 @@ class SolutionApproach1HashMap {
 
         val ans = ArrayList<Int>()
         for ((num, freq) in freqs) {
-            if (freq == 1) {
-                ans.add(num)
-            }
+            if (freq == 1) ans.add(num)
         }
 
         return ans.toIntArray()
