@@ -1,4 +1,10 @@
+package com.an7one.leetcode.lvl3.lc0846
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/hand-of-straights/
  *
  * Time Complexity:     O(DISTINCT * lg(DISTINCT) + O(DISTINCT * W)
@@ -6,14 +12,9 @@
  *
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/hand-of-straights/discuss/135598/C%2B%2BJavaPython-O(MlogM)-Complexity
+ * Reference:
+ * https://leetcode.com/problems/hand-of-straights/discuss/135598/C%2B%2BJavaPython-O(MlogM)-Complexity
  */
-package com.an7one.leetcode.lvl3.lc0846
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0TreeMap {
     fun isNStraightHand(cards: IntArray, W: Int): Boolean {

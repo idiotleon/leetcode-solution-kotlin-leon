@@ -3,6 +3,13 @@ package com.an7one.leetcode.lvl3.lc0846
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/hand-of-straights/
+ *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
+ */
 @Suppress(UNUSED)
 class SolutionApproach0TreeMapWithDeque {
     fun isNStraightHand(cards: IntArray, W: Int): Boolean {
@@ -12,7 +19,7 @@ class SolutionApproach0TreeMapWithDeque {
         }
 
         // to keep track of groups that are open
-        val deque = LinkedList<Int>()
+        val deque = ArrayDeque<Int>()
         var prevCard = -1
         var open = 0
 
@@ -22,9 +29,8 @@ class SolutionApproach0TreeMapWithDeque {
             deque.addLast(freq - open)
             prevCard = card
             open = freq
-            if (deque.size == W) {
-                open -= deque.pollFirst()
-            }
+
+            if (deque.size == W) open -= deque.removeFirst()
         }
 
         return open == 0
