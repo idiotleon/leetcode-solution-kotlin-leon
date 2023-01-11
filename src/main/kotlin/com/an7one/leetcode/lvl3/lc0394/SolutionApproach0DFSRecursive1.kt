@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0394
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/decode-string/
  *
  * Time Complexity:     O(`lenS`) + O(max digit of `s`)
  * Space Complexity:    O(`lenS`) + O(max digit of `s`)
  *
- * References:
- *  https://leetcode.com/problems/decode-string/discuss/210284/Java-Recursive
+ * Reference:
+ * https://leetcode.com/problems/decode-string/discuss/210284/Java-Recursive
  */
-package com.an7one.leetcode.lvl3.lc0394
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive1 {
     private companion object {
@@ -39,6 +40,7 @@ class SolutionApproach0DFSRecursive1 {
                     builder.append(sub.repeat(repCnt))
                     repCnt = 0
                 }
+
                 CLOSED_SQUARE_BRACKET -> break@loop
                 else -> builder.append(ch)
             }

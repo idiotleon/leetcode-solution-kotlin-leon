@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/decode-string/
- *
- * Time Complexity:     O(`lenS`) + O(max digit of `s`)
- * Space Complexity:    O(`lenS`) + O(max digit of `s`)
- *
- * References:
- *  https://leetcode.com/problems/decode-string/discuss/210284/Java-Recursive
- */
 package com.an7one.leetcode.lvl3.lc0394
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.ArrayDeque
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/decode-string/
+ *
+ * Time Complexity:     O(`lenS`) + O(max digit of `s`)
+ * Space Complexity:    O(`lenS`) + O(max digit of `s`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/decode-string/discuss/210284/Java-Recursive
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     private companion object {
@@ -20,7 +21,6 @@ class SolutionApproach0DFSRecursive {
         private const val CLOSED_SQUARE_BRACKET = ']'
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     fun decodeString(s: String): String {
         // not used
         // val lenS = s.length
@@ -33,7 +33,6 @@ class SolutionApproach0DFSRecursive {
         return dfs(queue)
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     private fun dfs(queue: ArrayDeque<Char>): String {
         val builder = StringBuilder()
         var repCnt = 0
@@ -46,9 +45,11 @@ class SolutionApproach0DFSRecursive {
                     builder.append(sub.repeat(repCnt))
                     repCnt = 0
                 }
+
                 CLOSED_SQUARE_BRACKET -> {
                     break@loop
                 }
+
                 else -> builder.append(ch)
             }
         }
