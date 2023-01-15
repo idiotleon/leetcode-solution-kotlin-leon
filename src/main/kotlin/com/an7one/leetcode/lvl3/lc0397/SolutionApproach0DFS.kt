@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0397
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/integer-replacement/
  *
  * Time Complexity:     O(lg(`n`))
  * Space Complexity:    O(lg(`n`))
  *
- * References:
- *  https://leetcode.com/problems/integer-replacement/discuss/87920/A-couple-of-Java-solutions-with-explanations/232365
+ * Reference:
+ * https://leetcode.com/problems/integer-replacement/discuss/87920/A-couple-of-Java-solutions-with-explanations/232365
  */
-package com.an7one.leetcode.lvl3.lc0397
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFS {
     fun integerReplacement(n: Int): Int {
