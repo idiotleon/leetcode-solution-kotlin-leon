@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0424
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/longest-repeating-character-replacement/
  *
  * Time Complexity:     O(L)
  * Space Complexity:    O(L) / O(1)
  *
- * References:
- *  https://leetcode.com/problems/longest-repeating-character-replacement/discuss/91271/Java-12-lines-O(n)-sliding-window-solution-with-explanation
+ * Reference:
+ * https://leetcode.com/problems/longest-repeating-character-replacement/discuss/91271/Java-12-lines-O(n)-sliding-window-solution-with-explanation
  */
-package com.an7one.leetcode.lvl3.lc0424
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0SlidingWindow1 {
     fun characterReplacement(s: String, k: Int): Int {
