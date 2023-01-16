@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0416
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/partition-equal-subset-sum/
  *
  * Time Complexity:     O()
@@ -6,13 +11,9 @@
  *
  * ### TLEed ###
  *
- * References:
- *  https://leetcode.com/problems/partition-equal-subset-sum/discuss/462699/Whiteboard-Editorial.-All-Approaches-explained.
+ * Reference:
+ * https://leetcode.com/problems/partition-equal-subset-sum/discuss/462699/Whiteboard-Editorial.-All-Approaches-explained.
  */
-package com.an7one.leetcode.lvl3.lc0416
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach2DFS {
     fun canPartition(nums: IntArray): Boolean {

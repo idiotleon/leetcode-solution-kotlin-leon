@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0416
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/partition-equal-subset-sum/
  *
  * Time Complexity:     O(`nNums` * `sumAll`)
@@ -8,14 +13,10 @@
  *  its time and space complexity is highly related
  *  to the range, in this case the `sumAll`, of the actual problem
  *
- * References:
- *  https://youtu.be/r6I-ikllNDM
- *  http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-416-partition-equal-subset-sum/
+ * Reference:
+ * https://youtu.be/r6I-ikllNDM
+ * http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-416-partition-equal-subset-sum/
  */
-package com.an7one.leetcode.lvl3.lc0416
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Knapsack {
     fun canPartition(nums: IntArray): Boolean {
@@ -23,8 +24,7 @@ class SolutionApproach0Knapsack {
         // val nNums = nums.size
 
         val sumAll = nums.sum()
-        if (sumAll % 2 != 0)
-            return false
+        if (sumAll % 2 != 0) return false
 
         val sumTarget = sumAll / 2
         val dp = BooleanArray(1 + sumTarget) { false }.also {
@@ -35,13 +35,11 @@ class SolutionApproach0Knapsack {
             for (sumCur in sumTarget downTo 0) {
                 if (dp[sumCur]) {
                     val sumNew = sumCur + num
-                    if (sumNew > sumTarget)
-                        continue
+                    if (sumNew > sumTarget) continue
                     dp[sumNew] = true
                 }
 
-                if (dp.last())
-                    return true
+                if (dp.last()) return true
             }
         }
 
