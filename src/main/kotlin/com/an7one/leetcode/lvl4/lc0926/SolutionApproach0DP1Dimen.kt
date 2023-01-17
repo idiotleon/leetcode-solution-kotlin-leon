@@ -1,31 +1,37 @@
+package com.an7one.leetcode.lvl4.lc0926
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/flip-string-to-monotone-increasing/
  *
  * Time Complexity:     O(`lenS`)
  * Space Complexity:    O(`lenS`)
  *
- * References:
- *  https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-926-flip-string-to-monotone-increasing/
+ * Reference:
+ * https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-926-flip-string-to-monotone-increasing/
  */
-package com.an7one.leetcode.lvl4.lc0926
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
+    private companion object {
+        private const val ONE: Char = '1';
+        private const val ZERO: Char = '0';
+    }
+
     fun minFlipsMonoIncr(str: String): Int {
         val lenS = str.length
 
         val loOnes = IntArray(lenS + 1) { 0 }
-        loOnes[0] = str[0] - '0'
+        loOnes[0] = str[0] - ZERO
         for (idx in 1 until lenS) {
-            loOnes[idx] = loOnes[idx - 1] + (str[idx] - '0')
+            loOnes[idx] = loOnes[idx - 1] + (str[idx] - ZERO)
         }
 
         val hiZeros = IntArray(lenS + 1) { 0 }
-        hiZeros[lenS - 1] = '1' - str[lenS - 1]
+        hiZeros[lenS - 1] = ONE - str[lenS - 1]
         for (idx in lenS - 2 downTo 0) {
-            hiZeros[idx] = hiZeros[idx + 1] + ('1' - str[idx])
+            hiZeros[idx] = hiZeros[idx + 1] + (ONE - str[idx])
         }
 
         var minFlips = hiZeros[0]
