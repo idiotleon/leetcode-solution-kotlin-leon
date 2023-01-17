@@ -7,10 +7,10 @@ import com.an7one.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/insert-interval/
  *
  * Time Complexity:     O(`nIntervals`)
- * Space Complexity:    O(`nIntervals`) / O(1)
+ * Space Complexity:    O(1) / O(`nIntervals`)
  *
- * References:
- *  https://leetcode.com/problems/insert-interval/discuss/21602/Short-and-straight-forward-Java-solution/242084
+ * Reference:
+ * https://leetcode.com/problems/insert-interval/discuss/21602/Short-and-straight-forward-Java-solution/242084
  */
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
