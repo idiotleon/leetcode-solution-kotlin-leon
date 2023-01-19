@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl3.lc0491.withBit
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/increasing-subsequences/
  *
  * Time Complexity:     O(`nNums` * (2 ^ `nNums`))
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/increasing-subsequences/discuss/97161/Clean-solution-non-recursion-bit-manipulation
+ * Reference:
+ * https://leetcode.com/problems/increasing-subsequences/discuss/97161/Clean-solution-non-recursion-bit-manipulation
  */
-package com.an7one.leetcode.lvl3.lc0491.withBit
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach1Backtrack {
     fun findSubsequences(nums: IntArray): List<List<Int>> {
@@ -23,12 +24,10 @@ class SolutionApproach1Backtrack {
             val path = mutableListOf<Int>()
 
             for (idx in nums.indices) {
-                if ((bitMask and (1 shl idx)) != 0 && (path.isEmpty() || path.last() <= nums[idx]))
-                    path.add(nums[idx])
+                if ((bitMask and (1 shl idx)) != 0 && (path.isEmpty() || path.last() <= nums[idx])) path.add(nums[idx])
             }
 
-            if (path.size > 1)
-                paths.add(path)
+            if (path.size > 1) paths.add(path)
         }
 
         return paths.toList()
