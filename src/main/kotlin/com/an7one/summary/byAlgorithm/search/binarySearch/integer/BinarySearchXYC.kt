@@ -1,13 +1,13 @@
-/**
- * YXC: 大雪菜闫学灿
- *
- * References:
- *  Paid Membership Required: https://www.acwing.com/video/10/
- */
 package com.an7one.summary.byAlgorithm.search.binarySearch.integer
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * YXC: 大雪菜闫学灿
+ *
+ * Reference:
+ * Paid Membership Required: https://www.acwing.com/video/10/
+ */
 @Suppress(UNUSED)
 class BinarySearchXYC {
     // to partition [low, high] into [lo, mid] and [mid + 1, high]
