@@ -1,18 +1,19 @@
+package com.an7one.leetcode.lvl5.lc0920
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/number-of-music-playlists/
  *
  * Time Complexity:     O(`L` * `N`)
  * Space Complexity:    O(`L`)
  *
- * References:
- *  https://leetcode.com/problems/number-of-music-playlists/discuss/180338/DP-solution-that-is-Easy-to-understand/262616
- *  https://leetcode.com/problems/number-of-music-playlists/discuss/180338/DP-solution-that-is-Easy-to-understand
- *  https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-920-number-of-music-playlists/
+ * Reference:
+ * https://leetcode.com/problems/number-of-music-playlists/discuss/180338/DP-solution-that-is-Easy-to-understand/262616
+ * https://leetcode.com/problems/number-of-music-playlists/discuss/180338/DP-solution-that-is-Easy-to-understand
+ * https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-920-number-of-music-playlists/
  */
-package com.an7one.leetcode.lvl5.lc0920
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     private companion object {

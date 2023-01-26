@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl5.lc0920
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/number-of-music-playlists/
  *
  * Time Complexity:     O(`L` * `N`)
@@ -10,15 +15,11 @@
  *      with n - 1 used, to pick any one from the remaining (N - (n - 1))
  *  2. to reuse an existing song: dp[l - 1][n] * max(N - K, 0)
  *
- * References:
- *  https://leetcode.com/problems/number-of-music-playlists/discuss/180338/DP-solution-that-is-Easy-to-understand
- *  https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-920-number-of-music-playlists/
- *  https://leetcode.com/problems/number-of-music-playlists/discuss/180338/DP-solution-that-is-Easy-to-understand/231158
+ * Reference:
+ * https://leetcode.com/problems/number-of-music-playlists/discuss/180338/DP-solution-that-is-Easy-to-understand
+ * https://zxi.mytechroad.com/blog/dynamic-programming/leetcode-920-number-of-music-playlists/
+ * https://leetcode.com/problems/number-of-music-playlists/discuss/180338/DP-solution-that-is-Easy-to-understand/231158
  */
-package com.an7one.leetcode.lvl5.lc0920
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     private companion object {
