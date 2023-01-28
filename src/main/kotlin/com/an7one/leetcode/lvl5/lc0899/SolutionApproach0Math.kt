@@ -1,16 +1,17 @@
+package com.an7one.leetcode.lvl5.lc0899
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/orderly-queue/
  *
  * Time Complexity:     O(`lenS` ^ 2)
  * Space Complexity:    O(`lenS`)
  *
  * Reference:
- *  https://leetcode.com/problems/orderly-queue/discuss/165878/C%2B%2BJavaPython-Sort-String-or-Rotate-String
+ * https://leetcode.com/problems/orderly-queue/discuss/165878/C%2B%2BJavaPython-Sort-String-or-Rotate-String
  */
-package com.an7one.leetcode.lvl5.lc0899
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Math {
     fun orderlyQueue(s: String, k: Int): String {
@@ -24,8 +25,7 @@ class SolutionApproach0Math {
         var res = s
         for (idx in 1 until lenS) {
             val tmp = s.substring(idx) + s.substring(0, idx)
-            if (res > tmp)
-                res = tmp
+            if (res > tmp) res = tmp
         }
         return res
     }
