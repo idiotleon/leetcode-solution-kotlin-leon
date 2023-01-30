@@ -1,30 +1,31 @@
-/**
- * https://leetcode.com/problems/shortest-path-visiting-all-nodes/
- *
- * Time Complexity:     O(N * (2 ^ N))
- * Space Complexity:    O(N * (2 ^ N))
- *
- * References:
- *  https://leetcode.com/problems/shortest-path-visiting-all-nodes/discuss/135809/Fast-BFS-Solution-(46ms)-Clear-Detailed-Explanation-Included/237938
- *  https://leetcode.com/problems/shortest-path-visiting-all-nodes/discuss/135809/Fast-BFS-Solution-(46ms)-Clear-Detailed-Explanation-Included
- */
 package com.an7one.leetcode.lvl5.lc0847
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 import kotlin.collections.HashSet
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/shortest-path-visiting-all-nodes/
+ *
+ * Time Complexity:     O(N * (2 ^ N))
+ * Space Complexity:    O(N * (2 ^ N))
+ *
+ * Reference:
+ * https://leetcode.com/problems/shortest-path-visiting-all-nodes/discuss/135809/Fast-BFS-Solution-(46ms)-Clear-Detailed-Explanation-Included/237938
+ * https://leetcode.com/problems/shortest-path-visiting-all-nodes/discuss/135809/Fast-BFS-Solution-(46ms)-Clear-Detailed-Explanation-Included
+ */
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
     fun shortestPathLength(graph: Array<IntArray>): Int {
-        val totalVertices = graph.size
-        val fullMask = (1 shl totalVertices) - 1
+        val nVertices = graph.size
+        val fullMask = (1 shl nVertices) - 1
 
         val seen = HashSet<String>()
-        val queue = LinkedList<State>()
+        val queue = ArrayDeque<State>()
         for (vertex in graph.indices) {
             val node = State(vertex, 1 shl vertex)
-            queue.offer(node)
+            queue.addLast(node)
             seen.add(node.toHash())
         }
 
@@ -33,14 +34,14 @@ class SolutionApproach0BFS {
             val size = queue.size
 
             for (i in 0 until size) {
-                val cur = queue.poll()
+                val cur = queue.removeFirst()
                 val vertex = cur.vertex
                 val bitMask = cur.bitMask
                 if (bitMask == fullMask) return steps
                 for (nextVertex in graph[vertex]) {
                     val nextNode = State(nextVertex, bitMask or (1 shl nextVertex))
                     if (!seen.add(nextNode.toHash())) continue
-                    queue.offer(nextNode)
+                    queue.addLast(nextNode)
                 }
             }
 

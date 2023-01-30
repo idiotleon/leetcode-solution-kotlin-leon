@@ -1,32 +1,33 @@
+package com.an7one.leetcode.lvl5.lc0847
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.collections.ArrayDeque
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/shortest-path-visiting-all-nodes/
  *
  * Time Complexity:     O(N * (2 ^ N))
  * Space Complexity:    O(N * (2 ^ N))
  *
- * References:
- *  https://leetcode.com/problems/shortest-path-visiting-all-nodes/discuss/135686/Java-DP-Solution
+ * Reference:
+ * https://leetcode.com/problems/shortest-path-visiting-all-nodes/discuss/135686/Java-DP-Solution
  */
-package com.an7one.leetcode.lvl5.lc0847
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0DPWithBFS {
     fun shortestPathLength(graph: Array<IntArray>): Int {
-        val totalVertices = graph.size
-        val fullMask = (1 shl totalVertices) - 1
+        val nVertices = graph.size
+        val fullMask = (1 shl nVertices) - 1
 
-        val queue = LinkedList<State>()
-        val dp = Array(totalVertices) { vertex ->
+        val queue = ArrayDeque<State>()
+        val dp = Array(nVertices) { vertex ->
             IntArray(fullMask + 1) { state ->
                 when (state) {
                     1 shl vertex -> 0
                     else -> Int.MAX_VALUE
                 }
             }.also {
-                queue.offer(State(vertex, 1 shl vertex))
+                queue.addLast(State(vertex, 1 shl vertex))
             }
         }
 
@@ -34,7 +35,7 @@ class SolutionApproach0DPWithBFS {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val cur = queue.poll()
+                val cur = queue.removeFirst()
                 val curVertex = cur.vertex
                 val curBitMask = cur.bitMask
 
@@ -43,7 +44,7 @@ class SolutionApproach0DPWithBFS {
 
                     if (dp[nextVertex][nextBitMask] > dp[curVertex][curBitMask] + 1) {
                         dp[nextVertex][nextBitMask] = dp[curVertex][curBitMask] + 1
-                        queue.offer(State(nextVertex, nextBitMask))
+                        queue.addLast(State(nextVertex, nextBitMask))
                     }
                 }
             }
