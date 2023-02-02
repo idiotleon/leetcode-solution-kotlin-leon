@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/find-the-shortest-superstring/
- *
- * Time Complexity:     O((2 ^ `nStrs`) ^ 2)
- * Space Complexity:    O()
- *
- * References:
- *  https://leetcode.com/problems/find-the-shortest-superstring/discuss/194932/Travelling-Salesman-Problem/222214
- *  https://leetcode.com/problems/find-the-shortest-superstring/discuss/194932/Travelling-Salesman-Problem
- */
 package com.an7one.leetcode.lvl5.lc0943.withBit
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/find-the-shortest-superstring/
+ *
+ * Time Complexity:     O((2 ^ `nStrs`) ^ 2)
+ * Space Complexity:    O()
+ *
+ * Reference:
+ * https://leetcode.com/problems/find-the-shortest-superstring/discuss/194932/Travelling-Salesman-Problem/222214
+ * https://leetcode.com/problems/find-the-shortest-superstring/discuss/194932/Travelling-Salesman-Problem
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun shortestSuperstring(strs: Array<String>): String {
