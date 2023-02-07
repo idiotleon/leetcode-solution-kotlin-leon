@@ -1,13 +1,14 @@
+package com.an7one.leetcode.lvl3.lc0134
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/gas-station/
  *
  * Time Complexity:     O(N)
  * Space Complexity:    O(1)
  */
-package com.an7one.leetcode.lvl3.lc0134
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
     fun canCompleteCircuit(gas: IntArray, costs: IntArray): Int {
