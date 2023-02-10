@@ -1,16 +1,17 @@
-/**
- * https://leetcode.com/problems/single-number-ii/
- *
- * Time Complexity:     O(`totalNums`)
- * Space Complexity:    O(`TYPE_INT_RANGE`) ~ O(1)
- *
- * References:
- *  https://docs.google.com/presentation/d/1_1mhjlmIwTHKV_rRpCo3YLI3Kc3FU8i4dbqhqghK6s8/edit#slide=id.ga4b64814d9_1_18
- */
 package com.an7one.leetcode.lvl3.lc0137.withBit
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/single-number-ii/
+ *
+ * Time Complexity:     O(`nNums`)
+ * Space Complexity:    O(`TYPE_INT_RANGE`) ~ O(1)
+ *
+ * Reference:
+ * https://docs.google.com/presentation/d/1_1mhjlmIwTHKV_rRpCo3YLI3Kc3FU8i4dbqhqghK6s8/edit#slide=id.ga4b64814d9_1_18
+ */
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     private companion object {
@@ -19,7 +20,7 @@ class SolutionApproach0LinearScan {
 
     fun singleNumber(nums: IntArray): Int {
         // not used
-        // val totalNums = nums.size
+        // val nNums = nums.size
 
         var single = 0
         val freqs = IntArray(TYPE_INT_RANGE) { 0 }
