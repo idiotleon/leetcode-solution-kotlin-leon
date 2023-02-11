@@ -1,4 +1,9 @@
+package com.an7one.leetcode.lvl3.lc0427
+
+import com.an7one.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/construct-quad-tree/
  *
  * Time Complexity:     O((`nRows` * `nCols`) ^ 2)
@@ -6,15 +11,11 @@
  *
  * Space Complexity:    O((`nRows` * `nCols`) ^ 2)
  *
- * References:
- *  https://leetcode.com/problems/construct-quad-tree/discuss/151684/Recursive-Java-Solution/249595
- *  https://leetcode.com/problems/construct-quad-tree/discuss/151684/Recursive-Java-Solution
- *  https://csc411.files.wordpress.com/2012/10/tutorial2.pdf
+ * Reference:
+ * https://leetcode.com/problems/construct-quad-tree/discuss/151684/Recursive-Java-Solution/249595
+ * https://leetcode.com/problems/construct-quad-tree/discuss/151684/Recursive-Java-Solution
+ * https://csc411.files.wordpress.com/2012/10/tutorial2.pdf
  */
-package com.an7one.leetcode.lvl3.lc0427
-
-import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun construct(grid: Array<IntArray>): QuadTreeNode? {
@@ -25,16 +26,11 @@ class SolutionApproach0DFSRecursive {
     }
 
     private fun buildTree(
-        loRow: Int,
-        loCol: Int,
-        hiRow: Int,
-        hiCol: Int,
-        grid: Array<IntArray>
+        loRow: Int, loCol: Int, hiRow: Int, hiCol: Int, grid: Array<IntArray>
     ): QuadTreeNode? {
         if (loRow > hiRow || loCol > hiCol) return null
 
-        if (isLeaf(loRow, loCol, hiRow, hiCol, grid))
-            return QuadTreeNode(grid[loRow][loCol] == 1, true)
+        if (isLeaf(loRow, loCol, hiRow, hiCol, grid)) return QuadTreeNode(grid[loRow][loCol] == 1, true)
 
         val midRow = loRow + (hiRow - loRow) / 2
         val midCol = loCol + (hiCol - loCol) / 2
