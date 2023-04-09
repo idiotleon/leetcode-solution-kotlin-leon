@@ -1,7 +1,6 @@
 package com.an7one.leetcode.lvl4.lc1857
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet
 
@@ -29,10 +28,10 @@ class SolutionApproach0TopologicalSort {
 
         val chToChFreqs = Array(lenC) { IntArray(26) }
 
-        val queue = LinkedList<Int>()
+        val queue = ArrayDeque<Int>()
         for ((idx, indegree) in indegrees.withIndex()) {
             if (indegree == 0) {
-                queue.offer(idx)
+                queue.addLast(idx)
                 chToChFreqs[idx][colors[idx] - 'a'] = 1
             }
         }
@@ -41,7 +40,7 @@ class SolutionApproach0TopologicalSort {
         var largest = 0
 
         while (queue.isNotEmpty()) {
-            val cur = queue.poll()
+            val cur = queue.removeFirst()
             ++seen
 
             largest = maxOf(largest, chToChFreqs[cur].maxOrNull()!!)
@@ -53,7 +52,7 @@ class SolutionApproach0TopologicalSort {
                             maxOf(chToChFreqs[next][i], chToChFreqs[cur][i] + if (colors[next] - 'a' == i) 1 else 0)
                     }
 
-                    if (--indegrees[next] == 0) queue.offer(next)
+                    if (--indegrees[next] == 0) queue.addLast(next)
                 }
             }
         }
