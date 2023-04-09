@@ -2,6 +2,13 @@ package com.an7one.leetcode.lvl3.lc0133
 
 import com.an7one.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/clone-graph/
+ *
+ * Time Complexity:     O(V + E) ~ O(N + (N - 1)) ~ O(N)
+ * Space Complexity:    O(V + E) ~ O(N + (N - 1)) ~ O(N)
+ */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun cloneGraph(node: Node?): Node? {
@@ -10,7 +17,7 @@ class SolutionApproach0DFSRecursive {
     }
 
     private fun dfs(cur: Node?, map: HashMap<Node, Node>): Node? {
-        if (cur == null) return cur
+        if (cur == null) return null
         map[cur]?.let { return it }
 
         val cloned = Node(cur.`val`)
