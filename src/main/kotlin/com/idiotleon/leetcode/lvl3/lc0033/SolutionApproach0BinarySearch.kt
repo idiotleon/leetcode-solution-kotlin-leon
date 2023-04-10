@@ -17,7 +17,7 @@ class SolutionApproach0BinarySearch {
         var lo = 0
         var hi = nNums - 1
 
-        while (lo < hi) {
+        while (lo <= hi) {
             val mid = lo + (hi - lo) / 2
 
             if (nums[mid] == target) return mid
