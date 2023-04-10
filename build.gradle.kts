@@ -46,7 +46,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.an7one.AppKt")
+    mainClass.set("com.idiotleon.AppKt")
 }
 
 val compileKotlin: KotlinCompile by tasks
