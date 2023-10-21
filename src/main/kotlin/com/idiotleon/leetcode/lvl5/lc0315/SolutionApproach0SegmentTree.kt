@@ -9,8 +9,8 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(`nNums` * lg(`nNums`))
  * Space Complexity:    O(`nNums`)
  *
- * References:
- *  https://leetcode.com/problems/count-of-smaller-numbers-after-self/discuss/76674/3-Ways-(Segment-Tree-Binary-Indexed-Tree-Merge-Sort)-clean-Java-code
+ * Reference:
+ * https://leetcode.com/problems/count-of-smaller-numbers-after-self/discuss/76674/3-Ways-(Segment-Tree-Binary-Indexed-Tree-Merge-Sort)-clean-Java-code
  */
 @Suppress(UNUSED)
 class SolutionApproach0SegmentTree {
@@ -19,8 +19,7 @@ class SolutionApproach0SegmentTree {
 
         val ans = MutableList(nNums) { 0 }
         // sanity check
-        if (nums.isEmpty())
-            return ans
+        if (nums.isEmpty()) return ans
 
         val min = nums.minOrNull()!!
         val max = nums.maxOrNull()!!
@@ -36,8 +35,7 @@ class SolutionApproach0SegmentTree {
     }
 
     private fun query(value: Int, node: SegmentTreeNode?): Int {
-        if (node == null)
-            return 0
+        if (node == null) return 0
 
         return if (value >= node.max) {
             node.count
@@ -53,25 +51,20 @@ class SolutionApproach0SegmentTree {
     }
 
     private fun update(value: Int, node: SegmentTreeNode?) {
-        if (node == null)
-            return
+        if (node == null) return
 
-        if (value < node.min || value > node.max)
-            return
+        if (value < node.min || value > node.max) return
 
         ++node.count
-        if (node.max == node.min)
-            return
+        if (node.max == node.min) return
 
         val mid = node.getMid()
         if (value < mid) {
-            if (node.left == null)
-                node.left = SegmentTreeNode(node.min, mid - 1)
+            if (node.left == null) node.left = SegmentTreeNode(node.min, mid - 1)
 
             update(value, node.left)
         } else {
-            if (node.right == null)
-                node.right = SegmentTreeNode(mid, node.max)
+            if (node.right == null) node.right = SegmentTreeNode(mid, node.max)
 
             update(value, node.right)
         }

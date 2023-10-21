@@ -1,17 +1,18 @@
+package com.idiotleon.leetcode.lvl5.lc0315
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/count-of-smaller-numbers-after-self/
  *
  * Time Complexity:     O(`nNums` * lg(`nNums`)), O(`nNums` ^ 2) in the worst case if the BST is skewed
  * Space Complexity:    O(`nNums`)
  *
- * References:
- *  https://leetcode.com/problems/count-of-smaller-numbers-after-self/discuss/76587/Easiest-Java-solution
- *  https://leetcode.com/problems/count-of-smaller-numbers-after-self/discuss/76580/9ms-short-Java-BST-solution-get-answer-when-building-BST
+ * Reference:
+ * https://leetcode.com/problems/count-of-smaller-numbers-after-self/discuss/76587/Easiest-Java-solution
+ * https://leetcode.com/problems/count-of-smaller-numbers-after-self/discuss/76580/9ms-short-Java-BST-solution-get-answer-when-building-BST
  */
-package com.idiotleon.leetcode.lvl5.lc0315
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach1BinarySearchTree {
     fun countSmaller(nums: IntArray): List<Int> {
@@ -61,9 +62,6 @@ class SolutionApproach1BinarySearchTree {
     }
 
     private data class TreeNode(
-        val value: Int,
-        var count: Int = 1,
-        var left: TreeNode? = null,
-        var right: TreeNode? = null
+        val value: Int, var count: Int = 1, var left: TreeNode? = null, var right: TreeNode? = null
     )
 }
