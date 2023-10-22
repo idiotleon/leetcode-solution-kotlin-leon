@@ -6,7 +6,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * @author: Leon
  * https://leetcode.com/problems/lru-cache/
  *
- * Time Complexities:
+ * Time Complexity:
  *  initialization:     O(1)
  *  `get()`:            O(1)
  *  `put()`:            O(1)
@@ -58,6 +58,11 @@ class SolutionApproach0DoublyLinkedList1(private val capacity: Int) {
             this.len = 0
         }
 
+        fun moveToHead(node: DLLNode) {
+            removeNode(node)
+            addFirst(node)
+        }
+
         fun addFirst(node: DLLNode) {
             val next = dummyHead.next
             node.prev = dummyHead
@@ -65,11 +70,6 @@ class SolutionApproach0DoublyLinkedList1(private val capacity: Int) {
 
             node.next = next
             next?.prev = node
-        }
-
-        fun moveToHead(node: DLLNode) {
-            removeNode(node)
-            addFirst(node)
         }
 
         fun removeLast(): DLLNode? {
