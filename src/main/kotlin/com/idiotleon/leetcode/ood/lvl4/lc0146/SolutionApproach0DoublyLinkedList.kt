@@ -56,6 +56,11 @@ class SolutionApproach0DoublyLinkedList(capacity: Int) {
             }
         }
 
+        private fun moveToHead(node: DLLNode) {
+            removeNode(node)
+            addFirst(node)
+        }
+
         private fun addFirst(node: DLLNode) {
             val next = dummyHead.next
             node.prev = dummyHead
@@ -64,17 +69,16 @@ class SolutionApproach0DoublyLinkedList(capacity: Int) {
             node.next = next
             next?.prev = node
 
-            if (++len > capacity) removeLast()
-        }
-
-        private fun moveToHead(node: DLLNode) {
-            removeNode(node)
-            addFirst(node)
+            if (++len > capacity) {
+                removeLast()
+            }
         }
 
         private fun removeLast(): DLLNode? {
             dummyTail.prev?.let {
-                if (it == dummyHead) return null
+                if (it == dummyHead) {
+                    return null
+                }
                 val key = it.key
                 map.remove(key)
                 return removeNode(it)
