@@ -78,7 +78,9 @@ class SolutionApproach0SkipList {
                 val iter = cur.levels[idxLevel]
                 if (iter != null && iter.value < num) {
                     cur = iter
-                } else break
+                } else {
+                    break
+                }
             }
 
             res.add(Pair(cur, idxLevel))

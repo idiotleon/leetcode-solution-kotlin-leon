@@ -2,8 +2,19 @@ package com.idiotleon.leetcode.ood.lvl5.lc0432
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/lfu-cache/
+ *
+ * Time Complexity:
+ *  initialization:     O()
+ *  get():              O()
+ *  put():              O()
+ *
+ * Space Complexity:    O()
+ */
 @Suppress(UNUSED)
-class SolutionApproach0DLL {
+class SolutionApproach0DoublyLinkedList {
     /** Initialize your data structure here. */
     private val dummyHead = Bucket(Int.MIN_VALUE)
     private val dummyTail = Bucket(Int.MAX_VALUE)

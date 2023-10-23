@@ -20,7 +20,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/fancy-sequence/discuss/898753/Python-Time-O(1)-for-each
  */
 @Suppress(UNUSED)
-class SolutionApproach0PrefixSums() {
+class SolutionApproach0PrefixSums {
     private companion object {
         private const val MOD = 1e9.toInt() + 7
     }
@@ -45,8 +45,10 @@ class SolutionApproach0PrefixSums() {
     }
 
     fun getIndex(idx: Int): Int {
-        val nVals = nums.size
-        if (idx >= nVals) return -1
+        val nNums = nums.size
+        if (idx >= nNums) {
+            return -1
+        }
 
         // Fermat Little Theorem
         val multi = prefixProducts.last() * powMod(prefixProducts[idx], MOD - 2L) % MOD
