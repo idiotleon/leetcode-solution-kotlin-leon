@@ -1,4 +1,10 @@
+package com.idiotleon.leetcode.lvl4.lc0456
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.collections.ArrayDeque
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/132-pattern/
  *
  * Time Complexity:     O(`nNums`), one pass
@@ -20,14 +26,9 @@
  *  after key step 1 is satisfied, meaning there are candidates for both s2 and s3,
  *  once s1 can be found, it is the time to return true
  *
- * References:
- *  https://leetcode.com/problems/132-pattern/discuss/94071/Single-pass-C%2B%2B-O(n)-space-and-time-solution-(8-lines)-with-detailed-explanation.
+ * Reference:
+ * https://leetcode.com/problems/132-pattern/discuss/94071/Single-pass-C%2B%2B-O(n)-space-and-time-solution-(8-lines)-with-detailed-explanation.
  */
-package com.idiotleon.leetcode.lvl4.lc0456
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
     fun find132pattern(nums: IntArray): Boolean {
@@ -35,18 +36,18 @@ class SolutionApproach0MonoStack {
         // val nNums = nums.size
 
         var pattern3 = Int.MIN_VALUE
-        val stack = LinkedList<Int>()
+        val stack = ArrayDeque<Int>()
 
         for (num in nums.reversed()) {
             if (num < pattern3) {
                 return true
             } else {
-                while (stack.isNotEmpty() && num > stack.peek()) {
-                    pattern3 = stack.pop()
+                while (stack.isNotEmpty() && num > stack.last()) {
+                    pattern3 = stack.removeLast()
                 }
             }
 
-            stack.push(num)
+            stack.addLast(num)
         }
 
         return false

@@ -6,25 +6,26 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * @author: Leon
  * https://leetcode.com/problems/lfu-cache/
  *
- * Time Complexities:
+ * Time Complexity:
  *  get:    O(1)
  *  put:    O(1)
  *
- * Space Complexity:    O(`CAPACITY`)
+ * Space Complexity:    O(`capacity`)
  *
  * Reference:
  * https://leetcode.com/problems/lfu-cache/discuss/94547/Java-O(1)-Solution-Using-Two-HashMap-and-One-DoubleLinkedList
  */
 @Suppress(UNUSED)
-class SolutionApproach0DLL(private val capacity: Int) {
-    private val freqs = hashMapOf<Int, DoublyLinkedList>()
-    private val nodeMap = hashMapOf<Int, DLLNode>()
+class SolutionApproach0DoublyLinkedList(private val capacity: Int) {
+    // DLL: Doubly Linked List
+    private val freqToDLL = hashMapOf<Int, DoublyLinkedList>()
+    private val valueToNode = hashMapOf<Int, DLLNode>()
 
     private var size = 0
     private var min = 0
 
     fun get(key: Int): Int {
-        nodeMap[key]?.let {
+        valueToNode[key]?.let {
             update(it)
             return it.value
         }
@@ -33,50 +34,55 @@ class SolutionApproach0DLL(private val capacity: Int) {
     }
 
     fun put(key: Int, value: Int) {
-        if (capacity == 0) return
+        if (capacity == 0) {
+            return
+        }
 
-        if (nodeMap[key] != null) {
-            val node = nodeMap[key]
+        if (valueToNode[key] != null) {
+            val node = valueToNode[key]
             node?.value = value
             update(node!!)
         } else {
             val node = DLLNode(key)
             node.value = value
-            nodeMap[key] = node
+            valueToNode[key] = node
 
             if (size == capacity) {
                 // to remove the last DLL
-                freqs[min]?.let {
-                    nodeMap.remove(it.removeLast()!!.key)
+                freqToDLL[min]?.let { dll ->
+                    valueToNode.remove(dll.removeLast()!!.key)
                     --size
                 }
             }
 
             ++size
             min = 1
-            val newList = freqs[node.count] ?: DoublyLinkedList()
+            val newList = freqToDLL[node.count] ?: DoublyLinkedList()
             newList.addFirst(node)
-            freqs[node.count] = newList
+            freqToDLL[node.count] = newList
         }
     }
 
     private fun update(node: DLLNode) {
         // to deal with the old DLL
-        freqs[node.count]?.let {
+        freqToDLL[node.count]?.let {
             it.remove(node)
 
-            if (node.count == min && it.isEmpty()) ++min
+            if (node.count == min && it.isEmpty()) {
+                ++min
+            }
         }
 
         ++node.count
 
-        val newList = freqs[node.count] ?: DoublyLinkedList()
+        val newList = freqToDLL[node.count] ?: DoublyLinkedList()
         newList.addFirst(node)
-        freqs[node.count] = newList
+        freqToDLL[node.count] = newList
     }
 
     private data class DoublyLinkedList(
-        val dummyHead: DLLNode = DLLNode(-1), val dummyTail: DLLNode = DLLNode(-1)
+        val dummyHead: DLLNode = DLLNode(-1),
+        val dummyTail: DLLNode = DLLNode(-1),
     ) {
         var size: Int = 0
 
@@ -113,7 +119,6 @@ class SolutionApproach0DLL(private val capacity: Int) {
             prev?.next = next
             next?.prev = prev
 
-            //
             --size
         }
 

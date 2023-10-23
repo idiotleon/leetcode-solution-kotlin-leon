@@ -4,7 +4,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 
 /**
  * @author: Leon
- * https://leetcode.com/problems/lfu-cache/
+ * https://leetcode.com/problems/all-oone-data-structure/
  *
  * Time Complexity:
  *  initialization:     O()
@@ -54,12 +54,18 @@ class SolutionApproach0DoublyLinkedList {
     }
 
     /** Returns one of the keys with maximal value. */
-    fun getMaxKey() = if (dummyTail.prev == dummyHead) ""
-    else dummyTail.prev!!.keySet.iterator().next()
+    fun getMaxKey() = if (dummyTail.prev == dummyHead) {
+        ""
+    } else {
+        dummyTail.prev!!.keySet.iterator().next()
+    }
 
     /** Returns one of the keys with Minimal value. */
-    fun getMinKey() = if (dummyHead.next == dummyTail) ""
-    else dummyHead.next!!.keySet.iterator().next()
+    fun getMinKey() = if (dummyHead.next == dummyTail) {
+        ""
+    } else {
+        dummyHead.next!!.keySet.iterator().next()
+    }
 
     private fun changeKey(key: String, offset: Int) {
         val freq = keyToFreq[key]!!
