@@ -11,14 +11,16 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  *
  * `dp[lo][hi]`, whether `str.substring(lo, hi + 1)` is a palindrome
  *
- * References:
- *  https://leetcode.com/problems/longest-palindromic-substring/discuss/2921/Share-my-Java-solution-using-dynamic-programming/223961
+ * Reference:
+ * https://leetcode.com/problems/longest-palindromic-substring/discuss/2921/Share-my-Java-solution-using-dynamic-programming/223961
  */
 @Suppress(UNUSED)
 class SolutionApproach0DP2Dimen {
     fun longestPalindrome(str: String): String {
         val lenS = str.length
-        if (lenS < 2) return str
+        if (lenS < 2) {
+            return str
+        }
 
         val dp = Array(lenS) { BooleanArray(lenS) { false } }
 
