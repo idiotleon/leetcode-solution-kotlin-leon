@@ -1,7 +1,6 @@
 package com.idiotleon.leetcode.lvl4.lc0269
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
 
 /**
  * @author: Leon
@@ -18,7 +17,9 @@ class SolutionApproach0TopologicalSort {
 
     fun alienOrder(words: Array<String>): String {
         // sanity check
-        if (words.isEmpty()) return ""
+        if (words.isEmpty()) {
+            return ""
+        }
 
         val nWords = words.size
 
@@ -40,12 +41,16 @@ class SolutionApproach0TopologicalSort {
             val len = maxOf(lenPrev, lenCur)
 
             for (j in 0 until len) {
-                if (j == lenPrev) break
-                else if (j == lenCur) return ""
-                else {
+                if (j == lenPrev) {
+                    break
+                } else if (j == lenCur) {
+                    return ""
+                } else {
                     val chPrev = wordPrev[j]
                     val chCur = wordCur[j]
-                    if (chPrev == chCur) continue
+                    if (chPrev == chCur) {
+                        continue
+                    }
 
                     val idxChPrev = chPrev - 'a'
                     val idxChCur = chCur - 'a'
@@ -58,10 +63,10 @@ class SolutionApproach0TopologicalSort {
             }
         }
 
-        val queue = LinkedList<Int>()
+        val queue = ArrayDeque<Int>()
         for (i in 0 until TOTAL_ALPHABET) {
             if (freqs[i] == 0) {
-                queue.offer(i)
+                queue.addLast(i)
             }
         }
 
@@ -70,13 +75,13 @@ class SolutionApproach0TopologicalSort {
             val size = queue.size
 
             for (i in 0 until size) {
-                val cur = queue.poll()
-                val ch = (cur + 'a'.toInt()).toChar()
+                val cur = queue.removeFirst()
+                val ch = (cur + 'a'.code).toChar()
                 builder.append(ch)
 
                 for (next in graph[cur]) {
                     if (--freqs[next] == 0) {
-                        queue.offer(next)
+                        queue.addLast(next)
                     }
                 }
             }
