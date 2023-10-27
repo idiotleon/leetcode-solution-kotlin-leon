@@ -10,7 +10,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(`nRows` * `nCols`) + O(`nBuildings`) ~ O(`nRows` * `nCols`)
  *
  * Reference:
- *  https://leetcode.com/problems/shortest-distance-from-all-buildings/discuss/76886/Share-a-Java-implement
+ * https://leetcode.com/problems/shortest-distance-from-all-buildings/discuss/76886/Share-a-Java-implement
  */
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
@@ -26,8 +26,9 @@ class SolutionApproach0BFS {
 
         for (row in grid.indices) {
             for (col in grid[row].indices) {
-                if (grid[row][col] == Type.BUILDING.code)
+                if (grid[row][col] == Type.BUILDING.code) {
                     buildings.add(Building(row, col, 0))
+                }
 
                 grid[row][col] = -grid[row][col]
             }
@@ -42,15 +43,16 @@ class SolutionApproach0BFS {
         var shortest = -1
         for (row in grid.indices) {
             for (col in grid[row].indices) {
-                if (grid[row][col] == nBuildings && (shortest < 0 || shortest > distances[row][col]))
+                if (grid[row][col] == nBuildings && (shortest < 0 || shortest > distances[row][col])) {
                     shortest = distances[row][col]
+                }
             }
         }
 
         return shortest
     }
 
-    private fun bfs(building: Building, reaches: Int, distances: Array<IntArray>, grid: Array<IntArray>) {
+    private fun bfs(building: Building, expectedId: Int, distances: Array<IntArray>, grid: Array<IntArray>) {
         val nRows = grid.size
         val nCols = grid[0].size
 
@@ -68,10 +70,11 @@ class SolutionApproach0BFS {
                 for (d in 0 until 4) {
                     val nextRow = row + DIRS[d]
                     val nextCol = col + DIRS[d + 1]
-                    if (nextRow < 0 || nextRow >= nRows || nextCol < 0 || nextCol >= nCols || grid[nextRow][nextCol] != reaches)
+                    if (nextRow < 0 || nextRow >= nRows || nextCol < 0 || nextCol >= nCols || grid[nextRow][nextCol] != expectedId) {
                         continue
+                    }
 
-                    grid[nextRow][nextCol] = 1 + reaches
+                    grid[nextRow][nextCol] = 1 + expectedId
                     queue.addLast(Building(nextRow, nextCol, 1 + distance))
                 }
             }
@@ -81,8 +84,6 @@ class SolutionApproach0BFS {
     private data class Building(val row: Int, val col: Int, val distance: Int)
 
     private enum class Type(val code: Int) {
-        EMPTY(0),
-        BUILDING(1),
-        OBSTACLE(2)
+        EMPTY(0), BUILDING(1), OBSTACLE(2)
     }
 }
