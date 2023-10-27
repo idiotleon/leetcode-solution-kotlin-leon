@@ -32,22 +32,22 @@ class SolutionApproach0TopologicalSort {
 
         val graph = Array(TOTAL_ALPHABET) { hashSetOf<Int>() }
 
-        for (i in 1 until nWords) {
-            val wordPrev = words[i - 1]
-            val wordCur = words[i]
+        for (idxWord in 1 until nWords) {
+            val wordPrev = words[idxWord - 1]
+            val wordCur = words[idxWord]
 
             val lenPrev = wordPrev.length
             val lenCur = wordCur.length
             val len = maxOf(lenPrev, lenCur)
 
-            for (j in 0 until len) {
-                if (j == lenPrev) {
+            for (idxCh in 0 until len) {
+                if (idxCh == lenPrev) {
                     break
-                } else if (j == lenCur) {
+                } else if (idxCh == lenCur) {
                     return ""
                 } else {
-                    val chPrev = wordPrev[j]
-                    val chCur = wordCur[j]
+                    val chPrev = wordPrev[idxCh]
+                    val chCur = wordCur[idxCh]
                     if (chPrev == chCur) {
                         continue
                     }
