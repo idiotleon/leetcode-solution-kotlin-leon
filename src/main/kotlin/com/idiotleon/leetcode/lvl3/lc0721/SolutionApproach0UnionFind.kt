@@ -9,10 +9,9 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/accounts-merge/discuss/109157/JavaC++-Union-Find/241144
- *  https://leetcode.com/problems/accounts-merge/discuss/109157/JavaC++-Union-Find/286437
+ * Reference:
+ * https://leetcode.com/problems/accounts-merge/discuss/109157/JavaC++-Union-Find/241144
+ * https://leetcode.com/problems/accounts-merge/discuss/109157/JavaC++-Union-Find/286437
  */
 @Suppress(UNUSED)
-class SolutionApproach0UnionFind {
-}
+class SolutionApproach0UnionFind {}

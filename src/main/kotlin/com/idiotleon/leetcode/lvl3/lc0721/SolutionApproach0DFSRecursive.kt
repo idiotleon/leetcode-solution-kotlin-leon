@@ -9,8 +9,8 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://leetcode.com/problems/accounts-merge/discuss/109157/JavaC++-Union-Find/241144
+ * Reference:
+ * https://leetcode.com/problems/accounts-merge/discuss/109157/JavaC++-Union-Find/241144
  */
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
@@ -23,6 +23,7 @@ class SolutionApproach0DFSRecursive {
             val size = account.size
 
             for (idx in 1 until size) {
+                // required, especially in the situation where there is only one email after the name
                 graph.getOrPut(account[idx]) { HashSet() }
                 emailToName[account[idx]] = name
 
@@ -38,7 +39,9 @@ class SolutionApproach0DFSRecursive {
         val ans = mutableListOf<List<String>>()
         val seen = HashSet<String>()
         for ((email, _) in graph) {
-            if (!seen.add(email)) continue
+            if (!seen.add(email)) {
+                continue
+            }
 
             val res = mutableListOf<String>()
             dfs(email, seen, res, graph)
@@ -51,16 +54,15 @@ class SolutionApproach0DFSRecursive {
     }
 
     private fun dfs(
-        cur: String,
-        seen: HashSet<String>,
-        res: MutableList<String>,
-        graph: HashMap<String, HashSet<String>>
+        cur: String, seen: HashSet<String>, res: MutableList<String>, graph: HashMap<String, HashSet<String>>
     ) {
         res.add(cur)
 
         graph[cur]?.let {
             for (next in it) {
-                if (!seen.add(next)) continue
+                if (!seen.add(next)) {
+                    continue
+                }
                 dfs(next, seen, res, graph)
             }
         }

@@ -2,7 +2,6 @@ package com.idiotleon.leetcode.lvl2.lc0958
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
-import java.util.LinkedList
 
 /**
  * @author: Leon
@@ -17,21 +16,24 @@ import java.util.LinkedList
 @Suppress(UNUSED)
 class SolutionApproach0BFS {
     fun isCompleteTree(root: TreeNode?): Boolean {
-        val queue = LinkedList<TreeNode?>().also {
-            it.offer(root)
+        val queue = ArrayDeque<TreeNode?>().also {
+            it.addLast(root)
         }
 
         var isEnd = false
 
         while (queue.isNotEmpty()) {
-            val cur = queue.poll()
+            val cur = queue.removeFirst()
 
-            if (cur == null) isEnd = true
-            else {
-                if (isEnd) return false
+            if (cur == null) {
+                isEnd = true
+            } else {
+                if (isEnd) {
+                    return false
+                }
 
-                queue.offer(cur!!.left)
-                queue.offer(cur!!.right)
+                queue.addLast(cur!!.left)
+                queue.addLast(cur!!.right)
             }
         }
 
