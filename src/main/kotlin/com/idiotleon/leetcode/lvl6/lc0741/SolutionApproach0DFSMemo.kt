@@ -30,7 +30,9 @@ class SolutionApproach0DFSMemo {
         if (row1 < 0 || col1 < 0 || row2 < 0 || col2 < 0) return -1
         if (grid[row1][col1] < 0 || grid[row2][col2] < 0) return -1
         if (row1 == 0 && col1 == 0) return grid[row1][col1]
-        if (memo[row1][col1][col2] != Int.MIN_VALUE) return memo[row1][col1][col2]
+        if (memo[row1][col1][col2] != Int.MIN_VALUE) {
+            return memo[row1][col1][col2]
+        }
 
         var max = maxOf(
             maxOf(

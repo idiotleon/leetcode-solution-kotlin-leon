@@ -20,7 +20,9 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0DP2Dimen {
     fun mergeStones(stones: IntArray, K: Int): Int {
         val nStones = stones.size
-        if ((nStones - 1) % (K - 1) > 0) return -1
+        if ((nStones - 1) % (K - 1) > 0) {
+            return -1
+        }
 
         val prefixSums = IntArray(nStones + 1) { 0 }
         for (idx in stones.indices) {

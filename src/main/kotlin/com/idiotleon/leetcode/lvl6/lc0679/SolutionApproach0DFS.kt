@@ -21,33 +21,39 @@ class SolutionApproach0DFS {
 
     fun judgePoint24(nums: IntArray): Boolean {
         val cards = ArrayList<Double>().also {
-            for (num in nums) it.add(num.toDouble())
+            for (num in nums) {
+                it.add(num.toDouble())
+            }
         }
 
         return dfs(cards)
     }
 
     private fun dfs(cards: ArrayList<Double>): Boolean {
-        val totalCards = cards.size
+        val nCards = cards.size
         // only 1 card left
-        if (totalCards == 1) {
+        if (nCards == 1) {
             if (abs(cards[0] - 24.0) < 0.001) return true
             return false
         }
 
         // to take two cards
         for (lo in cards.indices) {
-            for (hi in lo + 1 until totalCards) {
+            for (hi in lo + 1 until nCards) {
                 for (card in compute(cards[lo], cards[hi])) {
                     // to create a new ArrayList
                     val nextRound = arrayListOf(card)
 
                     for (k in cards.indices) {
-                        if (k == lo || k == hi) continue
+                        if (k == lo || k == hi) {
+                            continue
+                        }
                         nextRound.add(cards[k])
                     }
 
-                    if (dfs(nextRound)) return true
+                    if (dfs(nextRound)) {
+                        return true
+                    }
                 }
             }
         }

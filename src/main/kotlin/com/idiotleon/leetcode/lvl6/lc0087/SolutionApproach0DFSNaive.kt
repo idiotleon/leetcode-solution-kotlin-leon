@@ -22,8 +22,13 @@ class SolutionApproach0DFSNaive {
     private fun dfs(str1: String, str2: String): Boolean {
         val lenS = str1.length
 
-        if (str1 == str2) return true
-        if (getFreqs(str1) != getFreqs(str2)) return false
+        if (str1 == str2) {
+            return true
+        }
+
+        if (getFreqs(str1) != getFreqs(str2)) {
+            return false
+        }
 
         for (idx in 1 until lenS) {
             if (dfs(str1.substring(0, idx), str2.substring(0, idx)) && dfs(

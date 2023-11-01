@@ -2,6 +2,7 @@ package com.idiotleon.leetcode.lvl6.lc0587
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
+import kotlin.collections.ArrayDeque
 
 /**
  * @author: Leon
@@ -20,25 +21,24 @@ class SolutionApproach0ConvexHull {
         points.sortWith(compareBy({ -it[0] }, { -it[1] }))
 
         // to hold the vertices of upper and lower hulls
-        val hull = LinkedList<IntArray>()
+        val hull = ArrayDeque<IntArray>()
 
         for (idx in points.indices) {
             while (hull.size >= 2 && getOrientation(hull[0], hull[1], points[idx]) > 0) {
-
-                hull.pop()
+                hull.removeFirst()
             }
 
-            hull.push(points[idx])
+            hull.addLast(points[idx])
         }
 
-        hull.pop()
+        hull.removeFirst()
 
         for (idx in points.indices.reversed()) {
             while (hull.size >= 2 && getOrientation(hull[0], hull[1], points[idx]) > 0) {
-                hull.pop()
+                hull.removeFirst()
             }
 
-            hull.push(points[idx])
+            hull.addLast(points[idx])
         }
 
         return hull.toSet().toTypedArray()
