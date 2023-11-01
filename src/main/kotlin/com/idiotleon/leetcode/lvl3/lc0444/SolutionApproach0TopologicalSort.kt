@@ -11,7 +11,7 @@ import kotlin.collections.HashMap
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * to return true, it must:
+ * to return true, it must be that:
  *  1. the topological sort order exists
  *  2. the topological sort order is unique
  *  3. the topological sort order confirms to `org`
@@ -26,15 +26,18 @@ class SolutionApproach0TopologicalSort {
     fun sequenceReconstruction(org: IntArray, seqs: List<List<Int>>): Boolean {
         val nOrg = org.size
 
-        val indegrees = HashMap<Int, Int>()
-        val graph = buildGraph(seqs, indegrees)
-        if (nOrg != indegrees.size) return false
+        val counts = HashMap<Int, Int>()
+        val graph = buildGraph(seqs, counts)
+        if (nOrg != counts.size) {
+            return false
+        }
 
         // to topological sort
-        val queue = ArrayDeque<Int>()
-        for ((num, indegree) in indegrees) {
-            if (indegree == 0) {
-                queue.addLast(num)
+        val queue = ArrayDeque<Int>().also {
+            for ((num, count) in counts) {
+                if (count == 0) {
+                    it.addLast(num)
+                }
             }
         }
 
@@ -42,16 +45,20 @@ class SolutionApproach0TopologicalSort {
         while (queue.isNotEmpty()) {
             val size = queue.size
             // the topological sort order should be unique
-            if (size > 1) return false
+            if (size > 1) {
+                return false
+            }
 
             val cur = queue.removeFirst()
             // the topological sort order should confirm to `org`
-            if (org[idx++] != cur) return false
+            if (org[idx++] != cur) {
+                return false
+            }
 
             graph[cur]?.let {
                 for (next in it) {
-                    indegrees[next] = (indegrees[next] ?: 0) - 1
-                    if (indegrees[next] == 0) {
+                    counts[next] = (counts[next] ?: 0) - 1
+                    if (counts[next] == 0) {
                         queue.addLast(next)
                     }
                 }
@@ -62,21 +69,22 @@ class SolutionApproach0TopologicalSort {
     }
 
     private fun buildGraph(
-        seqs: List<List<Int>>, indegrees: HashMap<Int, Int>
-    ): HashMap<Int, MutableList<Int>> {
+        seqs: List<List<Int>>,
+        counts: HashMap<Int, Int>,
+    ): Map<Int, List<Int>> {
         val graph = HashMap<Int, MutableList<Int>>()
         for (seq in seqs) {
             for (idx in seq.indices) {
                 graph.getOrPut(seq[idx]) { mutableListOf() }
-                indegrees.getOrPut(seq[idx]) { 0 }
+                counts.getOrPut(seq[idx]) { 0 }
 
                 if (idx > 0) {
                     graph.getOrPut(seq[idx - 1]) { mutableListOf() }.add(seq[idx])
-                    indegrees[seq[idx]] = 1 + (indegrees[seq[idx]] ?: 0)
+                    counts[seq[idx]] = 1 + (counts[seq[idx]] ?: 0)
                 }
             }
         }
 
-        return graph
+        return graph.map { (key, value) -> key to value.toList() }.toMap()
     }
 }

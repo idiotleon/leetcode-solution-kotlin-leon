@@ -16,23 +16,33 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
     fun sequenceReconstruction(org: IntArray, seqs: List<List<Int>>): Boolean {
-        if (seqs.isEmpty()) return false
+        if (seqs.isEmpty()) {
+            return false
+        }
         val nOrg = org.size
 
-        val indexes = IntArray(nOrg + 1) { 0 }
-        for (idx in org.indices) indexes[org[idx]] = idx
+        val indices = IntArray(nOrg + 1) { 0 }
+        for (idx in org.indices) {
+            indices[org[idx]] = idx
+        }
 
         val flags = BooleanArray(nOrg + 1)
         var toMatch = nOrg - 1
 
         for (seq in seqs) {
             for (idx in seq.indices) {
-                if (seq[idx] <= 0 || seq[idx] > nOrg) return false
-                if (idx == 0) continue
+                if (seq[idx] <= 0 || seq[idx] > nOrg) {
+                    return false
+                }
+                if (idx == 0) {
+                    continue
+                }
                 val prev = seq[idx - 1]
                 val cur = seq[idx]
-                if (indexes[prev] >= indexes[cur]) return false
-                if (!flags[prev] && indexes[prev] + 1 == indexes[cur]) {
+                if (indices[prev] >= indices[cur]) {
+                    return false
+                }
+                if (!flags[prev] && indices[prev] + 1 == indices[cur]) {
                     flags[prev] = true
                     --toMatch
                 }
