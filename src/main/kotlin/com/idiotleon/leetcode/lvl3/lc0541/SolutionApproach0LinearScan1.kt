@@ -1,3 +1,7 @@
+package com.idiotleon.leetcode.lvl3.lc0541
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/reverse-string-ii/
@@ -5,13 +9,9 @@
  * Time Complexity:     O(`lenS`)
  * Space Complexity:    O(`lenS`)
  *
- * References:
+ * Reference:
  *  https://leetcode.com/problems/reverse-string-ii/discuss/100866/Java-Concise-Solution/104784
  */
-package com.idiotleon.leetcode.lvl3.lc0541
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan1 {
     fun reverseStr(s: String, k: Int): String {
