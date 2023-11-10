@@ -1,20 +1,21 @@
+package com.idiotleon.leetcode.lvl4.lc0636
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.collections.ArrayDeque
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/exclusive-time-of-functions/
  *
  * Time Complexity:     O(`n`)
  * Space Complexity:    O(`n`)
  *
- * `stack` is used to save the IDs, which should be pused in if it is a start, of functions
+ * `stack` is used to save the IDs, which should be pushed in if it is a start, of functions
  *
- * References:
- *  https://leetcode.com/problems/exclusive-time-of-functions/discuss/105062/Java-Stack-Solution-O(n)-Time-O(n)-Space
- *  https://leetcode.com/problems/exclusive-time-of-functions/discuss/105062/Java-Stack-Solution-O(n)-Time-O(n)-Space/107796
+ * Reference:
+ * https://leetcode.com/problems/exclusive-time-of-functions/discuss/105062/Java-Stack-Solution-O(n)-Time-O(n)-Space
+ * https://leetcode.com/problems/exclusive-time-of-functions/discuss/105062/Java-Stack-Solution-O(n)-Time-O(n)-Space/107796
  */
-package com.idiotleon.leetcode.lvl4.lc0636
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0Stack {
     private companion object {
@@ -25,7 +26,7 @@ class SolutionApproach0Stack {
     fun exclusiveTime(n: Int, logs: List<String>): IntArray {
         val ans = IntArray(n) { 0 }
 
-        val stack = LinkedList<Int>()
+        val stack = ArrayDeque<Int>()
         var prevTimestamp = 0
 
         for (log in logs) {
@@ -35,15 +36,15 @@ class SolutionApproach0Stack {
             val curTimestamp = res[2].toInt()
 
             if (stack.isNotEmpty()) {
-                ans[stack.peek()] += (curTimestamp - prevTimestamp)
+                ans[stack.last()] += (curTimestamp - prevTimestamp)
             }
 
             prevTimestamp = curTimestamp
 
             if (state == STATE_START) {
-                stack.push(id)
+                stack.addLast(id)
             } else {
-                ++ans[stack.pop()]
+                ++ans[stack.removeLast()]
                 ++prevTimestamp
             }
         }
