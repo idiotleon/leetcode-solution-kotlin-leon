@@ -24,7 +24,9 @@ class SolutionApproach0BinarySearch {
         var base = x
 
         while (absN > 0) {
-            if ((absN and 1) == 1L) ans *= base
+            if ((absN and 1) == 1L) {
+                ans *= base
+            }
 
             absN /= 2
             base *= base
