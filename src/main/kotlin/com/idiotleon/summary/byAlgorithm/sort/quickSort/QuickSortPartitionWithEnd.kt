@@ -1,21 +1,25 @@
+package com.idiotleon.summary.byAlgorithm.sort.quickSort
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
+ *
  * Time Complexity:
  *  O(`nNums` * lg(`nNums`)) on average
  *  O(`nNums` ^ 2) in the worst case
  *
  * Space Complexity:        O(1)
  *
- * References:
- *  https://www.baeldung.com/java-quicksort
+ * Reference:
+ * https://www.baeldung.com/java-quicksort
  */
-package com.idiotleon.summary.byAlgorithm.sort.quickSort
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class QuickSortPartitionWithEnd {
     fun quickSort(lo: Int, hi: Int, nums: IntArray) {
-        if (lo >= hi) return
+        if (lo >= hi) {
+            return
+        }
 
         val pivot = partition(lo, hi, nums)
         quickSort(lo, pivot - 1, nums)
@@ -27,7 +31,9 @@ class QuickSortPartitionWithEnd {
         var lo = low - 1
 
         for (hi in low until high) {
-            if (nums[hi] > pivot) continue
+            if (nums[hi] > pivot) {
+                continue
+            }
             ++lo
             swap(lo, hi, nums)
         }

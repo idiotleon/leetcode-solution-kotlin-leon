@@ -1,16 +1,17 @@
+package com.idiotleon.leetcode.lvl3.lc0670
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/maximum-swap/
  *
  * Time Complexity:     O(`lenD`)
  * Space Complexity:    O(`lenD`)
  *
  * Reference:
- *  https://leetcode.com/problems/maximum-swap/discuss/107068/Java-simple-solution-O(n)-time
+ * https://leetcode.com/problems/maximum-swap/discuss/107068/Java-simple-solution-O(n)-time
  */
-package com.idiotleon.leetcode.lvl3.lc0670
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0BucketSort {
     fun maximumSwap(num: Int): Int {

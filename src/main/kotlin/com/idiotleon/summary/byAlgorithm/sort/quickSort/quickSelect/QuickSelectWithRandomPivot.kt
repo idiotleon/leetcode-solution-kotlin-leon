@@ -1,3 +1,8 @@
+package com.idiotleon.summary.byAlgorithm.sort.quickSort.quickSelect
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+import kotlin.random.Random
+
 /**
  * @author: Leon
  *
@@ -8,18 +13,15 @@
  *
  * `k` is 0-indexed
  */
-package com.idiotleon.summary.byAlgorithm.sort.quickSort.quickSelect
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.random.Random
-
 @Suppress(UNUSED)
 class QuickSelectWithRandomPivot {
     fun quickSelect(lo: Int, hi: Int, k: Int, nums: IntArray): Int {
         if (lo <= hi) {
             val pivot = partition(lo, hi, nums)
             return when {
+                // to go left/low
                 pivot > k -> quickSelect(lo, pivot - 1, k, nums)
+                // to go right/high
                 pivot < k -> quickSelect(pivot + 1, hi, k, nums)
                 else -> nums[k]
             }
@@ -29,19 +31,19 @@ class QuickSelectWithRandomPivot {
     }
 
     private fun partition(lo: Int, hi: Int, nums: IntArray): Int {
-        val pivot = lo + Random.nextInt(hi - lo + 1)
-        swap(pivot, hi, nums)
+        val idxPivot = lo + Random.nextInt(hi - lo + 1)
+        swap(idxPivot, hi, nums)
 
-        var lo = lo
-        for (idx in lo until hi) {
+        var idxStore = lo
+        for (idx in idxStore until hi) {
             if (nums[idx] > nums[hi]) {
-                swap(lo, idx, nums)
-                ++lo
+                swap(idxStore, idx, nums)
+                ++idxStore
             }
         }
 
-        swap(lo, hi, nums)
-        return lo
+        swap(idxStore, hi, nums)
+        return idxStore
     }
 
     private fun swap(i: Int, j: Int, nums: IntArray) {

@@ -1,4 +1,10 @@
+package com.idiotleon.summary.byAlgorithm.sort.quickSort
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
+ *
  * pseudo code:
  *  quickSort(nums, lo, hi)
  *      pivot = partition(nums, lo, hi) #O(hi - 1)
@@ -29,10 +35,5 @@
  *  https://www.programcreek.com/2012/11/quicksort-array-in-java/
  *  https://www.youtube.com/watch?v=OQi4n8EKRD8
  */
-package com.idiotleon.summary.byAlgorithm.sort.quickSort
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
-class QuickSortPartitionWithMid {
-}
+class QuickSortPartitionWithMid {}

@@ -1,16 +1,16 @@
+package com.idiotleon.summary.byAlgorithm.sort.quickSort.quickSelect
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
- * References:
- *  https://youtu.be/SWr4cSY2fCk?t=933https://youtu.be/SWr4cSY2fCk?t=933
+ * Reference:
+ * https://youtu.be/SWr4cSY2fCk?t=933https://youtu.be/SWr4cSY2fCk?t=933
  */
-package com.idiotleon.summary.byAlgorithm.sort.quickSort.quickSelect
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class QuickSelect1 {
     fun findKthLargest(k: Int, nums: IntArray): Int {

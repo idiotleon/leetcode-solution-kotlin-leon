@@ -1,14 +1,16 @@
-/**
- * YXC: 大雪菜闫学灿
- *
- * References:
- *  Paid Membership Required: https://www.acwing.com/video/10/
- *  Paid Membership Required: https://www.acwing.com/video/11/
- */
 package com.idiotleon.summary.byAlgorithm.sort.quickSort
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ *
+ * YXC: 大雪菜闫学灿
+ *
+ * Reference:
+ * Paid Membership Required: https://www.acwing.com/video/10/
+ * Paid Membership Required: https://www.acwing.com/video/11/
+ */
 @Suppress(UNUSED)
 class QuickSortYXC {
     fun quickSort(low: Int, high: Int, nums: IntArray) {
