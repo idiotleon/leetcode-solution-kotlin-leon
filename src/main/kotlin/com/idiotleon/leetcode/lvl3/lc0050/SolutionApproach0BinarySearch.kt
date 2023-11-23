@@ -10,7 +10,7 @@ import kotlin.math.abs
  * Time Complexity:     O(lg(N))
  * Space Complexity:    O(1)
  *
- * References:
+ * Reference:
  * https://leetcode.wang/leetCode-50-Pow.html
  * https://leetcode.com/problems/powx-n/discuss/19563/Iterative-Log(N)-solution-with-Clear-Explanation
  * https://leetcode.com/problems/powx-n/discuss/19563/Iterative-Log(N)-solution-with-Clear-Explanation/115437

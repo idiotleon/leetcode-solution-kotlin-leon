@@ -1,17 +1,19 @@
+package com.idiotleon.leetcode.lvl5.lc0301
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+import java.util.*
+import kotlin.collections.ArrayDeque
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/remove-invalid-parentheses/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
  * Reference:
- *  https://leetcode.com/problems/remove-invalid-parentheses/discuss/75041/Java-BFS-solution-16ms-avoid-generating-duplicate-strings
+ * https://leetcode.com/problems/remove-invalid-parentheses/discuss/75041/Java-BFS-solution-16ms-avoid-generating-duplicate-strings
  */
-package com.idiotleon.leetcode.lvl5.lc0301
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-
 @Suppress(UNUSED)
 class SolutionApproach0BFS1 {
     private companion object {
@@ -20,42 +22,48 @@ class SolutionApproach0BFS1 {
     }
 
     fun removeInvalidParentheses(str: String): List<String> {
-        if (isValid(str))
+        if (isValid(str)) {
             return listOf(str)
+        }
 
         val ans = mutableListOf<String>()
-        if (str.isEmpty())
+        if (str.isEmpty()) {
             return ans
+        }
 
-        val queue = LinkedList<Node>().also {
-            it.offer(Node(str, 0, PAREN_CLOSED))
+        val queue = ArrayDeque<Node>().also {
+            it.addLast(Node(str, 0, PAREN_CLOSED))
         }
 
         while (queue.isNotEmpty()) {
             val size = queue.size
 
             for (sz in 0 until size) {
-                val (strCur, idxStart, chRemoved) = queue.poll()
+                val (strCur, idxStart, chRemoved) = queue.removeFirst()
 
                 val lenS = strCur.length
 
                 loop@ for (idx in idxStart until lenS) {
                     val ch = strCur[idx]
-                    if (ch != PAREN_OPEN && ch != PAREN_CLOSED)
+                    if (ch != PAREN_OPEN && ch != PAREN_CLOSED) {
                         continue@loop
+                    }
 
-                    if (idx > idxStart && strCur[idx - 1] == ch)
+                    if (idx > idxStart && strCur[idx - 1] == ch) {
                         continue@loop
+                    }
 
-                    if (chRemoved == PAREN_OPEN && ch == PAREN_CLOSED)
+                    if (chRemoved == PAREN_OPEN && ch == PAREN_CLOSED) {
                         continue@loop
+                    }
 
                     val deleted = StringBuilder(strCur).deleteCharAt(idx).toString()
 
-                    if (isValid(deleted))
+                    if (isValid(deleted)) {
                         ans.add(deleted)
-                    else if (ans.isEmpty())
-                        queue.offer(Node(deleted, idx, ch))
+                    } else if (ans.isEmpty()) {
+                        queue.addLast(Node(deleted, idx, ch))
+                    }
                 }
             }
         }
