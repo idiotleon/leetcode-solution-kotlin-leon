@@ -24,7 +24,9 @@ class SolutionApproach0InorderRecursive {
     }
 
     private fun inorder(node: TreeNode?, k: Int) {
-        if (node == null) return
+        if (node == null) {
+            return
+        }
 
         inorder(node.left, k)
         ++ith

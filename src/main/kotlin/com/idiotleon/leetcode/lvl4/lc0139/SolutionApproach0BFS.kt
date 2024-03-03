@@ -15,7 +15,9 @@ import kotlin.collections.HashSet
 class SolutionApproach0BFS {
     fun wordBreak(s: String, wordDict: List<String>): Boolean {
         // sanity check
-        if (s.isEmpty()) return false
+        if (s.isEmpty()) {
+            return false
+        }
 
         val wordSet = HashSet(wordDict)
 
@@ -33,12 +35,18 @@ class SolutionApproach0BFS {
                 val len = cur.length
 
                 for (idx in 1..len) {
-                    if (!wordSet.contains(cur.substring(0, idx))) continue
+                    if (!wordSet.contains(cur.substring(0, idx))) {
+                        continue
+                    }
 
-                    if (idx == len) return true
+                    if (idx == len) {
+                        return true
+                    }
 
                     val sub = cur.substring(idx)
-                    if (!seen.add(sub)) continue
+                    if (!seen.add(sub)) {
+                        continue
+                    }
                     queue.addLast(sub)
                 }
             }

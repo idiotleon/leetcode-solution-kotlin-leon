@@ -1,18 +1,19 @@
+package com.idiotleon.leetcode.lvl3.lc1245
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/tree-diameter/
  *
  * Time Complexity:     O(N)
  * Space Complexity:    O(H)
  *
- * References:
- *  https://leetcode.com/problems/tree-diameter/discuss/418820/(Java)-Using-2-BFS
- *  https://leetcode.com/problems/tree-diameter/discuss/418820/(Java)-Using-2-BFS/402688
- *  https://stackoverflow.com/a/29219346/6061609
+ * Reference:
+ * https://leetcode.com/problems/tree-diameter/discuss/418820/(Java)-Using-2-BFS
+ * https://leetcode.com/problems/tree-diameter/discuss/418820/(Java)-Using-2-BFS/402688
+ * https://stackoverflow.com/a/29219346/6061609
  */
-package com.idiotleon.leetcode.lvl3.lc1245
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DFSRecursive {
     fun treeDiameter(edges: Array<IntArray>): Int {
@@ -28,13 +29,8 @@ class SolutionApproach0DFSRecursive {
     }
 
     private fun dfs(
-        cur: Int,
-        parent: Int,
-        len: Int,
-        graph: Array<MutableList<Int>>,
-        res: Res
+        cur: Int, parent: Int, len: Int, graph: Array<MutableList<Int>>, res: Res
     ) {
-
         if (len > res.len) {
             res.len = len
             res.vertex = cur

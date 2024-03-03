@@ -9,14 +9,16 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(L ^ 2) + O(totalWords)
  * Space Complexity:    O(L)
  *
- * References:
- *  https://leetcode.com/problems/word-break/discuss/43790/Java-implementation-using-DP-in-two-ways
+ * Reference:
+ * https://leetcode.com/problems/word-break/discuss/43790/Java-implementation-using-DP-in-two-ways
  */
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     fun wordBreak(str: String, wordDict: List<String>): Boolean {
         // sanity check
-        if (str.isEmpty()) return false
+        if (str.isEmpty()) {
+            return false
+        }
 
         val lenS = str.length
         val wordSet = wordDict.toHashSet()

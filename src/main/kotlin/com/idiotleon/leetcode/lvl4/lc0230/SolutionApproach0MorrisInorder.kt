@@ -34,7 +34,9 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
 class SolutionApproach0MorrisInorder {
     fun kthSmallest(root: TreeNode?, k: Int): Int {
         // sanity check, not required given data range
-        if (root == null || k <= 0) return -1
+        if (root == null || k <= 0) {
+            return -1
+        }
 
         var cur = root
         var ith = 0

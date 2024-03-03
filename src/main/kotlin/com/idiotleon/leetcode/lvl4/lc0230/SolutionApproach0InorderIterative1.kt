@@ -26,7 +26,9 @@ class SolutionApproach0InorderIterative1 {
             pushLeft(cur, stack)
 
             cur = stack.removeLast()
-            if (++ith == k) return cur.`val`
+            if (++ith == k) {
+                return cur.`val`
+            }
             cur = cur.right
         }
 

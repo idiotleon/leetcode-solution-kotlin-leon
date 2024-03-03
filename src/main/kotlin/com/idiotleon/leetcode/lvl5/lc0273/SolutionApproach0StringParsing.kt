@@ -1,4 +1,9 @@
+package com.idiotleon.leetcode.lvl5.lc0273
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/integer-to-english-words/
  *
  * Time Complexity:     O(L ^ 2)
@@ -7,16 +12,34 @@
  * References:
  *  https://leetcode.com/problems/integer-to-english-words/discuss/70625/My-clean-Java-solution-very-easy-to-understand
  */
-package com.idiotleon.leetcode.lvl5.lc0273
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0StringParsing {
     private companion object {
-        private val LESS_THAN_20 = arrayOf("", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen")
+        private val LESS_THAN_20 = arrayOf(
+            "",
+            "One",
+            "Two",
+            "Three",
+            "Four",
+            "Five",
+            "Six",
+            "Seven",
+            "Eight",
+            "Nine",
+            "Ten",
+            "Eleven",
+            "Twelve",
+            "Thirteen",
+            "Fourteen",
+            "Fifteen",
+            "Sixteen",
+            "Seventeen",
+            "Eighteen",
+            "Nineteen"
+        )
 
-        private val TENS = arrayOf("", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety")
+        private val TENS =
+            arrayOf("", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety")
 
         private val THOUSANDS = arrayOf("Billion", "Million", "Thousand", "")
 

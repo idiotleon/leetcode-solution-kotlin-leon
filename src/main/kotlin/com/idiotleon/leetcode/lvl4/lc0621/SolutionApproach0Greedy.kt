@@ -9,8 +9,8 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(`nTasks`)
  * Space Complexity:    O(1)
  *
- * References:
- *  http://zxi.mytechroad.com/blog/greedy/leetcode-621-task-scheduler/
+ * Reference:
+ * http://zxi.mytechroad.com/blog/greedy/leetcode-621-task-scheduler/
  */
 @Suppress(UNUSED)
 class SolutionApproach0Greedy {
@@ -26,8 +26,9 @@ class SolutionApproach0Greedy {
 
         var ans = (maxFreq - 1) * (n + 1)
         for (freq in freqs) {
-            if (freq == maxFreq)
+            if (freq == maxFreq) {
                 ++ans
+            }
         }
 
         return maxOf(ans, nTasks)

@@ -2,7 +2,7 @@ package com.idiotleon.leetcode.lvl4.lc0230
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
-import java.util.*
+import kotlin.collections.ArrayDeque
 
 /**
  * @author: Leon
@@ -15,26 +15,30 @@ import java.util.*
 class SolutionApproach0InorderIterative {
     fun kthSmallest(root: TreeNode?, k: Int): Int {
         // sanity check
-        if (root == null || k <= 0) return -1
+        if (root == null || k <= 0) {
+            return -1
+        }
 
-        val stack = LinkedList<TreeNode>()
+        val stack = ArrayDeque<TreeNode>()
         pushLeft(root, stack)
 
         var ith = 0
 
         while (stack.isNotEmpty()) {
-            val top = stack.pop()
-            if (++ith == k) return top.`val`
+            val top = stack.removeFirst()
+            if (++ith == k) {
+                return top.`val`
+            }
             pushLeft(top.right, stack)
         }
 
         return -1
     }
 
-    private fun pushLeft(node: TreeNode?, stack: LinkedList<TreeNode>) {
+    private fun pushLeft(node: TreeNode?, stack: ArrayDeque<TreeNode>) {
         var cur = node
         while (cur != null) {
-            stack.push(cur)
+            stack.addLast(cur)
             cur = cur.left
         }
     }
