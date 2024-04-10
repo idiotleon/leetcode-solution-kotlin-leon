@@ -1,3 +1,7 @@
+package com.idiotleon.leetcode.lvl2.lc1570
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/dot-product-of-two-sparse-vectors/
@@ -8,18 +12,13 @@
  * Reference:
  * https://leetcode.com/problems/dot-product-of-two-sparse-vectors/discuss/826713/Java-100-O(min(dm-dn))-solution/866242
  */
-package com.idiotleon.leetcode.lvl2.lc1570
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SparseVector(nums: IntArray) {
     private val idxToVal = HashMap<Int, Int>()
 
     init {
         for ((idx, num) in nums.withIndex()) {
-            if (num != 0)
-                idxToVal[idx] = num
+            if (num != 0) idxToVal[idx] = num
         }
     }
 
@@ -30,8 +29,7 @@ class SparseVector(nums: IntArray) {
 
         // to make sure vector1 is of smaller size,
         // later on to start with
-        if (idxToVal1.size > valToIdx2.size)
-            return vec.dotProduct(this)
+        if (idxToVal1.size > valToIdx2.size) return vec.dotProduct(this)
 
         var product = 0
         for ((idx1, num1) in idxToVal1) {

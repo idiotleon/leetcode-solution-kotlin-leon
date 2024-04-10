@@ -10,7 +10,7 @@ import java.util.*
  * Time Complexity:     O(`nNodes`)
  * Space Complexity:    O(`nNodes`)
  *
- * References:
+ * Reference:
  * https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/discuss/68142/Java-O(n)-and-O(1)-extra-space/70002
  * https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/discuss/68142/Java-O(n)-and-O(1)-extra-space
  * https://github.com/wisdompeak/LeetCode/tree/master/Tree/255.Verify-Preorder-Sequence-in-Binary-Search-Tree
