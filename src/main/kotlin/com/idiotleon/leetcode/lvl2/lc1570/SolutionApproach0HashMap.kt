@@ -24,12 +24,14 @@ class SparseVector(nums: IntArray) {
 
     // Return the dotProduct of two sparse vectors
     fun dotProduct(vec: SparseVector): Int {
-        val idxToVal1 = this.valToIdx // one vector
-        val idxToVal2 = vec.valToIdx // the other vector
+        val idxToVal1 = this.idxToVal // one vector
+        val idxToVal2 = vec.idxToVal // the other vector
 
         // to make sure vector1 is of smaller size,
         // later on to start with
-        if (idxToVal1.size > valToIdx2.size) return vec.dotProduct(this)
+        if (idxToVal1.size > idxToVal.size) {
+            return vec.dotProduct(this)
+        }
 
         var product = 0
         for ((idx1, num1) in idxToVal1) {

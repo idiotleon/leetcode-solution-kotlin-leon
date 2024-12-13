@@ -21,7 +21,7 @@ class SolutionApproach0HashMap {
         while (idx < lenP) {
             val builder = StringBuilder()
             while (idx < lenP && paragraph[idx].isLetter()) {
-                builder.append(paragraph[idx++].toLowerCase())
+                builder.append(paragraph[idx++].lowercaseChar())
             }
 
             while (idx < lenP && !paragraph[idx].isLetter()) {
