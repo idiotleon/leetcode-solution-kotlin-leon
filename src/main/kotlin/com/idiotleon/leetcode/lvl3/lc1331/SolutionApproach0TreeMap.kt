@@ -1,18 +1,19 @@
-/**
- * https://leetcode.com/problems/rank-transform-of-an-array/
- *
- * Time Complexity:     O(`nNums` * lg(`nNums`))
- * Space Complexity:    O(`nNums`)
- *
- * References:
- *  https://leetcode.com/problems/rank-transform-of-an-array/discuss/489702/Java-TreeMap-sorting
- */
 package com.idiotleon.leetcode.lvl3.lc1331
 
 import java.util.*
 import kotlin.collections.ArrayList
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/rank-transform-of-an-array/
+ *
+ * Time Complexity:     O(`nNums` * lg(`nNums`))
+ * Space Complexity:    O(`nNums`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/rank-transform-of-an-array/discuss/489702/Java-TreeMap-sorting
+ */
 @Suppress(UNUSED)
 class SolutionApproach0TreeMap {
     fun arrayRankTransform(nums: IntArray): IntArray {
@@ -22,8 +23,10 @@ class SolutionApproach0TreeMap {
         }
 
         var rank = 1
-        for ((_, indexes) in map) {
-            for (idx in indexes) nums[idx] = rank
+        for ((_, indices) in map) {
+            for (idx in indices) {
+                nums[idx] = rank
+            }
             ++rank
         }
 
