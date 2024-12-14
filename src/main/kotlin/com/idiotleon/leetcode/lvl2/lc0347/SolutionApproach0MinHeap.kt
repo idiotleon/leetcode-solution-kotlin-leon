@@ -22,14 +22,14 @@ class SolutionApproach0MinHeap {
             return ans
         }
 
-        val freqs = HashMap<Int, Int>().also {
+        val numToFreq = HashMap<Int, Int>().also {
             for (num in nums) {
                 it[num] = (it[num] ?: 0) + 1
             }
         }
 
-        val minHeap = PriorityQueue<Int> { a, b -> (freqs[a] ?: 0).compareTo(freqs[b] ?: 0) }
-        for ((num, _) in freqs) {
+        val minHeap = PriorityQueue<Int> { a, b -> (numToFreq[a] ?: 0).compareTo(numToFreq[b] ?: 0) }
+        for ((num, _) in numToFreq) {
             minHeap.offer(num)
 
             if (minHeap.size > k) {
@@ -38,7 +38,7 @@ class SolutionApproach0MinHeap {
         }
 
         var idx = k - 1
-        while (!minHeap.isEmpty()) {
+        while (minHeap.isNotEmpty()) {
             ans[idx--] = minHeap.poll()
         }
 

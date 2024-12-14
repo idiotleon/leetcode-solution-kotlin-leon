@@ -28,12 +28,16 @@ private class SolutionApproach1DivideAndConquer {
     }
 
     private fun divide(lo: Int, hi: Int, nums: IntArray): Int {
-        if (lo == hi) return nums[lo]
+        if (lo == hi) {
+            return nums[lo]
+        }
         val mid = lo + (hi - lo) / 2
 
         val leftRes = divide(lo, mid, nums)
         val rightRes = divide(mid + 1, hi, nums)
-        if (leftRes == rightRes) return leftRes
+        if (leftRes == rightRes) {
+            return leftRes
+        }
         val leftCnt = conquer(lo, hi, leftRes, nums)
         val rightCnt = conquer(lo, hi, rightRes, nums)
 

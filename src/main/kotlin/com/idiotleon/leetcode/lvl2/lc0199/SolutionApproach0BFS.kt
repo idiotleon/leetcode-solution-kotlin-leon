@@ -2,7 +2,6 @@ package com.idiotleon.leetcode.lvl2.lc0199
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
-import kotlin.collections.ArrayDeque
 
 /**
  * @author: Leon
@@ -16,8 +15,9 @@ class SolutionApproach0BFS {
     fun rightSideView(root: TreeNode?): List<Int> {
         val ans = mutableListOf<Int>()
         // sanity check
-        if (root == null)
+        if (root == null) {
             return ans
+        }
 
         val queue = ArrayDeque<TreeNode>().also {
             it.addLast(root)
@@ -31,8 +31,9 @@ class SolutionApproach0BFS {
 
                 val value = cur.`val`
 
-                if (sz == size - 1)
+                if (sz == size - 1) {
                     ans.add(value)
+                }
 
                 cur.left?.let { queue.addLast(it) }
                 cur.right?.let { queue.addLast(it) }

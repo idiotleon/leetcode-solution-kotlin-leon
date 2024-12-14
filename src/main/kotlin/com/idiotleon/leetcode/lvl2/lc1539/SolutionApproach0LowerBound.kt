@@ -1,16 +1,17 @@
+package com.idiotleon.leetcode.lvl2.lc1539
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/kth-missing-positive-number/
  *
  * Time Complexity:     O(lg(max(`nNums`, `k`)))
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/kth-missing-positive-number/discuss/779999/JavaC%2B%2BPython-O(logN)
+ * Reference:
+ * https://leetcode.com/problems/kth-missing-positive-number/discuss/779999/JavaC%2B%2BPython-O(logN)
  */
-package com.idiotleon.leetcode.lvl2.lc1539
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0LowerBound {
     fun findKthPositive(nums: IntArray, k: Int): Int {

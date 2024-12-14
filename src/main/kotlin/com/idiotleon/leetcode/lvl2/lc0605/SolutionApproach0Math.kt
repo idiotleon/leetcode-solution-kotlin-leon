@@ -9,9 +9,9 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(`nBeds`)
  * Space Complexity:    O(1)
  *
- * References:
- *  https://leetcode.com/problems/can-place-flowers/discuss/103883/Java-Very-easy-solution/236171
- *  https://leetcode.com/problems/can-place-flowers/discuss/103883/Java-Very-easy-solution
+ * Reference:
+ * https://leetcode.com/problems/can-place-flowers/discuss/103883/Java-Very-easy-solution/236171
+ * https://leetcode.com/problems/can-place-flowers/discuss/103883/Java-Very-easy-solution
  */
 @Suppress(UNUSED)
 class SolutionApproach0Math {
@@ -31,7 +31,9 @@ class SolutionApproach0Math {
             }
         }
 
-        if (count != 0) capacity += count / 2
+        if (count != 0) {
+            capacity += count / 2
+        }
         return capacity >= n
     }
 }

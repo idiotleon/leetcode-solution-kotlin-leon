@@ -19,7 +19,9 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0MooreVotingAlgorithm1 {
     fun majorityElement(nums: IntArray): Int {
         // sanity check
-        if (nums.isEmpty()) return 0
+        if (nums.isEmpty()) {
+            return 0
+        }
 
         val nNums = nums.size
 

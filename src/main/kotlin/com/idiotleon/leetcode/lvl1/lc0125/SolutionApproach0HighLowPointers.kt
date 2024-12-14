@@ -3,6 +3,7 @@ package com.idiotleon.leetcode.lvl1.lc0125
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 
 /**
+ * @author: Leon
  * https://leetcode.com/problems/valid-palindrome/
  *
  * Time Complexity:     O(`lenS`)
@@ -10,10 +11,6 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  */
 @Suppress(UNUSED)
 class SolutionApproach0HighLowPointers {
-    private companion object {
-        private const val SPACE = ' '
-    }
-
     fun isPalindrome(str: String): Boolean {
         val lenS = str.length
 

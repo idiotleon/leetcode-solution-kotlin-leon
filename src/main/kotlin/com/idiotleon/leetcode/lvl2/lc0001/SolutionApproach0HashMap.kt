@@ -15,17 +15,17 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0HashMap {
     fun twoSum(nums: IntArray, target: Int): IntArray {
-        // not used
-        // val nNums = nums.size
+        val nNums = nums.size
 
-        val sumToIdx = HashMap<Int, Int>()
+        val sumToIdx = HashMap<Int, Int>(nNums)
 
         for ((idx, num) in nums.withIndex()) {
             val expectedSum = target - num
 
             sumToIdx[expectedSum]?.let {
-                if (it != idx)
+                if (it != idx) {
                     return intArrayOf(it, idx)
+                }
             }
 
             sumToIdx[num] = idx

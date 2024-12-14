@@ -14,8 +14,9 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
 class SolutionApproach0DFSRecursive {
     fun rightSideView(root: TreeNode?): List<Int> {
         val ans = mutableListOf<Int>()
-        if (root == null)
+        if (root == null) {
             return ans
+        }
 
         dfs(root, 0, ans)
 
@@ -23,13 +24,15 @@ class SolutionApproach0DFSRecursive {
     }
 
     private fun dfs(node: TreeNode?, curDepth: Int, res: MutableList<Int>) {
-        if (node == null)
+        if (node == null) {
             return
+        }
 
         val value = node.`val`
 
-        if (curDepth == res.size)
+        if (curDepth == res.size) {
             res.add(value)
+        }
 
         dfs(node.right, 1 + curDepth, res)
         dfs(node.left, 1 + curDepth, res)

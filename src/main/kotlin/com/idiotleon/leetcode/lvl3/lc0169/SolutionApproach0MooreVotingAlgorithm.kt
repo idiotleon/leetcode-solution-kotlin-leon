@@ -21,7 +21,9 @@ class SolutionApproach0MooreVotingAlgorithm {
         var candidate = 0
 
         for (num in nums) {
-            if (count == 0) candidate = num
+            if (count == 0) {
+                candidate = num
+            }
 
             count += if (num == candidate) 1 else -1
         }

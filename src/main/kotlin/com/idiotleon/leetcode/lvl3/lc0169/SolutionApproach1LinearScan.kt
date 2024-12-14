@@ -18,14 +18,18 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach1LinearScan {
     fun majorityElement(nums: IntArray): Int {
         // sanity check
-        if (nums.isEmpty()) return 0
+        if (nums.isEmpty()) {
+            return 0
+        }
 
         val nNums = nums.size
-        val numToFreq = HashMap<Int, Int>()
+        val numToFreq = HashMap<Int, Int>(nNums)
 
         for (num in nums) {
             numToFreq[num] = 1 + (numToFreq[num] ?: 0)
-            if (numToFreq[num]!! > nNums / 2) return num
+            if (numToFreq[num]!! > nNums / 2) {
+                return num
+            }
         }
 
         return Int.MAX_VALUE

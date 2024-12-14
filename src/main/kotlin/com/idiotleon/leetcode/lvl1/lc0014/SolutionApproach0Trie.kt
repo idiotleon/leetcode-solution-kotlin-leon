@@ -24,18 +24,23 @@ class SolutionApproach0Trie {
         outer@ while (queue.isNotEmpty()) {
             val size = queue.size
 
-            if (size > 1) break@outer
+            if (size > 1) {
+                break@outer
+            }
 
             for (sz in 0 until size) {
                 val cur = queue.removeFirst()
                 cur.ch?.let { builder.append(it) }
 
                 for (child in cur.children) {
-                    if (child != null)
+                    if (child != null) {
                         queue.addLast(child)
+                    }
                 }
 
-                if (cur.word != null) break@outer
+                if (cur.word != null) {
+                    break@outer
+                }
             }
         }
 
@@ -49,8 +54,9 @@ class SolutionApproach0Trie {
             var cur = root
 
             for (ch in str) {
-                if (cur.children[ch - 'a'] == null)
+                if (cur.children[ch - 'a'] == null) {
                     cur.children[ch - 'a'] = TrieNode(ch)
+                }
 
                 cur = cur.children[ch - 'a']!!
             }
