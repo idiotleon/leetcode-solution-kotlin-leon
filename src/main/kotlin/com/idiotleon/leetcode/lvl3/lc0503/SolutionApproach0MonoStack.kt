@@ -1,20 +1,20 @@
+package com.idiotleon.leetcode.lvl3.lc0503
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/next-greater-element-ii/
  *
  * Time Complexity:     O(`totalNums`)
  * Space Complexity:    O(`totalNums`)
  *
- * to maintain a "non-increasing" stack
- *  1. the contents are indexes, instead of values
- *  2. the values/elements, accessed by those indexes, are non-increasing
+ * To maintain a "non-increasing" stack
+ * 1. The contents are indices, instead of values
+ * 2. The values/elements, accessed by those indices, are non-increasing
  */
-package com.idiotleon.leetcode.lvl3.lc0503
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
-    @OptIn(ExperimentalStdlibApi::class)
     fun nextGreaterElements(nums: IntArray): IntArray {
         val nNums = nums.size
         val ans = IntArray(nNums) { -1 }

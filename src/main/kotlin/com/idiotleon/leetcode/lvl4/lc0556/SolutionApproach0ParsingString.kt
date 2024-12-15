@@ -6,8 +6,8 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * @author: Leon
  * https://leetcode.com/problems/next-greater-element-iii/
  *
- * Time Complexity:     O(`n`)
- * Space Complexity:    O(`n`)
+ * Time Complexity:     O(`n`) ~ O(1)
+ * Space Complexity:    O(`n`) ~ O(1)
  *
  * Reference:
  * https://leetcode.com/problems/next-greater-element-iii/discuss/101824/Simple-Java-solution-(4ms)-with-explanation./105491
