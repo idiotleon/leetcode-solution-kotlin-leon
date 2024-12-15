@@ -1,7 +1,6 @@
 package com.idiotleon.leetcode.lvl4.lc0636
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.collections.ArrayDeque
 
 /**
  * @author: Leon
@@ -10,7 +9,7 @@ import kotlin.collections.ArrayDeque
  * Time Complexity:     O(`n`)
  * Space Complexity:    O(`n`)
  *
- * `stack` is used to save the IDs, which should be pushed in if it is a start, of functions
+ * `stack` is used to save the IDs, which should be pushed in if it is the start of functions
  *
  * Reference:
  * https://leetcode.com/problems/exclusive-time-of-functions/discuss/105062/Java-Stack-Solution-O(n)-Time-O(n)-Space
