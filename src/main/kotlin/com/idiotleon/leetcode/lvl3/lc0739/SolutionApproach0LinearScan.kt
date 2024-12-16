@@ -14,23 +14,23 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  */
 @Suppress(UNUSED)
 class SolutionApproach0LinearScan {
-    fun dailyTemperatures(T: IntArray): IntArray {
-        val nTs = T.size
+    fun dailyTemperatures(temperatures: IntArray): IntArray {
+        val nTemps = temperatures.size
 
-        val ans = IntArray(nTs) { 0 }
+        val ans = IntArray(nTemps) { 0 }
 
-        for (lo in nTs - 1 downTo 0) {
+        for (lo in nTemps - 1 downTo 0) {
             var hi = lo + 1
 
-            while (hi < nTs && T[lo] >= T[hi]) {
-                // to find the next warmer day based on previous established paths,
+            while (hi < nTemps && temperatures[lo] >= temperatures[hi]) {
+                // to find the next warmer day based on previously established paths,
                 // or simply move to the end if previously established path is 0,
                 // meaning no greater element afterwards
-                hi = if (ans[hi] > 0) hi + ans[hi] else nTs
+                hi = if (ans[hi] > 0) hi + ans[hi] else nTemps
             }
 
             // either `hi == nTs` or `T[lo] < T[hi]`
-            if (hi < nTs) { // to abandon the situation where `hi == nTs`, leaving `ans[lo] == 0`
+            if (hi < nTemps) { // to abandon the situation where `hi == nTs`, leaving `ans[lo] == 0`
                 ans[lo] = hi - lo
             }
         }

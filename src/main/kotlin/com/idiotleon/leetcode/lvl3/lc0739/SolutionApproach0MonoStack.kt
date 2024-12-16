@@ -9,9 +9,9 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(`nTs`)
  * Space Complexity:    O(`nTs`)
  *
- * to maintain a "non-increasing" stack
- * 1. the elements of the stack are indexes, instead of values
- * 2. the values in the given array, accessed by those indexes, are in non-increasing order
+ * To maintain a "non-increasing" stack
+ * 1. The elements of the stack are indexes, instead of values
+ * 2. The values in the given array, accessed by those indexes, are in non-increasing order
  */
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
