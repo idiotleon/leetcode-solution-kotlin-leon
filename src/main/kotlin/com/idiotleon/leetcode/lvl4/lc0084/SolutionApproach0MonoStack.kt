@@ -21,13 +21,14 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
     fun largestRectangleArea(heights: IntArray): Int {
-        // sanity check
-        if (heights.isEmpty()) return 0
+        if (heights.isEmpty()) {
+            return 0
+        }
 
         val nHeights = heights.size
         var largest = 0
 
-        val stack = ArrayDeque<Int>()
+        val stack = ArrayDeque<Int>(nHeights)
 
         var idx = 0
         while (idx < nHeights) {

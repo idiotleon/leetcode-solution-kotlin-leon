@@ -15,11 +15,11 @@ class SolutionApproach0MonoStack {
         val nNums = nums.size
         val limit = nNums - k
 
-        val stack = ArrayDeque<Int>()
+        val stack = ArrayDeque<Int>(nNums)
         var count = 0
 
         for (num in nums) {
-            while (stack.isNotEmpty() && count < limit && stack.last() > num) {
+            while (stack.isNotEmpty() && count < limit && num < stack.last()) {
                 stack.removeLast()
                 ++count
             }

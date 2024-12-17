@@ -9,31 +9,28 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(`lenS`)
  * Space Complexity:    O(`lenS`)
  *
- * to main a "strickly increasing" stack
- *  1. the contents are actual characters
- *  2. the order of characters is maintained in strictly increasing order, if possible
+ * To main a "strictly increasing" stack
+ *  1. The contents are actual characters
+ *  2. The order of characters is maintained in strictly increasing order, if possible
  *      by "if possible", it rather depends on the given String sequence,
- *      in another words, how many letters left, and what they are
+ *      in another word, how many letters left, and what they are
  */
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
     fun removeDuplicateLetters(s: String): String {
-        // not used
-        // val lenS = s.length
+        val lenS = s.length
 
-        val remaining = IntArray(26) { 0 }
-        val used = IntArray(26) { 0 }
-        for (ch in s) {
-            ++remaining[ch - 'a']
+        val remaining = IntArray(26) { 0 }.also {
+            for (ch in s) {
+                ++it[ch - 'a']
+            }
         }
+        val used = IntArray(26) { 0 }
 
-        val builder = StringBuilder()
+        val builder = StringBuilder(lenS)
         for (ch in s) {
             if (used[ch - 'a'] == 0) {
-                while (builder.isNotEmpty()
-                        && builder.last() >= ch
-                        && remaining[builder.last() - 'a'] > 0) {
-
+                while (builder.isNotEmpty() && ch <= builder.last() && remaining[builder.last() - 'a'] > 0) {
                     --used[builder.last() - 'a']
                     builder.deleteCharAt(builder.length - 1)
                 }
