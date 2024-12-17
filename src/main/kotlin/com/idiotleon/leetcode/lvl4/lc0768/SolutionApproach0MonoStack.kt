@@ -1,33 +1,40 @@
-/**
- * https://leetcode.com/problems/max-chunks-to-make-sorted-ii/
- *
- * Time Complexity:     O(`totalNums`)
- * Space Complexity:    O(`totalNums`)
- *
- * References:
- *  https://leetcode.com/problems/max-chunks-to-make-sorted-ii/discuss/135830/c%2B%2B-Using-Stack-with-O(n)-space-and-time-complexity.-With-7-lines.-4ms.-Beats-100
- */
 package com.idiotleon.leetcode.lvl4.lc0768
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/max-chunks-to-make-sorted-ii/
+ *
+ * Time Complexity:     O(`nNums`)
+ * Space Complexity:    O(`nNums`)
+ *
+ * Reference:
+ * https://leetcode.com/problems/max-chunks-to-make-sorted-ii/solutions/595713/monotonic-stack-solution-with-detailed-explanation/
+ * https://leetcode.com/problems/max-chunks-to-make-sorted-ii/discuss/135830/c%2B%2B-Using-Stack-with-O(n)-space-and-time-complexity.-With-7-lines.-4ms.-Beats-100
+ */
 @Suppress(UNUSED)
 class SolutionApproach0MonoStack {
     fun maxChunksToSorted(nums: IntArray): Int {
-        // sanity check
-        if (nums.isEmpty()) return 0
+        if (nums.isEmpty()) {
+            return 0
+        }
 
-        val stack = LinkedList<Int>()
+        val nNums = nums.size
+        val stack = ArrayDeque<Int>(nNums)
 
         for (num in nums) {
-            val curMax = if (stack.isEmpty()) num else maxOf(stack.peek(), num)
-
-            while (stack.isNotEmpty() && stack.peek() > num) {
-                stack.pop()
+            val curMax = if (stack.isEmpty()) {
+                num
+            } else {
+                maxOf(stack.last(), num)
             }
 
-            stack.push(curMax)
+            while (stack.isNotEmpty() && num < stack.last()) {
+                stack.removeLast()
+            }
+
+            stack.addLast(curMax)
         }
 
         return stack.size
