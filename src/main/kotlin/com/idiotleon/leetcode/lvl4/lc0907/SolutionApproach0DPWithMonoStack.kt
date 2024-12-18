@@ -9,7 +9,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(`nNums`)
  *
- * `dp[idx + 1]`: sum of minimum of subarrays which ends with `nums[idx]`
+ * `dp[idx + 1]`: sum of the minimum of subarrays which ends with `nums[idx]`
  *
  * Reference:
  * https://leetcode.com/problems/sum-of-subarray-minimums/discuss/170769/Java-O(n)-monotone-stack-with-DP

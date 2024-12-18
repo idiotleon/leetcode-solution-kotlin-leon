@@ -10,7 +10,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(`nNums`)
  */
 @Suppress(UNUSED)
-class Solution0MonoStack1 {
+class Solution0MonoStack0 {
     fun maximumLengthOfRanges(nums: IntArray): IntArray {
         val nNums = nums.size
         val hiMax = IntArray(nNums) { -1 }.also {
