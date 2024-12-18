@@ -13,16 +13,15 @@ import java.util.*
 @Suppress(UNUSED)
 class SolutionApproach0MinHeap {
     fun findKthLargest(nums: IntArray, k: Int): Int {
-        // not used
-        // val nNums = nums.size
-
-        val minHeap = PriorityQueue<Int>()
+        val nNums = nums.size
+        val minHeap = PriorityQueue<Int>(nNums)
 
         for (num in nums) {
             minHeap.offer(num)
 
-            if (minHeap.size > k)
+            if (minHeap.size > k) {
                 minHeap.poll()
+            }
         }
 
         return minHeap.poll()

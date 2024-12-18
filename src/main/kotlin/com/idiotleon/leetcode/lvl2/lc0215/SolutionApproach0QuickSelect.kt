@@ -36,8 +36,7 @@ class SolutionApproach0QuickSelect {
     }
 
     private fun partition(low: Int, high: Int, nums: IntArray): Int {
-        if (low == high)
-            return low
+        if (low == high) return low
 
         var lo = low
         var hi = high + 1
@@ -46,16 +45,20 @@ class SolutionApproach0QuickSelect {
 
         while (true) {
             while (nums[++lo] < pivot) {
-                if (lo == high)
+                if (lo == high) {
                     break
+                }
             }
 
             while (pivot < nums[--hi]) {
-                if (hi == low)
+                if (hi == low) {
                     break
+                }
             }
 
-            if (lo >= hi) break
+            if (lo >= hi) {
+                break
+            }
 
 
             swap(lo, hi, nums)

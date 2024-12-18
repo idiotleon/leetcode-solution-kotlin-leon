@@ -20,18 +20,15 @@ class SolutionApproach0Stack {
         private const val PAREN_CLOSED = ')'
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     fun minRemoveToMakeValid(s: String): String {
-        // sanity check
         if (s.isEmpty()) {
             return ""
         }
 
-        // not used
-        // val lenS = s.length
+        val lenS = s.length
         val chs = s.toCharArray()
 
-        val stack = ArrayDeque<Int>()
+        val stack = ArrayDeque<Int>(lenS)
 
         for ((idx, ch) in chs.withIndex()) {
             when (ch) {
@@ -57,7 +54,7 @@ class SolutionApproach0Stack {
             chs[stack.removeLast()] = PLACEHOLDER
         }
 
-        val builder = StringBuilder()
+        val builder = StringBuilder(lenS)
         for (ch in chs) {
             if (ch != PLACEHOLDER) {
                 builder.append(ch)
