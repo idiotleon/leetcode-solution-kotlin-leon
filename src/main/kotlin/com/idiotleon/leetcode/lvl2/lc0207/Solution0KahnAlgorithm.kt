@@ -1,34 +1,31 @@
-package com.idiotleon.leetcode.lvl3.lc0210
+package com.idiotleon.leetcode.lvl2.lc0207
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 
-/***
+/**
  * @author: Leon
- * https://leetcode.com/problems/course-schedule-ii/
+ * https://leetcode.com/problems/course-schedule/
  *
  * Time Complexity:     O(`numCourses` + `nPres`)
  * Space Complexity:    O(`numCourses` + `nPres`) / O(1)
  */
 @Suppress(UNUSED)
-class SolutionApproach0KahnAlgorithm {
-    fun findOrder(numCourses: Int, prerequisites: Array<IntArray>): IntArray {
-        // not used
-        // val nPres = prerequisites.size
+class Solution0KahnAlgorithm {
+    fun canFinish(numCourses: Int, prerequisites: Array<IntArray>): Boolean {
         val (graph, indegrees) = buildGraph(numCourses, prerequisites)
 
-        val queue = ArrayDeque<Int>(numCourses)
-        for ((idx, indegree) in indegrees.withIndex()) {
-            if (indegree == 0) {
-                queue.addLast(idx)
+        val queue = ArrayDeque<Int>(numCourses).also {
+            for ((idx, indegree) in indegrees.withIndex()) {
+                if (indegree == 0) {
+                    it.addLast(idx)
+                }
             }
         }
 
-        val ans = IntArray(numCourses) { 0 }
-        var idx = 0
-
+        var count = 0
         while (queue.isNotEmpty()) {
             val cur = queue.removeFirst()
-            ans[idx++] = cur
+            ++count
 
             for (pre in graph[cur]) {
                 if (--indegrees[pre] == 0) {
@@ -37,11 +34,7 @@ class SolutionApproach0KahnAlgorithm {
             }
         }
 
-        if (idx < numCourses) {
-            return intArrayOf()
-        }
-
-        return ans
+        return count == numCourses
     }
 
     private fun buildGraph(numCourses: Int, prerequisites: Array<IntArray>): Res {
