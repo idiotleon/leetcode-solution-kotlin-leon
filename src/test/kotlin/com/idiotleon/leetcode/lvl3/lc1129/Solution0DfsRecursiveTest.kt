@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl3.lc1129
 import org.junit.Test
 import kotlin.test.assertTrue
 
-internal class SolutionApproach0DFSRecursiveTest {
+internal class Solution0DfsRecursiveTest {
     private val solution = SolutionApproach0DFSRecursive()
 
     @Test

@@ -13,7 +13,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(nEvents)
  */
 @Suppress(UNUSED)
-class SolutionApproach0SegmentTree {
+class Solution0SegmentTree {
     private companion object {
         private const val RANGE = 1e9.toInt() + 1
     }

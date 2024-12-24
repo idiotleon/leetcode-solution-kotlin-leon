@@ -1,7 +1,6 @@
-package com.idiotleon.leetcode.lvl5.lc0772
+package com.idiotleon.leetcode.ood.lvl5.lc0772
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.collections.ArrayDeque
 
 /**
  * @author: LEon
@@ -14,7 +13,7 @@ import kotlin.collections.ArrayDeque
  * https://leetcode.com/problems/basic-calculator-iii/discuss/152092/O(n)-Java-Recursive-Simple-Solution/227715
  */
 @Suppress(UNUSED)
-class SolutionApproach0DFSRecursive {
+class Solution0DfsRecursive {
     private companion object {
         private const val PAREN_OPEN = '('
         private const val PAREN_CLOSED = ')'
@@ -27,14 +26,16 @@ class SolutionApproach0DFSRecursive {
     }
 
     fun calculate(s: String): Int {
-        // not used
-        // val lenS = s.length
+        val lenS = s.length
 
-        val tokens = ArrayDeque<Char>()
-        for (ch in s) {
-            if (ch != SPACE) tokens.addLast(ch)
+        val tokens = ArrayDeque<Char>(lenS).also {
+            for (ch in s) {
+                if (ch != SPACE) {
+                    it.addLast(ch)
+                }
+            }
+            it.addLast(SIGN_PLUS)
         }
-        tokens.addLast(SIGN_PLUS)
 
         return dfs(tokens)
     }
@@ -73,7 +74,9 @@ class SolutionApproach0DFSRecursive {
                         }
                     }
 
-                    if (ch == PAREN_CLOSED) break@loop
+                    if (ch == PAREN_CLOSED) {
+                        break@loop
+                    }
 
                     op = ch
                     num = 0

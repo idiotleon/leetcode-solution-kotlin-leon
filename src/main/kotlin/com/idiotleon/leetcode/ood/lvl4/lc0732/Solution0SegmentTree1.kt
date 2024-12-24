@@ -14,7 +14,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/my-calendar-iii/discuss/288928/Lazy-Dynamic-Segment-Tree-A-general-template
  */
 @Suppress(UNUSED)
-class SolutionApproach0SegmentTree1 {
+class Solution0SegmentTree1 {
     private companion object {
         private const val RANGE = 1e9.toInt()
     }

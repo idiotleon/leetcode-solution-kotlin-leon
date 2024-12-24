@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl4.lc0699
 import org.junit.Test
 import kotlin.test.assertEquals
 
-internal class SolutionApproach0SegmentTreeTest {
+internal class Solution0SegmentTreeTest {
     private val solution = SolutionApproach0SegmentTree()
 
     @Test

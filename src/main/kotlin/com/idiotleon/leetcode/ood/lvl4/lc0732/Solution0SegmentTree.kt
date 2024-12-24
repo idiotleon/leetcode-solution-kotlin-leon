@@ -14,7 +14,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/my-calendar-iii/discuss/288928/Lazy-Dynamic-Segment-Tree-A-general-template
  */
 @Suppress(UNUSED)
-class SolutionApproach0SegmentTree {
+class Solution0SegmentTree {
     private val root = SegmentTree()
 
     fun book(start: Int, end: Int): Int {

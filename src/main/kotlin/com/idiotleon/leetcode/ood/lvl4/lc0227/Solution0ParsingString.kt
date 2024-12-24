@@ -1,7 +1,6 @@
-package com.idiotleon.leetcode.lvl4.lc0227
+package com.idiotleon.leetcode.ood.lvl4.lc0227
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.collections.ArrayDeque
 
 /**
  * @author: Leon
@@ -11,7 +10,7 @@ import kotlin.collections.ArrayDeque
  * Space Complexity:    O(1) / O(`lenS`)
  */
 @Suppress(UNUSED)
-class SolutionApproach0Stack {
+class Solution0ParsingString {
     private companion object {
         private const val SPACE = ' '
         private const val SIGN_PLUS = '+'
@@ -23,12 +22,14 @@ class SolutionApproach0Stack {
     fun calculate(s: String): Int {
         val lenS = s.length
 
-        val stack = ArrayDeque<Int>()
+        val stack = ArrayDeque<Int>(lenS)
         var num = 0
         var op = SIGN_PLUS
 
         for ((idx, ch) in s.withIndex()) {
-            if (ch in '0'..'9') num = num * 10 + (ch - '0')
+            if (ch in '0'..'9') {
+                num = num * 10 + (ch - '0')
+            }
 
             if (ch !in '0'..'9' && ch != SPACE || idx == lenS - 1) {
                 when (op) {
@@ -38,10 +39,12 @@ class SolutionApproach0Stack {
                         val product = num * stack.removeLast()
                         stack.addLast(product)
                     }
+
                     SIGN_DIVIDE -> {
                         val quotient = stack.removeLast() / num
                         stack.addLast(quotient)
                     }
+
                     else -> {
                     }
                 }

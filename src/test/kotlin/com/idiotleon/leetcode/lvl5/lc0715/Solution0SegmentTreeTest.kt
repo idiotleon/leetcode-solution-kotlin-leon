@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertTrue
 
 
-internal class SolutionApproach0SegmentTreeTest {
+internal class Solution0SegmentTreeTest {
     val solution = SolutionApproach0SegmentTree()
 
     @Test

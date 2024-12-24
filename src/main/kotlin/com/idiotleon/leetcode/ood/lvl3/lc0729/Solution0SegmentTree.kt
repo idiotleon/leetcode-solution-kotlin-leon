@@ -14,12 +14,14 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  *  nSegmentTreeNodes, number of segment tree nodes
  */
 @Suppress(UNUSED)
-class SolutionApproach0SegmentTree {
+class Solution0SegmentTree {
     private val root = SegmentTree()
 
     fun book(start: Int, end: Int): Boolean {
         val k = root.query(start, end - 1)
-        if (k > 0) return false
+        if (k > 0) {
+            return false
+        }
 
         root.update(start, end - 1, 1)
         return true
@@ -36,11 +38,17 @@ class SolutionApproach0SegmentTree {
         fun update(rangeLo: Int, rangeHi: Int, freq: Int) = update(rangeLo, rangeHi, freq, root)
 
         private fun query(rangeLo: Int, rangeHi: Int, node: SegmentTreeNode?): Int {
-            if (node == null) return 0
+            if (node == null) {
+                return 0
+            }
             pushDown(node)
 
-            if (rangeLo > node.hi || rangeHi < node.lo) return 0
-            if (rangeLo <= node.lo && node.hi <= rangeHi) return node.maxFreq
+            if (rangeLo > node.hi || rangeHi < node.lo) {
+                return 0
+            }
+            if (rangeLo <= node.lo && node.hi <= rangeHi) {
+                return node.maxFreq
+            }
 
             val leftMaxFreq = query(rangeLo, rangeHi, node.left)
             val rightMaxFreq = query(rangeLo, rangeHi, node.right)
@@ -49,7 +57,9 @@ class SolutionApproach0SegmentTree {
         }
 
         private fun update(rangeLo: Int, rangeHi: Int, value: Int, node: SegmentTreeNode?) {
-            if (node == null) return
+            if (node == null) {
+                return
+            }
 
             if (rangeLo <= node.lo && node.hi <= rangeHi) {
                 node.lazy += value
@@ -57,7 +67,9 @@ class SolutionApproach0SegmentTree {
 
             pushDown(node)
 
-            if (rangeLo <= node.lo && node.hi <= rangeHi || rangeLo > node.hi || rangeHi < node.lo) return
+            if (rangeLo <= node.lo && node.hi <= rangeHi || rangeLo > node.hi || rangeHi < node.lo) {
+                return
+            }
 
             update(rangeLo, rangeHi, value, node.left)
             update(rangeLo, rangeHi, value, node.right)

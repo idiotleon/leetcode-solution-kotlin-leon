@@ -14,7 +14,7 @@ import java.util.*
  * https://leetcode.com/problems/my-calendar-iii/discuss/702154/Four-AC-Solution%3A-TreeMap-BST-Segment-Tree-with-Diagrams-Beats-100-time-and-space-8ms-39.4MB
  */
 @Suppress(UNUSED)
-class SolutionApproach1SweepLine {
+class Solution1SweepLine {
     private val timeline = TreeMap<Int, Int>()
 
     fun book(start: Int, end: Int): Int {

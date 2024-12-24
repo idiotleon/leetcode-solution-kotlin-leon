@@ -13,7 +13,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/my-calendar-iii/discuss/702154/Four-AC-Solution%3A-TreeMap-BST-Segment-Tree-with-Diagrams-Beats-100-time-and-space-8ms-39.4MB
  */
 @Suppress(UNUSED)
-class SolutionApproach0SegmentTree2 {
+class Solution0SegmentTree2 {
     private companion object {
         private const val RANGE = 1e9.toInt()
     }

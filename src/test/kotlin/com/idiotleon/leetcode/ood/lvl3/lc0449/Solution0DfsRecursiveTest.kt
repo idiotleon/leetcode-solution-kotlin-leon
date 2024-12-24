@@ -4,7 +4,7 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
 import org.junit.Test
 import kotlin.test.assertEquals
 
-internal class SolutionApproach0DFSRecursiveTest {
+internal class Solution0DfsRecursiveTest {
     private val solution = SolutionApproach0DFSRecursive()
 
     @Test

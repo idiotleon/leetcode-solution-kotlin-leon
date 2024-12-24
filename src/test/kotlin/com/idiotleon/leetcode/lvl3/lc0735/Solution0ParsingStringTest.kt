@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl3.lc0735
 import org.junit.Test
 import kotlin.test.assertTrue
 
-class SolutionApproach0StackTest {
+class Solution0ParsingStringTest {
     private val solution = SolutionApproach0Stack()
 
     @Test
