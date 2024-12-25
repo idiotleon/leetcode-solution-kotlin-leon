@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl3.lc0583
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class TestSolutionApproach0DP2Dimen1 {
+class TestSolution0DP2Dimen1 {
     private val solution = SolutionApproach0DP2Dimen1()
 
     @Test

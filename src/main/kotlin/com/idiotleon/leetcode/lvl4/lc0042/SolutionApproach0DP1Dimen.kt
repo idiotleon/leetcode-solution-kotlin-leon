@@ -14,29 +14,30 @@ class SolutionApproach0DP1Dimen {
     fun trap(heights: IntArray): Int {
         val nHeights = heights.size
 
-        val leftMax = IntArray(nHeights)
-        for (idx in 0 until nHeights) {
-            leftMax[idx] = if (idx == 0) {
-                heights[idx]
-            } else {
-                maxOf(leftMax[idx - 1], heights[idx])
+        val loMax = IntArray(nHeights) { 0 }.also {
+            for (idx in 0 until nHeights) {
+                it[idx] = if (idx == 0) {
+                    heights[idx]
+                } else {
+                    maxOf(it[idx - 1], heights[idx])
+                }
             }
         }
 
-        val rightMax = IntArray(nHeights)
-        for (idx in nHeights - 1 downTo 0) {
-            rightMax[idx] = if (idx == nHeights - 1) {
-                heights[nHeights - 1]
-            } else {
-                maxOf(heights[idx], rightMax[idx + 1])
+        val hiMax = IntArray(nHeights) { 0 }.also {
+            for (idx in nHeights - 1 downTo 0) {
+                it[idx] = if (idx == heights.lastIndex) {
+                    heights.last()
+                } else {
+                    maxOf(heights[idx], it[idx + 1])
+                }
             }
         }
 
         var water = 0
         for (idx in 0 until nHeights) {
-            water += minOf(leftMax[idx], rightMax[idx]) - heights[idx]
+            water += minOf(loMax[idx], hiMax[idx]) - heights[idx]
         }
-
         return water
     }
 }
