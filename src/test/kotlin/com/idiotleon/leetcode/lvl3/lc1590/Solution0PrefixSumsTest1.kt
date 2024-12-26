@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl3.lc1590
 import org.junit.Test
 import kotlin.test.assertEquals
 
-internal class Solution0PrefixSumsTest {
+internal class Solution0PrefixSumsTest1 {
     val solution = SolutionApproach0PrefixSums()
 
     @Test

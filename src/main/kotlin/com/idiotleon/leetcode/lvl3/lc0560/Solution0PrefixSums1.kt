@@ -21,7 +21,9 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 class Solution0PrefixSums1 {
     fun subarraySum(nums: IntArray, k: Int): Int {
         val nNums = nums.size
-        val sumToFreq = hashMapOf(0 to 1)
+        val sumToFreq = HashMap<Int, Int>(nNums).also {
+            it[0] = 1
+        }
 
         var freq = 0
         var sum = 0

@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl3.lc0300.followup
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-internal class SolutionApproach0DP1DimenBinarySearch1Test {
+internal class Solution0DP1DimenBinarySearch1Test {
     val solution = SolutionApproach0DP1DimenBinarySearch()
 
     @Test
