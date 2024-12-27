@@ -13,7 +13,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/word-break/discuss/43819/DFS-with-Path-Memorizing-Java-Solution
  */
 @Suppress(UNUSED)
-class SolutionApproach0DFSRecursive {
+class Solution0DfsRecursive {
     fun wordBreak(str: String, wordDict: List<String>): Boolean {
         // not used
         // val lenS = str.length

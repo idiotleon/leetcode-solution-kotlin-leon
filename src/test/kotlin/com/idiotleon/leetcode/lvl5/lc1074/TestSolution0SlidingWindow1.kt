@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl5.lc1074
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class TestSolution0SlidingWindow {
+class TestSolution0SlidingWindow1 {
     private val solution = SolutionApproach0PrefixSums1()
 
     @Test

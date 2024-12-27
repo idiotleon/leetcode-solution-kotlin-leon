@@ -33,7 +33,7 @@ class Solution0UnionFind {
             }
         }
 
-        return IntArray(2) { 0 }
+        return intArrayOf(0, 0)
     }
 
     private fun find(x: Int, roots: IntArray): Int {

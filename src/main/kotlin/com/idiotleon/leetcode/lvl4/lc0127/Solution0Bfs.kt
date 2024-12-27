@@ -17,7 +17,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/word-ladder/discuss/40711/Two-end-BFS-in-Java-31ms.
  */
 @Suppress(UNUSED)
-class SolutionApproach0BFS {
+class Solution0Bfs {
     fun ladderLength(beginWord: String, endWord: String, wordList: List<String>): Int {
         // not used
         // val nWords = wordList.size
@@ -25,7 +25,9 @@ class SolutionApproach0BFS {
         val wordSet = HashSet(wordList)
 
         // sanity check
-        if (!wordSet.contains(endWord)) return 0
+        if (!wordSet.contains(endWord)) {
+            return 0
+        }
 
         var beginSet = HashSet<String>().also {
             it.add(beginWord)
@@ -54,9 +56,13 @@ class SolutionApproach0BFS {
                     for (ch in 'a'..'z') {
                         chs[idx] = ch
                         val nextWord = String(chs)
-                        if (endSet.contains(nextWord)) return 1 + steps
+                        if (endSet.contains(nextWord)) {
+                            return 1 + steps
+                        }
 
-                        if (!wordSet.contains(nextWord)) continue
+                        if (!wordSet.contains(nextWord)) {
+                            continue
+                        }
                         nextSet.add(nextWord)
                         wordSet.remove(nextWord)
                     }

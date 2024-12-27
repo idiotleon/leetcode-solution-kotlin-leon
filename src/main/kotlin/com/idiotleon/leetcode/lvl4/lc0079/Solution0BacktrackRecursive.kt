@@ -17,7 +17,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://www.bilibili.com/video/BV1M4411Q7td
  */
 @Suppress(UNUSED)
-class SolutionApproach0Backtrack {
+class Solution0BacktrackRecursive {
     private companion object {
         private val DIRS = intArrayOf(0, -1, 0, 1, 0)
         private const val IMPOSSIBLE = '#'
@@ -43,7 +43,9 @@ class SolutionApproach0Backtrack {
         val nCols = board[0].size
 
         if (idxS == lenW) return true
-        if (row < 0 || row >= nRows || col < 0 || col >= nCols || board[row][col] != word[idxS]) return false
+        if (row < 0 || row >= nRows || col < 0 || col >= nCols || board[row][col] != word[idxS]) {
+            return false
+        }
 
         val hold = board[row][col]
         board[row][col] = IMPOSSIBLE
@@ -52,7 +54,9 @@ class SolutionApproach0Backtrack {
             val nextRow = row + DIRS[d]
             val nextCol = col + DIRS[d + 1]
 
-            if (backtrack(nextRow, nextCol, idxS + 1, board, word)) return true
+            if (backtrack(nextRow, nextCol, idxS + 1, board, word)) {
+                return true
+            }
         }
 
         board[row][col] = hold

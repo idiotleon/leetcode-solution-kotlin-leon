@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl4.lc1900.withBit
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
-internal class SolutionApproach0DFSMemo1Test {
+internal class Solution0DfsMemo1Test {
     private val solution = SolutionApproach0DFSMemo1()
 
     @Test

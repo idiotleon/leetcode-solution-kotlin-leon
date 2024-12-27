@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl3.lc0209
 import org.junit.Test
 import kotlin.test.assertEquals
 
-internal class Solution0SlidingWindowTest {
+internal class Solution0SlidingWindow1Test {
     private val solution = SolutionApproach0SlidingWindow()
 
     @Test

@@ -4,7 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertTrue
 
 
-internal class SolutionApproach0DFSMemo0Test {
+internal class Solution0DFSMemo0Test {
     private val solution = SolutionApproach0DFSMemo0()
 
     @Test

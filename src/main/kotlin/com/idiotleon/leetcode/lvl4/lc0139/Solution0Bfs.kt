@@ -2,7 +2,6 @@ package com.idiotleon.leetcode.lvl4.lc0139
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
-import kotlin.collections.HashSet
 
 /**
  * @author: Leon
@@ -12,7 +11,7 @@ import kotlin.collections.HashSet
  * Space Complexity:    O(N)
  */
 @Suppress(UNUSED)
-class SolutionApproach0BFS {
+class Solution0Bfs {
     fun wordBreak(s: String, wordDict: List<String>): Boolean {
         // sanity check
         if (s.isEmpty()) {
@@ -21,11 +20,13 @@ class SolutionApproach0BFS {
 
         val wordSet = HashSet(wordDict)
 
-        val queue = ArrayDeque<String>()
-        queue.addLast(s)
+        val queue = ArrayDeque<String>().also {
+            it.addLast(s)
+        }
 
-        val seen = HashSet<String>()
-        seen.add(s)
+        val seen = HashSet<String>().also {
+            it.add(s)
+        }
 
         while (queue.isNotEmpty()) {
             val size = queue.size

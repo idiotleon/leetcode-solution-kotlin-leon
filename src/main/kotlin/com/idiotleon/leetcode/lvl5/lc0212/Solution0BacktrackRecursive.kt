@@ -5,12 +5,12 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 /**
  * @author: Leon
  * https://leetcode.com/problems/word-search-ii/
- * Time Complexity:     O(`nRows` * `nCols` * (4 ^ avgLenWord))
- * Space Complexity:    O(`nWords` * avgLenWord)
+ * Time Complexity:     O(`nRows` * `nCols` * (4 ^ averageLengthWord))
+ * Space Complexity:    O(`nWords` * averageLengthWord)
  */
 @Suppress(UNUSED)
-class SolutionApproach0BacktrackRecursive {
-    private companion object{
+class Solution0BacktrackRecursive {
+    private companion object {
         const val IMPOSSIBLE: Char = '#'
         val DIRS = intArrayOf(0, -1, 0, 1, 0)
     }
@@ -22,36 +22,37 @@ class SolutionApproach0BacktrackRecursive {
         val nCols = board[0].size
         val root = buildTrie(words)
         val ans = mutableListOf<String>()
-        for(row in 0 until nRows){
-            for(col in 0 until nCols){
+        for (row in 0 until nRows) {
+            for (col in 0 until nCols) {
                 backtrack(row, col, board, root, ans)
             }
         }
         return ans
     }
 
-    private fun backtrack(row: Int, col: Int, board: Array<CharArray>, node: TrieNode, res: MutableList<String>){
+    private fun backtrack(row: Int, col: Int, board: Array<CharArray>, node: TrieNode, res: MutableList<String>) {
         val nRows = board.size
         val nCols = board[0].size
 
-        if(row < 0 || row >= nRows || col < 0 || col >= nCols)
+        if (row < 0 || row >= nRows || col < 0 || col >= nCols) {
             return
+        }
 
         val hold = board[row][col]
         val idx = hold.code - 'a'.code;
-        if(hold == IMPOSSIBLE || node.children[idx] == null){
+        if (hold == IMPOSSIBLE || node.children[idx] == null) {
             return
         }
 
         var cur: TrieNode? = node
         cur = cur!!.children[idx]
-        if(cur!!.word != null){
+        if (cur!!.word != null) {
             res.add(cur.word!!)
             cur.word = null
         }
 
         board[row][col] = IMPOSSIBLE
-        for(d in 0 until 4){
+        for (d in 0 until 4) {
             val r = row + DIRS[d]
             val c = col + DIRS[d + 1]
             backtrack(r, c, board, cur, res)
@@ -59,14 +60,15 @@ class SolutionApproach0BacktrackRecursive {
         board[row][col] = hold
     }
 
-    private fun buildTrie(words: Array<String>): TrieNode{
+    private fun buildTrie(words: Array<String>): TrieNode {
         val root = TrieNode()
-        for(word in words){
+        for (word in words) {
             var cur: TrieNode? = root
-            for(ch in word){
+            for (ch in word) {
                 val idx = ch.code - 'a'.code
-                if(cur!!.children[idx] == null)
+                if (cur!!.children[idx] == null) {
                     cur.children[idx] = TrieNode()
+                }
 
                 cur = cur.children[idx]
             }
@@ -75,7 +77,7 @@ class SolutionApproach0BacktrackRecursive {
         return root
     }
 
-    private data class TrieNode(var word: String? = null){
-        val children: Array<TrieNode?> = Array(26){ null }
+    private data class TrieNode(var word: String? = null) {
+        val children: Array<TrieNode?> = Array(26) { null }
     }
 }

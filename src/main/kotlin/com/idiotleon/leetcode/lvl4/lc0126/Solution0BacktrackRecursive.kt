@@ -14,11 +14,13 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/word-ladder-ii/discuss/40475/My-concise-JAVA-solution-based-on-BFS-and-DFS
  */
 @Suppress(UNUSED)
-class SolutionApproach0BacktrackRecursive {
+class Solution0BacktrackRecursive {
     fun findLadders(beginWord: String, endWord: String, wordList: List<String>): List<List<String>> {
         val paths = mutableListOf<List<String>>();
         val wordSet = wordList.toHashSet()
-        if (!wordSet.contains(endWord)) return paths
+        if (!wordSet.contains(endWord)) {
+            return paths
+        }
 
         val graph = HashMap<String, MutableList<String>>()
         var curLevel = HashSet<String>().also {
@@ -38,11 +40,15 @@ class SolutionApproach0BacktrackRecursive {
                     for (ch in 'a'..'z') {
                         chs[idx] = ch
                         val newWord = String(chs)
-                        if (!wordSet.contains(newWord)) continue
+                        if (!wordSet.contains(newWord)) {
+                            continue
+                        }
 
                         graph.getOrPut(word) { mutableListOf() }.add(newWord)
                         nextLevel.add(newWord)
-                        if (newWord == endWord) found = true
+                        if (newWord == endWord) {
+                            found = true
+                        }
                     }
                     chs[idx] = chHold
                 }

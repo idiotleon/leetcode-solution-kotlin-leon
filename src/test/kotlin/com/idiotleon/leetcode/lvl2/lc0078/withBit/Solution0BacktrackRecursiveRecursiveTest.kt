@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl2.lc0078.withBit
 import org.junit.Test
 import kotlin.test.assertTrue
 
-class SolutionApproach0BacktrackRecursiveTest {
+class Solution0BacktrackRecursiveRecursiveTest {
     private val solution = SolutionApproach0Backtrack()
 
     @Test

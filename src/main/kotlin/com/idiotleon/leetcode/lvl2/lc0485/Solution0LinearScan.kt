@@ -6,17 +6,13 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * @author: Leon
  * https://leetcode.com/problems/max-consecutive-ones/
  *
- * Time Complexity:     O(`totalNums`)
+ * Time Complexity:     O(`nNums`)
  * Space Complexity:    O(1)
  */
 @Suppress(UNUSED)
-class SolutionApproach0Greedy {
+class Solution0LinearScan {
     fun findMaxConsecutiveOnes(nums: IntArray): Int {
-        // sanity check
-        if (nums.isEmpty()) return 0
-
-        // not used
-        // val totalNums = nums.size
+        val nNums = nums.size
 
         var longest = 0
         var len = 0

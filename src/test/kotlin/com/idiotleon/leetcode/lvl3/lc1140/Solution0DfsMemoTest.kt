@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl3.lc1140
 import org.junit.Test
 import kotlin.test.assertEquals
 
-internal class SolutionApproach0DFSMemoTest {
+internal class Solution0DfsMemoTest {
     val solution = SolutionApproach0DFSMemo()
 
     @Test
