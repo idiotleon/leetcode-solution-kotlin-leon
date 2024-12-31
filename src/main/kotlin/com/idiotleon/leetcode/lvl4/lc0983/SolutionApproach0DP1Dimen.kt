@@ -1,4 +1,9 @@
+package com.idiotleon.leetcode.lvl4.lc0983
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/minimum-cost-for-tickets/
  *
  * Time Complexity:     O(`lastDay`)
@@ -6,14 +11,10 @@
  *
  * a bottom-up approach
  *
- * References:
- *  https://leetcode.com/problems/minimum-cost-for-tickets/discuss/227130/Java-DP-Solution-with-detailed-comment-and-explanation
- *  https://leetcode.com/problems/minimum-cost-for-tickets/discuss/226659/Two-DP-solutions-with-pictures
+ * Reference:
+ * https://leetcode.com/problems/minimum-cost-for-tickets/discuss/227130/Java-DP-Solution-with-detailed-comment-and-explanation
+ * https://leetcode.com/problems/minimum-cost-for-tickets/discuss/226659/Two-DP-solutions-with-pictures
  */
-package com.idiotleon.leetcode.lvl4.lc0983
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
 class SolutionApproach0DP1Dimen {
     private companion object {
@@ -23,13 +24,14 @@ class SolutionApproach0DP1Dimen {
     }
 
     fun minCostTickets(days: IntArray, costs: IntArray): Int {
-        // not used
-        // val nDays = days.size
+        val nDays = days.size
 
         val lastDay = days.last()
         val dp = IntArray(lastDay + 1) { 0 }
         val isTravelDay = BooleanArray(lastDay + 1)
-        for (day in days) isTravelDay[day] = true
+        for (day in days) {
+            isTravelDay[day] = true
+        }
 
         for (day in 1..lastDay) {
             if (!isTravelDay[day]) {

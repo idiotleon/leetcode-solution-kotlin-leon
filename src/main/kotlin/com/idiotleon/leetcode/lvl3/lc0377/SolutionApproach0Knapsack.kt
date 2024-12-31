@@ -19,8 +19,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 @Suppress(UNUSED)
 class SolutionApproach0Knapsack {
     fun combinationSum4(nums: IntArray, target: Int): Int {
-        // not used
-        // val nNums = nums.size
+        val nNums = nums.size
 
         val dp = IntArray(target + 1) { 0 }
         dp[0] = 1
