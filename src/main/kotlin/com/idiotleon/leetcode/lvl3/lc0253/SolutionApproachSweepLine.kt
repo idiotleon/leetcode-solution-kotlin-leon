@@ -19,8 +19,10 @@ import java.util.*
 @Suppress(UNUSED)
 class SolutionApproachSweepLine {
     fun minMeetingRooms(intervals: Array<IntArray>): Int {
-        // sanity check
-        if (intervals.isEmpty()) return 0
+        val nIntervals = intervals.size
+        if (intervals.isEmpty()) {
+            return 0
+        }
 
         // a treemap: time(stamp) sorted to freq(uency)
         val timeline = TreeMap<Int, Int>()
