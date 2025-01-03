@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl3.lc0890
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class Solution0LinearScan11Test {
+class Solution0SlidingWindowAfterSort11Test {
     private val solution = SolutionApproach0LinearScan1()
 
     @Test
