@@ -12,7 +12,7 @@ import java.util.*
  * Space Complexity:    O(H)
  */
 @Suppress(UNUSED)
-class Solution0TreeMap {
+class Solution0InorderRecursive {
     class Solution {
         fun verticalOrder(root: TreeNode?): List<List<Int>> {
             if (root == null) {
@@ -20,7 +20,7 @@ class Solution0TreeMap {
             }
 
             val map = TreeMap<Int, TreeMap<Int, MutableList<Int>>>().also {
-                preorder(0, 0, root, it)
+                inorder(0, 0, root, it)
             }
 
             val ans = mutableListOf<List<Int>>()
@@ -34,14 +34,14 @@ class Solution0TreeMap {
             return ans
         }
 
-        private fun preorder(x: Int, y: Int, node: TreeNode?, map: TreeMap<Int, TreeMap<Int, MutableList<Int>>>) {
+        private fun inorder(x: Int, y: Int, node: TreeNode?, map: TreeMap<Int, TreeMap<Int, MutableList<Int>>>) {
             if (node == null) {
                 return
             }
 
+            inorder(x - 1, y + 1, node.left, map)
             map.getOrPut(x) { TreeMap() }.getOrPut(y) { mutableListOf() }.add(node.`val`)
-            preorder(x - 1, y + 1, node.left, map)
-            preorder(x + 1, y + 1, node.right, map)
+            inorder(x + 1, y + 1, node.right, map)
         }
     }
 }
