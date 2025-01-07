@@ -7,11 +7,11 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
  * @author: Leon
  * https://leetcode.com/problems/range-sum-of-bst/
  *
- * Time Complexity:  O(N)
- * Space Complexity:  O(H)
+ * Time Complexity:     O(N)
+ * Space Complexity:    O(H)
  */
 @Suppress(UNUSED)
-class SolutionApproach0DFSRecursive {
+class Solution0DfsRecursive {
     fun rangeSumBST(root: TreeNode?, low: Int, high: Int): Int = dfs(low, high, root)
 
     private fun dfs(low: Int, high: Int, node: TreeNode?): Int {

@@ -11,7 +11,7 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
  * Space Complexity:  O(H)
  */
 @Suppress(UNUSED)
-class SolutionApproach0DFSIterative {
+class Solution0DfsIterative1 {
     fun rangeSumBST(root: TreeNode?, low: Int, high: Int): Int {
         if (root == null) {
             return 0
