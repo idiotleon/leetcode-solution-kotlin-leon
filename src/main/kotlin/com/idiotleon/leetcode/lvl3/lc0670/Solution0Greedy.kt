@@ -13,7 +13,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/maximum-swap/discuss/107068/Java-simple-solution-O(n)-time
  */
 @Suppress(UNUSED)
-class SolutionApproach0Greedy {
+class Solution0Greedy {
     fun maximumSwap(num: Int): Int {
         val digits = num.toString().toCharArray()
         val lenD = digits.size

@@ -15,9 +15,7 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
  */
 @Suppress(UNUSED)
 class Solution0DfsRecursive {
-    fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? {
-        return dfs(root, p, q)
-    }
+    fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? = dfs(root, p, q)
 
     private fun dfs(node: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? {
         if (node == null || node == p || node == q) {
