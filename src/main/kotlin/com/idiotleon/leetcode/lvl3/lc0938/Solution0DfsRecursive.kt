@@ -23,7 +23,7 @@ class Solution0DfsRecursive {
 
         val value = node.`val`
 
-        if (value >= low) {
+        if (low <= value) {
             sum += dfs(low, high, node.left)
         }
 

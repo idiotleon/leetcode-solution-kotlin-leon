@@ -11,7 +11,7 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
  * Space Complexity:    O(H)
  */
 @Suppress(UNUSED)
-class SolutionApproach0DFSRecursive {
+class Solution0DfsRecursive {
     fun rightSideView(root: TreeNode?): List<Int> {
         val ans = mutableListOf<Int>()
         if (root == null) {

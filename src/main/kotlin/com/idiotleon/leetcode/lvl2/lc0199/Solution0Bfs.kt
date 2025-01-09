@@ -11,10 +11,9 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
  * Space Complexity:    O(W)
  */
 @Suppress(UNUSED)
-class SolutionApproach0BFS {
+class Solution0Bfs {
     fun rightSideView(root: TreeNode?): List<Int> {
         val ans = mutableListOf<Int>()
-        // sanity check
         if (root == null) {
             return ans
         }
