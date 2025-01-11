@@ -10,14 +10,16 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(V + E) ~ O(N + (N - 1)) ~ O(N)
  */
 @Suppress(UNUSED)
-class SolutionApproach0DFSRecursive {
+class Solution0DfsRecursive {
     fun cloneGraph(node: Node?): Node? {
         val map = HashMap<Node, Node>()
         return dfs(node, map)
     }
 
     private fun dfs(cur: Node?, map: HashMap<Node, Node>): Node? {
-        if (cur == null) return null
+        if (cur == null) {
+            return null
+        }
         map[cur]?.let { return it }
 
         val cloned = Node(cur.`val`)

@@ -4,7 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 internal class Solution0DfsRecursiveTest {
-    private val solution = SolutionApproach0DFSRecursive()
+    private val solution = Solution0DfsRecursive()
 
     @Test
     fun accoutsMerge_SampleInput0_ShouldReturnExpected() {

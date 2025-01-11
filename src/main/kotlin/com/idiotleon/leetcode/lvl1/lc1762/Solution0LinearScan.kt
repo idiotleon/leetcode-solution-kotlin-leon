@@ -1,28 +1,26 @@
+package com.idiotleon.leetcode.lvl1.lc1762
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/buildings-with-an-ocean-view/
  *
  * Time Complexity:     O(`nHeights`)
- * Space Complexity:    O(1)
+ * Space Complexity:    O(1) / O(`nHeights`)
  */
-package com.idiotleon.leetcode.lvl1.lc1762
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
-class SolutionApproach0LinearScan {
+class Solution0LinearScan {
     fun findBuildings(heights: IntArray): IntArray {
-        // not used
-        // val nHeights = heights.size
+        val nHeights = heights.size
 
         val ans = mutableListOf<Int>()
-
         var tallest = 0
 
-        for ((idx, height) in heights.withIndex().reversed()) {
-            if (height > tallest) {
+        for (idx in nHeights - 1 downTo 0) {
+            if (heights[idx] > tallest) {
                 ans.add(idx)
-                tallest = height
+                tallest = heights[idx]
             }
         }
 

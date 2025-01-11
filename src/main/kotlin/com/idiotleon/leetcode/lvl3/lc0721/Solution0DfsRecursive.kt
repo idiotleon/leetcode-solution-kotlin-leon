@@ -1,22 +1,19 @@
 package com.idiotleon.leetcode.lvl3.lc0721
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.collections.ArrayDeque
-import kotlin.collections.HashMap
-import kotlin.collections.HashSet
 
 /**
  * @author: Leon
  * https://leetcode.com/problems/accounts-merge/
  *
- * Time Complexity:     O()
- * Space Complexity:    O()
+ * Time Complexity:     O(V + E) ~ O()
+ * Space Complexity:    O(V + E) ~ O()
  *
  * Reference:
  * https://leetcode.com/problems/accounts-merge/discuss/109157/JavaC++-Union-Find/241144
  */
 @Suppress(UNUSED)
-class SolutionApproach0BFS {
+class Solution0DfsRecursive {
     fun accountsMerge(accounts: List<List<String>>): List<List<String>> {
         val graph = HashMap<String, HashSet<String>>()
         val emailToName = HashMap<String, String>()
@@ -45,7 +42,9 @@ class SolutionApproach0BFS {
             if (!seen.add(email)) {
                 continue
             }
-            val res = bfs(email, seen, graph)
+
+            val res = mutableListOf<String>()
+            dfs(email, seen, res, graph)
             res.sort()
             res.add(0, emailToName[res[0]]!!)
             ans.add(res)
@@ -54,31 +53,18 @@ class SolutionApproach0BFS {
         return ans
     }
 
-    private fun bfs(
-        start: String, seen: HashSet<String>, graph: HashMap<String, HashSet<String>>
-    ): MutableList<String> {
-        val res = mutableListOf<String>()
+    private fun dfs(
+        cur: String, seen: HashSet<String>, res: MutableList<String>, graph: HashMap<String, HashSet<String>>
+    ) {
+        res.add(cur)
 
-        val queue = ArrayDeque<String>().also {
-            it.addLast(start)
-        }
-
-        while (queue.isNotEmpty()) {
-            val size = queue.size
-
-            for (sz in 0 until size) {
-                val cur = queue.removeFirst()
-                res.add(cur)
-
-                for (next in graph[cur]!!) {
-                    if (!seen.add(next)) {
-                        continue
-                    }
-                    queue.addLast(next)
+        graph[cur]?.let {
+            for (next in it) {
+                if (!seen.add(next)) {
+                    continue
                 }
+                dfs(next, seen, res, graph)
             }
         }
-
-        return res
     }
 }

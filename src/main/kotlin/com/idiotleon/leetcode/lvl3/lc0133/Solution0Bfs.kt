@@ -10,13 +10,15 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(V + E) ~ O(N + (N - 1)) ~ O(N)
  */
 @Suppress(UNUSED)
-class SolutionApproach0BFS {
+class Solution0Bfs {
     fun cloneGraph(node: Node?): Node? {
-        // sanity check
-        if (node == null) return null
+        if (node == null) {
+            return null
+        }
 
-        val queue = ArrayDeque<Node>()
-        queue.addLast(node)
+        val queue = ArrayDeque<Node>().also {
+            it.addLast(node)
+        }
 
         val cloned = Node(node.`val`)
         val map: HashMap<Node, Node?> = hashMapOf(node to cloned)
@@ -28,8 +30,9 @@ class SolutionApproach0BFS {
                 val cur = queue.removeFirst()
 
                 for (neighbor in cur.neighbors) {
-                    if (neighbor == null)
-                        continue;
+                    if (neighbor == null) {
+                        continue
+                    };
 
                     if (map[neighbor] == null) {
                         map[neighbor] = Node(neighbor.`val`)

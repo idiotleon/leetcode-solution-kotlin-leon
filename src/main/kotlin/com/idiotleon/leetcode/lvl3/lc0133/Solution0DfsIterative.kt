@@ -10,12 +10,15 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(V + E) + O(N) ~ O(N + (N - 1)) ~ O(N)
  */
 @Suppress(UNUSED)
-class SolutionApproach0DFSIterative {
+class Solution0DfsIterative {
     fun cloneGraph(node: Node?): Node? {
-        if (node == null) return null
+        if (node == null) {
+            return null
+        }
 
-        val stack = ArrayDeque<Node>()
-        stack.addLast(node)
+        val stack = ArrayDeque<Node>().also {
+            it.addLast(node)
+        }
 
         val cloned = Node(node.`val`)
         val map: HashMap<Node, Node> = hashMapOf(node to cloned)
@@ -23,15 +26,17 @@ class SolutionApproach0DFSIterative {
         while (stack.isNotEmpty()) {
             val top = stack.removeLast()
 
-            for (nei in top.neighbors) {
-                if (nei == null) continue
-
-                if (map[nei] == null) {
-                    map[nei] = Node(nei.`val`)
-                    stack.addLast(nei)
+            for (neighbor in top.neighbors) {
+                if (neighbor == null) {
+                    continue
                 }
 
-                map[nei]?.let {
+                if (map[neighbor] == null) {
+                    map[neighbor] = Node(neighbor.`val`)
+                    stack.addLast(neighbor)
+                }
+
+                map[neighbor]?.let {
                     map[top]?.neighbors?.add(it)
                 }
             }
