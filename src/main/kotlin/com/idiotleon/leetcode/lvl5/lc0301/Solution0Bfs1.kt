@@ -1,8 +1,6 @@
 package com.idiotleon.leetcode.lvl5.lc0301
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import java.util.*
-import kotlin.collections.ArrayDeque
 
 /**
  * @author: Leon
@@ -15,7 +13,7 @@ import kotlin.collections.ArrayDeque
  * https://leetcode.com/problems/remove-invalid-parentheses/discuss/75041/Java-BFS-solution-16ms-avoid-generating-duplicate-strings
  */
 @Suppress(UNUSED)
-class SolutionApproach0BFS1 {
+class Solution0Bfs1 {
     private companion object {
         private const val PAREN_OPEN = '('
         private const val PAREN_CLOSED = ')'
@@ -77,7 +75,12 @@ class SolutionApproach0BFS1 {
         for (ch in str) {
             when (ch) {
                 PAREN_OPEN -> ++stack
-                PAREN_CLOSED -> if (--stack < 0) return false
+                PAREN_CLOSED -> {
+                    if (--stack < 0) {
+                        return false
+                    }
+                }
+
                 else -> {
                 }
             }

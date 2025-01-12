@@ -15,44 +15,44 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://zxi.mytechroad.com/blog/searching/leetcode-301-remove-invalid-parentheses/
  */
 @Suppress(UNUSED)
-class SolutionApproach0DFSRecursive {
+class Solution0DfsRecursive {
     private companion object {
-        private const val PAREN_OPEN = '('
-        private const val PAREN_CLOSED = ')'
+        private const val OPEN = '('
+        private const val CLOSED = ')'
     }
 
     fun removeInvalidParentheses(s: String): List<String> {
         val ans = mutableListOf<String>()
-        dfs(0, 0, s, PAREN_OPEN, PAREN_CLOSED, ans)
+        dfs(0, 0, s, OPEN, CLOSED, ans)
         return ans
     }
 
     private fun dfs(
-        loStart: Int, hiStart: Int, str: String, parenOpen: Char, parenClosed: Char, res: MutableList<String>
+        loStart: Int, hiStart: Int, str: String, openParen: Char, closedParen: Char, res: MutableList<String>
     ) {
         val lenS = str.length
 
         var stack = 0
         loop@ for (hi in hiStart until lenS) {
-            if (str[hi] == parenOpen) {
-                ++stack
+            when (str[hi]) {
+                openParen -> ++stack
+                closedParen -> --stack
+                else -> {}
             }
-            if (str[hi] == parenClosed) {
-                --stack
-            }
+
             // after this if block, there will be one surplus closed parenthesis to remove
             if (stack >= 0) {
                 continue@loop
             }
 
             for (lo in loStart..hi) { // to try to remove one at each position, skipping duplicates
-                if (str[lo] == parenClosed && (lo == 0 || str[lo - 1] != parenClosed)) { // only to remove the first one of the duplicates
+                if (str[lo] == closedParen && (lo == 0 || str[lo - 1] != closedParen)) { // only to remove the first one of the duplicates
                     // to remove the char at index `lo`
                     // time complexity: O(`lenS`)
                     val deleted = StringBuilder(str).deleteCharAt(lo).toString()
                     // or equivalently
                     // val deleted = str.substring(0, lo) + str.substring(lo + 1)
-                    dfs(lo, hi, deleted, parenOpen, parenClosed, res)
+                    dfs(lo, hi, deleted, openParen, closedParen, res)
                 }
             }
 
@@ -62,8 +62,8 @@ class SolutionApproach0DFSRecursive {
         // no invalid parenthesis has been detected,
         // to check the opposite direction.
         val reversed = str.reversed()
-        if (parenOpen == PAREN_OPEN) {
-            dfs(0, 0, reversed, PAREN_CLOSED, PAREN_OPEN, res)
+        if (openParen == OPEN) {
+            dfs(0, 0, reversed, CLOSED, OPEN, res)
         } else {
             res.add(reversed)
         }

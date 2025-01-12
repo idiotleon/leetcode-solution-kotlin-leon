@@ -2,7 +2,6 @@ package com.idiotleon.leetcode.lvl5.lc0301
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
-import kotlin.collections.HashSet
 
 /**
  * @author: Leon
@@ -15,7 +14,7 @@ import kotlin.collections.HashSet
  * https://leetcode.com/problems/remove-invalid-parentheses/discuss/75032/Share-my-Java-BFS-solution
  */
 @Suppress(UNUSED)
-class SolutionApproach0BFS0 {
+class Solution0Bfs {
     private companion object {
         private const val PAREN_OPEN = '('
         private const val PAREN_CLOSED = ')'
@@ -40,7 +39,7 @@ class SolutionApproach0BFS0 {
         while (queue.isNotEmpty()) {
             val size = queue.size
 
-            loop@ for (sz in 0 until size) {
+            outer@ for (sz in 0 until size) {
                 val cur = queue.removeFirst()
 
                 if (isValid(cur)) {
@@ -49,12 +48,12 @@ class SolutionApproach0BFS0 {
                 }
 
                 if (found) {
-                    continue@loop
+                    continue@outer
                 }
 
-                loop1@ for (idx in cur.indices) {
+                inner@ for (idx in cur.indices) {
                     if (cur[idx] != PAREN_OPEN && cur[idx] != PAREN_CLOSED) {
-                        continue@loop1
+                        continue@inner
                     }
 
                     val deleted = StringBuilder(cur).deleteCharAt(idx).toString()
@@ -75,7 +74,11 @@ class SolutionApproach0BFS0 {
         for (ch in str) {
             when (ch) {
                 PAREN_OPEN -> ++count
-                PAREN_CLOSED -> if (--count < 0) return false
+                PAREN_CLOSED -> {
+                    if (--count < 0) {
+                        return false
+                    }
+                }
             }
         }
 
