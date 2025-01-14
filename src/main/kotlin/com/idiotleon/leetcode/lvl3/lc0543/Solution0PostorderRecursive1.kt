@@ -11,7 +11,7 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
  * Space Complexity:    O(H)
  */
 @Suppress(UNUSED)
-class SolutionApproach0PostorderRecursive {
+class Solution0PostorderRecursive1 {
     fun diameterOfBinaryTree(root: TreeNode?) = postorder(root).longest
 
     private fun postorder(node: TreeNode?): Res {

@@ -15,45 +15,46 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://stackoverflow.com/a/29219346/6061609
  */
 @Suppress(UNUSED)
-class SolutionApproach0DFSRecursive {
+class Solution0DfsRecursive {
     fun treeDiameter(edges: Array<IntArray>): Int {
         val nVertices = edges.size + 1
 
         val graph = buildGraph(nVertices, edges)
 
-        val res = Res(0, 0)
-        dfs(0, -1, 0, graph, res)
-        dfs(res.vertex, -1, 0, graph, res)
+        val node = Node(0, 0)
+        dfs(0, -1, 0, graph, node)
+        dfs(node.vertex, -1, 0, graph, node)
 
-        return res.len
+        return node.len
     }
 
     private fun dfs(
-        cur: Int, parent: Int, len: Int, graph: Array<MutableList<Int>>, res: Res
+        cur: Int, parent: Int, len: Int, graph: List<List<Int>>, node: Node
     ) {
-        if (len > res.len) {
-            res.len = len
-            res.vertex = cur
+        if (len > node.len) {
+            node.len = len
+            node.vertex = cur
         }
 
         for (next in graph[cur]) {
-            if (next == parent) continue
-            dfs(next, cur, 1 + len, graph, res)
+            if (next == parent) {
+                continue
+            }
+
+            dfs(next, cur, 1 + len, graph, node)
         }
     }
 
-    private fun buildGraph(nVertices: Int, edges: Array<IntArray>): Array<MutableList<Int>> {
-        val graph = Array(nVertices) { mutableListOf<Int>() }
+    private fun buildGraph(nVertices: Int, edges: Array<IntArray>): List<List<Int>> {
+        val graph = List(nVertices) { mutableListOf<Int>() }
 
-        for (edge in edges) {
-            val (u, v) = edge
-
+        for ((u, v) in edges) {
             graph[u].add(v)
             graph[v].add(u)
         }
 
-        return graph
+        return graph.map { it.toList() }
     }
 
-    private data class Res(var len: Int, var vertex: Int)
+    private data class Node(var len: Int, var vertex: Int)
 }

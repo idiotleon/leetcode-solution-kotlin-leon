@@ -8,6 +8,9 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  *
  * Time Complexity:     O(`lenS`)
  * Space Complexity:    O(1)
+ *
+ * Reference:
+ * https://leetcode.com/problems/minimum-length-of-string-after-operations/editorial/
  */
 @Suppress(UNUSED)
 class Solution0LinearScan1 {

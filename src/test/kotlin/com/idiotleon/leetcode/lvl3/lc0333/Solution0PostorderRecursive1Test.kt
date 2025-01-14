@@ -4,7 +4,7 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class SolutionApproach0PostorderRecursiveTest {
+class Solution0PostorderRecursive1Test {
     val solution = SolutionApproach0PostorderRecursive()
 
     @Test
