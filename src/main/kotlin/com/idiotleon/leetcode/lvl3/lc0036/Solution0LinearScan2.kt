@@ -13,7 +13,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/valid-sudoku/discuss/15472/Short%2BSimple-Java-using-Strings
  */
 @Suppress(UNUSED)
-class SolutionApproach0LinearScan2 {
+class Solution0LinearScan2 {
     private companion object {
         private const val EMPTY = '.'
     }
@@ -24,10 +24,14 @@ class SolutionApproach0LinearScan2 {
         for (row in board.indices) {
             for (col in board[row].indices) {
                 val value = board[row][col]
-                if (value == EMPTY) continue
+                if (value == EMPTY) {
+                    continue
+                }
 
                 val hash = "($value)"
-                if (!seen.add("$hash$row") || !seen.add("$col$hash") || !seen.add("${row / 3}$hash${col / 3}")) return false
+                if (!seen.add("$hash$row") || !seen.add("$col$hash") || !seen.add("${row / 3}$hash${col / 3}")) {
+                    return false
+                }
             }
         }
 

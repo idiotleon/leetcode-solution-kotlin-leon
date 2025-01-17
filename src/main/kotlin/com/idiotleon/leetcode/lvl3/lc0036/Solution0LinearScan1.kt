@@ -14,7 +14,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/valid-sudoku/discuss/15450/Shared-my-concise-Java-code
  */
 @Suppress(UNUSED)
-class SolutionApproach0LinearScan1 {
+class Solution0LinearScan1 {
     private companion object {
         private const val EMPTY = '.'
     }
@@ -25,10 +25,14 @@ class SolutionApproach0LinearScan1 {
         for (row in board.indices) {
             for (col in board[row].indices) {
                 val value = board[row][col]
-                if (value == EMPTY) continue
+                if (value == EMPTY) {
+                    continue
+                }
 
                 val block = (row / 3 * 3) + (col / 3)
-                if (!seen.add("row#$row#$value") || !seen.add("col#$col$value") || !seen.add("block#$block$value")) return false
+                if (!seen.add("row#$row#$value") || !seen.add("col#$col$value") || !seen.add("block#$block$value")) {
+                    return false
+                }
             }
         }
 

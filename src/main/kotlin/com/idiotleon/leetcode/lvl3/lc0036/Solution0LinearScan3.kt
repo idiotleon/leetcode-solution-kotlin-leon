@@ -14,4 +14,4 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/valid-sudoku/discuss/15472/Short%2BSimple-Java-using-Strings
  */
 @Suppress(UNUSED)
-class SolutionApproach0LinearScan3 {}
+class Solution0LinearScan3 {}
