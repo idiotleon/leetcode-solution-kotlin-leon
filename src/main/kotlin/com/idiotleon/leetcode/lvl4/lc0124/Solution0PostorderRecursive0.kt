@@ -11,11 +11,13 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
  * Space Complexity:    O(H)
  */
 @Suppress(UNUSED)
-class SolutionApproach0PostorderRecursive0 {
+class Solution0PostorderRecursive0 {
     fun maxPathSum(root: TreeNode?) = postorder(root).maxSum
 
-    private fun postorder(node: TreeNode?): Res {
-        if (node == null) return Res(Int.MIN_VALUE, 0)
+    private fun postorder(node: TreeNode?): Node {
+        if (node == null) {
+            return Node(Int.MIN_VALUE, 0)
+        }
 
         val (leftMaxSum, leftPathSum) = postorder(node.left)
         val (rightMaxSum, rightPathSum) = postorder(node.right)
@@ -23,8 +25,8 @@ class SolutionApproach0PostorderRecursive0 {
         val value = node.`val`
         val sum = leftPathSum + rightPathSum + value
 
-        return Res(maxOf(leftMaxSum, rightMaxSum, sum), maxOf(0, value + maxOf(leftPathSum, rightPathSum)))
+        return Node(maxOf(leftMaxSum, rightMaxSum, sum), maxOf(0, value + maxOf(leftPathSum, rightPathSum)))
     }
 
-    private data class Res(val maxSum: Int, val pathSum: Int)
+    private data class Node(val maxSum: Int, val pathSum: Int)
 }

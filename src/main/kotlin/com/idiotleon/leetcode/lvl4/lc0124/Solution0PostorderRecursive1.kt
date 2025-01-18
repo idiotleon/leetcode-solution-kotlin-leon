@@ -15,7 +15,7 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
  *  https://leetcode.com/problems/binary-tree-maximum-path-sum/discuss/39775/Accepted-short-solution-in-Java
  */
 @Suppress(UNUSED)
-class SolutionApproach0PostorderRecursive1 {
+class Solution0PostorderRecursive1 {
     fun maxPathSum(root: TreeNode?): Int {
         val maxSum = intArrayOf(Int.MIN_VALUE)
         postorder(root, maxSum)
@@ -23,7 +23,9 @@ class SolutionApproach0PostorderRecursive1 {
     }
 
     private fun postorder(node: TreeNode?, maxSum: IntArray): Int {
-        if (node == null) return 0
+        if (node == null) {
+            return 0
+        }
 
         val leftPathSum = postorder(node.left, maxSum)
         val rightPathSum = postorder(node.right, maxSum)

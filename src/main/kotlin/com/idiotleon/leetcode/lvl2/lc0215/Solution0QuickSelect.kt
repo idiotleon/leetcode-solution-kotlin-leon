@@ -14,7 +14,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  *  https://mp.weixin.qq.com/s/TRO3FOKT90Mpvn3hQWVBAQ
  */
 @Suppress(UNUSED)
-class SolutionApproach0QuickSelect {
+class Solution0QuickSelect {
     fun findKthLargest(nums: IntArray, k: Int): Int {
         val nNums = nums.size
 

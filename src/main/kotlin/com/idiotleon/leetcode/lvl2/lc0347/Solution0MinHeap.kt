@@ -2,7 +2,6 @@ package com.idiotleon.leetcode.lvl2.lc0347
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
-import kotlin.collections.HashMap
 
 /**
  * @author: Leon
@@ -12,12 +11,11 @@ import kotlin.collections.HashMap
  * Space Complexity:    O(`nNums`)
  */
 @Suppress(UNUSED)
-class SolutionApproach0MinHeap {
+class Solution0MinHeap {
     fun topKFrequent(nums: IntArray, k: Int): IntArray {
         // not used
-        // val nNums = nums.size
+        val nNums = nums.size
         val ans = IntArray(k)
-        // sanity check
         if (nums.isEmpty()) {
             return ans
         }

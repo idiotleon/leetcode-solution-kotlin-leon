@@ -46,8 +46,8 @@ class QuickSelect1 {
     }
 
     private fun swap(i: Int, j: Int, nums: IntArray) {
-        val swap = nums[i]
+        val temp = nums[i]
         nums[i] = nums[j]
-        nums[j] = swap
+        nums[j] = temp
     }
 }

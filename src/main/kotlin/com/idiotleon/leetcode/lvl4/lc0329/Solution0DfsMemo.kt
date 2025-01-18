@@ -12,14 +12,16 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(`nRows` * `nCols`)
  */
 @Suppress(UNUSED)
-class SolutionApproach0DFSMemo {
+class Solution0DfsMemo {
     private companion object {
-        private val DIRS = arrayOf(0, -1, 0, 1, 0)
+        private val DIRS = intArrayOf(0, -1, 0, 1, 0)
     }
 
     fun longestIncreasingPath(matrix: Array<IntArray>): Int {
         // sanity check, required
-        if (matrix.isEmpty() || matrix[0].isEmpty()) return 0
+        if (matrix.isEmpty() || matrix[0].isEmpty()) {
+            return 0
+        }
 
         val nRows = matrix.size
         val nCols = matrix[0].size
@@ -49,7 +51,9 @@ class SolutionApproach0DFSMemo {
             val nextRow = row + DIRS[d]
             val nextCol = col + DIRS[d + 1]
 
-            if (nextRow < 0 || nextRow >= nRows || nextCol < 0 || nextCol >= nCols) continue
+            if (nextRow < 0 || nextRow >= nRows || nextCol < 0 || nextCol >= nCols) {
+                continue
+            }
 
             if (matrix[row][col] < matrix[nextRow][nextCol]) {
                 longest = maxOf(longest, 1 + dfs(nextRow, nextCol, matrix, memo))

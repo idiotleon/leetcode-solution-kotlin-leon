@@ -34,21 +34,21 @@ class QuickSelectWithRandomPivot {
         val idxPivot = lo + Random.nextInt(hi - lo + 1)
         swap(idxPivot, hi, nums)
 
-        var idxStore = lo
-        for (idx in idxStore until hi) {
+        var idxStart = lo
+        for (idx in idxStart until hi) {
             if (nums[idx] > nums[hi]) {
-                swap(idxStore, idx, nums)
-                ++idxStore
+                swap(idxStart, idx, nums)
+                ++idxStart
             }
         }
 
-        swap(idxStore, hi, nums)
-        return idxStore
+        swap(idxStart, hi, nums)
+        return idxStart
     }
 
     private fun swap(i: Int, j: Int, nums: IntArray) {
-        val swap = nums[i]
+        val temp = nums[i]
         nums[i] = nums[j]
-        nums[j] = swap
+        nums[j] = temp
     }
 }

@@ -11,7 +11,7 @@ import java.util.*
  * Space Complexity:    O(`k`)
  */
 @Suppress(UNUSED)
-class SolutionApproach0MinHeap {
+class Solution0MinHeap {
     fun findKthLargest(nums: IntArray, k: Int): Int {
         val nNums = nums.size
         val minHeap = PriorityQueue<Int>(nNums)

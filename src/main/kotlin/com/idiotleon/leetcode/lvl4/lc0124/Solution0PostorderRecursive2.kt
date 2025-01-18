@@ -11,7 +11,7 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
  * Space Complexity:    O(H)
  */
 @Suppress(UNUSED)
-class SolutionApproach0PostorderRecursive2 {
+class Solution0PostorderRecursive2 {
     private var maxPathSum = Int.MIN_VALUE
 
     fun maxPathSum(root: TreeNode?): Int {
@@ -20,7 +20,9 @@ class SolutionApproach0PostorderRecursive2 {
     }
 
     private fun postorder(node: TreeNode?): Int {
-        if (node == null) return 0
+        if (node == null) {
+            return 0
+        }
 
         val leftPathSum = postorder(node.left)
         val rightPathSum = postorder(node.right)
