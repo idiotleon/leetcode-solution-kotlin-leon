@@ -32,7 +32,7 @@ class Solution0Bfs {
                 for (neighbor in cur.neighbors) {
                     if (neighbor == null) {
                         continue
-                    };
+                    }
 
                     if (map[neighbor] == null) {
                         map[neighbor] = Node(neighbor.`val`)

@@ -20,6 +20,7 @@ class Solution0DfsRecursive {
         if (cur == null) {
             return null
         }
+
         map[cur]?.let { return it }
 
         val cloned = Node(cur.`val`)
