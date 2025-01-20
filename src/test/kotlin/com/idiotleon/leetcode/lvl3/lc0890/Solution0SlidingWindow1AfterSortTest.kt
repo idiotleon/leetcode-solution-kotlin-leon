@@ -3,8 +3,8 @@ package com.idiotleon.leetcode.lvl3.lc0890
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class Solution0SlidingWindowAfterSort11Test {
-    private val solution = SolutionApproach0LinearScan1()
+class Solution0SlidingWindow1AfterSortTest {
+    private val solution = SolutionApproach0LinearScan()
 
     @Test
     fun test_SampleInput1_ShouldReturnExpected() {

@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl1.lc0067
 import org.junit.Assert
 import org.junit.Test
 
-internal class Solution0SlidingWindowAfterSort1Test {
+internal class Solution0SlidingWindow1AfterSort1Test {
     private val solution = SolutionApproach0LinearScan()
 
     @Test

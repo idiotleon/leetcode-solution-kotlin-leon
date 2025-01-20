@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl5.lc1520
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class TestSolution0SlidingWindowAfterSort {
+class TestSolution0SlidingWindow1AfterSort {
     val solution = SolutionApproach0Greedy()
 
     @Test
