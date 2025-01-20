@@ -1,18 +1,19 @@
+package com.idiotleon.leetcode.lvl3.lc0647
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/palindromic-substrings/
  *
  * Time Complexity:     O(`lenS` ^ 2)
  * Space Complexity:    O(`lenS` ^ 2)
  *
  * Reference:
- *  https://leetcode.com/problems/palindromic-substrings/discuss/258917/Java-Simple-Code%3A-DP-short
+ * https://leetcode.com/problems/palindromic-substrings/discuss/258917/Java-Simple-Code%3A-DP-short
  */
-package com.idiotleon.leetcode.lvl3.lc0647
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
-class SolutionApproach0DP2Dimen {
+class Solution0DP2Dimen {
     fun countSubstrings(str: String): Int {
         val lenS = str.length
 
@@ -28,7 +29,9 @@ class SolutionApproach0DP2Dimen {
                     dp[lo][hi] = if (hi - lo <= 2) true // if the `len` <= 3
                     else dp[lo + 1][hi - 1] // if the `len` > 3
 
-                    if (dp[lo][hi]) ++count
+                    if (dp[lo][hi]) {
+                        ++count
+                    }
                 }
             }
         }

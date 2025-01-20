@@ -1,18 +1,19 @@
+package com.idiotleon.leetcode.lvl3.lc0647
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
+ * @author: Leon
  * https://leetcode.com/problems/palindromic-substrings/
  *
  * Time Complexity:     O()
  * Space Complexity:    O()
  *
  * Reference:
- *  https://leetcode.com/problems/palindromic-substrings/discuss/105689/Java-solution-8-lines-extendPalindrome
+ * https://leetcode.com/problems/palindromic-substrings/discuss/105689/Java-solution-8-lines-extendPalindrome
  */
-package com.idiotleon.leetcode.lvl3.lc0647
-
-import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-
 @Suppress(UNUSED)
-class SolutionApproach0TwoPointers {
+class Solution0TwoPointers {
     fun countSubstrings(str: String): Int {
         var count = 0
 
