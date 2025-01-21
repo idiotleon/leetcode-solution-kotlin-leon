@@ -18,7 +18,6 @@ class Solution0DfsMemo {
     }
 
     fun longestIncreasingPath(matrix: Array<IntArray>): Int {
-        // sanity check, required
         if (matrix.isEmpty() || matrix[0].isEmpty()) {
             return 0
         }
@@ -39,28 +38,29 @@ class Solution0DfsMemo {
     }
 
     private fun dfs(
-        row: Int, col: Int, matrix: Array<IntArray>, memo: Array<Array<Int?>>
+        curRow: Int,
+        curCol: Int,
+        matrix: Array<IntArray>,
+        memo: Array<Array<Int?>>,
     ): Int {
         val nRows = matrix.size
         val nCols = matrix[0].size
 
-        memo[row][col]?.let { return it }
+        memo[curRow][curCol]?.let { return it }
 
         var longest = 1
         for (d in 0 until 4) {
-            val nextRow = row + DIRS[d]
-            val nextCol = col + DIRS[d + 1]
+            val nextRow = curRow + DIRS[d]
+            val nextCol = curCol + DIRS[d + 1]
 
-            if (nextRow < 0 || nextRow >= nRows || nextCol < 0 || nextCol >= nCols) {
-                continue
-            }
-
-            if (matrix[row][col] < matrix[nextRow][nextCol]) {
-                longest = maxOf(longest, 1 + dfs(nextRow, nextCol, matrix, memo))
+            if (nextRow in 0 until nRows && nextCol in 0 until nCols) {
+                if (matrix[curRow][curCol] < matrix[nextRow][nextCol]) {
+                    longest = maxOf(longest, 1 + dfs(nextRow, nextCol, matrix, memo))
+                }
             }
         }
 
-        memo[row][col] = longest
+        memo[curRow][curCol] = longest
         return longest
     }
 }

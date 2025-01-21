@@ -12,9 +12,9 @@ import com.idiotleon.leetcode.util.dataStructure.tree.TreeNode
  */
 @Suppress(UNUSED)
 class Solution0DfsRecursive {
-    fun rangeSumBST(root: TreeNode?, low: Int, high: Int): Int = dfs(low, high, root)
+    fun rangeSumBST(root: TreeNode?, low: Int, high: Int): Int = dfs(root, low, high)
 
-    private fun dfs(low: Int, high: Int, node: TreeNode?): Int {
+    private fun dfs(node: TreeNode?, low: Int, high: Int): Int {
         if (node == null) {
             return 0
         }
@@ -24,11 +24,11 @@ class Solution0DfsRecursive {
         val value = node.`val`
 
         if (low <= value) {
-            sum += dfs(low, high, node.left)
+            sum += dfs(node.left, low, high)
         }
 
         if (value <= high) {
-            sum += dfs(low, high, node.right)
+            sum += dfs(node.right, low, high)
         }
 
         if (value in low..high) {
