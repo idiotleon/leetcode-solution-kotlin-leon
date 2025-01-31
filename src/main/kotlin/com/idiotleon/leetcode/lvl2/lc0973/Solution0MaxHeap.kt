@@ -1,25 +1,28 @@
-/**
- * https://leetcode.com/problems/k-closest-points-to-origin/
- *
- * Time Complexity:     O(`nPts`)
- * Space Complexity:    O(`k`)
- */
 package com.idiotleon.leetcode.lvl2.lc0973
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 import java.util.*
 
+/**
+ * @author: Leon
+ * https://leetcode.com/problems/k-closest-points-to-origin/
+ *
+ * Time Complexity:     O(`nPts`)
+ * Space Complexity:    O(`k`)
+ */
 @Suppress(UNUSED)
-class SolutionApproach0MaxHeap {
+class Solution0MaxHeap {
     fun kClosest(points: Array<IntArray>, k: Int): Array<IntArray> {
-        // not used
-        // val nPts = points.size
+        val nPts = points.size
+
         val maxHeap = PriorityQueue<IntArray>(compareBy { -getDistance(it[0], it[1]) })
 
         for (point in points) {
             maxHeap.offer(point)
-            if (maxHeap.size > k)
+
+            if (maxHeap.size > k) {
                 maxHeap.poll()
+            }
         }
 
         val ans = Array(k) { IntArray(2) { 0 } }
