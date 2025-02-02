@@ -13,7 +13,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://youtu.be/BxblkIz6TZc?t=512
  */
 @Suppress(UNUSED)
-class SolutionApproach0DFSMemo1 {
+class Solution0DfsMemo1 {
     fun uniquePaths(m: Int, n: Int): Int {
         val memo = Array(m) { Array<Int?>(n) { null } }
 
@@ -21,18 +21,20 @@ class SolutionApproach0DFSMemo1 {
     }
 
     private fun dfs(
-        row: Int, col: Int,
-        m: Int, n: Int,
-        memo: Array<Array<Int?>>
+        row: Int, col: Int, m: Int, n: Int, memo: Array<Array<Int?>>
     ): Int {
-        if (row >= m || col >= n) return 0
-        if (row == m - 1 && col == n - 1) return 1
+        if (row >= m || col >= n) {
+            return 0
+        }
+        if (row == m - 1 && col == n - 1) {
+            return 1
+        }
 
         memo[row][col]?.let { return it }
 
-        val cntUniquePaths = dfs(row + 1, col, m, n, memo) + dfs(row, col + 1, m, n, memo)
-        memo[row][col] = cntUniquePaths
+        val countUniquePaths = dfs(row + 1, col, m, n, memo) + dfs(row, col + 1, m, n, memo)
+        memo[row][col] = countUniquePaths
 
-        return cntUniquePaths
+        return countUniquePaths
     }
 }

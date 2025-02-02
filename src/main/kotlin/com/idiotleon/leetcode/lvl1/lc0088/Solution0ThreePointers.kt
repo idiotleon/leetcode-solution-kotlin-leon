@@ -10,15 +10,19 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(1)
  */
 @Suppress(UNUSED)
-class SolutionApproach0ThreePointers {
+class Solution0ThreePointers {
+    private companion object {
+        private const val RANGE = 1e9.toInt() + 7
+    }
+
     fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int) {
         var idx1 = m - 1
         var idx2 = n - 1
         var idx = m + n - 1
 
         while (idx >= 0) {
-            val num1 = if (idx1 < 0) Int.MIN_VALUE else nums1[idx1]
-            val num2 = if (idx2 < 0) Int.MIN_VALUE else nums2[idx2]
+            val num1 = if (idx1 < 0) -RANGE else nums1[idx1]
+            val num2 = if (idx2 < 0) -RANGE else nums2[idx2]
 
             nums1[idx] = if (num1 < num2) {
                 // to be careful with the order (of expressions) here

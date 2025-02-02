@@ -4,7 +4,7 @@ import org.junit.Assert
 import org.junit.Test
 
 internal class Solution0SlidingWindow1AfterSort1Test {
-    private val solution = SolutionApproach0LinearScan()
+    private val solution = Solution0LinearScan()
 
     @Test
     fun sampleInput0_ShouldReturnExpected() {

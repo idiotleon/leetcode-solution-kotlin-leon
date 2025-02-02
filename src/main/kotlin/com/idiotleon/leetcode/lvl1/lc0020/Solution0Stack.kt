@@ -10,7 +10,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(`lenS`)
  */
 @Suppress(UNUSED)
-class SolutionApproach0Stack {
+class Solution0Stack {
     private companion object {
         private const val PAREN_OPEN1 = '('
         private const val PAREN_OPEN2 = '['

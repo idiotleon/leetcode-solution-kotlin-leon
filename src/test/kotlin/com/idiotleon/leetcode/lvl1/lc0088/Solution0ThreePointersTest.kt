@@ -5,7 +5,7 @@ import kotlin.test.assertTrue
 
 
 internal class Solution0ThreePointersTest {
-    private val solution = SolutionApproach0ThreePointers1()
+    private val solution = Solution0ThreePointers1()
 
     @Test
     fun merge_SampleInput0_ShouldReturnExpected() {

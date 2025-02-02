@@ -13,16 +13,19 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/unique-paths/discuss/22954/C%2B%2B-DP
  */
 @Suppress(UNUSED)
-class SolutionApproach0DP1Dimen {
+class Solution0DP1Dimen1 {
     fun uniquePaths(m: Int, n: Int): Int {
+        var prev = IntArray(n) { 1 }
         val cur = IntArray(n) { 1 }
 
         for (row in 1 until m) {
             for (col in 1 until n) {
-                cur[col] += cur[col - 1]
+                cur[col] = prev[col] + cur[col - 1]
             }
+
+            prev = cur
         }
 
-        return cur[n - 1]
+        return prev[n - 1]
     }
 }

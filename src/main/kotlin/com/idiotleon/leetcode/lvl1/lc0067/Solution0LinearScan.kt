@@ -1,3 +1,7 @@
+package com.idiotleon.leetcode.lvl1.lc0067
+
+import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
+
 /**
  * @author: Leon
  * https://leetcode.com/problems/add-binary/
@@ -5,9 +9,8 @@
  * Time Complexity:     O(`lenA` + `lenB`) ~ O(maxOf(`lenA`, `lenB`))
  * Space Complexity:    O(1)
  */
-package com.idiotleon.leetcode.lvl1.lc0067
-
-class SolutionApproach0LinearScan {
+@Suppress(UNUSED)
+class Solution0LinearScan {
     fun addBinary(a: String, b: String): String {
         val lenA = a.length
         val lenB = b.length

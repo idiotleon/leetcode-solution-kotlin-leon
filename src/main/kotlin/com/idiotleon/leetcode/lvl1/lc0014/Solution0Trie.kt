@@ -1,7 +1,6 @@
 package com.idiotleon.leetcode.lvl1.lc0014
 
 import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
-import kotlin.collections.ArrayDeque
 
 /**
  * @author: Leon
@@ -11,7 +10,7 @@ import kotlin.collections.ArrayDeque
  * Space Complexity:    O(`nStrs` * lenS)
  */
 @Suppress(UNUSED)
-class SolutionApproach0Trie {
+class Solution0Trie {
     fun longestCommonPrefix(strs: Array<String>): String {
         val root = buildTrie(strs)
 
@@ -68,8 +67,6 @@ class SolutionApproach0Trie {
     }
 
     private data class TrieNode(
-        var ch: Char? = null,
-        var word: String? = null,
-        val children: Array<TrieNode?> = Array(26) { null }
+        var ch: Char? = null, var word: String? = null, val children: Array<TrieNode?> = Array(26) { null }
     )
 }

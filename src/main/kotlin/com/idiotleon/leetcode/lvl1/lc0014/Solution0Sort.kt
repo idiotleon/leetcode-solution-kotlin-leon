@@ -14,7 +14,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/longest-common-prefix/discuss/6924/Sorted-the-array-Java-solution-2-ms
  */
 @Suppress(UNUSED)
-class SolutionApproach0Sort {
+class Solution0Sort {
     fun longestCommonPrefix(strs: Array<String>): String {
         if (strs.isEmpty()) {
             return ""

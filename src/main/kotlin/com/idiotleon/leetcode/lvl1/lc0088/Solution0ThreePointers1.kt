@@ -10,7 +10,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(1)
  */
 @Suppress(UNUSED)
-class SolutionApproach0ThreePointers1 {
+class Solution0ThreePointers1 {
     fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int) {
         var idx1 = m - 1
         var idx2 = n - 1
