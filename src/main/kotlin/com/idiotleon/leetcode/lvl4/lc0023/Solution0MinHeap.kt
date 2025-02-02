@@ -25,13 +25,13 @@ class Solution0MinHeap {
         }
 
         val dummy = ListNode(-1)
-        var prev = dummy
+        var prev: ListNode? = dummy
         while (minHeap.isNotEmpty()) {
             val top = minHeap.poll()
-            top?.let { minHeap.offer(it) }
+            top.next?.let { minHeap.offer(it) }
 
-            prev.next = top
-            prev = prev.next
+            prev?.next = top
+            prev = prev?.next
         }
 
         return dummy.next
