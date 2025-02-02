@@ -3,7 +3,7 @@ package com.idiotleon.leetcode.lvl1.lc0917
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class SolutionApproach0HighLowPointersTest {
+class Solution0HighLowPointersTest {
     val solution = SolutionApproach0HighLowPointers()
 
     @Test

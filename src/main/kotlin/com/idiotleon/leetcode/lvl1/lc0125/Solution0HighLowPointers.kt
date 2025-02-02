@@ -10,7 +10,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(1)
  */
 @Suppress(UNUSED)
-class SolutionApproach0HighLowPointers {
+class Solution0HighLowPointers {
     fun isPalindrome(str: String): Boolean {
         val lenS = str.length
 

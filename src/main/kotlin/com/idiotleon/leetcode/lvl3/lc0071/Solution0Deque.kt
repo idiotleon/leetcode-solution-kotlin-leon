@@ -7,32 +7,37 @@ import java.util.*
  * @author: Leon
  * https://leetcode.com/problems/simplify-path/
  *
- * Time Complexity:     O(L)
- * Space Complexity:    O(L)
+ * Time Complexity:     O(`lenS`)
+ * Space Complexity:    O(`lenS`)
  *
  * Reference:
  * https://leetcode.com/problems/simplify-path/discuss/25686/Java-10-lines-solution-with-stack/168182
  * https://leetcode.com/problems/simplify-path/discuss/25686/Java-10-lines-solution-with-stack
  */
 @Suppress(UNUSED)
-class SolutionApproach0Deque {
+class Solution0Deque {
     fun simplifyPath(path: String): String {
+        val lenS = path.length
         val skip = hashSetOf("..", ".", "")
 
         val deque = ArrayDeque<String>()
         for (str in path.split("/")) {
             when {
-                !deque.isEmpty() && str == ".." -> deque.pop()
-                !skip.contains(str) -> deque.push(str)
+                deque.isNotEmpty() && str == ".." -> deque.removeLast()
+                !skip.contains(str) -> deque.addLast(str)
                 else -> {
                 }
             }
         }
 
-        if (deque.isEmpty()) return "/"
+        if (deque.isEmpty()) {
+            return "/"
+        }
 
         val builder = StringBuilder()
-        while (!deque.isEmpty()) builder.append("/").append(deque.pollLast())
+        while (deque.isNotEmpty()) {
+            builder.append("/").append(deque.removeFirst())
+        }
 
         return builder.toString()
     }
