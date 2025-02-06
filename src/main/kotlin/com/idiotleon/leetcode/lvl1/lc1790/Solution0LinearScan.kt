@@ -4,7 +4,10 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 
 /**
  * @author: Leon
+ * https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal/
  *
+ * Time Complexity:     O()
+ * Space Complexity:    O()
  */
 @Suppress(UNUSED)
 class Solution0LinearScan {
