@@ -10,10 +10,10 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(`nNums`)
  *
  * Reference:
- *  https://leetcode.com/problems/two-sum/discuss/715951/Rust%3A-HashMap-solution
+ * https://leetcode.com/problems/two-sum/discuss/715951/Rust%3A-HashMap-solution
  */
 @Suppress(UNUSED)
-class SolutionApproach0HashMap {
+class Solution0HashMap {
     fun twoSum(nums: IntArray, target: Int): IntArray {
         val nNums = nums.size
 
