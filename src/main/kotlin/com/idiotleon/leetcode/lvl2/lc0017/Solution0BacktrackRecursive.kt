@@ -6,21 +6,22 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * @author: Leon
  * https://leetcode.com/problems/letter-combinations-of-a-phone-number/
  *
- * Time Complexity:     O(3 ^ `lenD`)
- * Space Complexity:    O(`lenD`)
+ * Time Complexity:     O(3 ^ `lenS`)
+ * Space Complexity:    O(`lenS`)
  */
 @Suppress(UNUSED)
-class SolutionApproach0Backtrack {
+class Solution0BacktrackRecursive {
     private companion object {
         private val dialPad = arrayOf("", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz")
     }
 
     fun letterCombinations(digits: String): List<String> {
-        // not used
-        // val lenD = digits.length
+        val lenS = digits.length
 
         val ans = ArrayList<String>()
-        if (digits.isEmpty()) return ans
+        if (digits.isEmpty()) {
+            return ans
+        }
 
         val builder = StringBuilder()
         backtrack(0, digits, builder, ans)
@@ -28,8 +29,8 @@ class SolutionApproach0Backtrack {
     }
 
     private fun backtrack(idx: Int, digits: String, builder: StringBuilder, res: ArrayList<String>) {
-        val len = digits.length
-        if (idx == len) {
+        val lenS = digits.length
+        if (idx == lenS) {
             res.add(builder.toString())
             return
         }
