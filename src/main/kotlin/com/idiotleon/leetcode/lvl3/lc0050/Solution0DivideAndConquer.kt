@@ -13,7 +13,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://youtu.be/SWr4cSY2fCk?t=671
  */
 @Suppress(UNUSED)
-class SolutionApproach0DivideAndConquer {
+class Solution0DivideAndConquer {
     fun myPow(x: Double, n: Int): Double {
         return when {
             x == 0.0 || x == 1.0 -> x

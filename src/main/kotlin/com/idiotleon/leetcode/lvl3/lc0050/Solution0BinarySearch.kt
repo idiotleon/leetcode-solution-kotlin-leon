@@ -17,7 +17,7 @@ import kotlin.math.abs
  * https://stackoverflow.com/questions/38922606/what-is-x-1-and-x-1
  */
 @Suppress(UNUSED)
-class SolutionApproach0BinarySearch {
+class Solution0BinarySearch {
     fun myPow(x: Double, n: Int): Double {
         var ans = 1.0
         var absN = abs(n.toLong())
