@@ -10,7 +10,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * Space Complexity:    O(1)
  */
 @Suppress(UNUSED)
-class SolutionApproach0Greedy {
+class Solution0Greedy {
     fun canJump(nums: IntArray): Boolean {
         val nNums = nums.size
         var furthest = 0
