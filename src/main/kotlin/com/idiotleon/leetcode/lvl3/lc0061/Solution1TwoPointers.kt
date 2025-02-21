@@ -16,10 +16,12 @@ import com.idiotleon.leetcode.util.dataStructure.linkedList.ListNode
  * https://leetcode.com/problems/rotate-list/discuss/22726/Anyone-solve-the-problem-without-counting-the-length-of-List/22235
  */
 @Suppress(UNUSED)
-class SolutionApproach1TwoPointers {
+class Solution1TwoPointers {
     fun rotateRight(head: ListNode?, k: Int): ListNode? {
         // sanity check
-        if (head == null) return head
+        if (head == null) {
+            return head
+        }
 
         var fast = head
         var slow = head

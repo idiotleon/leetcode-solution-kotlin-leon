@@ -16,10 +16,12 @@ import com.idiotleon.leetcode.util.dataStructure.linkedList.ListNode
  * https://leetcode.com/problems/rotate-list/discuss/22751/Clean-Java-Solution-with-Brief-Explanation
  */
 @Suppress(UNUSED)
-class SolutionApproach0LinearScan {
+class Solution0LinearScan {
     fun rotateRight(head: ListNode?, k: Int): ListNode? {
         // sanity check
-        if (head == null) return head
+        if (head == null) {
+            return head
+        }
 
         var cur = head
         var len = 1
