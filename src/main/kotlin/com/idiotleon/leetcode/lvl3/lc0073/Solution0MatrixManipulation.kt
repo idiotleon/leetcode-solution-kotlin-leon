@@ -13,7 +13,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/set-matrix-zeroes/discuss/26014/Any-shorter-O(1)-space-solution
  */
 @Suppress(UNUSED)
-class SolutionApproach0MatrixManipulation {
+class Solution0MatrixManipulation {
     fun setZeroes(matrix: Array<IntArray>) {
         val nRows = matrix.size
         val nCols = matrix[0].size
@@ -24,9 +24,13 @@ class SolutionApproach0MatrixManipulation {
         for (row in matrix.indices) {
             for (col in matrix[row].indices) {
                 if (matrix[row][col] == 0) {
-                    if (row == 0) firstRow = true
+                    if (row == 0) {
+                        firstRow = true
+                    }
 
-                    if (col == 0) firstCol = true
+                    if (col == 0) {
+                        firstCol = true
+                    }
 
                     matrix[0][col] = 0
                     matrix[row][0] = 0
@@ -36,7 +40,9 @@ class SolutionApproach0MatrixManipulation {
 
         for (row in 1 until nRows) {
             for (col in 1 until nCols) {
-                if (matrix[row][0] == 0 || matrix[0][col] == 0) matrix[row][col] = 0
+                if (matrix[row][0] == 0 || matrix[0][col] == 0) {
+                    matrix[row][col] = 0
+                }
             }
         }
 
