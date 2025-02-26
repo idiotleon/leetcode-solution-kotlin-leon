@@ -13,7 +13,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/discuss/27976/3-6-easy-lines-C%2B%2B-Java-Python-Ruby
  */
 @Suppress(UNUSED)
-class SolutionApproach0LinearScan {
+class Solution0LinearScan {
     fun removeDuplicates(nums: IntArray): Int {
         // not used
         // val nNums = nums.size
