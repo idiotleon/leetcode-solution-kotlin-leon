@@ -16,7 +16,7 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
 class SolutionApproach0SlidingWindow {
     fun lengthOfLongestSubstringKDistinct(str: String, k: Int): Int {
         val lenS = str.length
-        val freqs = IntArray(128) { 0 }
+        val freqs = IntArray(size = 128) { 0 }
 
         var lo = 0
         var hi = 0
@@ -24,10 +24,14 @@ class SolutionApproach0SlidingWindow {
         var longest = 0
 
         while (hi < lenS) {
-            if (freqs[str[hi].toInt()]++ == 0) ++distinct
+            if (freqs[str[hi].code]++ == 0) {
+                ++distinct
+            }
 
             while (distinct > k) {
-                if (--freqs[str[lo++].toInt()] == 0) --distinct
+                if (--freqs[str[lo++].code] == 0) {
+                    --distinct
+                }
             }
 
             longest = maxOf(longest, hi - lo + 1)

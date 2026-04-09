@@ -25,12 +25,12 @@ class SolutionApproach0DP2Dimen1 {
 
         // to initialize the `dp` 2d array with `s1`
         for (idx1 in 1..len1) {
-            dp[idx1][0] = dp[idx1 - 1][0] + s1[idx1 - 1].toInt()
+            dp[idx1][0] = dp[idx1 - 1][0] + s1[idx1 - 1].code
         }
 
         // to initialize the `dp` 2d array with `s2`
         for (idx2 in 1..len2) {
-            dp[0][idx2] = dp[0][idx2 - 1] + s2[idx2 - 1].toInt()
+            dp[0][idx2] = dp[0][idx2 - 1] + s2[idx2 - 1].code
         }
 
         for (idx1 in 1..len1) {
@@ -38,7 +38,7 @@ class SolutionApproach0DP2Dimen1 {
                 dp[idx1][idx2] = if (s1[idx1 - 1] == s2[idx2 - 1]) {
                     dp[idx1 - 1][idx2 - 1]
                 } else {
-                    minOf(dp[idx1 - 1][idx2] + s1[idx1 - 1].toInt(), dp[idx1][idx2 - 1] + s2[idx2 - 1].toInt())
+                    minOf(dp[idx1 - 1][idx2] + s1[idx1 - 1].code, dp[idx1][idx2 - 1] + s2[idx2 - 1].code)
                 }
             }
         }

@@ -7,20 +7,27 @@ import com.idiotleon.leetcode.util.Constant.Annotation.UNUSED
  * https://leetcode.com/problems/valid-palindrome-ii/
  *
  * Time Complexity:     O(`lenS`)
- * Space Complexity:    O(`lenS`)
+ * Space Complexity:    O(1)
+ *
+ * Reference:
+ * https://leetcode.com/problems/valid-palindrome-ii/editorial/
  */
 @Suppress(UNUSED)
 class SolutionApproach0TwoPointers {
     fun validPalindrome(str: String): Boolean {
         // sanity check
-        if (str.isEmpty()) return false
+        if (str.isEmpty()) {
+            return false
+        }
 
         val lenS = str.length
         var lo = 0
         var hi = lenS - 1
 
         while (lo < hi) {
-            if (str[lo] != str[hi]) return isPalindrome(lo + 1, hi, str) || isPalindrome(lo, hi - 1, str)
+            if (str[lo] != str[hi]) {
+                return isPalindrome(lo + 1, hi, str) || isPalindrome(lo, hi - 1, str)
+            }
 
             ++lo
             --hi

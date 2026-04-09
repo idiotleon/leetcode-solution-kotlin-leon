@@ -7,9 +7,9 @@
  *  `dp[i][j]`, the minimum deletion for `str1.substring(0, i)`, i-th char exclusive,
  *  and `str2.substring(0, j)`, j-th char exclusive
  *
- * References:
- *  https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/discuss/108811/JavaDP(With-Explanation)/300816
- *  https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/discuss/642422/for-those-who-have-no-clue-%3A-step-by-step
+ * Reference:
+ * https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/discuss/108811/JavaDP(With-Explanation)/300816
+ * https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/discuss/642422/for-those-who-have-no-clue-%3A-step-by-step
  */
 package com.idiotleon.leetcode.lvl3.lc0712
 
@@ -24,12 +24,12 @@ class SolutionApproach0DP2Dimen {
         val dp = Array(len1 + 1) { IntArray(len2 + 1) { 0 } }
         // to initialize the 1st col with ASCII values of `s1`
         for (idx1 in 1..len1) {
-            dp[idx1][0] = dp[idx1 - 1][0] + s1[idx1 - 1].toInt()
+            dp[idx1][0] = dp[idx1 - 1][0] + s1[idx1 - 1].code
         }
 
         // to initialize the 1st row with ASCII values of `s2`
         for (idx2 in 1..len2) {
-            dp[0][idx2] = dp[0][idx2 - 1] + s2[idx2 - 1].toInt()
+            dp[0][idx2] = dp[0][idx2 - 1] + s2[idx2 - 1].code
         }
 
         for (idx1 in 1..len1) {
@@ -38,8 +38,7 @@ class SolutionApproach0DP2Dimen {
                     dp[idx1 - 1][idx2 - 1]
                 } else {
                     minOf(
-                        dp[idx1 - 1][idx2] + s1[idx1 - 1].toInt(),
-                        dp[idx1][idx2 - 1] + s2[idx2 - 1].toInt()
+                        dp[idx1 - 1][idx2] + s1[idx1 - 1].code, dp[idx1][idx2 - 1] + s2[idx2 - 1].code
                     )
                 }
             }
