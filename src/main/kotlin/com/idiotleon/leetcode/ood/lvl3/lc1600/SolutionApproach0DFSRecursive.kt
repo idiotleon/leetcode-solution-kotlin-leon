@@ -36,7 +36,9 @@ class SolutionApproach0DFSRecursive(kingName: String) {
     }
 
     private fun dfs(parent: String, res: MutableList<String>) {
-        if (!dead.contains(parent)) res.add(parent)
+        if (!dead.contains(parent)) {
+            res.add(parent)
+        }
 
         family[parent]?.let {
             for (child in it) {
