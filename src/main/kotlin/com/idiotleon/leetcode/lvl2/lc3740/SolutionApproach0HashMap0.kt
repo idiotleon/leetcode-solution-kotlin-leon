@@ -13,14 +13,6 @@ class SolutionApproach0HashMap0 {
     fun minimumDistance(nums: IntArray): Int {
         val nNums = nums.size
 
-        // val numToIndex = Array(nNums){ MutableList<Int>() }.also {
-        //     val
-        //     for((idx, num) in nums.withIndex()){
-        //         it[num].
-        //         it[num].add(idx)
-        //     }
-        // }
-
         val numToIndex: HashMap<Int, MutableList<Int>> = HashMap<Int, MutableList<Int>>(nNums).also {
             for ((idx, num) in nums.withIndex()) {
                 it.getOrPut(num) { mutableListOf() }.add(idx)
